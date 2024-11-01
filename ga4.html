@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Analytics 4 (GA4) Topics</title>
+    <title>GA4 Topics</title>
     
     <!-- Google Analytics 4 Tag -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
@@ -15,37 +15,30 @@
     </script>
     
     <style>
-        body { font-family: Arial, sans-serif; background-color: #f9f9f9; margin: 0; padding: 0; }
-        header, footer { background: #333; color: #fff; text-align: center; padding: 1em; }
-        main { padding: 20px; max-width: 800px; margin: auto; }
-        h2 { color: #007acc; }
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
+        h1 { color: #4CAF50; }
         ul { list-style: none; padding: 0; }
-        ul li { padding: 10px; margin: 10px 0; background: #e3f2fd; border-left: 5px solid #007acc; }
-        ul li a { text-decoration: none; color: #007acc; font-weight: bold; }
+        li { margin: 10px 0; }
+        a { color: #1a73e8; text-decoration: none; font-weight: bold; }
+        a:hover { text-decoration: underline; }
     </style>
+    <script>
+        function showWarning(title) {
+            return confirm("Are you sure you want to view the topic: " + title + "?");
+        }
+    </script>
 </head>
 <body>
-    <header>
-        <h1>Google Analytics 4 (GA4) Topics</h1>
-        <a href="index.html" style="color: #fff; text-decoration: none;">Back to Home</a>
-    </header>
-    <main>
-        <h2>GA4 Topics</h2>
-        <ul>
-            <li><a href="#">GA4 #01. Difference between Google Universal Analytics & GA4</a></li>
-            <li><a href="#">GA4 #02. Install Google Analytics 4 on Website</a></li>
-            <li><a href="#">GA4 #03. Get Access to Google Analytics Demo Account</a></li>
-            <li><a href="#">GA4 #04. Walkthrough of Google Analytics Dashboard</a></li>
-            <li><a href="#">GA4 #05. What is the Realtime Report in GA4</a></li>
-            <li><a href="#">GA4 #06. What is the Acquisition Report in GA4</a></li>
-            <li><a href="#">GA4 #07. Engagement Report in Google Analytics 4</a></li>
-            <!-- Additional GA4 topics continue in similar format -->
-            <li><a href="#">GA4 #35. When to Use GA4, What's new in GA4</a></li>
-            <li><a href="#">GA4 #36. Updates on Metrics & Dimensions</a></li>
-        </ul>
-    </main>
-    <footer>
-        <p>&copy; 2024 Educational Website - GA4 & GTM</p>
-    </footer>
+
+    <h1>GA4 Topics</h1>
+    <ul>
+        <li><a href="ga4-topic01.html" onclick="return showWarning('Difference between Google Universal Analytics & GA4')">Difference between Google Universal Analytics & GA4</a></li>
+        <li><a href="ga4-topic02.html" onclick="return showWarning('Install Google Analytics 4 on Website')">Install Google Analytics 4 on Website</a></li>
+        <li><a href="ga4-topic03.html" onclick="return showWarning('Get Access to Google Analytics Demo Account')">Get Access to Google Analytics Demo Account</a></li>
+        <li><a href="ga4-topic04.html" onclick="return showWarning('Walkthrough of Google Analytics Dashboard')">Walkthrough of Google Analytics Dashboard</a></li>
+        <li><a href="ga4-topic05.html" onclick="return showWarning('What is the Realtime Report in GA4')">What is the Realtime Report in GA4</a></li>
+        <!-- Add other GA4 topics here in the same format -->
+    </ul>
+
 </body>
 </html>
