@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GA4 Topics</title>
-    
+
     <!-- Google Analytics 4 Tag -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
     <script>
@@ -15,30 +15,91 @@
     </script>
     
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
-        h1 { color: #4CAF50; }
-        ul { list-style: none; padding: 0; }
-        li { margin: 10px 0; }
-        a { color: #1a73e8; text-decoration: none; font-weight: bold; }
-        a:hover { text-decoration: underline; }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #4CAF50;
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 1em;
+        }
+        .topics-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .topic-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: center;
+        }
+        .topic-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        .topic-card a {
+            color: #1a73e8;
+            text-decoration: none;
+            font-weight: bold;
+            display: block;
+            padding: 10px 0;
+            transition: color 0.2s;
+        }
+        .topic-card a:hover {
+            color: #0b57d0;
+        }
+        .error-message {
+            color: red;
+            font-size: 1em;
+            margin-top: 10px;
+        }
     </style>
     <script>
-        function showWarning(title) {
-            return confirm("Are you sure you want to view the topic: " + title + "?");
+        function showWarning(title, link) {
+            if (confirm("Are you sure you want to view the topic: " + title + "?")) {
+                try {
+                    window.location.href = link;
+                } catch (error) {
+                    document.getElementById("error-message").textContent = 
+                        "An error occurred while trying to navigate to the topic: " + title + ". Please try again later.";
+                }
+            }
         }
     </script>
 </head>
 <body>
 
     <h1>GA4 Topics</h1>
-    <ul>
-        <li><a href="ga4-topic01.html" onclick="return showWarning('Difference between Google Universal Analytics & GA4')">Difference between Google Universal Analytics & GA4</a></li>
-        <li><a href="ga4-topic02.html" onclick="return showWarning('Install Google Analytics 4 on Website')">Install Google Analytics 4 on Website</a></li>
-        <li><a href="ga4-topic03.html" onclick="return showWarning('Get Access to Google Analytics Demo Account')">Get Access to Google Analytics Demo Account</a></li>
-        <li><a href="ga4-topic04.html" onclick="return showWarning('Walkthrough of Google Analytics Dashboard')">Walkthrough of Google Analytics Dashboard</a></li>
-        <li><a href="ga4-topic05.html" onclick="return showWarning('What is the Realtime Report in GA4')">What is the Realtime Report in GA4</a></li>
+    <div class="topics-container">
+        <div class="topic-card">
+            <a href="#" onclick="showWarning('Difference between Google Universal Analytics & GA4', 'ga4-topic01.html')">Difference between Google Universal Analytics & GA4</a>
+        </div>
+        <div class="topic-card">
+            <a href="#" onclick="showWarning('Install Google Analytics 4 on Website', 'ga4-topic02.html')">Install Google Analytics 4 on Website</a>
+        </div>
+        <div class="topic-card">
+            <a href="#" onclick="showWarning('Get Access to Google Analytics Demo Account', 'ga4-topic03.html')">Get Access to Google Analytics Demo Account</a>
+        </div>
+        <div class="topic-card">
+            <a href="#" onclick="showWarning('Walkthrough of Google Analytics Dashboard', 'ga4-topic04.html')">Walkthrough of Google Analytics Dashboard</a>
+        </div>
+        <div class="topic-card">
+            <a href="#" onclick="showWarning('What is the Realtime Report in GA4', 'ga4-topic05.html')">What is the Realtime Report in GA4</a>
+        </div>
         <!-- Add other GA4 topics here in the same format -->
-    </ul>
+    </div>
+    <p id="error-message" class="error-message"></p>
 
 </body>
 </html>
