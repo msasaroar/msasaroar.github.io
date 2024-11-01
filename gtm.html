@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GTM Topics</title>
-    
+
     <!-- Google Analytics 4 Tag -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
     <script>
@@ -15,30 +15,91 @@
     </script>
 
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
-        h1 { color: #4CAF50; }
-        ul { list-style: none; padding: 0; }
-        li { margin: 10px 0; }
-        a { color: #1a73e8; text-decoration: none; font-weight: bold; }
-        a:hover { text-decoration: underline; }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #4CAF50;
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 1em;
+        }
+        .topics-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .topic-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: center;
+        }
+        .topic-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        .topic-card a {
+            color: #1a73e8;
+            text-decoration: none;
+            font-weight: bold;
+            display: block;
+            padding: 10px 0;
+            transition: color 0.2s;
+        }
+        .topic-card a:hover {
+            color: #0b57d0;
+        }
+        .error-message {
+            color: red;
+            font-size: 1em;
+            margin-top: 10px;
+        }
     </style>
     <script>
-        function showWarning(title) {
-            return confirm("Are you sure you want to view the topic: " + title + "?");
+        function showWarning(title, link) {
+            if (confirm("Are you sure you want to view the topic: " + title + "?")) {
+                try {
+                    window.location.href = link;
+                } catch (error) {
+                    document.getElementById("error-message").textContent = 
+                        "An error occurred while trying to navigate to the topic: " + title + ". Please try again later.";
+                }
+            }
         }
     </script>
 </head>
 <body>
 
     <h1>GTM Topics</h1>
-    <ul>
-        <li><a href="gtm-topic01.html" onclick="return showWarning('Introduction to GTM')">Introduction to GTM</a></li>
-        <li><a href="gtm-topic02.html" onclick="return showWarning('How to Install GTM on WP Websites')">How to Install GTM on WP Websites</a></li>
-        <li><a href="gtm-topic03.html" onclick="return showWarning('What are Tags and Triggers in GTM')">What are Tags and Triggers in GTM</a></li>
-        <li><a href="gtm-topic04.html" onclick="return showWarning('How to Install GA3/GA4 in GTM')">How to Install GA3/GA4 in GTM</a></li>
-        <li><a href="gtm-topic05.html" onclick="return showWarning('Variables in GTM')">Variables in GTM</a></li>
+    <div class="topics-container">
+        <div class="topic-card">
+            <a href="#" onclick="showWarning('Introduction to GTM', 'gtm-topic01.html')">Introduction to GTM</a>
+        </div>
+        <div class="topic-card">
+            <a href="#" onclick="showWarning('How to Install GTM on WP Websites', 'gtm-topic02.html')">How to Install GTM on WP Websites</a>
+        </div>
+        <div class="topic-card">
+            <a href="#" onclick="showWarning('What are Tags and Triggers in GTM', 'gtm-topic03.html')">What are Tags and Triggers in GTM</a>
+        </div>
+        <div class="topic-card">
+            <a href="#" onclick="showWarning('How to Install GA3/GA4 in GTM', 'gtm-topic04.html')">How to Install GA3/GA4 in GTM</a>
+        </div>
+        <div class="topic-card">
+            <a href="#" onclick="showWarning('Variables in GTM', 'gtm-topic05.html')">Variables in GTM</a>
+        </div>
         <!-- Add other GTM topics here in the same format -->
-    </ul>
+    </div>
+    <p id="error-message" class="error-message"></p>
 
 </body>
 </html>
