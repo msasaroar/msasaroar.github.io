@@ -5,30 +5,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Educational Website - GA4 and GTM</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
-        header, footer { background: #333; color: #fff; text-align: center; padding: 1em; }
-        main { padding: 20px; max-width: 800px; margin: auto; }
-        .topics { display: flex; justify-content: center; gap: 20px; margin-top: 20px; }
-        .topics a { padding: 15px; background: #007acc; color: white; border-radius: 5px; text-decoration: none; }
-        .topics a:hover { background: #005b9a; }
+        /* General Reset */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        /* Body styling */
+        body { 
+            font-family: Arial, sans-serif; 
+            background-color: #f0f2f5; 
+            color: #333; 
+        }
+
+        /* Header and hero section */
+        header { 
+            background: linear-gradient(to right, #007acc, #004d80); 
+            color: #fff; 
+            padding: 60px 20px; 
+            text-align: center; 
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+        }
+        header h1 { 
+            font-size: 2.5em; 
+            margin-bottom: 10px; 
+        }
+        header p { 
+            font-size: 1.2em; 
+            margin-bottom: 30px; 
+            max-width: 600px; 
+            margin: auto;
+        }
+        
+        /* Topics section */
+        .topics { 
+            display: flex; 
+            justify-content: center; 
+            gap: 30px; 
+            margin-top: 30px; 
+            flex-wrap: wrap; 
+        }
+        .topics a { 
+            background: #007acc; 
+            color: #fff; 
+            padding: 15px 30px; 
+            border-radius: 8px; 
+            text-decoration: none; 
+            font-size: 1.1em; 
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease, transform 0.3s ease; 
+        }
+        .topics a:hover { 
+            background: #005b9a; 
+            transform: translateY(-5px);
+        }
+
+        /* Footer styling */
+        footer { 
+            background: #333; 
+            color: #fff; 
+            text-align: center; 
+            padding: 1em; 
+            margin-top: 30px; 
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to the GA4 & GTM Educational Hub</h1>
-        <p>Your guide to mastering Google Analytics 4 and Google Tag Manager</p>
+        <h1>Master Google Analytics 4 & Google Tag Manager</h1>
+        <p>Explore comprehensive tutorials, guides, and tips to become proficient in GA4 and GTM. Start learning and take your analytics skills to the next level!</p>
+        <div class="topics">
+            <a href="ga4.html">Google Analytics 4 (GA4)</a>
+            <a href="gtm.html">Google Tag Manager (GTM)</a>
+        </div>
     </header>
     <main>
-        <section>
-            <h2>Choose a Topic</h2>
-            <div class="topics">
-                <a href="ga4.html">Google Analytics 4 (GA4)</a>
-                <a href="gtm.html">Google Tag Manager (GTM)</a>
-            </div>
+        <section style="padding: 20px; max-width: 800px; margin: 20px auto;">
+            <h2 style="color: #007acc; text-align: center; font-size: 1.8em;">Why Learn GA4 & GTM?</h2>
+            <p style="text-align: center; font-size: 1.1em; line-height: 1.6; color: #555;">
+                Google Analytics 4 and Google Tag Manager are essential tools for modern web analytics. 
+                With GA4, gain deep insights into user behavior, engagement, and conversion. GTM enables seamless tracking 
+                and tag management without the need for complex coding. Dive in and start your journey towards becoming a data-driven expert!
+            </p>
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 Educational Website - GA4 & GTM</p>
+        <p>&copy; 2024 Educational Website - GA4 & GTM. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
