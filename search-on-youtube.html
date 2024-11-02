@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Search Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            text-align: center;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        .video {
+            margin: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 300px;
+            display: inline-block;
+            vertical-align: top;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        iframe {
+            width: 100%;
+            height: 200px;
+            border: none;
+        }
+        .video-title {
+            font-size: 1.1em;
+            margin: 10px 0;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>YouTube Search Results for "Google Analytics Full Course"</h1>
+    <div id="video-container"></div>
+
+    <script>
+        // Your YouTube Data API key
+        const API_KEY = 'YOUR_YOUTUBE_API_KEY';
+
+        // YouTube API URL with the search query and API key
+        const searchQuery = 'Google Analytics full course';
+        const apiUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(searchQuery)}&type=video&key=${API_KEY}&maxResults=5`;
+
+        // Function to fetch YouTube search results
+        async function fetchVideos() {
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+
+                const videoContainer = document.getElementById('video-container');
+                videoContainer.innerHTML = '';
+
+                data.items.forEach(item => {
+                    const videoId = item.id.videoId;
+                    const title = item.snippet.title;
+                    
+                    // Create HTML structure for each video
+                    const videoElement = document.createElement('div');
+                    videoElement.classList.add('video');
+
+                    videoElement.innerHTML = `
+                        <iframe src="https://www.youtube.com/embed/${videoId}" allowfullscreen></iframe>
+                        <p class="video-title">${title}</p>
+                    `;
+
+                    videoContainer.appendChild(videoElement);
+                });
+            } catch (error) {
+                console.error('Error fetching videos:', error);
+            }
+        }
+
+        // Fetch and display videos on page load
+        fetchVideos();
+    </script>
+</body>
+</html>
