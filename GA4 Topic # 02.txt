@@ -1,0 +1,46 @@
+GA4 #02: Install Google Analytics 4 on a Website
+Installing Google Analytics 4 (GA4) on a website involves creating a property in GA4, setting up a data stream, and adding the tracking code to your website. Here are the step-by-step details:
+
+Step 1: Create a GA4 Property
+Log into Google Analytics: Go to analytics.google.com and sign in with your Google account.
+Create a New GA4 Property:
+Go to the Admin section (found at the bottom left).
+In the Account column, select the account you want or create a new account if needed.
+In the Property column, click on Create Property.
+Enter a name for your property, set the reporting time zone and currency, and click Next.
+Configure business details as prompted, then click Create to finalize the GA4 property.
+Step 2: Set Up a Data Stream for Your Website
+Choose Data Stream Type:
+Once your GA4 property is created, select Web as the platform type (for tracking a website).
+Add Website Information:
+Enter your website URL and provide a name for the data stream.
+Enable Enhanced Measurement (this automatically tracks basic interactions like page views, scrolls, outbound clicks, etc.).
+Create Stream: Click Create Stream to generate a unique Measurement ID for your website (it will look like "G-XXXXXXXXXX").
+Step 3: Add GA4 Tag to Your Website
+Access the Global Site Tag (gtag.js):
+On the Data Stream page, you’ll see a Measurement ID and tracking instructions. Copy the entire gtag.js script under Global site tag.
+Insert the Script in Your Website:
+Paste the gtag.js script in the <head> section of your website’s HTML, just before the closing </head> tag.
+Save and Publish: Save the changes and publish the updated HTML on your server to start tracking.
+Step 4: Verify Installation
+Use Google Tag Assistant:
+Open your website in a browser and use the Google Tag Assistant Chrome extension to confirm that the GA4 tag is firing correctly.
+Check Real-Time Report in GA4:
+Go back to Google Analytics and navigate to Realtime under the Reports section.
+Visit your website on a separate browser tab, and you should see the activity reflected in the Realtime report within a few seconds.
+Step 5: Enable Basic Tracking Features
+Enhanced Measurement:
+In your GA4 property, go to Admin > Data Streams and select your website stream.
+Make sure Enhanced Measurement is enabled to automatically track events like page views, scrolls, outbound clicks, and site searches.
+Enable Debug Mode (optional for testing):
+In GA4, activate DebugView by enabling Debug mode in your tracking code or using a Chrome extension like Google Analytics Debugger.
+Step 6: Set Up Goals or Conversions (Optional)
+Mark Events as Conversions:
+Go to Configure > Events in GA4.
+Find events you want to count as conversions (e.g., "purchase" or "sign_up") and toggle Mark as conversion.
+Step 7: Test and Validate
+Test Different Scenarios:
+Trigger events on your website (e.g., page views, clicks) to confirm data is flowing to GA4.
+Review Real-Time and DebugView:
+Navigate to Reports > Realtime and Configure > DebugView to monitor the events and ensure accurate tracking.
+Following these steps will set up GA4 on your website and begin capturing user data. Let me know if you have any specific questions about a step!
