@@ -16,7 +16,7 @@
     </script>
 
     <style>
-        /* Main styling to match eshop.html */
+        /* Main styling to match ga4.html */
         body {
             font-family: Arial, sans-serif;
             background-color: #e8f5e9;
@@ -45,24 +45,28 @@
             border-radius: 12px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
             padding: 20px;
-            transition: transform 0.3s, box-shadow 0.3s;
             text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
         .topic-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
         }
+        /* Button-like styling for links */
         .topic-card a {
-            color: #1976d2;
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #1976d2;
+            color: #fff;
             text-decoration: none;
             font-weight: bold;
             font-size: 1.1em;
-            display: block;
-            padding: 10px 0;
-            transition: color 0.3s;
+            border-radius: 8px;
+            transition: background-color 0.3s, color 0.3s;
         }
         .topic-card a:hover {
-            color: #0d47a1;
+            background-color: #0d47a1;
+            color: #e0f7fa;
         }
         .error-message {
             color: red;
