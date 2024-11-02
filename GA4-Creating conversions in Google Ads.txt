@@ -1,0 +1,22 @@
+Creating conversions in Google Ads based on key events in Google Analytics 4 (GA4) allows you to track valuable actions users take on your website and use that data for optimized ad targeting. Here’s how to do it:
+
+1. Set Up Events in GA4 as Conversions
+Open Google Analytics 4 and go to Admin > Events.
+Identify the events you want to use as conversions (e.g., "purchase," "form_submission").
+If an event is not yet marked as a conversion, toggle the Mark as conversion button next to it.
+2. Link Google Ads to Google Analytics 4
+In GA4, go to Admin > Product Links > Google Ads Links.
+Click Link and select your Google Ads account.
+Follow the prompts to complete the linking process, enabling data sharing between GA4 and Google Ads.
+3. Import GA4 Conversions into Google Ads
+Open Google Ads and go to Tools & Settings > Conversions.
+Click New Conversion Action and select Import.
+Choose Google Analytics (GA4) events and click Continue.
+Select the specific GA4 conversion events you marked (e.g., "purchase," "form_submission") and click Import and Continue.
+4. Verify and Customize Conversion Settings
+Once imported, click on each conversion action to verify details, including Conversion window, Attribution model, and Value assignment.
+Customize as needed based on the importance of each event for your campaign goals.
+5. Use the Conversions in Google Ads Campaigns
+In your Google Ads campaigns, ensure Optimize for conversions is selected in the Bidding section.
+Monitor the performance of your conversions over time, adjusting bids and budgets to optimize for high-value actions based on GA4 data.
+This integration improves campaign performance as it allows Google Ads to leverage GA4’s event-based tracking, providing a deeper understanding of user actions.
