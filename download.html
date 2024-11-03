@@ -32,7 +32,7 @@
             // Open a new window to display the content of the text file
             const newWindow = window.open('', '_blank', 'width=600,height=400');
 
-            fetch('GA4 Topic # 01.txt')
+            fetch('ga4-topic-01.txt')
                 .then(response => response.text())
                 .then(data => {
                     newWindow.document.write('<html><head><title>Topic Content</title></head><body>');
