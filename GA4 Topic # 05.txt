@@ -1,4 +1,4 @@
-GA4 #05: What is the Realtime Report in GA4
+GA4 # 05: What is the Realtime Report in GA4
 
 The Realtime Report in Google Analytics 4 (GA4) provides you with a live view of user activity on your website or app, helping you to monitor visitor behavior and campaign performance as it happens. Here’s a detailed, step-by-step guide to learn and make the most of the Realtime Report in GA4.
 
