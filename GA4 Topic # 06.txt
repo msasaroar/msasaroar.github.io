@@ -1,4 +1,5 @@
-GA4 #06, “What is the Acquisition Report in GA4,” learning activities should focus on understanding how users arrive at your site and what channels or sources are most effective in bringing in traffic. The GA4 Acquisition Report helps identify key sources, mediums, and campaigns that drive user engagement, making it a valuable tool for marketers, analysts, and site owners.
+GA4 #06: What is the Acquisition Report?
+In GA4 learning activities should focus on understanding how users arrive at your site and what channels or sources are most effective in bringing in traffic. The GA4 Acquisition Report helps identify key sources, mediums, and campaigns that drive user engagement, making it a valuable tool for marketers, analysts, and site owners.
 
 
 Step-by-Step Activities for GA4 #06: Understanding the Acquisition Report
