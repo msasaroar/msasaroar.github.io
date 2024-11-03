@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GA4 Topics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #4CAF50;
+            font-size: 1.8em;
+        }
+        .topic-link {
+            color: #1a73e8;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+        .topic-link:hover {
+            color: #0b57d0;
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function openTopicContent() {
+            // Open a new window to display the content of the text file
+            const newWindow = window.open('', '_blank', 'width=600,height=400');
+
+            fetch('GA4 Topic # 01.txt')
+                .then(response => response.text())
+                .then(data => {
+                    newWindow.document.write('<html><head><title>Topic Content</title></head><body>');
+                    newWindow.document.write('<h2>GA4 # 01. Difference between Google Universal Analytics & GA4</h2>');
+                    newWindow.document.write('<pre>' + data + '</pre>');
+                    newWindow.document.write('</body></html>');
+                    newWindow.document.close();
+                })
+                .catch(error => {
+                    newWindow.document.write('<p>Failed to load content. Please try again later.</p>');
+                });
+        }
+    </script>
+</head>
+<body>
+
+    <h1>GA4 Topics</h1>
+    <p>
+        <a href="#" class="topic-link" onclick="openTopicContent()">GA4 # 01. Difference between Google Universal Analytics & GA4</a>
+    </p>
+
+</body>
+</html>
