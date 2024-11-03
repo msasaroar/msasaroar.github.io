@@ -1,84 +1,49 @@
 GA4 #07: What is Engagement Report ?
 The Engagement Report provides data on metrics like engaged sessions, engagement time, and specific events users perform. This information helps in understanding user engagement levels and identifying areas for improvement.
 
-
 Step-by-Step Activities for GA4 #07: Understanding the Engagement Report
 
-
 1. Navigate to the Engagement Report
-
 Access GA4: Log in to your Google Analytics 4 account and select the property you want to analyze.
-
 Locate the Report: In the left-hand menu, go to Reports > Engagement. This opens the Engagement Overview, which provides a high-level summary of user interactions.
 
-
 2. Understand Key Engagement Metrics
-
 Engaged Sessions: These are sessions where users actively engaged with the website or app by staying for a minimum duration, triggering a conversion event, or viewing multiple pages.
-
 Engagement Rate: This is the percentage of engaged sessions out of total sessions, indicating the quality of user engagement.
-
 Average Engagement Time per Session: This shows the average time users spend interacting with the site during each session.
-
 User Stickiness (DAU, WAU, MAU): Daily Active Users (DAU), Weekly Active Users (WAU), and Monthly Active Users (MAU) show user retention over different periods, useful for assessing long-term engagement.
 
-
 3. Explore Specific Engagement Reports
-
 Events Report: Located under Reports > Engagement > Events, this report shows all events that users trigger. These include automatically collected events (e.g., page views), recommended events (e.g., purchases), and any custom events you’ve set up.
-
 Pages and Screens Report: Found under Reports > Engagement > Pages and screens, this report shows which pages (on websites) or screens (on apps) users interact with most, as well as metrics like average engagement time for each.
-
 Conversions Report: This report provides data on specific events marked as conversions, helping analyze how frequently users complete key actions.
 
-
 4. Adjust Date Ranges and Filters
-
 Set Date Ranges: Modify the date range in the upper right to examine engagement trends over different periods, such as weekly, monthly, or for custom dates.
-
 Apply Filters: Use filters to view engagement data by specific dimensions like user demographics, device category, or traffic source. This lets you see how engagement varies among different user segments.
 
-
 5. Analyze Engagement by Key Dimensions
-
 Primary Dimensions: Use dimensions like Page Title and Screen Class to understand which pages or screens users spend the most time on and which have high engagement rates.
-
 Secondary Dimensions: Add secondary dimensions, like Device Category or Country, for a more nuanced view of how engagement differs based on factors such as device type or location.
 
-
 6. Use Average Engagement Time Insights
-
 Identify High Engagement Areas: Look for pages or screens with high average engagement times to understand which content resonates most with users.
-
 Low Engagement Areas: Pages with low engagement may need improvements in design, content, or layout to retain user attention.
 
-
 7. Monitor Specific Events and Conversions
-
 Events Tracking: Review high-frequency events to see which interactions users perform the most. For instance, if video plays are a significant engagement action on your site, examine how often users perform this event.
-
 Conversion Events: Check how many engaged sessions lead to conversions. This helps understand how well your website or app engages users toward completing critical actions, such as purchases or sign-ups.
 
-
 8. Analyze Engagement Trends and Patterns
-
 Engagement Over Time: Look at engagement trends over days, weeks, or months to identify peak engagement times or periods of reduced activity. This helps with planning content or campaign releases.
-
 Compare New vs. Returning Users: Understand engagement patterns among new and returning users. Returning users generally have higher engagement rates, indicating loyalty and repeat visits.
 
-
 9. Utilize Advanced Exploration Tools
-
 Explore Feature: Go to Explore > Free Form Exploration and create custom explorations to dive deeper into user engagement data.
-
 Path Exploration: Use Path Exploration to see the sequence of events users perform, which provides insights into the flow of user interactions and helps identify any bottlenecks in the engagement process.
 
-
 10. Document Findings and Identify Actionable Insights
-
 Highlight Key Insights: Document which pages or screens have high engagement, which events drive user interactions, and which conversion events are most common.
-
 Plan Improvements: Use insights to make data-driven decisions, like optimizing low-engagement pages, promoting high-engagement content, or improving conversion paths based on user interaction patterns.
-
 
 By following these steps, you’ll gain practical experience in interpreting engagement data in GA4. The Engagement Report is essential for understanding user behavior, improving website or app design, and increasing user satisfaction and retention.
