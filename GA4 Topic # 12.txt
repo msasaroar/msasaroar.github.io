@@ -1,6 +1,5 @@
 GA4 #12: Connect Google Ads & Google Analytics 4
 
-
 Step-by-Step Guide to Connecting Google Ads & Google Analytics 4
 
 1. Prepare Accounts for Linking
