@@ -39,6 +39,7 @@ GA4 # 33. Subdomain Tracking in GA4
 GA4 # 34. Cross-Domain Configuration in GA4
 GA4 # 35. When to Use GA4, What's new in GA4
 GA4 # 36. Updates on Metrics & Dimensions
+========================================================================================================
 GTM # 01. Introduction to GTM
 GTM # 02. How to Install GTM on WP Websites
 GTM # 03. What are Tags and Triggers in GTM
