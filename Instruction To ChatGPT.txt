@@ -66,3 +66,9 @@ GTM # 24. Track Popup Visibility as Events
 GTM # 25. Track WP Form Submit using GTM
 GTM # 26. Install Tawk.to on Website using GTM
 GTM # 27. Trigger Exception in GTM
+
+
+
+Describe details and step by step details activities to learn on GA4 # 01
+Describe details and step by step details activities to learn on GTM # 01
+
