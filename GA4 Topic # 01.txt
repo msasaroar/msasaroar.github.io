@@ -1,4 +1,5 @@
 GA4 #01: Difference between Google Universal Analytics & GA4
+
 To understand the transition from Google Universal Analytics (UA) to Google Analytics 4 (GA4), here are detailed steps to learn and practice the differences between the two platforms:
 
 Step 1: Overview of UA and GA4
