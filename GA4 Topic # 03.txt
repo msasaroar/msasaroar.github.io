@@ -1,4 +1,5 @@
 GA4 #03: Get Access to Google Analytics Demo Account
+
 The Google Analytics Demo Account is a free resource provided by Google, allowing users to explore a fully functional Google Analytics 4 (GA4) account without needing to set up their own website tracking. The demo account is linked to Google’s merchandise store, offering real-world data to practice analysis, report creation, and event tracking. Here are the steps to access and learn from the GA4 Demo Account:
 
 
