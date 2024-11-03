@@ -1,4 +1,5 @@
 GA4 #02: Install Google Analytics 4 on a Website
+
 Installing Google Analytics 4 (GA4) on a website involves creating a property in GA4, setting up a data stream, and adding the tracking code to your website. Here are the step-by-step details:
 
 
