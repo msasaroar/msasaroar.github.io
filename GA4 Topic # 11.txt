@@ -1,4 +1,4 @@
-For GA4 #11, “User Report in GA4,” you’ll explore and learn to use the User Report in Google Analytics 4. This report is designed to help you analyze your audience by understanding user characteristics, such as demographics, location, technology used, and behavior patterns over time. Mastering the User Report allows you to build audience profiles and refine strategies for engagement.
+GA4 #11, “User Report in GA4,” you’ll explore and learn to use the User Report in Google Analytics 4. This report is designed to help you analyze your audience by understanding user characteristics, such as demographics, location, technology used, and behavior patterns over time. Mastering the User Report allows you to build audience profiles and refine strategies for engagement.
 
 Step-by-Step Guide to Learning the User Report in GA4
 1. Access the User Report in GA4
