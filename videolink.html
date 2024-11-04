@@ -3,108 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Tutorials Playlist</title>
-    
+    <title>YouTube Playlist Thumbnail</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-            margin: 0;
-            padding: 20px;
-            color: #333;
-            text-align: center;
-        }
-        h1 {
-            color: #4CAF50;
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-        .thumbnail-container {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-        .thumbnail {
-            position: relative;
-            width: 200px;
-            cursor: pointer;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        .thumbnail img {
-            width: 100%;
-            border-radius: 8px;
-        }
-        .caption {
-            text-align: center;
-            margin-top: 10px;
-            font-size: 1em;
-            color: #555;
-        }
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
             justify-content: center;
             align-items: center;
-            z-index: 1000;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
         }
-        .modal iframe {
-            width: 80%;
-            height: 80%;
+        .thumbnail-container {
+            text-align: center;
+        }
+        .thumbnail-container img {
+            width: 560px;
+            height: 315px;
             border-radius: 8px;
+            cursor: pointer;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
-        .close-btn {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 2em;
-            color: #fff;
-            cursor: pointer;
+        .thumbnail-container p {
+            font-size: 1.2em;
+            color: #333;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
-    <h1>Video Tutorials Playlist</h1>
-    
-    <div class="thumbnail-container">
-        <!-- Google Tag Assistant Playlist Thumbnail using First Video's Thumbnail -->
-        <div class="thumbnail" onclick="openModal('PLNfnAKZ4ZsarDqftB0A7teO-p656Utt84')">
-            <!-- Replace 'FIRST_VIDEO_ID' with the ID of the first video in the playlist -->
-            <img src="https://img.youtube.com/vi/FIRST_VIDEO_ID/0.jpg" alt="Playlist Thumbnail">
-            <p class="caption">Google Tag Assistant Playlist</p>
-        </div>
-        
-        <!-- Alternative: Custom Thumbnail for Playlist -->
-        <div class="thumbnail" onclick="openModal('PLNfnAKZ4ZsarDqftB0A7teO-p656Utt84')">
-            <!-- Replace 'custom-thumbnail.jpg' with the URL of your custom image -->
-            <img src="custom-thumbnail.jpg" alt="Custom Playlist Thumbnail">
-            <p class="caption">Google Tag Assistant Playlist (Custom Thumbnail)</p>
-        </div>
-    </div>
 
-    <!-- Full-Screen Modal -->
-    <div id="videoModal" class="modal">
-        <span class="close-btn" onclick="closeModal()">×</span>
-        <iframe id="videoFrame" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
+<div class="thumbnail-container">
+    <!-- Replace 'FIRST_VIDEO_ID' with the actual ID of the first video in the playlist -->
+    <img src="https://img.youtube.com/vi/FIRST_VIDEO_ID/0.jpg" alt="Playlist Thumbnail" onclick="openPlaylist()" />
+    <p>Google Tag Assistant Playlist</p>
+</div>
 
-    <script>
-        function openModal(playlistId) {
-            document.getElementById("videoModal").style.display = "flex";
-            document.getElementById("videoFrame").src = `https://www.youtube.com/embed/videoseries?list=${playlistId}&autoplay=1`;
-        }
+<script>
+    function openPlaylist() {
+        window.open("https://www.youtube.com/embed/videoseries?list=PLNfnAKZ4ZsarDqftB0A7teO-p656Utt84&autoplay=1", "_blank");
+    }
+</script>
 
-        function closeModal() {
-            document.getElementById("videoModal").style.display = "none";
-            document.getElementById("videoFrame").src = "";
-        }
-    </script>
 </body>
 </html>
