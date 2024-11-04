@@ -1,8 +1,6 @@
 GA4 #10 : Install GA Tag on Website Using Plugin
 Learn to set up Google Analytics 4 tracking on your website through a plugin, which simplifies the installation process without manually editing your site's code. Using a plugin is particularly helpful for WordPress and other CMS-based sites where direct code access may be limited.
 
-Step-by-Step Guide to Installing the GA4 Tag on Your Website Using a Plugin
-
 1. Log into Google Analytics and Retrieve Your Measurement ID
 Access Your GA4 Property: Log into Google Analytics and select the GA4 property you want to connect to your website.
 Find Measurement ID:
