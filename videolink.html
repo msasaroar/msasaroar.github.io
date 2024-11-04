@@ -3,75 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>প্লেলিস্ট থাম্বনেইল প্রদর্শন</title>
+    <title>YouTube প্লেলিস্ট থাম্বনেইল</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
-            background-color: #f5f5f5;
-        }
-        h1 {
-            text-align: center;
+            background-color: #f9f9f9;
         }
         .playlist {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             margin-bottom: 20px;
         }
         .playlist img {
-            width: 200px; /* থাম্বনেইল সাইজ */
-            height: auto;
-            margin: 10px;
-            border-radius: 8px;
+            width: 200px;
+            height: 113px;
+            object-fit: cover;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .playlist a {
+            text-decoration: none;
+            color: #333;
+            display: block;
+            margin-top: 5px;
+        }
+        .playlist-title {
+            font-weight: bold;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
 
-    <h1>ইউটিউব প্লেলিস্ট থাম্বনেইল</h1>
+<h1>YouTube প্লেলিস্ট থাম্বনেইল</h1>
 
-    <div class="playlist">
-        <h2>প্লেলিস্ট 1</h2>
-        <a href="https://youtube.com/playlist?list=PLNfnAKZ4ZsarDqftB0A7teO-p656Utt84" target="_blank">
-            <img src="https://img.youtube.com/vi/VIDEO_ID1/hqdefault.jpg" alt="প্লেলিস্ট 1">
-        </a>
-    </div>
+<div class="playlist">
+    <a href="https://youtube.com/playlist?list=PLNfnAKZ4ZsarDqftB0A7teO-p656Utt84">
+        <img src="https://img.youtube.com/vi/VIDEO_ID1/hqdefault.jpg" alt="Playlist 1">
+    </a>
+    <div class="playlist-title">প্লেলিস্ট 1: [আপনার প্লেলিস্টের শিরোনাম]</div>
+</div>
 
-    <div class="playlist">
-        <h2>প্লেলিস্ট 2</h2>
-        <a href="https://youtube.com/playlist?list=PLjVLYmrlmjGffhbXLtM0xL7itnOB2pqKC" target="_blank">
-            <img src="https://img.youtube.com/vi/VIDEO_ID2/hqdefault.jpg" alt="প্লেলিস্ট 2">
-        </a>
-    </div>
+<div class="playlist">
+    <a href="https://youtube.com/playlist?list=PLjVLYmrlmjGffhbXLtM0xL7itnOB2pqKC">
+        <img src="https://img.youtube.com/vi/VIDEO_ID2/hqdefault.jpg" alt="Playlist 2">
+    </a>
+    <div class="playlist-title">প্লেলিস্ট 2: [আপনার প্লেলিস্টের শিরোনাম]</div>
+</div>
 
-    <div class="playlist">
-        <h2>প্লেলিস্ট 3</h2>
-        <a href="https://youtube.com/playlist?list=PLNfnAKZ4Zsao_6XEuzfsTVlaxeqgltAQC" target="_blank">
-            <img src="https://img.youtube.com/vi/VIDEO_ID3/hqdefault.jpg" alt="প্লেলিস্ট 3">
-        </a>
-    </div>
+<div class="playlist">
+    <a href="https://youtube.com/playlist?list=PLNfnAKZ4Zsao_6XEuzfsTVlaxeqgltAQC">
+        <img src="https://img.youtube.com/vi/VIDEO_ID3/hqdefault.jpg" alt="Playlist 3">
+    </a>
+    <div class="playlist-title">প্লেলিস্ট 3: [আপনার প্লেলিস্টের শিরোনাম]</div>
+</div>
 
-    <div class="playlist">
-        <h2>প্লেলিস্ট 4</h2>
-        <a href="https://youtube.com/playlist?list=PLNfnAKZ4Zsaolsq8PxO1VbKYw6NfQUHkq" target="_blank">
-            <img src="https://img.youtube.com/vi/VIDEO_ID4/hqdefault.jpg" alt="প্লেলিস্ট 4">
-        </a>
-    </div>
+<div class="playlist">
+    <a href="https://youtube.com/playlist?list=PLNfnAKZ4Zsaolsq8PxO1VbKYw6NfQUHkq">
+        <img src="https://img.youtube.com/vi/VIDEO_ID4/hqdefault.jpg" alt="Playlist 4">
+    </a>
+    <div class="playlist-title">প্লেলিস্ট 4: [আপনার প্লেলিস্টের শিরোনাম]</div>
+</div>
 
-    <div class="playlist">
-        <h2>ভিডিও 1</h2>
-        <a href="https://youtu.be/BDRr4cdr-yA?si=6HZuAwtEC9FBX1G4" target="_blank">
-            <img src="https://img.youtube.com/vi/BDRr4cdr-yA/hqdefault.jpg" alt="ভিডিও 1">
-        </a>
-    </div>
+<!-- এখানে অন্যান্য প্লেলিস্ট এবং ভিডিও যুক্ত করুন -->
+<div class="playlist">
+    <a href="https://youtu.be/BDRr4cdr-yA?si=6HZuAwtEC9FBX1G4">
+        <img src="https://img.youtube.com/vi/BDRr4cdr-yA/hqdefault.jpg" alt="Video 1">
+    </a>
+    <div class="playlist-title">ভিডিও 1: [ভিডিওর শিরোনাম]</div>
+</div>
 
-    <h2>নতুন প্লেলিস্ট এবং ভিডিও যুক্ত করার নির্দেশনা:</h2>
-    <ul>
-        <li>নতুন প্লেলিস্ট যুক্ত করতে হলে, <code>src</code> এট্রিবিউটের মধ্যে <code>https://img.youtube.com/vi/VIDEO_ID/hqdefault.jpg</code> ব্যবহার করতে হবে, যেখানে <code>VIDEO_ID</code> হল প্রথম ভিডিওর আইডি।</li>
-        <li>নতুন ভিডিও যুক্ত করতে হলে, নিচে নতুন <code>div</code> তৈরি করে সেই ভিডিওর জন্যও একইভাবে <code>src</code> এট্রিবিউট ব্যবহার করতে হবে।</li>
-        <li>প্রতিটি নতুন <code>div</code> এর মধ্যে প্লেলিস্টের নাম এবং লিংক দিতে হবে।</li>
-    </ul>
+<div class="playlist">
+    <a href="https://youtu.be/nV6QUzlepS0?si=6XqXpD12EuNxyzdj">
+        <img src="https://img.youtube.com/vi/nV6QUzlepS0/hqdefault.jpg" alt="Video 2">
+    </a>
+    <div class="playlist-title">ভিডিও 2: [ভিডিওর শিরোনাম]</div>
+</div>
+
+<div class="playlist">
+    <a href="https://youtu.be/kFnoA_C4WpU?si=Y17b-HGt9ZHA31cp">
+        <img src="https://img.youtube.com/vi/kFnoA_C4WpU/hqdefault.jpg" alt="Video 3">
+    </a>
+    <div class="playlist-title">ভিডিও 3: [ভিডিওর শিরোনাম]</div>
+</div>
+
+<div class="playlist">
+    <a href="https://youtu.be/-APnAd6NQws?si=WFQ6QjoRSXERUaUs">
+        <img src="https://img.youtube.com/vi/-APnAd6NQws/hqdefault.jpg" alt="Video 4">
+    </a>
+    <div class="playlist-title">ভিডিও 4: [ভিডিওর শিরোনাম]</div>
+</div>
+
+<div class="playlist">
+    <a href="https://youtu.be/eWJ_9tGk4UA?si=pEcqgZup0Lmaqhbh">
+        <img src="https://img.youtube.com/vi/eWJ_9tGk4UA/hqdefault.jpg" alt="Video 5">
+    </a>
+    <div class="playlist-title">ভিডিও 5: [ভিডিওর শিরোনাম]</div>
+</div>
+
+<div class="playlist">
+    <a href="https://youtu.be/Vo3him4_wIk?si=SCBNw3VKUln2cedh">
+        <img src="https://img.youtube.com/vi/Vo3him4_wIk/hqdefault.jpg" alt="Video 6">
+    </a>
+    <div class="playlist-title">ভিডিও 6: [ভিডিওর শিরোনাম]</div>
+</div>
+
+<div class="playlist">
+    <a href="https://youtu.be/3vEmx0HTEhQ?si=ZyCVR1vz4TGM5vw6">
+        <img src="https://img.youtube.com/vi/3vEmx0HTEhQ/hqdefault.jpg" alt="Video 7">
+    </a>
+    <div class="playlist-title">ভিডিও 7: [ভিডিওর শিরোনাম]</div>
+</div>
+
+<h2>নতুন প্লেলিস্ট এবং ভিডিও যুক্ত করার নির্দেশনা</h2>
+<ol>
+    <li>নতুন ভিডিওর ইউআরএল যুক্ত করতে চাইলে, ভিডিওর ইউআরএল কপি করে একটি নতুন <div class="playlist"> ট্যাগ তৈরি করুন।</li>
+    <li>ভিডিওর থাম্বনেইল ইমেজ পেতে, ইউটিউব ভিডিওর আইডি ব্যবহার করে নিচের ফরম্যাটে ইমেজের ইউআরএল তৈরি করুন: <code>https://img.youtube.com/vi/VIDEO_ID/hqdefault.jpg</code> যেখানে <code>VIDEO_ID</code> এর স্থানে ভিডিওর আইডি বসান।</li>
+    <li>প্লেলিস্ট যুক্ত করতে চাইলে, প্লেলিস্টের ইউআরএল কপি করে একটি নতুন <div class="playlist"> ট্যাগ তৈরি করুন এবং প্রথম ভিডিওর থাম্বনেইল ইমেজ ব্যবহার করুন।</li>
+</ol>
 
 </body>
 </html>
