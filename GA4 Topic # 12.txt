@@ -1,7 +1,5 @@
 GA4 #12: Connect Google Ads & Google Analytics 4
 
-Step-by-Step Guide to Connecting Google Ads & Google Analytics 4
-
 1. Prepare Accounts for Linking
 Log into Google Analytics: Go to analytics.google.com and sign in to the GA4 property you want to link with Google Ads.
 Log into Google Ads: Open ads.google.com in another tab and sign in to your Google Ads account.
