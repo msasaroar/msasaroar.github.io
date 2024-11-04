@@ -1,8 +1,6 @@
 GA4 #07: What is Engagement Report ?
 The Engagement Report provides data on metrics like engaged sessions, engagement time, and specific events users perform. This information helps in understanding user engagement levels and identifying areas for improvement.
 
-Step-by-Step Activities for GA4 #07: Understanding the Engagement Report
-
 1. Navigate to the Engagement Report
 Access GA4: Log in to your Google Analytics 4 account and select the property you want to analyze.
 Locate the Report: In the left-hand menu, go to Reports > Engagement. This opens the Engagement Overview, which provides a high-level summary of user interactions.
