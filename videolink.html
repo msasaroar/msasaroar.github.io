@@ -3,92 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Thumbnails with Captions</title>
+    <title>YouTube Video & Playlist Thumbnails</title>
     <style>
         body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
             background-color: #f0f0f0;
             margin: 0;
             padding: 20px;
         }
         .thumbnail-container {
-            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .thumbnail {
+            width: 250px;
+            margin: 10px;
             text-align: center;
         }
-        .thumbnail-container img {
-            width: 560px;
-            height: 315px;
+        .thumbnail img {
+            width: 100%;
             border-radius: 8px;
             cursor: pointer;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
-        .caption {
-            margin-top: 8px;
-            font-size: 16px;
+        .thumbnail p {
+            margin-top: 5px;
+            font-size: 0.9em;
             color: #333;
-        }
-        .caption a {
-            text-decoration: none;
-            color: #1a73e8;
-            font-weight: bold;
         }
     </style>
 </head>
 <body>
 
 <div class="thumbnail-container">
-    <img src="https://img.youtube.com/vi/nV6QUzlepS0/0.jpg" alt="Video Thumbnail" onclick="openVideo('https://www.youtube.com/embed/nV6QUzlepS0')" />
-    <div class="caption"><a href="https://www.youtube.com/embed/nV6QUzlepS0" target="_blank">Individual Video 1</a></div>
+
+    <div class="thumbnail">
+        <img src="https://img.youtube.com/vi/nV6QUzlepS0/0.jpg" alt="Video Thumbnail 1" onclick="window.open('https://www.youtube.com/embed/nV6QUzlepS0?autoplay=1')" />
+        <p>GA4 Tutorial Video</p>
+    </div>
+
+    <div class="thumbnail">
+        <img src="https://img.youtube.com/vi/FIRST_VIDEO_ID_1/0.jpg" alt="Playlist Thumbnail 1" onclick="window.open('https://www.youtube.com/embed/videoseries?list=PLNfnAKZ4Zsaolsq8PxO1VbKYw6NfQUHkq&autoplay=1')" />
+        <p>GA4 Video Playlist 1</p>
+    </div>
+
+    <div class="thumbnail">
+        <img src="https://img.youtube.com/vi/tordSZdd8R4/0.jpg" alt="Video Thumbnail 2" onclick="window.open('https://www.youtube.com/embed/tordSZdd8R4?autoplay=1')" />
+        <p>GA4 Tutorial Video 2</p>
+    </div>
+
+    <div class="thumbnail">
+        <img src="https://img.youtube.com/vi/opxoXqjTggc/0.jpg" alt="Video Thumbnail 3" onclick="window.open('https://www.youtube.com/embed/opxoXqjTggc?autoplay=1')" />
+        <p>GA4 Tutorial Video 3</p>
+    </div>
+
+    <div class="thumbnail">
+        <img src="https://img.youtube.com/vi/FIRST_VIDEO_ID_2/0.jpg" alt="Playlist Thumbnail 2" onclick="window.open('https://www.youtube.com/embed/videoseries?list=PLNfnAKZ4Zsao_6XEuzfsTVlaxeqgltAQC&autoplay=1')" />
+        <p>GTM Video Playlist</p>
+    </div>
+
+    <div class="thumbnail">
+        <img src="https://img.youtube.com/vi/FIRST_VIDEO_ID_3/0.jpg" alt="Playlist Thumbnail 3" onclick="window.open('https://www.youtube.com/embed/videoseries?list=PLNfnAKZ4ZsarDqftB0A7teO-p656Utt84&autoplay=1')" />
+        <p>GTA Video Playlist</p>
+    </div>
+
 </div>
-
-<div class="thumbnail-container">
-    <img src="https://img.youtube.com/vi/VIDEO_ID_OF_FIRST_VIDEO_IN_PLAYLIST_1/0.jpg" alt="Playlist 1 Thumbnail" onclick="openVideo('https://www.youtube.com/embed/videoseries?list=PLNfnAKZ4Zsaolsq8PxO1VbKYw6NfQUHkq')" />
-    <div class="caption"><a href="https://www.youtube.com/embed/videoseries?list=PLNfnAKZ4Zsaolsq8PxO1VbKYw6NfQUHkq" target="_blank">Playlist 1: GA4 Tutorials</a></div>
-</div>
-
-<div class="thumbnail-container">
-    <img src="https://img.youtube.com/vi/tordSZdd8R4/0.jpg" alt="Video Thumbnail" onclick="openVideo('https://www.youtube.com/embed/tordSZdd8R4')" />
-    <div class="caption"><a href="https://www.youtube.com/embed/tordSZdd8R4" target="_blank">Individual Video 2</a></div>
-</div>
-
-<div class="thumbnail-container">
-    <img src="https://img.youtube.com/vi/opxoXqjTggc/0.jpg" alt="Video Thumbnail" onclick="openVideo('https://www.youtube.com/embed/opxoXqjTggc')" />
-    <div class="caption"><a href="https://www.youtube.com/embed/opxoXqjTggc" target="_blank">Individual Video 3</a></div>
-</div>
-
-<div class="thumbnail-container">
-    <img src="https://img.youtube.com/vi/VIDEO_ID_OF_FIRST_VIDEO_IN_PLAYLIST_2/0.jpg" alt="Playlist 2 Thumbnail" onclick="openVideo('https://www.youtube.com/embed/videoseries?list=PLNfnAKZ4Zsao_6XEuzfsTVlaxeqgltAQC')" />
-    <div class="caption"><a href="https://www.youtube.com/embed/videoseries?list=PLNfnAKZ4Zsao_6XEuzfsTVlaxeqgltAQC" target="_blank">Playlist 2: GTM Tutorials</a></div>
-</div>
-
-<div class="thumbnail-container">
-    <img src="https://img.youtube.com/vi/VIDEO_ID_OF_FIRST_VIDEO_IN_PLAYLIST_3/0.jpg" alt="Playlist 3 Thumbnail" onclick="openVideo('https://www.youtube.com/embed/videoseries?list=PLNfnAKZ4ZsarDqftB0A7teO-p656Utt84')" />
-    <div class="caption"><a href="https://www.youtube.com/embed/videoseries?list=PLNfnAKZ4ZsarDqftB0A7teO-p656Utt84" target="_blank">Playlist 3: Advanced GA4 Series</a></div>
-</div>
-
-<!-- নতুন ভিডিও -->
-<div class="thumbnail-container">
-    <img src="https://img.youtube.com/vi/abcd1234/0.jpg" alt="Thumbnail" onclick="openVideo('https://www.youtube.com/embed/BDRr4cdr-yA?si=FGsX6fkKTmqOBuZt')" />
-    <div class="caption"><a href="https://www.youtube.com/embed/BDRr4cdr-yA?si=FGsX6fkKTmqOBuZt" target="_blank">নতুন ভিডিও টিউটোরিয়াল</a></div>
-</div>
-
-
-<!-- নতুন প্লেলিস্ট -->
-<div class="thumbnail-container">
-    <img src="https://img.youtube.com/vi/xyz9876/0.jpg" alt="Thumbnail" onclick="openVideo('https://www.youtube.com/embed/NmfzGjGESrA?si=PazZO007cpVkNw-Y')" />
-    <div class="caption"><a href="https://www.youtube.com/embed/NmfzGjGESrA?si=PazZO007cpVkNw-Y" target="_blank">নতুন প্লেলিস্ট টিউটোরিয়াল</a></div>
-</div>
-
-
-
-<script>
-    function openVideo(url) {
-        window.open(url, "_blank");
-    }
-</script>
 
 </body>
 </html>
