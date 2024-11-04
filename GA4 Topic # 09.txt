@@ -1,8 +1,6 @@
 GA4 #09: Retention Report in GA4
 The goal is to understand user retention patterns, see how often users return to your site or app, and analyze how retention varies over time. GA4’s Retention Report is valuable for tracking user loyalty, identifying which days or periods see the most return visits, and optimizing engagement strategies accordingly.
 
-Step-by-Step Activities for GA4 #09: Understanding and Using the Retention Report
-
 1. Access the Retention Report
 Open Google Analytics 4: Log into your GA4 property.
 Navigate to Reports: In the left-hand menu, click on Reports to access the main reporting section.
