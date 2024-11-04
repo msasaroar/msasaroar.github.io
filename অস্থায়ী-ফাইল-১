@@ -1,0 +1,131 @@
+videolink.html====>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Tutorials Playlist</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4P58D67RQV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-4P58D67RQV');
+    </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            text-align: center;
+        }
+        h1 {
+            color: #4CAF50;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .video-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            max-width: 1500px;
+            margin: 0 auto;
+        }
+        .video-wrapper {
+            width: 100%;
+            max-width: 1500px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .description {
+            margin-top: 10px;
+            font-size: 1em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        
+        <!-- VIDEOE ON GOOGLE ADS -->
+        <div class="video-wrapper">
+            <iframe
+                src="https://www.youtube.com/embed/nV6QUzlepS0?si=r2BpDcD_ahlnzPzs" 
+                title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+            <p class="description">Practicing Google Ads without spending money.</p>
+        </div>
+
+        
+        <!-- VIDEOE ON GOOGLE ANALYTICS 4 -->
+        <div class="video-wrapper">
+            <iframe
+                    src="https://www.youtube.com/embed/videoseries?si=l9gVOhvuUZQafaHw&amp;list=PLNfnAKZ4Zsaolsq8PxO1VbKYw6NfQUHkq" 
+                    title="Video Tutorials on GA4" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+            <p class="description">Learn the fundamentals and advanced techniques of Google Analytics 4 (GA4) with this tutorial series.</p>
+        </div>
+
+        <div class="video-wrapper">
+            <iframe
+                src="https://www.youtube.com/embed/tordSZdd8R4?si=r3Zle5u1Wu9CqWYP" 
+                title="Video Tutorials on GA4" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+            <p class="description">Learn the fundamentals and advanced techniques of Google Analytics 4 (GA4) with this tutorial series.</p>
+        </div>
+
+        <div class="video-wrapper">
+            <iframe
+                src="https://www.youtube.com/embed/opxoXqjTggc?si=LS4rAKveUzy0_Ksl" 
+                title="Video Tutorials on GA4" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+            <p class="description">Learn the fundamentals and advanced techniques of Google Analytics 4 (GA4) with this tutorial series.</p>
+        </div>
+        
+        <!-- VIDEOE ON GOOGLE TAG MANAGER -->
+        <div class="video-wrapper">
+            <iframe
+                    src="https://www.youtube.com/embed/videoseries?si=HOKjWrMVFebO37rC&amp;list=PLNfnAKZ4Zsao_6XEuzfsTVlaxeqgltAQC" 
+                    title="Video Tutorials on GTM" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+            <p class="description">Master Google Tag Manager (GTM) setup, configuration, and advanced tagging through this in-depth series.</p>
+        </div>
+
+        <!-- VIDEOE ON GOOGLE TAG ASSISTANT -->
+        <div class="video-wrapper">
+            <iframe
+                    src="https://www.youtube.com/embed/videoseries?si=8fLeWvR1SKzBGIIo&amp;list=PLNfnAKZ4ZsarDqftB0A7teO-p656Utt84" 
+                    title="Video Tutorials on GTA" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+            <p class="description">Explore comprehensive insights on Google Tag Analysis (GTA) with this educational video playlist.</p>
+        </div>
+        
+    </div>
+
+    
+</body>
+</html>
