@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouTube Playlist Thumbnail</title>
+    <title>Video Thumbnails</title>
     <style>
         body {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            height: 100vh;
-            margin: 0;
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
         }
         .thumbnail-container {
+            margin-bottom: 20px;
             text-align: center;
         }
         .thumbnail-container img {
@@ -24,24 +25,37 @@
             cursor: pointer;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
-        .thumbnail-container p {
-            font-size: 1.2em;
-            color: #333;
-            margin-top: 10px;
-        }
     </style>
 </head>
 <body>
 
 <div class="thumbnail-container">
-    <!-- Replace 'FIRST_VIDEO_ID' with the actual ID of the first video in the playlist -->
-    <img src="https://img.youtube.com/vi/FIRST_VIDEO_ID/0.jpg" alt="Playlist Thumbnail" onclick="openPlaylist()" />
-    <p>Google Tag Assistant Playlist</p>
+    <img src="https://img.youtube.com/vi/nV6QUzlepS0/0.jpg" alt="Video Thumbnail" onclick="openVideo('https://www.youtube.com/embed/nV6QUzlepS0')" />
+</div>
+
+<div class="thumbnail-container">
+    <img src="https://img.youtube.com/vi/VIDEO_ID_OF_FIRST_VIDEO_IN_PLAYLIST_1/0.jpg" alt="Playlist 1 Thumbnail" onclick="openVideo('https://www.youtube.com/embed/videoseries?list=PLNfnAKZ4Zsaolsq8PxO1VbKYw6NfQUHkq')" />
+</div>
+
+<div class="thumbnail-container">
+    <img src="https://img.youtube.com/vi/tordSZdd8R4/0.jpg" alt="Video Thumbnail" onclick="openVideo('https://www.youtube.com/embed/tordSZdd8R4')" />
+</div>
+
+<div class="thumbnail-container">
+    <img src="https://img.youtube.com/vi/opxoXqjTggc/0.jpg" alt="Video Thumbnail" onclick="openVideo('https://www.youtube.com/embed/opxoXqjTggc')" />
+</div>
+
+<div class="thumbnail-container">
+    <img src="https://img.youtube.com/vi/VIDEO_ID_OF_FIRST_VIDEO_IN_PLAYLIST_2/0.jpg" alt="Playlist 2 Thumbnail" onclick="openVideo('https://www.youtube.com/embed/videoseries?list=PLNfnAKZ4Zsao_6XEuzfsTVlaxeqgltAQC')" />
+</div>
+
+<div class="thumbnail-container">
+    <img src="https://img.youtube.com/vi/VIDEO_ID_OF_FIRST_VIDEO_IN_PLAYLIST_3/0.jpg" alt="Playlist 3 Thumbnail" onclick="openVideo('https://www.youtube.com/embed/videoseries?list=PLNfnAKZ4ZsarDqftB0A7teO-p656Utt84')" />
 </div>
 
 <script>
-    function openPlaylist() {
-        window.open("https://www.youtube.com/embed/videoseries?list=PLNfnAKZ4ZsarDqftB0A7teO-p656Utt84&autoplay=1", "_blank");
+    function openVideo(url) {
+        window.open(url, "_blank");
     }
 </script>
 
