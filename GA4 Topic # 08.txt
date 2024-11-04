@@ -1,9 +1,6 @@
 GA4 #08: Bounce Rate in Google Analytics 4. 
 The focus is on understanding how GA4 redefines Bounce Rate and uses Engagement metrics to assess user interaction quality. While traditional Bounce Rate is not the primary metric in GA4, a modified version of it is accessible, alongside other engagement metrics that give a more comprehensive picture of user interactions. GA4 uses a new metric for Bounce Rate, calculated as the inverse of Engagement Rate. Engagement Rate in GA4 measures the percentage of sessions lasting 10 seconds or more, triggering a conversion event, or with two or more page/screen views.
 
-
-Step-by-Step Activities for GA4 #08: Understanding and Finding Bounce Rate in Google Analytics 4
-
 1. Understand GA4’s Redefined Bounce Rate
 Definition: GA4 uses a new metric for Bounce Rate, calculated as the inverse of Engagement Rate. Engagement Rate in GA4 measures the percentage of sessions lasting 10 seconds or more, triggering a conversion event, or with two or more page/screen views.
 Comparison to Universal Analytics: In Universal Analytics, Bounce Rate indicated single-page sessions with no interaction. In GA4, the focus shifts to Engaged Sessions, providing a more refined view of user engagement.
