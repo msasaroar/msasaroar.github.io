@@ -1,5 +1,81 @@
-<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=_4fbIYw2I5Hpw6Ef&amp;list=PLNfnAKZ4ZsarDqftB0A7teO-p656Utt84" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+videolink.html-2
 
-উপরোক্ত embed কোড ব্যবহার করে একটি html পেইজে সংশ্লিষ্ট প্লেলিস্টের থাম্বনেইল প্রদর্শন কর।
-প্লেলিস্টের থাম্বনেইল ইমেজ হিসাবে প্রথম ভিডিওর থাম্বনেইল ইমেজ দেখাবে।
-উক্ত থাম্বনেইল ক্লিক করলে প্লেলিস্টটি ওপেন হয়ে প্রথম ভিডিওটি প্লে হবে।
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video & Playlist Thumbnails</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .thumbnail-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .thumbnail {
+            width: 250px;
+            margin: 10px;
+            text-align: center;
+        }
+        .thumbnail img {
+            width: 100%;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        .thumbnail p {
+            margin-top: 5px;
+            font-size: 0.9em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="thumbnail-container">
+
+    <div class="thumbnail">
+        <img src="https://img.youtube.com/vi/nV6QUzlepS0/0.jpg" alt="Video Thumbnail 1" onclick="window.open('https://www.youtube.com/embed/nV6QUzlepS0?autoplay=1')" />
+        <p>GA4 Tutorial Video</p>
+    </div>
+
+    <div class="thumbnail">
+        <img src="https://img.youtube.com/vi/FIRST_VIDEO_ID_1/0.jpg" alt="Playlist Thumbnail 1" onclick="window.open('https://www.youtube.com/embed/videoseries?list=PLNfnAKZ4Zsaolsq8PxO1VbKYw6NfQUHkq&autoplay=1')" />
+        <p>GA4 Video Playlist 1</p>
+    </div>
+
+    <div class="thumbnail">
+        <img src="https://img.youtube.com/vi/tordSZdd8R4/0.jpg" alt="Video Thumbnail 2" onclick="window.open('https://www.youtube.com/embed/tordSZdd8R4?autoplay=1')" />
+        <p>GA4 Tutorial Video 2</p>
+    </div>
+
+    <div class="thumbnail">
+        <img src="https://img.youtube.com/vi/opxoXqjTggc/0.jpg" alt="Video Thumbnail 3" onclick="window.open('https://www.youtube.com/embed/opxoXqjTggc?autoplay=1')" />
+        <p>GA4 Tutorial Video 3</p>
+    </div>
+
+    <div class="thumbnail">
+        <img src="https://img.youtube.com/vi/FIRST_VIDEO_ID_2/0.jpg" alt="Playlist Thumbnail 2" onclick="window.open('https://www.youtube.com/embed/videoseries?list=PLNfnAKZ4Zsao_6XEuzfsTVlaxeqgltAQC&autoplay=1')" />
+        <p>GTM Video Playlist</p>
+    </div>
+
+    <div class="thumbnail">
+        <img src="https://img.youtube.com/vi/FIRST_VIDEO_ID_3/0.jpg" alt="Playlist Thumbnail 3" onclick="window.open('https://www.youtube.com/embed/videoseries?list=PLNfnAKZ4ZsarDqftB0A7teO-p656Utt84&autoplay=1')" />
+        <p>GTA Video Playlist</p>
+    </div>
+
+</div>
+
+</body>
+</html>
