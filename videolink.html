@@ -77,8 +77,8 @@
     
     <div class="thumbnail-container">
         <!-- Google Tag Assistant Playlist Thumbnail -->
-        <div class="thumbnail" onclick="openModal('https://www.youtube.com/embed/videoseries?list=PLNfnAKZ4ZsarDqftB0A7teO-p656Utt84')">
-            <img src="https://img.youtube.com/vi/8fLeWvR1SKzBGIIo/0.jpg" alt="Google Tag Assistant Playlist Thumbnail">
+        <div class="thumbnail" onclick="openModal('PLNfnAKZ4ZsarDqftB0A7teO-p656Utt84')">
+            <img src="https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg" alt="Google Tag Assistant Playlist Thumbnail">
             <p class="caption">Google Tag Assistant Playlist</p>
         </div>
     </div>
@@ -91,9 +91,9 @@
 
     <script>
         // Function to open the video in full-screen modal
-        function openModal(videoUrl) {
+        function openModal(playlistId) {
             document.getElementById("videoModal").style.display = "flex";
-            document.getElementById("videoFrame").src = videoUrl + "?autoplay=1";
+            document.getElementById("videoFrame").src = `https://www.youtube.com/embed/videoseries?list=${playlistId}&autoplay=1`;
         }
 
         // Function to close the modal and stop the video
