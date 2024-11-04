@@ -4,17 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Video Tutorials Playlist</title>
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4P58D67RQV"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
     
-      gtag('config', 'G-4P58D67RQV');
-    </script>
-
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -29,101 +19,96 @@
             font-size: 2.5em;
             margin-bottom: 20px;
         }
-        .video-container {
+        /* Thumbnail container */
+        .thumbnail-container {
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 20px;
-            max-width: 1500px;
-            margin: 0 auto;
         }
-        .video-wrapper {
-            width: 100%;
-            max-width: 1500px;
-        }
-        iframe {
-            width: 100%;
-            height: 600px;
+        .thumbnail {
+            position: relative;
+            width: 200px;
+            cursor: pointer;
             border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
         }
-        .description {
+        .thumbnail img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .caption {
+            text-align: center;
             margin-top: 10px;
             font-size: 1em;
             color: #555;
         }
+        /* Full-screen video modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal iframe {
+            width: 80%;
+            height: 80%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2em;
+            color: #fff;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
-    <div class="video-container">
-        
-        <!-- VIDEOE ON GOOGLE ADS -->
-        <div class="video-wrapper">
-            <iframe
-                src="https://www.youtube.com/embed/nV6QUzlepS0?si=r2BpDcD_ahlnzPzs" 
-                title="YouTube video player" frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-            </iframe>
-            <p class="description">Practicing Google Ads without spending money.</p>
+    <h1>Video Tutorials Playlist</h1>
+    
+    <div class="thumbnail-container">
+        <!-- Google Ads Video Thumbnail -->
+        <div class="thumbnail" onclick="openModal('https://www.youtube.com/embed/nV6QUzlepS0')">
+            <img src="https://img.youtube.com/vi/nV6QUzlepS0/0.jpg" alt="Google Ads Thumbnail">
+            <p class="caption">Practicing Google Ads without spending money.</p>
         </div>
 
-        
-        <!-- VIDEOE ON GOOGLE ANALYTICS 4 -->
-        <div class="video-wrapper">
-            <iframe
-                    src="https://www.youtube.com/embed/videoseries?si=l9gVOhvuUZQafaHw&amp;list=PLNfnAKZ4Zsaolsq8PxO1VbKYw6NfQUHkq" 
-                    title="Video Tutorials on GA4" frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-            </iframe>
-            <p class="description">Learn the fundamentals and advanced techniques of Google Analytics 4 (GA4) with this tutorial series.</p>
+        <!-- GA4 Playlist Thumbnail -->
+        <div class="thumbnail" onclick="openModal('https://www.youtube.com/embed/videoseries?list=PLNfnAKZ4Zsaolsq8PxO1VbKYw6NfQUHkq')">
+            <img src="https://img.youtube.com/vi/videoseries?list=PLNfnAKZ4Zsaolsq8PxO1VbKYw6NfQUHkq/0.jpg" alt="GA4 Playlist Thumbnail">
+            <p class="caption">Learn the fundamentals and advanced techniques of Google Analytics 4 (GA4).</p>
         </div>
 
-        <div class="video-wrapper">
-            <iframe
-                src="https://www.youtube.com/embed/tordSZdd8R4?si=r3Zle5u1Wu9CqWYP" 
-                title="Video Tutorials on GA4" frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-            </iframe>
-            <p class="description">Learn the fundamentals and advanced techniques of Google Analytics 4 (GA4) with this tutorial series.</p>
-        </div>
-
-        <div class="video-wrapper">
-            <iframe
-                src="https://www.youtube.com/embed/opxoXqjTggc?si=LS4rAKveUzy0_Ksl" 
-                title="Video Tutorials on GA4" frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-            </iframe>
-            <p class="description">Learn the fundamentals and advanced techniques of Google Analytics 4 (GA4) with this tutorial series.</p>
-        </div>
-        
-        <!-- VIDEOE ON GOOGLE TAG MANAGER -->
-        <div class="video-wrapper">
-            <iframe
-                    src="https://www.youtube.com/embed/videoseries?si=HOKjWrMVFebO37rC&amp;list=PLNfnAKZ4Zsao_6XEuzfsTVlaxeqgltAQC" 
-                    title="Video Tutorials on GTM" frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-            </iframe>
-            <p class="description">Master Google Tag Manager (GTM) setup, configuration, and advanced tagging through this in-depth series.</p>
-        </div>
-
-        <!-- VIDEOE ON GOOGLE TAG ASSISTANT -->
-        <div class="video-wrapper">
-            <iframe
-                    src="https://www.youtube.com/embed/videoseries?si=8fLeWvR1SKzBGIIo&amp;list=PLNfnAKZ4ZsarDqftB0A7teO-p656Utt84" 
-                    title="Video Tutorials on GTA" frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-            </iframe>
-            <p class="description">Explore comprehensive insights on Google Tag Analysis (GTA) with this educational video playlist.</p>
-        </div>
-        
+        <!-- Additional Thumbnails Here -->
     </div>
 
-    
+    <!-- Full-Screen Modal -->
+    <div id="videoModal" class="modal">
+        <span class="close-btn" onclick="closeModal()">×</span>
+        <iframe id="videoFrame" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <script>
+        // Function to open the video in full-screen modal
+        function openModal(videoUrl) {
+            document.getElementById("videoModal").style.display = "flex";
+            document.getElementById("videoFrame").src = videoUrl + "?autoplay=1";
+        }
+
+        // Function to close the modal and stop the video
+        function closeModal() {
+            document.getElementById("videoModal").style.display = "none";
+            document.getElementById("videoFrame").src = "";
+        }
+    </script>
 </body>
 </html>
