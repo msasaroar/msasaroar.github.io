@@ -19,7 +19,6 @@
             font-size: 2.5em;
             margin-bottom: 20px;
         }
-        /* Thumbnail container */
         .thumbnail-container {
             display: flex;
             flex-wrap: wrap;
@@ -43,7 +42,6 @@
             font-size: 1em;
             color: #555;
         }
-        /* Full-screen video modal */
         .modal {
             display: none;
             position: fixed;
@@ -76,10 +74,18 @@
     <h1>Video Tutorials Playlist</h1>
     
     <div class="thumbnail-container">
-        <!-- Google Tag Assistant Playlist Thumbnail -->
+        <!-- Google Tag Assistant Playlist Thumbnail using First Video's Thumbnail -->
         <div class="thumbnail" onclick="openModal('PLNfnAKZ4ZsarDqftB0A7teO-p656Utt84')">
-            <img src="https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg" alt="Google Tag Assistant Playlist Thumbnail">
+            <!-- Replace 'FIRST_VIDEO_ID' with the ID of the first video in the playlist -->
+            <img src="https://img.youtube.com/vi/FIRST_VIDEO_ID/0.jpg" alt="Playlist Thumbnail">
             <p class="caption">Google Tag Assistant Playlist</p>
+        </div>
+        
+        <!-- Alternative: Custom Thumbnail for Playlist -->
+        <div class="thumbnail" onclick="openModal('PLNfnAKZ4ZsarDqftB0A7teO-p656Utt84')">
+            <!-- Replace 'custom-thumbnail.jpg' with the URL of your custom image -->
+            <img src="custom-thumbnail.jpg" alt="Custom Playlist Thumbnail">
+            <p class="caption">Google Tag Assistant Playlist (Custom Thumbnail)</p>
         </div>
     </div>
 
@@ -90,13 +96,11 @@
     </div>
 
     <script>
-        // Function to open the video in full-screen modal
         function openModal(playlistId) {
             document.getElementById("videoModal").style.display = "flex";
             document.getElementById("videoFrame").src = `https://www.youtube.com/embed/videoseries?list=${playlistId}&autoplay=1`;
         }
 
-        // Function to close the modal and stop the video
         function closeModal() {
             document.getElementById("videoModal").style.display = "none";
             document.getElementById("videoFrame").src = "";
