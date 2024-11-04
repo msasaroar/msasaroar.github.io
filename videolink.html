@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Thumbnails</title>
+    <title>Video Thumbnails with Captions</title>
     <style>
         body {
             display: flex;
@@ -25,32 +25,48 @@
             cursor: pointer;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
+        .caption {
+            margin-top: 8px;
+            font-size: 16px;
+            color: #333;
+        }
+        .caption a {
+            text-decoration: none;
+            color: #1a73e8;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
 
 <div class="thumbnail-container">
     <img src="https://img.youtube.com/vi/nV6QUzlepS0/0.jpg" alt="Video Thumbnail" onclick="openVideo('https://www.youtube.com/embed/nV6QUzlepS0')" />
+    <div class="caption"><a href="https://www.youtube.com/embed/nV6QUzlepS0" target="_blank">Individual Video 1</a></div>
 </div>
 
 <div class="thumbnail-container">
     <img src="https://img.youtube.com/vi/VIDEO_ID_OF_FIRST_VIDEO_IN_PLAYLIST_1/0.jpg" alt="Playlist 1 Thumbnail" onclick="openVideo('https://www.youtube.com/embed/videoseries?list=PLNfnAKZ4Zsaolsq8PxO1VbKYw6NfQUHkq')" />
+    <div class="caption"><a href="https://www.youtube.com/embed/videoseries?list=PLNfnAKZ4Zsaolsq8PxO1VbKYw6NfQUHkq" target="_blank">Playlist 1: GA4 Tutorials</a></div>
 </div>
 
 <div class="thumbnail-container">
     <img src="https://img.youtube.com/vi/tordSZdd8R4/0.jpg" alt="Video Thumbnail" onclick="openVideo('https://www.youtube.com/embed/tordSZdd8R4')" />
+    <div class="caption"><a href="https://www.youtube.com/embed/tordSZdd8R4" target="_blank">Individual Video 2</a></div>
 </div>
 
 <div class="thumbnail-container">
     <img src="https://img.youtube.com/vi/opxoXqjTggc/0.jpg" alt="Video Thumbnail" onclick="openVideo('https://www.youtube.com/embed/opxoXqjTggc')" />
+    <div class="caption"><a href="https://www.youtube.com/embed/opxoXqjTggc" target="_blank">Individual Video 3</a></div>
 </div>
 
 <div class="thumbnail-container">
     <img src="https://img.youtube.com/vi/VIDEO_ID_OF_FIRST_VIDEO_IN_PLAYLIST_2/0.jpg" alt="Playlist 2 Thumbnail" onclick="openVideo('https://www.youtube.com/embed/videoseries?list=PLNfnAKZ4Zsao_6XEuzfsTVlaxeqgltAQC')" />
+    <div class="caption"><a href="https://www.youtube.com/embed/videoseries?list=PLNfnAKZ4Zsao_6XEuzfsTVlaxeqgltAQC" target="_blank">Playlist 2: GTM Tutorials</a></div>
 </div>
 
 <div class="thumbnail-container">
     <img src="https://img.youtube.com/vi/VIDEO_ID_OF_FIRST_VIDEO_IN_PLAYLIST_3/0.jpg" alt="Playlist 3 Thumbnail" onclick="openVideo('https://www.youtube.com/embed/videoseries?list=PLNfnAKZ4ZsarDqftB0A7teO-p656Utt84')" />
+    <div class="caption"><a href="https://www.youtube.com/embed/videoseries?list=PLNfnAKZ4ZsarDqftB0A7teO-p656Utt84" target="_blank">Playlist 3: Advanced GA4 Series</a></div>
 </div>
 
 <script>
