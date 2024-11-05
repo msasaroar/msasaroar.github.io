@@ -8,8 +8,8 @@
 html, body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #621938; /* Soft light blue background */
+    color: Blue Green;
+    background-color: Bright Green; /* Soft light blue background */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,8 +19,8 @@ html, body {
 
 /* Header Styles */
 header {
-    background-color: #912299; /* Bright blue */
-    color: #fff;
+    background-color: Bright Navy Blue; /* Bright blue */
+    color: Byzantium;
     padding: 1rem;
     text-align: center;
     width: 100%;
@@ -48,8 +48,8 @@ header p {
 }
 
 .topics a {
-    background-color: #227599; /* Coral color */
-    color: #329922;
+    background-color: Chartreuse1; /* Coral color */
+    color: Cosmic Cobalt;
     padding: 0.5rem 1rem;
     text-decoration: none;
     border-radius: 5px;
@@ -72,20 +72,20 @@ main {
 
 main h2 {
     font-size: 1.8rem;
-    color: #4a90e2;
+    color: Cyclamen;
     margin-bottom: 0.5rem;
 }
 
 main p {
     font-size: 1rem;
     line-height: 1.6;
-    color: #555;
+    color: Dark Lavender;
 }
 
 /* Footer Styles */
 footer {
-    background-color: #333;
-    color: #959922;
+    background-color: DarkGoldenrod3;
+    color: DarkOrchid;
     padding: 0.5rem;
     text-align: center;
     width: 100%;
@@ -101,7 +101,7 @@ footer p {
 }
 
 footer a {
-    color: #229977;
+    color: Golden Poppy;
     text-decoration: none;
 }
 
