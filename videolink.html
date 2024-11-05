@@ -39,16 +39,20 @@
         <p>Video ID: 001</p>
         <p>Video Title: <a href="https://www.youtube.com/watch?v=dAa4bu2TK34" target="_blank">GTM Tutorials-------1</a></p>
         <div class="video-description" style="max-height: 300px; max-width: 100%; overflow: auto; border: 1px solid #ccc; padding: 5px;">
-            Video Description: Full course(A-Z) on Google Tag Manager (GTM)
-            GA4 # 01. Difference between Google Universal Analytics & GA4
-            GA4 # 02. Install Google Analytics 4 on Website
-            Video Description: Full course(A-Z) on Google Tag Manager (GTM)
-            GA4 # 01. Difference between Google Universal Analytics & GA4
-            GA4 # 02. Install Google Analytics 4 on Website
-            GA4 # 02. Install Google Analytics 4 on Website
-            Video Description: Full course(A-Z) on Google Tag Manager (GTM)
-            GA4 # 01. Difference between Google Universal Analytics & GA4
-            GA4 # 02. Install Google Analytics 4 on Website            
+            In the following step cann't find Configure > Events in GA4
+            
+            Mark Events as Conversions:Go to Configure > Events in GA4. 
+            Find events you want to count as conversions (e.g., "purchase" or "sign_up") and toggle Mark as conversion.
+            
+            
+            
+            Topic Title is "GA4 # 01. Difference between Google Universal Analytics & GA4", Topic Code is "GA4TopicNo01" and Topic Content is saved in text file named "GA4TopicNo01.txt". Write an html file  on which a clickable link will show with Topic Title. On click Topic Content text file will be displayed on window. Window will display on the center of the screen. Line on window should be wrapable.
+            
+            
+            Here’s a list of popular hashtags related to Google Analytics, Google Tag Manager, and digital marketing:
+            
+            Google Analytics (GA4)
+#Analytics,#WebAnalytics #GoogleAnalytics, #GA4, #GoogleAnalytics4, #GA4Tutorials, #TrackingCode, #GA4Tips, #GoogleData, #DataAnalysis, #UserBehavior, #DataDriven, #GoogleTagManager, #GTM, #TagManager, #GTMtips, #GTMTracking, #TagManagement, #GTMUpdates, #EventTracking, #CustomTags, #ConversionTracking, #DataLayer, #WebsiteTracking, #DigitalMarketing, #DataDrivenMarketing, #MarketingAnalytics, #SEO, #PPC, #ContentMarketing, #MarketingStrategy, #MarketingInsights, #CustomerJourney, #PerformanceMarketing, #ConversionOptimization, #MarketingAutomation, #Insights, #DataVisualization, #KPIs, #Metrics, #CustomerInsights, #AudienceTargeting, #MarketingData          
         </div>
     </div>
 
@@ -65,7 +69,50 @@
             GA4 # 02. Install Google Analytics 4 on Website
             Video Description: Full course(A-Z) on Google Tag Manager (GTM)
             GA4 # 01. Difference between Google Universal Analytics & GA4
-            GA4 # 02. Install Google Analytics 4 on Website    
+            GA4 # 02. Install Google Analytics 4 on Website  
+```javascript
+function() {
+var urlParams = new URLSearchParams(window.location.search);
+return urlParams.get('paramName');
+}
+```
+- Calculating dynamic values:
+```javascript
+function() {
+var cartTotal = document.querySelector('.cart-total').textContent;
+return parseFloat(cartTotal);
+}
+```
+Outcome: Apply custom JavaScript variables to extract and calculate data dynamically.
+
+
+
+
+9.4 Using JavaScript in GTM: Data Layer > Pushing and Reading Data
+
+9.4.1 Using JavaScript in GTM: 						<<<<<<<<<<[DONE]>>>>>>>>>>
+Introduction to the Data Layer
+Activity: Understand the data layer concept and structure.
+Outcome: Know what the data layer is and why it’s used in GTM.
+
+9.4.2 Using JavaScript in GTM: 
+Pushing Data to the Data Layer > Push data to the data layer using JavaScript.
+Activity: 1. Write JavaScript code to push data to the data layer.
+```javascript
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+'event': 'purchase',
+'transactionId': '12345',
+'transactionTotal': 50.00,
+'transactionProducts': [{
+'sku': 'product1',
+'name': 'Product 1',
+'category': 'Category 1',
+'price': 25.00,
+'quantity': 2
+}]
+});
+            
         </div>
     </div>
 
