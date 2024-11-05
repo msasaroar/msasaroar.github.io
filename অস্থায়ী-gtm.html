@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTM Topics</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4P58D67RQV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-4P58D67RQV');
+    </script>
+
+    <style>
+        /* Main styling to match ga4.html */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e8f5e9;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #388e3c;
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 1.5em;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .topics-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .topic-card {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .topic-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+        }
+        /* Button-like styling for links */
+        .topic-card a {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #1976d2;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            border-radius: 8px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .topic-card a:hover {
+            background-color: #0d47a1;
+            color: #e0f7fa;
+        }
+        .error-message {
+            color: red;
+            font-size: 1em;
+            margin-top: 10px;
+            text-align: center;
+        }
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+    <script>
+        function showWarning(title, link) {
+            if (confirm("Are you sure you want to view the topic: " + title + "?")) {
+                try {
+                    window.location.href = link;
+                } catch (error) {
+                    document.getElementById("error-message").textContent = 
+                        "An error occurred while trying to navigate to the topic: " + title + ". Please try again later.";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h1>GTM Topics</h1>
+    <div class="topics-container">
+        <div class="topic-card">
+            <a href="#" onclick="showWarning('Introduction to GTM', 'gtm-topic01.html')">Introduction to GTM</a>
+        </div>
+        <div class="topic-card">
+            <a href="#" onclick="showWarning('How to Install GTM on WP Websites', 'gtm-topic02.html')">How to Install GTM on WP Websites</a>
+        </div>
+        <div class="topic-card">
+            <a href="#" onclick="showWarning('What are Tags and Triggers in GTM', 'gtm-topic03.html')">What are Tags and Triggers in GTM</a>
+        </div>
+        <div class="topic-card">
+            <a href="#" onclick="showWarning('How to Install GA3/GA4 in GTM', 'gtm-topic04.html')">How to Install GA3/GA4 in GTM</a>
+        </div>
+        <div class="topic-card">
+            <a href="#" onclick="showWarning('Variables in GTM', 'gtm-topic05.html')">Variables in GTM</a>
+        </div>
+        <!-- Add other GTM topics here in the same format -->
+    </div>
+    <p id="error-message" class="error-message"></p>
+
+</body>
+</html>
