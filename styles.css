@@ -253,3 +253,41 @@ header {
     margin-top: 10px;
     text-align: center;
 }
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #e0f7fa; /* হালকা নীল ব্যাকগ্রাউন্ড */
+    color: #34495e; /* গা dark ় নীল পাঠ্য */
+}
+
+.video-description {
+    max-width: 100%;
+    overflow: auto;
+    border: 2px solid #00796b; /* গা green নীল বর্ডার */
+    padding: 15px;
+    background-color: #b2ebf2; /* উজ্জ্বল হালকা নীল ব্যাকগ্রাউন্ড */
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* বক্স শ্যাডো */
+}
+
+p {
+    margin: 0;
+    padding: 8px;
+    background-color: #ffffff; /* সাদা পটভূমি */
+    border-radius: 5px;
+    border-left: 5px solid #00acc1; /* প্যারাগ্রাফের বাঁয়ে বর্ডার */
+}
+
+a {
+    color: #d32f2f; /* লিংকের জন্য উজ্জ্বল লাল রঙ */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #1976d2; /* হোভার করলে নীল */
+    text-decoration: underline;
+}
+
