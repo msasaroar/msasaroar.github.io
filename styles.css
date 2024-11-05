@@ -16,10 +16,10 @@ html, body {
     height: 100vh; /* Set body to full viewport height */
     overflow: hidden; /* Prevent vertical scrolling */
 }
-
+/* ================================================================================= */
 /* Header Styles */
 header {
-    background-color: Bright Navy Blue; /* Bright blue */
+    background-color: MediumBlue;
     color: Byzantium;
     padding: 1rem;
     text-align: center;
