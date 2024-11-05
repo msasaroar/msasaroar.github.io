@@ -9,7 +9,7 @@ body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #eef2f3; /* Light gray background */
+    background-color: #f0f4f8; /* Soft light blue background */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,7 +17,7 @@ body {
 
 /* Header Styles */
 header {
-    background-color: #ff6f61; /* Coral color */
+    background-color: #4a90e2; /* Bright blue */
     color: #fff;
     padding: 2rem;
     text-align: center;
@@ -45,7 +45,7 @@ header p {
 }
 
 .topics a {
-    background-color: #ffb74d; /* Light orange */
+    background-color: #ff6f61; /* Coral color */
     color: #fff;
     padding: 0.8rem 1.2rem;
     text-decoration: none;
@@ -54,7 +54,7 @@ header p {
 }
 
 .topics a:hover {
-    background-color: #ffa726; /* Darker orange */
+    background-color: #e65c50; /* Darker coral */
     transform: translateY(-2px); /* Slight lift effect */
 }
 
@@ -67,7 +67,7 @@ main {
 
 main h2 {
     font-size: 2rem;
-    color: #ff6f61; /* Coral */
+    color: #4a90e2; /* Bright blue */
     margin-bottom: 1rem;
 }
 
@@ -95,10 +95,10 @@ footer p {
 }
 
 footer a {
-    color: #ffb74d; /* Light orange */
+    color: #ff6f61; /* Coral color */
     text-decoration: none;
 }
 
 footer a:hover {
-    color: #ff6f61; /* Coral color */
+    color: #ff4c39; /* Darker coral */
 }
