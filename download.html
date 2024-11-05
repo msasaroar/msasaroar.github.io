@@ -4,18 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GA4 Topic Display</title>
+    
+    <!-- Link to External CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header>
+        <h1>Master Google Analytics 4 & Google Tag Manager</h1>
+        <p>Explore comprehensive tutorials, guides, and tips to become proficient in GA4 and GTM. Start learning and take your analytics skills to the next level!</p>
+        <div class="topics">
+            <a href="ga4.html">Google Analytics 4 (GA4)</a>
+            <a href="gtm.html">Google Tag Manager (GTM)</a>
+            <a href="videolink.html">Video Tutorials</a>
+            <a href="links.html">Links</a>
+            <a href="download.html">Download</a>
+            <a href="eshop.html">Demo eShop</a>
+            <a href="search-on-youtube.html">Search</a>
+        </div>
+    </header>
 
-    <h1>Google Analytics 4 (GA4) Topics</h1>
-    <p class="topic-link" onclick="openModal()">GA4 # 01. Difference between Google Universal Analytics & GA4</p>
+    <main>
+        <h2>Google Analytics 4 (GA4) Topics</h2>
+        <p class="topic-link" onclick="openModal()">GA4 # 01. Difference between Google Universal Analytics & GA4</p>
 
-    <!-- Modal for displaying topic content -->
-    <div id="modal" class="modal">
-        <span class="close-btn" onclick="closeModal()">✖</span>
-        <div id="modal-content" class="modal-content"></div>
-    </div>
+        <!-- Modal for displaying topic content -->
+        <div id="modal" class="modal">
+            <span class="close-btn" onclick="closeModal()">✖</span>
+            <div id="modal-content" class="modal-content"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Personal Demo Website For Practicing GA4, GTM. All Rights Reserved.</p>
+        <p>Connect with us on <a href="#">LinkedIn</a> | <a href="#">Twitter</a> | <a href="#">Facebook</a></p>
+    </footer>
 
     <script>
         // Function to open the modal and load content
@@ -45,6 +67,5 @@
             }
         }
     </script>
-
 </body>
 </html>
