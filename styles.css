@@ -1,4 +1,4 @@
-/* General Styles */
+/* General Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -6,10 +6,9 @@
 }
 
 html, body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
+    font-family: 'Helvetica', sans-serif;
     color: #333;
-    background-color: #f9f9f9; /* Soft light background */
+    background-color: #f0f8f7; /* Light teal background */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,14 +17,14 @@ html, body {
 
 /* Header Styles */
 header {
-    background-color: #2c3e50; /* Dark blue */
-    color: #fff;
+    background-color: #00796b; /* Teal */
+    color: #ffffff;
     padding: 2rem;
     text-align: center;
     width: 100%;
     max-width: 900px;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     margin-bottom: 2rem;
 }
 
@@ -47,8 +46,8 @@ header p {
 }
 
 .topics a {
-    background-color: #e74c3c; /* Red */
-    color: #fff;
+    background-color: #ff7043; /* Coral */
+    color: #ffffff;
     padding: 0.8rem 1.5rem;
     text-decoration: none;
     border-radius: 5px;
@@ -57,7 +56,7 @@ header p {
 }
 
 .topics a:hover {
-    background-color: #c0392b; /* Darker red */
+    background-color: #e64a19; /* Darker coral */
     transform: translateY(-2px);
 }
 
@@ -66,14 +65,15 @@ main {
     max-width: 800px;
     padding: 2rem;
     text-align: center;
-    background: #fff; /* White background for main content */
+    background: #ffffff; /* White background for main content */
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
 }
 
 main h2 {
     font-size: 2rem;
-    color: #2980b9; /* Bright blue */
+    color: #00796b; /* Teal */
     margin-bottom: 1rem;
 }
 
@@ -85,8 +85,8 @@ main p {
 
 /* Footer Styles */
 footer {
-    background-color: #2c3e50; /* Dark blue */
-    color: #fff;
+    background-color: #00796b; /* Teal */
+    color: #ffffff;
     padding: 1rem;
     text-align: center;
     width: 100%;
@@ -101,12 +101,12 @@ footer p {
 }
 
 footer a {
-    color: #e74c3c; /* Red */
+    color: #ff7043; /* Coral */
     text-decoration: none;
 }
 
 footer a:hover {
-    color: #c0392b; /* Darker red */
+    color: #e64a19; /* Darker coral */
 }
 
 /* Responsive Styles */
