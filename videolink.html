@@ -8,26 +8,30 @@
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
-            background-color: #f9f9f9;
+            background-color: #e0f7fa; /* হালকা নীল ব্যাকগ্রাউন্ড */
+            color: #2c3e50; /* অন্ধকার নীল পাঠ্য */
         }
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px; /* থাম্বনেইলগুলোর মধ্যে স্থান */
+        p {
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #ffffff; /* সাদা পটভূমি */
+            border: 1px solid #00bcd4; /* সাইনের জন্য বর্ডার */
         }
-        .playlist {
-            flex: 0 0 200px; /* প্রতিটি থাম্বনেইলের প্রস্থ */
-            text-align: center; /* থাম্বনেইল এবং শিরোনামের জন্য কেন্দ্রীভূত */
-        }
-        .playlist img {
-            width: 100%; /* ইমেজের প্রস্থ পুরো বক্সের সমান হবে */
-            height: auto; /* উচ্চতা স্বতন্ত্র */
-            border: 1px solid #ddd;
+        .video-description {
+            max-height: 300px;
+            max-width: 100%;
+            overflow: auto;
+            border: 1px solid #00796b; /* গা green নীল বর্ডার */
+            padding: 10px;
+            background-color: #b2dfdb; /* হালকা গা green নীল ব্যাকগ্রাউন্ড */
             border-radius: 5px;
         }
-        .playlist-title {
-            font-weight: bold;
-            margin-top: 5px;
+        a {
+            color: #2980b9; /* লিংকের জন্য নীল রঙ */
+            text-decoration: none; /* আন্ডারলাইন সরানো */
+        }
+        a:hover {
+            text-decoration: underline; /* হোভার করলে আন্ডারলাইন */
         }
     </style>
 </head>
@@ -38,7 +42,7 @@
     <p>Video Title: <a href="https://www.youtube.com/playlist?list=PLNfnAKZ4Zsaolsq8PxO1VbKYw6NfQUHkq">
         Complete Google Analytics 4 Tutorial | GA4 Course in Hindi - 2024 | Umar Tazkeer</a></p>
     
-    <div class="video-description" style="max-height: 300px; max-width: 100%; overflow: auto; border: 1px solid #ccc; padding: 5px;">
+    <div class="video-description">
         This playlist is for the people who want to learn Complete Google Analytics 4 (GA4) from Scratch in Hindi.
         All the concepts & Topics of Google ads are covered in detail.
     </div>
@@ -49,7 +53,7 @@
     <p>Video Title: <a href="https://www.youtube.com/watch?v=b-IpGibR59M&list=PLNfnAKZ4Zsao_6XEuzfsTVlaxeqgltAQC&pp=iAQB">
         Google Tag Manager Full Course in Single Video | GTM Course Beginner to Pro | Umar Tazkeer</a></p>
     
-    <div class="video-description" style="max-height: 600px; max-width: 100%; overflow: auto; border: 1px solid #ccc; padding: 5px;">
+    <div class="video-description">
         This Playlist Contains all the latest videos related to Google Tag Manager and its Setup. 
         This playlist explains basic to advanced level of Google Tag Manager Practical Implementation.      
     </div>
