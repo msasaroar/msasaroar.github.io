@@ -8,8 +8,8 @@
 html, body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    color: MediumOrchid4;
-    background-color: Bright Green; /* Soft light blue background */
+    color: MediumBlue;
+    background-color: Middle Yellow; /* Soft light blue background */
     display: flex;
     flex-direction: column;
     align-items: center;
