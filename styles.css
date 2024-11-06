@@ -114,17 +114,21 @@ button, .btn {
     padding: 0.75em 1.5em;
     color: #fff;
     background: linear-gradient(45deg, #00b4d8, #0077b6);
-    border: none;
+    border: 2px solid #0077b6;
     border-radius: 8px;
     font-size: 1em;
+    font-weight: bold;
     cursor: pointer;
-    transition: background 0.3s ease;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
 }
 
 button:hover, .btn:hover {
     background: #005f73;
+    transform: scale(1.05); /* Slight enlargement on hover */
 }
+
 
 /* Forms styling */
 form {
