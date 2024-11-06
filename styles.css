@@ -7,12 +7,14 @@
     box-sizing: border-box;
 }
 
-/* Body styling to allow footer to stay at the bottom */
+/* Body styling to allow header and footer to stay in place */
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
+    padding-top: 60px; /* Space for fixed header */
+    padding-bottom: 60px; /* Space for fixed footer */
 }
 
 /* Global container styling */
@@ -24,12 +26,17 @@ body {
 
 /* Header styling */
 header {
-    background-color: #4CAF50;
+    background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 2em;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 1em 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Ensure header stays above other elements */
 }
+
 
 /* Header title styling */
 header h1 {
