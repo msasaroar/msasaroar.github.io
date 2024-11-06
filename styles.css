@@ -436,6 +436,13 @@ table th {
     font-weight: bold;
 }
 
+/*Section styling*/
+section {
+    overflow-y: auto; /* উল্লম্ব স্ক্রলিং */
+    max-height: 400px; /* সর্বোচ্চ উচ্চতা */
+}
+
+
 /* Footer styling */
 footer {
     background-color: #023e8a;
