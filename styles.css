@@ -173,16 +173,23 @@ input[type="submit"]:hover {
     background-color: #0077b6;
 }
 
-/* Links */
+
+/* Link styling in style.css */
 a {
-    color: #0077b6;
-    text-decoration: none;
-    transition: color 0.3s ease;
+    text-decoration: none; /* Removes the underline */
+    color: #1a73e8; /* Sets link color */
+    font-weight: bold; /* Makes the font bold */
+    padding: 10px 15px; /* Adds padding around links */
+    border-radius: 5px; /* Rounds corners */
+    transition: background-color 0.3s ease; /* Smooth background transition */
 }
 
+/* Hover effect */
 a:hover {
-    color: #005f73;
+    background-color: #f0f0f0; /* Changes background color on hover */
+    color: #0b57d0; /* Changes font color on hover */
 }
+
 
 /* Lists styling */
 ul, ol {
