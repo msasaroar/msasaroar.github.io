@@ -7,13 +7,12 @@
     box-sizing: border-box;
 }
 
-/* Body styling for background and font */
+/* Body styling to allow footer to stay at the bottom */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     margin: 0;
-    padding: 0;
 }
 
 /* Global container styling */
@@ -113,9 +112,9 @@ nav a:hover {
     background-color: #0077b6;
 }
 
-/* Main content styling */
+/* Main content styling to take up remaining space */
 main {
-    padding: 2em 0;
+    flex: 1;
 }
 
 /* Headings styling */
@@ -285,11 +284,14 @@ table th {
 
 /* Footer styling */
 footer {
-    background-color: #023e8a;
-    color: #f1f1f1;
+    background-color: #333;
+    color: #fff;
     text-align: center;
-    padding: 1.5em 0;
-    font-size: 0.9em;
+    padding: 1em 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.2);
 }
 
 footer p {
