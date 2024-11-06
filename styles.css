@@ -191,6 +191,13 @@ a:hover {
 }
 
 
+a {
+    display: inline-block; /* Makes each link take up only as much width as needed */
+    margin-right: 10px; /* Adds space between links */
+}
+
+
+
 /* Lists styling */
 ul, ol {
     padding-left: 1.5em;
