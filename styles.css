@@ -40,7 +40,7 @@ header {
 
 /* Header title styling */
 header h1 {
-    font-size: 2.5em;
+    font-size: 1.5em;
     font-weight: bold;
     margin: 0 0 0.5em;
     color: #fff;
@@ -48,7 +48,7 @@ header h1 {
 
 /* Header paragraph styling */
 header p {
-    font-size: 1.2em;
+    font-size: 1em;
     line-height: 1em;
     max-width: 700px;
     margin: 0 auto 1.5em;
@@ -58,7 +58,7 @@ header p {
 header .topics {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 5px;
     justify-content: center;
     padding-top: 1em;
 }
@@ -131,17 +131,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 2.5em;
+    font-size: 1.5em;
     color: #0077b6;
 }
 
 h2 {
-    font-size: 2em;
+    font-size: 1em;
     color: #023e8a;
 }
 
 h3 {
-    font-size: 1.75em;
+    font-size: 0.75em;
     color: #03045e;
 }
 
@@ -158,7 +158,7 @@ button, .btn {
     background-color: #4CAF50;
     border: 2px solid #4CAF50;
     border-radius: 8px;
-    font-size: 1.1em;
+    font-size: 1em;
     font-weight: bold;
     cursor: pointer;
     text-align: center;
@@ -192,7 +192,7 @@ button.primary {
 
 button.primary::before {
     content: "🔍 ";
-    font-size: 1.2em;
+    font-size: 1em;
     vertical-align: middle;
 }
 
