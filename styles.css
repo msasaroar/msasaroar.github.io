@@ -7,13 +7,13 @@
     box-sizing: border-box;
 }
 
-/* Body styling */
+/* Body styling for background and font */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f3f4f6;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
     color: #333;
-    line-height: 1.6;
     margin: 0;
+    padding: 0;
 }
 
 /* Global container styling */
@@ -25,16 +25,72 @@ body {
 
 /* Header styling */
 header {
-    background-color: #0077b6;
+    background-color: #4CAF50;
     color: #fff;
-    padding: 1.5em 0;
     text-align: center;
+    padding: 2em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
+/* Header title styling */
 header h1 {
     font-size: 2.5em;
     font-weight: bold;
+    margin: 0 0 0.5em;
+    color: #fff;
 }
+
+/* Header paragraph styling */
+header p {
+    font-size: 1.2em;
+    line-height: 1.6em;
+    max-width: 700px;
+    margin: 0 auto 1.5em;
+}
+
+/* Topics links styling */
+header .topics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    padding-top: 1em;
+}
+
+/* Individual link button styling */
+header .topics a {
+    color: #fff;
+    background-color: #1a73e8;
+    padding: 0.8em 1.2em;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+header .topics a:hover {
+    background-color: #0b57d0;
+    transform: scale(1.05);
+}
+
+/* Responsive styling for mobile */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    header .topics a {
+        font-size: 0.9em;
+        padding: 0.6em 1em;
+    }
+}
+
 
 /* Navigation bar */
 nav {
