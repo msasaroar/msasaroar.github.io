@@ -45,7 +45,7 @@ header {
     top: 0;
     z-index: 1000;
     min-height: 50px;
-    /*overflow-y: auto;*/
+    overflow-y: hidden;
 }
 
 header h1 {
@@ -79,7 +79,7 @@ nav a:hover {
 main {
     padding: 3.5em 0 2em; /* Extra top padding to adjust for fixed header */
     margin-top: 70px;
-    /*overflow-y: auto;*/
+    overflow-y: auto;
 }
 
 /* Headings styling */
@@ -216,7 +216,7 @@ footer {
     bottom: 0;
     width: 100%;
     min-height: 30px;
-    /*overflow-y: auto;*/
+    overflow-y: hidden;
 }
 
 footer p {
