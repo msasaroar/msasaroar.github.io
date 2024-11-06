@@ -5,24 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GA4 Topic Display</title>
     
-    <!-- Link to External CSS -->
-    <link rel="stylesheet" href="styles.css">
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4P58D67RQV"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-4P58D67RQV');
-    </script>
+// Purchase event
+gtag('event', 'conversion_event_purchase', {
+  value: 59.99,
+  currency: 'USD',
+  transaction_id: '12345ABC'
+});
 
-    <!-- Google tag (gtag.js) event -->
-    <script>
-      gtag('event', 'conversion_event_purchase', {
-        // <event_parameters>
-      });
-    </script>
+// Add to Cart event
+gtag('event', 'conversion_event_add_to_cart', {
+  item_name: 'Example Product',
+  price: 29.99,
+  currency: 'USD'
+});
+
+// Begin Checkout event
+gtag('event', 'conversion_event_begin_checkout', {
+  cart_value: 59.99,
+  currency: 'USD'
+});
     
     <!-- Google tag (gtag.js) event -->
     <script>
