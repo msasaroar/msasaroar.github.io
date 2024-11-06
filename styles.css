@@ -1,6 +1,248 @@
+/*
+style.css ফাইলের নীচের কোড এমনভাবে মডিফাই কর যাতে ওয়েবসাইটেরঃ
+১। পেইজটি আরো কালারফুল হয়।
+২। পেইজের বাটন আরো স্পষ্ট দেখা যায়।
+৩। হেডার, বডি এবং ফুটার নির্দিস্ট জায়গায় স্থির থাকে।
+৪। হেডার এবং ফুটার সর্বনিম্ন জায়গা নেয়।
+৫। প্রয়োজনীয় ক্ষেত্রে তথ্য প্রদর্শনের জন্য হেডার, বডি এবং ফুটার স্ক্রলেবল হবে।
+*/
+
 /* Reset styles */
 *,
+*::before,/* Reset styles */
+*,
 *::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f3f4f6, #a2d2ff);
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Global container styling */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header styling */
+header {
+    background-color: #0077b6;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    min-height: 50px;
+    overflow-y: auto;
+}
+
+header h1 {
+    font-size: 2em;
+    font-weight: bold;
+    color: #caf0f8;
+}
+
+/* Navigation bar */
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #023e8a;
+    padding: 0.5em;
+}
+
+nav a {
+    color: #f1f1f1;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #0077b6;
+}
+
+/* Main content styling */
+main {
+    padding: 3.5em 0 2em; /* Extra top padding to adjust for fixed header */
+    margin-top: 70px;
+    overflow-y: auto;
+}
+
+/* Headings styling */
+h1, h2, h3, h4, h5, h6 {
+    color: #333;
+    margin-bottom: 0.5em;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #0077b6;
+}
+
+h2 {
+    font-size: 2em;
+    color: #023e8a;
+}
+
+h3 {
+    font-size: 1.75em;
+    color: #03045e;
+}
+
+/* Paragraphs */
+p {
+    margin-bottom: 1em;
+}
+
+/* Buttons styling */
+button, .btn {
+    display: inline-block;
+    padding: 0.75em 1.5em;
+    color: #fff;
+    background: linear-gradient(45deg, #00b4d8, #0077b6);
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:hover, .btn:hover {
+    background: #005f73;
+}
+
+/* Forms styling */
+form {
+    max-width: 600px;
+    margin: 2em auto;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    width: 100%;
+    padding: 0.75em;
+    margin: 0.5em 0;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    font-size: 1em;
+    background-color: #f9f9f9;
+}
+
+input[type="submit"] {
+    width: 100%;
+    background-color: #00b4d8;
+    border: none;
+    color: #fff;
+    padding: 1em;
+    font-size: 1em;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0077b6;
+}
+
+/* Links */
+a {
+    color: #0077b6;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #005f73;
+}
+
+/* Lists styling */
+ul, ol {
+    padding-left: 1.5em;
+    margin-bottom: 1em;
+}
+
+ul li, ol li {
+    margin-bottom: 0.5em;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1em;
+}
+
+table th, table td {
+    padding: 0.75em;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #caf0f8;
+    color: #03045e;
+    font-weight: bold;
+}
+
+/* Footer styling */
+footer {
+    background-color: #023e8a;
+    color: #f1f1f1;
+    text-align: center;
+    padding: 1em 0;
+    font-size: 0.9em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    min-height: 30px;
+    overflow-y: auto;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Utility classes */
+.text-center {
+    text-align: center;
+}
+
+.mt-1 { margin-top: 1em; }
+.mt-2 { margin-top: 2em; }
+.mb-1 { margin-bottom: 1em; }
+.mb-2 { margin-bottom: 2em; }
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+}
+
 *::after {
     margin: 0;
     padding: 0;
