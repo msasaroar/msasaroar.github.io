@@ -389,14 +389,19 @@ input[type="submit"]:hover {
 
 /* Links */
 a {
-    color: #D10363;
+    color: #fff;
+    background-color: #28a745; /* Green background color */
+    padding: 0.2em 0.5em;
+    border-radius: 4px;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a:hover {
-    color: #3C552D;
+    background-color: #218838; /* Darker green on hover */
+    color: #fff;
 }
+
 
 /* Lists styling */
 ul, ol {
