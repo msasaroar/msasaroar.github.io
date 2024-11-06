@@ -389,13 +389,13 @@ input[type="submit"]:hover {
 
 /* Links */
 a {
-    color: #3C552D;
+    color: #D10363;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #005f73;
+    color: #3C552D;
 }
 
 /* Lists styling */
