@@ -438,9 +438,36 @@ table th {
 
 /*Section styling*/
 section {
+    width: 80%; /* প্রস্থ */
+    max-width: 1200px; /* সর্বোচ্চ প্রস্থ */
+    height: auto; /* স্বাভাবিক উচ্চতা */
+    min-height: 300px; /* সর্বনিম্ন উচ্চতা */
     overflow-y: auto; /* উল্লম্ব স্ক্রলিং */
     max-height: 400px; /* সর্বোচ্চ উচ্চতা */
+    padding: 30px; /* প্যাডিং */
+    border: 2px dashed #0077b6; /* ড্যাশড বর্ডার */
+    border-radius: 12px; /* কোণার রাউন্ডিং */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* শ্যাডো */
+    position: relative; /* পজিশন রিলেটিভ */
+    top: 20px; /* উপরে ২০px দূরত্ব */
+    left: 10px; /* বাম দিকে ১০px দূরত্ব */
+    line-height: 1.6; /* লাইন হাইট */
+    letter-spacing: 0.5px; /* অক্ষরের মধ্যে স্পেস */
+    text-transform: capitalize; /* টেক্সটকে ক্যাপিটালাইজ করা */
+    font-size: 1.2em; /* ফন্ট সাইজ */
+    text-indent: 20px; /* প্রথম প্যারাগ্রাফ ইন্ডেন্ট */
+
+    background-color: #f8f9fa; /* ব্যাকগ্রাউন্ড রঙ */
+    color: #333; /* টেক্সট রঙ */
+    padding: 20px; /* প্যাডিং */
+    margin: 20px 0; /* মার্জিন */
+    border: 1px solid #ddd; /* বর্ডার */
+    border-radius: 8px; /* বর্ডার রেডিয়াস */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* বক্স শ্যাডো */
+    font-family: 'Arial', sans-serif; /* ফন্ট ফ্যামিলি */
+    text-align: left; /* টেক্সট এলাইনমেন্ট */
 }
+
 
 
 /* Footer styling */
