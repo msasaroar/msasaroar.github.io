@@ -387,19 +387,22 @@ input[type="submit"]:hover {
     background-color: #0077b6;
 }
 
-/* Links */
+/* Link styling */
 a {
-    color: #fff;
-    background-color: #28a745; /* Green background color */
-    padding: 0.2em 0.5em;
-    border-radius: 4px;
+    display: inline-block;
+    color: #fff; /* Link text color */
+    background-color: #28a745; /* Green background */
+    border: 2px solid #ffd700; /* Yellow border */
+    padding: 0.5em 1em; /* Padding for spacing inside links */
+    margin: 0.5em 0; /* Space between links */
+    border-radius: 5px;
     text-decoration: none;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 a:hover {
     background-color: #218838; /* Darker green on hover */
-    color: #fff;
+    transform: scale(1.05); /* Slight enlargement on hover */
 }
 
 
