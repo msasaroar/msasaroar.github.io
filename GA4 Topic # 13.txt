@@ -1,4 +1,5 @@
 GA4 #13: Introduction to Events in Google Analytics 4
+
 In Google Analytics 4 (GA4), Events are essential for tracking user interactions with a website or app, capturing activities like clicks, form submissions, downloads, page views, and other specific actions. Learning about events helps you understand user engagement, allowing for more precise data analysis and reporting. Here’s a detailed, step-by-step guide to learning about and working with events in GA4:
 1. Understanding Events in GA4
 What are Events? In GA4, events are designed to record specific user interactions within your site or app. Unlike Universal Analytics, GA4 does not rely on categories, actions, and labels for events; instead, each event is simply a recorded interaction with a user-defined name and relevant parameters.
