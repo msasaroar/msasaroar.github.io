@@ -2,6 +2,7 @@
 <html lang="en">
 
     <head>
+
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Personal Demo Website</title>
@@ -9,8 +10,8 @@
         <!-- Link to External CSS -->
         <link rel="stylesheet" href="styles.css">
 
-<--
-        <!-- Google tag (gtag.js) -->
+<!--
+        <!-- Google tag (gtag.js) --
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-4P58D67RQV"></script>
         
         <script>
@@ -20,8 +21,7 @@
             gtag('config', 'G-4P58D67RQV');
         </script>
 
-
-        <!-- Google tag (gtag.js) -->
+        <!-- Google tag (gtag.js) --
         <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16763876295"></script>
         <script>
           window.dataLayer = window.dataLayer || [];
@@ -32,7 +32,23 @@
         </script>
 -->
 
+        <!-- Combined Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4P58D67RQV"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16763876295"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+        
+            // Configure Google Analytics
+            gtag('config', 'G-4P58D67RQV');
+        
+            // Configure Google Ads
+            gtag('config', 'AW-16763876295');
+        </script>
 
+
+        
 // Purchase event
 gtag('event', 'conversion_event_purchase', {
   value: 59.99,
