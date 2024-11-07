@@ -1,0 +1,42 @@
+/* পুরো পেজে স্ক্রল বার নিষ্ক্রিয় করা */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* পুরো পেজে স্ক্রল বার নিষ্ক্রিয় */
+}
+
+/* হেডার স্টাইলিং */
+header {
+    background-color: #006400; /* গাঢ় সবুজ */
+    color: #000000;
+    text-align: center;
+    padding: 0px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* কনটেন্ট স্টাইলিং */
+.content {
+    background-color: #002000;
+    color: #009000;
+    padding: 10px;
+    margin-top: 90px; /* হেডারের নিচে জায়গা */
+    margin-bottom: 0px; /* ফুটারের উপরে জায়গা */
+    height: calc(100vh - 170px); /* ভিউপোর্ট থেকে হেডার এবং ফুটার বাদ দিয়ে উচ্চতা */
+    overflow-y: auto; /* শুধু ভার্টিক্যাল স্ক্রল বার */
+    scrollbar-width: thin; /* পাতলা স্ক্রল বার (কেবল ফায়ারফক্সে কাজ করবে) */
+}
+
+/* ফুটার স্টাইলিং */
+footer {
+    background-color: #006400; /* গাঢ় সবুজ */
+    color: #000000;
+    text-align: center;
+    padding: 0px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+}
