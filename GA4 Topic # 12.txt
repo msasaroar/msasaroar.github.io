@@ -32,7 +32,7 @@ Review Settings:
 Carefully review your selected accounts and settings to ensure everything is accurate.
 Submit the Link:
 Click Submit to finalize the link between GA4 and Google Ads. Once the link is established, data will start flowing from GA4 to Google Ads, and you’ll begin seeing GA4 conversion events in Google Ads.
-
+================================================================
 6. Verify the Connection
 Return to Google Ads Links Section:
 In GA4’s Admin section, go back to Google Ads Links. Your linked account should now be listed as active.
