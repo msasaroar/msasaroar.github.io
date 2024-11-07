@@ -20,12 +20,12 @@ style.css ফাইলের নীচের কোড এমনভাবে ম
 
 /* Body styling */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Arial,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #f3f4f6, #a2d2ff);
     color: #333;
     line-height: 1.6;
     margin: 0;
-    overflow-y: auto;
+    overflow: hidden; /* পুরো পেজে স্ক্রল বার নিষ্ক্রিয় */
 }
 
 /* Global container styling */
