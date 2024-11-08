@@ -79,10 +79,8 @@
         // Form submission handling
         document.getElementById("contactForm").addEventListener("submit", function(event) {
             event.preventDefault();
-            // Show thank you message upon submission
-            document.getElementById("thankYouMessage").style.display = "block";
-            // Reset the form
-            event.target.reset();
+            window.location.href = "thank-you.html";
+        });
         });
     </script>
 
