@@ -28,6 +28,18 @@ body {
     overflow: hidden; /* পুরো পেজে স্ক্রল বার নিষ্ক্রিয় */
 }
 
+/* কনটেন্ট স্টাইলিং */
+.content {
+    background-color: #002000;
+    color: #009000;
+    padding: 10px;
+    margin-top: 90px; /* হেডারের নিচে জায়গা */
+    margin-bottom: 0px; /* ফুটারের উপরে জায়গা */
+    height: calc(100vh - 170px); /* ভিউপোর্ট থেকে হেডার এবং ফুটার বাদ দিয়ে উচ্চতা */
+    overflow-y: auto; /* শুধু ভার্টিক্যাল স্ক্রল বার */
+    scrollbar-width: thin; /* পাতলা স্ক্রল বার (কেবল ফায়ারফক্সে কাজ করবে) */
+}
+
 /* Global container styling */
 .container {
     width: 90%;
@@ -37,16 +49,15 @@ body {
 
 /* Header styling */
 header {
-    background-color: #0077b6;
-    color: #fff;
-    padding: 1em;
+    background-color: #006400;
+    color: #000000;
+    padding: 0px;
     text-align: center;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    min-height: 50px;
-    overflow-y: hidden;
+    overflow-y: hidden; 
 }
 
 header h1 {
@@ -208,15 +219,15 @@ table th {
 
 /* Footer styling */
 footer {
-    background-color: #023e8a;
-    color: #f1f1f1;
+    background-color: #006400;
+    color: #000000;
     text-align: center;
-    padding: 1em 0;
+    padding: 0px;
     font-size: 0.9em;
     position: fixed;
     bottom: 0;
     width: 100%;
-    min-height: 30px;
+    z-index: 1000;
     overflow-y: hidden;
 }
 
