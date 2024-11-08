@@ -25,16 +25,6 @@ body {
     overflow: hidden; /* পুরো পেজে স্ক্রল বার নিষ্ক্রিয় */
 }
 
-/* কনটেন্ট স্টাইলিং */
-.content {
-    background-color: #002000;
-    color: #009000;
-    padding: 10px;
-    margin-top: 90px;
-    height: calc(100vh - 170px);
-    overflow-y: auto;
-    scrollbar-width: thin;
-}
 
 /* Global container styling */
 .container {
@@ -180,6 +170,22 @@ a {
 
 a:hover {
     color: #005f73;
+}
+
+.topics a {
+    display: inline-block; /* বাটনের মতো ব্লক তৈরি করতে */
+    padding: 10px 20px; /* বাটনের প্যাডিং */
+    margin: 5px; /* বাটনগুলোর মধ্যে স্থান */
+    text-decoration: none; /* আন্ডারলাইন সরাতে */
+    color: #ffffff; /* টেক্সটের রঙ */
+    background-color: #007bff; /* বাটনের ব্যাকগ্রাউন্ড রঙ */
+    border-radius: 5px; /* বাটনের কোণগুলো গোলাকার করতে */
+    font-weight: bold; /* টেক্সটকে মোটা করতে */
+    transition: background-color 0.3s; /* হোভার ইফেক্টের জন্য স্মুথ ট্রানজিশন */
+}
+
+.topics a:hover {
+    background-color: #0056b3; /* হোভার করলে ব্যাকগ্রাউন্ড পরিবর্তন */
 }
 
 /* Lists styling */
