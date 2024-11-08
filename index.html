@@ -13,6 +13,8 @@
         
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-4P58D67RQV"></script>
         <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16763876295"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-K51293ZS47"></script>
+
         <script>
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -23,27 +25,11 @@
         
             // Configure Google Ads
             gtag('config', 'AW-16763876295');
+
+            // Configure Google Analytics for the account sakifazfarrabib@gmail.com
+            gtag('config', 'G-K51293ZS47');
         </script>
     
-        // Purchase event
-        gtag('event', 'conversion_event_purchase', {
-          value: 59.99,
-          currency: 'USD',
-          transaction_id: '12345ABC'
-        });
-        
-        // Add to Cart event
-        gtag('event', 'conversion_event_add_to_cart', {
-          item_name: 'Example Product',
-          price: 29.99,
-          currency: 'USD'
-        });
-    
-        // Begin Checkout event
-        gtag('event', 'conversion_event_begin_checkout', {
-          cart_value: 59.99,
-          currency: 'USD'
-        });
     </head>
 
     <body>
