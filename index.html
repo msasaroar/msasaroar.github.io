@@ -1,81 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
-
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Personal => Demo <= Website</title>
-    
+        
         <!-- Link to External CSS -->
         <link rel="stylesheet" href="styles.css">
-
-<!--
-        <!-- Google tag (gtag.js) --
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4P58D67RQV"></script>
+    
+        <!-- Combined Google tag (gtag.js) -->
+        <script type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/cbca7acee10a7.js" data-cmp-host="c.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="16"></script>
         
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4P58D67RQV"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16763876295"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
+        
+            // Configure Google Analytics
             gtag('config', 'G-4P58D67RQV');
+        
+            // Configure Google Ads
+            gtag('config', 'AW-16763876295');
         </script>
-
-        <!-- Google tag (gtag.js) --
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16763876295"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
+    
+        // Purchase event
+        gtag('event', 'conversion_event_purchase', {
+          value: 59.99,
+          currency: 'USD',
+          transaction_id: '12345ABC'
+        });
         
-          gtag('config', 'AW-16763876295');
-        </script>
--->
-
-
-<!-- Combined Google tag (gtag.js) -->
-<script type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/cbca7acee10a7.js" data-cmp-host="c.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="16"></script>
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4P58D67RQV"></script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16763876295"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    // Configure Google Analytics
-    gtag('config', 'G-4P58D67RQV');
-
-    // Configure Google Ads
-    gtag('config', 'AW-16763876295');
-</script>
-
-
-        
-// Purchase event
-gtag('event', 'conversion_event_purchase', {
-  value: 59.99,
-  currency: 'USD',
-  transaction_id: '12345ABC'
-});
-
-// Add to Cart event
-gtag('event', 'conversion_event_add_to_cart', {
-  item_name: 'Example Product',
-  price: 29.99,
-  currency: 'USD'
-});
-
-// Begin Checkout event
-gtag('event', 'conversion_event_begin_checkout', {
-  cart_value: 59.99,
-  currency: 'USD'
-});
-
-
-        
+        // Add to Cart event
+        gtag('event', 'conversion_event_add_to_cart', {
+          item_name: 'Example Product',
+          price: 29.99,
+          currency: 'USD'
+        });
+    
+        // Begin Checkout event
+        gtag('event', 'conversion_event_begin_checkout', {
+          cart_value: 59.99,
+          currency: 'USD'
+        });
     </head>
-        
+
     <body>
         <header>
             <h1>Learn GA4 & GTM On Your Own</h1>
