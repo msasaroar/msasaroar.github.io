@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>=Contact Form=</title>
+    <title>Contact Form</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -79,8 +79,8 @@
         // Form submission handling
         document.getElementById("contactForm").addEventListener("submit", function(event) {
             event.preventDefault();
-            window.location.href = "thank-you.html";
-        });
+            document.getElementById("thankYouMessage").style.display = "block";
+            document.getElementById("contactForm").reset(); // Optional: clear form fields
         });
     </script>
 
