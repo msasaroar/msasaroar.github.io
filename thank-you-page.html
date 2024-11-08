@@ -12,26 +12,42 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f4f4f4;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            color: #fff;
         }
         .thank-you-container {
             text-align: center;
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+            max-width: 500px;
+            width: 100%;
         }
         .thank-you-container h1 {
+            font-size: 2.5em;
             color: #4CAF50;
+            margin: 0 0 10px;
         }
         .thank-you-container p {
-            color: #333;
-            font-size: 18px;
+            font-size: 1.2em;
+            margin: 10px 0;
+            color: #555;
         }
         .thank-you-container a {
-            text-decoration: none;
-            color: #4CAF50;
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: #4CAF50;
+            color: #fff;
             font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+        .thank-you-container a:hover {
+            background-color: #45a049;
         }
     </style>
 </head>
@@ -40,8 +56,8 @@
     <div class="thank-you-container">
         <h1>Thank You!</h1>
         <p>Your message has been successfully submitted.</p>
-        <p>We will get back to you as soon as possible.</p>
-        <p><a href="index.html">Return to Homepage</a></p>
+        <p>We appreciate your effort and will reach out to you soon!</p>
+        <a href="index.html">Return to Homepage</a>
     </div>
 
 </body>
