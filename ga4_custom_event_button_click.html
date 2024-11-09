@@ -11,24 +11,24 @@
     <button id="customEventButton">Click Me!</button>
 
     <!-- Google Analytics tag -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4P58D67RQV"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            
+            // Replace 'G-XXXXXXXXXX' with your actual GA4 Measurement ID
+            gtag('config', 'G-4P58D67RQV');
         
-        // Replace 'G-XXXXXXXXXX' with your actual GA4 Measurement ID
-        gtag('config', 'G-XXXXXXXXXX');
-
-        // Custom event tracking for button click
-        document.getElementById("customEventButton").addEventListener("click", function() {
-            gtag('event', 'button_click', { 
-                'event_category': 'engagement',
-                'event_label': 'Custom Button',
-                'value': 1
+            // Custom event tracking for button click
+            document.getElementById("customEventButton").addEventListener("click", function() {
+                gtag('event', 'button_click', { 
+                    'event_category': 'engagement',
+                    'event_label': 'Custom Button',
+                    'value': 1
+                });
+                alert("Custom event 'button_click' has been sent to GA4!");
             });
-            alert("Custom event 'button_click' has been sent to GA4!");
-        });
-    </script>
+        </script>
 </body>
 </html>
