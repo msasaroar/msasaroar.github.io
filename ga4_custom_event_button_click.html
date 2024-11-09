@@ -3,32 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GA4 Custom Event Example</title>
+    <title>Button Click Event Practice</title>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4P58D67RQV"></script>
+    <script>
+        // GA4 Tracking ID Configuration
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-4P58D67RQV'); // Replace 'G-XXXXXXXXXX' with your GA4 Measurement ID
+    </script>
+    
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+        }
+        .button-container {
+            text-align: center;
+        }
+        .button-container button {
+            padding: 15px 30px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button-container button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-    <h2>GA4 Button Click Event Example</h2>
-    <!-- Button for triggering the event -->
-    <button id="customEventButton">Click Me!</button>
-
-    <!-- Google Analytics tag -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4P58D67RQV"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            
-            // Replace 'G-XXXXXXXXXX' with your actual GA4 Measurement ID
-            gtag('config', 'G-4P58D67RQV');
-        
-            // Custom event tracking for button click
-            document.getElementById("customEventButton").addEventListener("click", function() {
-                gtag('event', 'button_click', { 
-                    'event_category': 'engagement',
-                    'event_label': 'Custom Button',
-                    'value': 1
-                });
-                alert("Custom event 'button_click' has been sent to GA4!");
+    
+    <div class="button-container">
+        <button onclick="sendButtonClickEvent()">Click Me</button>
+    </div>
+    
+    <script>
+        function sendButtonClickEvent() {
+            // Sending custom event to GA4
+            gtag('event', 'button_click', {
+                'event_category': 'engagement',
+                'event_label': 'Homepage Button',
+                'value': 1
             });
-        </script>
+            
+            // Alert for user feedback
+            alert("Button click event sent to Google Analytics 4!");
+        }
+    </script>
+
 </body>
 </html>
