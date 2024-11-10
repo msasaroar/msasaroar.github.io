@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Events in GA4</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR-GA4-ID"></script>
+    <script>
+        // Initialize gtag with GA4 tracking ID
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'YOUR-GA4-ID');
+    </script>
+</head>
+<body>
+    <h1>Welcome to Our E-commerce Store</h1>
+
+    <!-- Product List (View Item Event) -->
+    <h2>Product List</h2>
+    <div id="productList">
+        <div class="product" data-product-id="1" data-product-name="Laptop" data-price="1000">
+            <h3>Laptop</h3>
+            <p>Price: $1000</p>
+            <button onclick="viewItem(1, 'Laptop', 1000)">View Item</button>
+            <button onclick="addToCart(1, 'Laptop', 1000)">Add to Cart</button>
+        </div>
+        <div class="product" data-product-id="2" data-product-name="Smartphone" data-price="600">
+            <h3>Smartphone</h3>
+            <p>Price: $600</p>
+            <button onclick="viewItem(2, 'Smartphone', 600)">View Item</button>
+            <button onclick="addToCart(2, 'Smartphone', 600)">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- Cart Section (View Cart Event) -->
+    <h2>Your Cart</h2>
+    <div id="cart">
+        <button onclick="viewCart()">View Cart</button>
+    </div>
+
+    <!-- Checkout Section (Begin Checkout Event) -->
+    <h2>Checkout</h2>
+    <div id="checkout">
+        <button onclick="beginCheckout()">Begin Checkout</button>
+    </div>
+
+    <!-- Purchase Section (Purchase Event) -->
+    <h2>Complete Your Purchase</h2>
+    <div id="purchase">
+        <button onclick="purchase()">Complete Purchase</button>
+    </div>
+
+    <!-- Refund Section (Refund Event) -->
+    <h2>Request a Refund</h2>
+    <div id="refund">
+        <button onclick="refund()">Request Refund</button>
+    </div>
+
+    <script>
+        // Function to trigger the "view_item" event
+        function viewItem(productId, productName, price) {
+            gtag('event', 'view_item', {
+                "currency": "USD",
+                "item_id": productId,
+                "item_name": productName,
+                "price": price
+            });
+            alert('View Item event triggered for ' + productName);
+        }
+
+        // Function to trigger the "add_to_cart" event
+        function addToCart(productId, productName, price) {
+            gtag('event', 'add_to_cart', {
+                "currency": "USD",
+                "item_id": productId,
+                "item_name": productName,
+                "price": price,
+                "quantity": 1
+            });
+            alert('Add to Cart event triggered for ' + productName);
+        }
+
+        // Function to trigger the "view_cart" event
+        function viewCart() {
+            gtag('event', 'view_cart', {
+                "currency": "USD",
+                "items": [
+                    {
+                        "item_id": "1",
+                        "item_name": "Laptop",
+                        "price": 1000
+                    },
+                    {
+                        "item_id": "2",
+                        "item_name": "Smartphone",
+                        "price": 600
+                    }
+                ]
+            });
+            alert('View Cart event triggered');
+        }
+
+        // Function to trigger the "begin_checkout" event
+        function beginCheckout() {
+            gtag('event', 'begin_checkout', {
+                "currency": "USD",
+                "transaction_id": "TX12345",
+                "affiliation": "Online Store",
+                "coupon": "SUMMER21",
+                "items": [
+                    {
+                        "item_id": "1",
+                        "item_name": "Laptop",
+                        "price": 1000,
+                        "quantity": 1
+                    },
+                    {
+                        "item_id": "2",
+                        "item_name": "Smartphone",
+                        "price": 600,
+                        "quantity": 1
+                    }
+                ]
+            });
+            alert('Begin Checkout event triggered');
+        }
+
+        // Function to trigger the "purchase" event
+        function purchase() {
+            gtag('event', 'purchase', {
+                "currency": "USD",
+                "transaction_id": "TX12345",
+                "affiliation": "Online Store",
+                "value": 1600,
+                "coupon": "SUMMER21",
+                "items": [
+                    {
+                        "item_id": "1",
+                        "item_name": "Laptop",
+                        "price": 1000,
+                        "quantity": 1
+                    },
+                    {
+                        "item_id": "2",
+                        "item_name": "Smartphone",
+                        "price": 600,
+                        "quantity": 1
+                    }
+                ]
+            });
+            alert('Purchase event triggered');
+        }
+
+        // Function to trigger the "refund" event
+        function refund() {
+            gtag('event', 'refund', {
+                "currency": "USD",
+                "transaction_id": "TX12345",
+                "items": [
+                    {
+                        "item_id": "1",
+                        "item_name": "Laptop",
+                        "price": 1000,
+                        "quantity": 1
+                    }
+                ]
+            });
+            alert('Refund event triggered');
+        }
+    </script>
+
+</body>
+</html>
