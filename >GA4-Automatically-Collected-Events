@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GA4 Automatically Collected Events</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR-GA4-ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'YOUR-GA4-ID'); // Replace with your GA4 property ID
+
+        // Manually fire first_visit event after page load (GA4 does this automatically on first visit)
+        window.addEventListener('load', function () {
+            gtag('event', 'first_visit');
+        });
+    </script>
+</head>
+<body>
+
+    <!-- Page View Event -->
+    <h1>Automatically Collected Events - GA4</h1>
+    <p>This page demonstrates the automatically collected events in GA4.</p>
+
+    <!-- Add a button to simulate session_start (triggering a new session) -->
+    <button id="startSessionBtn" onclick="startNewSession()">Start New Session</button>
+    
+    <!-- Simulate User Engagement (scrolling or interacting with page) -->
+    <p id="engageMsg">Scroll down to engage with the page and trigger user engagement event.</p>
+
+    <div style="height: 1000px; background-color: lightblue;">Scroll down to trigger user engagement.</div>
+
+    <!-- Track page view event -->
+    <div id="pageViewTrigger" style="padding: 10px; background-color: lightgreen;">
+        <h2>Welcome to the Page!</h2>
+        <p>This content will be tracked under the 'page_view' event.</p>
+    </div>
+
+    <!-- Simulate User Interaction (session_start, user_engagement) -->
+    <div id="userInteraction">
+        <p>Click below to simulate user interaction.</p>
+        <button onclick="triggerEngagement()">Trigger User Engagement</button>
+    </div>
+
+    <!-- App Exception (Simulated for Web) -->
+    <div>
+        <button onclick="triggerException()">Simulate App Exception</button>
+    </div>
+
+    <script>
+        // Start new session (simulated)
+        function startNewSession() {
+            console.log("New session started");
+            gtag('event', 'session_start');
+        }
+
+        // Trigger user engagement event (this would typically be triggered by scrolling, clicking, etc.)
+        function triggerEngagement() {
+            console.log("User engagement triggered");
+            gtag('event', 'user_engagement', {
+                'engagement_time_msec': 1000
+            });
+        }
+
+        // Simulate app_exception event for web (this is usually for mobile apps)
+        function triggerException() {
+            console.log("App exception triggered");
+            gtag('event', 'app_exception', {
+                'fatal': true,
+                'exception_message': 'Simulated exception on page',
+                'exception_stacktrace': 'Error at line 20'
+            });
+        }
+
+        // Track page view manually (although GA4 automatically tracks this)
+        gtag('event', 'page_view', {
+            'page_location': window.location.href,
+            'page_referrer': document.referrer,
+            'page_title': document.title
+        });
+    </script>
+
+</body>
+</html>
