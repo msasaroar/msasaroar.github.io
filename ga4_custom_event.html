@@ -3,45 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GA4 Custom Event Tracking Example</title>
-
-    <!-- Link to External CSS -->
-    <link rel="stylesheet" href="styles.css">
-    
-    <!-- Google Analytics 4 Measurement ID -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4P58D67RQV"></script>
+    <title>Track Button Clicks</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
     <script>
+        // Initialize gtag
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-4P58D67RQV'); // Replace with your GA4 Measurement ID
+        gtag('config', 'G-XXXXXXX'); // Replace with your GA4 property ID
+    </script>
+
+    <script>
+        // Generic button click tracking without event listeners for each button
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('button'); // Track all button clicks
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const buttonText = this.textContent || this.innerText; // Get button text for the event label
+                    gtag('event', 'button_click', {
+                        'event_category': 'Button',
+                        'event_label': buttonText, // Add button text as event label
+                        'value': 1 // You can add any numeric value or leave as is
+                    });
+                });
+            });
+        });
     </script>
 </head>
 <body>
-
-<h1>GA4 Custom Events Example</h1>
-
-<!-- Button without Event Tracking -->
-<button id="signup-button">Sign Up</button>
-
-<!-- Form without Event Tracking -->
-<form id="contact-form">
-    <h3>Contact Us</h3>
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <button type="submit">Submit</button>
-</form>
-
-<!-- Video without Event Tracking -->
-<video id="sample-video" width="320" height="240" controls>
-    <source src="sample-video.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
-
-<!-- Scroll Event Removed -->
-
-<!-- File Download Link without Event Tracking -->
-<a href="sample-document.pdf" download="sample-document.pdf" id="download-link">Download PDF</a>
-
+    <button>Click Me!</button>
+    <button>Submit Form</button>
+    <button>Buy Now</button>
 </body>
 </html>
