@@ -1,56 +1,57 @@
-যৌনশক্তি বর্ধক হালুয়া তৈরি করতে উপরে উল্লেখিত উপাদানগুলো ব্যবহার করে আপনি একটি পুষ্টিকর এবং শক্তিবর্ধক হালুয়া তৈরি করতে পারেন। নিচে তার রেসিপিটি দেওয়া হলো:
+GA4 #10 : Install GA Tag on Website Using Plugin
+Learn to set up Google Analytics 4 tracking on your website through a plugin, which simplifies the installation process without manually editing your site's code. Using a plugin is particularly helpful for WordPress and other CMS-based sites where direct code access may be limited.
 
-উপকরণ:
-01.অশ্বগন্ধা গুঁড়ো - ১ টেবিল চামচ
-02.আখরোট - ১/৪ কাপ (গুঁড়ো করা)
-03.আদা গুঁড়ো - ১/২ চা চামচ
-04.এলাচ গুঁড়ো - ১/২ চা চামচ
-05.কাজু বাদাম - ১/৪ কাপ (গুঁড়ো করা)
-06.কাঠ বাদাম - ১/৪ কাপ (গুঁড়ো করা)
-07.কালো গোলমরিচ গুঁড়ো - ১ চিমটি
-08.কালো জিরা গুঁড়ো - ১/৪ চা চামচ
-09.কিসমিস - ১/৪ কাপ
-10.কেশর - ১ চিমটি (দুধে ভিজিয়ে রাখা)
-11.খেজুর - ৫-৬ টি (গুড়ো করে নিন)
-12.গমের আটা - ১ কাপ
-13.ঘি - ১/২ কাপ
-14.চিনি বা গুড় - ১/২ কাপ (স্বাদ অনুযায়ী)
-15.মধু - ২ টেবিল চামচ
-16.ছোলা বেসন - ১/২ কাপ
-17.জয়ফল গুঁড়ো - ১ চিমটি
-18.জাফরান - ১ চিমটি
-19.দারুচিনি গুঁড়ো - ১/৪ চা চামচ
-20.দুধ - ২ কাপ
-21.পেস্তা বাদাম - ১/৪ কাপ (গুঁড়ো করা)
-22.চীনা বাদাম - ১/৪ কাপ (গুঁড়ো করা)
-23.মেথি গুঁড়ো - ১/২ চা চামচ
-24.লবঙ্গ গুঁড়ো - ১/৪ চা চামচ
-25.শতমূলী গুঁড়ো - ১ চা চামচ
-26.শিলাজিত - ১/৪ চা চামচ (ঐচ্ছিক, ১ চিমটি পরিমাণ)
+1. Log into Google Analytics and Retrieve Your Measurement ID
+Access Your GA4 Property: Log into Google Analytics and select the GA4 property you want to connect to your website.
+Find Measurement ID:
+Go to Admin (bottom left) > Data Streams under the Property column.
+Select your website data stream.
+Copy the Measurement ID (in the format G-XXXXXX), which you'll need to enter into the plugin.
 
-প্রস্তুত প্রণালী:
-1. প্রথমে একটি পাত্রে ঘি গরম করুন। ঘি গরম হয়ে গেলে তাতে গমের আটা ও ছোলা বেসন দিয়ে হালকা আঁচে ভাজুন যতক্ষণ না আটা সোনালী বাদামী হয়ে যায় এবং সুগন্ধ বের হয়।
-2. আটা ও বেসন ভাজা হয়ে গেলে তাতে কাঠ বাদাম, কাজু বাদাম, আখরোট, পেস্তা বাদাম ও চীনা বাদাম যোগ করুন এবং কিছুক্ষণ ভাজুন।
-3. এরপর এতে আদা গুঁড়ো, এলাচ গুঁড়ো, কালো গোলমরিচ, কালো জিরা, দারুচিনি গুঁড়ো, লবঙ্গ গুঁড়ো, মেথি গুঁড়ো, শতমূলী গুঁড়ো, জয়ফল গুঁড়ো, অশ্বগন্ধা গুঁড়ো এবং শিলাজিত যোগ করে ভালোভাবে মিশিয়ে নিন।
-4. যখন সবকিছু ভালোভাবে ভাজা হয়ে যাবে, তখন এতে কিসমিস, খেজুর, কেশর (দুধে ভেজানো), জাফরান, চিনি বা গুড় এবং মধু দিয়ে ভালোভাবে মেশান।
-5. এবার ধীরে ধীরে দুধ ঢেলে ভালোভাবে নাড়তে থাকুন যাতে মিশ্রণটি মাখনের মত হয়ে যায়।
-6. সব উপাদান ভালোভাবে মিশে গেলে চুলা থেকে নামিয়ে ঠান্ডা করতে দিন।
-7. মিশ্রণ ঠান্ডা হলে একটি পাত্রে ঢেলে সেটে রেখে দিন। আপনি চাইলে এটি ছোট ছোট আকারে কেটে পরিবেশন করতে পারেন।
+2. Choose and Install a Suitable Plugin for Google Analytics
+Select a Plugin: If your site uses WordPress, popular plugins for GA4 include Site Kit by Google, MonsterInsights, or GA Google Analytics. These plugins simplify GA4 installation by automatically inserting the tag across your website.
+Install the Plugin:
+In your WordPress dashboard, go to Plugins > Add New.
+Search for the plugin of your choice, such as "Site Kit by Google."
+Click Install Now and then Activate.
 
-সংরক্ষণ:
-এই হালুয়া ঠান্ডা হয়ে গেলে এটি ফ্রিজে সংরক্ষণ করুন এবং প্রতিদিন একটি ছোট টুকরা খাবেন।
-এই হালুয়া শরীরের শক্তি বৃদ্ধি করে এবং যৌনশক্তি বৃদ্ধিতে সহায়ক। এটি নিয়মিত খেলে শরীরের সার্বিক স্বাস্থ্যও ভালো থাকে।
+3. Configure the Plugin with Your GA4 Measurement ID
+Open Plugin Settings:
+After activating, find the plugin in the sidebar or under Settings.
+Access the plugin settings, where you’ll be able to connect your Google Analytics account.
+Add Measurement ID:
+Follow the plugin’s instructions to connect to Google Analytics.
+Enter the GA4 Measurement ID (G-XXXXXX) copied in Step 1.
+Some plugins, like Site Kit, may also authenticate with Google directly to automatically populate this ID.
 
+4. Verify Tracking in Google Analytics
+Enable DebugView in GA4: In Google Analytics, go to Realtime > DebugView (under the Reports section). This will allow you to see your site data in real-time and verify that tracking is active.
+Visit Your Website:
+Open your website in an Incognito window (to avoid cached sessions).
+Perform a few actions on your site, such as visiting different pages, to trigger events in GA4.
+Check for Active Sessions: Return to the DebugView tab in GA4 to confirm that your actions are being tracked. You should see your site visit and any interactions you performed.
 
+5. Configure Additional Tracking Settings in the Plugin
+Enhanced Measurement: Some plugins, like Site Kit, offer additional configuration options like enhanced measurement to automatically track page views, scrolls, and outbound clicks.
+Enable enhanced measurement options, if available, for a more comprehensive view of user interactions.
+Events and Goals:
+Plugins like MonsterInsights provide simplified event tracking setups, allowing you to specify actions to track, such as downloads or button clicks, without extra configuration in GA4.
 
-            <div class="topics">
-                <a href="ga4.html"> Google Analytics 4 (GA4) </a>
-                <a href="gtm.html"> Google Tag Manager (GTM) </a>
-                <a href="videolink.html"> Video Tutorials </a>
-                <a href="links.html"> Links </a>
-                <a href="download.html"> Download </a>
-                <a href="eshop.html"> Demo eShop </a>
-                <a href="search-on-youtube.html">Search</a>
-            </div>
-			
-			এই <div> লিংক গুলোকে বাটনের চেহারা দিতে উপরোক্ত style sheet এ কি পরিবর্তন করতে হবে ?
+6. Test Your Configuration Using Google Tag Assistant
+Install Tag Assistant Extension:
+Download and install the Google Tag Assistant Chrome extension.
+Verify Tag Firing:
+Open Tag Assistant and visit your website with the extension enabled.
+Confirm that the GA4 tag is detected and correctly firing on all pages.
+
+7. Review Data Flow in GA4 Reports
+Wait for Data to Populate: GA4 may take a few hours to display data fully in reports.
+Check Standard Reports:
+In GA4, go to Reports > Realtime and Reports > Engagement > Events to verify that visitor data is being recorded.
+Confirm that page views and interactions reflect visits to your site.
+
+8. Troubleshoot Common Issues
+No Data in GA4: Double-check that the Measurement ID is correctly entered in the plugin settings.
+Check Browser Console for Errors: Use your browser’s Developer Console to look for any GA4-related errors that could prevent data from tracking.
+
+By following these steps, you’ll have successfully installed the GA4 tag on your website using a plugin, which allows Google Analytics 4 to start gathering and reporting data on user interactions. Regularly check your GA4 reports to verify accurate tracking and get insights into visitor behavior.
