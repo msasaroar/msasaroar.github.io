@@ -114,7 +114,14 @@
     <div class="sidebar">
         <div class="tree-menu">
             <ul>
-                
+                <li onclick="toggleSubMenu(this)" onmouseover="showTooltip(event)" onmouseout="hideTooltip(event)">
+                    <span class="toggle-btn">+</span>Google Analytics 4(GA4)
+                    <ul>
+                        <li onclick="loadContent('page1.html')" onmouseover="showTooltip(event)" onmouseout="hideTooltip(event)">Subpage 1.1</li>
+                        <li onclick="loadContent('page2.html')" onmouseover="showTooltip(event)" onmouseout="hideTooltip(event)">Subpage 1.2</li>
+                    </ul>
+                </li>
+
                 <li onclick="toggleSubMenu(this)" onmouseover="showTooltip(event)" onmouseout="hideTooltip(event)">
                     <span class="toggle-btn">+</span>Google Analytics 4(GA4)
                     <ul>
