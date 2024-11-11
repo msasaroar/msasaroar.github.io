@@ -5,8 +5,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GA4 Topics</title>
 
-    <!-- Link to External CSS -->
-    <!--<link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        header, footer {
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        header {
+            background-color: #0073e6;
+        }
+
+        footer {
+            background-color: #333;
+            font-size: 0.9em;
+        }
+
+        .topics a {
+            margin: 10px;
+            padding: 10px;
+            text-decoration: none;
+            background-color: #0073e6;
+            color: white;
+            border-radius: 5px;
+            border: 2px solid #004a99;
+        }
+
+        .topics-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .topic-card {
+            margin: 10px;
+            padding: 15px;
+            background-color: #ffffff;
+            border: 2px solid #0073e6;
+            border-radius: 5px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+        }
+
+        .topic-card:hover {
+            transform: scale(1.05);
+            background-color: #e6f2ff;
+        }
+
+        .topic-card a {
+            color: #0073e6;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .error-message {
+            color: red;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        footer a {
+            color: #0073e6;
+            text-decoration: none;
+        }
+    </style>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4P58D67RQV"></script>
@@ -16,7 +89,6 @@
         gtag('js', new Date());
         gtag('config', 'G-4P58D67RQV');
     </script>
-
 
     <script>
         function showWarning(title, link) {
