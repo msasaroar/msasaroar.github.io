@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tree Menu with Text File Content</title>
+    <title>Demo Website</title>
     <style>
         body {
             display: flex;
@@ -114,26 +114,37 @@
     <div class="sidebar">
         <div class="tree-menu">
             <ul>
+                
                 <li onclick="toggleSubMenu(this)" onmouseover="showTooltip(event)" onmouseout="hideTooltip(event)">
-                    <span class="toggle-btn">+</span> Page 1
+                    <span class="toggle-btn">+</span>Google Analytics 4(GA4)
                     <ul>
                         <li onclick="loadContent('page1.html')" onmouseover="showTooltip(event)" onmouseout="hideTooltip(event)">Subpage 1.1</li>
                         <li onclick="loadContent('page2.html')" onmouseover="showTooltip(event)" onmouseout="hideTooltip(event)">Subpage 1.2</li>
                     </ul>
                 </li>
+
                 <li onclick="toggleSubMenu(this)" onmouseover="showTooltip(event)" onmouseout="hideTooltip(event)">
-                    <span class="toggle-btn">+</span> Page 2
+                    <span class="toggle-btn">+</span>Google Tag Manager(GTM)
+                    <ul>
+                        <li onclick="loadContent('page1.html')" onmouseover="showTooltip(event)" onmouseout="hideTooltip(event)">Subpage 1.1</li>
+                        <li onclick="loadContent('page2.html')" onmouseover="showTooltip(event)" onmouseout="hideTooltip(event)">Subpage 1.2</li>
+                    </ul>
+                </li>
+
+                <li onclick="toggleSubMenu(this)" onmouseover="showTooltip(event)" onmouseout="hideTooltip(event)">
+                    <span class="toggle-btn">+</span>Note
                     <ul>
                         <li onclick="loadContent('page1.txt')" onmouseover="showTooltip(event)" onmouseout="hideTooltip(event)">Subpage 2.1</li>
                         <li onclick="loadContent('page2.txt')" onmouseover="showTooltip(event)" onmouseout="hideTooltip(event)">Subpage 2.2 (Text File)</li>
                     </ul>
                 </li>
+                
             </ul>
         </div>
     </div>
 
     <div class="content">
-        <div class="header">Content Heading</div>
+        <div class="header">Demo Website For Web Tracking With GA4 & GTM</div>
         <div class="main-content" id="content-display">Click on a menu item to load content.</div>
     </div>
 
