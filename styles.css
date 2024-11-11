@@ -23,8 +23,20 @@ body {
     color: #333;
     line-height: 1.6;
     overflow: hidden; /* পুরো পেজে স্ক্রল বার নিষ্ক্রিয় */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    text-align: center;
+    flex-direction: column;
 }
 
+/* ভিতরের সব ডিভ এবং অন্যান্য এলিমেন্টকে সেন্টার করার জন্য */
+div {
+    margin: 20px 0;
+}
 
 /* Global container styling */
 .container {
