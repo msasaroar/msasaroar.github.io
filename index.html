@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tree Menu with Sub-Nodes</title>
+    <title>Tree Menu with Tooltips</title>
     <style>
         body {
             display: flex;
             font-family: Arial, sans-serif;
-            margin: 5;
+            margin: 0;
             padding: 0;
             height: 100vh;
         }
@@ -17,6 +17,7 @@
             background-color: #f4f4f4;
             padding: 10px;
             box-shadow: 2px 0px 5px rgba(0,0,0,0.1);
+            position: relative;
         }
         .content {
             flex: 1;
@@ -62,6 +63,24 @@
             cursor: pointer;
             font-weight: bold;
         }
+
+        /* Tooltip Styling */
+        .tooltip {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            white-space: nowrap;
+            z-index: 1000;
+            transform: translateY(-120%);
+        }
+
+        .tree-menu li:hover .tooltip {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -69,18 +88,30 @@
     <div class="sidebar">
         <div class="tree-menu">
             <ul>
-                <li onclick="toggleSubMenu(this)">Page 1
+                <li onclick="toggleSubMenu(this)">
+                    Page 1
+                    <span class="tooltip">This is Page 1</span>
                     <span class="toggle-btn">+</span>
                     <ul>
-                        <li onclick="loadContent('page1.html')">Subpage 1.1</li>
-                        <li onclick="loadContent('page2.html')">Subpage 1.2</li>
+                        <li onclick="loadContent('page1.html')">Subpage 1.1
+                            <span class="tooltip">This is Subpage 1.1</span>
+                        </li>
+                        <li onclick="loadContent('page2.html')">Subpage 1.2
+                            <span class="tooltip">This is Subpage 1.2</span>
+                        </li>
                     </ul>
                 </li>
-                <li onclick="toggleSubMenu(this)">Page 2
+                <li onclick="toggleSubMenu(this)">
+                    Page 2
+                    <span class="tooltip">This is Page 2</span>
                     <span class="toggle-btn">+</span>
                     <ul>
-                        <li onclick="loadContent('page3.html')">Subpage 2.1</li>
-                        <li onclick="loadContent('page4.txt')">Subpage 2.2 (Text File)</li>
+                        <li onclick="loadContent('page3.html')">Subpage 2.1
+                            <span class="tooltip">This is Subpage 2.1</span>
+                        </li>
+                        <li onclick="loadContent('page4.txt')">Subpage 2.2 (Text File)
+                            <span class="tooltip">This is Subpage 2.2</span>
+                        </li>
                     </ul>
                 </li>
             </ul>
