@@ -8,7 +8,7 @@
         body {
             display: flex;
             font-family: Arial, sans-serif;
-            margin: 0;
+            margin: 5;
             padding: 0;
             height: 100vh;
         }
@@ -106,8 +106,8 @@
                     Page 2
                     <span class="toggle-btn">+</span>
                     <ul>
-                        <li onclick="loadContent('page1.txt')" onmouseover="showTooltip(event)" onmouseout="hideTooltip(event)">Subpage 2.1</li>
-                        <li onclick="loadContent('page2.txt')" onmouseover="showTooltip(event)" onmouseout="hideTooltip(event)">Subpage 2.2 (Text File)</li>
+                        <li onclick="loadContent('page3.html')" onmouseover="showTooltip(event)" onmouseout="hideTooltip(event)">Subpage 2.1</li>
+                        <li onclick="loadContent('page4.txt')" onmouseover="showTooltip(event)" onmouseout="hideTooltip(event)">Subpage 2.2 (Text File)</li>
                     </ul>
                 </li>
             </ul>
@@ -144,9 +144,14 @@
 
         // Toggle sub-menu visibility
         function toggleSubMenu(element) {
-            element.classList.toggle('open');
+            const subMenu = element.querySelector('ul');
             const toggleBtn = element.querySelector('.toggle-btn');
-            toggleBtn.textContent = toggleBtn.textContent === '+' ? '-' : '+';
+
+            // Toggle the current sub-menu visibility
+            if (subMenu) {
+                subMenu.style.display = subMenu.style.display === 'block' ? 'none' : 'block';
+                toggleBtn.textContent = toggleBtn.textContent === '+' ? '-' : '+';
+            }
         }
 
         // Show tooltip when hovering over a menu item
