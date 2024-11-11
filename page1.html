@@ -1,2 +1,91 @@
-<h2>Subpage 1.1 Content</h2>
-<p>This is the content of Subpage 1.1.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GA4 Topics</title>
+
+    <!-- Link to External CSS -->
+    <!--<link rel="stylesheet" href="styles.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4P58D67RQV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-4P58D67RQV');
+    </script>
+
+
+    <script>
+        function showWarning(title, link) {
+            if (confirm("Are you sure you want to view the topic: " + title + "?")) {
+                try {
+                    window.location.href = link;
+                } catch (error) {
+                    document.getElementById("error-message").textContent = 
+                        "An error occurred while trying to navigate to the topic: " + title + ". Please try again later.";
+                }
+            }
+        }
+    </script>
+    
+</head>
+<body>
+    <header>
+        <h1>Demo Website For Web Tracking With GA4 & GTM</h1>
+        <p>Explore comprehensive tutorials, guides, and tips to become proficient in GA4 and GTM. Start learning and take your analytics skills to the next level!</p>
+        <div class="topics">
+            <a href="0100-ga4-topic.html">GA4 : Topic</a>
+            <a href="0200-ga4-event.html">GA4 : Event</a>
+            <a href="0300-gtm-topic.html">GTM : Topic</a>
+            <a href="0400-gtm-event.html">GTM : Event</a>
+            <a href="0500-video-link.html">Video Tutorials</a>
+            <a href="0600-e-shop.html">Demo eShop</a>
+            <a href="9800-download.html">Download</a>
+            <a href="9900-contact-us.html">Contact Us</a>
+        </div> 
+    </header>
+
+    <main>
+        <h2>GA4 Topics</h2>
+        
+        <div class="topics-container">
+            <div class="topic-card">
+                <a href="#" onclick="showWarning('Difference between Google Universal Analytics & GA4', 'ga4-topic01.html')">
+                    Difference between Google Universal Analytics & GA4
+                </a>
+            </div>
+            <div class="topic-card">
+                <a href="#" onclick="showWarning('Install Google Analytics 4 on Website', 'ga4-topic02.html')">
+                    Install Google Analytics 4 on Website
+                </a>
+            </div>
+            <div class="topic-card">
+                <a href="#" onclick="showWarning('Get Access to Google Analytics Demo Account', 'ga4-topic03.html')">
+                    Get Access to Google Analytics Demo Account
+                </a>
+            </div>
+            <div class="topic-card">
+                <a href="#" onclick="showWarning('Walkthrough of Google Analytics Dashboard', 'ga4-topic04.html')">
+                    Walkthrough of Google Analytics Dashboard
+                </a>
+            </div>
+            <div class="topic-card">
+                <a href="#" onclick="showWarning('What is the Realtime Report in GA4', 'ga4-topic05.html')">
+                    What is the Realtime Report in GA4
+                </a>
+            </div>
+            <!-- Additional topics can be added here in the same format -->
+        </div>
+        
+        <p id="error-message" class="error-message"></p>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Demo Website For Web Tracking With GA4 & GTM. All Rights Reserved.</p>
+        <p>Connect with us on <a href="#">LinkedIn</a> | <a href="#">Twitter</a> | <a href="https://www.facebook.com/msasaroar">Facebook</a></p>
+    </footer>
+</body>
+</html>
