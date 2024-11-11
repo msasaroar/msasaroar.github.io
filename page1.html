@@ -3,146 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GA4 Topics</title>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-        }
-
-        header, footer {
-            padding: 20px;
-            text-align: center;
-            color: white;
-        }
-
-        header {
-            background-color: #0073e6;
-        }
-
-        footer {
-            background-color: #333;
-            font-size: 0.9em;
-        }
-
-        .topics a {
-            margin: 10px;
-            padding: 10px;
-            text-decoration: none;
-            background-color: #0073e6;
-            color: white;
-            border-radius: 5px;
-            border: 2px solid #004a99;
-        }
-
-        .topics-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .topic-card {
-            margin: 10px;
-            padding: 15px;
-            background-color: #ffffff;
-            border: 2px solid #0073e6;
-            border-radius: 5px;
-            width: 300px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.2s;
-        }
-
-        .topic-card:hover {
-            transform: scale(1.05);
-            background-color: #e6f2ff;
-        }
-
-        .topic-card a {
-            color: #0073e6;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .error-message {
-            color: red;
-            text-align: center;
-            font-weight: bold;
-            margin-top: 10px;
-        }
-
-        footer a {
-            color: #0073e6;
-            text-decoration: none;
-        }
-    </style>
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4P58D67RQV"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>GA4 Automatically Collected Events</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR-GA4-ID"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-4P58D67RQV');
-    </script>
+        gtag('config', 'G-4P58D67RQV'); // Replace with your GA4 property ID
 
-    <script>
-        function showWarning(title, link) {
-            if (confirm("Are you sure you want to view the topic: " + title + "?")) {
-                try {
-                    window.location.href = link;
-                } catch (error) {
-                    document.getElementById("error-message").textContent = 
-                        "An error occurred while trying to navigate to the topic: " + title + ". Please try again later.";
-                }
-            }
-        }
+        // Manually fire first_visit event after page load (GA4 does this automatically on first visit)
+        window.addEventListener('load', function () {
+            gtag('event', 'first_visit');
+        });
     </script>
-    
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        h1, p {
+            text-align: center;
+        }
+
+        /* Centering the buttons container */
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .scroll-section {
+            height: 300px;
+            width: 100%;
+            background-color: lightblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 
-    <main>
-        
-        <div class="topics-container">
-            <div class="topic-card">
-                <a href="#" onclick="showWarning('Difference between Google Universal Analytics & GA4', 'ga4-topic01.html')">
-                    Difference between Google Universal Analytics & GA4
-                </a>
-            </div>
-            <div class="topic-card">
-                <a href="#" onclick="showWarning('Install Google Analytics 4 on Website', 'ga4-topic02.html')">
-                    Install Google Analytics 4 on Website
-                </a>
-            </div>
-            <div class="topic-card">
-                <a href="#" onclick="showWarning('Get Access to Google Analytics Demo Account', 'ga4-topic03.html')">
-                    Get Access to Google Analytics Demo Account
-                </a>
-            </div>
-            <div class="topic-card">
-                <a href="#" onclick="showWarning('Walkthrough of Google Analytics Dashboard', 'ga4-topic04.html')">
-                    Walkthrough of Google Analytics Dashboard
-                </a>
-            </div>
-            <div class="topic-card">
-                <a href="#" onclick="showWarning('What is the Realtime Report in GA4', 'ga4-topic05.html')">
-                    What is the Realtime Report in GA4
-                </a>
-            </div>
-            <!-- Additional topics can be added here in the same format -->
-        </div>
-        
-        <p id="error-message" class="error-message"></p>
-    </main>
+    <!-- Page View Event -->
+    <h1>Automatically Collected Events - GA4</h1>
+    <p>This page demonstrates the automatically collected events in GA4.</p>
 
-    <footer>
-        <p>&copy; 2024 Demo Website For Web Tracking With GA4 & GTM. All Rights Reserved.</p>
-        <p>Connect with us on <a href="#">LinkedIn</a> | <a href="#">Twitter</a> | <a href="https://www.facebook.com/msasaroar">Facebook</a></p>
-    </footer>
+    <div class="button-container">
+        <!-- Add a button to simulate session_start (triggering a new session) -->
+        <button id="startSessionBtn" onclick="startNewSession()">Start New Session</button>
+
+        <!-- Simulate User Interaction (session_start, user_engagement) -->
+        <button onclick="triggerEngagement()">Trigger User Engagement</button>
+
+        <!-- App Exception (Simulated for Web) -->
+        <button onclick="triggerException()">Simulate App Exception</button>
+    </div>
+
+    <!-- Simulate User Engagement (scrolling or interacting with page) -->
+    <div class="scroll-section">
+        <p>Scroll down to trigger user engagement.</p>
+    </div>
+
+    <script>
+        // Start new session (simulated)
+        function startNewSession() {
+            console.log("New session started");
+            gtag('event', 'session_start');
+        }
+
+        // Trigger user engagement event (this would typically be triggered by scrolling, clicking, etc.)
+        function triggerEngagement() {
+            console.log("User engagement triggered");
+            gtag('event', 'user_engagement', {
+                'engagement_time_msec': 1000
+            });
+        }
+
+        // Simulate app_exception event for web (this is usually for mobile apps)
+        function triggerException() {
+            console.log("App exception triggered");
+            gtag('event', 'app_exception', {
+                'fatal': true,
+                'exception_message': 'Simulated exception on page',
+                'exception_stacktrace': 'Error at line 20'
+            });
+        }
+
+        // Track page view manually (although GA4 automatically tracks this)
+        gtag('event', 'page_view', {
+            'page_location': window.location.href,
+            'page_referrer': document.referrer,
+            'page_title': document.title
+        });
+    </script>
+
 </body>
 </html>
