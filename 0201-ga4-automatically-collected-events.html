@@ -17,46 +17,92 @@
             gtag('event', 'first_visit');
         });
     </script>
+    <style>
+        /* Modal styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4); /* Black background with opacity */
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 8px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Page View Event -->
-    <h1>Automatically Collected Events - GA4</h1>
-    <p>This page demonstrates the automatically collected events in GA4.</p>
+    <!-- Button to open modal -->
+    <button onclick="openModal()">Open Modal</button>
 
-    <!-- Add a button to simulate session_start (triggering a new session) -->
-    <button id="startSessionBtn" onclick="startNewSession()">Start New Session</button>
-    
-    <!-- Simulate User Engagement (scrolling or interacting with page) -->
-    <p id="engageMsg">Scroll down to engage with the page and trigger user engagement event.</p>
+    <!-- Modal content -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h1>Automatically Collected Events - GA4</h1>
+            <p>This page demonstrates the automatically collected events in GA4.</p>
 
-    <div style="height: 1000px; background-color: lightblue;">Scroll down to trigger user engagement.</div>
+            <button id="startSessionBtn" onclick="startNewSession()">Start New Session</button>
+            <p id="engageMsg">Scroll down to engage with the page and trigger user engagement event.</p>
 
-    <!-- Track page view event -->
-    <div id="pageViewTrigger" style="padding: 10px; background-color: lightgreen;">
-        <h2>Welcome to the Page!</h2>
-        <p>This content will be tracked under the 'page_view' event.</p>
-    </div>
+            <div style="height: 200px; background-color: lightblue;">Scroll down to trigger user engagement.</div>
 
-    <!-- Simulate User Interaction (session_start, user_engagement) -->
-    <div id="userInteraction">
-        <p>Click below to simulate user interaction.</p>
-        <button onclick="triggerEngagement()">Trigger User Engagement</button>
-    </div>
+            <div id="pageViewTrigger" style="padding: 10px; background-color: lightgreen;">
+                <h2>Welcome to the Page!</h2>
+                <p>This content will be tracked under the 'page_view' event.</p>
+            </div>
 
-    <!-- App Exception (Simulated for Web) -->
-    <div>
-        <button onclick="triggerException()">Simulate App Exception</button>
+            <div id="userInteraction">
+                <p>Click below to simulate user interaction.</p>
+                <button onclick="triggerEngagement()">Trigger User Engagement</button>
+            </div>
+
+            <div>
+                <button onclick="triggerException()">Simulate App Exception</button>
+            </div>
+        </div>
     </div>
 
     <script>
+        // Modal functions
+        function openModal() {
+            document.getElementById("myModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
         // Start new session (simulated)
         function startNewSession() {
             console.log("New session started");
             gtag('event', 'session_start');
         }
 
-        // Trigger user engagement event (this would typically be triggered by scrolling, clicking, etc.)
         function triggerEngagement() {
             console.log("User engagement triggered");
             gtag('event', 'user_engagement', {
@@ -64,7 +110,6 @@
             });
         }
 
-        // Simulate app_exception event for web (this is usually for mobile apps)
         function triggerException() {
             console.log("App exception triggered");
             gtag('event', 'app_exception', {
@@ -74,12 +119,20 @@
             });
         }
 
-        // Track page view manually (although GA4 automatically tracks this)
+        // Track page view manually
         gtag('event', 'page_view', {
             'page_location': window.location.href,
             'page_referrer': document.referrer,
             'page_title': document.title
         });
+
+        // Close modal if user clicks outside
+        window.onclick = function(event) {
+            var modal = document.getElementById("myModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
     </script>
 
 </body>
