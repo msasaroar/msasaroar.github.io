@@ -1,2 +1,83 @@
-Page 3 Content
-This is the content of Page 3. It’s a simple text file.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree Menu Example</title>
+    <style>
+        body {
+            display: flex;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #f4f4f4;
+            padding: 10px;
+            box-shadow: 2px 0px 5px rgba(0,0,0,0.1);
+        }
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+        .header {
+            padding: 20px;
+            background-color: #007bff;
+            color: white;
+            font-size: 24px;
+        }
+        .main-content {
+            padding: 20px;
+            flex: 1;
+            overflow-y: auto;
+            background-color: #ffffff;
+            border-top: 1px solid #ddd;
+        }
+        .tree-menu ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .tree-menu li {
+            padding: 5px 0;
+            cursor: pointer;
+        }
+        .tree-menu li:hover {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="tree-menu">
+            <ul>
+                <li onclick="loadContent('page1.html')">Page 1</li>
+                <li onclick="loadContent('page2.html')">Page 2</li>
+                <li onclick="loadContent('page3.txt')">Page 3 (Text File)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="header">Content Heading</div>
+        <div class="main-content" id="content-display">Click on a menu item to load content.</div>
+    </div>
+
+    <script>
+        function loadContent(url) {
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('content-display').innerHTML = data;
+                })
+                .catch(error => {
+                    document.getElementById('content-display').innerHTML = "Error loading content.";
+                });
+        }
+    </script>
+</body>
+</html>
