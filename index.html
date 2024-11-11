@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tree Menu with Tooltips</title>
+    <title>Tree Menu with Dynamic Tooltips</title>
     <style>
         body {
             display: flex;
@@ -77,10 +77,6 @@
             z-index: 1000;
             transform: translateY(-120%);
         }
-
-        .tree-menu li:hover .tooltip {
-            display: block;
-        }
     </style>
 </head>
 <body>
@@ -88,30 +84,20 @@
     <div class="sidebar">
         <div class="tree-menu">
             <ul>
-                <li onclick="toggleSubMenu(this)">
+                <li onclick="toggleSubMenu(this)" onmouseover="showTooltip(event)" onmouseout="hideTooltip(event)">
                     Page 1
-                    <span class="tooltip">This is Page 1</span>
                     <span class="toggle-btn">+</span>
                     <ul>
-                        <li onclick="loadContent('page1.html')">Subpage 1.1
-                            <span class="tooltip">This is Subpage 1.1</span>
-                        </li>
-                        <li onclick="loadContent('page2.html')">Subpage 1.2
-                            <span class="tooltip">This is Subpage 1.2</span>
-                        </li>
+                        <li onclick="loadContent('page1.html')" onmouseover="showTooltip(event)" onmouseout="hideTooltip(event)">Subpage 1.1</li>
+                        <li onclick="loadContent('page2.html')" onmouseover="showTooltip(event)" onmouseout="hideTooltip(event)">Subpage 1.2</li>
                     </ul>
                 </li>
-                <li onclick="toggleSubMenu(this)">
+                <li onclick="toggleSubMenu(this)" onmouseover="showTooltip(event)" onmouseout="hideTooltip(event)">
                     Page 2
-                    <span class="tooltip">This is Page 2</span>
                     <span class="toggle-btn">+</span>
                     <ul>
-                        <li onclick="loadContent('page3.html')">Subpage 2.1
-                            <span class="tooltip">This is Subpage 2.1</span>
-                        </li>
-                        <li onclick="loadContent('page4.txt')">Subpage 2.2 (Text File)
-                            <span class="tooltip">This is Subpage 2.2</span>
-                        </li>
+                        <li onclick="loadContent('page3.html')" onmouseover="showTooltip(event)" onmouseout="hideTooltip(event)">Subpage 2.1</li>
+                        <li onclick="loadContent('page4.txt')" onmouseover="showTooltip(event)" onmouseout="hideTooltip(event)">Subpage 2.2 (Text File)</li>
                     </ul>
                 </li>
             </ul>
@@ -141,6 +127,32 @@
             element.classList.toggle('open');
             const toggleBtn = element.querySelector('.toggle-btn');
             toggleBtn.textContent = toggleBtn.textContent === '+' ? '-' : '+';
+        }
+
+        // Show tooltip when hovering over a menu item
+        function showTooltip(event) {
+            const tooltip = document.createElement('div');
+            tooltip.className = 'tooltip';
+            tooltip.innerText = event.target.innerText;
+
+            // Append tooltip to body
+            document.body.appendChild(tooltip);
+
+            // Position the tooltip
+            const rect = event.target.getBoundingClientRect();
+            tooltip.style.left = rect.left + 'px';
+            tooltip.style.top = rect.top - 30 + 'px';
+
+            // Show the tooltip
+            tooltip.style.display = 'block';
+        }
+
+        // Hide tooltip when mouse leaves
+        function hideTooltip() {
+            const tooltip = document.querySelector('.tooltip');
+            if (tooltip) {
+                tooltip.remove();
+            }
         }
     </script>
 </body>
