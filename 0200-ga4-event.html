@@ -17,33 +17,20 @@
         gtag('config', 'G-4P58D67RQV');
     </script>
 
-    <!-- Modal styles -->
-    <style>
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.4);
+
+    <script>
+        function showWarning(title, link) {
+            if (confirm("Are you sure you want to view the topic: " + title + "?")) {
+                try {
+                    window.location.href = link;
+                } catch (error) {
+                    document.getElementById("error-message").textContent = 
+                        "An error occurred while trying to navigate to the topic: " + title + ". Please try again later.";
+                }
+            }
         }
-        .modal-content {
-            background-color: #fff;
-            margin: 10% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            max-width: 500px;
-            border-radius: 8px;
-        }
-        .close {
-            float: right;
-            font-size: 24px;
-            cursor: pointer;
-        }
-    </style>
+    </script>
+    
 </head>
 <body>
     <header>
@@ -58,7 +45,7 @@
             <a href="0600-e-shop.html">Demo eShop</a>
             <a href="9800-download.html">Download</a>
             <a href="9900-contact-us.html">Contact Us</a>
-        </div>
+        </div> 
     </header>
 
     <main>
@@ -66,40 +53,43 @@
         
         <div class="event-container">
             <div class="event-card">
-                <a href="#" onclick="openModal('0201-ga4-automatically-collected-events.html')">
+                <a href="#" onclick="showWarning('Automatically Collected Events', '0201-ga4-automatically-collected-events.html')">
                     Automatically Collected Events
                 </a>
             </div>
 
             <div class="event-card">
-                <a href="#" onclick="openModal('0202-ga4-enhanced-measurement-events.html')">
+                <a href="#" onclick="showWarning('Enhanced Measurement Events', '0202-ga4-enhanced-measurement-events.html')">
                     Enhanced Measurement Events
                 </a>
             </div>
 
             <div class="event-card">
-                <a href="#" onclick="openModal('0203-ga4-recommended-events.html')">
+                <a href="#" onclick="showWarning('Recommended Events', '0203-ga4-recommended-events.html')">
                     Recommended Events
                 </a>
             </div>
 
             <div class="event-card">
-                <a href="#" onclick="openModal('0204-ga4-e-commerce-events.html')">
+                <a href="#" onclick="showWarning('eCommerce Events', '0204-ga4-e-commerce-events.html')">
                     eCommerce Events
                 </a>
             </div>
 
             <div class="event-card">
-                <a href="#" onclick="openModal('0298-ga4-custom-event-tracking.html')">
-                    Custom Event Tracking
+                <a href="#" onclick="showWarning('Track Button Clicks.html', '0298-ga4-custom-event-tracking.html')">
+                    custom-event-tracking
                 </a>
             </div>
 
             <div class="event-card">
-                <a href="#" onclick="openModal('0299-ga4-track-button-clicks.html')">
-                    Track Button Clicks
+                <a href="#" onclick="showWarning('Track Button Clicks.html', '0299-ga4-track-button-clicks.html')">
+                    track-button-clicks
                 </a>
             </div>
+
+            <!-- Additional topics can be added here in the same format -->
+            
         </div>
         
         <p id="error-message" class="error-message"></p>
@@ -109,48 +99,5 @@
         <p>&copy; 2024 Demo Website For Web Tracking With GA4 & GTM. All Rights Reserved.</p>
         <p>Connect with us on <a href="#">LinkedIn</a> | <a href="#">Twitter</a> | <a href="https://www.facebook.com/msasaroar">Facebook</a></p>
     </footer>
-
-    <!-- Modal structure -->
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <div id="modalContent">Loading...</div>
-        </div>
-    </div>
-
-    <script>
-        // Function to open modal and load content from specified HTML file
-        function openModal(pageUrl) {
-            fetch(pageUrl)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error("Page not found");
-                    }
-                    return response.text();
-                })
-                .then(data => {
-                    document.getElementById("modalContent").innerHTML = data;
-                    document.getElementById("myModal").style.display = "block";
-                })
-                .catch(error => {
-                    document.getElementById("error-message").textContent = 
-                        "An error occurred while trying to load the content. Please try again later.";
-                });
-        }
-
-        // Function to close modal
-        function closeModal() {
-            document.getElementById("myModal").style.display = "none";
-            document.getElementById("modalContent").innerHTML = "";  // Clear previous content
-        }
-
-        // Close modal if user clicks outside of it
-        window.onclick = function(event) {
-            var modal = document.getElementById("myModal");
-            if (event.target == modal) {
-                closeModal();
-            }
-        }
-    </script>
 </body>
 </html>
