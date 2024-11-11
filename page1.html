@@ -3,99 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--<link rel="stylesheet" href="styles.css">-->
     <title>GA4 Automatically Collected Events</title>
     <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR-GA4-ID"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-4P58D67RQV'); // Replace with your GA4 property ID
-
-        // Manually fire first_visit event after page load (GA4 does this automatically on first visit)
+        gtag('config', 'G-4P58D67RQV');
         window.addEventListener('load', function () {
             gtag('event', 'first_visit');
         });
     </script>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-        
-        h1, p {
-            text-align: center;
-        }
-
-        /* Centering the buttons container */
-        .button-container {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            align-items: center;
-            margin-top: 20px;
-        }
-
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        .scroll-section {
-            height: 300px;
-            width: 100%;
-            background-color: lightblue;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
-
-    <!-- Page View Event -->
     <h1>Automatically Collected Events - GA4</h1>
     <p>This page demonstrates the automatically collected events in GA4.</p>
-
     <div class="button-container">
-        <!-- Add a button to simulate session_start (triggering a new session) -->
-        <button id="startSessionBtn" onclick="startNewSession()">Start New Session</button>
-
-        <!-- Simulate User Interaction (session_start, user_engagement) -->
+        <button onclick="startNewSession()">Start New Session</button>
         <button onclick="triggerEngagement()">Trigger User Engagement</button>
-
-        <!-- App Exception (Simulated for Web) -->
         <button onclick="triggerException()">Simulate App Exception</button>
     </div>
-
-    <!-- Simulate User Engagement (scrolling or interacting with page) -->
     <div class="scroll-section">
         <p>Scroll down to trigger user engagement.</p>
     </div>
-
     <script>
-        // Start new session (simulated)
         function startNewSession() {
             console.log("New session started");
             gtag('event', 'session_start');
         }
 
-        // Trigger user engagement event (this would typically be triggered by scrolling, clicking, etc.)
         function triggerEngagement() {
             console.log("User engagement triggered");
-            gtag('event', 'user_engagement', {
-                'engagement_time_msec': 1000
-            });
+            gtag('event', 'user_engagement', {'engagement_time_msec': 1000 });
         }
 
-        // Simulate app_exception event for web (this is usually for mobile apps)
         function triggerException() {
             console.log("App exception triggered");
             gtag('event', 'app_exception', {
@@ -105,13 +46,11 @@
             });
         }
 
-        // Track page view manually (although GA4 automatically tracks this)
         gtag('event', 'page_view', {
             'page_location': window.location.href,
             'page_referrer': document.referrer,
             'page_title': document.title
         });
     </script>
-
 </body>
 </html>
