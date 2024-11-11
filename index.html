@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tree Menu Example</title>
+    <title>Tree Menu with Sub-Nodes</title>
     <style>
         body {
             display: flex;
@@ -13,7 +13,7 @@
             height: 100vh;
         }
         .sidebar {
-            width: 200px;
+            width: 250px;
             background-color: #f4f4f4;
             padding: 10px;
             box-shadow: 2px 0px 5px rgba(0,0,0,0.1);
@@ -44,9 +44,23 @@
         .tree-menu li {
             padding: 5px 0;
             cursor: pointer;
+            position: relative;
+        }
+        .tree-menu li ul {
+            display: none;
+            padding-left: 20px;
+        }
+        .tree-menu li.open > ul {
+            display: block;
         }
         .tree-menu li:hover {
             color: #007bff;
+        }
+        .toggle-btn {
+            position: absolute;
+            left: -15px;
+            cursor: pointer;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -55,9 +69,20 @@
     <div class="sidebar">
         <div class="tree-menu">
             <ul>
-                <li onclick="loadContent('page1.html')">Page 1</li>
-                <li onclick="loadContent('page2.html')">Page 2</li>
-                <li onclick="loadContent('page3.txt')">Page 3 (Text File)</li>
+                <li onclick="toggleSubMenu(this)">Page 1
+                    <span class="toggle-btn">+</span>
+                    <ul>
+                        <li onclick="loadContent('page1.html')">Subpage 1.1</li>
+                        <li onclick="loadContent('page2.html')">Subpage 1.2</li>
+                    </ul>
+                </li>
+                <li onclick="toggleSubMenu(this)">Page 2
+                    <span class="toggle-btn">+</span>
+                    <ul>
+                        <li onclick="loadContent('page3.html')">Subpage 2.1</li>
+                        <li onclick="loadContent('page4.txt')">Subpage 2.2 (Text File)</li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>
@@ -68,6 +93,7 @@
     </div>
 
     <script>
+        // Load content function to fetch content based on clicked node
         function loadContent(url) {
             fetch(url)
                 .then(response => response.text())
@@ -77,6 +103,13 @@
                 .catch(error => {
                     document.getElementById('content-display').innerHTML = "Error loading content.";
                 });
+        }
+
+        // Toggle sub-menu visibility
+        function toggleSubMenu(element) {
+            element.classList.toggle('open');
+            const toggleBtn = element.querySelector('.toggle-btn');
+            toggleBtn.textContent = toggleBtn.textContent === '+' ? '-' : '+';
         }
     </script>
 </body>
