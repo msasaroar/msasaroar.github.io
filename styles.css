@@ -24,13 +24,13 @@ body {
     line-height: 1.6;
     overflow: hidden; /* পুরো পেজে স্ক্রল বার নিষ্ক্রিয় */
 
-    display: flex;
+/*    display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
     margin: 0;
     text-align: center;
-    flex-direction: column;
+    flex-direction: column; */
 }
 
 
