@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GA4 Custom Event Example</title>
+    
+    <!-- Google Analytics 4 tracking code -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4P58D67RQV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-4P58D67RQV'); // Replace with your GA4 tracking ID
+    </script>
+</head>
+
+<body>
+    <h1>GA4 Custom Event Tracking Example</h1>
+
+    <!-- Button 1 -->
+    <button id="button1">Button 1</button>
+
+    <!-- Button 2 -->
+    <button id="button2">Button 2</button>
+
+    <!-- Page Visit Link -->
+    <a href="page3.html" id="pageVisitLink">Visit Page 3</a>
+
+    <!-- Form -->
+    <form id="sampleForm">
+        <input type="text" placeholder="Your Name" required>
+        <button type="submit">Submit Form</button>
+    </form>
+
+    <!-- Special Offer Button -->
+    <button id="specialOfferButton">Special Offer</button>
+
+    <script>
+        // Button 1 Click Event
+        document.getElementById('button1').addEventListener('click', function () {
+            gtag('event', 'button_click_1', {
+                'event_category': 'button',
+                'event_label': 'Button 1'
+            });
+            alert('Button 1 Clicked');
+        });
+
+        // Button 2 Click Event
+        document.getElementById('button2').addEventListener('click', function () {
+            gtag('event', 'button_click_2', {
+                'event_category': 'button',
+                'event_label': 'Button 2'
+            });
+            alert('Button 2 Clicked');
+        });
+
+        // Page Visit Link Click Event
+        document.getElementById('pageVisitLink').addEventListener('click', function () {
+            gtag('event', 'page_visit', {
+                'event_category': 'navigation',
+                'event_label': 'Page 3 Visit'
+            });
+            alert('Page Visit Link Clicked');
+        });
+
+        // Form Submit Event
+        document.getElementById('sampleForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent form submission for demo
+            gtag('event', 'form_submit', {
+                'event_category': 'form',
+                'event_label': 'Submit Form'
+            });
+            alert('Form Submitted');
+        });
+
+        // Special Offer Button Click Event
+        document.getElementById('specialOfferButton').addEventListener('click', function () {
+            gtag('event', 'special_offer_click', {
+                'event_category': 'offer',
+                'event_label': 'Special Offer Clicked'
+            });
+            alert('Special Offer Button Clicked');
+        });
+    </script>
+</body>
+
+</html>
