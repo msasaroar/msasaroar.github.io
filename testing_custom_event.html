@@ -1,35 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Event in GA4</title>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4P58D67RQV"></script>
-    <script>
-        // Initialize gtag with GA4 tracking ID
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-4P58D67RQV');
-    </script>
-</head>
-<body>
-    <h1>Custom Event Example in GA4</h1>
-    <p>Click the button below to trigger a custom event in GA4.</p>
-    
-    <!-- Custom Button -->
-    <button onclick="trackCustomEvent()">Click Me!</button>
 
-    <script>
-        // Function to send a custom event to GA4 when the button is clicked
-        function trackCustomEvent() {
-            gtag('event', 'button_click', {
-                'event_category': 'button',
-                'event_label': 'click_me_button',
-                'value': 1
-            });
-            alert('Custom Event "button_click" has been triggered!');
-        }
-    </script>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Button Click Tracking with GA4</title>
+    
+        <!-- Google Analytics 4 tracking code -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-XXXXXXX'); // Replace with your GA4 tracking ID
+        </script>
+    </head>
+    
+    <body>
+        <h1>Welcome to the Button Click Tracking Page</h1>
+        <p>Click the button below to trigger a custom event in GA4.</p
+        <!-- Button for tracking click event -->
+        <button id="trackButton">Click Me!</button>
+    </body>
+
 </html>
+
