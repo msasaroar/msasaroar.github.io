@@ -17,8 +17,41 @@
     </head>
     
     <body>
-        <h1>Welcome to the Button Click Tracking Page</h1>
-        <p>Click the button below to trigger a custom event in GA4.</p
+        <h1>Configuaring Custom Event Without GTM</h1>
+        <p>Click the button below to trigger a custom event in GA4.</p>
+        <p> GA4 এর মধ্যে Button Click কাস্টম ইভেন্ট ট্র্যাক করতে চাইলে, নিচের ধাপগুলো অনুসরণ করতে হবে। 
+            এই ইভেন্টটি সরাসরি GA4 এর ইন্টারফেসের মাধ্যমে কনফিগার করা সম্ভব, তাই HTML পেইজে কোনো অতিরিক্ত কোড যোগ করার প্রয়োজন নেই।
+
+            Step 1: GA4 ইন্টারফেসে Custom Event তৈরি করা
+            GA4 এ লগইন করুন এবং আপনার প্রজেক্ট নির্বাচন করুন।
+            
+            Admin মেনুতে যান।
+            
+            Events সেকশনে Create Event অপশনটিতে ক্লিক করুন।
+            
+            Create Event পেইজে গিয়ে Custom Events এর জন্য Create বাটনে ক্লিক করুন।
+            
+            নতুন ইভেন্ট তৈরি করার জন্য নিচের তথ্যগুলো যোগ করুন:
+            
+            Custom Event Name: button_click (এটি ইভেন্টের নাম যেটি আমরা ট্র্যাক করতে চাই)
+            Matching Conditions: এখানে শর্ত সেট করবেন যাতে GA4 সঠিকভাবে এই ইভেন্টটি চিনতে পারে।
+            Parameter: click বা click_text নির্বাচন করুন, যা বাটনের টেক্সট বা আইডি ব্যবহার করে।
+            Operator: equals
+            Value: বাটনে থাকা টেক্সট (যেমন, "Click Me!" অথবা অন্যকিছু)।
+            Parameter Configuration:
+            
+            আপনার ইভেন্টের জন্য event_category, event_label, এবং value প্যারামিটার যোগ করতে চাইলে, এগুলি কনফিগার করুন। এটি ট্র্যাকিং এবং রির্পোটিং এর সময় সহায়ক হবে।
+            সব কিছু ঠিকভাবে কনফিগার করা হলে, Create বাটনে ক্লিক করুন।
+            
+            Step 2: GA4 DebugView দিয়ে পরীক্ষা করুন
+            GA4 এর DebugView অপশনটিতে যান।
+            আপনার ওয়েবসাইটের বাটনে ক্লিক করে দেখুন যে ইভেন্টটি DebugView এ প্রদর্শিত হচ্ছে কিনা।
+            কাস্টম ইভেন্টটি সফলভাবে কাজ করলে এটি button_click নামে দেখাবে এবং আপনি এটি রিপোর্টে ট্র্যাক করতে পারবেন।
+            Step 3: GA4 এর Reports এ কাস্টম ইভেন্ট দেখুন
+            আপনার কাস্টম ইভেন্টটি Reports > Events সেকশনে দেখার জন্য GA4 এ যান এবং নিশ্চিত করুন যে button_click ইভেন্টটি ট্র্যাক হচ্ছে।
+            এখান থেকে আপনার কাস্টম ইভেন্ট সম্পর্কিত বিস্তারিত বিশ্লেষণ করতে পারবেন।
+        </p>
+        
         <!-- Button for tracking click event -->
         <button id="trackButton">Click Me!</button>
     </body>
