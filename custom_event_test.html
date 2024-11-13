@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Event in GA4</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR-GA4-ID"></script>
+    <script>
+        // Initialize gtag with GA4 tracking ID
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'YOUR-GA4-ID');
+    </script>
+</head>
+<body>
+    <h1>Custom Event Example in GA4</h1>
+    <p>Click the button below to trigger a custom event in GA4.</p>
+    
+    <!-- Custom Button -->
+    <button onclick="trackCustomEvent()">Click Me!</button>
+
+    <script>
+        // Function to send a custom event to GA4 when the button is clicked
+        function trackCustomEvent() {
+            gtag('event', 'button_click', {
+                'event_category': 'button',
+                'event_label': 'click_me_button',
+                'value': 1
+            });
+            alert('Custom Event "button_click" has been triggered!');
+        }
+    </script>
+</body>
+</html>
