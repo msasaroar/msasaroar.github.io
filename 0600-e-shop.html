@@ -4,78 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>One-Page E-commerce Shop</title>
-    <link rel="stylesheet" href="styles.css">
-    
+    <link rel="stylesheet" href="styles.css">  
 </head>
 <body>
+    <header>
+        <h1>Demo e-Commerce Shop</h1>
+        <p>Explore a range of products and add them to your cart. Enjoy shopping!</p>
+        <div class="topics">
+            <a href="0100-ga4-topic.html">GA4 : Topic</a>
+            <a href="0200-ga4-event.html">GA4 : Event</a>
+            <a href="0300-gtm-topic.html">GTM : Topic</a>
+            <a href="0400-gtm-event.html">GTM : Event</a>
+            <a href="0500-video-link.html">Video Tutorials</a>
+            <a href="0600-e-shop.html">Demo eShop</a>
+            <a href="9800-download.html">Download</a>
+            <a href="9900-contact-us.html">Contact Us</a>
+        </div> 
+    </header>
 
-<header>
-    <h1>Demo e-Commerce Shop</h1>
-    <p>Explore a range of products and add them to your cart. Enjoy shopping!</p>
-    <div class="topics">
-        <a href="0100-ga4-topic.html">GA4 : Topic</a>
-        <a href="0200-ga4-event.html">GA4 : Event</a>
-        <a href="0300-gtm-topic.html">GTM : Topic</a>
-        <a href="0400-gtm-event.html">GTM : Event</a>
-        <a href="0500-video-link.html">Video Tutorials</a>
-        <a href="0600-e-shop.html">Demo eShop</a>
-        <a href="9800-download.html">Download</a>
-        <a href="9900-contact-us.html">Contact Us</a>
-    </div> 
-</header>
-
-<main>
-    <section class="shop-container">
-        <h2>Our Products</h2>
-
-        <!-- Product 1 -->
-        <div class="product">
-            <img src="product1.jpg" alt="Product 1">
-            <div class="product-info">
-                <h3>Product 1</h3>
-                <p>Description of product 1.</p>
-                <p><strong>Price: $10.00</strong></p>
+    <main>
+        <section class="shop-container">
+            <h2>Our Products</h2>
+    
+            <!-- Product 1 -->
+            <div class="product">
+                <img src="product1.jpg" alt="Product 1">
+                <div class="product-info">
+                    <h3>Product 1</h3>
+                    <p>Description of product 1.</p>
+                    <p><strong>Price: $10.00</strong></p>
+                </div>
+                <button onclick="addToCart('Product 1', 10.00)">Add to Cart</button>
             </div>
-            <button onclick="addToCart('Product 1', 10.00)">Add to Cart</button>
-        </div>
-
-        <!-- Product 2 -->
-        <div class="product">
-            <img src="product2.jpg" alt="Product 2">
-            <div class="product-info">
-                <h3>Product 2</h3>
-                <p>Description of product 2.</p>
-                <p><strong>Price: $20.00</strong></p>
+    
+            <!-- Product 2 -->
+            <div class="product">
+                <img src="product2.jpg" alt="Product 2">
+                <div class="product-info">
+                    <h3>Product 2</h3>
+                    <p>Description of product 2.</p>
+                    <p><strong>Price: $20.00</strong></p>
+                </div>
+                <button onclick="addToCart('Product 2', 20.00)">Add to Cart</button>
             </div>
-            <button onclick="addToCart('Product 2', 20.00)">Add to Cart</button>
-        </div>
-
-        <!-- Product 3 -->
-        <div class="product">
-            <img src="product3.jpg" alt="Product 3">
-            <div class="product-info">
-                <h3>Product 3</h3>
-                <p>Description of product 3.</p>
-                <p><strong>Price: $30.00</strong></p>
+    
+            <!-- Product 3 -->
+            <div class="product">
+                <img src="product3.jpg" alt="Product 3">
+                <div class="product-info">
+                    <h3>Product 3</h3>
+                    <p>Description of product 3.</p>
+                    <p><strong>Price: $30.00</strong></p>
+                </div>
+                <button onclick="addToCart('Product 3', 30.00)">Add to Cart</button>
             </div>
-            <button onclick="addToCart('Product 3', 30.00)">Add to Cart</button>
-        </div>
-    </section>
+        </section>
+    
+        <section class="cart">
+            <h3>Shopping Cart</h3>
+            <div id="cart-items"></div>
+            <p><strong>Total: $<span id="total">0.00</span></strong></p>
+            <button class="checkout-button">Checkout</button>
+        </section>
+    </main>
 
-    <section class="cart">
-        <h3>Shopping Cart</h3>
-        <div id="cart-items"></div>
-        <p><strong>Total: $<span id="total">0.00</span></strong></p>
-        <button class="checkout-button">Checkout</button>
-    </section>
-</main>
+    <footer>
+        <p>&copy; 2024 Demo Website For Web Tracking With GA4 & GTM. All Rights Reserved.</p>
+        <p>Connect with us on <a href="#">LinkedIn</a> | <a href="#">Twitter</a> | <a href="https://www.facebook.com/msasaroar">Facebook</a></p>
+    </footer>
 
-<footer>
-    <p>&copy; 2024 Demo Website For Web Tracking With GA4 & GTM. All Rights Reserved.</p>
-    <p>Connect with us on <a href="#">LinkedIn</a> | <a href="#">Twitter</a> | <a href="https://www.facebook.com/msasaroar">Facebook</a></p>
-</footer>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>
