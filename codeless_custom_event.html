@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Codeless Custom Event</title>
+    <title>Coded Custom Event</title>
     
     <!-- Google Analytics 4 tracking code -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4P58D67RQV"></script>
@@ -17,86 +17,73 @@
 </head>
 
 <body>
-    <h1>GA4 Codeless Custom Event Tracking Example</h1>
-    <!-- Button 1 -->
-    <button id="button1">Button 1</button>
+    <h1>GA4 Coded Custom Event Tracking Example</h1>
+
+    <!-- Button-1 -->
+    <button id="button1">Button-1</button>
+
     <!-- Button 2 -->
-    <button id="button2">Button 2</button>
+    <button id="button2">Button-2</button>
+
     <!-- Page Visit Link -->
-    <a href="page3.html" id="pageVisitLink">Visit Page 3</a>
+    <a href="page3.html" id="pageVisitLink">Visit-Page-3</a>
+
     <!-- Form -->
     <form id="sampleForm">
         <input type="text" placeholder="Your Name" required>
-        <button type="submit">Submit Form</button>
+        <button type="submit">Submit-Form</button>
     </form>
-    <!-- Special Offer Button -->
-    <button id="specialOfferButton">Special Offer</button>
 
-<!--
+    <!-- Special Offer Button -->
+    <button id="specialOfferButton">Special-Offer</button>
+
     <script>
         // Button 1 Click Event
         document.getElementById('button1').addEventListener('click', function () {
             gtag('event', 'button_click_1', {
                 'event_category': 'button',
-                'event_label': 'Button 1'
+                'event_label': 'Button-1'
             });
             alert('Button 1 Clicked');
         });
-        Custom Event Name    : button_click_1
-        Parameter Name       : event_category,    Value: button, 
-        Parameter Name       : event_label,       Value: Button 1
-    
+
         // Button 2 Click Event
         document.getElementById('button2').addEventListener('click', function () {
             gtag('event', 'button_click_2', {
                 'event_category': 'button',
-                'event_label': 'Button 2'
+                'event_label': 'Button-2'
             });
             alert('Button 2 Clicked');
         });
-        Custom Event Name    : button_click_2
-        Parameter Name       : event_category,    Value: button, 
-        Parameter Name       : event_label,       Value: Button 2
 
         // Page Visit Link Click Event
         document.getElementById('pageVisitLink').addEventListener('click', function () {
             gtag('event', 'page_visit', {
                 'event_category': 'navigation',
-                'event_label': 'Page 3 Visit'
+                'event_label': 'Page-3-Visit'
             });
             alert('Page Visit Link Clicked');
         });
-        Custom Event Name    : page_visit
-        Parameter Name       : event_category,    Value: navigation, 
-        Parameter Name       : event_label,       Value: Page 3 Visit
 
         // Form Submit Event
         document.getElementById('sampleForm').addEventListener('submit', function (e) {
             e.preventDefault(); // Prevent form submission for demo
             gtag('event', 'form_submit', {
                 'event_category': 'form',
-                'event_label': 'Submit Form'
+                'event_label': 'Submit-Form'
             });
             alert('Form Submitted');
         });
-        Custom Event Name    : form_submit
-        Parameter Name       : event_category,    Value: form, 
-        Parameter Name       : event_label,       Value: Submit Form
-    
+
         // Special Offer Button Click Event
         document.getElementById('specialOfferButton').addEventListener('click', function () {
             gtag('event', 'special_offer_click', {
                 'event_category': 'offer',
-                'event_label': 'Special Offer Clicked'
+                'event_label': 'Special-Offer-Clicked'
             });
             alert('Special Offer Button Clicked');
         });
-        Custom Event Name    : special_offer_click
-        Parameter Name       : event_category,    Value: offer, 
-        Parameter Name       : event_label,       Value: Special Offer Clicked
-
     </script>
-    -->
 </body>
 
 </html>
