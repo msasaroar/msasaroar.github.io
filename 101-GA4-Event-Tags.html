@@ -1,47 +1,79 @@
+<!--
+একটি html পেইজ তৈরী কর যা দিয়ে GTM থেকে নিম্নোক্ত তালিকার সাথে সম্পর্কযুক্ত tag তৈরী করা যাবে।
+1. GA4 – Configuration
+2. Button Click Event
+3. Form Submission Event
+4. Scroll Depth Event
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+    
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-PPBVCLNF');</script>
-<!-- End Google Tag Manager -->    
-
+<!-- End Google Tag Manager --> 
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Web Page</title>
+    <title>GTM Event Tracking Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 10px;
+        }
+        .content {
+            height: 1000px; /* Enough content to test scroll depth */
+        }
+    </style>
 </head>
+
 <body>
 
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     
-    <h1>Welcome to My Web Page</h1>
-    <p>This is a sample page without any GA4 custom events.</p>
+    <h1>GTM Event Tracking Demo</h1>
+    <p>This page demonstrates how to track different events using GTM.</p>
 
-    <button id="sampleButton">Click Me</button>
-    
-    <p>
-        <a href="https://example.com" target="_blank">Visit Example</a>
-    </p>
+    <!-- Button Click Section -->
+    <h2>Button Click Tracking</h2>
+    <button id="trackButton">Click Me</button>
 
-    <p>
-        Watch this sample video:
-        <video width="320" height="240" controls>
-            <source src="sample-video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </p>
-
-    <form id="sampleForm">
+    <!-- Form Submission Section -->
+    <h2>Form Submission Tracking</h2>
+    <form id="trackingForm" action="#" method="POST">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
         <button type="submit">Submit</button>
     </form>
+
+    <!-- Scroll Depth Section -->
+    <h2>Scroll Depth Tracking</h2>
+    <div class="content">
+        <p>Scroll down to test scroll depth tracking.</p>
+        <p>Scroll depth events will trigger at 25%, 50%, 75%, and 100% of the page height.</p>
+        <p>Keep scrolling to the bottom to ensure all events are triggered!</p>
+    </div>
+
+    <footer>
+        <p>End of the page.</p>
+    </footer>
+
+    <!-- GTM Container Code -->
+    <script>
+        // Insert GTM container code here
+    </script>
 </body>
 </html>
