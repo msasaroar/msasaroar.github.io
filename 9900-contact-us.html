@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
+
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -9,93 +9,167 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-PPBVCLNF');</script>
 <!-- End Google Tag Manager -->  
-    
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Form</title>
+    <title>Complete Stylish Form</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
-            background-color: #f4f4f4;
         }
+
         .form-container {
-            background-color: #fff;
+            background-color: #ffffff;
             padding: 20px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            width: 300px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 100%;
         }
-        .form-container h2 {
-            margin-top: 0;
+
+        h1 {
             text-align: center;
+            color: #333;
+            margin-bottom: 20px;
         }
-        .form-container input[type="text"], .form-container input[type="email"], .form-container textarea {
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        input, select, textarea, button {
             width: 100%;
             padding: 10px;
-            margin: 10px 0;
+            font-size: 14px;
             border: 1px solid #ccc;
             border-radius: 4px;
+            box-sizing: border-box;
         }
-        .form-container button {
-            width: 100%;
-            padding: 10px;
+
+        textarea {
+            resize: none;
+        }
+
+        button {
             background-color: #4CAF50;
-            color: #fff;
+            color: white;
+            font-weight: bold;
             border: none;
-            border-radius: 4px;
             cursor: pointer;
-            font-size: 16px;
+            padding: 10px 20px;
+            text-transform: uppercase;
         }
-        .form-container button:hover {
-            background-color: #45a049;
+
+        button[type="reset"] {
+            background-color: #f44336;
         }
-        .thank-you-message {
-            display: none;
-            color: #4CAF50;
-            font-size: 16px;
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .form-footer {
             text-align: center;
-            margin-top: 15px;
+            margin-top: 20px;
         }
+
     </style>
 </head>
 <body>
-
+    
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-
+    
     <div class="form-container">
-        <h2>Contact Us</h2>
-        <form id="contactForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+        <h1>Complete Stylish Form</h1>
+        <form action="/submit" method="POST">
+            <div class="form-grid">
+                <!-- Text Input -->
+                <div>
+                    <label for="text">Text Input:</label>
+                    <input type="text" id="text" name="textInput" placeholder="Enter text">
+                </div>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+                <!-- Password Input -->
+                <div>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password">
+                </div>
 
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
+                <!-- Email Input -->
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                </div>
 
-            <button type="submit">Submit</button>
+                <!-- Number Input -->
+                <div>
+                    <label for="number">Number:</label>
+                    <input type="number" id="number" name="number" min="0" max="100">
+                </div>
+
+                <!-- Date Input -->
+                <div>
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date">
+                </div>
+
+                <!-- Select Dropdown -->
+                <div>
+                    <label for="dropdown">Choose an Option:</label>
+                    <select id="dropdown" name="dropdown">
+                        <option value="">Select</option>
+                        <option value="option1">Option 1</option>
+                        <option value="option2">Option 2</option>
+                        <option value="option3">Option 3</option>
+                    </select>
+                </div>
+
+                <!-- Radio Buttons -->
+                <div>
+                    <label>Gender:</label>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+                </div>
+
+                <!-- Checkbox -->
+                <div>
+                    <input type="checkbox" id="agree" name="agree">
+                    <label for="agree">I agree to the terms and conditions</label>
+                </div>
+
+                <!-- Textarea -->
+                <div>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Enter your message here..."></textarea>
+                </div>
+            </div>
+
+            <!-- Form Footer -->
+            <div class="form-footer">
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
         </form>
-        <div class="thank-you-message" id="thankYouMessage">
-            Thank you! Your message has been sent successfully.
-        </div>
     </div>
-
-    <script>
-        // Form submission handling
-        document.getElementById("contactForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            window.location.href = "9999-thank-you-page.html";
-        });
-    </script>
-
 </body>
 </html>
