@@ -1,54 +1,92 @@
-GA4 # 18: Exclude IP & Internal Traffic in GA4
-Excluding internal traffic in GA4 ensures that data from your organization or testing activities doesn't skew your analytics. This is particularly important for maintaining accurate reporting.
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 
-Step-by-Step Details to Learn and Practice
-Step 1: Understand Internal Traffic
-Before excluding traffic, learn what constitutes "internal traffic":
+.cart-container {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 500px;
+    width: 100%;
+}
 
-Employees accessing the website.
-Test interactions during development.
-Office or organizational IP addresses.
-Step 2: Identify Internal IP Addresses
-Determine your internal IP address range.
-Use a service like WhatIsMyIP to find public IPs.
-For dynamic IPs or VPNs, identify ranges used by your network provider.
-Note the format (IPv4 or IPv6) and confirm ranges with your network admin, if applicable.
-Step 3: Create an Internal Traffic Rule in GA4
-Log in to your GA4 Admin Console.
-Navigate to: Admin > Data Streams.
-Select the appropriate data stream (Web or App).
-Scroll down and click on Configure tag settings.
-Select Define internal traffic under Advanced Settings.
-Click Create to define a new rule:
-Name: Enter a descriptive name (e.g., "Office Traffic").
-Traffic Type: Internal.
-Match Type: Use "IP address equals" or "IP address begins with".
-Value: Enter your IP address or range.
-Save the rule.
-Step 4: Test Internal Traffic Detection
-Open your website with the tracking implemented.
-Check DebugView in GA4 (via the Admin panel) to confirm that your internal traffic is flagged correctly.
-Look for the "traffic_type" parameter and ensure it shows "internal".
-Step 5: Exclude Internal Traffic in Reporting
-Go to Admin > Data Settings > Data Filters.
-Find the Internal Traffic filter and click on it.
-Set the filter to Testing Mode first:
-This ensures the rule works without affecting live data.
-Once verified, set the filter to Active:
-This excludes internal traffic permanently from your reporting data.
-Save the configuration.
-Step 6: Validate Exclusion
-Visit your site from the IP address defined as "internal".
-Verify using Realtime Reports:
-Ensure that your visits no longer appear after applying the exclusion filter.
-Step 7: Document and Monitor
-Document the IPs and rules for future reference.
-Regularly review the filter settings:
-If IPs change (dynamic networks), update the rules.
-Ensure no legitimate user traffic is excluded.
-Practice Activities
-Define multiple internal traffic rules for testing environments and corporate offices.
-Use Google Tag Assistant to verify the traffic type classification.
-Check DebugView and Realtime Reports to ensure accuracy in filtering.
-Update the rules as your organization's IPs or traffic conditions change.
-By following these steps, you'll maintain clean and reliable data for your GA4 reports.
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.cart-items {
+    margin: 20px 0;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.item-name {
+    font-weight: bold;
+    color: #555;
+}
+
+.item-price {
+    color: #777;
+}
+
+.remove-item {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.remove-item:hover {
+    background-color: #c0392b;
+}
+
+.cart-summary {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.cart-summary h2 {
+    margin-bottom: 10px;
+}
+
+.checkout-button {
+    display: block;
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.checkout-button:hover {
+    background-color: #45a049;
+}
