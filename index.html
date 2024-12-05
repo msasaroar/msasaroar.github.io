@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,11 +22,16 @@
             margin-bottom: 20px;
         }
         .link-list {
+            display: flex;
+            flex-wrap: wrap; /* বাটনগুলো একাধিক লাইনে যাবে যদি জায়গা না থাকে */
+            justify-content: center; /* বাটনগুলো সেন্টার করতে */
+            gap: 10px; /* বাটনের মাঝখানে ফাঁকা রাখার জন্য */
             list-style-type: none;
             padding: 0;
+            margin: 0;
         }
         .link-list li {
-            margin: 10px 0;
+            margin: 0;
         }
         .link-list a {
             text-decoration: none;
