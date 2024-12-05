@@ -3,16 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup Confirmation</title>
+    <title>Shopping Cart</title>
     <link rel="stylesheet" href="add-to-cart.css">
 </head>
 <body>
-    <div class="confirmation-container">
-        <h1>Signup Successful!</h1>
-        <p>Thank you for joining us, <span id="user-name">[User Name]</span>.</p>
-        <p>A confirmation email has been sent to your email address.</p>
-        <p>Please check your inbox (or spam folder) to verify your email.</p>
-        <a href="index.html" class="button">Proceed to Login</a>
+    <div class="cart-container">
+        <h1>Your Shopping Cart</h1>
+        <div class="cart-items">
+            <!-- Example items -->
+            <div class="cart-item">
+                <p class="item-name">Item 1</p>
+                <p class="item-price">$20.00</p>
+                <button class="remove-item">Remove</button>
+            </div>
+            <div class="cart-item">
+                <p class="item-name">Item 2</p>
+                <p class="item-price">$15.00</p>
+                <button class="remove-item">Remove</button>
+            </div>
+        </div>
+        <div class="cart-summary">
+            <h2>Order Summary</h2>
+            <p><strong>Total Items:</strong> <span id="total-items">2</span></p>
+            <p><strong>Total Price:</strong> $<span id="total-price">35.00</span></p>
+        </div>
+        <button class="checkout-button">Proceed to Checkout</button>
     </div>
     <script src="add-to-cart.js"></script>
 </body>
