@@ -3,66 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A sample HTML template with Google Tag Manager.">
-    <meta name="author" content="Your Name">
-    <title>Sample HTML Template</title>
-    <link rel="stylesheet" href="styles.css">
-    
-    <!-- Google Tag Manager -->
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-XXXXXXX'); <!-- Replace with your GTM ID -->
-    </script>
-    <!-- End Google Tag Manager -->
+    <title>Purchase Confirmation</title>
+    <link rel="stylesheet" href="test.css">
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" 
-                height="0" 
-                width="0" 
-                style="display:none; visibility:hidden;">
-        </iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
-    <header>
-        <h1>Welcome to My Website</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section>
-            <h2>Main Content</h2>
-            <p>This is where your main content will go. Customize it as needed.</p>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Your Website. All rights reserved.</p>
-        <p>Follow us on 
-            <a href="https://www.facebook.com">Facebook</a>, 
-            <a href="https://www.twitter.com">Twitter</a>, and 
-            <a href="https://www.linkedin.com">LinkedIn</a>.
-        </p>
-    </footer>
+    <div class="confirmation-container">
+        <h1>Thank You for Your Purchase!</h1>
+        <p>Your order has been successfully placed.</p>
+        <div class="order-details">
+            <h2>Order Details</h2>
+            <p><strong>Order Number:</strong> #12345</p>
+            <p><strong>Items:</strong> 3</p>
+            <p><strong>Total Amount:</strong> $59.99</p>
+            <p><strong>Payment Method:</strong> Credit Card</p>
+        </div>
+        <a href="test.html" class="button">Return to Home</a>
+    </div>
+    <script src="test.js"></script>
 </body>
 </html>
