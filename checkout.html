@@ -1,106 +1,60 @@
-GA4 #16: What Are Dimensions & Metrics in GA4?
-Dimensions and metrics are fundamental concepts in Google Analytics 4 (GA4) that you’ll use regularly for reporting, analysis, and tracking user behavior. Understanding the difference between them and how to use them effectively is crucial for analyzing data in GA4.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+    <div class="checkout-container">
+        <h1>Checkout</h1>
+        <form id="checkout-form">
+            <!-- Billing Information -->
+            <fieldset>
+                <legend>Billing Information</legend>
+                <label for="full-name">Full Name:</label>
+                <input type="text" id="full-name" name="full-name" placeholder="John Doe" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+                
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="123-456-7890" required>
+                
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" placeholder="123 Main St" required>
+                
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" placeholder="New York" required>
+                
+                <label for="zip">ZIP Code:</label>
+                <input type="text" id="zip" name="zip" placeholder="10001" required>
+            </fieldset>
 
-1. Introduction to Dimensions and Metrics
-Dimensions: Qualitative attributes or characteristics of the data. These are attributes that describe the data. For example, the page title, user country, or device type are all dimensions.
-Metrics: Quantitative measurements of the data. These are the values that measure the performance of the dimensions. For example, the number of users, session duration, or pageviews are all metrics.
-In simple terms:
+            <!-- Payment Information -->
+            <fieldset>
+                <legend>Payment Information</legend>
+                <label for="card-number">Card Number:</label>
+                <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" required>
 
-Dimensions tell you "what" happened.
-Metrics tell you "how much" or "how often" something happened.
+                <label for="expiry">Expiry Date:</label>
+                <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required>
 
-2. Common Examples of Dimensions and Metrics
-Dimensions:
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" placeholder="123" required>
+            </fieldset>
 
-Page Title (e.g., "Homepage")
-Source (e.g., "Google", "Direct")
-Device Category (e.g., "mobile", "desktop")
-User Location (e.g., "United States")
-Event Name (e.g., "button_click", "video_play")
-Browser (e.g., "Chrome", "Firefox")
-Metrics:
+            <!-- Order Summary -->
+            <fieldset>
+                <legend>Order Summary</legend>
+                <p><strong>Items:</strong> <span id="order-items">3</span></p>
+                <p><strong>Total Price:</strong> $<span id="order-total">75.00</span></p>
+            </fieldset>
 
-Sessions (the number of sessions on the site)
-Users (the number of users visiting the site)
-Pageviews (the number of page views)
-Engagement Time (the time users engaged with the website)
-Conversions (the number of conversion events)
-Event Count (the number of times a specific event was triggered)
-3. Step-by-Step Activities to Learn About Dimensions & Metrics in GA4
-Step 1: Understand the Default Dimensions and Metrics in GA4
-GA4 provides a set of default dimensions and metrics that are automatically tracked for you. You don’t need to do anything extra to track these; they come with the standard setup of GA4.
-
-Go to Explore in the GA4 interface.
-Start a Blank Exploration.
-In the Variables section, you'll see a list of available Dimensions and Metrics.
-Dimensions are listed first under Dimensions, and metrics are under Metrics.
-Examples of default dimensions and metrics in GA4:
-
-Dimensions: Page Title, Source/Medium, Device Category, City, Country, Session Source, etc.
-Metrics: Users, Sessions, Pageviews, Engaged Sessions, Average Engagement Time, Conversions, etc.
-Step 2: Using Dimensions and Metrics in a Report
-Go to the "Explore" Section:
-
-Open the Explore section in GA4 and start a Blank Exploration.
-Choose a Template (Optional):
-
-You can use predefined templates like Free Form, Funnel Exploration, or Path Exploration for more structured reporting.
-Drag and Drop Dimensions and Metrics:
-
-From the Variables section, drag a dimension (e.g., Page Title) into the Rows section.
-Drag a metric (e.g., Pageviews) into the Values section.
-Customize the Report:
-
-You can add multiple dimensions and metrics. For example, you could combine Device Category with Page Title to see how different devices interact with different pages.
-Filter the report by specific criteria, such as filtering for just Organic traffic sources or focusing only on specific pages.
-Analyze the Report:
-
-Once the data is displayed, look at the combinations of dimensions and metrics to analyze user behavior.
-For example, if you combine Device Category with Users, you can determine how many users accessed the site via mobile vs desktop.
-Step 3: Creating Custom Dimensions and Metrics (Optional)
-While GA4 offers many default dimensions and metrics, you might need to create custom dimensions and custom metrics based on the data you want to track.
-
-Custom Dimensions:
-
-Custom dimensions allow you to track specific information about your users or events.
-For example, you could create a custom dimension to track the user role (admin, editor, viewer) on your site if you're running a membership site.
-How to create a custom dimension:
-
-Go to Admin > Property > Custom Definitions.
-Click Create Custom Dimension.
-Enter the name, scope (event or user), and description of the custom dimension.
-Define the event parameter or user property that will be used to capture this custom dimension.
-Custom Metrics:
-
-Custom metrics are numeric values that you can track in addition to the default metrics GA4 provides.
-For example, you might want to track the number of form submissions on your site.
-How to create a custom metric:
-
-Go to Admin > Property > Custom Definitions.
-Click Create Custom Metric.
-Enter the necessary information like the name, description, and event parameter you want to measure (e.g., form_submissions).
-Step 4: Using Dimensions and Metrics for Analysis
-Once you have your dimensions and metrics set up, use them for analysis:
-
-Segmentation: Use dimensions to segment data. For example, you can break down your users by device type, location, or traffic source.
-Trends and Patterns: Look for patterns and trends over time. For example, do users from a specific country visit more pages than users from another country?
-Conversions: Measure conversions using both dimensions and metrics. For example, track how many users (dimension) completed a specific action (metric like purchase or sign-up).
-Step 5: Create Custom Reports Using Dimensions and Metrics
-Custom reports allow you to focus on the exact data you want to see.
-
-Go to Explore: Open a Blank Exploration or use a predefined template like Free Form.
-Drag Dimensions and Metrics into Rows and Columns.
-Apply Filters (optional): For example, filter by Device Category to only see data for desktop users.
-Analyze: Study how different dimensions and metrics relate to each other, helping you answer key business questions like:
-Which pages are the most visited on desktop vs mobile?
-What is the average session duration by country?
-Which traffic sources lead to the most conversions?
-
-4. Summary of Dimensions and Metrics in GA4
-Dimensions are qualitative attributes (e.g., page title, user location, traffic source).
-Metrics are quantitative measures (e.g., pageviews, users, sessions, event count).
-Default Dimensions and Metrics are automatically tracked in GA4.
-You can create custom dimensions and metrics to track specific data points relevant to your business.
-Use Explore to combine dimensions and metrics for in-depth analysis.
-
-By mastering dimensions and metrics, you’ll be able to create more detailed and tailored reports, perform better analysis, and make data-driven decisions to optimize your website or app’s performance.
+            <button type="submit" class="checkout-button">Place Order</button>
+        </form>
+    </div>
+    <script src="checkout.js"></script>
+</body>
+</html>
