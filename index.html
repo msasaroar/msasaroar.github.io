@@ -14,6 +14,10 @@
         .container {
             text-align: center;
             margin-top: 50px;
+            display: grid;
+            grid-template-columns: repeat(10, 2fr);
+            gap: 10px; /* Adds space between grid items */
+            background-color: lightgray;
         }
         .header {
             background-color: #4CAF50;
@@ -25,7 +29,7 @@
             display: flex;
             flex-wrap: wrap; /* বাটনগুলো একাধিক লাইনে যাবে যদি জায়গা না থাকে */
             justify-content: center; /* বাটনগুলো সেন্টার করতে */
-            gap: 50px; /* বাটনের মাঝখানে ফাঁকা রাখার জন্য */
+            gap: 10px; /* বাটনের মাঝখানে ফাঁকা রাখার জন্য */
             list-style-type: none;
             padding: 0;
             margin: 0;
