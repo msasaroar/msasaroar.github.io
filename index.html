@@ -14,16 +14,6 @@
         .container {
             text-align: center;
             margin-top: 50px;
-            display: grid;
-            grid-template-columns: repeat(10, 2fr);
-            gap: 10px; /* Adds space between grid items */
-            background-color: lightgray;
-        }
-        .item {
-          background-color: coral;
-          padding: 20px;
-          text-align: center;
-          border: 1px solid black;
         }
         .header {
             background-color: #4CAF50;
@@ -32,29 +22,33 @@
             margin-bottom: 20px;
         }
         .link-list {
-            display: flex;
-            flex-wrap: wrap; /* বাটনগুলো একাধিক লাইনে যাবে যদি জায়গা না থাকে */
-            justify-content: center; /* বাটনগুলো সেন্টার করতে */
-            gap: 10px; /* বাটনের মাঝখানে ফাঁকা রাখার জন্য */
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px; /* Adds space between grid items */
             list-style-type: none;
             padding: 0;
-            margin: 0;
+            margin: 0 auto;
+            max-width: 800px;
         }
         .link-list li {
             margin: 0;
         }
         .link-list a {
             text-decoration: none;
-            font-size: 18px;
+            font-size: 16px;
             color: #4CAF50;
             border: 1px solid #4CAF50;
-            padding: 10px 15px;
+            display: flex; /* To center text inside the button */
+            align-items: center; /* Align text vertically */
+            justify-content: center; /* Align text horizontally */
             border-radius: 5px;
+            width: 150px; /* Fixed button width */
+            height: 50px; /* Fixed button height */
             transition: background-color 0.3s, color 0.3s;
         }
         .link-list a:hover {
             background-color: #4CAF50;
-            color: #824caf;
+            color: #fff;
         }
     </style>
 </head>
