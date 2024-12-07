@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorful Practice Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background: linear-gradient(135deg, #f3e6ff, #d9faff);
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #5a009d;
+        }
+        h2 {
+            color: #2e7d32;
+            border-bottom: 2px solid #2e7d32;
+        }
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            border-radius: 10px;
+            background: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        button, a {
+            display: inline-block;
+            margin: 10px 0;
+            padding: 10px 15px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            background: linear-gradient(135deg, #0073e6, #005bb5);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+        }
+        button:hover, a:hover {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #005bb5, #003f7f);
+        }
+        .form-group {
+            margin: 10px 0;
+        }
+        input {
+            padding: 8px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        p {
+            color: #555;
+        }
+        .section:nth-child(odd) {
+            background: #e0f7fa;
+        }
+        .section:nth-child(even) {
+            background: #ffe0b2;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Practice GA4, GTM, and Google Ads Tags & Triggers</h1>
+
+    <!-- Section 1: Page View -->
+    <div class="section">
+        <h2>1. Page View</h2>
+        <p>Simply loading this page can be tracked as a Page View.</p>
+    </div>
+
+    <!-- Section 2: Button Clicks -->
+    <div class="section">
+        <h2>2. Button Clicks</h2>
+        <button id="cta-button">Click Me (Call-to-Action)</button>
+        <button id="cta-secondary">Click Me (Secondary)</button>
+    </div>
+
+    <!-- Section 3: Link Clicks -->
+    <div class="section">
+        <h2>3. Outbound and Internal Links</h2>
+        <a href="https://www.google.com" target="_blank">Visit Google (Outbound Link)</a>
+        <a href="#cta-button">Scroll to Call-to-Action Button</a>
+    </div>
+
+    <!-- Section 4: Form Submission -->
+    <div class="section">
+        <h2>4. Form Submission</h2>
+        <form id="contact-form">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <!-- Section 5: Scroll Tracking -->
+    <div class="section">
+        <h2>5. Scroll Depth</h2>
+        <p>Scroll down to practice tracking scroll depth.</p>
+        <p style="margin-top: 2000px;">You’ve reached the bottom of this section!</p>
+    </div>
+
+    <!-- Section 6: File Download -->
+    <div class="section">
+        <h2>6. File Download</h2>
+        <a href="sample.pdf" download>Download PDF</a>
+        <a href="image.jpg" download>Download Image</a>
+    </div>
+
+    <!-- Section 7: Video Interaction -->
+    <div class="section">
+        <h2>7. Video Tracking</h2>
+        <video controls id="sample-video">
+            <source src="sample.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Section 8: E-commerce Actions -->
+    <div class="section">
+        <h2>8. E-commerce Actions</h2>
+        <button id="add-to-cart">Add to Cart</button>
+        <button id="purchase">Purchase</button>
+    </div>
+
+    <!-- Section 9: Custom Event -->
+    <div class="section">
+        <h2>9. Custom Event</h2>
+        <button id="custom-event">Trigger Custom Event</button>
+    </div>
+
+    <!-- Section 10: Timer Trigger -->
+    <div class="section">
+        <h2>10. Timer Trigger</h2>
+        <p>A tag can fire after a specific time spent on the page (e.g., 10 seconds).</p>
+    </div>
+
+    <!-- Section 11: Visibility Trigger -->
+    <div class="section">
+        <h2>11. Element Visibility</h2>
+        <p id="visible-element" style="margin-top: 2000px; background: #f4f4f4; padding: 10px;">
+            This element becomes visible when you scroll here.
+        </p>
+    </div>
+
+    <!-- Section 12: Social Media Links -->
+    <div class="section">
+        <h2>12. Social Media Links</h2>
+        <a href="https://facebook.com" target="_blank">Visit Facebook</a>
+        <a href="https://twitter.com" target="_blank">Visit Twitter</a>
+    </div>
+
+    <!-- Section 13: Timer Event (10 seconds) -->
+    <div class="section">
+        <h2>13. Timer Event</h2>
+        <p>The "Timer Trigger" fires after 10 seconds of page load.</p>
+    </div>
+
+    <!-- Section 14: User Interaction with Videos -->
+    <div class="section">
+        <h2>14. Video Interaction</h2>
+        <video controls id="video-interaction">
+            <source src="example.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Section 15: Element Visibility Trigger -->
+    <div class="section">
+        <h2>15. Element Visibility</h2>
+        <p id="visibility-element" style="margin-top: 2000px; background: #f4f4f4; padding: 10px;">
+            Track when this element becomes visible on the page.
+        </p>
+    </div>
+
+    <!-- Section 16: Form Submission -->
+    <div class="section">
+        <h2>16. Form Submission</h2>
+        <form id="signup-form">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+
+    <!-- Section 17: File Download -->
+    <div class="section">
+        <h2>17. File Download</h2>
+        <a href="whitepaper.pdf" download>Download White Paper</a>
+        <a href="ebook.pdf" download>Download eBook</a>
+    </div>
+
+    <!-- Section 18: Scroll Depth Trigger -->
+    <div class="section">
+        <h2>18. Scroll Depth</h2>
+        <p>Track user scroll depth to gauge engagement.</p>
+    </div>
+
+    <!-- Section 19: Custom Event Trigger -->
+    <div class="section">
+        <h2>19. Custom Event Trigger</h2>
+        <button id="custom-trigger">Trigger Custom Action</button>
+    </div>
+
+    <!-- Section 20: Product Purchase -->
+    <div class="section">
+        <h2>20. Product Purchase</h2>
+        <button id="purchase-button">Make a Purchase</button>
+    </div>
+
+    <!-- Section 21: CTA Clicks -->
+    <div class="section">
+        <h2>21. Call-to-Action (CTA) Clicks</h2>
+        <button id="cta-first">Primary CTA</button>
+        <button id="cta-second">Secondary CTA</button>
+    </div>
+
+    <!-- Section 22: Timer Event -->
+    <div class="section">
+        <h2>22. Timer Event</h2>
+        <p>Track user interaction after a certain time (e.g., 30 seconds).</p>
+    </div>
+
+    <!-- Section 23: Newsletter Signup -->
+    <div class="section">
+        <h2>23. Newsletter Signup</h2>
+        <form id="newsletter-form">
+            <div class="form-group">
+                <label for="email-newsletter">Email:</label>
+                <input type="email" id="email-newsletter" name="email" required>
+            </div>
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+
+    <!-- Section 24: File Download -->
+    <div class="section">
+        <h2>24. File Download</h2>
+        <a href="guide.pdf" download>Download Guide</a>
+        <a href="template.docx" download>Download Template</a>
+    </div>
+
+    <!-- Section 25: Custom Interaction -->
+    <div class="section">
+        <h2>25. Custom Interaction</h2>
+        <button id="custom-action">Execute Custom Action</button>
+    </div>
+
+    <!-- Section 26: Video View Tracking -->
+    <div class="section">
+        <h2>26. Video View</h2>
+        <video controls id="video-view">
+            <source src="video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Section 27: File Download -->
+    <div class="section">
+        <h2>27. File Download</h2>
+        <a href="whitepaper.pdf" download>Download White Paper</a>
+        <a href="ebook.pdf" download>Download eBook</a>
+    </div>
+
+    <!-- Section 28: Scroll Depth Trigger -->
+    <div class="section">
+        <h2>28. Scroll Depth</h2>
+        <p>Track user scroll to track engagement level.</p>
+    </div>
+
+    <!-- Section 29: Custom Event Trigger -->
+    <div class="section">
+        <h2>29. Custom Event Trigger</h2>
+        <button id="custom-action">Execute Custom Action</button>
+    </div>
+
+    <!-- Section 30: Product Purchase -->
+    <div class="section">
+        <h2>30. Product Purchase</h2>
+        <button id="purchase-button">Make a Purchase</button>
+    </div>
+
+    <!-- Section 31: CTA Clicks -->
+    <div class="section">
+        <h2>31. Call-to-Action (CTA) Clicks</h2>
+        <button id="cta-first">Primary CTA</button>
+        <button id="cta-second">Secondary CTA</button>
+    </div>
+
+    <!-- Section 32: Timer Event -->
+    <div class="section">
+        <h2>32. Timer Event</h2>
+        <p>Track user interaction after a certain time (e.g., 30 seconds).</p>
+    </div>
+
+    <!-- Section 33: Newsletter Signup -->
+    <div class="section">
+        <h2>33. Newsletter Signup</h2>
+        <form id="newsletter-form">
+            <div class="form-group">
+                <label for="email-newsletter">Email:</label>
+                <input type="email" id="email-newsletter" name="email" required>
+            </div>
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+
+    <!-- Section 34: File Download -->
+    <div class="section">
+        <h2>34. File Download</h2>
+        <a href="guide.pdf" download>Download Guide</a>
+        <a href="template.docx" download>Download Template</a>
+    </div>
+
+    <!-- Section 35: Custom Interaction -->
+    <div class="section">
+        <h2>35. Custom Interaction</h2>
+        <button id="custom-action">Execute Custom Action</button>
+    </div>
+
+    <!-- Section 36: Video View Tracking -->
+    <div class="section">
+        <h2>36. Video View</h2>
+        <video controls id="video-view">
+            <source src="video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Section 37: File Download -->
+    <div class="section">
+        <h2>37. File Download</h2>
+        <a href="whitepaper.pdf" download>Download White Paper</a>
+        <a href="ebook.pdf" download>Download eBook</a>
+    </div>
+
+    <!-- Section 38: Scroll Depth Trigger -->
+    <div class="section">
+        <h2>38. Scroll Depth</h2>
+        <p>Track user scroll to track engagement level.</p>
+    </div>
+
+    <!-- Section 39: Custom Event Trigger -->
+    <div class="section">
+        <h2>39. Custom Event Trigger</h2>
+        <button id="custom-action">Execute Custom Action</button>
+    </div>
+
+    <!-- Section 40: Product Purchase -->
+    <div class="section">
+        <h2>40. Product Purchase</h2>
+        <button id="purchase-button">Make a Purchase</button>
+    </div>
+
+    <!-- Section 41: CTA Clicks -->
+    <div class="section">
+        <h2>41. Call-to-Action (CTA) Clicks</h2>
+        <button id="cta-first">Primary CTA</button>
+        <button id="cta-second">Secondary CTA</button>
+    </div>
+
+    <!-- Section 42: Timer Event -->
+    <div class="section">
+        <h2>42. Timer Event</h2>
+        <p>Track user interaction after a certain time (e.g., 30 seconds).</p>
+    </div>
+
+    <!-- Section 43: Newsletter Signup -->
+    <div class="section">
+        <h2>43. Newsletter Signup</h2>
+        <form id="newsletter-form">
+            <div class="form-group">
+                <label for="email-newsletter">Email:</label>
+                <input type="email" id="email-newsletter" name="email" required>
+            </div>
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+
+    <!-- Section 44: File Download -->
+    <div class="section">
+        <h2>44. File Download</h2>
+        <a href="guide.pdf" download>Download Guide</a>
+        <a href="template.docx" download>Download Template</a>
+    </div>
+
+    <!-- Section 45: Custom Interaction -->
+    <div class="section">
+        <h2>45. Custom Interaction</h2>
+        <button id="custom-action">Execute Custom Action</button>
+    </div>
+
+    <!-- Section 46: Video View Tracking -->
+    <div class="section">
+        <h2>46. Video View</h2>
+        <video controls id="video-view">
+            <source src="video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Section 47: File Download -->
+    <div class="section">
+        <h2>47. File Download</h2>
+        <a href="whitepaper.pdf" download>Download White Paper</a>
+        <a href="ebook.pdf" download>Download eBook</a>
+    </div>
+
+    <!-- Section 48: Scroll Depth Trigger -->
+    <div class="section">
+        <h2>48. Scroll Depth</h2>
+        <p>Track user scroll to track engagement level.</p>
+    </div>
+
+    <!-- Section 49: Custom Event Trigger -->
+    <div class="section">
+        <h2>49. Custom Event Trigger</h2>
+        <button id="custom-action">Execute Custom Action</button>
+    </div>
+
+    <!-- Section 50: Product Purchase -->
+    <div class="section">
+        <h2>50. Product Purchase</h2>
+        <button id="purchase-button">Make a Purchase</button>
+    </div>
+
+    <script>
+        // JavaScript to simulate tag firing
+        document.getElementById('cta-button').addEventListener('click', function() {
+            console.log('CTA Button Clicked');
+            // Add tag firing logic here
+        });
+
+        document.getElementById('cta-secondary').addEventListener('click', function() {
+            console.log('Secondary CTA Clicked');
+            // Add tag firing logic here
+        });
+
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            console.log('Form Submitted');
+            // Add tag firing logic here
+        });
+
+        document.getElementById('signup-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            console.log('Signup Form Submitted');
+            // Add tag firing logic here
+        });
+
+        document.getElementById('purchase-button').addEventListener('click', function() {
+            console.log('Product Purchased');
+            // Add tag firing logic here
+        });
+
+        document.getElementById('custom-trigger').addEventListener('click', function() {
+            console.log('Custom Event Triggered');
+            // Add tag firing logic here
+        });
+
+        // Example of visibility trigger
+        var visibilityElement = document.getElementById('visible-element');
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    console.log('Element Visible');
+                    // Add tag firing logic here
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(visibilityElement);
+
+        // Example of timer trigger (10 seconds after page load)
+        setTimeout(function() {
+            console.log('Timer Trigger Fired');
+            // Add tag firing logic here
+        }, 10000);
+
+        // Example of video interaction trigger
+        var video = document.getElementById('sample-video');
+        video.addEventListener('play', function() {
+            console.log('Video Played');
+            // Add tag firing logic here
+        });
+
+        video.addEventListener('pause', function() {
+            console.log('Video Paused');
+            // Add tag firing logic here
+        });
+    </script>
+
+</body>
+</html>
