@@ -9,7 +9,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-PPBVCLNF');</script>
 <!-- End Google Tag Manager -->
-
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Merged Clickable Elements</title>
@@ -18,78 +18,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             font-family: Arial, sans-serif;
             margin: 20px;
         }
-
-        .clickable, button, input[type="submit"], input[type="button"], label, li, img, fieldset, table, blockquote, p {
+        .button {
             display: inline-block;
             padding: 10px 20px;
             margin: 10px;
             font-size: 16px;
+            color: white;
+            border: none;
+            border-radius: 5px;
             text-align: center;
             text-decoration: none;
             cursor: pointer;
-            border-radius: 5px;
-            border: none;
         }
-
-        button {
-            background-color: #007BFF;
-            color: white;
-        }
-
-        input[type="submit"], input[type="button"] {
-            background-color: #28a745;
-            color: white;
-        }
-
-        .clickable {
-            background-color: #ffc107;
-            color: black;
-        }
-
-        label {
-            background-color: #17a2b8;
-            color: white;
-        }
-
-        li {
-            background-color: #dc3545;
-            color: white;
-        }
-
-        img {
-            width: 100px;
-            height: auto;
-            border: none;
-            background-color: #6c757d;
-            color: white;
-        }
-
-        fieldset {
-            background-color: #20c997;
-            color: white;
-        }
-
-        table {
-            background-color: #343a40;
-            color: white;
-            text-align: center;
-        }
-
-        blockquote {
-            background-color: #6610f2;
-            color: white;
-        }
-
-        p {
-            background-color: #fd7e14;
-            color: white;
-        }
-
-        /* Hover effects */
-        button:hover, .clickable:hover, input[type="submit"]:hover, input[type="button"]:hover,
-        label:hover, li:hover, img:hover, fieldset:hover, table:hover, blockquote:hover, p:hover {
-            opacity: 0.8;
-        }
+        .btn-default { background-color: #007BFF; }
+        .btn-primary { background-color: #28A745; }
+        .btn-danger { background-color: #DC3545; }
+        .btn-warning { background-color: #FFC107; color: black; }
+        .btn-info { background-color: #17A2B8; }
+        .btn-secondary { background-color: #6C757D; }
+        .btn-purple { background-color: #6F42C1; }
+        .btn-orange { background-color: #FD7E14; }
+        .btn-pink { background-color: #E83E8C; }
+        .btn-teal { background-color: #20C997; }
+        .btn-dark { background-color: #343A40; }
+        .button:hover { opacity: 0.8; }
     </style>
 </head>
 <body>
@@ -98,57 +50,56 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-
-    <h1>Combined Clickable Elements</h1>
+    
+    <h1>Clickable Elements</h1>
 
     <!-- Buttons -->
-    <button onclick="showMessage('This is a default button')">Default Button</button>
-    <button onclick="showMessage('This is a primary button')" style="background-color: #007BFF; color: white;">Primary Button</button>
-    <button onclick="showMessage('This is a danger button')" style="background-color: #dc3545; color: white;">Danger Button</button>
+    <button class="button btn-default" onclick="showMessage('This is a default button')">Default Button</button>
+    <button class="button btn-primary" onclick="showMessage('This is a primary button')">Primary Button</button>
+    <button class="button btn-danger" onclick="showMessage('This is a danger button')">Danger Button</button>
 
-    <!-- Link as button -->
-    <a href="#" class="clickable" onclick="showMessage('This is a link acting as a button')">Link Button</a>
+    <!-- Link -->
+    <a href="#" class="button btn-warning" onclick="showMessage('This is a link acting as a button')">Link Button</a>
 
-    <!-- Div as button -->
-    <div class="clickable" onclick="showMessage('This is a div acting as a button')">Div Button</div>
+    <!-- Div -->
+    <div class="button btn-info" onclick="showMessage('This is a div acting as a button')">Div Button</div>
 
-    <!-- Span as button -->
-    <span class="clickable" onclick="showMessage('This is a span acting as a button')">Span Button</span>
+    <!-- Span -->
+    <span class="button btn-secondary" onclick="showMessage('This is a span acting as a button')">Span Button</span>
 
-    <!-- Input Buttons -->
-    <input type="button" value="Input Button" onclick="showMessage('This is an input button')">
+    <!-- Input -->
+    <input type="button" class="button btn-purple" value="Input Button" onclick="showMessage('This is an input button')">
     <form onsubmit="showMessage('This is a submit button'); return false;">
-        <input type="submit" value="Submit Button">
+        <input type="submit" class="button btn-orange" value="Submit Button">
     </form>
 
-    <!-- Label as button -->
-    <label class="clickable" onclick="showMessage('This is a label acting as a button')">Label Button</label>
+    <!-- Label -->
+    <label class="button btn-pink" onclick="showMessage('This is a label acting as a button')">Label Button</label>
 
-    <!-- List Item as button -->
+    <!-- List Item -->
     <ul>
-        <li onclick="showMessage('This is a list item button')">List Item Button</li>
+        <li class="button btn-teal" onclick="showMessage('This is a list item button')">List Item Button</li>
     </ul>
 
-    <!-- Image as button -->
-    <img src="https://via.placeholder.com/100" alt="Image Button" onclick="showMessage('This is an image button')">
+    <!-- Image -->
+    <img src="https://via.placeholder.com/100" class="button btn-dark" alt="Image Button" onclick="showMessage('This is an image button')" style="display: block; margin: 10px auto; border-radius: 5px;">
 
-    <!-- Paragraph as button -->
-    <p onclick="showMessage('This is a paragraph button')">Paragraph Button</p>
+    <!-- Paragraph -->
+    <p class="button btn-primary" onclick="showMessage('This is a paragraph button')">Paragraph Button</p>
 
-    <!-- Fieldset as button -->
-    <fieldset onclick="showMessage('This is a fieldset button')">Fieldset Button</fieldset>
+    <!-- Fieldset -->
+    <fieldset class="button btn-danger" onclick="showMessage('This is a fieldset button')">Fieldset Button</fieldset>
 
-    <!-- Table as button -->
-    <table onclick="showMessage('This is a table button')">
+    <!-- Table -->
+    <table class="button btn-secondary" onclick="showMessage('This is a table button')" style="width: 200px; margin: 10px auto; text-align: center; padding: 10px; border-radius: 5px;">
         <tr>
             <td>Table Button</td>
         </tr>
     </table>
 
-    <!-- Blockquote as button -->
-    <blockquote onclick="showMessage('This is a blockquote button')">Blockquote Button</blockquote>
-    <a href="index.html" class="button">Return to Home</a>
-    <!-- JavaScript -->
+    <!-- Blockquote -->
+    <blockquote class="button btn-warning" onclick="showMessage('This is a blockquote button')">Blockquote Button</blockquote>
+
     <script>
         function showMessage(message) {
             alert(message);
@@ -156,3 +107,4 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </script>
 </body>
 </html>
+
