@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Analytics Practice</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #ffecd2, #fcb69f);
+      color: #333;
+    }
+    header {
+      text-align: center;
+      background-color: #4caf50;
+      color: white;
+      padding: 1rem 0;
+    }
+    section {
+      margin: 20px;
+      padding: 20px;
+      border-radius: 10px;
+      background: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    section h2 {
+      color: #4caf50;
+      text-align: center;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .card {
+      width: 250px;
+      margin: 15px;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      background: #f0f8ff;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    }
+    .card h3 {
+      margin: 10px 0;
+      color: #007bb5;
+    }
+    .card button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      background-color: #007bb5;
+      color: white;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .card button:hover {
+      background-color: #005f8b;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #4caf50;
+      color: white;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Web Analytics Practice</h1>
+    <p>Explore tags, triggers, variables, events, and data layers!</p>
+  </header>
+
+  <!-- Tags Section -->
+  <section>
+    <h2>Tags Practice</h2>
+    <div class="container">
+      <!-- Add 20 popular tags -->
+      <div class="card">
+        <h3>Page View Tag</h3>
+        <button onclick="console.log('Page View Tag Triggered')">Simulate</button>
+      </div>
+      <div class="card">
+        <h3>Event Tag</h3>
+        <button onclick="console.log('Event Tag Triggered')">Simulate</button>
+      </div>
+      <!-- Add more tags here -->
+    </div>
+  </section>
+
+  <!-- Triggers Section -->
+  <section>
+    <h2>Triggers Practice</h2>
+    <div class="container">
+      <!-- Add 20 popular triggers -->
+      <div class="card">
+        <h3>Click Trigger</h3>
+        <button onclick="console.log('Click Trigger Activated')">Simulate</button>
+      </div>
+      <div class="card">
+        <h3>Scroll Depth Trigger</h3>
+        <button onclick="console.log('Scroll Depth Trigger Activated')">Simulate</button>
+      </div>
+      <!-- Add more triggers here -->
+    </div>
+  </section>
+
+  <!-- Variables Section -->
+  <section>
+    <h2>Variables Practice</h2>
+    <div class="container">
+      <!-- Add 20 popular variables -->
+      <div class="card">
+        <h3>Page URL Variable</h3>
+        <button onclick="console.log('Page URL Variable: ' + window.location.href)">Simulate</button>
+      </div>
+      <div class="card">
+        <h3>Click Element Variable</h3>
+        <button onclick="console.log('Clicked Element Simulated')">Simulate</button>
+      </div>
+      <!-- Add more variables here -->
+    </div>
+  </section>
+
+  <!-- Events Section -->
+  <section>
+    <h2>Events Practice</h2>
+    <div class="container">
+      <!-- Add 20 popular events -->
+      <div class="card">
+        <h3>Sign-Up Event</h3>
+        <button onclick="console.log('Sign-Up Event Triggered')">Simulate</button>
+      </div>
+      <div class="card">
+        <h3>Purchase Event</h3>
+        <button onclick="console.log('Purchase Event Triggered')">Simulate</button>
+      </div>
+      <!-- Add more events here -->
+    </div>
+  </section>
+
+  <!-- Data Layer Section -->
+  <section>
+    <h2>Data Layer Practice</h2>
+    <div class="container">
+      <!-- Add 20 popular data layer examples -->
+      <div class="card">
+        <h3>Product Added to Cart</h3>
+        <button onclick="console.log('Data Layer: Product Added')">Simulate</button>
+      </div>
+      <div class="card">
+        <h3>Page View Data Layer</h3>
+        <button onclick="console.log('Data Layer: Page View Simulated')">Simulate</button>
+      </div>
+      <!-- Add more data layer examples here -->
+    </div>
+  </section>
+
+  <footer>
+    <p>Practice your analytics skills and track interactions in real-time!</p>
+  </footer>
+</body>
+</html>
