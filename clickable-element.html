@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merged Clickable Elements</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .clickable, button, input[type="submit"], input[type="button"], label, li, img, fieldset, table, blockquote, p {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        input[type="submit"], input[type="button"] {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .clickable {
+            background-color: #ffc107;
+            color: black;
+        }
+
+        label {
+            background-color: #17a2b8;
+            color: white;
+        }
+
+        li {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        img {
+            width: 100px;
+            height: auto;
+            border: none;
+            background-color: #6c757d;
+            color: white;
+        }
+
+        fieldset {
+            background-color: #20c997;
+            color: white;
+        }
+
+        table {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+        }
+
+        blockquote {
+            background-color: #6610f2;
+            color: white;
+        }
+
+        p {
+            background-color: #fd7e14;
+            color: white;
+        }
+
+        /* Hover effects */
+        button:hover, .clickable:hover, input[type="submit"]:hover, input[type="button"]:hover,
+        label:hover, li:hover, img:hover, fieldset:hover, table:hover, blockquote:hover, p:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <h1>Combined Clickable Elements</h1>
+
+    <!-- Buttons -->
+    <button onclick="showMessage('This is a default button')">Default Button</button>
+    <button onclick="showMessage('This is a primary button')" style="background-color: #007BFF; color: white;">Primary Button</button>
+    <button onclick="showMessage('This is a danger button')" style="background-color: #dc3545; color: white;">Danger Button</button>
+
+    <!-- Link as button -->
+    <a href="#" class="clickable" onclick="showMessage('This is a link acting as a button')">Link Button</a>
+
+    <!-- Div as button -->
+    <div class="clickable" onclick="showMessage('This is a div acting as a button')">Div Button</div>
+
+    <!-- Span as button -->
+    <span class="clickable" onclick="showMessage('This is a span acting as a button')">Span Button</span>
+
+    <!-- Input Buttons -->
+    <input type="button" value="Input Button" onclick="showMessage('This is an input button')">
+    <form onsubmit="showMessage('This is a submit button'); return false;">
+        <input type="submit" value="Submit Button">
+    </form>
+
+    <!-- Label as button -->
+    <label class="clickable" onclick="showMessage('This is a label acting as a button')">Label Button</label>
+
+    <!-- List Item as button -->
+    <ul>
+        <li onclick="showMessage('This is a list item button')">List Item Button</li>
+    </ul>
+
+    <!-- Image as button -->
+    <img src="https://via.placeholder.com/100" alt="Image Button" onclick="showMessage('This is an image button')">
+
+    <!-- Paragraph as button -->
+    <p onclick="showMessage('This is a paragraph button')">Paragraph Button</p>
+
+    <!-- Fieldset as button -->
+    <fieldset onclick="showMessage('This is a fieldset button')">Fieldset Button</fieldset>
+
+    <!-- Table as button -->
+    <table onclick="showMessage('This is a table button')">
+        <tr>
+            <td>Table Button</td>
+        </tr>
+    </table>
+
+    <!-- Blockquote as button -->
+    <blockquote onclick="showMessage('This is a blockquote button')">Blockquote Button</blockquote>
+
+    <!-- JavaScript -->
+    <script>
+        function showMessage(message) {
+            alert(message);
+        }
+    </script>
+</body>
+</html>
