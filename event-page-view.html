@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PPBVCLNF');</script>
+<!-- End Google Tag Manager -->  
+
+    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page View Tag Practice</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #ffecd2, #fcb69f);
+      color: #333;
+    }
+    header {
+      text-align: center;
+      background-color: #4caf50;
+      color: white;
+      padding: 1rem 0;
+    }
+    section {
+      margin: 20px;
+      padding: 20px;
+      border-radius: 10px;
+      background: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    section h2 {
+      color: #4caf50;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <header>
+    <h1>Page View Tag Practice</h1>
+    <p>Simulate tracking page views using a 'Page View Tag'.</p>
+  </header>
+
+  <section>
+    <h2>Page View Tag Simulation</h2>
+    <div id="message" style="text-align: center;">
+      <p>Simulate a page view event by loading this page.</p>
+    </div>
+  </section>
+
+  <script>
+    // JavaScript code to simulate a Page View Tag using Google Analytics
+    function simulatePageView() {
+      // Assuming Google Analytics is already loaded in the page
+      if (typeof gtag === 'function') {
+        gtag('event', 'page_view', {
+          page_location: window.location.href,
+          page_path: window.location.pathname,
+        });
+        document.getElementById('message').innerText = 'Page view event simulated successfully!';
+      } else {
+        console.error('Google Analytics is not available.');
+      }
+    }
+
+    // Call the function on page load
+    window.onload = simulatePageView;
+  </script>
+</body>
+</html>
