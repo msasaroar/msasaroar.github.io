@@ -12,40 +12,50 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tag Practice : Element Click</title>
+    <title>Centered Page</title>
     <style>
+        /* Center the entire page using Flexbox */
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to right, #ffecd2, #fcb69f);
-            color: #333;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
+            display: flex;
             justify-content: center;
             align-items: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #044a1a;
+        }
+
+        /* Container styling */
+        .container {
+            text-align: center;
             padding: 20px;
+            background-color: #c3dbdb;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        header {
-            grid-column: span 3;
-            text-align: center;
-            background-color: #4caf50;
+
+        /* General button styling */
+        .button {
+            display: inline-block;
+            font-size: 16px;
             color: white;
-            padding: 1rem 0;
-            border-radius: 10px;
-        }
-        .button, .link, .span, .input, .label, .image, .paragraph, .fieldset, .table, .blockquote {
             text-align: center;
-            padding: 10px;
-            border-radius: 10px;
-            background: white;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .button button, .button input, .button a, .button div, .button span, .button label, .button img, .button table, .button blockquote, .button p, .button fieldset {
+            text-decoration: none;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
             cursor: pointer;
-            margin: 10px;
+            transition: transform 0.2s, opacity 0.3s;
         }
+
+        .button:hover {
+            opacity: 0.9;
+            transform: scale(1.05);
+        }
+
+        /* Specific color classes */
         .btn-default { background-color: #007BFF; }
         .btn-primary { background-color: #28A745; }
         .btn-danger { background-color: #DC3545; }
@@ -57,10 +67,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .btn-pink { background-color: #E83E8C; }
         .btn-teal { background-color: #20C997; }
         .btn-dark { background-color: #343A40; }
-        .button:hover { opacity: 0.8; }
     </style>
+    <script>
+        // Button click event handler
+        function showMessage(message) {
+            alert(message);
+        }
+    </script>
 </head>
-
 <body>
 
 <!-- Google Tag Manager (noscript) -->
@@ -68,83 +82,40 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-    <header>
-        <h1>Tag Practice : Element Click</h1>
-    </header>
-
-    <!-- Buttons -->
-    <div class="button">
+    <div class="container">
+        <h1>Uniform Button Look and Feel</h1>
         <button class="button btn-default" onclick="showMessage('This is a default button')">Default Button</button>
         <button class="button btn-primary" onclick="showMessage('This is a primary button')">Primary Button</button>
         <button class="button btn-danger" onclick="showMessage('This is a danger button')">Danger Button</button>
-    </div>
 
-    <!-- Link -->
-    <div class="link">
         <a href="#" class="button btn-warning" onclick="showMessage('This is a link acting as a button')">Link Button</a>
-    </div>
 
-    <!-- Div -->
-    <div class="button btn-info" onclick="showMessage('This is a div acting as a button')">Div Button</div>
-
-    <!-- Span -->
-    <div class="span">
         <span class="button btn-secondary" onclick="showMessage('This is a span acting as a button')">Span Button</span>
-    </div>
 
-    <!-- Input -->
-    <div class="input">
+        <div class="button btn-info" onclick="showMessage('This is a div acting as a button')">Div Button</div>
+
         <input type="button" class="button btn-purple" value="Input Button" onclick="showMessage('This is an input button')">
         <form onsubmit="showMessage('This is a submit button'); return false;">
             <input type="submit" class="button btn-orange" value="Submit Button">
         </form>
-    </div>
 
-    <!-- Label -->
-    <div class="label">
         <label class="button btn-pink" onclick="showMessage('This is a label acting as a button')">Label Button</label>
-    </div>
 
-    <!-- List Item -->
-    <div class="input">
-        <ul>
-            <li class="button btn-teal" onclick="showMessage('This is a list item button')">List Item Button</li>
-        </ul>
-    </div>
+        <li class="button btn-teal" onclick="showMessage('This is a list item button')">List Item Button</li>
 
-    <!-- Image -->
-    <div class="image">
         <img src="https://via.placeholder.com/100" class="button btn-dark" alt="Image Button" onclick="showMessage('This is an image button')" style="display: block; margin: 10px auto; border-radius: 5px;">
-    </div>
 
-    <!-- Paragraph -->
-    <div class="paragraph">
         <p class="button btn-primary" onclick="showMessage('This is a paragraph button')">Paragraph Button</p>
-    </div>
 
-    <!-- Fieldset -->
-    <div class="fieldset">
         <fieldset class="button btn-danger" onclick="showMessage('This is a fieldset button')">Fieldset Button</fieldset>
-    </div>
 
-    <!-- Table -->
-    <div class="table">
         <table class="button btn-secondary" onclick="showMessage('This is a table button')" style="width: 200px; margin: 10px auto; text-align: center; padding: 10px; border-radius: 5px;">
             <tr>
                 <td>Table Button</td>
             </tr>
         </table>
-    </div>
 
-    <!-- Blockquote -->
-    <div class="blockquote">
         <blockquote class="button btn-warning" onclick="showMessage('This is a blockquote button')">Blockquote Button</blockquote>
     </div>
-
-    <script>
-        function showMessage(message) {
-            alert(message);
-        }
-    </script>
 </body>
 </html>
