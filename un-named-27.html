@@ -1,34 +1,64 @@
-To verify that Google Ads and Google Analytics 4 (GA4) are successfully connected, follow these steps:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scroll Depth Practice</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    .vertical-section {
+      height: 3000px;
+      background: linear-gradient(to bottom, #ffcccb, #add8e6);
+      text-align: center;
+      padding-top: 20px;
+    }
+    .horizontal-section {
+      width: 3000px;
+      height: 400px;
+      background: linear-gradient(to right, #ffd700, #ff69b4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow-x: scroll;
+      white-space: nowrap;
+    }
+    .horizontal-section div {
+      min-width: 300px;
+      height: 200px;
+      background-color: white;
+      margin: 10px;
+      text-align: center;
+      line-height: 200px;
+      border: 2px solid #000;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Scroll Depth Practice Page</h1>
+    <p>Scroll vertically and horizontally to test GTM scroll depth tracking.</p>
+  </header>
 
-1. Check in Google Analytics 4
-Go to GA4: Open your GA4 property and navigate to Admin.
-Under Property Settings:
-Click on Google Ads Links under the "Product Links" section.
-Look for your Google Ads account in the list. If it’s showing as “Active,” then the connection is established.
+  <div class="vertical-section">
+    <h2>Vertical Scrolling Section</h2>
+    <p>Keep scrolling down to trigger vertical scroll depth events.</p>
+  </div>
 
-2. Verify in Google Ads
-Open Google Ads: Log into the Google Ads account you connected.
-Go to Tools and Settings: Click on the wrench icon in the top-right corner.
-Linked Accounts:
-Under "Setup," select Linked Accounts.
-In the Linked Accounts section, locate Google Analytics (GA4).
-Your linked GA4 property should appear here, indicating that the link is active.
-
-3. Monitor Data Flow in GA4
-Wait for Data Transfer: It may take a few hours for data to start flowing between GA4 and Google Ads.
-Check Audience Data:
-Go to Reports > Acquisition > Google Ads in GA4.
-You should start to see Google Ads data such as clicks, cost, and conversions in your GA4 reports within 24 hours.
-Real-Time Report: Open Reports > Realtime to see if any current sessions are coming from Google Ads campaigns.
-
-4. Verify Conversions (Optional)
-If you’ve set up specific conversions to be shared from GA4 to Google Ads, go to Tools and Settings > Conversions in Google Ads and check that the GA4 conversions are listed as active.
-
-5. Use DebugView in GA4 (Optional)
-To confirm that specific Google Ads-related events (like clicks or conversions) are being logged, go to Configure > DebugView in GA4. If you have debug mode enabled on your website or app, you should see the events associated with Google Ads clicks or interactions here.
-
-6. Run a Test Campaign (Optional)
-To be fully certain that data is flowing correctly, consider running a small test campaign in Google Ads.
-Use campaign parameters to verify that traffic and conversions show up in GA4 under Acquisition > Traffic Acquisition with proper Google Ads data.
-
-Following these steps will confirm that the integration is working properly and that data is successfully flowing between Google Ads and Google Analytics 4.
+  <div class="horizontal-section">
+    <div>Item 1</div>
+    <div>Item 2</div>
+    <div>Item 3</div>
+    <div>Item 4</div>
+    <div>Item 5</div>
+  </div>
+</body>
+</html>
