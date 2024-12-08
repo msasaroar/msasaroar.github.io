@@ -1,1 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PPBVCLNF');</script>
+<!-- End Google Tag Manager -->
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page View Tag Practice</title>
+  <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background: linear-gradient(to right, #ffecd2, #fcb69f);
+          color: #333;
+        }
+        header {
+          text-align: center;
+          background-color: #4caf50;
+          color: white;
+          padding: 1rem 0;
+        }
+        section {
+          margin: 20px;
+          padding: 20px;
+          border-radius: 10px;
+          background: white;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        section h2 {
+          color: #4caf50;
+          text-align: center;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .btn-default { background-color: #007BFF; }
+        .btn-primary { background-color: #28A745; }
+        .btn-danger { background-color: #DC3545; }
+        .btn-warning { background-color: #FFC107; color: black; }
+        .btn-info { background-color: #17A2B8; }
+        .btn-secondary { background-color: #6C757D; }
+        .btn-purple { background-color: #6F42C1; }
+        .btn-orange { background-color: #FD7E14; }
+        .btn-pink { background-color: #E83E8C; }
+        .btn-teal { background-color: #20C997; }
+        .btn-dark { background-color: #343A40; }
+        .button:hover { opacity: 0.8; }
+    </style>
+</head>
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+    <header>
+        <h1>Page View Tag Practice</h1>
+        <p>Simulate tracking page views using a 'Page View Tag'.</p>
+    </header>
+    
+    <section>
+        <h2>Page View Tag Simulation</h2>
+        <div id="message" style="text-align: center;">
+            <p>Simulate a page view event by loading this page.</p>
+        </div>
+    </section>
+
+    <div><a href="index.html">Return to Home</a></div>
+    
+    <h1>Clickable Elements</h1>
+    <!-- Buttons -->
+    <button class="button btn-default" onclick="showMessage('This is a default button')">Default Button</button>
+    <button class="button btn-primary" onclick="showMessage('This is a primary button')">Primary Button</button>
+    <button class="button btn-danger" onclick="showMessage('This is a danger button')">Danger Button</button>
+
+    <!-- Link -->
+    <a href="#" class="button btn-warning" onclick="showMessage('This is a link acting as a button')">Link Button</a>
+
+    <!-- Div -->
+    <div class="button btn-info" onclick="showMessage('This is a div acting as a button')">Div Button</div>
+
+    <!-- Span -->
+    <span class="button btn-secondary" onclick="showMessage('This is a span acting as a button')">Span Button</span>
+
+    <!-- Input -->
+    <input type="button" class="button btn-purple" value="Input Button" onclick="showMessage('This is an input button')">
+    <form onsubmit="showMessage('This is a submit button'); return false;">
+        <input type="submit" class="button btn-orange" value="Submit Button">
+    </form>
+
+    <!-- Label -->
+    <label class="button btn-pink" onclick="showMessage('This is a label acting as a button')">Label Button</label>
+
+    <!-- List Item -->
+    <ul>
+        <li class="button btn-teal" onclick="showMessage('This is a list item button')">List Item Button</li>
+    </ul>
+
+    <!-- Image -->
+    <img src="https://via.placeholder.com/100" class="button btn-dark" alt="Image Button" onclick="showMessage('This is an image button')" style="display: block; margin: 10px auto; border-radius: 5px;">
+
+    <!-- Paragraph -->
+    <p class="button btn-primary" onclick="showMessage('This is a paragraph button')">Paragraph Button</p>
+
+    <!-- Fieldset -->
+    <fieldset class="button btn-danger" onclick="showMessage('This is a fieldset button')">Fieldset Button</fieldset>
+
+    <!-- Table -->
+    <table class="button btn-secondary" onclick="showMessage('This is a table button')" style="width: 200px; margin: 10px auto; text-align: center; padding: 10px; border-radius: 5px;">
+        <tr>
+            <td>Table Button</td>
+        </tr>
+    </table>
+
+    <!-- Blockquote -->
+    <blockquote class="button btn-warning" onclick="showMessage('This is a blockquote button')">Blockquote Button</blockquote>
+
+    <script>
+        function showMessage(message) {
+            alert(message);
+        }
+    </script>
+</body>
+</html>
