@@ -84,52 +84,75 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div><a href="index.html">Return to Home</a></div>
     
     <h1>Clickable Elements</h1>
+    
     <!-- Buttons -->
-    <button class="button btn-default" onclick="showMessage('This is a default button')">Default Button</button>
-    <button class="button btn-primary" onclick="showMessage('This is a primary button')">Primary Button</button>
-    <button class="button btn-danger" onclick="showMessage('This is a danger button')">Danger Button</button>
-
+    <div class="button">
+        <button class="button btn-default" onclick="showMessage('This is a default button')">Default Button</button>
+        <button class="button btn-primary" onclick="showMessage('This is a primary button')">Primary Button</button>
+        <button class="button btn-danger" onclick="showMessage('This is a danger button')">Danger Button</button>
+    </div>
+    
     <!-- Link -->
-    <a href="#" class="button btn-warning" onclick="showMessage('This is a link acting as a button')">Link Button</a>
-
+    <div class="link">
+        <a href="#" class="button btn-warning" onclick="showMessage('This is a link acting as a button')">Link Button</a>
+    </div>
+    
     <!-- Div -->
     <div class="button btn-info" onclick="showMessage('This is a div acting as a button')">Div Button</div>
 
     <!-- Span -->
-    <span class="button btn-secondary" onclick="showMessage('This is a span acting as a button')">Span Button</span>
+    <div class="span">
+        <span class="button btn-secondary" onclick="showMessage('This is a span acting as a button')">Span Button</span>
+    </div>
 
     <!-- Input -->
-    <input type="button" class="button btn-purple" value="Input Button" onclick="showMessage('This is an input button')">
-    <form onsubmit="showMessage('This is a submit button'); return false;">
-        <input type="submit" class="button btn-orange" value="Submit Button">
-    </form>
-
+    <div class="input">
+        <input type="button" class="button btn-purple" value="Input Button" onclick="showMessage('This is an input button')">
+        <form onsubmit="showMessage('This is a submit button'); return false;">
+            <input type="submit" class="button btn-orange" value="Submit Button">
+        </form>
+    </div>
+  
     <!-- Label -->
-    <label class="button btn-pink" onclick="showMessage('This is a label acting as a button')">Label Button</label>
+    <div class="label">
+        <label class="button btn-pink" onclick="showMessage('This is a label acting as a button')">Label Button</label>
+    </div>
 
     <!-- List Item -->
-    <ul>
-        <li class="button btn-teal" onclick="showMessage('This is a list item button')">List Item Button</li>
-    </ul>
+    <div class="input>
+        <ul>
+            <li class="button btn-teal" onclick="showMessage('This is a list item button')">List Item Button</li>
+        </ul>
+    </div>
 
     <!-- Image -->
-    <img src="https://via.placeholder.com/100" class="button btn-dark" alt="Image Button" onclick="showMessage('This is an image button')" style="display: block; margin: 10px auto; border-radius: 5px;">
+    <div class="image">
+        <img src="https://via.placeholder.com/100" class="button btn-dark" alt="Image Button" onclick="showMessage('This is an image button')" style="display: block; margin: 10px auto; border-radius: 5px;">
+    </div> 
 
     <!-- Paragraph -->
-    <p class="button btn-primary" onclick="showMessage('This is a paragraph button')">Paragraph Button</p>
+    <div class="paragraph">
+        <p class="button btn-primary" onclick="showMessage('This is a paragraph button')">Paragraph Button</p>
+    </div>
 
     <!-- Fieldset -->
-    <fieldset class="button btn-danger" onclick="showMessage('This is a fieldset button')">Fieldset Button</fieldset>
+    <div class="fieldset">
+        <fieldset class="button btn-danger" onclick="showMessage('This is a fieldset button')">Fieldset Button</fieldset>
+    </div>
 
     <!-- Table -->
+    <div class="table">
     <table class="button btn-secondary" onclick="showMessage('This is a table button')" style="width: 200px; margin: 10px auto; text-align: center; padding: 10px; border-radius: 5px;">
         <tr>
             <td>Table Button</td>
         </tr>
     </table>
+    </div>
 
     <!-- Blockquote -->
-    <blockquote class="button btn-warning" onclick="showMessage('This is a blockquote button')">Blockquote Button</blockquote>
+    <div class="blockquote">
+        <blockquote class="button btn-warning" onclick="showMessage('This is a blockquote button')">Blockquote Button</blockquote>
+    </div>
 
     <script>
         function showMessage(message) {
