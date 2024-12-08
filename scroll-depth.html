@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scroll Depth Practice</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    .vertical-content {
+      height: 3000px;
+      background: linear-gradient(to bottom, #ff7eb3, #ff758c);
+      text-align: center;
+      padding-top: 20px;
+      color: white;
+    }
+    .horizontal-content-wrapper {
+      overflow-x: scroll;
+      white-space: nowrap;
+      background-color: #f0f0f0;
+    }
+    .horizontal-content {
+      display: inline-block;
+      height: 300px;
+      width: 5000px;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      text-align: center;
+      color: white;
+    }
+    h1, h2 {
+      margin: 20px;
+    }
+  </style>
+  <!-- Google Tag Manager -->
+  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-PPBVCLNF"></script>
+  <script>
+    (function(w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+      var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l !== 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
+  </script>
+  <!-- End Google Tag Manager -->
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <div class="vertical-content">
+    <h1>Vertical Scroll Tracking</h1>
+    <h2>Scroll down to test vertical depth tracking!</h2>
+  </div>
+
+  <div class="horizontal-content-wrapper">
+    <div class="horizontal-content">
+      <h1>Horizontal Scroll Tracking</h1>
+      <h2>Scroll right to test horizontal depth tracking!</h2>
+    </div>
+  </div>
+</body>
+</html>
