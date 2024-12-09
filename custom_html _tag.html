@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    (function(w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+      var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
+  </script>
+  <!-- End GTM -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tag Practice : Custom HTML Tags</title>
+  <style>
+    /* General Reset */
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ff7eb3, #7afcff);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #fff;
+    }
+
+    /* Centered Container */
+    .container {
+      text-align: center;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      width: 90%;
+      max-width: 600px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #ffeb3b;
+    }
+
+    p {
+      margin: 15px 0;
+      font-size: 1.2rem;
+    }
+
+    button, input, a {
+      font-size: 1rem;
+      margin: 10px 5px;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      outline: none;
+      cursor: pointer;
+    }
+
+    button {
+      background: #ff7eb3;
+      color: #fff;
+    }
+
+    button:hover {
+      background: #ff9ecd;
+    }
+
+    input {
+      width: 80%;
+      max-width: 300px;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+    }
+
+    a {
+      color: #ffeb3b;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Full-Height Gradient Section */
+    .gradient-section {
+      margin-top: 30px;
+      height: 200vh;
+      background: linear-gradient(to bottom, #7afcff, #ff7eb3);
+    }
+
+    .gradient-section p {
+      text-align: center;
+      margin-top: 100vh;
+      font-size: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (GTM) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  
+  <!-- Content Section -->
+  <div class="container">
+    <h1>Tag Practice : Custom HTML Tags</h1>
+    <p>Click the button below to simulate an action:</p>
+    <button id="practiceButton">Click Me!</button>
+
+    <p>Fill out the form below:</p>
+    <form id="practiceForm">
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name" placeholder="Your Name"><br>
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" placeholder="Your Email"><br>
+      <button type="submit">Submit</button>
+    </form>
+
+    <p>Click the link below:</p>
+    <a href="https://www.example.com" id="practiceLink" target="_blank">Visit Example</a>
+  </div>
+
+  <!-- Scroll Section -->
+  <div class="gradient-section">
+    <p>You have reached the bottom of the page!</p>
+  </div>
+
+  <script>
+    // Custom interactions for practice
+    document.getElementById('practiceButton').addEventListener('click', function() {
+      alert("Button clicked!");
+    });
+
+    document.getElementById('practiceForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert("Form submitted!");
+    });
+
+    document.getElementById('practiceLink').addEventListener('click', function() {
+      console.log("Link clicked!");
+    });
+  </script>
+</body>
+</html>
