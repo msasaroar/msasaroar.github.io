@@ -58,11 +58,33 @@
       transform: scale(1.05);
       box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
     }
-    .card h3 {
+
+    .card {
+      width: 250px;
+      margin: 15px;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      background: #f0f8ff;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    }
+
+
+
+
+
+    
+    .card-done h3 {
       margin: 10px 0;
       color: #007bb5;
     }
-    .card button {
+    .card-done button {
       padding: 10px 15px;
       border: none;
       border-radius: 4px;
@@ -71,9 +93,10 @@
       cursor: pointer;
       font-size: 14px;
     }
-    .card button:hover {
+    .card-done button:hover {
       background-color: #005f8b;
     }
+    
     footer {
       text-align: center;
       padding: 1rem;
@@ -100,8 +123,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section>
     <h2>Tags Practiced</h2>
     <div class="container">
-      <div class="card"><h3>GA4 Configuration</h3><button onclick="simulatePageView('ga4-config.html')">Simulate</button></div>
-      <div class="card"><h3>Page View</h3><button onclick="simulatePageView('page-view.html')">Simulate</button></div>
+      <div class="card-done">
+        <h3>GA4 Configuration</h3>
+        <button onclick="simulatePageView('ga4-config.html')">Simulate</button></div>
+      <div class="card-done"><h3>Page View</h3><button onclick="simulatePageView('page-view.html')">Simulate</button></div>
       <div class="card"><h3>Purchase Confirmation</h3><button onclick="simulatePageView('purchase-confirmation.html')">Simulate</button></div>
       <div class="card"><h3>Contact Form Submission</h3><button onclick="simulatePageView('contact.html')">Simulate</button></div>
       <div class="card"><h3>Signup Confirmation</h3><button onclick="simulatePageView('signup-confirmation.html')">Simulate</button></div>
