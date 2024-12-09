@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Image Tag Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+      color: #333;
+      text-align: center;
+    }
+    h1 {
+      color: #ffffff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      margin-top: 20px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+      f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PPBVCLNF');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <h1>Custom Image Tag Demo</h1>
+  <p>Click the button below to trigger the Custom Image Tag through GTM.</p>
+  <button id="triggerButton">Click Me!</button>
+
+  <!-- GTM No-Script -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End GTM No-Script -->
+
+  <script>
+    document.getElementById('triggerButton').addEventListener('click', function () {
+      alert("Button clicked! The Custom Image Tag will be triggered if set up correctly in GTM.");
+    });
+  </script>
+</body>
+</html>
