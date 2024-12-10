@@ -3,17 +3,137 @@
 <head>
 
 <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+<script>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PPBVCLNF');</script>
+})(window,document,'script','dataLayer','GTM-PPBVCLNF');
+</script>
 <!-- End Google Tag Manager -->
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart</title>
-    <link rel="stylesheet" href="add-to-cart.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(90deg, #006938, #008c4a);
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .cart-container {
+            max-width: 800px;
+            margin: 30px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .cart-container h1 {
+            background: linear-gradient(90deg, #007d3e, #009f58);
+            color: white;
+            padding: 20px;
+            margin: 0;
+            text-align: center;
+        }
+
+        .cart-items {
+            padding: 20px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-name {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .item-price {
+            font-size: 16px;
+            color: #006938;
+            font-weight: bold;
+        }
+
+        .remove-item {
+            background-color: #d32f2f;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .remove-item:hover {
+            background-color: #b71c1c;
+        }
+
+        .cart-summary {
+            padding: 20px;
+            background: #f9f9f9;
+            border-top: 1px solid #eee;
+        }
+
+        .cart-summary h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .cart-summary p {
+            font-size: 16px;
+            margin: 5px 0;
+        }
+
+        .button {
+            display: block;
+            width: calc(100% - 40px);
+            margin: 20px auto;
+            padding: 15px;
+            text-align: center;
+            background: linear-gradient(90deg, #007d3e, #009f58);
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background: linear-gradient(90deg, #005f2a, #007d3e);
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px 0;
+            background: #006938;
+            color: white;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
 
@@ -22,28 +142,45 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-    <div class="cart-container">
-        <h1>Your Shopping Cart</h1>
-        <div class="cart-items">
-            <!-- Example items -->
-            <div class="cart-item">
-                <p class="item-name">Item 1</p>
-                <p class="item-price">$20.00</p>
-                <button class="remove-item">Remove</button>
-            </div>
-            <div class="cart-item">
-                <p class="item-name">Item 2</p>
-                <p class="item-price">$15.00</p>
-                <button class="remove-item">Remove</button>
-            </div>
+<header>
+    Shopping Cart System
+</header>
+
+<div class="cart-container">
+    <h1>Your Shopping Cart</h1>
+    <div class="cart-items">
+        <div class="cart-item">
+            <p class="item-name">Item 1</p>
+            <p class="item-price">$20.00</p>
+            <button class="remove-item">Remove</button>
         </div>
-        <div class="cart-summary">
-            <h2>Order Summary</h2>
-            <p><strong>Total Items:</strong> <span id="total-items">2</span></p>
-            <p><strong>Total Price:</strong> $<span id="total-price">35.00</span></p>
+        <div class="cart-item">
+            <p class="item-name">Item 2</p>
+            <p class="item-price">$15.00</p>
+            <button class="remove-item">Remove</button>
         </div>
-        <button class="button">Proceed to Checkout</button>
     </div>
-    <script src="add-to-cart.js"></script>
+    <div class="cart-summary">
+        <h2>Order Summary</h2>
+        <p><strong>Total Items:</strong> <span id="total-items">2</span></p>
+        <p><strong>Total Price:</strong> $<span id="total-price">35.00</span></p>
+    </div>
+    <button class="button">Proceed to Checkout</button>
+</div>
+
+<footer>
+    &copy; 2024 Shopping Cart System. All rights reserved.
+</footer>
+
+<script>
+    // Example: Remove item functionality
+    const removeButtons = document.querySelectorAll('.remove-item');
+    removeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            this.closest('.cart-item').remove();
+            alert('Item removed!');
+        });
+    });
+</script>
 </body>
 </html>
