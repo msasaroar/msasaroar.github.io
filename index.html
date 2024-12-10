@@ -1,74 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-PPBVCLNF');</script>
-  <!-- End Google Tag Manager -->
-  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Web Analytics Practice</title>
   <style>
+    /* Base Styles */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(to right, #881adb, #fcb69f);
-      color: #20106e;
-      overflow-x: hidden;
+      background-color: #e7f3eb; /* Light green background */
+      color: #333; /* Neutral text color */
     }
 
+    /* Header */
     header {
+      background-color: #3b5998; /* Facebook blue */
+      color: white;
+      padding: 1rem;
       text-align: center;
-      background-color: #881adb;
-      color: #20106e;
-      padding: 1rem 0;
     }
+    header h1 {
+      font-size: 2rem;
+      margin: 0;
+    }
+    header p {
+      font-size: 1rem;
+      margin: 0;
+    }
+
+    /* Section */
     section {
       margin: 20px;
       padding: 20px;
+      background-color: #ffffff; /* White cards for contrast */
       border-radius: 10px;
-      background: #11d9bb;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
     section h2 {
-      color: #20106e;
+      color: #3b5998; /* Facebook blue for headings */
       text-align: center;
+      margin-bottom: 20px;
     }
+
+    /* Container and Cards */
     .container {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
+      justify-content: space-around;
     }
     .card {
+      background-color: #f0f2f5; /* Light gray card background */
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       width: 250px;
       margin: 15px;
       padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       text-align: center;
-      background: #347009;
-      cursor: pointer;
       transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card h3 {
+      color: #333;
+      font-size: 1.2rem;
+    }
+    .card button {
+      background-color: #4caf50; /* Green button */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 15px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    .card button:hover {
+      background-color: #45a049; /* Darker green on hover */
     }
     .card:hover {
       transform: scale(1.05);
-      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     }
 
+    /* Footer */
     footer {
-      text-align: center;
+      background-color: #3b5998; /* Facebook blue */
+      color: white;
       padding: 1rem;
-      background-color: #881adb;
-      color: #20106e;
+      text-align: center;
       position: fixed;
-      width: 100%;
       bottom: 0;
+      width: 100%;
     }
   </style>
 </head>
