@@ -6,7 +6,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: green;
+    background-color: white;
 }
 
 .confirmation-container {
@@ -30,7 +30,7 @@ p {
 
 .order-details h2 {
     margin-bottom: 10px;
-    color: #333;
+    color: black;
 }
 
 .order-details p {
