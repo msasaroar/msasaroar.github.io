@@ -16,6 +16,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
     <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #eaf1f4;
+            color: #333;
+        }
+
+        .header {
+            background-color: #006600;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header .logo img {
+            width: 150px;
+        }
+
+        .header nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .header nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        .header nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .header nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #ffffff;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .contact-container h1 {
+            font-size: 2.5rem;
+            color: #006600;
+        }
+
+        .contact-container p {
+            font-size: 1.2rem;
+        }
+
+        .contact-container form {
+            text-align: left;
+        }
+
+        .contact-container label {
+            font-weight: bold;
+        }
+
+        .contact-container input,
+        .contact-container textarea,
+        .contact-container button {
+            display: block;
+            width: calc(100% - 20px);
+            margin: 10px auto;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .contact-container button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .contact-container button:hover {
+            background-color: #218838;
+        }
+
+        .footer {
+            background-color: #006600;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -27,7 +122,7 @@
 
     <header class="header">
         <div class="logo">
-            <img src="logo.png" alt="Islami Bank Logo">
+            <img src="logo.png" alt="Demo Site Logo">
         </div>
         <nav>
             <ul>
@@ -66,7 +161,7 @@
     </section>
 
     <footer class="footer">
-        <p>&copy; 2024 Islami Bank. All Rights Reserved.</p>
+        <p>&copy; 2024 Demo Site. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
