@@ -1,90 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>
-    (function(w, d, s, l, i) {
-      w[l] = w[l] || [];
-      w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-      var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != 'dataLayer' ? '&l=' + l : '';
-      j.async = true;
-      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-      f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
-  </script>
-  <!-- End GTM -->
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tag Practice : Custom HTML Tag</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
-    /* General Reset */
     body {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #ff7eb3, #7afcff);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      color: #fff;
+      background-color: #eaf1f4;
+      color: #333;
+      font-family: 'Arial', sans-serif;
     }
 
-    /* Centered Container */
     .container {
-      text-align: center;
-      background: rgba(0, 0, 0, 0.7);
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-      width: 90%;
       max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #ffffff;
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
     }
 
     h1 {
       font-size: 2.5rem;
+      color: #006600;
+      text-align: center;
       margin-bottom: 20px;
-      color: #ffeb3b;
     }
 
     p {
-      margin: 15px 0;
       font-size: 1.2rem;
+      text-align: center;
     }
 
     button, input, a {
+      display: block;
+      width: 100%;
+      margin-top: 10px;
+      padding: 10px;
       font-size: 1rem;
-      margin: 10px 5px;
-      padding: 10px 15px;
-      border: none;
+      border: 1px solid #ddd;
       border-radius: 5px;
       outline: none;
       cursor: pointer;
     }
 
     button {
-      background: #ff7eb3;
-      color: #fff;
+      background-color: #28a745;
+      color: white;
     }
 
     button:hover {
-      background: #ff9ecd;
+      background-color: #218838;
     }
 
     input {
-      width: 80%;
-      max-width: 300px;
-      padding: 8px;
       margin-bottom: 10px;
-      border: 1px solid #ccc;
     }
 
     a {
-      color: #ffeb3b;
+      text-align: center;
+      color: #006600;
       text-decoration: none;
     }
 
@@ -92,17 +68,17 @@
       text-decoration: underline;
     }
 
-    /* Full-Height Gradient Section */
     .gradient-section {
       margin-top: 30px;
       height: 200vh;
-      background: linear-gradient(to bottom, #7afcff, #ff7eb3);
+      background: linear-gradient(to bottom, #b6e2a1, #99c38e);
     }
 
     .gradient-section p {
       text-align: center;
       margin-top: 100vh;
       font-size: 1.5rem;
+      color: #333;
     }
   </style>
 </head>
@@ -121,10 +97,10 @@
 
     <p>Fill out the form below:</p>
     <form id="practiceForm">
-      <label for="name">Name:</label><br>
-      <input type="text" id="name" name="name" placeholder="Your Name"><br>
-      <label for="email">Email:</label><br>
-      <input type="email" id="email" name="email" placeholder="Your Email"><br>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Your Name">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Your Email">
       <button type="submit">Submit</button>
     </form>
 
