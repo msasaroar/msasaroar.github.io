@@ -6,11 +6,11 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f4f4f4;
+    background-color: green;
 }
 
 .confirmation-container {
-    background: #8fe390;
+    background: green;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
