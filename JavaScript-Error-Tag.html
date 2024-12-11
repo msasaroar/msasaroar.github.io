@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Error Tag Demonstration</title>
+    <style>
+        /* General styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: black;
+        }
+
+        /* Header styles */
+        header {
+            background-color: green;
+            color: black;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: green;
+            color: black;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        /* Button styles */
+        button {
+            background-color: orange;
+            color: black;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: white;
+            color: black;
+            border: 1px solid black;
+        }
+
+        /* Home button position */
+        .home-button {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 1001;
+        }
+
+        /* Content section */
+        .content {
+            margin-top: 60px;
+            margin-bottom: 60px;
+            padding: 20px;
+        }
+    </style>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
+    </script>
+    <!-- End Google Tag Manager -->
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header>
+        <h1>To Demonstrate "JavaScript Error Tag" in GTM</h1>
+    </header>
+
+    <button class="home-button">Home</button>
+
+    <div class="content">
+        <p>This page is created to demonstrate the implementation of a "JavaScript Error Tag" in Google Tag Manager. Please explore the console to check for errors captured by GTM.</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 JavaScript Error Tag Demonstration</p>
+    </footer>
+
+    <script>
+        // Example of an intentional JavaScript error for testing
+        console.log(undeclaredVariable);
+    </script>
+</body>
+</html>
