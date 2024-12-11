@@ -6,25 +6,69 @@
     <title>Tag Practice : Outbound Link Click</title>
     <style>
         body {
-            background-color: green; /* গাঢ় সবুজ ব্যাকগ্রাউন্ড */
-            color: #ffffff; /* White text for contrast */
+            background-color: white; /* White body background */
+            color: black; /* Black font color */
             font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 20px;
+            margin: 0;
         }
+
+        header {
+            background-color: green; /* Green header background */
+            position: fixed;
+            top: 0;
+            width: 100%;
+            text-align: center;
+            color: black; /* Black text color */
+            padding: 10px 0;
+        }
+
+        footer {
+            background-color: green; /* Green footer background */
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            color: black; /* Black text color */
+            padding: 10px 0;
+        }
+
+        .home-button {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background-color: orange; /* Orange button background */
+            color: black; /* Black font color */
+            border: none;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .home-button:hover {
+            background-color: white; /* White hover color */
+            color: black; /* Black font color */
+        }
+
         a {
             display: inline-block;
             margin: 10px;
             padding: 10px 20px;
             text-decoration: none;
-            color: #ffffff;
-            background-color: #ff4500; /* Bright orange for links */
+            background-color: orange; /* Orange button background */
+            color: black; /* Black font color */
             border-radius: 5px;
             font-size: 16px;
-            font-weight: bold;
         }
+
         a:hover {
-            background-color: #ffa500; /* Light orange on hover */
+            background-color: white; /* White hover color */
+            color: black; /* Black font color */
+        }
+
+        main {
+            padding: 80px 20px 60px; /* Adjusted for header and footer spacing */
+            text-align: center;
         }
     </style>
     <!-- Google Tag Manager -->
@@ -43,11 +87,22 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <h1>Tag Practice : Outbound Link Click</h1>
-    <p>Click on the following outbound links to test tracking.</p>
-    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
-    <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">Google</a>
-    <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a>
-    <a href="https://www.github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <header>
+        <h1>Tag Practice : Outbound Link Click</h1>
+    </header>
+
+    <a href="#" class="home-button">Home</a>
+
+    <main>
+        <p>Click on the following outbound links to test tracking.</p>
+        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">Google</a>
+        <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a href="https://www.github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tag Practice</p>
+    </footer>
 </body>
 </html>
