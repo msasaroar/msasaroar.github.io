@@ -1,69 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PPBVCLNF');</script>
+  <!-- End Google Tag Manager -->
 
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PPBVCLNF');</script>
-<!-- End Google Tag Manager -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Purchase Confirmation</title>
-  <script>
-    // Simulated Data Layer Push for Purchase Event
-    window.dataLayer = window.dataLayer || [];
-    dataLayer.push({
-      event: "purchase",
-      ecommerce: {
-        transaction_id: "12345", // Replace with dynamic order ID
-        value: 100.00,          // Replace with dynamic total value
-        currency: "USD",        // Replace with dynamic currency
-        items: [
-          {
-            item_name: "Product 1",   // Replace with dynamic product name
-            price: 50.00,            // Replace with dynamic product price
-            quantity: 1,             // Replace with dynamic quantity
-          },
-          {
-            item_name: "Product 2",
-            price: 50.00,
-            quantity: 1,
-          }
-        ]
-      }
-    });
-    console.log("Purchase event pushed to dataLayer");
-  </script>
   <style>
     body {
       font-family: Arial, sans-serif;
       line-height: 1.6;
       margin: 0;
       padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
       background-color: white;
+      color: black;
     }
+
+    header {
+      background-color: green;
+      color: black;
+      text-align: center;
+      padding: 10px 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    footer {
+      background-color: green;
+      color: black;
+      text-align: center;
+      padding: 10px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
     .confirmation-container {
       text-align: center;
-      background: green;
       padding: 20px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      border-radius: 5px;
       max-width: 500px;
+      margin: 80px auto 80px; /* Adjusted for header and footer space */
     }
-    
+
     .confirmation-container h1 {
-      color: #4CAF50;
+      color: black;
     }
+
     .confirmation-container p {
-      color: #333;
+      color: black;
     }
+
     .confirmation-container .order-summary {
       margin-top: 20px;
       text-align: left;
@@ -72,29 +66,68 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       padding: 10px;
       border-radius: 5px;
       background: #f4f4f4;
+      color: black;
+    }
+
+    .button, button {
+      background-color: orange;
+      color: black;
+      padding: 10px 20px;
+      text-decoration: none;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .button:hover, button:hover {
+      background-color: white;
+    }
+
+    .home-button {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      background-color: orange;
+      color: black;
+      text-decoration: none;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .home-button:hover {
+      background-color: white;
     }
   </style>
 </head>
 <body>
-    
+
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-  <div class="confirmation-container">
-    <h1>Thank You for Your Purchase!</h1>
-    <p>Your order has been successfully placed.</p>
-    <p>Order ID: <strong>12345</strong></p>
-    <div class="order-summary">
-      <h3>Order Summary</h3>
-      <p><strong>Product 1</strong> - $50.00 x 1</p>
-      <p><strong>Product 2</strong> - $50.00 x 1</p>
-      <p><strong>Total:</strong> $100.00</p>
-    </div>
-    <p>You will receive a confirmation email shortly.</p>
-    <a href="index.html" class="button">Return to Home</a>
+<header>
+  <a href="index.html" class="home-button">Home</a>
+  <h1>Purchase Confirmation</h1>
+</header>
+
+<div class="confirmation-container">
+  <h1>Thank You for Your Purchase!</h1>
+  <p>Your order has been successfully placed.</p>
+  <p>Order ID: <strong>12345</strong></p>
+  <div class="order-summary">
+    <h3>Order Summary</h3>
+    <p><strong>Product 1</strong> - $50.00 x 1</p>
+    <p><strong>Product 2</strong> - $50.00 x 1</p>
+    <p><strong>Total:</strong> $100.00</p>
   </div>
+  <p>You will receive a confirmation email shortly.</p>
+  <a href="index.html" class="button">Return to Home</a>
+</div>
+
+<footer>
+  <p>&copy; 2024 Your Company</p>
+</footer>
+
 </body>
 </html>
-
