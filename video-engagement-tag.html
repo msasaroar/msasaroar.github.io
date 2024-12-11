@@ -13,11 +13,14 @@
 
         .navbar {
             background-color: green;
-            color: white;
+            color: black;
             padding: 10px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
         }
 
         .navbar .logo {
@@ -57,7 +60,7 @@
         }
 
         .content {
-            padding: 20px;
+            padding: 80px 20px 20px; /* Adjusted for navbar height */
         }
 
         .video-container {
@@ -94,7 +97,7 @@
         }
 
         .like-buttons button {
-            background: none;
+            background: orange;
             border: none;
             cursor: pointer;
             font-size: 14px;
@@ -102,7 +105,18 @@
         }
 
         .like-buttons button:hover {
-            color: #000;
+            background: white;
+            color: black;
+        }
+
+        footer {
+            background-color: green;
+            color: black;
+            text-align: center;
+            padding: 10px 20px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
         }
     </style>
 </head>
@@ -151,6 +165,10 @@
             </div>
         </div>
     </div>
+
+    <footer>
+        <button onclick="alert('Home clicked')">Home</button>
+    </footer>
 
     <noscript>
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe>
