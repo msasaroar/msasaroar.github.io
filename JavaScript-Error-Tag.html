@@ -103,10 +103,15 @@
         <p>This page is created to demonstrate the implementation of a "JavaScript Error Tag" in Google Tag Manager. Please explore the console to check for errors captured by GTM.</p>
     </div>
 
-    <footer>
-        <p>&copy; 2024 Saiful Alam. All rights reserved.</p>
-        <p>This demo website is provided solely for educational and demonstration purposes related to Google Analytics and Conversion Tracking.</p>
-    </footer>
+    <div id="footer"></div>
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
+    </script>
 
     <script>
         // Example of an intentional JavaScript error for testing
