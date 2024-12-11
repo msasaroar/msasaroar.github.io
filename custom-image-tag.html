@@ -89,9 +89,15 @@
     <button id="triggerButton">Click Me!</button>
   </main>
 
-  <footer>
-    <p>&copy; 2024 Your Website</p>
-  </footer>
+  <div id="footer"></div>
+  <script>
+      fetch('footer.html')
+          .then(response => response.text())
+          .then(data => {
+              document.getElementById('footer').innerHTML = data;
+          })
+          .catch(error => console.error('Error loading footer:', error));
+  </script>
 
   <!-- Google Tag Manager -->
   <script>
