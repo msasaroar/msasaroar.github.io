@@ -11,61 +11,78 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Islamic Bank Practice : Element Click</title>
+    <title>Islamic Bank Practice: Element Click</title>
     <style>
-        /* Center the entire page using Flexbox */
         body {
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            font-family: 'Arabic', sans-serif; /* Adding Arabic script for Islamic vibe */
-            background-color: #f5f5f5;
+            font-family: 'Arabic', sans-serif;
+            background-color: white;
+            color: black;
         }
 
-        /* Container styling */
-        .container {
+        header {
+            background-color: green;
+            color: black;
+            position: fixed;
+            top: 0;
+            width: 100%;
             text-align: center;
-            padding: 30px;
-            background-color: #e9f5f0; /* Softer green for Islamic aesthetics */
-            border: 1px solid #b3d1d1;
-            border-radius: 15px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            padding: 10px 0;
+            z-index: 1000;
         }
 
-        /* General button styling */
+        footer {
+            background-color: green;
+            color: black;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+
+        .container {
+            padding: 100px 20px 60px; /* Adjust padding to account for header and footer */
+            text-align: center;
+        }
+
         .button {
             display: inline-block;
             font-size: 18px;
-            color: #fff;
+            color: black;
+            background-color: orange;
             text-align: center;
             text-decoration: none;
             padding: 12px 25px;
             border: none;
             border-radius: 8px;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         .button:hover {
-            opacity: 0.85;
-            transform: translateY(-2px);
+            background-color: white;
+            color: black;
         }
 
-        /* Specific color classes */
-        .btn-default { background-color: #007bff; }
-        .btn-primary { background-color: #28a745; }
-        .btn-danger { background-color: #dc3545; }
-        .btn-warning { background-color: #ffc107; color: #000; }
-        .btn-info { background-color: #17a2b8; }
-        .btn-secondary { background-color: #6c757d; }
-        .btn-purple { background-color: #6f42c1; }
-        .btn-orange { background-color: #fd7e14; }
-        .btn-pink { background-color: #e83e8c; }
-        .btn-teal { background-color: #20c997; }
-        .btn-dark { background-color: #343a40; }
+        .home-button {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background-color: orange;
+            color: black;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .home-button:hover {
+            background-color: white;
+            color: black;
+        }
     </style>
     <script>
         // Button click event handler
@@ -75,46 +92,49 @@
     </script>
 </head>
 <body>
+    <header>
+        <h1>Islamic Bank Practice: Element Click</h1>
+    </header>
 
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+    <a href="#" class="home-button">Home</a>
 
     <div class="container">
-        <h1>Islamic Bank Practice : Element Click</h1>
-        <button class="button btn-default" onclick="showMessage('This is a default button')">Default Button</button>
-        <button class="button btn-primary" onclick="showMessage('This is a primary button')">Primary Button</button>
-        <button class="button btn-danger" onclick="showMessage('This is a danger button')">Danger Button</button>
+        <button class="button" onclick="showMessage('This is a default button')">Default Button</button>
+        <button class="button" onclick="showMessage('This is a primary button')">Primary Button</button>
+        <button class="button" onclick="showMessage('This is a danger button')">Danger Button</button>
 
-        <a href="#" class="button btn-warning" onclick="showMessage('This is a link acting as a button')">Link Button</a>
+        <a href="#" class="button" onclick="showMessage('This is a link acting as a button')">Link Button</a>
 
-        <span class="button btn-secondary" onclick="showMessage('This is a span acting as a button')">Span Button</span>
+        <span class="button" onclick="showMessage('This is a span acting as a button')">Span Button</span>
 
-        <div class="button btn-info" onclick="showMessage('This is a div acting as a button')">Div Button</div>
+        <div class="button" onclick="showMessage('This is a div acting as a button')">Div Button</div>
 
-        <input type="button" class="button btn-purple" value="Input Button" onclick="showMessage('This is an input button')">
+        <input type="button" class="button" value="Input Button" onclick="showMessage('This is an input button')">
         <form onsubmit="showMessage('This is a submit button'); return false;">
-            <input type="submit" class="button btn-orange" value="Submit Button">
+            <input type="submit" class="button" value="Submit Button">
         </form>
 
-        <label class="button btn-pink" onclick="showMessage('This is a label acting as a button')">Label Button</label>
+        <label class="button" onclick="showMessage('This is a label acting as a button')">Label Button</label>
 
-        <li class="button btn-teal" onclick="showMessage('This is a list item button')">List Item Button</li>
+        <li class="button" onclick="showMessage('This is a list item button')">List Item Button</li>
 
-        <img src="https://via.placeholder.com/100" class="button btn-dark" alt="Image Button" onclick="showMessage('This is an image button')" style="display: block; margin: 10px auto; border-radius: 8px;">
+        <img src="https://via.placeholder.com/100" class="button" alt="Image Button" onclick="showMessage('This is an image button')" style="display: block; margin: 10px auto; border-radius: 8px;">
 
-        <p class="button btn-primary" onclick="showMessage('This is a paragraph button')">Paragraph Button</p>
+        <p class="button" onclick="showMessage('This is a paragraph button')">Paragraph Button</p>
 
-        <fieldset class="button btn-danger" onclick="showMessage('This is a fieldset button')">Fieldset Button</fieldset>
+        <fieldset class="button" onclick="showMessage('This is a fieldset button')">Fieldset Button</fieldset>
 
-        <table class="button btn-secondary" onclick="showMessage('This is a table button')" style="width: 250px; margin: 10px auto; text-align: center; padding: 15px; border-radius: 8px;">
+        <table class="button" onclick="showMessage('This is a table button')" style="width: 250px; margin: 10px auto; text-align: center; padding: 15px; border-radius: 8px;">
             <tr>
                 <td>Table Button</td>
             </tr>
         </table>
 
-        <blockquote class="button btn-warning" onclick="showMessage('This is a blockquote button')">Blockquote Button</blockquote>
+        <blockquote class="button" onclick="showMessage('This is a blockquote button')">Blockquote Button</blockquote>
     </div>
+
+    <footer>
+        <p>Footer Content</p>
+    </footer>
 </body>
 </html>
