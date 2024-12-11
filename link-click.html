@@ -17,80 +17,67 @@
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
-            height: 100vh; /* Full height of the viewport */
+            height: 100vh;
+            background-color: white;
+            color: black;
             display: flex;
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
-            background: linear-gradient(to bottom, #f9f9f9, #dceefc);
-            color: #333;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        /* Main Container */
-        .container {
+        /* Header Styling */
+        header {
+            background-color: green;
+            color: black;
             text-align: center;
-            background: #176614; /* গাঢ় সবুজ */
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            color: black;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        p {
-            font-size: 1.2rem;
-            color: black;
-            margin-bottom: 30px;
-        }
-
-        /* Link Container Styling */
-        .link-container {
-            margin: 10px 0;
-        }
-
-        /* Link Styling */
-        a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 12px 20px;
-            border-radius: 25px;
-            display: inline-block;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-        }
-
-        /* Different Colors for Links */
-        .link1 {
-            background-color: #007bff; /* Blue */
-        }
-        .link1:hover {
-            background-color: #0056b3;
-        }
-
-        .link2 {
-            background-color: #ff5722; /* Orange */
-        }
-        .link2:hover {
-            background-color: #e64a19;
-        }
-
-        .link3 {
-            background-color: #671d8a; /* Green */
-        }
-        .link3:hover {
-            background-color: #7d388e;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
         }
 
         /* Footer Styling */
         footer {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 0.9rem;
+            background-color: green;
             color: black;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        /* Button Styling */
+        button, a {
+            background-color: orange;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover, a:hover {
+            background-color: white;
+            color: black;
+        }
+
+        /* Home Button Styling */
+        .home-button {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+        }
+
+        /* Main Container Styling */
+        .container {
+            text-align: center;
+            padding: 100px 20px 60px; /* Adjust padding for fixed header/footer */
         }
     </style>
 </head>
@@ -101,10 +88,13 @@
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
+<header>
+    <h1>Tag Practice : Element Click</h1>
+</header>
+
+<button class="home-button">Home</button>
+
 <div class="container">
-    <header>
-        <h1>Tag Practice : Element Click</h1>
-    </header>
     <p>নিচের লিঙ্কগুলোতে ক্লিক করুন এবং GTM-এ "Link Click" ট্র্যাকিং পরীক্ষা করুন।</p>
 
     <div class="link-container">
@@ -116,11 +106,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="link-container">
         <a href="https://example.com/contact" target="_blank" class="link3">Contact Us</a>
     </div>
-
-    <footer>
-        &copy; 2024 | GTM Tracking Demo
-    </footer>
 </div>
+
+<footer>
+    &copy; 2024 | GTM Tracking Demo
+</footer>
 
 </body>
 </html>
