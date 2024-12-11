@@ -20,23 +20,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f7f7f7;
+            background-color: white;
             color: black;
         }
 
         header {
-            background: green);
+            background-color: green;
             color: black;
             padding: 15px 0;
             text-align: center;
             font-size: 24px;
             font-weight: bold;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
 
         .cart-container {
             max-width: 800px;
-            margin: 30px auto;
-            background: green;
+            margin: 100px auto 30px;
+            background: white;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             overflow: hidden;
@@ -88,13 +92,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         .remove-item:hover {
-            background-color: #b71c1c;
+            background-color: white;
         }
 
         .cart-summary {
             padding: 20px;
             background: green;
             border-top: 1px solid #eee;
+            color: black;
         }
 
         .cart-summary h2 {
@@ -122,13 +127,37 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             cursor: pointer;
         }
 
+        .button:hover {
+            background: white;
+        }
 
         footer {
             text-align: center;
             padding: 15px 0;
-            background: green;
+            background-color: green;
             color: black;
             font-size: 14px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .home-button {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background-color: orange;
+            color: black;
+            border: none;
+            padding: 8px 12px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1100;
+        }
+
+        .home-button:hover {
+            background-color: white;
         }
     </style>
 </head>
@@ -139,6 +168,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
+<header>
+    Shopping Cart System
+</header>
+
+<button class="home-button">Home</button>
 
 <div class="cart-container">
     <h1>Your Shopping Cart</h1>
@@ -175,7 +209,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             alert('Item removed!');
         });
     });
-</script
-    
+</script>
 </body>
 </html>
