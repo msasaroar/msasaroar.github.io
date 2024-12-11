@@ -8,17 +8,23 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
+            background-color: white;
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         header {
-            background-color: #034731;
-            color: #fff;
+            background-color: green;
+            color: black;
             padding: 10px 0;
             text-align: center;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
         }
 
         header h1 {
@@ -26,10 +32,28 @@
             font-size: 24px;
         }
 
+        .home-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: orange;
+            color: black;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .home-button:hover {
+            background-color: white;
+        }
+
         .checkout-container {
             max-width: 800px;
-            margin: 20px auto;
-            background-color: #ffffff;
+            margin: 120px auto 20px; /* Adjusted margin for fixed header */
+            background-color: white;
             border: 1px solid #ddd;
             border-radius: 8px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -38,7 +62,7 @@
 
         .checkout-container h1 {
             text-align: center;
-            color: #034731;
+            color: black;
             font-size: 26px;
         }
 
@@ -51,7 +75,7 @@
 
         legend {
             font-size: 18px;
-            color: #034731;
+            color: black;
             font-weight: bold;
             padding: 0 10px;
         }
@@ -60,7 +84,7 @@
             display: block;
             margin-bottom: 8px;
             font-weight: bold;
-            color: #555;
+            color: black;
         }
 
         input {
@@ -75,8 +99,8 @@
         button {
             display: block;
             width: 100%;
-            background-color: #034731;
-            color: #fff;
+            background-color: orange;
+            color: black;
             font-size: 16px;
             font-weight: bold;
             padding: 12px;
@@ -87,13 +111,17 @@
         }
 
         button:hover {
-            background-color: #026f24;
+            background-color: white;
         }
 
         footer {
+            background-color: green;
+            color: black;
             text-align: center;
-            margin-top: 20px;
-            color: #777;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
 
         footer p {
@@ -101,7 +129,7 @@
         }
 
         footer a {
-            color: #034731;
+            color: black;
             text-decoration: none;
         }
 
@@ -112,6 +140,7 @@
 </head>
 <body>
     <header>
+        <a href="#" class="home-button">Home</a>
         <h1>Checkout</h1>
     </header>
     <div class="checkout-container">
