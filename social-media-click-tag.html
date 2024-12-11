@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Click Tag Demonstration in GTM</title>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: green;
+            padding: 20px;
+            text-align: center; /* Center text horizontally */
+            position: fixed;
+            width: 100%;
+            top: 0;
+        }
+
+        footer {
+            background-color: green;
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .content {
+            padding: 60px 20px; /* 60px is the height of the header */
+            text-align: center;
+        }
+
+        button {
+            background-color: orange;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .social-media-links {
+            margin-top: 30px;
+        }
+
+        .social-media-links a {
+            display: inline-block;
+            margin: 10px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .home-button {
+            background-color: orange;
+            color: black;
+            border: none;
+            padding: 5px 15px;
+            cursor: pointer;
+            position: absolute;
+            top: 10px; /* Position the button to the left top corner */
+            left: 10px;
+        }
+
+        .home-button:hover {
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <button class="home-button" onclick="window.location.href='index.html'">Home</button>
+        <h1>Social Media Click Tag Demonstration in GTM</h1>
+    </header>
+
+    <div class="content">
+        <p>Click on the links below to demonstrate the social media click tracking:</p>
+        <div class="social-media-links">
+            <a href="https://www.facebook.com" target="_blank">Facebook</a>
+            <a href="https://www.twitter.com" target="_blank">Twitter</a>
+            <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>Footer Content</p>
+    </footer>
+
+    <!-- Google Tag Manager Script -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+</body>
+</html>
