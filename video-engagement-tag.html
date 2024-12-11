@@ -166,9 +166,15 @@
         </div>
     </div>
 
-    <footer>
-        <button onclick="alert('Home clicked')">Home</button>
-    </footer>
+    <div id="footer"></div>
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
+    </script>
 
     <noscript>
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe>
