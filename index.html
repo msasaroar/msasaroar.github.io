@@ -332,9 +332,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
   </section>
 
-  <footer>
-    <p>Fully expanded practice environment for web analytics!</p>
-  </footer>
+    <div id="footer"></div>
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
+    </script>
   
   <script>
     function simulatePageView(page) {
