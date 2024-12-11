@@ -9,37 +9,80 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-PPBVCLNF');</script>
 <!-- End Google Tag Manager -->
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GA4 Configuration</title>
 
   <style>
+    /* General Styling */
     body {
       font-family: Arial, sans-serif;
       line-height: 1.6;
       margin: 0;
       padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #f9f9f9;
+      background-color: white;
+      color: black;
     }
+
+    /* Header Styling */
+    header {
+      background-color: green;
+      color: black;
+      text-align: center;
+      padding: 10px 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    /* Footer Styling */
+    footer {
+      background-color: green;
+      color: black;
+      text-align: center;
+      padding: 10px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* Button Styling */
+    .button, button {
+      background-color: orange;
+      color: black;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .button:hover, button:hover {
+      background-color: white;
+    }
+
+    /* Confirmation Container */
     .confirmation-container {
       text-align: center;
-      background: #006400; /* গাঢ় সবুজ রঙ */
+      background: #f4f4f4;
       padding: 20px;
+      margin: 100px auto 60px; /* Adjusted for fixed header and footer */
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       border-radius: 5px;
       max-width: 500px;
     }
-    
+
     .confirmation-container h1 {
-      color: #ffffff; /* ইসলামী ব্যাংকের লোগো রঙের অনুরূপ হালকা সবুজ */
+      color: black;
     }
+
     .confirmation-container p {
-      color: #333;
+      color: black;
     }
+
     .confirmation-container .order-summary {
       margin-top: 20px;
       text-align: left;
@@ -49,42 +92,55 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       border-radius: 5px;
       background: #f4f4f4;
     }
-    .button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: #ffc20e;
+
+    /* Home Button */
+    .home-button {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      background-color: orange;
       color: black;
-      text-align: center;
-      text-decoration: none;
+      padding: 10px 15px;
       border-radius: 5px;
+      text-decoration: none;
     }
 
-    .button:hover {
-      background-color: #45a049; /* হোভার এফেক্টের জন্য হালকা সবুজ রঙ */
+    .home-button:hover {
+      background-color: white;
     }
   </style>
 </head>
-  
+
 <body>
-  
+
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-  <div class="confirmation-container">
-    <h1>GA4 Configuration</h1>
-    <p>আপনার GA4 কনফিগারেশন সফলভাবে সম্পন্ন হয়েছে।</p>
-    <div class="order-summary">
-      <p>Order Summary:</p>
-      <ul>
-        <li>Configuration: GA4 setup completed</li>
-        <li>Date: 2024-12-10</li>
-        <li>Time: 10:00 AM</li>
-      </ul>
-    </div>
-    <a href="index.html" class="button">Return to Home</a>
+<header>
+  <h1>GA4 Configuration</h1>
+</header>
+
+<a href="index.html" class="home-button">Home</a>
+
+<div class="confirmation-container">
+  <h1>GA4 Configuration</h1>
+  <p>আপনার GA4 কনফিগারেশন সফলভাবে সম্পন্ন হয়েছে।</p>
+  <div class="order-summary">
+    <p>Order Summary:</p>
+    <ul>
+      <li>Configuration: GA4 setup completed</li>
+      <li>Date: 2024-12-10</li>
+      <li>Time: 10:00 AM</li>
+    </ul>
   </div>
+  <a href="index.html" class="button">Return to Home</a>
+</div>
+
+<footer>
+  <p>&copy; 2024 GA4 Configuration. All Rights Reserved.</p>
+</footer>
+
 </body>
 </html>
