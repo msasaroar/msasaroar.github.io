@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTM Timer Tag Demo</title>
+    <style>
+        /* General Styles */
+        body {
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: green;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            margin: 0;
+            color: black;
+        }
+
+        /* Home Button */
+        .home-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: orange;
+            color: black;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .home-button:hover {
+            background-color: white;
+            color: black;
+        }
+
+        /* Footer Styles */
+        footer {
+            margin-top: 60px; /* Adjust for content */
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <a href="#" class="home-button">Home</a>
+        <h1>Timer Tag Demonstration</h1>
+    </header>
+
+    <!-- Content Section -->
+    <main style="padding-top: 80px; text-align: center;">
+        <p>Welcome to the Timer Tag demonstration page!</p>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <!-- Include the footer.html content -->
+        <!-- Use server-side include or appropriate framework to embed footer.html -->
+    </footer>
+</body>
+</html>
