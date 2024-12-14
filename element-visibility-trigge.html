@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element Visibility Trigger - GTM</title>
+    <style>
+        /* General Styling */
+        body {
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: green;
+            color: black;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px 0;
+        }
+
+        /* Home Button Styling */
+        .home-button {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            background-color: orange;
+            color: black;
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+
+        .home-button:hover {
+            background-color: white;
+            color: black;
+            border: 1px solid orange;
+        }
+
+        /* Main Content Styling */
+        main {
+            margin-top: 60px; /* Offset for the fixed header */
+            padding: 20px;
+        }
+
+        /* Button Styling */
+        button {
+            background-color: orange;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: white;
+            color: black;
+            border: 1px solid orange;
+        }
+
+        /* Footer Inclusion */
+        footer {
+            margin-top: 20px;
+        }
+    </style>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-PPBVCLNF');
+    </script>
+    <!-- End Google Tag Manager -->
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Header -->
+    <header>
+        <button class="home-button" onclick="location.href='index.html';">Home</button>
+        <h1>Element Visibility Trigger - GTM</h1>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <h2>What is an Element Visibility Trigger?</h2>
+        <p>The Element Visibility Trigger in Google Tag Manager allows you to track when specific elements on a page become visible to the user. This can be useful for monitoring interactions with elements that may not always be in view, such as advertisements, videos, or special offers.</p>
+
+        <button onclick="alert('Example Button Clicked!')">Example Button</button>
+    </main>
+
+    <!-- Footer Inclusion -->
+    <footer>
+        <!-- Assuming footer.html contains valid HTML content -->
+        <iframe src="footer.html" style="width:100%; height:100px; border:none;"></iframe>
+    </footer>
+</body>
+</html>
