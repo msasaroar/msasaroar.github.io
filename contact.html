@@ -1,184 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form Submission - GTM</title>
     <!-- Google Tag Manager -->
     <script>
-        (function(w,d,s,l,i){
-            w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
-            var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-PPBVCLNF');
     </script>
     <!-- End Google Tag Manager -->
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
+        /* Global styles */
         body {
-            font-family: 'Arial', sans-serif;
             background-color: white;
-            color: black;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            color: black;
         }
 
+        /* Header styles */
         header {
             background-color: green;
             color: black;
             text-align: center;
+            padding: 10px 0;
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
         }
 
-        .header nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-        }
-
-        .header nav ul li {
-            margin: 0 15px;
-        }
-
-        .header nav ul li a {
-            color: black;
-            text-decoration: none;
-        }
-
-        .header nav ul li a:hover {
-            color: white;
-        }
-
-        .contact-container {
-            max-width: 600px;
-            margin: 120px auto 50px auto;
-            padding: 20px;
-            background: green;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .contact-container h1 {
-            font-size: 2.5rem;
-            color: black;
-        }
-
-        .contact-container p {
-            font-size: 1.2rem;
-        }
-
-        .contact-container form {
-            text-align: left;
-        }
-
-        .contact-container label {
-            font-weight: bold;
-        }
-
-        .contact-container input,
-        .contact-container textarea,
-        .contact-container button {
-            display: block;
-            width: calc(100% - 20px);
-            margin: 10px auto;
-            padding: 10px;
-            font-size: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            outline: none;
-        }
-
-        .contact-container button {
-            background-color: orange;
-            color: black;
-            border: none;
-            cursor: pointer;
-        }
-
-        .contact-container button:hover {
-            background-color: white;
-        }
-
-        .home-button {
-            position: fixed;
+        /* Home button */
+        #home-button {
+            position: absolute;
             top: 10px;
             left: 10px;
             background-color: orange;
             color: black;
             border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 1rem;
-            z-index: 1001;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 14px;
         }
 
-        .home-button:hover {
+        #home-button:hover {
+            background-color: white;
+        }
+
+        /* Main content styles */
+        main {
+            margin-top: 70px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Button styles */
+        button {
+            background-color: orange;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
             background-color: white;
         }
     </style>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <a href="#" class="home-button">Home</a>
-
-    <header class="header">
-        <div class="logo">
-            <img src="logo.png" alt="Demo Site Logo">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact Us</a></li>
-            </ul>
-        </nav>
+    <header>
+        <button id="home-button" onclick="window.location.href='index.html'">Home</button>
+        <h1>Contact Form Submission - GTM</h1>
     </header>
 
-    <section class="contact-container">
-        <h1>Contact Us</h1>
-        <p>We are here to assist you. Feel free to reach out to us using the form below.</p>
+    <main>
+        <h2>Fill Out the Contact Form Below</h2>
+        <form>
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
 
-        <form id="contact-form" action="submit_form.php" method="POST">
-            <label for="name">Your Name:</label>
-            <input type="text" id="name" name="name" placeholder="John Doe" required>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
 
-            <label for="email">Your Email:</label>
-            <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="5" required></textarea><br><br>
 
-            <label for="subject">Subject:</label>
-            <input type="text" id="subject" name="subject" placeholder="Your Subject" required>
-
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" placeholder="Write your message here..." rows="5" required></textarea>
-
-            <button type="submit" class="button">Submit</button>
+            <button type="submit">Submit</button>
         </form>
-    </section>
+    </main>
 
-    <div id="footer"></div>
-    <script>
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer').innerHTML = data;
-            })
-            .catch(error => console.error('Error loading footer:', error));
-    </script>
+    <!-- Footer inclusion -->
+    <footer>
+        <!-- Include footer from footer.html -->
+        <iframe src="footer.html" style="width:100%; height:100px; border:none;"></iframe>
+    </footer>
 </body>
 </html>
