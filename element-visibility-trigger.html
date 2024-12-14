@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element Visibility Trigger - Button Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: green;
+            color: white;
+            padding: 10px;
+        }
+
+        main {
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        footer {
+            background-color: green;
+            color: white;
+            padding: 10px;
+            position: relative;
+        }
+
+        #demoButton {
+            background-color: orange;
+            color: black;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            cursor: pointer;
+            display: none; /* Hidden by default */
+            margin-top: 50px;
+        }
+
+        #demoButton:hover {
+            background-color: white;
+            color: black;
+            border: 1px solid orange;
+        }
+
+        .spacer {
+            height: 1500px; /* Adds enough space to make the page scrollable */
+        }
+    </style>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-PPBVCLNF');
+    </script>
+    <!-- End Google Tag Manager -->
+    <script>
+        document.addEventListener("scroll", function () {
+            const button = document.getElementById("demoButton");
+            if (window.scrollY > 300) { // Button becomes visible after scrolling down 300px
+                button.style.display = "block";
+            }
+        });
+    </script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header>
+        <h1>Element Visibility Trigger - Button Demo</h1>
+    </header>
+
+    <main>
+        <h2>Scroll Down to See the Button</h2>
+        <p>The button will appear after you scroll down the page.</p>
+        <div class="spacer"></div>
+    </main>
+
+    <footer>
+        <p>Footer Content Here</p>
+    </footer>
+
+    <button id="demoButton">Click Me!</button>
+</body>
+</html>
