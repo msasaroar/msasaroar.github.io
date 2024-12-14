@@ -1,111 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tag Practice : Custom Image Tag</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: white;
-      color: black;
-      text-align: center;
-    }
-
-    header {
-      background-color: green;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      color: black;
-      padding: 10px 0;
-      text-align: center;
-      z-index: 1000;
-    }
-
-    button {
-      background-color: orange;
-      color: black;
-      border: none;
-      padding: 15px 30px;
-      font-size: 18px;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-top: 20px;
-    }
-
-    button:hover {
-      background-color: white;
-      color: black;
-    }
-
-    .home-button {
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      background-color: orange;
-      color: black;
-      padding: 10px 20px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-size: 16px;
-      font-weight: bold;
-    }
-
-    .home-button:hover {
-      background-color: white;
-      color: black;
-    }
-
-    main {
-      padding-top: 70px; /* Offset for fixed header */
-      padding-bottom: 50px; /* Offset for fixed footer */
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Image Tag Demonstration</title>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': 
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-PPBVCLNF');
+    </script>
+    <!-- End Google Tag Manager -->
+    <style>
+        /* Styling based on requirements */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: black;
+        }
+        header {
+            background-color: green;
+            color: black;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+        header a {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: orange;
+            color: black;
+            text-decoration: none;
+            padding: 10px 15px;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        header a:hover {
+            background-color: white;
+            color: black;
+        }
+        main {
+            padding: 100px 20px;
+            text-align: center;
+        }
+        button {
+            background-color: orange;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: white;
+            color: black;
+        }
+        footer {
+            margin-top: 50px;
+            text-align: center;
+        }
+        img {
+            width: 300px;
+            cursor: pointer;
+            margin: 20px 0;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <a href="#" class="home-button">Home</a>
-    <h1>Tag Practice : Custom Image Tag</h1>
-  </header>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" 
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
-  <main>
-    <p>Click the button below to trigger the Custom Image Tag through GTM.</p>
-    <button id="triggerButton">Click Me!</button>
-  </main>
+    <header>
+        <a href="index.html" id="home-button">Home</a>
+        <h1>Demonstrating Custom Image Tag in GTM</h1>
+    </header>
 
-  <div id="footer"></div>
-  <script>
-      fetch('footer.html')
-          .then(response => response.text())
-          .then(data => {
-              document.getElementById('footer').innerHTML = data;
-          })
-          .catch(error => console.error('Error loading footer:', error));
-  </script>
+    <main>
+        <p>Click the image below to trigger the Custom Image Tag in GTM:</p>
+        <img src="example-image.jpg" alt="Custom Image" id="trackable-image">
+        <p>This is an example of tracking an image interaction using GTM.</p>
+    </main>
 
-  <!-- Google Tag Manager -->
-  <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
-      var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-      f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PPBVCLNF');
-  </script>
-  <!-- End Google Tag Manager -->
-
-  <!-- GTM No-Script -->
-  <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-  </noscript>
-  <!-- End GTM No-Script -->
-
-  <script>
-    document.getElementById('triggerButton').addEventListener('click', function () {
-      alert("Button clicked! The Custom Image Tag will be triggered if set up correctly in GTM.");
-    });
-  </script>
+    <!-- Footer included from an external file -->
+    <footer>
+        <!-- Footer HTML file -->
+        <p>© 2024 | Your Website</p>
+    </footer>
 </body>
 </html>
