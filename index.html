@@ -4,16 +4,16 @@
 
     <!-- Google Tag Manager -->
     <script>
-    (function(w, d, s, l, i) {
+        (function(w, d, s, l, i) {
         w[l] = w[l] || [];
         w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
         var f = d.getElementsByTagName(s)[0],
-            j = d.createElement(s),
-            dl = l != 'dataLayer' ? '&l=' + l : '';
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
         j.async = true;
         j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
         f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
+        })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
     </script>
     <!-- End Google Tag Manager -->
     
@@ -26,69 +26,81 @@
     
 <body>
 
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <header>
+        <h1>Web Analytics Practice</h1>
+        <p>Explore tags, triggers, variables, events, and data layers!</p>
+    </header>
+        
+    <section>
+        <h2>Tags Practiced</h2>
+        <div class="container">
+            <div class="card"><h3>GA4 Configuration</h3><button onclick="simulatePageView('ga4-config.html')">Simulate</button></div>
+            <div class="card"><h3>Page View</h3><button onclick="simulatePageView('page-view.html')">Simulate</button></div>
+            <div class="card"><h3>Purchase Confirmation</h3><button onclick="simulatePageView('purchase-confirmation.html')">Simulate</button></div>
+            <div class="card"><h3>Contact Form Submission</h3><button onclick="simulatePageView('contact.html')">Simulate</button></div>
+            <div class="card"><h3>Signup Confirmation</h3><button onclick="simulatePageView('signup-confirmation.html')">Simulate</button></div>
+            <div class="card"><h3>Add to Cart</h3><button onclick="simulatePageView('add-to-cart.html')">Simulate</button></div>
+            <div class="card"><h3>Checkout</h3><button onclick="simulatePageView('checkout.html')">Simulate</button></div>
+            <div class="card"><h3>Link Click</h3><button onclick="simulatePageView('link-click.html')">Simulate</button></div>
+            <div class="card"><h3>Scroll (Vertical & Horizontal) Tag</h3><button onclick="simulatePageView('scroll-depth.html')">Simulate</button></div>
+            <div class="card"><h3>Custom HTML Tag</h3><button onclick="simulatePageView('custom-html-tag.html')">Simulate</button></div>
+            <div class="card"><h3>Outbound Click Tag</h3><button onclick="simulatePageView('outbound-link-click.html')">Simulate</button></div>
+            <div class="card"><h3>JavaScript Error Tag</h3><button onclick="simulatePageView('JavaScript-Error-Tag.html')">Simulate</button></div>
+            <div class="card"><h3>Timer Tag</h3><button onclick="simulatePageView('timer-tag.html')">Simulate</button></div>
+            <div class="card"><h3>User Login Trigger</h3><button onclick="simulatePageView('user-login-form.html')">Simulate</button></div>
+            <div class="card"><h3>Element Visibility Trigger</h3><button onclick="simulatePageView('element-visibility-trigger.html')">Simulate</button></div>
+            <div class="card"><h3>Social Media Click Tag</h3><button onclick="simulatePageView('social-media-click-tag.html')">Simulate</button></div>
+            <div class="card"><h3>Video Engagement[Non Youtube]</h3><button onclick="simulatePageView('video-engagement-non-youtube.html')">Simulate</button></div>
+            <div class="card"><h3>Video Engagement[Youtube]</h3><button onclick="simulatePageView('video-engagement-youtube.html')">Simulate</button></div>
+            <div class="card"><h3>Custom Image Tag</h3><button onclick="simulatePageView('custom-image-tag.html')">Simulate</button></div>
+            <div class="card"><h3>Element Click </h3><button onclick="simulatePageView('element-click.html')">Simulate</button></div>
+            
+            <!------------------------------------------Triggers are not firing---------------------------------------------->
+            
+            <!------------------------------------------Triggers are not firing---------------------------------------------->
+        </div>
+    </section>
   
-  <header>
-    <h1>Web Analytics Practice</h1>
-    <p>Explore tags, triggers, variables, events, and data layers!</p>
-  </header>
-  
-  <section>
-    <h2>Tags Practiced</h2>
-    <div class="container">
-        <div class="card"><h3>GA4 Configuration</h3><button onclick="simulatePageView('ga4-config.html')">Simulate</button></div>
-        <div class="card"><h3>Page View</h3><button onclick="simulatePageView('page-view.html')">Simulate</button></div>
-        <div class="card"><h3>Purchase Confirmation</h3><button onclick="simulatePageView('purchase-confirmation.html')">Simulate</button></div>
-        <div class="card"><h3>Contact Form Submission</h3><button onclick="simulatePageView('contact.html')">Simulate</button></div>
-        <div class="card"><h3>Signup Confirmation</h3><button onclick="simulatePageView('signup-confirmation.html')">Simulate</button></div>
-        <div class="card"><h3>Add to Cart</h3><button onclick="simulatePageView('add-to-cart.html')">Simulate</button></div>
-        <div class="card"><h3>Checkout</h3><button onclick="simulatePageView('checkout.html')">Simulate</button></div>
-        <div class="card"><h3>Link Click</h3><button onclick="simulatePageView('link-click.html')">Simulate</button></div>
-        <div class="card"><h3>Scroll (Vertical & Horizontal) Tag</h3><button onclick="simulatePageView('scroll-depth.html')">Simulate</button></div>
-        <div class="card"><h3>Custom HTML Tag</h3><button onclick="simulatePageView('custom-html-tag.html')">Simulate</button></div>
-        <div class="card"><h3>Outbound Click Tag</h3><button onclick="simulatePageView('outbound-link-click.html')">Simulate</button></div>
-        <div class="card"><h3>JavaScript Error Tag</h3><button onclick="simulatePageView('JavaScript-Error-Tag.html')">Simulate</button></div>
-        <div class="card"><h3>Timer Tag</h3><button onclick="simulatePageView('timer-tag.html')">Simulate</button></div>
-        <div class="card"><h3>User Login Trigger</h3><button onclick="simulatePageView('user-login-form.html')">Simulate</button></div>
-        <div class="card"><h3>Element Visibility Trigger</h3><button onclick="simulatePageView('element-visibility-trigger.html')">Simulate</button></div>
-        <div class="card"><h3>Social Media Click Tag</h3><button onclick="simulatePageView('social-media-click-tag.html')">Simulate</button></div>
-        <div class="card"><h3>Video Engagement[Non Youtube]</h3><button onclick="simulatePageView('video-engagement-non-youtube.html')">Simulate</button></div>
-        <div class="card"><h3>Video Engagement[Youtube]</h3><button onclick="simulatePageView('video-engagement-youtube.html')">Simulate</button></div>
-        <div class="card"><h3>Custom Image Tag</h3><button onclick="simulatePageView('custom-image-tag.html')">Simulate</button></div>
-        <div class="card"><h3>Element Click </h3><button onclick="simulatePageView('element-click.html')">Simulate</button></div>
+    <!-- Triggers Section -->
+    <section>
+        <h2>=Triggers To Be Practice=</h2>
+        <div class="container">
+            <div class="card"><h3>History Change Trigger</h3><button onclick="simulatePageView('history-change.html')">Simulate</button></div>
+            <div class="card"><h3>Custom Trigger</h3><button onclick="simulatePageView('custom.html')">Simulate</button></div>
+            <div class="card"><h3>Window Loaded Trigger</h3><button onclick="simulatePageView('window-loaded.html')">Simulate</button></div>
+            <div class="card"><h3>Custom Event Trigger</h3><button onclick="simulatePageView('custom-event.html')">Simulate</button></div>
+            <div class="card"><h3>DOM Ready Trigger</h3><button onclick="simulatePageView('dom-ready.html')">Simulate</button></div>
+            <div class="card"><h3>Page Visibility Trigger</h3><button onclick="simulatePageView('page-visibility.html')">Simulate</button></div>
+            <div class="card"><h3>Hash Change Trigger</h3><button onclick="simulatePageView('hash-change.html')">Simulate</button></div>
+            <div class="card"><h3>Ad Click Trigger</h3><button onclick="simulatePageView('ad-click.html')">Simulate</button></div>
+        </div>
+    </section>
 
-<!------------------------------------------Triggers are not firing---------------------------------------------->
-
-<!------------------------------------------Triggers are not firing---------------------------------------------->
-    </div>
-  </section>
-  
-   <!-- Triggers Section -->
-  <section>
-    <h2>=Triggers To Be Practice=</h2>
-    <div class="container">
-      <div class="card"><h3>History Change Trigger</h3><button onclick="simulatePageView('history-change.html')">Simulate</button></div>
-      <div class="card"><h3>Custom Trigger</h3><button onclick="simulatePageView('custom.html')">Simulate</button></div>
-      <div class="card"><h3>Window Loaded Trigger</h3><button onclick="simulatePageView('window-loaded.html')">Simulate</button></div>
-      <div class="card"><h3>Custom Event Trigger</h3><button onclick="simulatePageView('custom-event.html')">Simulate</button></div>
-      <div class="card"><h3>DOM Ready Trigger</h3><button onclick="simulatePageView('dom-ready.html')">Simulate</button></div>
-      <div class="card"><h3>Page Visibility Trigger</h3><button onclick="simulatePageView('page-visibility.html')">Simulate</button></div>
-      <div class="card"><h3>Hash Change Trigger</h3><button onclick="simulatePageView('hash-change.html')">Simulate</button></div>
-      <div class="card"><h3>Ad Click Trigger</h3><button onclick="simulatePageView('ad-click.html')">Simulate</button></div>
-    </div>
-  </section>
-
-  <!-- Tags Section -->
-  <section>
-    <h2>Tags To Be Practice</h2>
-    <div class="container">
-        <div class="card"><h3>GA4 Refund Event Tag</h3><button onclick="simulatePageView('GA4-Refund-Event-Tag')">Simulate</button></div>
-        <div class="card"><h3>Remarketing Tag</h3><button onclick="simulatePageView('Remarketing-Tag.html')">Simulate</button></div>
-    </div>
-  </section>
+    <!-- Events Section -->
+    <section>
+        <h2>Events To Be Practice</h2>
+        <div class="container">
+            <div class="card"><h3>Video Play</h3><button onclick="simulatePageView('video-play.html')">Simulate</button></div>
+            <div class="card"><h3>Video Pause</h3><button onclick="simulatePageView('video-pause.html')">Simulate</button></div>
+            <div class="card"><h3>Video Complete</h3><button onclick="simulatePageView('video-complete.html')">Simulate</button></div>
+            <div class="card"><h3>Hash Change</h3><button onclick="simulatePageView('hash-change.html')">Simulate</button></div>
+        </div>
+    </section>  
+    
+    
+    <!-- Tags Section -->
+    <section>
+        <h2>Tags To Be Practice</h2>
+        <div class="container">
+            <div class="card"><h3>GA4 Refund Event Tag</h3><button onclick="simulatePageView('GA4-Refund-Event-Tag')">Simulate</button></div>
+            <div class="card"><h3>Remarketing Tag</h3><button onclick="simulatePageView('Remarketing-Tag.html')">Simulate</button></div>
+        </div>
+    </section>
 
 
   <!-- Variables Section -->
@@ -118,19 +130,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
   </section>
   
-  
-  <!-- Events Section -->
-  <section>
-  <h2>Events To Be Practice</h2>
-  <div class="container">
-    <div class="card"><h3>Video Play</h3><button onclick="simulatePageView('video-play.html')">Simulate</button></div>
-    <div class="card"><h3>Video Pause</h3><button onclick="simulatePageView('video-pause.html')">Simulate</button></div>
-    <div class="card"><h3>Video Complete</h3><button onclick="simulatePageView('video-complete.html')">Simulate</button></div>
-    <div class="card"><h3>Hash Change</h3><button onclick="simulatePageView('hash-change.html')">Simulate</button></div>
-  </div>
-  </section>
-  
-  
+
   <!-- Data Layer Section -->
   <section>
   <h2>Data Layer To Be Practice</h2>
