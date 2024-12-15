@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Track the 'Video Play' Event using GTM</title>
+    <!-- GTM Code -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
+    </script>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color: green;
+            color: black;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+        .home-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: orange;
+            color: black;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .home-button:hover {
+            background-color: white;
+        }
+        .content {
+            margin-top: 70px; /* Space below header */
+            padding: 20px;
+        }
+        button {
+            background-color: orange;
+            color: black;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: white;
+        }
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <!-- GTM No-JS Fallback -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header>
+        <button class="home-button" onclick="window.location.href='index.html';">Home</button>
+        <h1>To Track the 'Video Play' Event using GTM</h1>
+    </header>
+
+    <div class="content">
+        <h2>How to Track Video Play Events:</h2>
+        <p>This page explains the steps to set up tracking for the <strong>'Video Play'</strong> event using Google Tag Manager (GTM).</p>
+        <h3>Steps:</h3>
+        <ol>
+            <li>Enable built-in variables for tracking video interactions.</li>
+            <li>Create a YouTube Video trigger in GTM.</li>
+            <li>Set up a GA4 event tag with parameters such as video title and URL.</li>
+            <li>Test the setup in GTM's preview mode.</li>
+            <li>Verify the event in Google Analytics' Realtime report.</li>
+        </ol>
+        <p>Click the button below to play the video and test the tracking:</p>
+        <video id="sampleVideo" width="600" controls>
+            <source src="sample-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Footer included from an external file -->
+    <footer>
+        <!-- Footer content dynamically loaded -->
+        <!-- Replace the script source if footer.html is hosted elsewhere -->
+        <script>
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.write(html);
+                })
+                .catch(err => console.error('Failed to load footer:', err));
+        </script>
+    </footer>
+</body>
+</html>
