@@ -109,10 +109,10 @@
 
     <main>
         <nav>
-            <a href="#SectionHome">Hash : Google Analytics 4</a>
-            <a href="#SectionAbout">Hash : Google Tag Manager</a>
-            <a href="#SectionServices">Hash : Google Ads</a>
-            <a href="#SectionContact">Hash : GitHub</a>
+            <a href="#SectionGA4">Hash : Google Analytics 4</a>
+            <a href="#SectionGTM">Hash : Google Tag Manager</a>
+            <a href="#SectionGADs">Hash : Google Ads</a>
+            <a href="#SectionGitHub">Hash : GitHub</a>
         </nav>
 
         <section id="content">
@@ -134,25 +134,20 @@
                 'event': 'hashChange',
                 'newHash': location.hash
             });
-            
-            <a href="#SectionGA4">Googlem Analytics 4</a>
-            <a href="#SectionGTM">Googlem Tag Manager</a>
-            <a href="#SectionGAds">Coogle Ads</a>
-            <a href="#SectionGitHub">GitHub</a>
         
             // Update content dynamically based on hash
             const content = document.getElementById('content');
             switch (location.hash) {
-                case '#SectionHome':
-                    content.innerHTML = '<h2>Google Analytics 4</h2><p>Welcome to the Googlem Analytics 4 section!</p>';
+                case '#SectionGA4':
+                    content.innerHTML = '<h2>Google Analytics 4</h2><p>Welcome to the Google Analytics 4 section!</p>';
                     break;
-                case '#SectionAbout':
-                    content.innerHTML = '<h2>Google Tag Manager</h2><p>Welcome to the Googlem Tag Manager section!</p>';
+                case '#SectionGTM':
+                    content.innerHTML = '<h2>Google Tag Manager</h2><p>Welcome to the Google Tag Manager section!</p>';
                     break;
-                case '#SectionServices':
+                case '#SectionGAds':
                     content.innerHTML = '<h2>Coogle Ads</h2><p>Welcome to the Google Ads section!</p>';
                     break;
-                case '#SectionContact':
+                case '#SectionGitHub':
                     content.innerHTML = '<h2>GitHub</h2><p>Welcome to the GitHub section!</p>';
                     break;
                 default:
