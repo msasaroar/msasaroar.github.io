@@ -109,10 +109,10 @@
 
     <main>
         <nav>
-            <a href="#SectionHome">Hash : Home</a>
-            <a href="#SectionAbout">Hash : About</a>
-            <a href="#SectionServices">Hash : Services</a>
-            <a href="#SectionContact">Hash : Contact</a>
+            <a href="#SectionHome">Hash : Google Analytics 4</a>
+            <a href="#SectionAbout">Hash : Google Tag Manager</a>
+            <a href="#SectionServices">Hash : Google Ads</a>
+            <a href="#SectionContact">Hash : GitHub</a>
         </nav>
 
         <section id="content">
@@ -134,21 +134,26 @@
                 'event': 'hashChange',
                 'newHash': location.hash
             });
-
+            
+            <a href="#SectionGA4">Googlem Analytics 4</a>
+            <a href="#SectionGTM">Googlem Tag Manager</a>
+            <a href="#SectionGAds">Coogle Ads</a>
+            <a href="#SectionGitHub">GitHub</a>
+        
             // Update content dynamically based on hash
             const content = document.getElementById('content');
             switch (location.hash) {
                 case '#SectionHome':
-                    content.innerHTML = '<h2>Hash # Home</h2><p>Welcome to the Home section!</p>';
+                    content.innerHTML = '<h2>Google Analytics 4</h2><p>Welcome to the Googlem Analytics 4 section!</p>';
                     break;
                 case '#SectionAbout':
-                    content.innerHTML = '<h2>Hash # About</h2><p>This section is about our website.</p>';
+                    content.innerHTML = '<h2>Google Tag Manager</h2><p>Welcome to the Googlem Tag Manager section!</p>';
                     break;
                 case '#SectionServices':
-                    content.innerHTML = '<h2>Hash # Services</h2><p>Here are the services we offer.</p>';
+                    content.innerHTML = '<h2>Coogle Ads</h2><p>Welcome to the Google Ads section!</p>';
                     break;
                 case '#SectionContact':
-                    content.innerHTML = '<h2>Hash # Contact</h2><p>Contact us for more information.</p>';
+                    content.innerHTML = '<h2>GitHub</h2><p>Welcome to the GitHub section!</p>';
                     break;
                 default:
                     content.innerHTML = '<h2>Welcome</h2><p>This is a simple Single Page Application(SPA) page to demonstrate hash change event tracking with GTM.</p>';
