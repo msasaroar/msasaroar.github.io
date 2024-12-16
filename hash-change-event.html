@@ -103,21 +103,21 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <header>
-        <!--a href="index.html" class="home-button">Home</a-->
-        <button class="home-button" onclick="location.hash='home'">Home</button>    
+        <button class="home-button" onclick="location.hash='home'">Home</button>
+        <h1>To track the 'Hash Change Event' using GTM</h1>
     </header>
 
     <main>
         <nav>
-            <a href="#SectionHome">Section : Home</a>
-            <a href="#SectionAbout">Section : About</a>
-            <a href="#SectionServices">Section : Services</a>
-            <a href="#SectionContact">Section : Contact</a>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
         </nav>
 
         <section id="content">
             <h2>Welcome</h2>
-            <p>This is a simple Single Page Application (SPA) page to demonstrate hash change event tracking with GTM.</p>
+            <p>This is a simple SPA page to demonstrate hash change event tracking with GTM.</p>
         </section>
     </main>
 
@@ -138,20 +138,20 @@
             // Update content dynamically based on hash
             const content = document.getElementById('content');
             switch (location.hash) {
-                case '#SectionHome':
-                    content.innerHTML = '<h2>Section # Home</h2><p>Welcome to the Home section!</p>';
+                case '#home':
+                    content.innerHTML = '<h2>Home</h2><p>Welcome to the Home section!</p>';
                     break;
-                case '#SectionAbout':
-                    content.innerHTML = '<h2>Section # About</h2><p>This section is about our website.</p>';
+                case '#about':
+                    content.innerHTML = '<h2>About</h2><p>This section is about our website.</p>';
                     break;
-                case '#SectionServices':
-                    content.innerHTML = '<h2>Section # Services</h2><p>Here are the services we offer.</p>';
+                case '#services':
+                    content.innerHTML = '<h2>Services</h2><p>Here are the services we offer.</p>';
                     break;
-                case '#SectionContact':
-                    content.innerHTML = '<h2>Section # Contact</h2><p>Contact us for more information.</p>';
+                case '#contact':
+                    content.innerHTML = '<h2>Contact</h2><p>Contact us for more information.</p>';
                     break;
                 default:
-                    content.innerHTML = '<h2>Welcome</h2><p>This is a simple Single Page Application (SPA) page to demonstrate hash change event tracking with GTM.</p>';
+                    content.innerHTML = '<h2>Welcome</h2><p>This is a simple SPA page to demonstrate hash change event tracking with GTM.</p>';
             }
         });
     </script>
