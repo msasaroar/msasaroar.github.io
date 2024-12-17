@@ -75,137 +75,138 @@
     <!-- Variables Section -->
     <section>
         <h2>Variables To Be Practice</h2>
-            <div class="container">
-                <div class="card"><h3>Page URL Variable</h3><button onclick="simulatePageView('page-url.html')">Simulate</button></div>
-                <div class="card"><h3>Page Hostname Variable</h3><button onclick="simulatePageView('page-hostname.html')">Simulate</button></div>
-                <div class="card"><h3>Page Path Variable</h3><button onclick="simulatePageView('page-path.html')">Simulate</button></div>
-                <div class="card"><h3>Click URL Variable</h3><button onclick="simulatePageView('click-url.html')">Simulate</button></div>
-                <div class="card"><h3>Click Text Variable</h3><button onclick="simulatePageView('click-text.html')">Simulate</button></div>
-                <div class="card"><h3>Click Classes Variable</h3><button onclick="simulatePageView('click-classes.html')">Simulate</button></div>
-                <div class="card"><h3>Click ID Variable</h3><button onclick="simulatePageView('click-id.html')">Simulate</button></div>
-                <div class="card"><h3>Form ID Variable</h3><button onclick="simulatePageView('form-id.html')">Simulate</button></div>
-                <div class="card"><h3>Form Classes Variable</h3><button onclick="simulatePageView('form-classes.html')">Simulate</button></div>
-                <div class="card"><h3>Form Target Variable</h3><button onclick="simulatePageView('form-target.html')">Simulate</button></div>
-                <div class="card"><h3>Video Title Variable</h3><button onclick="simulatePageView('video-title.html')">Simulate</button></div>
-                <div class="card"><h3>Video Duration Variable</h3><button onclick="simulatePageView('video-duration.html')">Simulate</button></div>
-                <div class="card"><h3>Video Percentage Variable</h3><button onclick="simulatePageView('video-percentage.html')">Simulate</button></div>
-                <div class="card"><h3>Video URL Variable</h3><button onclick="simulatePageView('video-url.html')">Simulate</button></div>
-                <div class="card"><h3>Event Name Variable</h3><button onclick="simulatePageView('event-name.html')">Simulate</button></div>
-                <div class="card"><h3>First Party Cookie Variable</h3><button onclick="simulatePageView('cookie.html')">Simulate</button></div>
-                <div class="card"><h3>Custom JavaScript Variable</h3><button onclick="simulatePageView('js-variable.html')">Simulate</button></div>
-                <div class="card"><h3>Data Layer Variable</h3><button onclick="simulatePageView('data-layer.html')">Simulate</button></div>
-                <div class="card"><h3>JavaScript Variable</h3><button onclick="simulatePageView('js-variable.html')">Simulate</button></div>
-                <div class="card"><h3>Environment Name Variable</h3><button onclick="simulatePageView('environment-name.html')">Simulate</button></div>
-          </div>
+        <div class="container">
+            <div class="card"><h3>Page URL Variable</h3><button onclick="simulatePageView('page-url.html')">Simulate</button></div>
+            <div class="card"><h3>Page Hostname Variable</h3><button onclick="simulatePageView('page-hostname.html')">Simulate</button></div>
+            <div class="card"><h3>Page Path Variable</h3><button onclick="simulatePageView('page-path.html')">Simulate</button></div>
+            <div class="card"><h3>Click URL Variable</h3><button onclick="simulatePageView('click-url.html')">Simulate</button></div>
+            <div class="card"><h3>Click Text Variable</h3><button onclick="simulatePageView('click-text.html')">Simulate</button></div>
+            <div class="card"><h3>Click Classes Variable</h3><button onclick="simulatePageView('click-classes.html')">Simulate</button></div>
+            <div class="card"><h3>Click ID Variable</h3><button onclick="simulatePageView('click-id.html')">Simulate</button></div>
+            <div class="card"><h3>Form ID Variable</h3><button onclick="simulatePageView('form-id.html')">Simulate</button></div>
+            <div class="card"><h3>Form Classes Variable</h3><button onclick="simulatePageView('form-classes.html')">Simulate</button></div>
+            <div class="card"><h3>Form Target Variable</h3><button onclick="simulatePageView('form-target.html')">Simulate</button></div>
+            <div class="card"><h3>Video Title Variable</h3><button onclick="simulatePageView('video-title.html')">Simulate</button></div>
+            <div class="card"><h3>Video Duration Variable</h3><button onclick="simulatePageView('video-duration.html')">Simulate</button></div>
+            <div class="card"><h3>Video Percentage Variable</h3><button onclick="simulatePageView('video-percentage.html')">Simulate</button></div>
+            <div class="card"><h3>Video URL Variable</h3><button onclick="simulatePageView('video-url.html')">Simulate</button></div>
+            <div class="card"><h3>Event Name Variable</h3><button onclick="simulatePageView('event-name.html')">Simulate</button></div>
+            <div class="card"><h3>First Party Cookie Variable</h3><button onclick="simulatePageView('cookie.html')">Simulate</button></div>
+            <div class="card"><h3>Custom JavaScript Variable</h3><button onclick="simulatePageView('js-variable.html')">Simulate</button></div>
+            <div class="card"><h3>Data Layer Variable</h3><button onclick="simulatePageView('data-layer.html')">Simulate</button></div>
+            <div class="card"><h3>JavaScript Variable</h3><button onclick="simulatePageView('js-variable.html')">Simulate</button></div>
+            <div class="card"><h3>Environment Name Variable</h3><button onclick="simulatePageView('environment-name.html')">Simulate</button></div>
+        </div>
     </section>
 
-<!-- Data Layer Section -->
-<section>
-    <h2>Data Layer To Be Practice</h2>
-    <div class="container">
-        <div class="card">
-          <h3>Page View</h3>
-          <pre>{ "event": "page_view", "page": { "url": "example.com/home" } }</pre>
-          <button>Simulate</button>
+    <!-- Data Layer Section -->
+    <section>
+        <h2>Data Layer To Be Practice</h2>
+        <div class="container">
+            <div class="card">
+                <h3>Page View</h3>
+                <pre>{ "event": "page_view", "page": { "url": "example.com/home" } }</pre>
+                <button>Simulate</button>
+            </div>
+            <div class="card">
+                <h3>Click</h3>
+                <pre>{ "event": "click", "element": { "id": "cta_button", "text": "Learn More" } }</pre>
+                <button>Simulate</button>
+            </div>
+            <div class="card">
+                <h3>Scroll Depth</h3>
+                <pre>{ "event": "scroll", "depth": "50%" }</pre>
+                <button>Simulate</button>
+            </div>
+            <div class="card">
+                <h3>Form Submit</h3>
+                <pre>{ "event": "form_submit", "form_id": "signup_form" }</pre>
+                <button>Simulate</button>
+            </div>
+            <div class="card">
+                <h3>Video Start</h3>
+                <pre>{ "event": "video_start", "video_id": "promo_video_1" }</pre>
+                <button>Simulate</button>
+            </div>
+            <div class="card">
+                <h3>Add to Cart</h3>
+                <pre>{ "event": "add_to_cart", "product": { "id": "12345", "name": "Laptop" } }</pre>
+                <button>Simulate</button>
+            </div>
+            <div class="card">
+                <h3>Remove from Cart</h3>
+                <pre>{ "event": "remove_from_cart", "product": { "id": "12345", "name": "Laptop" } }</pre>
+                <button>Simulate</button>
+            </div>
+            <div class="card">
+                <h3>Purchase</h3>
+                <pre>{ "event": "purchase", "order_id": "78910", "value": 299.99 }</pre>
+                <button>Simulate</button>
+            </div>
+            <div class="card">
+                <h3>User Login</h3>
+                <pre>{ "event": "login", "user_id": "user_001" }</pre>
+                <button>Simulate</button>
+            </div>
+            <div class="card">
+                <h3>User Logout</h3>
+                <pre>{ "event": "logout", "user_id": "user_001" }</pre>
+                <button>Simulate</button>
+            </div>
+            <div class="card">
+                <h3>Search</h3>
+                <pre>{ "event": "search", "query": "web analytics" }</pre>
+                <button>Simulate</button>
+            </div>
+            <div class="card">
+                <h3>Share</h3>
+                <pre>{ "event": "share", "platform": "facebook" }</pre>
+                <button>Simulate</button>
+            </div>
+            <div class="card">
+                <h3>Like</h3>
+                <pre>{ "event": "like", "item_id": "post_123" }</pre>
+                <button>Simulate</button>
+            </div>
+            <div class="card">
+                <h3>Dislike</h3>
+                <pre>{ "event": "dislike", "item_id": "post_123" }</pre>
+                <button>Simulate</button>
+            </div>
+            <div class="card">
+                <h3>Error Tracking</h3>
+                <pre>{ "event": "error", "message": "404 Not Found" }</pre>
+                <button>Simulate</button>
+            </div>
+            <div class="card">
+                <h3>Product View</h3>
+                <pre>{ "event": "product_view", "product": { "id": "5678", "name": "Headphones" } }</pre>
+                <button>Simulate</button>
+            </div>
+            <div class="card">
+                <h3>Page Timing</h3>
+                <pre>{ "event": "page_timing", "load_time": "2.5s" }</pre>
+                <button>Simulate</button>
+            </div>
+            <div class="card">
+                <h3>Custom Event</h3>
+                <pre>{ "event": "custom_event", "details": { "key": "value" } }</pre>
+                <button>Simulate</button>
+            </div>
+            <div class="card">
+                <h3>Download File</h3>
+                <pre>{ "event": "file_download", "file_name": "report.pdf" }</pre>
+                <button>Simulate</button>
+            </div>
+            <div class="card">
+                <h3>Feedback Submit</h3>
+                <pre>{ "event": "feedback", "rating": 5, "comments": "Great experience!" }</pre>
+                <button>Simulate</button>
+            </div>
         </div>
-        <div class="card">
-          <h3>Click</h3>
-          <pre>{ "event": "click", "element": { "id": "cta_button", "text": "Learn More" } }</pre>
-          <button>Simulate</button>
-        </div>
-        <div class="card">
-          <h3>Scroll Depth</h3>
-          <pre>{ "event": "scroll", "depth": "50%" }</pre>
-          <button>Simulate</button>
-        </div>
-        <div class="card">
-          <h3>Form Submit</h3>
-          <pre>{ "event": "form_submit", "form_id": "signup_form" }</pre>
-          <button>Simulate</button>
-        </div>
-        <div class="card">
-          <h3>Video Start</h3>
-          <pre>{ "event": "video_start", "video_id": "promo_video_1" }</pre>
-          <button>Simulate</button>
-        </div>
-        <div class="card">
-          <h3>Add to Cart</h3>
-          <pre>{ "event": "add_to_cart", "product": { "id": "12345", "name": "Laptop" } }</pre>
-          <button>Simulate</button>
-        </div>
-        <div class="card">
-          <h3>Remove from Cart</h3>
-          <pre>{ "event": "remove_from_cart", "product": { "id": "12345", "name": "Laptop" } }</pre>
-          <button>Simulate</button>
-        </div>
-        <div class="card">
-          <h3>Purchase</h3>
-          <pre>{ "event": "purchase", "order_id": "78910", "value": 299.99 }</pre>
-          <button>Simulate</button>
-        </div>
-        <div class="card">
-          <h3>User Login</h3>
-          <pre>{ "event": "login", "user_id": "user_001" }</pre>
-          <button>Simulate</button>
-        </div>
-        <div class="card">
-          <h3>User Logout</h3>
-          <pre>{ "event": "logout", "user_id": "user_001" }</pre>
-          <button>Simulate</button>
-        </div>
-        <div class="card">
-          <h3>Search</h3>
-          <pre>{ "event": "search", "query": "web analytics" }</pre>
-          <button>Simulate</button>
-        </div>
-        <div class="card">
-          <h3>Share</h3>
-          <pre>{ "event": "share", "platform": "facebook" }</pre>
-          <button>Simulate</button>
-        </div>
-        <div class="card">
-          <h3>Like</h3>
-          <pre>{ "event": "like", "item_id": "post_123" }</pre>
-          <button>Simulate</button>
-        </div>
-        <div class="card">
-          <h3>Dislike</h3>
-          <pre>{ "event": "dislike", "item_id": "post_123" }</pre>
-          <button>Simulate</button>
-        </div>
-        <div class="card">
-          <h3>Error Tracking</h3>
-          <pre>{ "event": "error", "message": "404 Not Found" }</pre>
-          <button>Simulate</button>
-        </div>
-        <div class="card">
-          <h3>Product View</h3>
-          <pre>{ "event": "product_view", "product": { "id": "5678", "name": "Headphones" } }</pre>
-          <button>Simulate</button>
-        </div>
-        <div class="card">
-          <h3>Page Timing</h3>
-          <pre>{ "event": "page_timing", "load_time": "2.5s" }</pre>
-          <button>Simulate</button>
-        </div>
-        <div class="card">
-          <h3>Custom Event</h3>
-          <pre>{ "event": "custom_event", "details": { "key": "value" } }</pre>
-          <button>Simulate</button>
-        </div>
-        <div class="card">
-          <h3>Download File</h3>
-          <pre>{ "event": "file_download", "file_name": "report.pdf" }</pre>
-          <button>Simulate</button>
-        </div>
-        <div class="card">
-          <h3>Feedback Submit</h3>
-          <pre>{ "event": "feedback", "rating": 5, "comments": "Great experience!" }</pre>
-          <button>Simulate</button>
-        </div>
-    </div>
+    </section>
 
-        <!-- Triggers Section -->
+    <!-- Triggers Section -->
     <section>
         <h2>=Triggers To Be Practice=</h2>
         <div class="container">
@@ -215,8 +216,6 @@
         </div>
     </section>    
 
-</section>
-        
     <script>
         fetch('footer.html')
             .then(response => response.text())
@@ -228,20 +227,20 @@
     
     <script>
         function simulatePageView(page) {
-        if (page) {
-        window.location.href = page; // নতুন পেজের URL
-        } else {
-        console.log('Simulating Page View');
-        }
+            if (page) {
+                window.location.href = page; // নতুন পেজের URL
+            } else {
+                console.log('Simulating Page View');
+            }
         }
         
         function simulateEventView() {
-        console.log('Simulating Event Tag');
+            console.log('Simulating Event Tag');
         }
     </script>
-    <!-- Footer inclusion -->
+
+    <!-- Include footer from footer.html -->
     <footer>
-        <!-- Include footer from footer.html -->
         <iframe src="footer.html" style="width:100%; height:100px; border:none;"></iframe>
     </footer>
 </body>
