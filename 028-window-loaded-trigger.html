@@ -4,115 +4,138 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Window Loaded Trigger Demonstration</title>
-
-    <!-- Google Tag Manager (GTM) Code -->
+    <!-- GTM Code -->
     <script>
-      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-PPBVCLNF');
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
     </script>
-    <!-- End Google Tag Manager -->
-    
     <!-- CSS Styling -->
     <style>
-        /* General Body Style */
+        /* General Styles */
         body {
+            margin: 0;
             background-color: white;
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
             color: black;
         }
 
-        /* Header Styling */
+        /* Header */
         header {
             background-color: green;
             color: black;
             text-align: center;
+            padding: 10px;
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 10px 0;
-            z-index: 10;
+            z-index: 1000;
         }
 
         /* Home Button */
         .home-button {
             position: absolute;
-            left: 10px;
             top: 10px;
+            left: 10px;
             background-color: orange;
-            color: blue;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-weight: bold;
+            color: black;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16px;
         }
 
         .home-button:hover {
-            background-color: blue;
-            color: orange;
+            background-color: white;
+            color: black;
         }
 
         /* Main Content */
-        main {
-            margin-top: 200px; /* Space for the fixed header */
-            text-align: center;
+        .content {
+            margin-top: 80px; /* To avoid overlap with the fixed header */
             padding: 20px;
+            text-align: center;
         }
 
-        /* Footer Include */
+        /* Footer */
         footer {
-            margin-top: 20px;
-            text-align: center;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            background-color: white;
         }
 
         /* Buttons */
         button {
             background-color: orange;
             color: black;
-            padding: 10px 15px;
             border: none;
+            padding: 10px 20px;
+            margin: 10px;
             cursor: pointer;
-            border-radius: 5px;
         }
 
         button:hover {
-            background-color: blue;
-            color: orange;
+            background-color: white;
+            color: black;
         }
     </style>
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
+    <!-- Google Tag Manager (noscript fallback) -->
     <noscript>
-      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </noscript>
-    <!-- End Google Tag Manager (noscript) -->
 
-    <!-- Header Section -->
+    <!-- Header -->
     <header>
-        <a href="index.html" class="home-button">Home</a>
+        <button class="home-button" onclick="navigateHome()">Home</button>
         <h1>Demonstration of 'Window Loaded Trigger' using GTM</h1>
-		<p style="color: orange;">The 'Window Loaded' event occurs when all the content of a web page, including its resources like images, scripts, CSS files, and other assets, have fully loaded into the browser.<br> It signals the final stage of page loading, ensuring that everything on the page is ready to be accessed or interacted with.</p>
-
     </header>
 
     <!-- Main Content -->
-    <main>
-        <p>Welcome to the demonstration page for the 'Window Loaded Trigger' using Google Tag Manager.</p>
-        <p>Click the buttons to interact with the page.</p>
-        <button>Sample Button 1</button>
-        <button>Sample Button 2</button>
-    </main>
+    <div class="content">
+        <h2>Welcome to the SPA</h2>
+        <p>This Single Page Application demonstrates the use of the 'Window Loaded Trigger' in Google Tag Manager.</p>
+        <button onclick="loadPage('index')">Index Page</button>
+        <button onclick="loadPage('about')">About Page</button>
+        <div id="spa-content">
+            <!-- SPA Content will load here -->
+        </div>
+    </div>
 
-    <!-- Footer Section -->
+    <!-- Footer -->
     <footer>
         <object type="text/html" data="footer.html" style="width: 100%; height: 50px;"></object>
     </footer>
+
+    <!-- JavaScript for SPA and Navigation -->
+    <script>
+        function navigateHome() {
+            window.location.href = 'index.html';
+        }
+
+        function loadPage(page) {
+            const content = document.getElementById('spa-content');
+            if (page === 'index') {
+                content.innerHTML = '<h3>Index Page</h3><p>This is the index page loaded dynamically.</p>';
+            } else if (page === 'about') {
+                content.innerHTML = '<h3>About Page</h3><p>This is the about page loaded dynamically.</p>';
+            }
+        }
+
+        // Simulating Window Loaded Event for GTM
+        window.addEventListener('load', function() {
+            console.log('Window Loaded - GTM Trigger Demonstrated');
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({ event: 'windowLoaded' });
+        });
+    </script>
 </body>
 </html>
-
