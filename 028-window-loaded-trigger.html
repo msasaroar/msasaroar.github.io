@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window Loaded Trigger Demonstration</title>
+
+    <!-- Google Tag Manager (GTM) Code -->
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-PPBVCLNF');
+    </script>
+    <!-- End Google Tag Manager -->
+    
+    <!-- CSS Styling -->
+    <style>
+        /* General Body Style */
+        body {
+            background-color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: black;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: green;
+            color: black;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 10px 0;
+            z-index: 10;
+        }
+
+        /* Home Button */
+        .home-button {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            background-color: orange;
+            color: blue;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .home-button:hover {
+            background-color: blue;
+            color: orange;
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 200px; /* Space for the fixed header */
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Footer Include */
+        footer {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* Buttons */
+        button {
+            background-color: orange;
+            color: black;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: blue;
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Header Section -->
+    <header>
+        <a href="index.html" class="home-button">Home</a>
+        <h1>Demonstration of 'Window Loaded Trigger' using GTM</h1>
+		<p style="color: orange;">The 'Window Loaded' event occurs when all the content of a web page, including its resources like images, scripts, CSS files, and other assets, have fully loaded into the browser.<br> It signals the final stage of page loading, ensuring that everything on the page is ready to be accessed or interacted with.</p>
+
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <p>Welcome to the demonstration page for the 'Window Loaded Trigger' using Google Tag Manager.</p>
+        <p>Click the buttons to interact with the page.</p>
+        <button>Sample Button 1</button>
+        <button>Sample Button 2</button>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <!-- Footer will be included from external file -->
+        <!-- Include footer.html here if you use a server-side language like PHP -->
+        <p>&copy; 2024 | Footer Included Separately</p>
+    </footer>
+</body>
+</html>
+
