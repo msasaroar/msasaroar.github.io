@@ -3,78 +3,99 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Data Layer - Page View</title>
+  <title>Data Layer Practice</title>
   <style>
+    /* General Styles */
     body {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      background-color: white;
+      color: black;
       margin: 0;
       font-family: Arial, sans-serif;
-	  background-color: green;
+    }
+    header {
+      background-color: green;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+    header h1 {
+      margin: 0;
     }
     button {
-      padding: 10px 20px;
-      font-size: 16px;
       background-color: orange;
       color: black;
       border: none;
-      border-radius: 5px;
+      padding: 10px 15px;
       cursor: pointer;
+      margin: 10px;
     }
     button:hover {
       background-color: white;
+      color: orange;
     }
-    pre {
-      background: white;
-      padding: 15px;
-      border-radius: 5px;
-      font-family: Arial, sans-serif;
-	  font-size: 25px;
-      color: black;
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    #data-layer-output {
+      margin: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background-color: #f9f9f9;
     }
   </style>
-</head>
-<body>
-  <h1>Data Layer - Page View Example</h1>
-  <p>Click the button below to simulate a page view event:</p>
-  <button onclick="triggerPageView()">Simulate Page View</button>
-
-  <h2>Current Data Layer:</h2>
-  <pre id="dataLayerOutput">[]</pre>
-
   <script>
-    // Initialize the Data Layer
+    // Initialize Data Layer
     window.dataLayer = window.dataLayer || [];
 
-    // Function to trigger a page view event
-    function triggerPageView() {
-      const pageViewEvent = {
-        event: "page_view",
-        page: {
-          url: window.location.href,
-          title: document.title,
-          referrer: document.referrer || "Direct Traffic"
-        }
+    // Function to push a sample Data Layer
+    function pushSampleDataLayer() {
+      const sampleData = {
+        event: 'sample_event',
+        pageTitle: document.title,
+        pagePath: window.location.pathname,
+        userRole: 'guest',
+        timestamp: new Date().toISOString()
       };
 
-      // Push the page view event to the dataLayer
-      window.dataLayer.push(pageViewEvent);
+      // Push the sample data into the Data Layer
+      window.dataLayer.push(sampleData);
 
-      // Update the displayed data layer
-      updateDataLayerOutput();
+      // Display the pushed Data Layer on the screen
+      displayDataLayer();
     }
 
-    // Function to display the current data layer
-    function updateDataLayerOutput() {
-      const output = document.getElementById("dataLayerOutput");
-      output.textContent = JSON.stringify(window.dataLayer, null, 2);
+    // Function to display the current Data Layer content
+    function displayDataLayer() {
+      const outputElement = document.getElementById('data-layer-output');
+      outputElement.textContent = JSON.stringify(window.dataLayer, null, 2);
     }
 
-    // Initialize the display
-    updateDataLayerOutput();
+    // Display Data Layer content on page load
+    document.addEventListener('DOMContentLoaded', displayDataLayer);
   </script>
+</head>
+<body>
+  <header>
+    <button onclick="location.href='index.html'">Home</button>
+    <h1>Data Layer Practice</h1>
+  </header>
+
+  <main style="padding-top: 80px; text-align: center;">
+    <h2>Subject: To practice and understand how the Data Layer works in a Page View scenario</h2>
+    <p>Click the button below to push a sample Data Layer and view it on the screen.</p>
+    <button onclick="pushSampleDataLayer()">Push Sample Data Layer</button>
+    <div id="data-layer-output" style="text-align: left; white-space: pre-wrap;"></div>
+  </main>
+
+  <footer>
+    <object type="text/html" data="footer.html" style="width: 100%; height: 50px;"></object>
+  </footer>
 </body>
 </html>
