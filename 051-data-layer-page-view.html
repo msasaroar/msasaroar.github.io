@@ -3,9 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Data Layer Practice</title>
+  <title>Page View Data Layer</title>
+  
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+      var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
+  </script>
+  <!-- End Google Tag Manager -->
+
   <style>
-    /* General Styles */
+    /* General Styling */
     body {
       background-color: green;
       color: black;
@@ -14,87 +30,111 @@
     }
     header {
       background-color: green;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       color: black;
+      text-align: center;
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
-    header h1 {
-      margin: 0;
+    #home-button {
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      background-color: orange;
+      color: black;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    #home-button:hover {
+      background-color: white;
+      color: orange;
     }
     button {
       background-color: orange;
       color: black;
       border: none;
-      padding: 10px 15px;
+      padding: 10px 20px;
+      font-size: 16px;
       cursor: pointer;
-      margin: 10px;
     }
     button:hover {
       background-color: white;
       color: orange;
+    }
+    #data-layer-output {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background-color: #f9f9f9;
+      white-space: pre-wrap;
+      font-family: monospace;
     }
     footer {
       position: fixed;
       bottom: 0;
       width: 100%;
     }
-    #data-layer-output {
-      margin: 20px;
-      padding: 10px;
-      border: 1px solid #ccc;
-      background-color: #f9f9f9;
-    }
   </style>
+  
   <script>
-    // Initialize Data Layer
-    window.dataLayer = window.dataLayer || [];
+    // Sample Data Layer
+	window.dataLayer = [{
+		event: "page_view",
+		pageTitle: "Page View Data Layer",
+		pagePath: "/home",
+		userType: "developer",
+		timestamp: new Date().toISOString(),
+		ecommerce: {
+		  currencyCode: "USD",
+		  items: [{
+			  itemName: "Product A",
+			  itemId: "P123",
+			  price: 29.99,
+			  quantity: 1,
+			},
+			{
+			  itemName: "Product B",
+			  itemId: "P124",
+			  price: 49.99,
+			  quantity: 2,
+			},],
+		},
+	  },];
 
-    // Function to push a sample Data Layer
-    function pushSampleDataLayer() {
-      const sampleData = {
-        event: 'sample_event',
-        pageTitle: document.title,
-        pagePath: window.location.pathname,
-        userRole: 'developer',
-		userComent: 'পরীক্ষামূলক কমেন্ট',
-        timestamp: new Date().toISOString()
-      };
 
-      // Push the sample data into the Data Layer
-      window.dataLayer.push(sampleData);
-
-      // Display the pushed Data Layer on the screen
-      displayDataLayer();
-    }
-
-    // Function to display the current Data Layer content
-    function displayDataLayer() {
+    // Function to display the initially pushed Data Layer
+    function showInitialDataLayer() {
       const outputElement = document.getElementById('data-layer-output');
-      outputElement.textContent = JSON.stringify(window.dataLayer, null, 2);
+      outputElement.textContent = JSON.stringify(window.dataLayer[0], null, 2);
     }
-
-    // Display Data Layer content on page load
-    document.addEventListener('DOMContentLoaded', displayDataLayer);
   </script>
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Header Section -->
   <header>
-    <button onclick="location.href='index.html'">Home</button>
-    <h1>Data Layer Practice</h1>
+    <button id="home-button" onclick="window.location.href='index.html';">Home</button>
+    <h1>Data Layer Display</h1>
   </header>
 
-  <main style="padding-top: 80px; text-align: center;">
-    <h2>Subject: To practice and understand how the Data Layer works in a Page View scenario</h2>
-    <p>Click the button below to push a sample Data Layer and view it on the screen.</p>
-    <button onclick="pushSampleDataLayer()">Push Sample Data Layer</button>
-    <div id="data-layer-output" style="text-align: left; white-space: pre-wrap;"></div>
+  <!-- Main Content -->
+  <main>
+    <h2>Demonstrate Page View Data Layer</h2>
+    <p>Click the button below to view the initially pushed Data Layer:</p>
+    <button onclick="showInitialDataLayer()">Show Data Layer</button>
+    <div id="data-layer-output">
+      <!-- Data Layer output will appear here -->
+    </div>
   </main>
 
+  <!-- Footer Section -->
   <footer>
     <object type="text/html" data="footer.html" style="width: 100%; height: 50px;"></object>
   </footer>
