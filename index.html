@@ -39,6 +39,19 @@
     <section>
         <h2>Tags Practiced</h2>
         <div class="container">
+            <div class="card">
+                <h3>031. Data Layer : Page View</h3>
+                <!-- 
+                {"event": "page_view",
+                  "page": {"url": "example.com/home",
+                           "title": "Home Page",
+                           "referrer": "example.com"}
+                }
+                -->
+                <button title='{"event": "page_view","page": {"url": "example.com/home","title": "Home Page","referrer": "example.com"}}' 
+                    onclick="simulatePageView('031-data-layer-page-view.html')">Simulate</button>
+            </div>  
+
             <div class="card"><h3>030. All GTM URL Variable</h3><button onclick="simulatePageView('030-all-url-variable.html')">Simulate</button></div>
             <div class="card"><h3>029. DOM Ready Trigger</h3><button onclick="simulatePageView('029-dom-ready.html')">Simulate</button></div>
             <div class="card"><h3>028. Window Loaded Trigger</h3><button onclick="simulatePageView('028-window-loaded-trigger.html')">Simulate</button></div>
