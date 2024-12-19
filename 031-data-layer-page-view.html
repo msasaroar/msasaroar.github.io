@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Layer Practice</title>
+  <style>
+    /* General Styles */
+    body {
+      background-color: white;
+      color: black;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    header {
+      background-color: green;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+    header h1 {
+      margin: 0;
+    }
+    button {
+      background-color: orange;
+      color: black;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      position: absolute;
+      left: 10px;
+      top: 10px;
+    }
+    button:hover {
+      background-color: white;
+      color: orange;
+    }
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+  <script>
+    // Google Tag Manager (GTM) Code
+    (function(w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
+
+    // Initialize the Data Layer
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'page_view',
+      pageTitle: document.title,
+      pageURL: window.location.href,
+      pagePath: window.location.pathname,
+      pageCategory: 'Using Data Layer In GTM',
+    });
+  </script>
+</head>
+<body>
+  <!-- GTM No-JS Code -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <header>
+    <button onclick="location.href='index.html'">Home</button>
+    <h1>Data Layer Practice</h1>
+  </header>
+
+  <main style="padding-top: 80px; text-align: center;">
+    <h2>Subject: To practice and understand how the Data Layer works in a Page View scenario</h2>
+    <p>Explore the working of the Data Layer in this example setup.</p>
+  </main>
+
+  <footer>
+    <object type="text/html" data="footer.html" style="width: 100%; height: 50px;"></object>
+  </footer>
+</body>
+</html>
