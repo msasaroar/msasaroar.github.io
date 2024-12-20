@@ -1,118 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Click DataLayer Demonstration</title>
-  <style>
-    /* General Styling */
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      background-color: white;
-      color: black;
-      padding-bottom: 50px; /* Avoid overlap with footer */
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click DataLayer Example</title>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
+    </script>
+    <!-- End Google Tag Manager -->
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-    /* Header Styling */
-    header {
-      background-color: green;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      text-align: center;
-      padding: 10px 0;
-      z-index: 1000;
-    }
-    header a {
-      color: black;
-      text-decoration: none;
-      position: absolute;
-      left: 10px;
-      top: 10px;
-      background-color: orange;
-      padding: 5px 10px;
-      border-radius: 3px;
-    }
-    header a:hover {
-      background-color: white;
-      color: black;
-    }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: green;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
 
-    /* Button Styling */
-    button {
-      background-color: orange;
-      color: black;
-      border: none;
-      padding: 10px 20px;
-      cursor: pointer;
-      margin: 20px;
-    }
-    button:hover {
-      background-color: white;
-      color: black;
-    }
+        .home-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: orange;
+            color: blue;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
 
-    /* Footer Styling */
-    footer {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background-color: #f1f1f1;
-      text-align: center;
-      height: 50px;
-      z-index: 1000;
-    }
-    footer object {
-      width: 100%;
-      height: 100%;
-    }
+        .home-button:hover {
+            background-color: blue;
+            color: orange;
+        }
 
-    /* Content Area */
-    main {
-      margin-top: 60px; /* Space for fixed header */
-      padding: 20px;
-      text-align: center;
-    }
-  </style>
-  <!-- Google Tag Manager -->
-  <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PPBVCLNF');
-  </script>
-  <!-- End Google Tag Manager -->
-  <script>
-    function handleButtonClick(eventLabel) {
-      // Push event to dataLayer
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        'event': 'button_click',
-        'button_label': eventLabel
-      });
-      alert(`DataLayer updated with event: button_click, Label: ${eventLabel}`);
-    }
-  </script>
+        main {
+            margin-top: 80px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .track-button {
+            background-color: orange;
+            color: blue;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 20px;
+        }
+
+        .track-button:hover {
+            background-color: blue;
+            color: orange;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #f1f1f1;
+            text-align: center;
+            height: 50px;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <a href="index.html">Home</a>
-    <h1>Click DataLayer Demonstration</h1>
-  </header>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
-  <main>
-    <h2>Track Button Click Events Using DataLayer</h2>
-    <p>Click the buttons below to simulate DataLayer events.</p>
-    <button onclick="handleButtonClick('Button 1')">Button 1</button>
-    <button onclick="handleButtonClick('Button 2')">Button 2</button>
-    <button onclick="handleButtonClick('Button 3')">Button 3</button>
-  </main>
+    <header>
+        <button class="home-button" onclick="location.href='index.html'">Home</button>
+        Demonstration of Click DataLayer
+    </header>
 
-  <footer>
-    <object type="text/html" data="footer.html"></object>
-  </footer>
+    <main>
+        <h1>Track Button Clicks Using DataLayer</h1>
+        <button class="track-button" onclick="trackClick('Button A')">Button A</button>
+        <button class="track-button" onclick="trackClick('Button B')">Button B</button>
+    </main>
+
+    <footer>
+        <object type="text/html" data="footer.html" style="width: 100%; height: 100%;"></object>
+    </footer>
+
+    <script>
+        // Initialize the dataLayer if it doesn't already exist
+        window.dataLayer = window.dataLayer || [];
+
+        // Function to push button click event to the dataLayer
+        function trackClick(buttonName) {
+            dataLayer.push({
+                'event': 'button_click',
+                'button_name': buttonName
+            });
+            console.log('Event pushed to dataLayer:', {
+                event: 'button_click',
+                button_name: buttonName
+            });
+        }
+    </script>
 </body>
 </html>
