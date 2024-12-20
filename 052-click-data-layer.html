@@ -26,15 +26,17 @@
             padding: 0;
         }
 
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: green;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-        }
+header {
+    position: fixed; /* হেডারকে ফিক্সড করে, যাতে এটি সবসময় স্ক্রিনের টপে থাকে */
+    top: 0; /* পৃষ্ঠার একদম টপে অবস্থান নির্ধারণ */
+    width: 100%; /* পুরো পৃষ্ঠার প্রস্থ জুড়ে থাকবে */
+    background-color: green; /* হেডারের ব্যাকগ্রাউন্ড রঙ */
+    color: black; /* টেক্সটের রঙ */
+    text-align: center; /* টেক্সটকে হেডারের সেন্টারে রাখে */
+    height: 100px; /* হেডারের উচ্চতা */
+    line-height: 50px; /* ভর্টিক্যালি সেন্টারে টেক্সট রাখার জন্য */
+    padding: 0; /* প্যাডিং সরিয়ে দেওয়া */
+}
 
         .home-button {
             position: absolute;
