@@ -28,7 +28,6 @@
 
         header {
             position: fixed;
-            height: 100px;
             top: 0;
             width: 100%;
             background-color: green;
@@ -39,7 +38,7 @@
 
         .home-button {
             position: absolute;
-            top: 40px;
+            top: 10px;
             left: 10px;
             background-color: orange;
             color: blue;
@@ -91,13 +90,14 @@
 
     <header>
         <button class="home-button" onclick="location.href='index.html'">Home</button>
-        Demonstration of Click DataLayer
+        Click DataLayer Example
     </header>
 
     <main>
         <h1>Track Button Clicks Using DataLayer</h1>
         <button class="track-button" onclick="trackClick('Button A')">Button A</button>
         <button class="track-button" onclick="trackClick('Button B')">Button B</button>
+        <button class="track-button" onclick="trackClick('Submit Form')">Submit Form</button>
     </main>
 
     <footer>
@@ -110,16 +110,16 @@
 
         // Function to push button click event to the dataLayer
         function trackClick(buttonName) {
-            dataLayer.push({
+            const eventData = {
                 'event': 'button_click',
                 'button_name': buttonName
-            });
-            console.log('Event pushed to dataLayer:', {
-                event: 'button_click',
-                button_name: buttonName
-            });
+            };
 
-            alert(`Event pushed to dataLayer. ডেটালেয়ার এ ইভেন্ট পুশ করা হয়েছে। Event Name: 'button_click'. 'button_name': ${buttonName}`);
+            dataLayer.push(eventData);
+
+            alert(`Event pushed to dataLayer.\n\nডেটালেয়ার এ ইভেন্ট পুশ করা হয়েছে।\n\nEvent Name: ${eventData.event}\nButton Name: ${eventData.button_name}`);
+
+            console.log('Event pushed to dataLayer:', eventData);
         }
     </script>
 </body>
