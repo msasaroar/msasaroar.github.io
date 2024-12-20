@@ -1,96 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scroll Depth Tracking</title>
-    
-    <!-- GTM Script -->
-    <script>
-        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-PPBVCLNF');
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scroll Depth Example</title>
+  <style>
+    body {
+      background-color: white;
+      color: black;
+      font-family: Arial, sans-serif;
+    }
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: white;
-            color: black;
-        }
-        .content {
-            height: 300vh; /* Simulates a long page */
-            padding: 20px;
-        }
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: green;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            z-index: 1000;
-        }
-        footer {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background-color: #f1f1f1;
-            text-align: center;
-            height: 50px;
-        }
-    </style>
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: green;
+      text-align: center;
+    }
+
+    header button {
+      background-color: orange;
+      color: blue;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    header button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    main {
+      margin-top: 60px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .content {
+      margin-top: 60px;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #f1f1f1;
+      text-align: center;
+      height: 50px;
+    }
+  </style>
 </head>
 <body>
-    <!-- GTM NoScript -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <header>
+    <button onclick="goHome()">Home</button>
+  </header>
 
-    <header>
-        <a href="index.html" style="position: absolute; left: 10px; color: white; text-decoration: none;">Home</a>
-        <h1>Scroll Depth Tracking Example</h1>
-    </header>
-
+  <main>
+    <h1>Scroll Depth Demo</h1>
+    <p>Scroll down the page to track the scroll depth.</p>
+    
+    <!-- Dummy content for scrolling demonstration -->
     <div class="content">
-        <h2>Welcome to the Scroll Depth Tracking Page</h2>
-        <p>Scroll down the page to trigger scroll depth events. These events will be recorded in the data layer and can be captured by Google Tag Manager.</p>
-        <p>Keep scrolling to see how it works!</p>
+      <p>Some content...</p>
+      <p>Scroll down to see the data layer in action.</p>
+      <div style="height: 1500px;"></div>
     </div>
+  </main>
 
-    <footer>
-        <object type="text/html" data="footer.html" style="width: 100%; height: 100%;"></object>
-    </footer>
+  <footer>
+    <object type="text/html" data="footer.html" style="width: 100%; height: 100%;"></object>
+  </footer>
 
-    <!-- Scroll Depth Tracking Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const thresholds = [25, 50, 75, 100]; // Scroll depth percentages
-            const trackedDepths = new Set();
-
-            window.addEventListener('scroll', () => {
-                const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                const currentDepth = (scrollTop / scrollHeight) * 100;
-
-                thresholds.forEach(threshold => {
-                    if (currentDepth >= threshold && !trackedDepths.has(threshold)) {
-                        trackedDepths.add(threshold);
-
-                        // Push to dataLayer
-                        window.dataLayer = window.dataLayer || [];
-                        window.dataLayer.push({
-                            event: 'scrollDepth',
-                            scrollDepthPercentage: threshold
-                        });
-                        console.log(`Scroll depth ${threshold}% tracked.`);
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 </html>
