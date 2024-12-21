@@ -35,9 +35,7 @@
   </noscript>
   <!-- End GTM -->
 
-
   <!-- ডেটা লেয়ার পুশ করার স্ক্রিপ্ট -->
-  
   <script>
     // ডেটা লেয়ার তৈরি (যদি এটি আগে না থাকে)
     window.dataLayer = window.dataLayer || [];
@@ -45,11 +43,12 @@
     // ডেটা পুশ করা
     window.dataLayer.push({
       'event': 'pageView',  // ইভেন্ট নাম
-      'pageTitle': document.title,  // পেজের টাইটেল
-      'pageURL': window.location.href,  // পেজের URL
-      'userRole': 'guest'  // কাস্টম ডেটা
+      'userRole': 'subscriber',  // কাস্টম ডেটা
+      'pageCategory': 'blog',
+      'transactionValue': 50
     });
-  </script>				
+  </script>
+  
 </body>
 </html>
 
