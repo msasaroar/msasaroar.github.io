@@ -96,32 +96,37 @@ header {
     </header>
 
     <main>
-        <h1>Click A Button. See Pushed DataLayer In Console.</h1>
-        <button class="track-button" onclick="trackClick('Button A')">Button A</button>
-        <button class="track-button" onclick="trackClick('Button B')">Button B</button>
-        <button class="track-button" onclick="trackClick('Submit Form')">Submit Form</button>
-    </main>
+		<button id="sampleButton">Click Me</button>
+	</main>
 
     <footer>
         <object type="text/html" data="footer.html" style="width: 100%; height: 100%;"></object>
     </footer>
 
-    <script>
-        // Initialize the dataLayer if it doesn't already exist
-        window.dataLayer = window.dataLayer || [];
+  <script>
+    // Pushing data to the dataLayer
+      window.dataLayer = window.dataLayer || [];
+    
+    // Example: Page View event
+    dataLayer.push({
+      event: 'button_click বাটন_ক্লিক',
+      pageTitle: document.title + 'ডকুম্যান্ট_টাইটেল',
+      pageURL: window.location.href + 'পেইজ_ইউআরএল',
+      buttonID: 'sampleButton নমুনাবাটন',
+      buttonText: 'Click Me ক্লিক মি'
+    });
 
-        // Function to push button click event to the dataLayer
-        function trackClick(buttonName) {
-            const eventData = {
-                'event': 'button_click',
-                'button_name': buttonName
-            };
+    // Example: Button Click event
+      document.getElementById('sampleButton').addEventListener('click', function() {
+      dataLayer.push({
+      event: 'button_click',
+      buttonID: 'sampleButton',
+      buttonText: 'Click Me',
+    });
 
-            dataLayer.push(eventData);
+    console.log('Button click event pushed to dataLayer');
+    });
+  </script>
 
-            alert(`Event pushed to dataLayer.\n\nডেটালেয়ার এ ইভেন্ট পুশ করা হয়েছে।\n\nEvent Name: ${eventData.event}\nButton Name: ${eventData.button_name}`);
-            console.log('Event pushed to dataLayer:', eventData);
-        }
-    </script>
 </body>
 </html>
