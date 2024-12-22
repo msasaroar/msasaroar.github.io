@@ -81,6 +81,28 @@
   
   <script>
     // Sample Data Layer
+	
+	window.dataLayer = window.dataLayer || [];
+	window.dataLayer.push({
+	  event: 'page_view',
+	  pageTitle: document.title,
+	  pagePath: window.location.pathname,
+	  userId: 'user123',
+	  ecommerce: {
+	    currencyCode: 'USD',
+	    items: [
+	      {
+	        itemName: 'Sample Product',
+	        itemId: 'P001',
+	        price: 29.99,
+	        quantity: 1
+	      }
+	    ]
+	  }
+	});
+	
+
+/*
 	window.dataLayer = [{
 		event: "পেইজ_ভিউ",
 		pageTitle: "পেইজ_ভিউ ডেটা লেয়ার",
@@ -103,7 +125,7 @@
 		},
 		timestamp: new Date().toISOString(),
 	  },];
-
+*/
 
     // Function to display the initially pushed Data Layer
     function showInitialDataLayer() {
