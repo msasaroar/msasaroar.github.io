@@ -41,19 +41,27 @@
       window.dataLayer = window.dataLayer || [];
     
     // Example: Page View event
+    // dataLayer.push({
+    //  event: 'page_view',
+    //  pageTitle: document.title,
+    //  pageURL: window.location.href,
+    //});
+
+    // Example: Page View event
     dataLayer.push({
       event: 'পেইজ_ভিউ',
       pageTitle: 'ডকুম্যান্ট_টাইটেল',
       pageURL: 'পেইজ_ইউআরএল',
     });
-    
-    // Example: Page View event
-     // dataLayer.push({
-    //  event: 'page_view',
-    //  pageTitle: document.title,
-    //  pageURL: window.location.href,
-    });
-    
+
+    // Example: Button Click event
+    //  document.getElementById('sampleButton').addEventListener('click', function() {
+    //  dataLayer.push({
+    //  event: 'button_click',
+    //  buttonID: 'sampleButton',
+    //  buttonText: 'Click Me',
+    //});
+
     // Example: Button Click event
       document.getElementById('sampleButton').addEventListener('click', function() {
       dataLayer.push({
@@ -61,6 +69,7 @@
       buttonID: 'sampleButton',
       buttonText: 'Click Me',
     });
+
     console.log('Button click event pushed to dataLayer');
     });
   </script>
