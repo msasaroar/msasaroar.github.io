@@ -3,183 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add to Cart Data Layer Example</title>
-    <!-- Google Tag Manager Script -->
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF'); // Replace GTM-PPBVCLNF with your GTM ID
-    </script>
-    <!-- End Google Tag Manager Script -->
+    <title>SPA E-commerce</title>
     <style>
-        /* Header Styles */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: green;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            z-index: 1000;
-        }
-        header a {
-            position: absolute;
-            left: 20px;
-            top: 10px;
-            color: white;
-            background-color: orange;
-            padding: 5px 10px;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        header a:hover {
-            background-color: blue;
-            color: orange;
-        }
-
-        /* Footer Styles */
-        footer {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background-color: #f1f1f1;
-            text-align: center;
-            height: 50px;
-            line-height: 50px;
-        }
-
-        /* Body & Product Styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: white;
-            color: black;
-            padding-top: 60px; /* Adjust for fixed header */
-            padding-bottom: 60px; /* Adjust for fixed footer */
+            background-color: #f9f9f9;
         }
-        .product {
-            border: 1px solid #ddd;
-            margin: 20px;
-            padding: 15px;
-            display: inline-block;
-            width: 300px;
-            vertical-align: top;
-            text-align: left;
-        }
-        .product img {
-            width: 100%;
-            height: auto;
-        }
-        .product h2 {
-            font-size: 18px;
-            margin: 10px 0;
-        }
-        .product p {
-            margin: 5px 0;
-        }
-        button {
-            margin-top: 10px;
-            padding: 10px 20px;
-            font-size: 14px;
+        header {
+            background-color: #4CAF50;
             color: white;
-            background-color: green;
-            border: none;
-            cursor: pointer;
-            width: 100%;
+            text-align: center;
+            padding: 10px;
         }
-        button:hover {
-            background-color: darkgreen;
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .products, .cart {
+            width: 45%;
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .product, .cart-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            align-items: center;
+        }
+        .product button, .cart-item button {
+            background-color: orange;
+            color: blue;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .product button:hover, .cart-item button:hover {
+            background-color: blue;
+            color: orange;
+        }
+        .checkout-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .checkout-buttons button {
+            padding: 10px;
+            width: 48%;
         }
     </style>
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
-    <!-- Header -->
     <header>
-        <a href="index.html">Home</a>
-        <h1>Add to Cart Data Layer</h1>
+        <h1>SPA E-commerce</h1>
     </header>
 
-    <!-- Main Content -->
-    <div class="product" data-product-id="123" data-product-name="Sample Product" data-product-price="29.99" data-product-category="Electronics">
-        <img src="demo.png" alt="Sample Product">
-        <h2>Sample Product</h2>
-        <p>Price: $29.99</p>
-        <p>Category: Electronics</p>
-        <p>Description: A great sample product for everyday use.</p>
-        <button class="add-to-cart-button">Add to Cart</button>
-    </div>
+    <div class="container">
+        <div class="products">
+            <h2>Products</h2>
+            <div class="product" data-product="Mobile" data-price="15000">
+                <span>Mobile - ৳15000</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button onclick="addToCart(event)">Add to Cart</button>
+            </div>
+            <div class="product" data-product="Speaker" data-price="5000">
+                <span>Speaker - ৳5000</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button onclick="addToCart(event)">Add to Cart</button>
+            </div>
+            <div class="product" data-product="Ear Phone" data-price="2000">
+                <span>Ear Phone - ৳2000</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button onclick="addToCart(event)">Add to Cart</button>
+            </div>
+            <div class="product" data-product="Mouse" data-price="1000">
+                <span>Mouse - ৳1000</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button onclick="addToCart(event)">Add to Cart</button>
+            </div>
+            <div class="product" data-product="Charger" data-price="800">
+                <span>Charger - ৳800</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button onclick="addToCart(event)">Add to Cart</button>
+            </div>
+            <div class="product" data-product="Laptop" data-price="50000">
+                <span>Laptop - ৳50000</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button onclick="addToCart(event)">Add to Cart</button>
+            </div>
+        </div>
 
-    <div class="product" data-product-id="124" data-product-name="Another Product" data-product-price="49.99" data-product-category="Books">
-        <img src="demo.png" alt="Another Product">
-        <h2>Another Product</h2>
-        <p>Price: $49.99</p>
-        <p>Category: Books</p>
-        <p>Description: An amazing book to expand your knowledge.</p>
-        <button class="add-to-cart-button">Add to Cart</button>
+        <div class="cart">
+            <h2>Cart</h2>
+            <div id="cart-items"></div>
+            <p><strong>Total: ৳<span id="total-price">0</span></strong></p>
+            <div class="checkout-buttons">
+                <button onclick="checkout()">Check Out</button>
+                <button onclick="cancelOrder()">Cancel</button>
+            </div>
+        </div>
     </div>
-
-    <div class="product" data-product-id="125" data-product-name="Premium Product" data-product-price="99.99" data-product-category="Home Appliances">
-        <img src="demo.png" alt="Premium Product">
-        <h2>Premium Product</h2>
-        <p>Price: $99.99</p>
-        <p>Category: Home Appliances</p>
-        <p>Description: A premium product to enhance your home.</p>
-        <button class="add-to-cart-button">Add to Cart</button>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <object type="text/html" data="footer.html" style="width: 100%; height: 100%;"></object>
-    </footer>
 
     <script>
-        // Initialize the Data Layer
-        window.dataLayer = window.dataLayer || [];
+        const cart = {};
 
-        // Event listener for all "Add to Cart" buttons
-        document.querySelectorAll('.add-to-cart-button').forEach(function(button) {
-            button.addEventListener('click', function() {
-                var productElement = this.closest('.product');
-                var productData = {
-                    event: 'addToCart',
-                    ecommerce: {
-                        currencyCode: 'USD', // Replace with your preferred currency code
-                        add: {
-                            products: [{
-                                id: productElement.getAttribute('data-product-id'),
-                                name: productElement.getAttribute('data-product-name'),
-                                price: productElement.getAttribute('data-product-price'),
-                                category: productElement.getAttribute('data-product-category'),
-                                quantity: 1 // Default quantity; adjust as needed
-                            }]
-                        }
-                    }
-                };
+        function addToCart(event) {
+            const productDiv = event.target.parentElement;
+            const productName = productDiv.getAttribute('data-product');
+            const productPrice = parseInt(productDiv.getAttribute('data-price'));
+            const quantity = parseInt(productDiv.querySelector('.quantity').value);
 
-                // Push the product data to the data layer
-                window.dataLayer.push(productData);
-                console.log('Add to Cart data pushed to the data layer:', productData);
-            });
-        });
+            if (cart[productName]) {
+                cart[productName].quantity += quantity;
+            } else {
+                cart[productName] = { price: productPrice, quantity: quantity };
+            }
+            updateCart();
+        }
+
+        function removeFromCart(productName) {
+            delete cart[productName];
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartItemsDiv = document.getElementById('cart-items');
+            const totalPriceSpan = document.getElementById('total-price');
+            cartItemsDiv.innerHTML = '';
+
+            let totalPrice = 0;
+            for (const [productName, details] of Object.entries(cart)) {
+                totalPrice += details.price * details.quantity;
+
+                const cartItemDiv = document.createElement('div');
+                cartItemDiv.className = 'cart-item';
+                cartItemDiv.innerHTML = `
+                    <span>${productName} (x${details.quantity}) - ৳${details.price * details.quantity}</span>
+                    <button onclick="removeFromCart('${productName}')">Remove</button>
+                `;
+                cartItemsDiv.appendChild(cartItemDiv);
+            }
+            totalPriceSpan.textContent = totalPrice;
+        }
+
+        function checkout() {
+            alert('Order placed successfully!');
+            for (const key in cart) {
+                delete cart[key];
+            }
+            updateCart();
+        }
+
+        function cancelOrder() {
+            if (confirm('Are you sure you want to cancel the order?')) {
+                for (const key in cart) {
+                    delete cart[key];
+                }
+                updateCart();
+            }
+        }
     </script>
 </body>
 </html>
-
