@@ -111,6 +111,9 @@
     <script>
         const cart = {};
 
+        // Initialize the data layer
+        window.dataLayer = window.dataLayer || [];
+
         function addToCart(event) {
             const productDiv = event.target.parentElement;
             const productName = productDiv.getAttribute('data-product');
@@ -122,6 +125,23 @@
             } else {
                 cart[productName] = { price: productPrice, quantity: quantity };
             }
+
+            // Push data to the data layer
+            window.dataLayer.push({
+                event: 'addToCart',
+                ecommerce: {
+                    currencyCode: 'BDT',
+                    add: {
+                        products: [{
+                            name: productName,
+                            id: productName,
+                            price: productPrice,
+                            quantity: quantity
+                        }]
+                    }
+                }
+            });
+
             updateCart();
         }
 
