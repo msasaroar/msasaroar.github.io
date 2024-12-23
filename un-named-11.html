@@ -1,82 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PPBVCLNF');</script>
-<!-- End Google Tag Manager -->  
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GTM Topics</title>
-    <link rel="stylesheet" href="styles.css">
-    <script>
-        function showWarning(title, link) {
-            if (confirm("Are you sure you want to view the topic: " + title + "?")) {
-                try {
-                    window.location.href = link;
-                } catch (error) {
-                    document.getElementById("error-message").textContent = 
-                        "An error occurred while trying to navigate to the topic: " + title + ". Please try again later.";
-                }
-            }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Purchase Data Layer</title>
+  <script>
+    // Standard Purchase Data Layer Implementation
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "purchase",
+      transaction_id: "TX123456789",
+      value: 250.00,
+      currency: "USD",
+      tax: 20.00,
+      shipping: 5.00,
+      items: [
+        {
+          item_id: "prod001",
+          item_name: "Wireless Headphones",
+          quantity: 1,
+          price: 200.00,
+          category: "Electronics"
+        },
+        {
+          item_id: "prod002",
+          item_name: "Phone Case",
+          quantity: 2,
+          price: 25.00,
+          category: "Accessories"
         }
-    </script>
+      ]
+    });
+  </script>
 </head>
-
 <body>
+  <header style="position: fixed; top: 0; width: 100%; background-color: green; color: black; text-align: center; padding: 10px;">
+    <a href="index.html" style="position: absolute; left: 10px; color: orange; text-decoration: none;">Home</a>
+    <h1>Purchase Confirmation</h1>
+  </header>
 
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+  <main style="margin-top: 150px; text-align: center;">
+    <h2>Thank you for your purchase!</h2>
+    <p>Your transaction ID: <strong>TX123456789</strong></p>
+    <p>Total Amount: <strong>$250.00</strong></p>
+    <p>Shipping Details: <strong>Standard Delivery</strong></p>
 
-    <header>
-        <h1>Demo Website For Web Tracking With GA4 & GTM</h1>
-        <p>Explore comprehensive tutorials, guides, and tips to become proficient in GA4 and GTM. Start learning and take your analytics skills to the next level!</p>
-        <div class="topics">
-            <a href="0100-ga4-topic.html">GA4 : Topic</a>
-            <a href="0200-ga4-event.html">GA4 : Event</a>
-            <a href="0300-gtm-topic.html">GTM : Topic</a>
-            <a href="0400-gtm-event.html">GTM : Event</a>
-            <a href="0500-video-tutorials.html">Video Tutorials</a>
-            <a href="0600-e-shop.html">Demo eShop</a>
-            <a href="9800-download.html">Download</a>
-            <a href="9900-contact-us.html">Contact Us</a>
-        </div> 
-    </header>
+    <h3>Purchased Items:</h3>
+    <ul style="list-style-type: none; padding: 0;">
+      <li>1x Wireless Headphones - $200.00</li>
+      <li>2x Phone Case - $25.00 each</li>
+    </ul>
+  </main>
 
-    <main>
-        <h2>GTM Topics</h2>
-        <div class="topics-container">
-            <div class="topic-card">
-                <a href="#" onclick="showWarning('Introduction to GTM', 'gtm-topic01.html')">Introduction to GTM</a>
-            </div>
-            <div class="topic-card">
-                <a href="#" onclick="showWarning('How to Install GTM on WP Websites', 'gtm-topic02.html')">How to Install GTM on WP Websites</a>
-            </div>
-            <div class="topic-card">
-                <a href="#" onclick="showWarning('What are Tags and Triggers in GTM', 'gtm-topic03.html')">What are Tags and Triggers in GTM</a>
-            </div>
-            <div class="topic-card">
-                <a href="#" onclick="showWarning('How to Install GA3/GA4 in GTM', 'gtm-topic04.html')">How to Install GA3/GA4 in GTM</a>
-            </div>
-            <div class="topic-card">
-                <a href="#" onclick="showWarning('Variables in GTM', 'gtm-topic05.html')">Variables in GTM</a>
-            </div>
-            <!-- Add other GTM topics here in the same format -->
-        </div>
-        <p id="error-message" class="error-message"></p>
-    </main>
-    
-    <footer>
-        <p>&copy; 2024 Demo Website For Web Tracking With GA4 & GTM. All Rights Reserved.</p>
-        <p>Connect with us on <a href="#">LinkedIn</a> | <a href="#">Twitter</a> | <a href="https://www.facebook.com/msasaroar">Facebook</a></p>
-    </footer>
+  <footer style="position: fixed; bottom: 0; width: 100%; background-color: #f1f1f1; text-align: center; height: 50px;">
+    <p>&copy; 2024 Your Company</p>
+  </footer>
 </body>
-
 </html>
