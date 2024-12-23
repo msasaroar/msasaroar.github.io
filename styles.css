@@ -83,8 +83,8 @@ section h5 {
 
 .card h5 {
   margin: 0 0 10px;
-  font-size: 1.25rem;
-  color: red;
+  font-size: .75rem;
+  color: #9c0606;
 }
 
 .card button {
