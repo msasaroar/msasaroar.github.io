@@ -23,7 +23,6 @@ header h1 {
 header h5 {
   margin: 0;
   font-size: 2rem;
-  font-color: orange;
 }
 
 header p {
@@ -45,6 +44,14 @@ section h2 {
   color: black;
   margin-bottom: 15px;
 }
+
+section h5 {
+  text-align: center;
+  color: orange;
+  margin-bottom: 15px;
+}
+
+
 
 /* Cards Styling */
 .container {
