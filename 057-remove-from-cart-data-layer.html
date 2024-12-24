@@ -167,31 +167,10 @@
             updateCart();
         }
 
-        //function removeFromCart(productName) {
-        //    delete cart[productName];
-        //    updateCart();
-        //}
-
-	function removeFromCart(productName) {
-	    // Push the event to the data layer
-	    window.dataLayer.push({
-	        event: 'removeFromCart',
-	        ecommerce: {
-	            remove: {
-	                products: [{
-	                    name: productName,
-	                    id: productName,
-	                    price: cart[productName].price,
-	                    quantity: cart[productName].quantity
-	                }]
-	            }
-	        }
-	    });
-	
-	    // Remove the product from the cart
-	    delete cart[productName];
-	    updateCart();
-	}
+        function removeFromCart(productName) {
+            delete cart[productName];
+            updateCart();
+        }
 
         function updateCart() {
             const cartItemsDiv = document.getElementById('cart-items');
