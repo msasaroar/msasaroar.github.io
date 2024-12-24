@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove From Cart</title>
+	
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
+    </script>
+    <!-- End Google Tag Manager -->
+	
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: green;
+            color: black;
+            text-align: center;
+            padding: 10px;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .products, .cart {
+            width: 45%;
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .product, .cart-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            align-items: center;
+        }
+        .product button, .cart-item button {
+            background-color: orange;
+            color: blue;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .product button:hover, .cart-item button:hover {
+            background-color: blue;
+            color: orange;
+        }
+        .checkout-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .checkout-buttons button {
+            padding: 10px;
+            width: 48%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+	
+    <header>
+        <h1>Demonstration : Remove From Cart Data Layer</h1>
+    </header>
+
+    <div class="container">
+        <div class="products">
+            <h2>Products</h2>
+            <div class="product" data-product="Mobile" data-price="15000">
+                <span>Mobile - ৳15000</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button onclick="addToCart(event)">Add to Cart</button>
+            </div>
+            <div class="product" data-product="Speaker" data-price="5000">
+                <span>Speaker - ৳5000</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button onclick="addToCart(event)">Add to Cart</button>
+            </div>
+            <div class="product" data-product="Ear Phone" data-price="2000">
+                <span>Ear Phone - ৳2000</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button onclick="addToCart(event)">Add to Cart</button>
+            </div>
+            <div class="product" data-product="Mouse" data-price="1000">
+                <span>Mouse - ৳1000</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button onclick="addToCart(event)">Add to Cart</button>
+            </div>
+            <div class="product" data-product="Charger" data-price="800">
+                <span>Charger - ৳800</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button onclick="addToCart(event)">Add to Cart</button>
+            </div>
+            <div class="product" data-product="Laptop" data-price="50000">
+                <span>Laptop - ৳50000</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button onclick="addToCart(event)">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="cart">
+            <h2>Cart</h2>
+            <div id="cart-items"></div>
+            <p><strong>Total: ৳<span id="total-price">0</span></strong></p>
+            <div class="checkout-buttons">
+                <button onclick="checkout()">Check Out</button>
+                <button onclick="cancelOrder()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const cart = {};
+
+        // Initialize the data layer
+        window.dataLayer = window.dataLayer || [];
+
+        function addToCart(event) {
+            const productDiv = event.target.parentElement;
+            const productName = productDiv.getAttribute('data-product');
+            const productPrice = parseInt(productDiv.getAttribute('data-price'));
+            const quantity = parseInt(productDiv.querySelector('.quantity').value);
+
+            if (cart[productName]) {
+                cart[productName].quantity += quantity;
+            } else {
+                cart[productName] = { price: productPrice, quantity: quantity };
+            }
+
+            // Push data to the data layer
+            window.dataLayer.push({
+                event: 'addToCart',
+                ecommerce: {
+                    currencyCode: 'BDT',
+                    add: {
+                        products: [{
+                            name: productName,
+                            id: productName,
+                            price: productPrice,
+                            quantity: quantity
+                        }]
+                    }
+                }
+            });
+
+            updateCart();
+        }
+
+
+      	function removeFromCart(productName) {
+      	    // Push the event to the data layer
+      	    window.dataLayer.push({
+      	        event: 'removeFromCart',
+      	        ecommerce: {
+      	            remove: {
+      	                products: [{
+      	                    name: productName,
+      	                    id: productName,
+      	                    price: cart[productName].price,
+      	                    quantity: cart[productName].quantity
+      	                }]
+      	            }
+      	        }
+      	    });
+      	
+      	    // Remove the product from the cart
+      	    delete cart[productName];
+      	    updateCart();
+      	}
+
+        function updateCart() {
+            const cartItemsDiv = document.getElementById('cart-items');
+            const totalPriceSpan = document.getElementById('total-price');
+            cartItemsDiv.innerHTML = '';
+
+            let totalPrice = 0;
+            for (const [productName, details] of Object.entries(cart)) {
+                totalPrice += details.price * details.quantity;
+
+                const cartItemDiv = document.createElement('div');
+                cartItemDiv.className = 'cart-item';
+                cartItemDiv.innerHTML = `
+                    <span>${productName} (x${details.quantity}) - ৳${details.price * details.quantity}</span>
+                    <button onclick="removeFromCart('${productName}')">Remove</button>
+                `;
+                cartItemsDiv.appendChild(cartItemDiv);
+            }
+            totalPriceSpan.textContent = totalPrice;
+        }
+
+        function checkout() {
+            alert('Order placed successfully!');
+            for (const key in cart) {
+                delete cart[key];
+            }
+            updateCart();
+        }
+
+        function cancelOrder() {
+            if (confirm('Are you sure you want to cancel the order?')) {
+                for (const key in cart) {
+                    delete cart[key];
+                }
+                updateCart();
+            }
+        }
+    </script>
+</body>
+</html>
