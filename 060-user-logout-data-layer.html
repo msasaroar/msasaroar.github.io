@@ -19,14 +19,6 @@
   </script>
   <!-- End Google Tag Manager -->
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background-color: white;
-      color: black;
-      margin: 0;
-      padding: 0;
-    }
     header {
       background-color: green;
       color: white;
@@ -36,18 +28,29 @@
       width: 100%;
       text-align: center;
     }
-button {
-  background-color: orange; /* Button background color */
-  color: blue; /* Button text color */
-  border: none; /* Removes border */
-  padding: 10px 20px; /* Spacing inside the button */
-  font-size: 16px; /* Font size */
-  cursor: pointer; /* Changes cursor to pointer on hover */
-  margin: 20px auto; /* Centers the button horizontally */
-  display: block; /* Ensures block-level behavior for centering */
-  position: relative; /* Needed for `top` property to take effect */
-  top: 60px; /* Moves button 60px down relative to its original position */
-}
+    
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: white;
+      color: black;
+      margin: 0;
+      padding: 0;
+    }
+
+    button {
+      background-color: orange; /* Button background color */
+      color: blue; /* Button text color */
+      border: none; /* Removes border */
+      padding: 10px 20px; /* Spacing inside the button */
+      font-size: 16px; /* Font size */
+      cursor: pointer; /* Changes cursor to pointer on hover */
+      margin: 20px auto; /* Centers the button horizontally */
+      display: block; /* Ensures block-level behavior for centering */
+      position: relative; /* Needed for `top` property to take effect */
+      top: 60px; /* Moves button 60px down relative to its original position */
+    }
+    
     button:hover {
       background-color: blue;
       color: orange;
@@ -61,7 +64,7 @@ button {
       padding: 10px;
     }
     main {
-      margin-top: 60px;
+      margin-top: 160px;
       margin-bottom: 60px;
     }
   </style>
@@ -76,7 +79,7 @@ button {
   </header>
 
   <main>
-    <p>Click the button below to simulate a logout.</p>
+    <p>Click the button below to simulate a user logout.</p>
     <button id="logoutButton">Logout</button>
   </main>
 
