@@ -37,14 +37,16 @@
       text-align: center;
     }
     button {
-      background-color: orange;
-      color: blue;
-      border: none;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      margin: 20px auto;
-      display: block;
+      background-color: orange; /* Button background color */
+      color: blue; /* Button text color */
+      border: none; /* Removes border */
+      padding: 10px 20px; /* Spacing inside the button */
+      font-size: 16px; /* Font size */
+      cursor: pointer; /* Changes cursor to pointer on hover */
+      margin: 20px auto; /* Centers the button horizontally */
+      display: block; /* Ensures block-level behavior for centering */
+      position: relative; /* Needed for `top` property to take effect */
+      top: 60px; /* Moves button 60px down relative to its original position */
     }
     button:hover {
       background-color: blue;
