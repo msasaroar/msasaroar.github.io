@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Login</title>
+  <script>
+    // Initialize the data layer
+    window.dataLayer = window.dataLayer || [];
+
+    // Function to simulate login and update the data layer
+    function handleLogin(event) {
+      event.preventDefault();
+
+      // Simulate login logic
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      let loginStatus = "failure"; // Default to failure
+      let errorMessage = "Invalid credentials"; // Default error message
+
+      // Example: Dummy validation logic
+      if (username === "msasaroar" && password === "123456") {
+        loginStatus = "success";
+        errorMessage = "";
+      }
+
+      // Push data to the data layer
+      dataLayer.push({
+        event: "userLogin",
+        userId: username || "anonymous",
+        loginStatus: loginStatus,
+        errorMessage: errorMessage,
+        timestamp: new Date().toISOString(),
+        platform: "web"
+      });
+
+      // Show feedback to the user
+      const message = loginStatus === "success"
+        ? "Login successful!"
+        : `Login failed: ${errorMessage}`;
+      document.getElementById('message').innerText = message;
+    }
+  </script>
+</head>
+<body>
+  <h1>User Login</h1>
+
+  <form onsubmit="handleLogin(event)">
+    <label for="username">Username[msasaroar]:</label>
+    <input type="text" id="username" name="username" required><br><br>
+
+    <label for="password">Password[123456]:</label>
+    <input type="password" id="password" name="password" required><br><br>
+
+    <button type="submit">Login</button>
+  </form>
+
+  <p id="message"></p>
+
+  <!-- Example Footer -->
+  <footer style="position: fixed; bottom: 0; width: 100%; background-color: #f1f1f1; text-align: center; height: 50px;">
+    <object type="text/html" data="footer.html" style="width: 100%; height: 100%;"></object>
+  </footer>
+</body>
+</html>
+
