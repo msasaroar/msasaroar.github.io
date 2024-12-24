@@ -1,137 +1,113 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
-    
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PPBVCLNF');</script>
-<!-- End Google Tag Manager -->  
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Tutorials</title>
-    <link rel="stylesheet" href="styles.css">
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #333;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .topics a {
-            color: #ffffff;
-            margin: 0 10px;
-            text-decoration: none;
-        }
-
-        main {
-            max-height: 80vh; /* সেকশনের সর্বোচ্চ উচ্চতা */
-            overflow-y: auto; /* উল্লম্ব স্ক্রলিং */
-            padding: 20px;
-            background-color: #f8f9fa;
-        }
-
-        .video-description {
-            margin-bottom: 20px;
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-
-        footer p {
-            margin: 5px 0;
-        }
-    </style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Logout Example</title>
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
+  </script>
+  <!-- End Google Tag Manager -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: white;
+      color: black;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: green;
+      color: black;
+      padding: 10px 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      text-align: center;
+    }
+    button {
+      background-color: orange;
+      color: blue;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 20px auto;
+      display: block;
+    }
+    button:hover {
+      background-color: blue;
+      color: orange;
+    }
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #f1f1f1;
+      text-align: center;
+      padding: 10px;
+    }
+    main {
+      margin-top: 60px;
+      margin-bottom: 60px;
+    }
+  </style>
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+  <header>
+    <h1>Logout Example Page</h1>
+  </header>
 
-    <header>
-        <h1>Demo Website For Web Tracking With GA4 & GTM</h1>
-        <p>Discover a curated list of video tutorials for mastering Google Analytics 4 and Google Tag Manager.</p>
-        <div class="topics">
-            <a href="0100-ga4-topic.html">GA4 : Topic</a>
-            <a href="0200-ga4-event.html">GA4 : Event</a>
-            <a href="0300-gtm-topic.html">GTM : Topic</a>
-            <a href="0400-gtm-event.html">GTM : Event</a>
-            <a href="0500-video-link.html">Video Tutorials</a>
-            <a href="0600-e-shop.html">Demo eShop</a>
-            <a href="9800-download.html">Download</a>
-            <a href="9900-contact-us.html">Contact Us</a>
-        </div> 
-    </header>
+  <main>
+    <h2>Welcome to the User Logout Example</h2>
+    <p>Click the button below to simulate a logout.</p>
+    <button id="logoutButton">Logout</button>
+  </main>
 
-    <main>
-        
-        <h2>Video Tutorials on GA4 & GTM</h2>
+  <footer>
+    <p>Footer Content Here</p>
+  </footer>
 
-        <div class="video-description">
-            <p><strong>Video ID:</strong> 001</p>
-            <p><strong>Video Title:</strong> <a href="https://www.youtube.com/playlist?list=PLNfnAKZ4Zsaolsq8PxO1VbKYw6NfQUHkq" target="_blank">
-                Complete Google Analytics 4 Tutorial | GA4 Course in Hindi - 2024 | Umar Tazkeer</a></p>
-            <p>
-                This playlist is for those who want to learn Google Analytics 4 (GA4) from scratch in Hindi.
-                All key concepts & topics of GA4 are covered in detail.
-            </p>
-        </div>
+  <script>
+    // Initialize dataLayer
+    window.dataLayer = window.dataLayer || [];
 
-        <div class="video-description">
-            <p><strong>Video ID:</strong> 002</p>
-            <p><strong>Video Title:</strong> <a href="https://www.youtube.com/watch?v=b-IpGibR59M&list=PLNfnAKZ4Zsao_6XEuzfsTVlaxeqgltAQC&pp=iAQB" target="_blank">
-                Google Tag Manager Full Course in Single Video | GTM Course Beginner to Pro | Umar Tazkeer</a></p>
-            <p>
-                This playlist contains the latest videos on Google Tag Manager, explaining GTM setup and
-                covering topics from basic to advanced practical implementation.
-            </p>
-        </div>
+    // Logout Button Event Listener
+    document.getElementById("logoutButton").addEventListener("click", function () {
+      var logoutData = {
+        event: "userLogout",
+        userId: "12345", // Replace with dynamic user ID
+        userType: "premium", // Replace with dynamic user type
+        logoutTime: new Date().toISOString(),
+        sessionDuration: "45m30s", // Replace with dynamic session duration
+        logoutReason: "manual", // Example reason
+        page: {
+          url: window.location.href,
+          title: document.title
+        }
+      };
 
-        <div class="video-description">
-            <p><strong>Video ID:</strong> 003</p>
-            <p><strong>Video Title:</strong> <a href="https://www.youtube.com/playlist?list=PLNfnAKZ4Zsaolsq8PxO1VbKYw6NfQUHkq" target="_blank">
-                Complete Google Analytics 4 Tutorial | GA4 Course in Hindi - 2024 | Umar Tazkeer</a></p>
-            <p>
-                This playlist is for those who want to learn Google Analytics 4 (GA4) from scratch in Hindi.
-                All key concepts & topics of GA4 are covered in detail.
-            </p>
-        </div>
+      // Push data to the dataLayer
+      dataLayer.push(logoutData);
 
-        <div class="video-description">
-            <p><strong>Video ID:</strong> 004</p>
-            <p><strong>Video Title:</strong> <a href="https://www.youtube.com/watch?v=b-IpGibR59M&list=PLNfnAKZ4Zsao_6XEuzfsTVlaxeqgltAQC&pp=iAQB" target="_blank">
-                Google Tag Manager Full Course in Single Video | GTM Course Beginner to Pro | Umar Tazkeer</a></p>
-            <p>
-                This playlist contains the latest videos on Google Tag Manager, explaining GTM setup and
-                covering topics from basic to advanced practical implementation.
-            </p>
-        </div>
-
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Demo Website For Web Tracking With GA4 & GTM. All Rights Reserved.</p>
-        <p>Connect with us on <a href="#">LinkedIn</a> | <a href="#">Twitter</a> | <a href="https://www.facebook.com/msasaroar">Facebook</a></p>
+      // Display a confirmation message
+      alert("Logout event tracked!");
+    });
+  </script>
 </body>
 </html>
