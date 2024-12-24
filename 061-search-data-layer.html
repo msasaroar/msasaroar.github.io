@@ -1,1 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Data Layer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: #000;
+        }
 
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: green;
+            text-align: center;
+            padding: 10px;
+            color: black;
+        }
+
+        header button {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            background-color: orange;
+            color: blue;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        main {
+            margin-top: 80px;
+            padding: 20px;
+        }
+
+        .search-bar {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        input, select, button {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: orange;
+            color: blue;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: blue;
+            color: orange;
+        }
+
+        .results {
+            margin-top: 20px;
+        }
+
+        .result-item {
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin: 5px 0;
+            cursor: pointer;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #f1f1f1;
+            text-align: center;
+            padding: 10px;
+            height: 50px;
+        }
+    </style>
+    <script>
+        // Function to simulate pushing data to the data layer
+        function pushSearchDataLayer(eventType, data) {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                event: eventType,
+                ...data
+            });
+            console.log("Data Layer Push:", { event: eventType, ...data });
+        }
+
+        // Function to perform a search
+        function performSearch() {
+            const searchQuery = document.getElementById('searchInput').value;
+            const filters = {
+                category: document.getElementById('categoryFilter').value,
+                size: document.getElementById('sizeFilter').value
+            };
+
+            // Simulate search results
+            const results = [
+                { id: '1', name: `${searchQuery} - Red Shoes` },
+                { id: '2', name: `${searchQuery} - Blue Shirt` },
+                { id: '3', name: `${searchQuery} - Green Jacket` }
+            ];
+
+            // Update the results display
+            displayResults(results);
+
+            // Push data to the data layer
+            pushSearchDataLayer('searchPerformed', {
+                searchQuery,
+                filters,
+                results: { totalResults: results.length, searchTime: '0.3s' }
+            });
+        }
+
+        // Function to display search results
+        function displayResults(results) {
+            const resultsContainer = document.getElementById('searchResults');
+            resultsContainer.innerHTML = ''; // Clear previous results
+
+            results.forEach(result => {
+                const resultDiv = document.createElement('div');
+                resultDiv.className = 'result-item';
+                resultDiv.textContent = result.name;
+                resultDiv.onclick = () => handleResultClick(result);
+                resultsContainer.appendChild(resultDiv);
+            });
+        }
+
+        // Function to handle result clicks
+        function handleResultClick(result) {
+            pushSearchDataLayer('resultClicked', {
+                resultId: result.id,
+                resultName: result.name
+            });
+            alert(`You clicked on: ${result.name}`);
+        }
+    </script>
+</head>
+<body>
+
+    <header>
+        <button onclick="window.location.href='index.html';">Home</button>
+        <h1>Demonstration : Search Data Layer</h1>
+    </header>
+
+    <main>
+        <h2>Search for Products</h2>
+
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Enter search term" />
+            <select id="categoryFilter">
+                <option value="Men">Men</option>
+                <option value="Women">Women</option>
+                <option value="Kids">Kids</option>
+            </select>
+            <select id="sizeFilter">
+                <option value="Small">Small</option>
+                <option value="Medium">Medium</option>
+                <option value="Large">Large</option>
+            </select>
+            <button onclick="performSearch()">Search</button>
+        </div>
+
+        <div id="searchResults" class="results">
+            <!-- Dynamic search results will appear here -->
+        </div>
+    </main>
+
+    <footer>
+        <p>Footer Content</p>
+    </footer>
+
+</body>
+</html>
