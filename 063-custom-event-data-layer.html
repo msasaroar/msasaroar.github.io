@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Recommendation Tracker</title>
+  <script>
+    // Initialize the Data Layer
+    window.dataLayer = window.dataLayer || [];
+
+    // Google Tag Manager Script
+    (function(w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
+  </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f9f9f9;
+    }
+    .product {
+      display: inline-block;
+      border: 1px solid #ddd;
+      margin: 10px;
+      padding: 15px;
+      text-align: center;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .product img {
+      max-width: 150px;
+      margin-bottom: 10px;
+    }
+    .product button {
+      background-color: orange;
+      color: blue;
+      border: none;
+      padding: 8px 16px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .product button:hover {
+      background-color: blue;
+      color: orange;
+    }
+  </style>
+</head>
+<body>
+  <h1>Recommended Products</h1>
+  <div class="product" data-product-id="101" data-product-name="Wireless Headphones" data-product-category="Electronics">
+    <img src="https://via.placeholder.com/150" alt="Wireless Headphones">
+    <h2>Wireless Headphones</h2>
+    <p>$120</p>
+    <button>View Details</button>
+  </div>
+  <div class="product" data-product-id="102" data-product-name="Smartwatch" data-product-category="Wearables">
+    <img src="https://via.placeholder.com/150" alt="Smartwatch">
+    <h2>Smartwatch</h2>
+    <p>$180</p>
+    <button>View Details</button>
+  </div>
+  <div class="product" data-product-id="103" data-product-name="Bluetooth Speaker" data-product-category="Electronics">
+    <img src="https://via.placeholder.com/150" alt="Bluetooth Speaker">
+    <h2>Bluetooth Speaker</h2>
+    <p>$60</p>
+    <button>View Details</button>
+  </div>
+
+  <script>
+    // Add event listeners to product buttons
+    document.querySelectorAll('.product button').forEach(button => {
+      button.addEventListener('click', function() {
+        // Get product details from the parent element
+        const productElement = this.closest('.product');
+        const productId = productElement.getAttribute('data-product-id');
+        const productName = productElement.getAttribute('data-product-name');
+        const productCategory = productElement.getAttribute('data-product-category');
+
+        // Push the custom event to the data layer
+        window.dataLayer.push({
+          event: 'product_click',
+          productId: productId,
+          productName: productName,
+          productCategory: productCategory,
+          timestamp: new Date().toISOString()
+        });
+
+        console.log(`Custom event "product_click" pushed for ${productName}`);
+      });
+    });
+  </script>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+</body>
+</html>
