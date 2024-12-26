@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Remove From Cart</title>
-	
+
     <!-- Google Tag Manager -->
     <script>
         (function(w, d, s, l, i) {
@@ -19,7 +19,7 @@
         })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
     </script>
     <!-- End Google Tag Manager -->
-	
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -79,7 +79,7 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-	
+
     <header>
         <h1>Demonstration : Remove From Cart Data Layer</h1>
     </header>
@@ -168,6 +168,25 @@
         }
 
         function removeFromCart(productName) {
+            const product = cart[productName];
+            if (product) {
+                // Push data to the data layer
+                window.dataLayer.push({
+                    event: 'removeFromCart',
+                    ecommerce: {
+                        currencyCode: 'BDT',
+                        remove: {
+                            products: [{
+                                name: productName,
+                                id: productName,
+                                price: product.price,
+                                quantity: product.quantity
+                            }]
+                        }
+                    }
+                });
+            }
+
             delete cart[productName];
             updateCart();
         }
