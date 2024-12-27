@@ -81,56 +81,109 @@
     }
   </style>
   <script>
-    // Page View Data Layer
 	window.dataLayer = window.dataLayer || [];
+	
+	// Entry 1: Page Information
 	window.dataLayer.push({
 	  event: "page_view",
 	  pageTitle: "Product Page - Sample Products",
+	  pageURL: "https://www.example.com/products/wireless-headphones",
 	  pagePath: "/product/sample-product",
+	  pageCategory: "Product",
+	  pageTemplate: "product-template",
 	  userType: "guest",
-	  ecommerce: {
-	    	currencyCode: "USD",
-		items: [
-		{
-			itemName: "Product-1",
-			itemId: "P123",
-			price: 11.11,
-			quantity: 1
-		},
-		{
-			itemName: "Product-2",
-			itemId: "P124",
-			price: 22.22,
-			quantity: 1
-		},
-		{
-			itemName: "Product-3",
-			itemId: "P125",
-			price: 33.33,
-			quantity: 1
-		},
-		],
-	  },
+	  timestamp: new Date().toISOString()
+	});
+	
+	// Entry 2: User Information
+	window.dataLayer.push({
+	  event: "userInfo",
+	  userId: "user12345",
+	  userType: "registered",
+	  userRegion: "US",
+	  userLanguage: "en-US",
+	  timestamp: new Date().toISOString()
+	});
+	
+	// Entry 3: Event Information
+	window.dataLayer.push({
+	  event: "navigationEvent",
+	  eventCategory: "navigation",
+	  eventAction: "load",
+	  eventLabel: "product-page-load",
+	  timestamp: new Date().toISOString()
+	});
+	
+	// Entry 4: Site/Business Information
+	window.dataLayer.push({
+	  event: "siteInfo",
+	  siteName: "Example E-commerce",
+	  siteVersion: "3.0.1",
+	  businessUnit: "Consumer Electronics",
+	  timestamp: new Date().toISOString()
+	});
+	
+	// Entry 5: Content Metadata
+	window.dataLayer.push({
+	  event: "contentMetadata",
+	  contentId: "product-98765",
+	  contentType: "product",
+	  contentTags: ["electronics", "headphones", "wireless"],
+	  contentAuthor: "Example Team",
+	  contentPublishedDate: "2024-01-15",
+	  timestamp: new Date().toISOString()
+	});
+	
+	// Entry 6: Campaign/Traffic Information
+	window.dataLayer.push({
+	  event: "campaignInfo",
+	  trafficSource: "organic",
+	  campaignName: "Winter Deals 2024",
+	  utmSource: "google",
+	  utmMedium: "cpc",
+	  utmCampaign: "winter_deals",
+	  timestamp: new Date().toISOString()
+	});
+	
+	// Entry 7: eCommerce Information
+	window.dataLayer.push({
+	  event: "ecommerceInfo",
+	  productId: "98765",
+	  productCategory: "Headphones",
+	  productPrice: 129.99,
+	  cartValue: 259.98,
+	  transactionId: "txn12345",
+	  timestamp: new Date().toISOString()
+	});
+	
+	// Entry 8: Custom Variables
+	window.dataLayer.push({
+	  event: "customVariables",
+	  loggedInStatus: true,
+	  pageEnvironment: "production",
 	  timestamp: new Date().toISOString()
 	});
 
-    // Button Click Handler for "Add to Cart"
-    function addToCart() {
-      window.dataLayer.push({
-        event: "add_to_cart",
-        ecommerce: {
-          items: [
-            {
-              itemName: "Product-1",
-              itemId: "P123",
-              price: 11.11,
-              quantity: 1
-            }
-          ]
-        }
-      });
-      alert("Item added to cart! Check your analytics for the event.");
-    }
+
+	  
+	// Button Click Handler for "Add to Cart"
+	function addToCart() {
+	window.dataLayer.push({
+	event: "add_to_cart",
+	ecommerce: {
+	  items: [
+	    {
+	      itemName: "Product-1",
+	      itemId: "P123",
+	      price: 11.11,
+	      quantity: 1
+	    }
+	  ]
+	}
+	});
+	alert("Item added to cart! Check your analytics for the event.");
+	}
+  
   </script>
 </head>
 <body>
