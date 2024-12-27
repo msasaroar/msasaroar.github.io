@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -95,9 +94,30 @@
     <button type="submit">Submit</button>
   </form>
 
+  <script>
+    // Push form data to the dataLayer on submit
+    document.getElementById('exampleForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent actual form submission for demo purposes
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+
+      // Push form data to the dataLayer
+      window.dataLayer = window.dataLayer || [];
+      dataLayer.push({
+        event: 'formSubmit',
+        formData: {
+          visitors_name: name,
+          visitors_email: email
+        }
+      });
+
+      console.log('Form data pushed to dataLayer:', { name, email });
+      alert('Form data sent to dataLayer!');
+    });
+  </script>
+
   <footer>
     <object type="text/html" data="footer.html" style="width: 100%; height: 100%;"></object>
   </footer>
 </body>
 </html>
-
