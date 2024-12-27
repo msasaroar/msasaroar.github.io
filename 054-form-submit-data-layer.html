@@ -104,10 +104,12 @@
       // Push form data to the dataLayer
       window.dataLayer = window.dataLayer || [];
       dataLayer.push({
-        event: 'formSubmit',
-        formData: {
+          event: 'formSubmit',
+          formData: {
+          page_name: '054-form-submit-data-layer',
           visitors_name: name,
-          visitors_email: email
+          visitors_email: email,
+          timestamp: new Date().toISOString()
         }
       });
 
