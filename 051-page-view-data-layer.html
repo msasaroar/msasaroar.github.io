@@ -82,25 +82,37 @@
   </style>
   <script>
     // Page View Data Layer
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: "page_view",
-      pageTitle: "Product Page - Wireless Headphones",
-      pagePath: "/product/wireless-headphones",
-      userType: "guest",
-      ecommerce: {
-        currencyCode: "USD",
-        items: [
-          {
-            itemName: "Wireless Headphones",
-            itemId: "WH123",
-            price: 99.99,
-            quantity: 1
-          }
-        ]
-      },
-      timestamp: new Date().toISOString()
-    });
+	window.dataLayer = window.dataLayer || [];
+	window.dataLayer.push({
+	  event: "page_view",
+	  pageTitle: "Product Page - Wireless Headphones",
+	  pagePath: "/product/wireless-headphones",
+	  userType: "guest",
+	  ecommerce: {
+	    	currencyCode: "USD",
+		items: [
+		{
+			itemName: "Product-1",
+			itemId: "P123",
+			price: 11.11,
+			quantity: 1
+		},
+		{
+			itemName: "Product-2",
+			itemId: "P124",
+			price: 22.22,
+			quantity: 1
+		},
+		{
+			itemName: "Product-3",
+			itemId: "P125",
+			price: 33.33,
+			quantity: 1
+		},
+		],
+	  },
+	  timestamp: new Date().toISOString()
+	});
 
     // Button Click Handler for "Add to Cart"
     function addToCart() {
