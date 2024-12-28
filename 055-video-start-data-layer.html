@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +19,7 @@
             width: 100%;
             height: 50px;
             background-color: green;
-            color: black;
+            color: white;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -97,5 +96,23 @@
     <footer>
         <object type="text/html" data="footer.html" style="width: 100%; height: 100%;"></object>
     </footer>
+
+    <script>
+        // Add event listener for video play
+        document.getElementById('demoVideo').addEventListener('play', function () {
+            const videoData = {
+                event: 'videoStart',
+                videoTitle: 'Big Buck Bunny',
+                videoUrl: this.currentSrc
+            };
+            
+            // Push video data to dataLayer
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push(videoData);
+
+            // Display the data in the pre tag
+            document.getElementById('dataLayerOutput').textContent = JSON.stringify(videoData, null, 2);
+        });
+    </script>
 </body>
 </html>
