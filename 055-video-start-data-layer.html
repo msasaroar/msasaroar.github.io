@@ -120,7 +120,7 @@
 </html>
 
 
-<!--
+<!-- এটি পূর্বেকার ডেটা লেয়ার
 // Add event listener for video play
 document.getElementById('demoVideo').addEventListener('play', function () {
     const videoData = {
@@ -143,22 +143,5 @@ document.getElementById('demoVideo').addEventListener('play', function () {
 
     // Display alert
     alert(videoData.videoTitle);
-});
-==========================================
-document.getElementById('demoVideo').addEventListener('play', function () {
-    const videoData = {
-        eventName: 'videoStart', // ইভেন্ট নাম GTM-এ একই হতে হবে
-        topicTitle: '055 : Video Start Data Layer',
-        videoTitle: 'Big Buck Bunny',
-        videoURL: this.currentSrc,
-        timeStamp: new Date().toISOString()
-    };
-
-    // ডেটা লেয়ার পুশ
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push(videoData);
-
-    // ডিবাগিং-এর জন্য কনসোলে দেখানো
-    console.log('Data Layer:', window.dataLayer);
 });
 -->

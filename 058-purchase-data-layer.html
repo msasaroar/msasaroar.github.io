@@ -3,85 +3,152 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <title>Purchase Confirmation</title>
   <!-- Google Tag Manager -->
   <script>
-      (function(w, d, s, l, i) {
+    (function(w, d, s, l, i) {
       w[l] = w[l] || [];
       w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
       var f = d.getElementsByTagName(s)[0],
-      j = d.createElement(s),
-      dl = l != 'dataLayer' ? '&l=' + l : '';
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
       j.async = true;
       j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
       f.parentNode.insertBefore(j, f);
-      })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
+    })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
   </script>
   <!-- End Google Tag Manager -->
+  <style>
+    /* Global Styles */
+    body {
+      background-color: white;
+      color: black;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
+    /* Header Styles */
+    header {
+      background-color: green;
+      color: black;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 10px 0;
+    }
 
-  <title>Purchase Data Layer</title>
-  <script>
-    // Standard Purchase Data Layer Implementation
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: "purchase",
-      transaction_id: "TX123456789",
-      value: 250.00,
-      currency: "USD",
-      tax: 20.00,
-      shipping: 5.00,
-      items: [
-        {
-          item_id: "prod001",
-          item_name: "Wireless Headphones",
-          quantity: 1,
-          price: 200.00,
-          category: "Electronics"
-        },
-        {
-          item_id: "prod002",
-          item_name: "Phone Case",
-          quantity: 2,
-          price: 25.00,
-          category: "Accessories"
-        }
-      ]
-    });
-  </script>
+    .home-button {
+      position: absolute;
+      top: 50%;
+      left: 15px;
+      transform: translateY(-50%);
+      background-color: orange;
+      color: blue;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    /* Main Content */
+    main {
+      margin: 120px auto 80px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* Button Styles */
+    button {
+      background-color: orange;
+      color: blue;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    /* Footer Styles */
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #f1f1f1;
+      text-align: center;
+      height: 50px;
+    }
+
+    footer object {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
 </head>
 <body>
-
-<!-- Google Tag Manager (noscript) -->
-<noscript>
-  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-</noscript>
-<!-- End Google Tag Manager (noscript) -->
-
-
-
-
-  
-  <header style="position: fixed; top: 0; width: 100%; background-color: green; color: black; text-align: center; padding: 10px;">
-    <a href="index.html" style="position: absolute; left: 10px; color: orange; text-decoration: none;">Home</a>
-    <h1>Purchase Confirmation</h1>
+  <!-- Header -->
+  <header>
+    <button class="home-button" onclick="location.href='index.html'">Home</button>
+    <h1>Order Confirmation</h1>
   </header>
 
-  <main style="margin-top: 150px; text-align: center;">
-    <h2>Thank you for your purchase!</h2>
-    <p>Your transaction ID: <strong>TX123456789</strong></p>
-    <p>Total Amount: <strong>$250.00</strong></p>
-    <p>Shipping Details: <strong>Standard Delivery</strong></p>
-
-    <h3>Purchased Items:</h3>
-    <ul style="list-style-type: none; padding: 0;">
-      <li>1x Wireless Headphones - $200.00</li>
-      <li>2x Phone Case - $25.00 each</li>
+  <!-- Main Content -->
+  <main>
+    <h2>Thank You for Your Purchase!</h2>
+    <p>Your order has been placed successfully. Below are the details:</p>
+    <div class="order-summary">
+      <p><strong>Order ID:</strong> #67890</p>
+      <p><strong>Total Price:</strong> $179.93</p>
+    </div>
+    <h3>Products Purchased:</h3>
+    <ul>
+      <li>Super Widget - Quantity: 2 - Price: $24.99 each</li>
+      <li>Mega Widget - Quantity: 1 - Price: $49.99 each</li>
+      <li>Ultra Widget - Quantity: 3 - Price: $14.99 each</li>
     </ul>
+    <button onclick="window.location.href='shop.html'">Continue Shopping</button>
   </main>
 
-  <footer style="position: fixed; bottom: 0; width: 100%; background-color: #f1f1f1; text-align: center; height: 50px;">
-    <p>&copy; 2024 Your Company</p>
+  <!-- Footer -->
+  <footer>
+    <object type="text/html" data="footer.html"></object>
   </footer>
+
+  <!-- Data Layer -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+      event: "purchase",
+      ecommerce: {
+        transaction_id: "67890",
+        affiliation: "My E-commerce Store",
+        value: 179.93,
+        currency: "USD",
+        tax: 0,
+        shipping: 5.00,
+        items: [
+          { item_name: "Super Widget", item_id: "SW123", price: 24.99, quantity: 2 },
+          { item_name: "Mega Widget", item_id: "MW456", price: 49.99, quantity: 1 },
+          { item_name: "Ultra Widget", item_id: "UW789", price: 14.99, quantity: 3 }
+        ]
+      }
+    });
+  </script>
 </body>
 </html>
