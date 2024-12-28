@@ -102,9 +102,9 @@
         document.getElementById('demoVideo').addEventListener('play', function () {
             const videoData = {
                 eventName: 'videoStart',
-                topicTitle: '055 : Video Start Data Layer'
+                topicTitle: '055 : Video Start Data Layer',
                 videoTitle: 'Big Buck Bunny',
-                videoURL: this.currentSrc
+                videoURL: this.currentSrc,
                 timeStamp: new Date().toISOString()
             };
             
