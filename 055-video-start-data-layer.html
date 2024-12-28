@@ -101,6 +101,32 @@
         // Add event listener for video play
         document.getElementById('demoVideo').addEventListener('play', function () {
             const videoData = {
+                event: 'videoStart',
+                videoTitle: 'Big Buck Bunny',
+                videoUrl: this.currentSrc
+            };
+            
+            // Push video data to dataLayer
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push(videoData);
+
+            // Log dataLayer to console for debugging
+            console.log('Data Layer:', window.dataLayer);
+
+            // Display the data in the pre tag
+            document.getElementById('dataLayerOutput').textContent = JSON.stringify(videoData, null, 2);
+        });
+    </script>
+</body>
+</html>
+
+
+
+<!--
+    <script>
+        // Add event listener for video play
+        document.getElementById('demoVideo').addEventListener('play', function () {
+            const videoData = {
                 eventName: 'videoStart',
                 topicTitle: '055 : Video Start Data Layer',
                 videoTitle: 'Big Buck Bunny',
@@ -116,5 +142,7 @@
             document.getElementById('dataLayerOutput').textContent = JSON.stringify(videoData, null, 2);
         });
     </script>
-</body>
-</html>
+-->
+
+
+
