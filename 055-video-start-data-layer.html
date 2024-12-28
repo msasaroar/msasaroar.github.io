@@ -101,9 +101,11 @@
         // Add event listener for video play
         document.getElementById('demoVideo').addEventListener('play', function () {
             const videoData = {
-                event: 'videoStart',
+                eventName: 'videoStart',
+                topicTitle: '055 : Video Start Data Layer'
                 videoTitle: 'Big Buck Bunny',
-                videoUrl: this.currentSrc
+                videoURL: this.currentSrc
+                timeStamp: new Date().toISOString()
             };
             
             // Push video data to dataLayer
