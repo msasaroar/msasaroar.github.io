@@ -135,7 +135,6 @@
 
         // Initialize the data layer
         window.dataLayer = window.dataLayer || [];
-
         function addToCart(event) {
             const productDiv = event.target.parentElement;
             const productName = productDiv.getAttribute('data-product');
@@ -171,6 +170,7 @@
             const product = cart[productName];
             if (product) {
                 // Push data to the data layer
+                // একাধিক আইটেম/Row থাকলে কিভাবে হ্যান্ডেল করতে হবে ?
                 window.dataLayer.push({
                     event: 'removeFromCart',
                     ecommerce: {
