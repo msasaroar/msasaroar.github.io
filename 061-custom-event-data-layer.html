@@ -19,6 +19,27 @@
       j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
       f.parentNode.insertBefore(j, f);
     })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
+
+    // Function to handle button clicks
+    function handleViewDetails(event) {
+      const productElement = event.target.closest('.product');
+      const productId = productElement.getAttribute('data-product-id');
+      const productName = productElement.getAttribute('data-product-name');
+      const productCategory = productElement.getAttribute('data-product-category');
+      const productPrice = productElement.querySelector('p').innerText;
+
+      // Push the event to the data layer
+      window.dataLayer.push({
+        event: 'product_click',
+        productId: productId,
+        productName: productName,
+        productCategory: productCategory,
+        productPrice: productPrice,
+        timestamp: new Date().toISOString()
+      });
+
+      console.log(`Custom event "product_click" pushed for ${productName}`);
+    }
   </script>
   <style>
     body {
@@ -60,44 +81,20 @@
     <img src="product-1.png" alt="Wireless Headphones">
     <h2>Wireless Headphones</h2>
     <p>$120</p>
-    <button>View Details</button>
+    <button onclick="handleViewDetails(event)">View Details</button>
   </div>
   <div class="product" data-product-id="102" data-product-name="Smartwatch" data-product-category="Wearables">
     <img src="product-2.png" alt="Smartwatch">
     <h2>Smartwatch</h2>
     <p>$180</p>
-    <button>View Details</button>
+    <button onclick="handleViewDetails(event)">View Details</button>
   </div>
   <div class="product" data-product-id="103" data-product-name="Bluetooth Speaker" data-product-category="Electronics">
     <img src="product-3.png" alt="Bluetooth Speaker">
     <h2>Bluetooth Speaker</h2>
     <p>$60</p>
-    <button>View Details</button>
+    <button onclick="handleViewDetails(event)">View Details</button>
   </div>
-
-  <script>
-    // Add event listeners to product buttons
-    document.querySelectorAll('.product button').forEach(button => {
-      button.addEventListener('click', function() {
-        // Get product details from the parent element
-        const productElement = this.closest('.product');
-        const productId = productElement.getAttribute('data-product-id');
-        const productName = productElement.getAttribute('data-product-name');
-        const productCategory = productElement.getAttribute('data-product-category');
-
-        // Push the custom event to the data layer
-        window.dataLayer.push({
-          event: 'product_click',
-          productId: productId,
-          productName: productName,
-          productCategory: productCategory,
-          timestamp: new Date().toISOString()
-        });
-
-        console.log(`Custom event "product_click" pushed for ${productName}`);
-      });
-    });
-  </script>
 
   <!-- Google Tag Manager (noscript) -->
   <noscript>
