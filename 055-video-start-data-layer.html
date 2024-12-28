@@ -111,7 +111,7 @@
             // Push video data to dataLayer
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push(videoData);
-
+            alert(videoTitle);
             // Display the data in the pre tag
             document.getElementById('dataLayerOutput').textContent = JSON.stringify(videoData, null, 2);
         });
