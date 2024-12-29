@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Product View</title>
 
-    <!-- Google Tag Manager -->
-    <script>
-      (function(w, d, s, l, i) {
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w, d, s, l, i) {
       w[l] = w[l] || [];
       w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
       var f = d.getElementsByTagName(s)[0],
@@ -16,7 +16,7 @@
       j.async = true;
       j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
       f.parentNode.insertBefore(j, f);
-      })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
+    })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
   </script>
   <!-- End Google Tag Manager -->
 
@@ -25,23 +25,22 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
+      margin-top:20px;
     }
     header {
       background-color: green;
       color: black;
       text-align: center;
       padding: 10px 0;
-      position: absolute;
-      top: 50;
+      position: fixed;
+      top: 0;
       width: 100%;
+  
     }
-	
-	
     #app {
-      padding: 100px 20px;
-	  text-align: center;
+      padding: 80px 20px;
+      text-align: center;
     }
-	
     footer {
       position: fixed;
       bottom: 0;
@@ -51,10 +50,10 @@
       padding: 10px 0;
     }
     .product-card {
-      border: 5px solid #ddd;
+      border: 1px solid #ddd;
       border-radius: 10px;
       width: 150px;
-      text-align: left;
+      text-align: center;
       padding: 10px;
       background: green;
       margin: 10px;
@@ -79,114 +78,136 @@
     }
     #details img {
       max-height: 25%;
-	    max-width: 25%;
+      max-width: 25%;
     }
   </style>
 </head>
 <body>
 
 <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-		
-	<header>
-		<h1>Demonstration : Product View Data Layer</h1>
-	</header>
-	
-	<!-- Main Content Area -->
-	<div id="app"></div>
-	
-	<!-- Footer -->
-	<footer>
-		<p>Footer content here</p>
-	</footer>
 
-  <!-- JavaScript -->
-  <script>
-    // Product data
-    const products = [
-      {
-        id: "AW12345",
-        name: "Product-1",
-        price: "99.99",
-        brand: "WidgetCo",
-        category: "Widgets",
-        description: "The Awesome Widget is a top-of-the-line widget offering exceptional performance and quality.",
-        image: "product-1.png"
-      },
-      {
-        id: "SG67890",
-        name: "Product-2",
-        price: "149.99",
-        brand: "GadgetCo",
-        category: "Gadgets",
-        description: "The Super Gadget is a must-have for gadget enthusiasts.",
-        image: "product-2.png"
-      },
-      {
-        id: "CD24680",
-        name: "Product-3",
-        price: "199.99",
-        brand: "DeviceCo",
-        category: "Devices",
-        description: "The Cool Device offers cutting-edge technology in a sleek design.",
-        image: "product-3.png"
-      }
-    ];
+<header>
+  <h1>Product View Data Layer Demonstration</h1>
+</header>
 
-    // App container
-    const app = document.getElementById("app");
+<!-- Main Content Area -->
+<div id="app"></div>
 
-    // Load Product Listing
-    function loadProductListing() {
-      app.innerHTML = "<h2>Product Listing</h2>";
-      const productCards = products.map(product => `
-        <div class="product-card">
-          <img src="${product.image}" alt="${product.name}">
-          <h3>${product.name}</h3>
-          <p>Price: $${product.price}</p>
-          <a href="#details/${product.id}">View Details</a>
-        </div>
-      `).join("");
-      app.innerHTML += productCards;
+<!-- Footer -->
+<footer>
+  <p>Footer content here</p>
+</footer>
+
+<!-- JavaScript -->
+<script>
+  // Product data
+  const products = [
+    {
+      id: "AW12345",
+      name: "Product-1",
+      price: "99.99",
+      brand: "WidgetCo",
+      category: "Widgets",
+      description: "The Awesome Widget offers exceptional performance and quality.",
+      image: "product-1.png"
+    },
+    {
+      id: "SG67890",
+      name: "Product-2",
+      price: "149.99",
+      brand: "GadgetCo",
+      category: "Gadgets",
+      description: "The Super Gadget is a must-have for gadget enthusiasts.",
+      image: "product-2.png"
+    },
+    {
+      id: "CD24680",
+      name: "Product-3",
+      price: "199.99",
+      brand: "DeviceCo",
+      category: "Devices",
+      description: "The Cool Device offers cutting-edge technology in a sleek design.",
+      image: "product-3.png"
     }
+  ];
 
-    // Load Product Details
-    function loadProductDetails(productId) {
-      const product = products.find(p => p.id === productId);
-      if (!product) {
-        app.innerHTML = "<p>Product not found!</p>";
-        return;
-      }
-      app.innerHTML = `
-        <button onclick="window.location.hash = ''">Back to Products</button>
-        <h2>${product.name}</h2>
+  // App container
+  const app = document.getElementById("app");
+
+  // Load Product Listing
+  function loadProductListing() {
+    app.innerHTML = "<h2>Product Listing</h2>";
+    const productCards = products.map(product => `
+      <div class="product-card">
         <img src="${product.image}" alt="${product.name}">
-        <p><strong>Price:</strong> $${product.price}</p>
-        <p><strong>Brand:</strong> ${product.brand}</p>
-        <p><strong>Category:</strong> ${product.category}</p>
-        <p><strong>Description:</strong> ${product.description}</p>
-        <button style="padding: 10px 20px; background-color: orange; color: blue;">Add to Cart</button>
-      `;
+        <h3>${product.name}</h3>
+        <p>Price: $${product.price}</p>
+        <a href="#details/${product.id}">View Details</a>
+      </div>
+    `).join("");
+    app.innerHTML += productCards;
+  }
+
+  // Load Product Details
+  function loadProductDetails(productId) {
+    const product = products.find(p => p.id === productId);
+    if (!product) {
+      app.innerHTML = "<p>Product not found!</p>";
+      return;
     }
 
-    // Router
-    function router() {
-      const hash = window.location.hash;
-      if (hash.startsWith("#details/")) {
-        const productId = hash.split("/")[1];
-        loadProductDetails(productId);
-      } else {
-        loadProductListing();
+    // Push product view data into the dataLayer
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'productView',
+      ecommerce: {
+        detail: {
+          products: [
+            {
+              id: product.id,
+              name: product.name,
+              price: product.price,
+              brand: product.brand,
+              category: product.category,
+              description: product.description
+            }
+          ]
+        }
       }
+    });
+
+    // Render the product details on the page
+    app.innerHTML = `
+      <button  onclick="window.location.hash = ''">Back to Products</button>
+      <h2>${product.name}</h2>
+      <img height="150" width="150" src="${product.image}" alt="${product.name}">
+      <p><strong>Price:</strong> $${product.price}</p>
+      <p><strong>Brand:</strong> ${product.brand}</p>
+      <p><strong>Category:</strong> ${product.category}</p>
+      <p><strong>Description:</strong> ${product.description}</p>
+      <button style="padding: 10px 20px; background-color: orange; color: blue;">Add to Cart</button>
+    `;
+  }
+
+  // Router
+  function router() {
+    const hash = window.location.hash;
+    if (hash.startsWith("#details/")) {
+      const productId = hash.split("/")[1];
+      loadProductDetails(productId);
+    } else {
+      loadProductListing();
     }
+  }
 
-    // Event Listener for Hash Changes
-    window.addEventListener("hashchange", router);
+  // Event Listener for Hash Changes
+  window.addEventListener("hashchange", router);
 
-    // Initial Load
-    router();
-  </script>
+  // Initial Load
+  router();
+</script>
 </body>
 </html>
