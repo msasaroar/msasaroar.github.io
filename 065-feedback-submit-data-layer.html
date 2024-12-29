@@ -25,15 +25,17 @@
             position: fixed;
             top: 0;
             width: 100%;
+            height: 60px;
             background-color: green;
-            color: white;
+            color: rgb(0, 0, 0);
             text-align: center;
             padding: 10px 0;
+            font-size: 40px;
         }
         .home-button {
             position: absolute;
-            top: 10px;
-            left: 10px;
+            top: 0px;
+            left: 0px;
             background-color: orange;
             color: blue;
             border: none;
@@ -45,7 +47,7 @@
             color: orange;
         }
         main {
-            margin-top: 80px;
+            margin-top: 150px;
             padding: 20px;
             text-align: center;
         }
@@ -78,14 +80,13 @@
 
     <header>
         <button class="home-button" onclick="window.location.href='index.html'">Home</button>
-        Feedback Submission
+        Demonstration : Feedback Submission
     </header>
 
     <main>
-        <h1>Submit Your Feedback</h1>
+        <h2>Write Your Feedback Below</h2>
         <form class="feedback-form" onsubmit="submitFeedback(event)">
-            <label for="feedback">Your Feedback:</label><br>
-            <textarea id="feedback" name="feedback" rows="4" cols="50" required></textarea><br><br>
+            <textarea id="feedback" name="feedback" rows="10" cols="100" required></textarea><br><br>
             <button type="submit">Submit</button>
         </form>
     </main>
