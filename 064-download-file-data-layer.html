@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download File Data Layer</title>
+    <script>
+        // Google Tag Manager Setup
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+        var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:''; j.async=true; j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+        f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-PPBVCLNF');
+
+        // Function to push download event to the data layer
+        function trackDownload(fileName, fileType) {
+            dataLayer.push({
+                'event': 'fileDownload',
+                'fileName': fileName,
+                'fileType': fileType
+            });
+        }
+    </script>
+    <style>
+        body {
+            background-color: rgb(255, 255, 255);
+            color: black;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            margin-top: 150px;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: green;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 10px 0;
+        }
+        .home-button {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            background-color: orange;
+            color: blue;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+        }
+        .home-button:hover {
+            background-color: blue;
+            color: orange;
+        }
+        .content {
+            margin-top: 80px;
+            text-align: center;
+        }
+        .download-button {
+            background-color: orange;
+            color: blue;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .download-button:hover {
+            background-color: blue;
+            color: orange;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #ffffff;
+            text-align: center;
+            height: 50px;
+            line-height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <button class="home-button" onclick="window.location.href='index.html'">Home</button>
+        <h1>Track File Downloads</h1>
+    </header>
+    <div class="content">
+        <h2>Download Files</h2>
+        <button class="download-button" onclick="trackDownload('sample', 'pdf')">Download PDF</button>
+        <button class="download-button" onclick="trackDownload('sample', 'jpg')">Download Image</button>
+    </div>
+    <footer>
+        Footer Content Goes Here
+    </footer>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+</body>
+</html>
