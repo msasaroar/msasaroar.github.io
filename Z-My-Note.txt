@@ -3,6 +3,7 @@ Subject : Feedback Submit Data Layer
 Subject : Page Timing Data Layer
 Subject : Error Tracking Data Layer
 Subject : Tracking User Interactions with Share, Like, and Dislike Using Data
+Subject : Ad Click Trigger
 Task # 1 : Create an HTML page addressing a real-world problem and its solution on the aforementioned subject. Do not create separate .css or .js files.
 Task # 2 : Describe all the steps to configure GTM Tag, Trigger, and Variables for tracking on the aforementioned subject.
 
@@ -11,7 +12,7 @@ Header
 
 Position: The header will always be positioned at the top of the screen.
 Background Color: The header's background color will be green.
-Text Color: Black
+Header Text Color: Black
 Text Alignment: Header text will always be centered.
 Home Button:
 A Home button will be placed at the top-left corner of the header.
