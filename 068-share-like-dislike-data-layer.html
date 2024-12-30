@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Interaction</title>
+    <script>
+        // Initialize Data Layer
+        window.dataLayer = window.dataLayer || [];
+
+        // Function to push interaction events to the data layer
+        function trackInteraction(eventName, details) {
+            window.dataLayer.push({
+                event: eventName,
+                details: details
+            });
+        }
+    </script>
+    <!-- Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-PPBVCLNF"></script>
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
+    </script>
+    <!-- End Google Tag Manager -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: black;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: green;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .home-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: orange;
+            color: blue;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+        }
+        .home-button:hover {
+            background-color: blue;
+            color: orange;
+        }
+        main {
+            padding: 100px 20px;
+            text-align: center;
+        }
+        button {
+            background-color: orange;
+            color: blue;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+        }
+        button:hover {
+            background-color: blue;
+            color: orange;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #f1f1f1;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <button class="home-button" onclick="window.location.href='index.html';">Home</button>
+        <h1>Demonstrate : Tracking User Interactions with Share, Like, and Dislike Using Data Layer</h1>
+    </header>
+    <main>
+        <button onclick="trackInteraction('share_click', { contentId: '12345', action: 'share' });">
+            Share
+        </button>
+        <button onclick="trackInteraction('like_click', { contentId: '12345', action: 'like' });">
+            Like
+        </button>
+        <button onclick="trackInteraction('dislike_click', { contentId: '12345', action: 'dislike' });">
+            Dislike
+        </button>
+    </main>
+    <footer>
+        <object type="text/html" data="footer.html" style="width: 100%; height: 100%;"></object>
+    </footer>
+</body>
+</html>
