@@ -1,8 +1,40 @@
-Subject  : Download File Data Layer
-Task # 1: Create an html page solving real world problem and solution on  on the aforsaid subject. Don't create separate .css and .js
-Task # 2: Describe all steps for configure GTM Tag, Trigger and Variables for tracking on the aforsaid subject.
+Subject : Download File Data Layer
+Subject : Feedback Submit Data Layer
+Subject : Page Timing Data Layer
+Task # 1 : Create an HTML page addressing a real-world problem and its solution on the aforementioned subject. Do not create separate .css or .js files.
+Task # 2 : Describe all the steps to configure GTM Tag, Trigger, and Variables for tracking on the aforementioned subject.
 
+Guideline for HTML Page Creation
+Header
 
-Subject  : Feedback Submit Data Layer
-Task # 1: Create an html page solving real world problem and solution on  on the aforsaid subject. Don't create separate .css and .js
-Task # 2: Describe all steps for configure GTM Tag, Trigger and Variables for tracking on the aforsaid subject.
+Position: The header will always be positioned at the top of the screen.
+Background Color: The header's background color will be green.
+Text Color: Black
+Text Alignment: Header text will always be centered.
+Home Button:
+A Home button will be placed at the top-left corner of the header.
+Clicking the Home button will navigate to the index.html page.
+Buttons
+
+Button Color: All buttons will have an orange background.
+Font Color: All buttons will have blue font color.
+Hover Behavior:
+Background color will change to blue on hover.
+Font color will change to orange on hover.
+Position: All buttons, except the Home button, will be center-aligned within the page.
+Body
+
+Background Color: The body background color will always be white.
+Font Color: All text within the body will have black font color.
+Footer
+
+Position: The footer will always be positioned at the bottom of the screen and remain visible at all times.
+Implementation Code: The following code will be used to include the footer:
+html
+Copy code
+<footer style="position: fixed; bottom: 0; width: 100%; background-color: #f1f1f1; text-align: center; height: 50px;">
+  <object type="text/html" data="footer.html" style="width: 100%; height: 100%;"></object>
+</footer>
+Google Tag Manager (GTM)
+
+The GTM code GTM-PPBVCLNF will be included in every page.
