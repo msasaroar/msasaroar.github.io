@@ -4,11 +4,14 @@ Subject : Page Timing Data Layer
 Subject : Error Tracking Data Layer
 Subject : Tracking User Interactions with Share, Like, and Dislike Using Data
 Subject : GA4 Ad Click Trigger
-
 Subject : Refund Event Tag
+Subject : Custom Event Tracking. Track Form Field Changes: Set up tracking for changes in form fields (e.g., input focus, changes in selections), and send this data to GA4 as custom events.
+
 Task # 1 : Create an HTML page addressing a real-world problem and its solution on the aforementioned subject. Do not create separate .css or .js files.
-Task # 1 : Add necessary data layers.
-Task # 2 : Describe all the steps to configure GTM Tag, Trigger, and Variables for tracking on the aforementioned subject.
+Task # 2 : Add necessary data layers.
+Task # 3 : Describe all the steps to configure GTM Tag, Trigger, and Variables for tracking on the aforementioned subject.
+Task # 4 : Add a short explanation on the subject as a para on the page.
+
 
 Guideline for HTML Page Creation
 Header
