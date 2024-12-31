@@ -3,8 +3,11 @@ Subject : Feedback Submit Data Layer
 Subject : Page Timing Data Layer
 Subject : Error Tracking Data Layer
 Subject : Tracking User Interactions with Share, Like, and Dislike Using Data
-Subject : Ad Click Trigger
+Subject : GA4 Ad Click Trigger
+
+Subject : Refund Event Tag
 Task # 1 : Create an HTML page addressing a real-world problem and its solution on the aforementioned subject. Do not create separate .css or .js files.
+Task # 1 : Add necessary data layers.
 Task # 2 : Describe all the steps to configure GTM Tag, Trigger, and Variables for tracking on the aforementioned subject.
 
 Guideline for HTML Page Creation
