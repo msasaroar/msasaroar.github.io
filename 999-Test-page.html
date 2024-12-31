@@ -3,189 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ad Click Tracking</title>
+    <title>Track Form Field Changes</title>
     <script>
-        // Initialize Data Layer
+        // Data layer for GTM
         window.dataLayer = window.dataLayer || [];
+
+        // Function to track form field changes
+        function trackFieldChange(event, fieldName) {
+            dataLayer.push({
+                'event': 'formFieldChange',
+                'fieldName': fieldName,
+                'fieldValue': event.target.value
+            });
+        }
+
+        // Function to track form field focus
+        function trackFieldFocus(event, fieldName) {
+            dataLayer.push({
+                'event': 'formFieldFocus',
+                'fieldName': fieldName
+            });
+        }
     </script>
-    <style>
-        /* General Styles */
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: white;
-            color: black;
-        }
-
-        /* Header Styles */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: green;
-            color: black;
-            text-align: center;
-            padding: 10px 0;
-            z-index: 1000;
-        }
-        .home-button {
-            position: absolute;
-            left: 10px;
-            top: 10px;
-            background-color: orange;
-            color: blue;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            font-weight: bold;
-            text-decoration: none;
-        }
-        .home-button:hover {
-            background-color: blue;
-            color: orange;
-        }
-
-        /* Main Content Styles */
-        main {
-            padding: 80px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        /* Ad Section Styles */
-        .ad-container {
-            width: 320px;
-            padding: 20px;
-            border-radius: 15px;
-            background-color: white;
-            text-align: center;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-            margin: 20px 0;
-        }
-        .ad-logo {
-            width: 60px;
-            margin: 0 auto 15px;
-        }
-        .ad-headline {
-            font-size: 22px;
-            font-weight: bold;
-            color: #ff5722;
-            margin-bottom: 15px;
-        }
-        .ad-carousel {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 15px;
-        }
-        .ad-carousel img {
-            width: 60px;
-            height: 60px;
-            margin: 0 5px;
-            border-radius: 10px;
-            border: 2px solid #ddd;
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-        .ad-carousel img:hover {
-            transform: scale(1.1);
-            border-color: #ff5722;
-        }
-        .ad-body {
-            font-size: 16px;
-            color: #333;
-            margin-bottom: 20px;
-            line-height: 1.5;
-        }
-        .ad-cta {
-            background-color: #4caf50;
-            color: white;
-            padding: 12px 25px;
-            font-size: 16px;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 25px;
-            display: inline-block;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-        .ad-cta:hover {
-            background-color: #388e3c;
-            transform: scale(1.05);
-        }
-        .ad-footer {
-            font-size: 12px;
-            color: #888;
-            margin-top: 15px;
-        }
-
-        /* Footer Styles */
-        footer {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background-color: #f1f1f1;
-            text-align: center;
-            height: 50px;
-        }
-        footer object {
-            width: 100%;
-            height: 100%;
-        }
-    </style>
 </head>
-<body>
-    <!-- Header -->
-    <header>
-        <a href="index.html" class="home-button">Home</a>
-        Ad Click Tracking
+<body style="background-color: white; color: black;">
+
+    <!-- Header Section -->
+    <header style="position: fixed; top: 0; width: 100%; background-color: green; text-align: center; color: black; padding: 10px;">
+        <a href="index.html" style="position: absolute; top: 10px; left: 20px; color: black;">Home</a>
+        <h1>Track Form Field Changes</h1>
     </header>
 
-    <!-- Main Content -->
-    <main>
-        <section class="ad-container">
-            <!-- Branding -->
-            <img src="product-1.png" alt="App Logo" class="ad-logo">
-            
-            <!-- Headline -->
-            <div class="ad-headline">Transform Your Fitness Journey!</div>
-            
-            <!-- Image Carousel -->
-            <div class="ad-carousel">
-                <img src="product-1.png" alt="Feature 1">
-                <img src="product-2.png" alt="Feature 2">
-                <img src="product-3.png" alt="Feature 3">
-            </div>
-            
-            <!-- Body Copy -->
-            <div class="ad-body">
-                Discover the easiest way to track workouts, meals, and progress. Join millions transforming their lives with our app today!
-            </div>
-            
-            <!-- Call-to-Action -->
-            <a href="https://example.com" class="ad-cta" onclick="trackAdClick()">Start Free Trial</a>
-            
-            <!-- Footer Note -->
-            <div class="ad-footer">*Limited offer: 1-month free trial for new users.</div>
-        </section>
-    </main>
+    <!-- Main Content Section -->
+    <div style="margin-top: 60px; text-align: center;">
 
-    <!-- Footer -->
-    <footer>
-        <object type="text/html" data="footer.html"></object>
+        <h2>Contact Form</h2>
+        <form id="contactForm" style="width: 300px; margin: 0 auto; padding: 20px; border: 1px solid #ccc;">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" onfocus="trackFieldFocus(event, 'name')" oninput="trackFieldChange(event, 'name')"><br><br>
+            
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" onfocus="trackFieldFocus(event, 'email')" oninput="trackFieldChange(event, 'email')"><br><br>
+            
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" onfocus="trackFieldFocus(event, 'message')" oninput="trackFieldChange(event, 'message')"></textarea><br><br>
+            
+            <button type="submit" style="background-color: orange; color: blue; padding: 10px 20px; border: none;">Submit</button>
+        </form>
+
+        <p style="margin-top: 20px;">This page tracks changes and focus events on the form fields (name, email, and message) and sends this data to Google Analytics 4 via GTM.</p>
+    </div>
+
+    <!-- Footer Section -->
+    <footer style="position: fixed; bottom: 0; width: 100%; background-color: #f1f1f1; text-align: center; height: 50px;">
+        <object type="text/html" data="footer.html" style="width: 100%; height: 100%;"></object>
     </footer>
 
-    <!-- Data Layer Push Script -->
-    <script>
-        function trackAdClick() {
-            window.dataLayer.push({
-                event: "adClick",
-                adDetails: {
-                    adName: "Fitness App Free Trial",
-                    adType: "Banner",
-                    destinationURL: "https://example.com"
-                }
-            });
-            console.log("Ad Click Tracked!");
-        }
-    </script>
+    <!-- GTM Code -->
+    <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-PPBVCLNF"></script>
 </body>
 </html>
