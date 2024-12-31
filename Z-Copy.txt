@@ -1,4 +1,5 @@
 I have practice all of the following activities with GA4 and GTM. What else need to do for starting freelancing with google analytics and conversion tracking ?
+Which of the following  are directly related to GAds ?
 071. Remarketing Tag
 070. GA4 Refund Event Tag
 069. Ad Click Trigger
@@ -50,6 +51,3 @@ I have practice all of the following activities with GA4 and GTM. What else need
 003. Purchase Confirmation
 002. Page View
 001. GA4 Configuration
-
-
-
