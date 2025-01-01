@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+    <style>
+        /* General Styles */
+        body {
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: green;
+            color: black;
+            text-align: center;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+
+        header a {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            background-color: orange;
+            color: blue;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        header a:hover {
+            background-color: blue;
+            color: orange;
+        }
+
+        /* Main Content */
+        main {
+            margin: 80px 20px 70px; /* Adjust for fixed header and footer */
+            text-align: center;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: auto;
+            text-align: left;
+        }
+
+        /* Checkout Styles */
+        .checkout-container {
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .checkout-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .checkout-item:last-child {
+            border-bottom: none;
+        }
+
+        .checkout-summary {
+            text-align: right;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        /* Footer Styles */
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #f1f1f1;
+            text-align: center;
+            height: 50px;
+        }
+
+        footer object {
+            width: 100%;
+            height: 100%;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: orange;
+            color: blue;
+            text-align: center;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .button:hover {
+            background-color: blue;
+            color: orange;
+        }
+
+        .ecommerce-data {
+            margin-top: 20px;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .ecommerce-data .column {
+            width: 48%;
+        }
+
+        .ecommerce-data pre {
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <header>
+        <a href="index.html">Home</a>
+        <h1>Checkout</h1>
+    </header>
+
+    <main>
+        <div class="content">
+            <div class="checkout-container">
+                <div class="checkout-item">
+                    <span>Wireless Headphones</span>
+                    <span>$99.99</span>
+                </div>
+                <div class="checkout-item">
+                    <span>Charging Cable (2)</span>
+                    <span>$39.98</span>
+                </div>
+                <div class="checkout-summary">
+                    Total: $149.97
+                </div>
+                <button class="button" onclick="triggerBeginCheckoutEvent()">Begin Checkout</button>
+            </div>
+
+            <div class="ecommerce-data">
+                <div class="column">
+                    <h3>eCommerce Data (Normal Format)</h3>
+                    <div id="ecommerceNormal">No data yet...</div>
+                </div>
+                <div class="column">
+                    <h3>eCommerce Data (JSON Format)</h3>
+                    <pre id="ecommerceOutput">No data yet...</pre>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <object type="text/html" data="footer.html"></object>
+    </footer>
+
+    <!-- Data Layer Example -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function triggerBeginCheckoutEvent() {
+            const ecommerceData = {
+                event: 'begin_checkout',
+                ecommerce: {
+                    value: 149.97,
+                    currency: 'USD',
+                    items: [
+                        {
+                            item_name: 'Wireless Headphones',
+                            item_id: 'sku123',
+                            price: 99.99,
+                            quantity: 1,
+                            item_category: 'Electronics'
+                        },
+                        {
+                            item_name: 'Charging Cable',
+                            item_id: 'sku456',
+                            price: 19.99,
+                            quantity: 2,
+                            item_category: 'Accessories'
+                        }
+                    ]
+                }
+            };
+
+            dataLayer.push(ecommerceData);
+            alert('Begin Checkout Event Triggered! Check GTM Debug Mode.');
+
+            const normalOutput = `
+Event: Begin Checkout
+Value: ${ecommerceData.ecommerce.value} ${ecommerceData.ecommerce.currency}
+Items:
+` + ecommerceData.ecommerce.items.map(item => `- ${item.item_name} (${item.item_id}) - ${item.quantity} x ${item.price} ${ecommerceData.ecommerce.currency}`).join('\n');
+
+            document.getElementById('ecommerceNormal').textContent = normalOutput;
+            document.getElementById('ecommerceOutput').textContent = JSON.stringify(ecommerceData, null, 2);
+        }
+    </script>
+</body>
+</html>
