@@ -89,7 +89,7 @@
 
 14. Advanced Topics (Optional for Beginners)
     14.1. Using the GA4 Data Layer with GTM
-14.2. Setting up eCommerce tracking
+    14.2. Setting up eCommerce tracking
 14.3. Configuring cross-domain tracking
 14.4. Using GA4 API for programmatic access
 
