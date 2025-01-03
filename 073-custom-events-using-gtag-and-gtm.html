@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Event Tracking with gtag.js and GTM</title>
+    
+    <!-- Google Tag Manager (GTM) code -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GTM-PPBVCLNF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GTM-PPBVCLNF');
+    </script>
+
+    <style>
+        body {
+            background-color: white;
+            font-family: Arial, sans-serif;
+            color: black;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: green;
+            color: black;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+        header button {
+            background-color: orange;
+            color: blue;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        header button:hover {
+            background-color: blue;
+            color: orange;
+        }
+        .content {
+            margin-top: 80px;
+            text-align: center;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #f1f1f1;
+            text-align: center;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <button onclick="window.location.href='index.html'">Home</button>
+    <h1>Custom Event Tracking with gtag.js and GTM</h1>
+</header>
+
+<div class="content">
+    <h2>Real-World Problem: Tracking User Interactions</h2>
+    <p>Understanding user behavior is essential for optimizing websites. In this example, we'll track a button click using **gtag.js** and **Google Tag Manager (GTM)**. This will help in understanding how users interact with the website, improving conversion rates, and monitoring user engagement.</p>
+
+    <h3>Solution: Implement Custom Event Tracking</h3>
+    <p>We can implement custom event tracking to measure user interactions. Using **gtag.js** and **GTM**, we will track when a user clicks a button and send this event data to **Google Analytics** for reporting and analysis.</p>
+
+    <button onclick="sendEvent()">Track Button Click</button>
+
+    <p>Click the button above to trigger a custom event that will be tracked by both **gtag.js** and **GTM**.</p>
+</div>
+
+<footer>
+    <object type="text/html" data="footer.html" style="width: 100%; height: 100%;"></object>
+</footer>
+
+<script>
+  // Function to trigger a custom event via gtag.js and push to GTM dataLayer
+  function sendEvent() {
+    // Triggering the event using gtag.js
+    gtag('event', 'button_click', {
+      event_category: 'user_interaction',
+      event_label: 'track_button_click',
+      value: 1
+    });
+
+    // Pushing the event to the GTM dataLayer
+    window.dataLayer.push({
+      event: 'button_click',
+      event_category: 'user_interaction',
+      event_label: 'track_button_click',
+      value: 1
+    });
+  }
+</script>
+
+</body>
+</html>
