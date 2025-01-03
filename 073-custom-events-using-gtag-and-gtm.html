@@ -7,6 +7,7 @@
     
     <!-- Google Tag Manager (GTM) code -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=GTM-PPBVCLNF"></script>
+    
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -86,7 +87,7 @@
     // Triggering the event using gtag.js
     gtag('event', 'button_click', {
       event_category: 'user_interaction',
-      event_label: 'track_button_click',
+      event_label: 'track_button_click-gtag',
       value: 1
     });
 
@@ -94,7 +95,7 @@
     window.dataLayer.push({
       event: 'button_click',
       event_category: 'user_interaction',
-      event_label: 'track_button_click',
+      event_label: 'track_button_click-gtm',
       value: 1
     });
   }
