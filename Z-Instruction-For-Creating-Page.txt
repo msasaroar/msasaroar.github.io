@@ -7,6 +7,9 @@ Subject : GA4 Ad Click Trigger
 Subject : Refund Event Tag
 Subject : Custom Event Tracking. Track Form Field Changes: Set up tracking for changes in form fields (e.g., input focus, changes in selections), and send this data to GA4 as custom events.
 Subject : Setting up eCommerce tracking in GA4.
+Subject : creation and implementation of custom events using gtag.js or GTM.
+
+ 
 Task # 1 : Create an HTML page addressing a real-world problem and its solution on the aforementioned subject. Do not create separate .css or .js files.
 Task # 2 : Add necessary data layers.
 Task # 3 : Describe all the steps to configure GTM Tag, Trigger, and Variables for tracking on the aforementioned subject.
@@ -20,12 +23,9 @@ Position: The header will always be positioned at the top of the screen.
 Background Color: The header's background color will be green.
 Header Text Color: Black
 Text Alignment: Header text will always be centered.
-Home Button:
-A Home button will be placed at the top-left corner of the header.
+Home Button Position: Left and Top of the header.
 Clicking the Home button will navigate to the index.html page.
-Buttons
-
-Button Color: All buttons will have an orange background.
+Buttons: All buttons will have an orange background.
 Font Color: All buttons will have blue font color.
 Hover Behavior:
 Background color will change to blue on hover.

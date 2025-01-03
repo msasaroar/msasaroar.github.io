@@ -3,82 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout Page</title>
+    <title>Custom Event Tracking with gtag.js and GTM</title>
+    
+    <!-- Google Tag Manager (GTM) code -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GTM-PPBVCLNF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GTM-PPBVCLNF');
+    </script>
+
     <style>
-        /* General Styles */
         body {
             background-color: white;
-            color: black;
             font-family: Arial, sans-serif;
-            margin: 0;
-        }
-
-        /* Header Styles */
-        header {
-            top: 0;
-            width: 100%;
-            background-color: green;
             color: black;
-            text-align: center;
-            padding: 1px 0;
-            z-index: 1000;
+            margin: 0;
+            padding: 0;
         }
-
-        header a {
-            position: absolute;
-            left: 10px;
-            top: 10px;
+        header {
+      background-color: green;
+      color: black;
+      padding: 10px 20px;
+      text-align: center;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+        header button {
             background-color: orange;
             color: blue;
-            padding: 10px 15px;
-            text-decoration: none;
-            border-radius: 5px;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
         }
-
-        header a:hover {
+        header button:hover {
             background-color: blue;
             color: orange;
         }
-
-        /* Main Content */
-        main {
-            margin: 80px 20px 70px; /* Adjust for fixed header and footer */
-        }
-
         .content {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
+            margin-top: 80px;
+            text-align: center;
         }
-
-        /* Checkout Styles */
-        .checkout-container {
-            width: 48%;
-            border: 1px solid #581010;
-            padding: 20px;
-            border-radius: 5px;
-            background-color: #39d2da;
-        }
-
-        .checkout-item {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .checkout-item:last-child {
-            border-bottom: none;
-        }
-
-        .checkout-summary {
-            text-align: right;
-            margin-top: 20px;
-            font-weight: bold;
-        }
-
-        /* Footer Styles */
         footer {
             position: fixed;
             bottom: 0;
@@ -87,130 +55,53 @@
             text-align: center;
             height: 50px;
         }
-
-        footer object {
-            width: 100%;
-            height: 100%;
-        }
-
-        .button {
-            display: inline-block;
-            background-color: orange;
-            color: blue;
-            text-align: center;
-            padding: 10px 20px;
-            margin-top: 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        .button:hover {
-            background-color: blue;
-            color: orange;
-        }
-
-        .ecommerce-data {
-            width: 48%;
-            background-color: #39d2da;
-            padding: 10px;
-            border: 1px solid #571212;
-            border-radius: 5px;
-        }
-
-        .ecommerce-data pre {
-            background-color: #fff;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            overflow-x: auto;
-        }
     </style>
 </head>
 <body>
-    <!-- Google Tag Manager -->
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
-    </script>
-    <!-- End Google Tag Manager -->
 
     <header>
-        <a href="index.html">Home</a>
-        <h1>Checkout</h1>
+        <button 
+          style="position: fixed; top: 20px; left: 10px; background-color: orange; color: blue; border: none; padding: 10px 15px; cursor: pointer; font-size: 16px;"
+          onclick="location.href='index.html';">
+          Home
+        </button>
+        <h1 style="text-align: center;">Demonstration : Frequently Used Data Layer</h1>
     </header>
 
-    <main>
-        <div class="content">
-            <div class="checkout-container">
-                <div class="checkout-item">
-                    <span>Wireless Headphones</span>
-                    <span>$99.99</span>
-                </div>
-                <div class="checkout-item">
-                    <span>Charging Cable (2)</span>
-                    <span>$39.98</span>
-                </div>
-                <div class="checkout-summary">
-                    Total: $149.97
-                </div>
-                <button class="button" onclick="triggerBeginCheckoutEvent()">Begin Checkout</button>
-            </div>
+<div class="content">
+    <h2>Real-World Problem: Tracking User Interactions</h2>
+    <p>Tracking user interactions such as button clicks, form submissions, or specific actions on a website is crucial for understanding user behavior and improving conversion rates. In this case, we will track a button click using both gtag.js and Google Tag Manager (GTM) for a more comprehensive tracking solution.</p>
 
-            <div class="ecommerce-data">
-                <h3>eCommerce Data (JSON Format)</h3>
-                <pre id="ecommerceOutput">No data yet...</pre>
-            </div>
-        </div>
-    </main>
+    <h3>Solution: Implement Custom Event Tracking</h3>
+    <p>We can implement custom events to track user interactions such as button clicks and link visits. By using gtag.js and GTM, we can send these interactions to Google Analytics for further analysis.</p>
 
-    <footer>
-        <object type="text/html" data="footer.html"></object>
-    </footer>
+    <button onclick="sendEvent()">Track Button Click</button>
 
-    <!-- Data Layer Example -->
-    <script>
-        window.dataLayer = window.dataLayer || [];
+    <p>Click the button above to trigger a custom event. This will be tracked using gtag.js and GTM.</p>
+</div>
 
-        function triggerBeginCheckoutEvent() {
-            const ecommerceData = {
-                event: 'begin_checkout',
-                ecommerce: {
-                    value: 149.97,
-                    currency: 'USD',
-                    items: [
-                        {
-                            item_name: 'Wireless Headphones',
-                            item_id: 'sku123',
-                            price: 99.99,
-                            quantity: 1,
-                            item_category: 'Electronics'
-                        },
-                        {
-                            item_name: 'Charging Cable',
-                            item_id: 'sku456',
-                            price: 19.99,
-                            quantity: 2,
-                            item_category: 'Accessories'
-                        }
-                    ]
-                }
-            };
+<footer>
+    <object type="text/html" data="footer.html" style="width: 100%; height: 100%;"></object>
+</footer>
 
-            dataLayer.push(ecommerceData);
-            alert('Begin Checkout Event Triggered! Check GTM Debug Mode.');
+<script>
+  // Function to trigger a custom event via gtag.js
+  function sendEvent() {
+    gtag('event', 'button_click', {
+      event_category: 'user_interaction',
+      event_label: 'track_button_click-gtag',
+      value: 1
+    });
 
-            document.getElementById('ecommerceOutput').textContent = JSON.stringify(ecommerceData, null, 2);
-        }
-    </script>
+    // Push event to GTM dataLayer for GTM tracking
+    window.dataLayer.push({
+      event: 'button_click',
+      event_category: 'user_interaction',
+      event_label: 'track_button_click-GTM',
+      value: 1
+    });
+  }
+</script>
+
 </body>
 </html>
