@@ -5,12 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Custom Event Tracking with gtag.js and GTM</title>
     
-    <!-- Google Tag Manager (GTM) code 
+    <!-- Google Tag Manager (GTM) code  -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=GTM-PPBVCLNF"></script>
-    -->
+   
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GTM-PPBVCLNF');
+    </script>
+
+
+
     
-    
-      <!-- Google Tag Manager -->
+    <!-- Google Tag Manager -->
     <script>
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -20,12 +28,7 @@
     </script>
     <!-- End Google Tag Manager -->
     
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'GTM-PPBVCLNF');
-    </script>
+
 
     <style>
         body {
