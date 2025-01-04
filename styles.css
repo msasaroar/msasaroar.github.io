@@ -35,18 +35,19 @@ section {
   margin: 20px;
   padding: 20px;
   border-radius: 8px;
-  background-color: #ffffff;
+  background-color: #1a5725;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 section h2 {
   text-align: center;
-  color: black;
+  color: rgb(210, 207, 21);
   margin-bottom: 15px;
 }
 
 section h5 {
   text-align: center;
+  color: rgb(160, 111, 97);
   margin-bottom: 15px;
 }
 
@@ -65,15 +66,15 @@ section h5 {
   padding: 20px;
   border-radius: 8px;
   text-align: center;
-  background-color: green;
-  color: black;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: rgb(100, 128, 0);
+  color: rgb(228, 199, 199);
+  box-shadow: 0 4px 8px rgba(137, 221, 11, 0.945);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 16px rgba(10, 9, 106, 0.849);
 }
 
 .card h3 {
@@ -84,7 +85,7 @@ section h5 {
 .card h5 {
   margin: 0 0 10px;
   font-size: .75rem;
-  color: #910303;
+  color: #060962;
 }
 
 .card button {
@@ -94,10 +95,10 @@ section h5 {
   border-radius: 4px;
   font-size: 1rem;
   cursor: pointer;
-  color: black;
+  color: rgba(47, 0, 255, 0.938);
   transition: background-color 0.3s;
 }
 
 .card button:hover {
-  background-color: white;
+  background-color: rgba(11, 216, 0, 0.805);
 }
