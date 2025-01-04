@@ -3,7 +3,7 @@ body {
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f6f6f6;
+  background-color: #098b0b;
   color: #333;
 }
 
@@ -35,7 +35,7 @@ section {
   margin: 20px;
   padding: 20px;
   border-radius: 8px;
-  background-color: #1a5725;
+  background-color: #3c954d;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -47,7 +47,7 @@ section h2 {
 
 section h5 {
   text-align: center;
-  color: rgb(160, 111, 97);
+  color: rgb(49, 138, 83);
   margin-bottom: 15px;
 }
 
