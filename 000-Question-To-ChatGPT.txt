@@ -1,0 +1,5 @@
+01. Prepare a requirement specification for Events and Conversion Tracking Requirements on a general purpose website. Present answer document as an html page.
+02. Prepare a requirement specification for Events and Conversion Tracking Requirements on an e-commerce web site. Present answer document as an html page.
+03. Prepare a requirement specification for Events and Conversion Tracking Requirements on an blogging web site. Present answer document as an html page.
+04. Prepare a standard format for User Acceptance Test for Events and Conversion Tracking Requirements. Present answer document as an html page.
+
