@@ -1,6 +1,0 @@
-Correct the following 4 statements: 
-
-1. Give me a real world analytics and conversion tracking related task for solving with GA4, GTM.
-2. Create a html page related to this problem where I can solve the aforesaid problem.
-3. Show the task scenario, objectives and Steps to Solve in a scrollable text area on the page.
-4. Place the objectives and Steps on the left side of the page and main and others on the right side of the page.
