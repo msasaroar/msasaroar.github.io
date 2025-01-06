@@ -10,8 +10,8 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
-            color: #890000;
+            background-color: #0ed803;
+            color: #0c00b6;
         }
         header {
             background-color: green;
@@ -27,7 +27,7 @@
         }
         section {
             flex: 1;
-            background: rgb(13, 131, 38);
+            background: green;
             padding: 15px;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -48,6 +48,19 @@
         ul {
             padding-left: 20px;
         }
+        button {
+            background-color: orange;
+            color: blue;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: blue;
+            color: orange;
+        }
     </style>
 </head>
 <body>
@@ -56,7 +69,7 @@
     </header>
     <main>
         <section>
-            <h2>GA4-Compliant Data Layer</h2>
+            <h2>Data Layer : Compliant To GA4 Schema</h2>
             <p>This is an example of a data layer structured to meet the GA4 schema requirements.</p>
             <pre>{
   "event": "purchase",
@@ -75,15 +88,10 @@
     ]
   }
 }</pre>
-            <p><strong>Explanation:</strong></p>
-            <ul>
-                <li><strong>event:</strong> Defines the type of interaction (e.g., "purchase").</li>
-                <li><strong>ecommerce:</strong> Contains transaction-specific details.</li>
-                <li><strong>items:</strong> Each product in the transaction is represented as an object with required attributes like <code>item_name</code>, <code>item_id</code>, <code>price</code>, etc.</li>
-            </ul>
+            <button onclick="pushCompliantData()">Push GA4 Compliant Data</button>
         </section>
         <section>
-            <h2>Non-Compliant Data Layer</h2>
+            <h2>Data Layer : Non-Compliant To GA4 Schema</h2>
             <p>This is an example of a data layer that does not follow the GA4 schema, leading to potential issues in tracking.</p>
             <pre>{
   "action": "transactionComplete",
@@ -102,13 +110,55 @@
     ]
   }
 }</pre>
-            <p><strong>Explanation:</strong></p>
-            <ul>
-                <li><strong>action:</strong> Uses a non-standard key; GA4 expects <code>event</code>.</li>
-                <li><strong>orderDetails:</strong> Does not use the <code>ecommerce</code> object required by GA4.</li>
-                <li><strong>products:</strong> Uses incorrect attribute names like <code>productName</code> and <code>cost</code> instead of <code>item_name</code> and <code>price</code>.</li>
-            </ul>
+            <button onclick="pushNonCompliantData()">Push Non-Compliant Data</button>
         </section>
     </main>
+    <script>
+        // Function to push GA4-compliant data
+        function pushCompliantData() {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                event: "purchase",
+                ecommerce: {
+                    transaction_id: "T123456",
+                    value: 299.99,
+                    currency: "USD",
+                    items: [
+                        {
+                            item_name: "Laptop",
+                            item_id: "LPT123",
+                            price: 299.99,
+                            quantity: 1,
+                            category: "Electronics"
+                        }
+                    ]
+                }
+            });
+            alert("GA4 Compliant Data Pushed!");
+        }
+
+        // Function to push non-compliant data
+        function pushNonCompliantData() {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                action: "transactionComplete",
+                orderDetails: {
+                    orderID: "T654321",
+                    totalAmount: 299.99,
+                    currencyCode: "USD",
+                    products: [
+                        {
+                            productName: "Laptop",
+                            productCode: "LPT123",
+                            cost: 299.99,
+                            units: 1,
+                            categoryName: "Electronics"
+                        }
+                    ]
+                }
+            });
+            alert("Non-Compliant Data Pushed!");
+        }
+    </script>
 </body>
 </html>
