@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GA4 Coupon Applied Event Schema</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            text-align: left;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>GA4 Coupon Applied Event Schema</h1>
+</header>
+
+<main>
+    <h2>Schema Details</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter Name</th>
+                <th>Data Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>coupon</td>
+                <td>String</td>
+                <td>The code of the applied coupon.</td>
+            </tr>
+            <tr>
+                <td>value</td>
+                <td>Float</td>
+                <td>The value of the discount applied by the coupon.</td>
+            </tr>
+            <tr>
+                <td>currency</td>
+                <td>String</td>
+                <td>The currency used for the coupon (e.g., "USD").</td>
+            </tr>
+            <tr>
+                <td>items</td>
+                <td>Array</td>
+                <td>An array of items that the coupon is applied to, if applicable.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Items Parameter Details</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Field Name</th>
+                <th>Data Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>item_id</td>
+                <td>String</td>
+                <td>The unique identifier of the item the coupon is applied to.</td>
+            </tr>
+            <tr>
+                <td>item_name</td>
+                <td>String</td>
+                <td>The name of the item the coupon is applied to.</td>
+            </tr>
+            <tr>
+                <td>item_quantity</td>
+                <td>Integer</td>
+                <td>The quantity of the item the coupon is applied to.</td>
+            </tr>
+            <tr>
+                <td>item_price</td>
+                <td>Float</td>
+                <td>The price of a single unit of the item.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Example JSON for the Coupon Applied Event</h2>
+    <pre>
+{
+  "event_name": "coupon_applied",
+  "parameters": {
+    "coupon": "SAVE10",
+    "value": 10.00,
+    "currency": "USD",
+    "items": [
+      {
+        "item_id": "P001",
+        "item_name": "Laptop Sleeve",
+        "item_quantity": 1,
+        "item_price": 20.00
+      }
+    ]
+  }
+}
+    </pre>
+</main>
+
+</body>
+</html>
