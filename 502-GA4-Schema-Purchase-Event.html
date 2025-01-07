@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GA4 Purchase Event Schema</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>GA4 Purchase Event Schema</h1>
+</header>
+
+<main>
+    <h2>Event Parameters</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter Name</th>
+                <th>Data Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>transaction_id</td>
+                <td>String</td>
+                <td>A unique identifier for the transaction.</td>
+            </tr>
+            <tr>
+                <td>value</td>
+                <td>Float</td>
+                <td>The total value of the transaction (including taxes and shipping).</td>
+            </tr>
+            <tr>
+                <td>currency</td>
+                <td>String</td>
+                <td>The currency used for the transaction (e.g., "USD").</td>
+            </tr>
+            <tr>
+                <td>items</td>
+                <td>Array</td>
+                <td>An array of items purchased, where each item is an object containing details (e.g., name, price).</td>
+            </tr>
+            <tr>
+                <td>tax</td>
+                <td>Float</td>
+                <td>The total tax amount for the transaction.</td>
+            </tr>
+            <tr>
+                <td>shipping</td>
+                <td>Float</td>
+                <td>The shipping cost for the transaction.</td>
+            </tr>
+            <tr>
+                <td>coupon</td>
+                <td>String</td>
+                <td>The coupon code applied to the transaction, if any.</td>
+            </tr>
+            <tr>
+                <td>affiliation</td>
+                <td>String</td>
+                <td>The store or affiliation associated with the transaction.</td>
+            </tr>
+            <tr>
+                <td>payment_type</td>
+                <td>String</td>
+                <td>The payment method used for the purchase (e.g., "Credit Card").</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Items Parameter Details</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Field Name</th>
+                <th>Data Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>item_id</td>
+                <td>String</td>
+                <td>The unique identifier of the item.</td>
+            </tr>
+            <tr>
+                <td>item_name</td>
+                <td>String</td>
+                <td>The name of the item.</td>
+            </tr>
+            <tr>
+                <td>quantity</td>
+                <td>Integer</td>
+                <td>The number of units purchased for the item.</td>
+            </tr>
+            <tr>
+                <td>price</td>
+                <td>Float</td>
+                <td>The price of a single unit of the item.</td>
+            </tr>
+            <tr>
+                <td>item_brand</td>
+                <td>String</td>
+                <td>The brand associated with the item.</td>
+            </tr>
+            <tr>
+                <td>item_category</td>
+                <td>String</td>
+                <td>The category associated with the item.</td>
+            </tr>
+            <tr>
+                <td>item_variant</td>
+                <td>String</td>
+                <td>The variant of the item (e.g., color or size).</td>
+            </tr>
+            <tr>
+                <td>discount</td>
+                <td>Float</td>
+                <td>The discount applied to the item, if any.</td>
+            </tr>
+        </tbody>
+    </table>
+</main>
+
+</body>
+</html>
