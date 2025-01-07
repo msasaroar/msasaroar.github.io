@@ -3,20 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GA4 Purchase Event Schema</title>
+    <title>GA4 Add to Cart Event Schema</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
             margin: 0;
             padding: 20px;
-            background-color: #f9f9f9;
-            color: #333;
         }
         header {
+            text-align: center;
             background-color: #4CAF50;
             color: white;
-            text-align: center;
-            padding: 15px;
+            padding: 10px 0;
             margin-bottom: 20px;
         }
         table {
@@ -25,8 +24,8 @@
             margin-bottom: 20px;
         }
         th, td {
-            padding: 10px;
             text-align: left;
+            padding: 10px;
             border: 1px solid #ddd;
         }
         th {
@@ -36,16 +35,22 @@
         tr:nth-child(even) {
             background-color: #f2f2f2;
         }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>GA4 Purchase Event Schema</h1>
+    <h1>GA4 Add to Cart Event Schema</h1>
 </header>
 
 <main>
-    <h2>Event Parameters</h2>
+    <h2>Schema Details</h2>
     <table>
         <thead>
             <tr>
@@ -56,49 +61,19 @@
         </thead>
         <tbody>
             <tr>
-                <td>transaction_id</td>
-                <td>String</td>
-                <td>A unique identifier for the transaction.</td>
-            </tr>
-            <tr>
                 <td>value</td>
                 <td>Float</td>
-                <td>The total value of the transaction (including taxes and shipping).</td>
+                <td>The total value of the items added to the cart.</td>
             </tr>
             <tr>
                 <td>currency</td>
                 <td>String</td>
-                <td>The currency used for the transaction (e.g., "USD").</td>
+                <td>The currency used (e.g., "USD").</td>
             </tr>
             <tr>
                 <td>items</td>
                 <td>Array</td>
-                <td>An array of items purchased, where each item is an object containing details (e.g., name, price).</td>
-            </tr>
-            <tr>
-                <td>tax</td>
-                <td>Float</td>
-                <td>The total tax amount for the transaction.</td>
-            </tr>
-            <tr>
-                <td>shipping</td>
-                <td>Float</td>
-                <td>The shipping cost for the transaction.</td>
-            </tr>
-            <tr>
-                <td>coupon</td>
-                <td>String</td>
-                <td>The coupon code applied to the transaction, if any.</td>
-            </tr>
-            <tr>
-                <td>affiliation</td>
-                <td>String</td>
-                <td>The store or affiliation associated with the transaction.</td>
-            </tr>
-            <tr>
-                <td>payment_type</td>
-                <td>String</td>
-                <td>The payment method used for the purchase (e.g., "Credit Card").</td>
+                <td>An array of items added to the cart, where each item is an object containing details.</td>
             </tr>
         </tbody>
     </table>
@@ -126,7 +101,7 @@
             <tr>
                 <td>quantity</td>
                 <td>Integer</td>
-                <td>The number of units purchased for the item.</td>
+                <td>The number of units added to the cart.</td>
             </tr>
             <tr>
                 <td>price</td>
@@ -155,6 +130,39 @@
             </tr>
         </tbody>
     </table>
+
+    <h2>Example JSON for the Add to Cart Event</h2>
+    <pre>
+{
+  "event_name": "add_to_cart",
+  "parameters": {
+    "value": 149.97,
+    "currency": "USD",
+    "items": [
+      {
+        "item_id": "P001",
+        "item_name": "Running Shoes",
+        "quantity": 1,
+        "price": 89.99,
+        "item_brand": "BrandA",
+        "item_category": "Footwear",
+        "item_variant": "Black",
+        "discount": 10.00
+      },
+      {
+        "item_id": "P002",
+        "item_name": "Sports Socks",
+        "quantity": 3,
+        "price": 20.00,
+        "item_brand": "BrandB",
+        "item_category": "Accessories",
+        "item_variant": "White",
+        "discount": 5.00
+      }
+    ]
+  }
+}
+    </pre>
 </main>
 
 </body>

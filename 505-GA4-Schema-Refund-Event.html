@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GA4 Add to Wishlist Event Schema</title>
+    <title>GA4 Refund Event Schema</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -46,7 +46,7 @@
 <body>
 
 <header>
-    <h1>GA4 Add to Wishlist Event Schema</h1>
+    <h1>GA4 Refund Event Schema</h1>
 </header>
 
 <main>
@@ -61,19 +61,29 @@
         </thead>
         <tbody>
             <tr>
+                <td>transaction_id</td>
+                <td>String</td>
+                <td>The unique identifier of the transaction being refunded.</td>
+            </tr>
+            <tr>
                 <td>value</td>
                 <td>Float</td>
-                <td>The total value of the items added to the wishlist.</td>
+                <td>The total refund amount (may not equal the full transaction value).</td>
             </tr>
             <tr>
                 <td>currency</td>
                 <td>String</td>
-                <td>The currency used (e.g., "USD").</td>
+                <td>The currency used for the refund (e.g., "USD").</td>
+            </tr>
+            <tr>
+                <td>refund_reason</td>
+                <td>String</td>
+                <td>The reason for the refund (e.g., "Product Defect").</td>
             </tr>
             <tr>
                 <td>items</td>
                 <td>Array</td>
-                <td>An array of items added to the wishlist, where each item is an object containing details.</td>
+                <td>An array of refunded items, where each item is an object containing details.</td>
             </tr>
         </tbody>
     </table>
@@ -91,7 +101,7 @@
             <tr>
                 <td>item_id</td>
                 <td>String</td>
-                <td>The unique identifier of the item.</td>
+                <td>The unique identifier of the item being refunded.</td>
             </tr>
             <tr>
                 <td>item_name</td>
@@ -101,7 +111,7 @@
             <tr>
                 <td>quantity</td>
                 <td>Integer</td>
-                <td>The number of units added to the wishlist.</td>
+                <td>The number of units refunded for the item.</td>
             </tr>
             <tr>
                 <td>price</td>
@@ -126,31 +136,24 @@
         </tbody>
     </table>
 
-    <h2>Example JSON for the Add to Wishlist Event</h2>
+    <h2>Example JSON for the Refund Event</h2>
     <pre>
 {
-  "event_name": "add_to_wishlist",
+  "event_name": "refund",
   "parameters": {
-    "value": 75.00,
+    "transaction_id": "T12345",
+    "value": 45.00,
     "currency": "USD",
+    "refund_reason": "Product Defect",
     "items": [
       {
         "item_id": "P001",
-        "item_name": "Smartwatch",
+        "item_name": "Smartphone",
         "quantity": 1,
-        "price": 50.00,
+        "price": 45.00,
         "item_brand": "BrandX",
         "item_category": "Electronics",
-        "item_variant": "Silver"
-      },
-      {
-        "item_id": "P002",
-        "item_name": "Wireless Earbuds",
-        "quantity": 1,
-        "price": 25.00,
-        "item_brand": "BrandY",
-        "item_category": "Accessories",
-        "item_variant": "Black"
+        "item_variant": "Blue"
       }
     ]
   }

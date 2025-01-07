@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GA4 Add to Wishlist Event Schema</title>
+    <title>GA4 Begin Checkout Event Schema</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -46,7 +46,7 @@
 <body>
 
 <header>
-    <h1>GA4 Add to Wishlist Event Schema</h1>
+    <h1>GA4 Begin Checkout Event Schema</h1>
 </header>
 
 <main>
@@ -63,7 +63,7 @@
             <tr>
                 <td>value</td>
                 <td>Float</td>
-                <td>The total value of the items added to the wishlist.</td>
+                <td>The total value of the items in the checkout.</td>
             </tr>
             <tr>
                 <td>currency</td>
@@ -71,9 +71,14 @@
                 <td>The currency used (e.g., "USD").</td>
             </tr>
             <tr>
+                <td>coupon</td>
+                <td>String</td>
+                <td>The coupon code applied at checkout, if any.</td>
+            </tr>
+            <tr>
                 <td>items</td>
                 <td>Array</td>
-                <td>An array of items added to the wishlist, where each item is an object containing details.</td>
+                <td>An array of items in the checkout, where each item is an object containing details.</td>
             </tr>
         </tbody>
     </table>
@@ -101,7 +106,7 @@
             <tr>
                 <td>quantity</td>
                 <td>Integer</td>
-                <td>The number of units added to the wishlist.</td>
+                <td>The number of units in the checkout for this item.</td>
             </tr>
             <tr>
                 <td>price</td>
@@ -123,34 +128,42 @@
                 <td>String</td>
                 <td>The variant of the item (e.g., color or size).</td>
             </tr>
+            <tr>
+                <td>discount</td>
+                <td>Float</td>
+                <td>The discount applied to the item, if any.</td>
+            </tr>
         </tbody>
     </table>
 
-    <h2>Example JSON for the Add to Wishlist Event</h2>
+    <h2>Example JSON for the Begin Checkout Event</h2>
     <pre>
 {
-  "event_name": "add_to_wishlist",
+  "event_name": "begin_checkout",
   "parameters": {
-    "value": 75.00,
+    "value": 150.00,
     "currency": "USD",
+    "coupon": "WINTER2025",
     "items": [
       {
         "item_id": "P001",
-        "item_name": "Smartwatch",
+        "item_name": "Laptop Bag",
         "quantity": 1,
-        "price": 50.00,
-        "item_brand": "BrandX",
-        "item_category": "Electronics",
-        "item_variant": "Silver"
+        "price": 75.00,
+        "item_brand": "BrandA",
+        "item_category": "Accessories",
+        "item_variant": "Grey",
+        "discount": 0.00
       },
       {
         "item_id": "P002",
-        "item_name": "Wireless Earbuds",
+        "item_name": "Wireless Mouse",
         "quantity": 1,
-        "price": 25.00,
-        "item_brand": "BrandY",
-        "item_category": "Accessories",
-        "item_variant": "Black"
+        "price": 50.00,
+        "item_brand": "BrandB",
+        "item_category": "Electronics",
+        "item_variant": "Black",
+        "discount": 5.00
       }
     ]
   }

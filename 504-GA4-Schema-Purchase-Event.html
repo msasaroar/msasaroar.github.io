@@ -1,9 +1,11 @@
+Create another html page for add_to_cart event as like following html page:
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GA4 Add to Wishlist Event Schema</title>
+    <title>GA4 Purchase Event Schema</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -46,7 +48,7 @@
 <body>
 
 <header>
-    <h1>GA4 Add to Wishlist Event Schema</h1>
+    <h1>GA4 Purchase Event Schema</h1>
 </header>
 
 <main>
@@ -61,19 +63,49 @@
         </thead>
         <tbody>
             <tr>
+                <td>transaction_id</td>
+                <td>String</td>
+                <td>A unique identifier for the transaction.</td>
+            </tr>
+            <tr>
                 <td>value</td>
                 <td>Float</td>
-                <td>The total value of the items added to the wishlist.</td>
+                <td>The total value of the transaction (including taxes and shipping).</td>
             </tr>
             <tr>
                 <td>currency</td>
                 <td>String</td>
-                <td>The currency used (e.g., "USD").</td>
+                <td>The currency used for the transaction (e.g., "USD").</td>
             </tr>
             <tr>
                 <td>items</td>
                 <td>Array</td>
-                <td>An array of items added to the wishlist, where each item is an object containing details.</td>
+                <td>An array of items purchased, where each item is an object containing details.</td>
+            </tr>
+            <tr>
+                <td>tax</td>
+                <td>Float</td>
+                <td>The total tax amount for the transaction.</td>
+            </tr>
+            <tr>
+                <td>shipping</td>
+                <td>Float</td>
+                <td>The shipping cost for the transaction.</td>
+            </tr>
+            <tr>
+                <td>coupon</td>
+                <td>String</td>
+                <td>The coupon code applied to the transaction, if any.</td>
+            </tr>
+            <tr>
+                <td>affiliation</td>
+                <td>String</td>
+                <td>The store or affiliation associated with the transaction.</td>
+            </tr>
+            <tr>
+                <td>payment_type</td>
+                <td>String</td>
+                <td>The payment method used for the purchase (e.g., "Credit Card").</td>
             </tr>
         </tbody>
     </table>
@@ -101,7 +133,7 @@
             <tr>
                 <td>quantity</td>
                 <td>Integer</td>
-                <td>The number of units added to the wishlist.</td>
+                <td>The number of units purchased for the item.</td>
             </tr>
             <tr>
                 <td>price</td>
@@ -123,34 +155,47 @@
                 <td>String</td>
                 <td>The variant of the item (e.g., color or size).</td>
             </tr>
+            <tr>
+                <td>discount</td>
+                <td>Float</td>
+                <td>The discount applied to the item, if any.</td>
+            </tr>
         </tbody>
     </table>
 
-    <h2>Example JSON for the Add to Wishlist Event</h2>
+    <h2>Example JSON for the Purchase Event</h2>
     <pre>
 {
-  "event_name": "add_to_wishlist",
+  "event_name": "purchase",
   "parameters": {
-    "value": 75.00,
+    "transaction_id": "T12345",
+    "value": 99.99,
     "currency": "USD",
+    "tax": 5.99,
+    "shipping": 10.00,
+    "coupon": "SUMMER2025",
+    "affiliation": "Online Store",
+    "payment_type": "Credit Card",
     "items": [
       {
         "item_id": "P001",
-        "item_name": "Smartwatch",
+        "item_name": "Running Shoes",
         "quantity": 1,
-        "price": 50.00,
-        "item_brand": "BrandX",
-        "item_category": "Electronics",
-        "item_variant": "Silver"
+        "price": 89.99,
+        "item_brand": "BrandA",
+        "item_category": "Footwear",
+        "item_variant": "Black",
+        "discount": 10.00
       },
       {
         "item_id": "P002",
-        "item_name": "Wireless Earbuds",
-        "quantity": 1,
-        "price": 25.00,
-        "item_brand": "BrandY",
+        "item_name": "Sports Socks",
+        "quantity": 2,
+        "price": 5.00,
+        "item_brand": "BrandB",
         "item_category": "Accessories",
-        "item_variant": "Black"
+        "item_variant": "White",
+        "discount": 0.00
       }
     ]
   }

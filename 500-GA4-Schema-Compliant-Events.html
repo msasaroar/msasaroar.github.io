@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GA4 Compliant Events</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: black;
+        }
+        header {
+            background-color: green;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        header a {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            background-color: orange;
+            color: blue;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        header a:hover {
+            background-color: blue;
+            color: orange;
+        }
+        main {
+            margin-top: 70px;
+            padding: 20px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        ul {
+            margin-left: 20px;
+            padding-left: 20px;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #f1f1f1;
+            text-align: center;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html">Home</a>
+        <h1>GA4 Compliant Events</h1>
+    </header>
+
+    <main>
+        <h2>1. Automatically Collected Events</h2>
+        <ul>
+            <li><strong>first_visit</strong>: Triggered the first time a user visits the site.</li>
+            <li><strong>session_start</strong>: Logged at the start of a new session.</li>
+            <li><strong>user_engagement</strong>: Tracked when the app goes to the background or after a session timeout.</li>
+        </ul>
+
+        <h2>2. Enhanced Measurement Events</h2>
+        <ul>
+            <li><strong>page_view</strong>: Logged whenever a page is viewed.</li>
+            <li><strong>scroll</strong>: Triggered when a user scrolls 90% of the page.</li>
+            <li><strong>click</strong>: Tracked for outbound links by default.</li>
+            <li><strong>file_download</strong>: Triggered when users download a file.</li>
+            <li><strong>video_start</strong>, <strong>video_progress</strong>, <strong>video_complete</strong>: Tracked for embedded video engagement.</li>
+            <li><strong>view_search_results</strong>: Logged when a user performs a search on the site.</li>
+        </ul>
+
+        <h2>3. Recommended Events</h2>
+        <h3>E-Commerce and Retail</h3>
+        <ul>
+            <li><strong>add_to_cart</strong>: When an item is added to the shopping cart.</li>
+            <li><strong>add_to_wishlist</strong>: When an item is added to a wishlist.</li>
+            <li><strong>begin_checkout</strong>: When a user starts the checkout process.</li>
+            <li><strong>purchase</strong>: For a completed purchase.</li>
+            <li><strong>refund</strong>: When a transaction is refunded.</li>
+            <li><strong>view_item</strong>: When a user views a specific product.</li>
+            <li><strong>view_item_list</strong>: When a user views a list of items.</li>
+        </ul>
+
+        <h3>Travel and Hospitality</h3>
+        <ul>
+            <li><strong>select_item</strong>: When a user selects a travel item like a flight or hotel.</li>
+            <li><strong>add_payment_info</strong>: When a user adds payment details.</li>
+        </ul>
+
+        <h3>Media and Entertainment</h3>
+        <ul>
+            <li><strong>sign_up</strong>: When a user signs up for an account.</li>
+            <li><strong>login</strong>: When a user logs in.</li>
+            <li><strong>subscribe</strong>: For paid subscriptions.</li>
+            <li><strong>share</strong>: When users share content via social or other platforms.</li>
+        </ul>
+
+        <h2>4. Custom Events</h2>
+        <p>When none of the predefined events match your specific tracking needs, you can define <strong>custom events</strong>. Examples include:</p>
+        <ul>
+            <li><strong>form_submission</strong></li>
+            <li><strong>video_mute</strong></li>
+            <li><strong>coupon_applied</strong></li>
+        </ul>
+    </main>
+</body>
+</html>
