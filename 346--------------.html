@@ -116,23 +116,26 @@
     <main>
         <section>
             <h2>1. Compliant Data</h2>
-            <pre>{
-  "event": "purchase",
-  "ecommerce": {
-    "transaction_id": "T123456",
-    "value": 299.99,
-    "currency": "USD",
-    "items": [
-      {
-        "item_name": "Laptop",
-        "item_id": "LPT123",
-        "price": 299.99,
-        "quantity": 1,
-        "category": "Electronics"
-      }
-    ]
-  }
-}</pre>
+            <p>This is an example of a data layer that meet the GA4 schema requirements.</p>
+            <pre>
+                    {
+                    "event": "purchase",
+                    "ecommerce": {
+                        "transaction_id": "T123456",
+                        "value": 299.99,
+                        "currency": "USD",
+                        "items": [
+                        {
+                            "item_name": "Laptop",
+                            "item_id": "LPT123",
+                            "price": 299.99,
+                            "quantity": 1,
+                            "category": "Electronics"
+                        }
+                        ]
+                    }
+                    }
+            </pre>
             <button onclick="pushCompliantData()">Push GA4 Compliant Data</button>
             <p><strong>Effect in GA4:</strong></p>
             <ul>
@@ -145,23 +148,26 @@
 
         <section>
             <h2>2. Non-Compliant Data</h2>
-            <pre>{
-  "action": "transactionComplete",
-  "orderDetails": {
-    "orderID": "T654321",
-    "totalAmount": 299.99,
-    "currencyCode": "USD",
-    "products": [
-      {
-        "productName": "Laptop",
-        "productCode": "LPT123",
-        "cost": 299.99,
-        "units": 1,
-        "categoryName": "Electronics"
-      }
-    ]
-  }
-}</pre>
+            <p>This is an example of a data layer that does not meet the GA4 schema requirements, leading to potential issues in tracking.</p>
+            <pre>
+                    {
+                    "action": "transactionComplete",
+                    "orderDetails": {
+                        "orderID": "T654321",
+                        "totalAmount": 299.99,
+                        "currencyCode": "USD",
+                        "products": [
+                        {
+                            "productName": "Laptop",
+                            "productCode": "LPT123",
+                            "cost": 299.99,
+                            "units": 1,
+                            "categoryName": "Electronics"
+                        }
+                        ]
+                    }
+                    }
+            </pre>
             <button onclick="pushNonCompliantData()">Push Non-Compliant Data</button>
             <p><strong>Effect in GA4:</strong></p>
             <ul>
