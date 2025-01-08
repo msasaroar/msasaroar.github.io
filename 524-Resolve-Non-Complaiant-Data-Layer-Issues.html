@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resolving Data Layer Issues</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        code {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            padding: 2px 5px;
+            font-size: 0.9em;
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            padding: 10px;
+            overflow: auto;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Resolving Data Layer Issues in GA4</h1>
+</header>
+
+<main>
+    <h2>Problem Overview</h2>
+    <p>If the standard GA4 data layer schema was not followed during the website build, you may encounter issues like incorrect or missing data for analytics tracking. This can affect your ability to accurately track user interactions and events.</p>
+
+    <h2>Solution Steps</h2>
+    <ol>
+        <li>
+            <strong>Audit the Existing Data Layer:</strong>
+            <p>Inspect the current implementation using browser developer tools to understand the data structure being used. Look for the presence of the <code>dataLayer</code> object and analyze the events and parameters being pushed.</p>
+            <pre><code>console.log(dataLayer);</code></pre>
+        </li>
+        <li>
+            <strong>Create a Data Mapping Plan:</strong>
+            <p>Document the differences between the implemented data layer and the GA4 schema. Identify which data points need to be adjusted or transformed to match GA4 requirements.</p>
+        </li>
+        <li>
+            <strong>Use a Tag Manager to Transform Data:</strong>
+            <p>Utilize Google Tag Manager (GTM) to intercept and reformat data layer pushes. Use custom JavaScript variables in GTM to extract and reformat data as needed.</p>
+            <pre><code>function () {
+    var dl = window.dataLayer || [];
+    for (var i = 0; i < dl.length; i++) {
+        if (dl[i].event === 'customEvent') {
+            return {
+                event_name: dl[i].event,
+                parameter_name: dl[i].customParameter || 'default_value'
+            };
+        }
+    }
+    return undefined;
+}</code></pre>
+        </li>
+        <li>
+            <strong>Leverage Data Layer Helpers:</strong>
+            <p>If the schema needs significant adjustments, work with the development team to modify the data layer structure on the website to better align with GA4 standards.</p>
+        </li>
+        <li>
+            <strong>Validate the Data:</strong>
+            <p>Use tools like the GA4 DebugView or GTM preview mode to ensure that the transformed data is being sent correctly to GA4.</p>
+        </li>
+    </ol>
+
+    <h2>Example Code Snippet</h2>
+    <p>Here is an example of pushing a corrected event to the data layer:</p>
+    <pre><code>window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+    event: 'purchase',
+    ecommerce: {
+        transaction_id: '12345',
+        value: 99.99,
+        currency: 'USD'
+    }
+});</code></pre>
+
+    <h2>Conclusion</h2>
+    <p>By auditing and transforming your data layer to align with GA4 standards, you can resolve tracking issues and ensure accurate data collection for your analytics setup.</p>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<div class="container">
+    <h3>Data Layer (Non-Compliant JSON)</h3>
+    <div class="json-container">
+        <div class="json-output" id="jsonOutput1">
+            {
+                "event": "purchase",
+                "purchaseId": "123456",
+                "productName": "Awesome Product",
+                "productPrice": "29.99",
+                "transactionAmount": "29.99",
+                "currencyCode": "USD",
+                "customerEmail": "customer@example.com",
+                "promoCode": "DISCOUNT20"
+            }
+        </div>
+
+        <div class="json-output" id="jsonOutput2">
+            {
+                "event": "purchase",
+                "transaction_id": "123456",
+                "affiliation": "Online Store",
+                "value": 29.99,
+                "currency": "USD",
+                "coupon": "DISCOUNT20",
+                "items": [
+                    {
+                        "item_name": "Awesome Product",
+                        "item_id": "123456",
+                        "price": 29.99,
+                        "quantity": 1
+                    }
+                ]
+            }
+        </div>
+    </div>
+</div>

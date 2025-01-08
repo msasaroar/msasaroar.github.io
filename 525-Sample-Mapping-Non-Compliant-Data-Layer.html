@@ -10,66 +10,80 @@
             margin: 0;
             padding: 0;
             background-color: #f4f4f9;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
         header {
             background-color: #4CAF50;
             color: white;
             text-align: center;
-            padding: 10px 0;
+            //padding: 5px 0;
+            font-size: 16px;
         }
         .container {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            flex-grow: 1;
+            padding: 15px;
+            margin-top: 20px;
         }
-        .product {
+        .json-container {
+            width: 48%;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+        }
+        .json-output {
+            background-color: #9486ea;
+            padding: 10px;
+            border-radius: 8px;
+            border: 5px solid #940e0e;
+            font-family: "Courier New", Courier, monospace;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-size: 12px;
+            height: 400px;
+            overflow-y: auto;
+        }
+        .product-section {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: white;
+            padding: 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px;
-        }
-        .product img {
-            width: 150px;
-            border-radius: 8px;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
         }
         .product-info {
-            flex-grow: 1;
-            margin-left: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .product img {
+            width: 10px;
+            border-radius: 8px;
         }
         .product-info h3 {
             margin: 0;
-            font-size: 20px;
+            font-size: 18px;
             color: #333;
         }
-        .product-info p {
-            color: #777;
-            font-size: 14px;
-        }
         .purchase-button {
-            padding: 10px 20px;
-            background-color: #4CAF50;
+            padding: 8px 15px;
+            background-color: #530c0c;
             color: white;
-            font-size: 16px;
+            font-size: 14px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
         .purchase-button:hover {
-            background-color: #45a049;
-        }
-        .json-output {
-            background-color: #f1f1f1;
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px solid #ddd;
-            font-family: "Courier New", Courier, monospace;
-            white-space: pre-wrap;
-            margin-top: 30px;
-            word-wrap: break-word;
+            background-color: #00ff0d;
         }
     </style>
 </head>
@@ -81,22 +95,9 @@
     </header>
 
     <div class="container">
-        <h2>Featured Product</h2>
-
-        <div class="product">
-            <img src="https://via.placeholder.com/150" alt="Product Image">
-            <div class="product-info">
-                <h3>Awesome Product</h3>
-                <p>Price: $29.99</p>
-                <p>Buy now to enjoy great discounts!</p>
-            </div>
-            <button class="purchase-button" onclick="trackPurchase()">Buy Now</button>
-        </div>
-    </div>
-
-    <div class="container2">
-        <h3>Data Layer (Non-Compliant JSON)</h3>
+        <!-- JSON Output Section -->
         <div class="json-container">
+            <h3>Data Layer (Non-Compliant JSON)</h3>
             <div class="json-output" id="jsonOutput1">
                 {
                     "event": "purchase",
@@ -109,7 +110,10 @@
                     "promoCode": "DISCOUNT20"
                 }
             </div>
-    
+        </div>
+
+        <div class="json-container">
+            <h3>Data Layer (Converted To Compliant JSON)</h3>
             <div class="json-output" id="jsonOutput2">
                 {
                     "event": "purchase",
@@ -131,6 +135,16 @@
         </div>
     </div>
 
+    <div class="product-section">
+        <div class="product-info">
+            <img src="product-1.png" alt="Product Image" style="width: 150px;">
+            <div>
+                <h3>Awesome Product</h3>
+                <p>Price: $29.99</p>
+            </div>
+        </div>
+        <button class="purchase-button" onclick="trackPurchase()">Buy Now</button>
+    </div>
 
     <script>
         // Non-compliant Data Layer for purchase event
@@ -152,7 +166,7 @@
             window.dataLayer.push(purchaseData);
             
             // Display the data layer as JSON on the page
-            const jsonOutputDiv = document.getElementById('jsonOutput');
+            const jsonOutputDiv = document.getElementById('jsonOutput1');
             jsonOutputDiv.textContent = JSON.stringify(purchaseData, null, 4); // Display JSON in readable format
 
             alert('Purchase event tracked with non-compliant data!');

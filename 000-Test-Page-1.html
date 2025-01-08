@@ -3,235 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GA4 Product Interaction Events Schema</title>
+    <title>Purchase Event with Data Layer</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            background-color: #f4f4f9;
         }
         header {
-            text-align: center;
             background-color: #4CAF50;
             color: white;
+            text-align: center;
             padding: 10px 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .product {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: 20px;
         }
-        section {
-            margin-bottom: 30px;
+        .product img {
+            width: 150px;
+            border-radius: 8px;
         }
-        h2 {
+        .product-info {
+            flex-grow: 1;
+            margin-left: 20px;
+        }
+        .product-info h3 {
+            margin: 0;
+            font-size: 20px;
             color: #333;
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
+        .product-info p {
+            color: #777;
+            font-size: 14px;
         }
-        th, td {
-            text-align: left;
-            padding: 10px;
-            border: 1px solid #ddd;
-        }
-        th {
+        .purchase-button {
+            padding: 10px 20px;
             background-color: #4CAF50;
             color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
         }
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
+        .purchase-button:hover {
+            background-color: #45a049;
         }
-        pre {
-            background-color: #f4f4f4;
+        .json-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .json-output {
+            background-color: #f1f1f1;
             padding: 15px;
+            border-radius: 8px;
             border: 1px solid #ddd;
-            overflow-x: auto;
+            font-family: "Courier New", Courier, monospace;
+            white-space: pre-wrap;
+            width: 48%;
+            word-wrap: break-word;
+            max-height: 400px;
+            overflow-y: auto;
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>GA4 Product Interaction Events Schema</h1>
-</header>
+    <header>
+        <h1>Welcome to Our Store</h1>
+        <p>Shop the latest products and complete your purchase with ease!</p>
+    </header>
 
-<main>
-    <!-- Schema Details Section -->
-    <section>
-        <h2>Schema Details for Product Interaction Events</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Event Name</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>view_item</td>
-                    <td>Tracks when a user views a product or item.</td>
-                </tr>
-                <tr>
-                    <td>select_item</td>
-                    <td>Tracks when a user selects a product from a list or category.</td>
-                </tr>
-                <tr>
-                    <td>add_to_cart</td>
-                    <td>Tracks when a user adds a product to their shopping cart.</td>
-                </tr>
-                <tr>
-                    <td>remove_from_cart</td>
-                    <td>Tracks when a user removes a product from their shopping cart.</td>
-                </tr>
-                <tr>
-                    <td>begin_checkout</td>
-                    <td>Tracks when a user starts the checkout process.</td>
-                </tr>
-                <tr>
-                    <td>purchase</td>
-                    <td>Tracks when a user completes a purchase.</td>
-                </tr>
-                <tr>
-                    <td>add_to_wishlist</td>
-                    <td>Tracks when a user adds a product to their wishlist.</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+    <div class="container">
+        <h2>Featured Product</h2>
 
-    <!-- Common Parameters -->
-    <section>
-        <h2>Common Parameters</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Parameter Name</th>
-                    <th>Data Type</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>value</td>
-                    <td>Float</td>
-                    <td>The monetary value associated with the event.</td>
-                </tr>
-                <tr>
-                    <td>currency</td>
-                    <td>String</td>
-                    <td>The currency used (e.g., "USD").</td>
-                </tr>
-                <tr>
-                    <td>items</td>
-                    <td>Array</td>
-                    <td>An array of items associated with the event.</td>
-                </tr>
-                <tr>
-                    <td>coupon</td>
-                    <td>String</td>
-                    <td>The coupon code applied (if any).</td>
-                </tr>
-                <tr>
-                    <td>transaction_id</td>
-                    <td>String</td>
-                    <td>A unique identifier for the transaction (for purchase events).</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+        <div class="product">
+            <img src="https://via.placeholder.com/150" alt="Product Image">
+            <div class="product-info">
+                <h3>Awesome Product</h3>
+                <p>Price: $29.99</p>
+                <p>Buy now to enjoy great discounts!</p>
+            </div>
+            <button class="purchase-button" onclick="trackPurchase()">Buy Now</button>
+        </div>
 
-    <!-- Items Schema -->
-    <section>
-        <h2>Items Parameter Schema</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Field Name</th>
-                    <th>Data Type</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>item_id</td>
-                    <td>String</td>
-                    <td>The unique identifier of the item.</td>
-                </tr>
-                <tr>
-                    <td>item_name</td>
-                    <td>String</td>
-                    <td>The name of the item.</td>
-                </tr>
-                <tr>
-                    <td>quantity</td>
-                    <td>Integer</td>
-                    <td>The number of units of the item.</td>
-                </tr>
-                <tr>
-                    <td>price</td>
-                    <td>Float</td>
-                    <td>The price of a single unit of the item.</td>
-                </tr>
-                <tr>
-                    <td>item_brand</td>
-                    <td>String</td>
-                    <td>The brand of the item.</td>
-                </tr>
-                <tr>
-                    <td>item_category</td>
-                    <td>String</td>
-                    <td>The category of the item.</td>
-                </tr>
-                <tr>
-                    <td>item_variant</td>
-                    <td>String</td>
-                    <td>The variant of the item (e.g., color, size).</td>
-                </tr>
-                <tr>
-                    <td>discount</td>
-                    <td>Float</td>
-                    <td>The discount applied to the item, if any.</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+        <div class="json-container">
+            <div>
+                <h3>Data Layer (Non-Compliant JSON)</h3>
+                <div class="json-output" id="jsonOutput1">
+                    {
+                        "event": "purchase",
+                        "purchaseId": "123456",
+                        "productName": "Awesome Product",
+                        "productPrice": "29.99",
+                        "transactionAmount": "29.99",
+                        "currencyCode": "USD",
+                        "customerEmail": "customer@example.com",
+                        "promoCode": "DISCOUNT20"
+                    }
+                </div>
+            </div>
 
-    <!-- Example JSON -->
-    <section>
-        <h2>Example JSON for Product Interaction Events</h2>
-        <pre>
-{
-  "event_name": "add_to_cart",
-  "parameters": {
-    "value": 150.00,
-    "currency": "USD",
-    "items": [
-      {
-        "item_id": "P001",
-        "item_name": "Gaming Laptop",
-        "quantity": 1,
-        "price": 1000.00,
-        "item_brand": "BrandA",
-        "item_category": "Electronics",
-        "item_variant": "16GB RAM",
-        "discount": 100.00
-      },
-      {
-        "item_id": "P002",
-        "item_name": "Gaming Mouse",
-        "quantity": 1,
-        "price": 50.00,
-        "item_brand": "BrandB",
-        "item_category": "Accessories",
-        "item_variant": "Wireless",
-        "discount": 0.00
-      }
-    ]
-  }
-}
-        </pre>
-    </section>
-</main>
+            <div>
+                <h3>Data Layer (Converted To Compliant JSON)</h3>
+                <div class="json-output" id="jsonOutput2">
+                    {
+                        "event": "purchase",
+                        "transaction_id": "123456",
+                        "affiliation": "Online Store",
+                        "value": 29.99,
+                        "currency": "USD",
+                        "coupon": "DISCOUNT20",
+                        "items": [
+                            {
+                                "item_name": "Awesome Product",
+                                "item_id": "123456",
+                                "price": 29.99,
+                                "quantity": 1
+                            }
+                        ]
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Non-compliant Data Layer for purchase event
+        window.dataLayer = window.dataLayer || [];
+
+        function trackPurchase() {
+            const purchaseData = {
+                'event': 'purchase',
+                'purchaseId': '123456', // Incorrect property name
+                'productName': 'Awesome Product',
+                'productPrice': '29.99', // Should be numeric
+                'transactionAmount': '29.99', // Inconsistent naming
+                'currencyCode': 'USD', // Missing from proper schema
+                'customerEmail': 'customer@example.com', // Personal data inclusion (non-compliant)
+                'promoCode': 'DISCOUNT20', // Correct in some cases, but incomplete in others
+            };
+            
+            // Push data to data layer
+            window.dataLayer.push(purchaseData);
+            
+            // Display the data layer as JSON on the page
+            const jsonOutputDiv = document.getElementById('jsonOutput1');
+            jsonOutputDiv.textContent = JSON.stringify(purchaseData, null, 4); // Display JSON in readable format
+
+            alert('Purchase event tracked with non-compliant data!');
+        }
+    </script>
 
 </body>
 </html>
