@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GA4 Downloads Event Schema</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            text-align: left;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>GA4 Downloads Event Schema</h1>
+</header>
+
+<main>
+    <h2>Schema Details</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter Name</th>
+                <th>Data Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>file_name</td>
+                <td>String</td>
+                <td>The name of the file downloaded.</td>
+            </tr>
+            <tr>
+                <td>file_extension</td>
+                <td>String</td>
+                <td>The file extension of the downloaded file (e.g., ".pdf", ".jpg").</td>
+            </tr>
+            <tr>
+                <td>file_size</td>
+                <td>Integer</td>
+                <td>The size of the file in bytes.</td>
+            </tr>
+            <tr>
+                <td>download_url</td>
+                <td>String</td>
+                <td>The URL from which the file was downloaded.</td>
+            </tr>
+            <tr>
+                <td>page_title</td>
+                <td>String</td>
+                <td>The title of the page where the download occurred.</td>
+            </tr>
+            <tr>
+                <td>page_location</td>
+                <td>String</td>
+                <td>The URL of the page where the download occurred.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Example JSON for the Downloads Event</h2>
+    <pre>
+{
+  "event_name": "download",
+  "parameters": {
+    "file_name": "report.pdf",
+    "file_extension": ".pdf",
+    "file_size": 1048576,
+    "download_url": "https://example.com/files/report.pdf",
+    "page_title": "Reports Page",
+    "page_location": "https://example.com/reports"
+  }
+}
+    </pre>
+</main>
+
+</body>
+</html>
