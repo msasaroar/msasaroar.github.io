@@ -119,7 +119,7 @@
                     "promoCode": "DISCOUNT20"
                 }
             </div>
-            <button class="purchase-button1" onclick="trackPurchase("NON-COMPLIANT")">Buy Using Above Data Layer</button>
+            <button class="purchase-button1" onclick="trackPurchase('NON-COMPLIANT')">Buy Using Above Data Layer</button>
         </div>
 
         <div class="json-container">
@@ -142,7 +142,7 @@
                     ]
                 }
             </div>
-            <button class="purchase-button2" onclick="trackPurchase("COMPLIANT")">Buy Using Above Data Layer</button>
+            <button class="purchase-button2" onclick="trackPurchase('COMPLIANT')">Buy Using Above Data Layer</button>
         </div>
     </div>
 
@@ -154,8 +154,7 @@
         // Function to track purchase with parameter
         function trackPurchase(type) {
             let purchaseData;
-    
-            if (type === "NON-COMPLIANT") {
+            if (type === 'NON-COMPLIANT') {
                 purchaseData = {
                     "event": "purchase",
                     "purchaseId": "123456", // Incorrect property name
@@ -169,8 +168,7 @@
     
                 // Update the non-compliant JSON output
                 document.getElementById('jsonOutput1').textContent = JSON.stringify(purchaseData, null, 4);
-                alert(`Purchase event tracked with ${type} data!`);
-            } else if (type === "COMPLIANT") {
+            } else if (type === 'COMPLIANT') {
                 purchaseData = {
                     "event": "purchase",
                     "transaction_id": "123456",
@@ -190,7 +188,6 @@
     
                 // Update the compliant JSON output
                 document.getElementById('jsonOutput2').textContent = JSON.stringify(purchaseData, null, 4);
-                alert(`Purchase event tracked with ${type} data!`);
             } else {
                 alert("Invalid type provided!");
                 return;
