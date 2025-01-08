@@ -110,13 +110,13 @@
             <div class="json-output" id="jsonOutput1">
                 {
                     "event": "purchase",
-                    "purchaseId": "123456",
-                    "productName": "Awesome Product",
-                    "productPrice": "29.99",
-                    "transactionAmount": "29.99",
-                    "currencyCode": "USD",
-                    "customerEmail": "customer@example.com",
-                    "promoCode": "DISCOUNT20"
+                    "purchaseId": "NC-999", // Incorrect property name
+                    "productName": "NC-Product",
+                    "productPrice": "99.99", // Should be numeric
+                    "transactionAmount": "99.99", // Inconsistent naming
+                    "currencyCode": "BDT", // Missing from proper schema
+                    "customerEmail": "nc@example.com", // Personal data inclusion (non-compliant)
+                    "promoCode": "NC-DISCOUNT-20", // Correct in some cases, but incomplete in others
                 }
             </div>
             <button class="purchase-button" onclick="trackPurchase('NON-COMPLIANT')">Buy Using Above Data Layer</button>
@@ -127,20 +127,20 @@
             <div class="json-output" id="jsonOutput2">
                 {
                     "event": "purchase",
-                    "transaction_id": "123456",
-                    "affiliation": "Online Store",
-                    "value": 29.99,
+                    "transaction_id": "C-111",
+                    "affiliation": "C-Online Store",
+                    "value": 11.11,
                     "currency": "USD",
-                    "coupon": "DISCOUNT20",
+                    "coupon": "C-DISCOUNT20",
                     "items": [
                         {
-                            "item_name": "Awesome Product",
-                            "item_id": "123456",
-                            "price": 29.99,
+                            "item_name": "C-Awesome Product",
+                            "item_id": "C-123456",
+                            "price": 11.11,
                             "quantity": 1
                         }
                     ]
-                }
+                };
             </div>
             <button class="purchase-button" onclick="trackPurchase('COMPLIANT')">Buy Using Above Data Layer</button>
         </div>
