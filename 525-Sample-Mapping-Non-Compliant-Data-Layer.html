@@ -169,6 +169,7 @@
     
                 // Update the non-compliant JSON output
                 document.getElementById('jsonOutput1').textContent = JSON.stringify(purchaseData, null, 4);
+                alert(`Purchase event tracked with ${type} data!`);
             } else if (type === "COMPLIANT") {
                 purchaseData = {
                     "event": "purchase",
@@ -189,6 +190,7 @@
     
                 // Update the compliant JSON output
                 document.getElementById('jsonOutput2').textContent = JSON.stringify(purchaseData, null, 4);
+                alert(`Purchase event tracked with ${type} data!`);
             } else {
                 alert("Invalid type provided!");
                 return;
