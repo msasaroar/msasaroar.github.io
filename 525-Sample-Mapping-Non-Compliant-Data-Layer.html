@@ -119,6 +119,7 @@
                     "promoCode": "DISCOUNT20"
                 }
             </div>
+            <button class="purchase-button" onclick="trackPurchase("NON-COMPLIANT")">Buy Using Above Data Layer</button>
         </div>
 
         <div class="json-container">
@@ -141,47 +142,63 @@
                     ]
                 }
             </div>
+            <button class="purchase-button" onclick="trackPurchase("COMPLIANT")">Buy Using Above Data Layer</button>
         </div>
     </div>
 
-    <div class="product-section">
-        <div class="product-info">
-            <img src="product-1.png" alt="Product Image" style="width: 150px;">
-            <div>
-                <h3>Awesome Product</h3>
-                <p>Price: $29.99</p>
-            </div>
-        </div>
-        <button class="purchase-button" onclick="trackPurchase()">Non-Compliant : Buy Now</button>
-        <button class="purchase-button" onclick="trackPurchase()">Compliant : Buy Now</button>
-    </div>
 
     <script>
-        // Non-compliant Data Layer for purchase event
+        // Data Layer initialization
         window.dataLayer = window.dataLayer || [];
-
-        function trackPurchase() {
-            const purchaseData = {
-                'event': 'purchase',
-                'purchaseId': '123456', // Incorrect property name
-                'productName': 'Awesome Product',
-                'productPrice': '29.99', // Should be numeric
-                'transactionAmount': '29.99', // Inconsistent naming
-                'currencyCode': 'USD', // Missing from proper schema
-                'customerEmail': 'customer@example.com', // Personal data inclusion (non-compliant)
-                'promoCode': 'DISCOUNT20', // Correct in some cases, but incomplete in others
-            };
-            
-            // Push data to data layer
+    
+        // Function to track purchase with parameter
+        function trackPurchase(type) {
+            let purchaseData;
+    
+            if (type === "NON-COMPLIANT") {
+                purchaseData = {
+                    "event": "purchase",
+                    "purchaseId": "123456", // Incorrect property name
+                    "productName": "Awesome Product",
+                    "productPrice": "29.99", // Should be numeric
+                    "transactionAmount": "29.99", // Inconsistent naming
+                    "currencyCode": "USD", // Missing from proper schema
+                    "customerEmail": "customer@example.com", // Personal data inclusion (non-compliant)
+                    "promoCode": "DISCOUNT20", // Correct in some cases, but incomplete in others
+                };
+    
+                // Update the non-compliant JSON output
+                document.getElementById('jsonOutput1').textContent = JSON.stringify(purchaseData, null, 4);
+            } else if (type === "COMPLIANT") {
+                purchaseData = {
+                    "event": "purchase",
+                    "transaction_id": "123456",
+                    "affiliation": "Online Store",
+                    "value": 29.99,
+                    "currency": "USD",
+                    "coupon": "DISCOUNT20",
+                    "items": [
+                        {
+                            "item_name": "Awesome Product",
+                            "item_id": "123456",
+                            "price": 29.99,
+                            "quantity": 1
+                        }
+                    ]
+                };
+    
+                // Update the compliant JSON output
+                document.getElementById('jsonOutput2').textContent = JSON.stringify(purchaseData, null, 4);
+            } else {
+                alert("Invalid type provided!");
+                return;
+            }
+    
+            // Push data to the data layer
             window.dataLayer.push(purchaseData);
-            
-            // Display the data layer as JSON on the page
-            const jsonOutputDiv = document.getElementById('jsonOutput1');
-            jsonOutputDiv.textContent = JSON.stringify(purchaseData, null, 4); // Display JSON in readable format
-
-            alert('Purchase event tracked with non-compliant data!');
+            alert(`Purchase event tracked with ${type} data!`);
         }
     </script>
-
+    
 </body>
 </html>
