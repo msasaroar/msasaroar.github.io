@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Refund Event</title>
+  <title>View Promotion Event</title>
   <script>
     // Google Tag Manager - GTM-PPBVCLNF
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
-    var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'}); 
+    var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); 
     })(window,document,'script','dataLayer','GTM-PPBVCLNF');
   </script>
   <script src="601-2-JavaScript.js"></script>
@@ -95,11 +95,11 @@
   
   <header>
     <a href="index.html">Home</a>
-    <h1>Refund Event</h1>
+    <h1>View Promotion</h1>
   </header>
 
   <main>
-    <h2>Refund Information</h2>
+    <h2>Promotion Information</h2>
     <table>
       <thead>
         <tr>
@@ -111,8 +111,8 @@
         <!-- DataLayer information will be dynamically added here -->
       </tbody>
     </table>
-    <button id="trigger-event">Trigger Refund Event</button>
-    <button onclick="navigateToURL('refund')">Show Google Reference</button>
+    <button id="trigger-event">Trigger View Promotion Event</button>
+    <button onclick="navigateToURL('view_promotion')">Show Google Reference</button>
   </main>
 
   <footer>
@@ -120,19 +120,14 @@
   </footer>
 
   <script>
-    // Clear any existing ecommerce data
-    dataLayer.push({ ecommerce: null });
-
     // Initialize dataLayer with the provided data
     const eventData = {
-      event: "refund",
+      event: "view_promotion",
       ecommerce: {
-        currency: "USD",
-        transaction_id: "T_12345", // Transaction ID. Required for refunds.
-        value: 30.03,
-        coupon: "SUMMER_FUN",
-        shipping: 3.33,
-        tax: 1.11,
+        creative_name: "Summer Banner",
+        creative_slot: "featured_app_1",
+        promotion_id: "P_12345",
+        promotion_name: "Summer Sale",
         items: [
           {
             item_id: "SKU_12345",
@@ -158,6 +153,7 @@
       }
     };
 
+    // Push the dataLayer
     dataLayer.push(eventData);
 
     // Display dataLayer information in the table
@@ -185,10 +181,10 @@
 
     displayDataLayer();
 
-    // Trigger the refund event
+    // Trigger the view_promotion event
     document.getElementById('trigger-event').addEventListener('click', () => {
       dataLayer.push(eventData);
-      alert('refund event triggered!');
+      alert('view_promotion event triggered!');
     });
   </script>
 </body>

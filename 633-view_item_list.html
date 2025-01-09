@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Refund Event</title>
+  <title>View Item List Event</title>
   <script>
     // Google Tag Manager - GTM-PPBVCLNF
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
@@ -95,11 +95,11 @@
   
   <header>
     <a href="index.html">Home</a>
-    <h1>Refund Event</h1>
+    <h1>View Item List</h1>
   </header>
 
   <main>
-    <h2>Refund Information</h2>
+    <h2>Item List Information</h2>
     <table>
       <thead>
         <tr>
@@ -111,8 +111,8 @@
         <!-- DataLayer information will be dynamically added here -->
       </tbody>
     </table>
-    <button id="trigger-event">Trigger Refund Event</button>
-    <button onclick="navigateToURL('refund')">Show Google Reference</button>
+    <button id="trigger-event">Trigger View Item List Event</button>
+    <button onclick="navigateToURL('view_item_list')">Show Google Reference</button>
   </main>
 
   <footer>
@@ -120,19 +120,12 @@
   </footer>
 
   <script>
-    // Clear any existing ecommerce data
-    dataLayer.push({ ecommerce: null });
-
     // Initialize dataLayer with the provided data
     const eventData = {
-      event: "refund",
+      event: "view_item_list",
       ecommerce: {
-        currency: "USD",
-        transaction_id: "T_12345", // Transaction ID. Required for refunds.
-        value: 30.03,
-        coupon: "SUMMER_FUN",
-        shipping: 3.33,
-        tax: 1.11,
+        item_list_id: "related_products",
+        item_list_name: "Related products",
         items: [
           {
             item_id: "SKU_12345",
@@ -151,8 +144,30 @@
             item_list_name: "Related Products",
             item_variant: "green",
             location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
-            price: 10.01,
+            price: 10.03,
             quantity: 3
+          },
+          {
+            item_id: "SKU_12346",
+            item_name: "Google Grey Women's Tee",
+            affiliation: "Google Merchandise Store",
+            coupon: "SUMMER_FUN",
+            discount: 3.33,
+            index: 1,
+            item_brand: "Google",
+            item_category: "Apparel",
+            item_category2: "Adult",
+            item_category3: "Shirts",
+            item_category4: "Crew",
+            item_category5: "Short sleeve",
+            item_list_id: "related_products",
+            item_list_name: "Related Products",
+            item_variant: "gray",
+            location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
+            price: 21.01,
+            promotion_id: "P_12345",
+            promotion_name: "Summer Sale",
+            quantity: 2
           }
         ]
       }
@@ -185,10 +200,10 @@
 
     displayDataLayer();
 
-    // Trigger the refund event
+    // Trigger the view_item_list event
     document.getElementById('trigger-event').addEventListener('click', () => {
       dataLayer.push(eventData);
-      alert('refund event triggered!');
+      alert('view_item_list event triggered!');
     });
   </script>
 </body>

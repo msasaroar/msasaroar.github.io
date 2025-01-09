@@ -1,42 +1,39 @@
 
 601-add_payment_info.html
-https://developers.google.com/analytics/devguides/collection/ga4/reference/events?client_type=gtm#add_payment_info
-
 602-add_shipping_info.html
-
 603-add_to_cart.html
 604-add_to_wishlist.html
 605-begin_checkout.html
-606-close_convert_lead.html
-607-close_unconvert_lead.html
-608-disqualify_lead.html
-609-earn_virtual_currency.html
-610-generate_lead.html
-611-join_group.html
-612-level_end.html
-613-level_start.html
-614-level_up.html
-615-login.html
-616-post_score.html
+  606-close_convert_lead.html
+  607-close_unconvert_lead.html
+  608-disqualify_lead.html
+  609-earn_virtual_currency.html
+  610-generate_lead.html
+  611-join_group.html
+  612-level_end.html
+  613-level_start.html
+  614-level_up.html
+  615-login.html
+  616-post_score.html
 617-purchase.html
-618-qualify_lead.html
+  618-qualify_lead.html
 619-refund.html
 620-remove_from_cart.html
-621-search.html
-622-select_content.html
+  621-search.html
+  622-select_content.html
 623-select_item.html
 624-select_promotion.html
-625-share.html
-626-sign_up.html
-627-spend_virtual_currency.html
-628-tutorial_begin.html
-629-tutorial_complete.html
-630-unlock_achievement.html
+  625-share.html
+  626-sign_up.html
+  627-spend_virtual_currency.html
+  628-tutorial_begin.html
+  629-tutorial_complete.html
+  630-unlock_achievement.html
 631-view_cart.html
 632-view_item.html
 633-view_item_list.html
 634-view_promotion.html
-635-working_lead.html
+    635-working_lead.html
 
 
 <!DOCTYPE html>
@@ -230,24 +227,22 @@ https://developers.google.com/analytics/devguides/collection/ga4/reference/event
 
 
 
-Create an html page which demonstrating the event refund as like above page. 
+Create an html page which demonstrating the event view_promotion as like above page. 
 Design the page as showing all information from following data layer . 
 Also use this data layer while pushing data layer.
 Add following code in suitable place.
 <script src="601-2-JavaScript.js"></script>
-<button onclick="navigateToURL('refund')">Show Google Reference</button>
+<button onclick="navigateToURL('view_promotion')">Show Google Reference</button>
 
 
 
 dataLayer.push({
-  event: "refund",
+  event: "view_promotion",
   ecommerce: {
-    currency: "USD",
-    transaction_id: "T_12345", // Transaction ID. Required for purchases and refunds.
-    value: 30.03,
-    coupon: "SUMMER_FUN",
-    shipping: 3.33,
-    tax: 1.11,
+    creative_name: "Summer Banner",
+    creative_slot: "featured_app_1",
+    promotion_id: "P_12345",
+    promotion_name: "Summer Sale",
     items: [
     {
       item_id: "SKU_12345",
