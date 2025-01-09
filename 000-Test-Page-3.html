@@ -1,163 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Purchase Event with Data Layer</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .product {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        .product img {
-            width: 150px;
-            border-radius: 8px;
-        }
-        .product-info {
-            flex-grow: 1;
-            margin-left: 20px;
-        }
-        .product-info h3 {
-            margin: 0;
-            font-size: 20px;
-            color: #333;
-        }
-        .product-info p {
-            color: #777;
-            font-size: 14px;
-        }
-        .purchase-button {
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .purchase-button:hover {
-            background-color: #45a049;
-        }
-        .json-output {
-            background-color: #f1f1f1;
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px solid #ddd;
-            font-family: "Courier New", Courier, monospace;
-            white-space: pre-wrap;
-            margin-top: 30px;
-            word-wrap: break-word;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Payment Info Event</title>
+  <script>
+    // Google Tag Manager - GTM-PPBVCLNF
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+    var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PPBVCLNF');
+  </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: white;
+      color: black;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: green;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+    }
+    header a {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: orange;
+      color: blue;
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+    header a:hover {
+      background-color: blue;
+      color: orange;
+    }
+    main {
+      margin: 80px 20px;
+      text-align: center;
+    }
+    button {
+      background-color: orange;
+      color: blue;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: blue;
+      color: orange;
+    }
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #f1f1f1;
+      text-align: center;
+      height: 50px;
+    }
+    footer object {
+      width: 100%;
+      height: 100%;
+    }
+    .product-details {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      display: inline-block;
+      text-align: left;
+    }
+  </style>
 </head>
 <body>
+  <!-- Google Tag Manager NoScript -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-    <header>
-        <h1>Welcome to Our Store</h1>
-        <p>Shop the latest products and complete your purchase with ease!</p>
-    </header>
+  <header>
+    <a href="index.html">Home</a>
+    <h1>Add Payment Info</h1>
+  </header>
 
-    <div class="container">
-        <h2>Featured Product</h2>
-
-        <div class="product">
-            <img src="https://via.placeholder.com/150" alt="Product Image">
-            <div class="product-info">
-                <h3>Awesome Product</h3>
-                <p>Price: $29.99</p>
-                <p>Buy now to enjoy great discounts!</p>
-            </div>
-            <button class="purchase-button" onclick="trackPurchase()">Buy Now</button>
-        </div>
+  <main>
+    <h2>Checkout</h2>
+    <div class="product-details">
+      <p><strong>Item:</strong> Stan and Friends Tee</p>
+      <p><strong>Price:</strong> $10.01</p>
+      <p><strong>Quantity:</strong> 3</p>
+      <p><strong>Total:</strong> $30.03</p>
+      <p><strong>Coupon Applied:</strong> SUMMER_FUN</p>
     </div>
+    <button id="trigger-event">Add Payment Info</button>
+  </main>
 
-    <div class="container2">
-        <h3>Data Layer (Non-Compliant JSON)</h3>
-        <div class="json-container">
-            <div class="json-output" id="jsonOutput1">
-                {
-                    "event": "purchase",
-                    "purchaseId": "123456",
-                    "productName": "Awesome Product",
-                    "productPrice": "29.99",
-                    "transactionAmount": "29.99",
-                    "currencyCode": "USD",
-                    "customerEmail": "customer@example.com",
-                    "promoCode": "DISCOUNT20"
-                }
-            </div>
-    
-            <div class="json-output" id="jsonOutput2">
-                {
-                    "event": "purchase",
-                    "transaction_id": "123456",
-                    "affiliation": "Online Store",
-                    "value": 29.99,
-                    "currency": "USD",
-                    "coupon": "DISCOUNT20",
-                    "items": [
-                        {
-                            "item_name": "Awesome Product",
-                            "item_id": "123456",
-                            "price": 29.99,
-                            "quantity": 1
-                        }
-                    ]
-                }
-            </div>
-        </div>
-    </div>
+  <footer>
+    <object type="text/html" data="footer.html"></object>
+  </footer>
 
-
-    <script>
-        // Non-compliant Data Layer for purchase event
-        window.dataLayer = window.dataLayer || [];
-
-        function trackPurchase() {
-            const purchaseData = {
-                'event': 'purchase',
-                'purchaseId': '123456', // Incorrect property name
-                'productName': 'Awesome Product',
-                'productPrice': '29.99', // Should be numeric
-                'transactionAmount': '29.99', // Inconsistent naming
-                'currencyCode': 'USD', // Missing from proper schema
-                'customerEmail': 'customer@example.com', // Personal data inclusion (non-compliant)
-                'promoCode': 'DISCOUNT20', // Correct in some cases, but incomplete in others
-            };
-            
-            // Push data to data layer
-            window.dataLayer.push(purchaseData);
-            
-            // Display the data layer as JSON on the page
-            const jsonOutputDiv = document.getElementById('jsonOutput');
-            jsonOutputDiv.textContent = JSON.stringify(purchaseData, null, 4); // Display JSON in readable format
-
-            alert('Purchase event tracked with non-compliant data!');
+  <script>
+    document.getElementById('trigger-event').addEventListener('click', function() {
+      // Clear the previous ecommerce object and push the add_payment_info event to the dataLayer
+      dataLayer.push({ ecommerce: null });
+      dataLayer.push({
+        event: "add_payment_info",
+        ecommerce: {
+          currency: "USD",
+          value: 30.03,
+          coupon: "SUMMER_FUN",
+          payment_type: "Credit Card",
+          items: [
+            {
+              item_id: "SKU_12345",
+              item_name: "Stan and Friends Tee",
+              affiliation: "Google Merchandise Store",
+              coupon: "SUMMER_FUN",
+              discount: 2.22,
+              index: 0,
+              item_brand: "Google",
+              item_category: "Apparel",
+              item_category2: "Adult",
+              item_category3: "Shirts",
+              item_category4: "Crew",
+              item_category5: "Short sleeve",
+              item_list_id: "related_products",
+              item_list_name: "Related Products",
+              item_variant: "green",
+              location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
+              price: 10.01,
+              quantity: 3
+            }
+          ]
         }
-    </script>
-
+      });
+      alert('add_payment_info event triggered!');
+    });
+  </script>
 </body>
 </html>
