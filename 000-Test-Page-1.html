@@ -3,55 +3,189 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ecommerce Purchase Example</title>
+  <title>Add Payment Info Event</title>
   <script>
-    // GTM Data Layer Setup
-    window.dataLayer = window.dataLayer || [];
-  </script>
-  <!-- Google Tag Manager Script -->
-  <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    // Google Tag Manager - GTM-PPBVCLNF
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+    var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PPBVCLNF'); // Replace with your GTM ID
+    })(window,document,'script','dataLayer','GTM-PPBVCLNF');
   </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: white;
+      color: black;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: green;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+    }
+    header a {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: orange;
+      color: blue;
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+    header a:hover {
+      background-color: blue;
+      color: orange;
+    }
+    main {
+      margin: 125px 20px;
+      text-align: center;
+    }
+    table {
+      width: 80%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      border: 1px solid #ddd;
+    }
+    table th, table td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+    table th {
+      background-color: #f4f4f4;
+    }
+    button {
+      background-color: orange;
+      color: blue;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      margin: 20px;
+    }
+    button:hover {
+      background-color: blue;
+      color: orange;
+    }
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #f1f1f1;
+      text-align: center;
+      height: 50px;
+    }
+    footer object {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
 </head>
 <body>
-  <h1>Simulate Ecommerce Purchase</h1>
-  <button id="purchaseButton">Complete Purchase</button>
+  <!-- Google Tag Manager NoScript -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  
+  <header>
+    <a href="index.html">Home</a>
+    <h1>Add Payment Info</h1>
+  </header>
+
+  <main>
+    <h2>Payment Information</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Property</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody id="data-layer-display">
+        <!-- DataLayer information will be dynamically added here -->
+      </tbody>
+    </table>
+    <button id="trigger-event">Trigger Add Payment Info Event</button>
+  </main>
+
+  <footer>
+    <object type="text/html" data="footer.html"></object>
+  </footer>
 
   <script>
-    // Simulate a purchase event
-    document.getElementById("purchaseButton").addEventListener("click", function() {
-      window.dataLayer.push({
-        event: "purchase",
-        ecommerce: {
-          transaction_id: "T12345", // Unique Transaction ID
-          value: 99.99, // Total value of the transaction
-          currency: "USD",
-          items: [
-            {
-              item_name: "Widget A",
-              item_id: "WA123",
-              price: 49.99,
-              quantity: 1
-            },
-            {
-              item_name: "Widget B",
-              item_id: "WB456",
-              price: 50.00,
-              quantity: 1
+    // Clear the previous ecommerce object
+    dataLayer.push({ ecommerce: null });
+
+    // Add the provided data to the dataLayer
+    const eventData = {
+      event: "add_payment_info",
+      ecommerce: {
+        currency: "USD",
+        value: 30.03,
+        coupon: "SUMMER_FUN",
+        payment_type: "Credit Card",
+        items: [
+          {
+            item_id: "SKU_12345",
+            item_name: "Stan and Friends Tee",
+            affiliation: "Google Merchandise Store",
+            coupon: "SUMMER_FUN",
+            discount: 2.22,
+            index: 0,
+            item_brand: "Google",
+            item_category: "Apparel",
+            item_category2: "Adult",
+            item_category3: "Shirts",
+            item_category4: "Crew",
+            item_category5: "Short sleeve",
+            item_list_id: "related_products",
+            item_list_name: "Related Products",
+            item_variant: "green",
+            location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
+            price: 10.01,
+            quantity: 3
+          }
+        ]
+      }
+    };
+
+    dataLayer.push(eventData);
+
+    // Display dataLayer information in the table
+    const displayDataLayer = () => {
+      const tbody = document.getElementById('data-layer-display');
+      tbody.innerHTML = '';
+
+      const ecommerce = eventData.ecommerce;
+      for (const key in ecommerce) {
+        if (Array.isArray(ecommerce[key])) {
+          ecommerce[key].forEach((item, index) => {
+            for (const prop in item) {
+              const row = document.createElement('tr');
+              row.innerHTML = `<td>${key}[${index}].${prop}</td><td>${item[prop]}</td>`;
+              tbody.appendChild(row);
             }
-          ]
+          });
+        } else {
+          const row = document.createElement('tr');
+          row.innerHTML = `<td>${key}</td><td>${ecommerce[key]}</td>`;
+          tbody.appendChild(row);
         }
-      });
-      alert("Purchase data pushed to Data Layer!");
+      }
+    };
+
+    displayDataLayer();
+
+    // Trigger the add_payment_info event
+    document.getElementById('trigger-event').addEventListener('click', () => {
+      dataLayer.push(eventData);
+      alert('add_payment_info event triggered!');
     });
   </script>
-
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </body>
 </html>
