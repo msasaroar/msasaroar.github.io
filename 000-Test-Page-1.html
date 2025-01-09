@@ -3,46 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HTML File Selector</title>
+  <title>File Selection</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      text-align: center;
-      margin-top: 50px;
+      margin: 20px;
     }
     select, button {
+      margin: 10px 0;
+      padding: 10px;
       font-size: 16px;
-      padding: 10px 15px;
-      margin: 10px;
-    }
-    button {
-      background-color: orange;
-      color: blue;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-    button:hover {
-      background-color: blue;
-      color: orange;
     }
   </style>
   <script>
-    function openFile() {
-      const dropdown = document.getElementById("fileList");
-      const selectedFile = dropdown.value;
-
-      if (selectedFile) {
-        window.location.href = selectedFile;
+    function openFile(fileName) {
+      if (fileName) {
+        window.location.href = fileName; // Redirect to the selected file
       } else {
-        alert("Please select a file.");
+        alert("Please select a file before clicking Open File.");
       }
     }
   </script>
 </head>
 <body>
-  <h1>Select an HTML File to View</h1>
-  <select id="fileList">
+  <h1>File Selection</h1>
+  
+  <label for="fileList-1">Select a syllabus file:</label>
+  <select id="fileList-1">
+    <option value="" disabled selected>Select a file</option>
+    <option value="401-Syllabus-For-Learning-GA4.html">401-Syllabus-For-Learning-GA4.html</option>
+    <option value="402-Syllabus-For-Learning-GTM.html">402-Syllabus-For-Learning-GTM.html</option>
+    <option value="403-Requirements-on-General-Purpose-Website.html">403-Requirements-on-General-Purpose-Website.html</option>
+    <option value="404-Requirements-on-an-e-Commerce-Website.html">404-Requirements-on-an-e-Commerce-Website.html</option>
+    <option value="405-Requirements-on-a-Blogging-Website.html">405-Requirements-on-a-Blogging-Website.html</option>
+    <option value="406-UAT-Format.html">406-UAT-Format.html</option>
+    <option value="407-Setup GA4 Ecommerce Tracking with GTM (As Per GA4 Schema).html">407-Setup GA4 Ecommerce Tracking with GTM (As Per GA4 Schema).html</option>
+  </select>
+  <button onclick="openFile(document.getElementById('fileList-1').value)">Open File</button>
+  
+  <label for="fileList-2">Select a tracking file:</label>
+  <select id="fileList-2">
     <option value="" disabled selected>Select a file</option>
     <option value="601-add_payment_info.html">601-add_payment_info.html</option>
     <option value="602-add_shipping_info.html">602-add_shipping_info.html</option>
@@ -59,7 +59,6 @@
     <option value="633-view_item_list.html">633-view_item_list.html</option>
     <option value="634-view_promotion.html">634-view_promotion.html</option>
   </select>
-  <br>
-  <button onclick="openFile()">Open File</button>
+  <button onclick="openFile(document.getElementById('fileList-2').value)">Open File</button>
 </body>
 </html>
