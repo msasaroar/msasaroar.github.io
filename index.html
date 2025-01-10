@@ -3,7 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dropdown List with Buttons</title>
+    <title>Resources On GA4 & GTM </title>
+    <h1>Resources For Learning Google Analytics 4(GA4) & Google Tag Manager(GTM)</h1>
+    <h2>Explore tags, triggers, variables, events, and data layers!</h2>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
+    </script>
+    <!-- End Google Tag Manager -->
+
     <script src="script.js"></script>
     <style>
         body {
@@ -17,8 +34,12 @@
             margin: 100px auto;
             padding: 20px;
             background-color: #2a913f;
-            box-shadow: 0 8px 8px rgba(176, 215, 5, 0.807);
+            box-shadow: 0 8px 8px #2bcfbf;
             border-radius: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
         }
         h2 {
             text-align: center;
@@ -33,12 +54,12 @@
         label {
             width: 18%;
             text-align: left;
-            font-weight: bold;
         }
         select {
             width: 65%;
             padding: 10px;
             font-size: 16px;
+            background-color: #2bcfbf;
         }
         button {
             width: 15%;
@@ -47,22 +68,23 @@
         }
         button {
             background-color: #4CAF50;
-            color: white;
+            color: rgb(0, 0, 0);
             border: none;
             cursor: pointer;
             transition: background-color 0.3s;
         }
         button:hover {
-            background-color: #3f4be8;
+            background-color: #2bcfbf;
         }
     </style>
 </head>
 
 <body>
-
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
   <div class="container">
-      <h2>Resources For Learning Google Analytics 4(GA4) & Google Tag Manager(GTM)</h2>
-
       <div class="dropdown-group">
           <label for="workoutLevel-1">Workouts Level-1</label>
           <select id="workoutLevel-1">
@@ -232,5 +254,17 @@
         <button onclick="openFile(document.getElementById('ga4RecommendedEvents').value)">Proceed</button>
       </div>
   </div>
-</body>
+
+
+  <footer style="background-color: green; color: orange; padding: 0px; text-align: center; height: 25px;">
+    <p style="font-family: Arial, sans-serif; color: orange; font-size: 12px;">
+        &copy; 2024 Md. Saiful Alam Saroar. All rights reserved. This demo website is provided solely for educational and demonstration purposes related to Google Analytics and Conversion Tracking.
+    </p>
+    <a href="https://www.facebook.com/msasaroar" target="_blank" style="background-color: green; color: orange; text-decoration: none; margin: 0 5px;">Facebook</a> | 
+    <a href="mailto:msasaroar@gmail.com" style="background-color: green; color: orange; text-decoration: none; margin: 0 5px;">Email</a> | 
+    <a href="https://wa.me/8801917530031" target="_blank" style="background-color: green; color: orange; text-decoration: none; margin: 0 5px;">WhatsApp</a>
+</footer>
+
+ </body>
+
 </html>
