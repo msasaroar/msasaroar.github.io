@@ -14,6 +14,9 @@ function openFile(fileName) {
     window.location.href = finalURL;
 }
 
-
-
-
+//===========================================================================
+function loadScript() {
+  const script = document.createElement('script');
+  script.src = 'script.js';
+  document.body.appendChild(script); // Append the script to the body
+}
