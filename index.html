@@ -10,34 +10,38 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
+            background-color: green;
         }
         .container {
-            max-width: 800px;
-            margin: 50px auto;
+            max-width: 1200px;
+            margin: 100px auto;
             padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
+            background-color: #2a913f;
+            box-shadow: 0 8px 8px rgba(176, 215, 5, 0.807);
+            border-radius: 20px;
         }
         h2 {
             text-align: center;
             margin-bottom: 30px;
         }
         .dropdown-group {
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
         label {
-            width: 30%;
-            text-align: right;
-            margin-right: 20px;
+            width: 18%;
+            text-align: left;
             font-weight: bold;
         }
-        select, button {
+        select {
             width: 65%;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            width: 15%;
             padding: 10px;
             font-size: 16px;
         }
@@ -49,7 +53,7 @@
             transition: background-color 0.3s;
         }
         button:hover {
-            background-color: #45a049;
+            background-color: #3f4be8;
         }
     </style>
 </head>
@@ -57,10 +61,10 @@
 <body>
 
   <div class="container">
-      <h2>Choose an Event</h2>
+      <h2>Learning & Practicing Resource : GA4 & GTM</h2>
 
       <div class="dropdown-group">
-          <label for="workoutLevel-1">Workout Level 1</label>
+          <label for="workoutLevel-1">Workouts Level-1</label>
           <select id="workoutLevel-1">
               <option value="">Select an item</option>
               <option value="101-ga4-config.html">101. GA4 Configuration</option>
@@ -76,11 +80,11 @@
               <option value="111-outbound-link-click.html">111. Outbound Click Tag</option>
               <option value="112-timer-tag.html">112. Timer Tag</option>
           </select>
-          <button onclick="openFile(document.getElementById('workoutLevel-1').value)">Open File</button>
+          <button onclick="openFile(document.getElementById('workoutLevel-1').value)">Proceed</button>
       </div>
 
       <div class="dropdown-group">
-          <label for="workoutLevel-2">Workout Level 2</label>
+          <label for="workoutLevel-2">Workouts Level-2</label>
           <select id="workoutLevel-2">
               <option value="">Select an item</option>
               <option value="201-JavaScript-Error-Tag.html">201. JavaScript Error Tag</option>
@@ -101,11 +105,11 @@
               <option value="216-window-loaded-trigger.html">216. Window Loaded Trigger</option>
               <option value="217-dom-ready.html">217. DOM Ready Trigger</option>
           </select>
-          <button onclick="openFile(document.getElementById('workoutLevel-2').value)">Open File</button>
+          <button onclick="openFile(document.getElementById('workoutLevel-2').value)">Proceed</button>
       </div>
 
       <div class="dropdown-group">
-          <label for="workoutLevel-3">Workout Level 3</label>
+          <label for="workoutLevel-3">Workouts Level-3</label>
           <select id="workoutLevel-3">
               <option value="">Select an item</option>
               <option value="301-all-url-variable.html">301. To 320. All GTM URL Variable</option>
@@ -133,12 +137,12 @@
               <option value="341-Form-Field-And-Focus-Changes-Data-Layer.html">341. Form Field & Focus Changes</option>
               <option value="342-Frequently-Used-Data-Layers.html">342. Frequently Used Data Layer</option>
           </select>
-          <button onclick="openFile(document.getElementById('workoutLevel-3').value)">Open File</button>
+          <button onclick="openFile(document.getElementById('workoutLevel-3').value)">Proceed</button>
         </div>
 
       <div class="dropdown-group">
-        <label for="syllabusAndUAT">Syllabus and UAT Section</label>
-        <select id="syllabusAndUAT">
+        <label for="syllabusRSandUAT">Topics and Sample Formts</label>
+        <select id="syllabusRSandUAT">
             <option value="">Select an item</option>
             <option value="401-Syllabus-For-Learning-GA4.html">401. Syllabus For Learning GA4</option>
             <option value="402-Syllabus-For-Learning-GTM.html">402. Syllabus For Learning GTM</option>
@@ -147,12 +151,12 @@
             <option value="405-Requirements-on-a-Blogging-Website.html">405. Events and Conversion Tracking Requirements on a Blogging Website</option>
             <option value="406-UAT-Format.html">406. UAT Format</option>
         </select>
-        <button onclick="openFile(document.getElementById('syllabusAndUAT').value)">Open File</button>
+        <button onclick="openFile(document.getElementById('syllabusRSandUAT').value)">Proceed</button>
       </div>
 
 
       <div class="dropdown-group">
-        <label for="ga4Schema">GA4 Schema Section</label>
+        <label for="ga4Schema">GA4 Schema</label>
         <select id="ga4Schema">
           <option value="">Select an item</option>
           <option value="501-What-Is-GA4-Schema.html">501. About GA4 Schema</option>
@@ -182,7 +186,7 @@
           <option value="525-Sample-Mapping-Non-Compliant-Data-Layer.html">525. Sample Mapping Non-Compliant Data Layer</option>
           <option value="526-Simulate-Ecommerce-Purchase.html">526. Simulate Ecommerce Purchase</option>
         </select>
-        <button onclick="openFile(document.getElementById('ga4Schema').value)">Open File</button>
+        <button onclick="openFile(document.getElementById('ga4Schema').value)">Proceed</button>
       </div>
 
       <div class="dropdown-group">
@@ -225,7 +229,7 @@
           <option value="634-view_promotion.html">634. View Promotion</option>
           <option value="635-working_lead.html">635. Working Lead</option>
         </select>
-        <button onclick="openFile(document.getElementById('ga4RecommendedEvents').value)">Open File</button>
+        <button onclick="openFile(document.getElementById('ga4RecommendedEvents').value)">Proceed</button>
       </div>
   </div>
 </body>
