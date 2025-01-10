@@ -1,64 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>File Selection</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-    }
-    select, button {
-      margin: 10px 0;
-      padding: 10px;
-      font-size: 16px;
-    }
-  </style>
-  <script>
-    function openFile(fileName) {
-      if (fileName) {
-        window.location.href = fileName; // Redirect to the selected file
-      } else {
-        alert("Please select a file before clicking Open File.");
-      }
-    }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown List with Buttons</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .dropdown-group {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        label {
+            width: 30%;
+            text-align: right;
+            margin-right: 20px;
+            font-weight: bold;
+        }
+        select, button {
+            width: 65%;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
+
 <body>
-  <h1>File Selection</h1>
+
+  <div class="container">
+      <h2>Choose an Event</h2>
+
+      <div class="dropdown-group">
+          <label for="workoutLevel-1">Workout Level 1</label>
+          <select id="workoutLevel-1">
+              <option value="">Select an item</option>
+              <option value="112-timer-tag.html">112. Timer Tag</option>
+              <option value="111-outbound-link-click.html">111. Outbound Click Tag</option>
+              <option value="110-custom-html-tag.html">110. Custom HTML Tag</option>
+              <option value="109-scroll-depth.html">109. Scroll (Vertical & Horizontal) Tag</option>
+              <option value="108-link-click.html">108. Link Click</option>
+              <option value="107-checkout.html">107. Checkout</option>
+              <option value="106-add-to-cart.html">106. Add to Cart</option>
+              <option value="105-signup-confirmation.html">105. Signup Confirmation</option>
+              <option value="104-contact.html">104. Contact Form Submission</option>
+              <option value="103-purchase-confirmation.html">103. Purchase Confirmation</option>
+              <option value="102-page-view.html">102. Page View</option>
+              <option value="101-ga4-config.html">101. GA4 Configuration</option>
+          </select>
+          <button onclick="openFile('workoutLevel-1')">Open File</button>
+      </div>
+
+      <div class="dropdown-group">
+          <label for="workoutLevel-2">Workout Level 2</label>
+          <select id="workoutLevel-2">
+              <option value="">Select an item</option>
+              <option value="217-dom-ready.html">217. DOM Ready Trigger</option>
+              <option value="216-window-loaded-trigger.html">216. Window Loaded Trigger</option>
+              <option value="215-page-visibility-trigger.html">215. Page Visibility Trigger</option>
+              <option value="214-custom-event-trigger.html">214. Custom Event Trigger</option>
+              <option value="213-history-change-event.html">213. History Change Event</option>
+              <option value="212-hash-change-tag-and-trigger.html">212. Hash Change Tag and Trigger</option>
+              <option value="211-video-complete-event.html">211. Video Complete Event</option>
+              <option value="210-video-pause-event.html">210. Video Pause Event</option>
+              <option value="209-video-engagement-with-repository-video.html">209. Video Engagement [Repository]</option>
+              <option value="208-video-engagement-with-non-embedded-video.html">208. Video Engagement [Link]</option>
+              <option value="207-video-engagement-with-embedded-youtube-video.html">207. Video Engagement [Embedded]</option>
+              <option value="206-element-click.html">206. Element Click</option>
+              <option value="205-custom-image-tag.html">205. Custom Image Tag</option>
+              <option value="204-social-media-click-tag.html">204. Social Media Click Tag</option>
+              <option value="203-element-visibility-trigger.html">203. Element Visibility Trigger</option>
+              <option value="202-user-login-form.html">202. User Login Trigger</option>
+              <option value="201-JavaScript-Error-Tag.html">201. JavaScript Error Tag</option>
+          </select>
+          <button onclick="openFile('workoutLevel-2')">Open File</button>
+      </div>
+
+      <div class="dropdown-group">
+          <label for="workoutLevel-3">Workout Level 3</label>
+          <select id="workoutLevel-3">
+              <option value="">Select an item</option>
+              <option value="342-Frequently-Used-Data-Layers.html">342. Frequently Used Data Layer</option>
+              <option value="341-Form-Field-And-Focus-Changes-Data-Layer.html">341. Form Field & Focus Changes</option>
+              <option value="340-GA4-Refund-Event-Tag-Data-Layer.html">340. GA4 Refund Event Tag</option>
+              <option value="339-Ad-Click-Tracking-Data-Layer.html">339. Ad Click Trigger</option>
+              <option value="338-share-like-dislike-data-layer.html">338. Share, Like & Dislike Data Layer</option>
+              <option value="337-error-tracking-data-layer.html">337. Error Tracking Data Layer</option>
+              <option value="336-page-timing-data-layer.html">336. Page Timing Data Layer</option>
+              <option value="335-feedback-submit-data-layer.html">335. Feedback Submit Data Layer</option>
+              <option value="334-download-file-data-layer.html">334. Download File Data Layer</option>
+              <option value="333-product-view-data-layer.html">333. Product View Data Layer</option>
+              <option value="332-search-data-layer.html">332. Search Data Layer</option>
+              <option value="331-custom-event-data-layer.html">331. Custom Event Data Layer</option>
+              <option value="330-user-logout-data-layer.html">330. User Logout Data Layer</option>
+              <option value="329-user-login-data-layer.html">329. User Login Data Layer</option>
+              <option value="328-purchase-data-layer.html">328. Purchase Data Layer</option>
+              <option value="328-checkout-data-layer.html">328. Checkout Data Layer</option>
+              <option value="327-remove-from-cart-data-layer.html">327. Remove from Cart Data Layer</option>
+              <option value="326-add-to-cart-data-layer.html">326. Add to Cart Data Layer</option>
+              <option value="325-video-start-data-layer.html">325. Video Start Data Layer</option>
+              <option value="324-form-submit-data-layer.html">324. Form Submit Data Layer</option>
+              <option value="323-scroll-depth-data-layer.html">323. Scroll Depth Data Layer</option>
+              <option value="322-button-click-data-layer.html">322. Button Click Data Layer</option>
+              <option value="321-page-view-data-layer.html">321. Page View Data Layer</option>
+              <option value="301-all-url-variable.html">301. To 320. All GTM URL Variable</option>
+          </select>
+          <button onclick="openFile('workoutLevel-3')">Open File</button>
+      </div>
+
+      <div class="dropdown-group">
+        <label for="syllabusAndUAT">Syllabus and UAT Section</label>
+        <select id="syllabusAndUAT">
+            <option value="">Select an item</option>
+            <option value="401-Syllabus-For-Learning-GA4.html">401. Syllabus For Learning GA4</option>
+            <option value="402-Syllabus-For-Learning-GTM.html">402. Syllabus For Learning GTM</option>
+            <option value="403-Requirements-on-General-Purpose-Website.html">403. Events and Conversion Tracking Requirements on General-Purpose Website</option>
+            <option value="404-Requirements-on-an-e-Commerce-Website.html">404. Events and Conversion Tracking Requirements on an e-Commerce Website</option>
+            <option value="405-Requirements-on-a-Blogging-Website.html">405. Events and Conversion Tracking Requirements on a Blogging Website</option>
+            <option value="406-UAT-Format.html">406. UAT Format</option>
+        </select>
+        <button onclick="openFile('syllabusAndUAT')">Open File</button>
+      </div>
+
+
+      <div class="dropdown-group">
+        <label for="ga4Schema">GA4 Schema Section</label>
+        <select id="ga4Schema">
+          <option value="">Select an item</option>
+          <option value="501-What-Is-GA4-Schema.html">501. About GA4 Schema</option>
+          <option value="502-GA4-Schema-Compliant-Events.html">502. GA4 Schema Compliant Events</option>
+          <option value="503-GA4-Schema-Add-To-Cart-Event.html">503. GA4 Schema : Add To Cart Event</option>
+          <option value="504-GA4-Schema-Add-To-Wishlist-Event.html">504. GA4 Schema : Add To Wishlist Event</option>
+          <option value="505-GA4-Schema-Begin-Checkout-Event.html">505. GA4 Schema : Begin Checkout Event</option>
+          <option value="506-GA4-Schema-Purchase-Event.html">506. GA4 Schema : Purchase Event</option>
+          <option value="507-GA4-Schema-Refund-Event.html">507. GA4 Schema : Refund Event</option>
+          <option value="508-GA4-Schema-View-Item-Event.html">508. GA4 Schema : View Item Event</option>
+          <option value="509-GA4-Schema-View-Item-List-Event.html">509. GA4 Schema : View Item List Event</option>
+          <option value="510-GA4-Schema-Select-Item-Event.html">510. GA4 Schema : Select Item Event</option>
+          <option value="511-GA4-Schema-Add-Payment-Info-Event.html">511. GA4 Schema : Add Payment Info Event</option>
+          <option value="512-GA4-Schema-Sign-Up-Event.html">512. GA4 Schema : Sign Up Event</option>
+          <option value="513-GA4-Schema-Login-Event.html">513. GA4 Schema : Login Event</option>
+          <option value="514-GA4-Schema-Subscribe-Event.html">514. GA4 Schema : Subscribe Event</option>
+          <option value="515-GA4-Schema-Share-Event.html">515. GA4 Schema : Share Event</option>
+          <option value="516-GA4-Schema-Form-Submission-Event.html">516. GA4 Schema : Form Submission Event</option>
+          <option value="517-GA4-Schema-Coupon-Applied-Event.html">517. GA4 Schema : Coupon Applied Event</option>
+          <option value="518-GA4-Schema-Compliant-VS-Non-Complaiant-Data-Layer.html">518. GA4 Schema Compliant VS Non-Compliant Data Layer</option>
+          <option value="519-custom-events-using-gtag-and-gtm.html">519. Custom events using gtag.js and GTM</option>
+          <option value="520-GA4-Schema-DLV-Product Details.html">520. GA4 Schema DLV Product Details</option>
+          <option value="521-GA4-Schema-DLV-Transaction-Details.html">521. GA4 Schema DLV Transaction Details</option>
+          <option value="522-GA4-Schema-Product-Interaction-Events.html">522. GA4 Schema Product Interaction Events</option>
+          <option value="523-GA4-Schema-Download-Events.html">523. GA4 Schema Download Events</option>
+          <option value="524-Resolve-Non-Complaiant-Data-Layer-Issues.html">524. Resolve Non-Compliant Data Layer Issues</option>
+          <option value="525-Sample-Mapping-Non-Compliant-Data-Layer.html">525. Sample Mapping Non-Compliant Data Layer</option>
+          <option value="526-Simulate-Ecommerce-Purchase.html">526. Simulate Ecommerce Purchase</option>
+        </select>
+        <button onclick="openFile('ga4Schema')">Open File</button>
+      </div>
+
+      <div class="dropdown-group">
+        <label for="ga4RecommendedEvents">GA4 Recommended Events</label>
+        <select id="ga4RecommendedEvents">
+          <option value="">Select an item</option>
+          <option value="634-view_promotion.html">634. View Promotion</option>
+          <option value="633-view_item_list.html">633. View Item List</option>
+          <option value="632-view_item.html">632. View Item</option>
+          <option value="631-view_cart.html">631. View Cart</option>
+          <option value="624-select_promotion.html">624. Select Promotion</option>
+          <option value="623-select_item.html">623. Select Item</option>
+          <option value="620-remove_from_cart.html">620. Remove From Cart</option>
+          <option value="619-refund.html">619. Refund</option>
+          <option value="617-purchase.html">617. Purchase</option>
+          <option value="605-begin_checkout.html">605. Begin Checkout</option>
+          <option value="604-add_to_wishlist.html">604. Add to Wishlist</option>
+          <option value="603-add_to_cart.html">603. Add to Cart</option>
+          <option value="602-add_shipping_info.html">602. Add Shipping Info</option>
+          <option value="601-add_payment_info.html">601. Add Payment Info</option>
+        </select>
+        <button onclick="openFile('ga4RecommendedEvents')">Open File</button>
+      </div>
+  </div>
+
+  <script>
+      function openFile(level) {
+          const dropdown = document.getElementById(level);
+          const selectedFile = dropdown.value;
+          if (selectedFile) {
+              window.open(selectedFile, '_blank');
+          } else {
+              alert("Please select a valid option.");
+          }
+      }
+  </script>
   
-  <label for="fileList-1">Select a syllabus file:</label>
-  <select id="fileList-1">
-    <option value="" disabled selected>Select a file</option>
-    <option value="401-Syllabus-For-Learning-GA4.html">401-Syllabus-For-Learning-GA4.html</option>
-    <option value="402-Syllabus-For-Learning-GTM.html">402-Syllabus-For-Learning-GTM.html</option>
-    <option value="403-Requirements-on-General-Purpose-Website.html">403-Requirements-on-General-Purpose-Website.html</option>
-    <option value="404-Requirements-on-an-e-Commerce-Website.html">404-Requirements-on-an-e-Commerce-Website.html</option>
-    <option value="405-Requirements-on-a-Blogging-Website.html">405-Requirements-on-a-Blogging-Website.html</option>
-    <option value="406-UAT-Format.html">406-UAT-Format.html</option>
-    <option value="407-Setup GA4 Ecommerce Tracking with GTM (As Per GA4 Schema).html">407-Setup GA4 Ecommerce Tracking with GTM (As Per GA4 Schema).html</option>
-  </select>
-  <button onclick="openFile(document.getElementById('fileList-1').value)">Open File</button>
-  
-  <label for="fileList-2">Select a tracking file:</label>
-  <select id="fileList-2">
-    <option value="" disabled selected>Select a file</option>
-    <option value="601-add_payment_info.html">601-add_payment_info.html</option>
-    <option value="602-add_shipping_info.html">602-add_shipping_info.html</option>
-    <option value="603-add_to_cart.html">603-add_to_cart.html</option>
-    <option value="604-add_to_wishlist.html">604-add_to_wishlist.html</option>
-    <option value="605-begin_checkout.html">605-begin_checkout.html</option>
-    <option value="617-purchase.html">617-purchase.html</option>
-    <option value="619-refund.html">619-refund.html</option>
-    <option value="620-remove_from_cart.html">620-remove_from_cart.html</option>
-    <option value="623-select_item.html">623-select_item.html</option>
-    <option value="624-select_promotion.html">624-select_promotion.html</option>
-    <option value="631-view_cart.html">631-view_cart.html</option>
-    <option value="632-view_item.html">632-view_item.html</option>
-    <option value="633-view_item_list.html">633-view_item_list.html</option>
-    <option value="634-view_promotion.html">634-view_promotion.html</option>
-  </select>
-  <button onclick="openFile(document.getElementById('fileList-2').value)">Open File</button>
 </body>
 </html>
