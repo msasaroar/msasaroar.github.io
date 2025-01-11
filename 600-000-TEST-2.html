@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources On GA4 & GTM</title>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
+    </script>
+    <!-- End Google Tag Manager -->
+    <script src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: green;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: #2a913f;
+            box-shadow: 0 8px 8px #2bcfbf;
+            border-radius: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: bold;
+            box-shadow: 0 8px 8px #2bcfbf;
+        }
+        h2 {
+            color: blue;
+        }
+        .dropdown-group {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        label {
+            width: 18%;
+            text-align: left;
+        }
+        select {
+            width: 65%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #2bcfbf;
+        }
+        button {
+            width: 15%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: rgb(0, 0, 0);
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #2bcfbf;
+        }
+        footer {
+            background-color: green;
+            color: blue;
+            padding: 5px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        footer a {
+            color: blue;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <h1>Resources For Learning Google Analytics 4 (GA4) & Google Tag Manager (GTM)</h1>
+    <h2>Explore tags, triggers, variables, events, and data layers!</h2>
+
+    <div class="container">
+        <div class="dropdown-group">
+            <label for="workoutLevel-1" aria-label="Workout Level 1">Workouts Level-1</label>
+            <select id="workoutLevel-1">
+                <option value="">Select an item</option>
+                <option value="101-ga4-config.html">101. GA4 Configuration</option>
+                <option value="102-page-view.html">102. Page View</option>
+                <!-- Other options here -->
+            </select>
+            <button onclick="openFile('workoutLevel-1')">Proceed</button>
+        </div>
+
+        <div class="dropdown-group">
+            <label for="workoutLevel-2" aria-label="Workout Level 2">Workouts Level-2</label>
+            <select id="workoutLevel-2">
+                <option value="">Select an item</option>
+                <option value="201-JavaScript-Error-Tag.html">201. JavaScript Error Tag</option>
+                <!-- Other options here -->
+            </select>
+            <button onclick="openFile('workoutLevel-2')">Proceed</button>
+        </div>
+        <!-- Additional dropdown groups as needed -->
+    </div>
+
+    <footer>
+        <p>
+            &copy; 2024 Md. Saiful Alam Saroar. All rights reserved. 
+            This demo website is provided solely for educational purposes related to Google Analytics and Conversion Tracking.
+        </p>
+        <a href="https://www.facebook.com/msasaroar" target="_blank">Facebook</a> | 
+        <a href="mailto:msasaroar@gmail.com">Email</a> | 
+        <a href="https://wa.me/8801917530031" target="_blank">WhatsApp</a>
+    </footer>
+
+    <script>
+        function openFile(selectId) {
+            const selectedValue = document.getElementById(selectId).value;
+            if (selectedValue) {
+                window.location.href = selectedValue;
+            } else {
+                alert("Please select an item to proceed.");
+            }
+        }
+    </script>
+</body>
+</html>
