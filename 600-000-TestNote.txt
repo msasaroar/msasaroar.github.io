@@ -1,0 +1,11 @@
+I didn't make any change in code.(Page No 526, 601)
+Both page working fine on preview mode.
+
+1. Showing click_any_element instead of purchase on debug view. (?????526)
+2. add_payment_info is showing on debug view. (601)
+
+3. purchase Related data layer including item showing on consol. (526)
+4. add_payment_info Related data layer including item showing on consol. (601)
+
+5. purchase is not showing on report. (526)
+6. add_payment_info is showing on report (not showing item). (601)
