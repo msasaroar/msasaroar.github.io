@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>View Item Event</title>
+  <title>Purchase Event</title>
   <script>
     // Google Tag Manager - GTM-PPBVCLNF
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'}); 
@@ -46,24 +46,26 @@
     main {
       margin: 125px 20px;
       text-align: center;
-    }
-    .data-container {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      justify-content: space-between;
       gap: 20px;
     }
-    .data-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    .section {
+      width: 45%;
+    }
+    table {
+      width: 100%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      border: 1px solid #ddd;
+    }
+    table th, table td {
       border: 1px solid #ddd;
       padding: 10px;
-      width: 150px;
-      text-align: center;
+      text-align: left;
     }
-    .data-item > div {
-      margin: 5px 0;
+    table th {
+      background-color: #f4f4f4;
     }
     button {
       background-color: orange;
@@ -73,7 +75,7 @@
       font-size: 16px;
       cursor: pointer;
       border-radius: 5px;
-      margin: 20px;
+      margin: 10px 0;
     }
     button:hover {
       background-color: blue;
@@ -99,16 +101,31 @@
   
   <header>
     <a href="index.html">Home</a>
-    <h1>View Item</h1>
+    <h1>Purchase Event</h1>
   </header>
 
   <main>
-    <h2>Item Information</h2>
-    <div class="data-container" id="data-layer-display">
-      <!-- DataLayer information will be dynamically added here -->
+    <!-- Data Layer Information Section -->
+    <div class="section">
+      <h2>Purchase Information</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Property</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody id="data-layer-display">
+          <!-- DataLayer information will be dynamically added here -->
+        </tbody>
+      </table>
     </div>
-    <button id="trigger-event">Trigger View Item Event</button>
-    <button onclick="navigateToURL('view_item')">Show Google Reference</button>
+
+    <!-- Action Buttons Section -->
+    <div class="section">
+      <button id="trigger-event">Trigger Purchase Event</button>
+      <button onclick="navigateToURL('purchase')">Show Google Reference</button>
+    </div>
   </main>
 
   <footer>
@@ -117,11 +134,15 @@
 
   <script>
     // Initialize dataLayer with the provided data
-    const eventData = {
-      event: "view_item",
+    const purchaseData = {
+      event: "purchase",
       ecommerce: {
+        transaction_id: "T_12345",
+        value: 72.05,
+        tax: 3.60,
+        shipping: 5.99,
         currency: "USD",
-        value: 30.03,
+        coupon: "SUMMER_SALE",
         items: [
           {
             item_id: "SKU_12345",
@@ -142,68 +163,64 @@
             location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
             price: 10.01,
             quantity: 3
+          },
+          {
+            item_id: "SKU_12346",
+            item_name: "Google Grey Women's Tee",
+            affiliation: "Google Merchandise Store",
+            coupon: "SUMMER_FUN",
+            discount: 3.33,
+            index: 1,
+            item_brand: "Google",
+            item_category: "Apparel",
+            item_category2: "Adult",
+            item_category3: "Shirts",
+            item_category4: "Crew",
+            item_category5: "Short sleeve",
+            item_list_id: "related_products",
+            item_list_name: "Related Products",
+            item_variant: "gray",
+            location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
+            price: 21.01,
+            promotion_id: "P_12345",
+            promotion_name: "Summer Sale",
+            quantity: 2
           }
         ]
       }
     };
 
-    dataLayer.push(eventData);
+    dataLayer.push(purchaseData);
 
-    // Display dataLayer information in the side-by-side layout
+    // Display dataLayer information in the table
     const displayDataLayer = () => {
-      const container = document.getElementById('data-layer-display');
-      container.innerHTML = '';
+      const tbody = document.getElementById('data-layer-display');
+      tbody.innerHTML = '';
 
-      const ecommerce = eventData.ecommerce;
+      const ecommerce = purchaseData.ecommerce;
       for (const key in ecommerce) {
         if (Array.isArray(ecommerce[key])) {
           ecommerce[key].forEach((item, index) => {
             for (const prop in item) {
-              const dataItem = document.createElement('div');
-              dataItem.classList.add('data-item');
-              let label = prop.replace(/_/g, " ").toUpperCase();
-              // Make the label more readable and descriptive
-              if (label === "ITEM_ID") label = "Product ID";
-              if (label === "ITEM_NAME") label = "Product Name";
-              if (label === "AFFILIATION") label = "Store Affiliation";
-              if (label === "DISCOUNT") label = "Product Discount";
-              if (label === "ITEM_BRAND") label = "Brand";
-              if (label === "ITEM_CATEGORY") label = "Main Category";
-              if (label === "ITEM_CATEGORY2") label = "Sub Category 1";
-              if (label === "ITEM_CATEGORY3") label = "Sub Category 2";
-              if (label === "ITEM_CATEGORY4") label = "Sub Category 3";
-              if (label === "ITEM_CATEGORY5") label = "Sub Category 4";
-              if (label === "ITEM_LIST_ID") label = "Item List ID";
-              if (label === "ITEM_LIST_NAME") label = "Item List Name";
-              if (label === "ITEM_VARIANT") label = "Variant";
-              if (label === "LOCATION_ID") label = "Location ID";
-              if (label === "PRICE") label = "Price";
-              if (label === "QUANTITY") label = "Quantity";
-
-              dataItem.innerHTML = `<div><strong>${label}</strong></div><div>${item[prop]}</div>`;
-              container.appendChild(dataItem);
+              const row = document.createElement('tr');
+              row.innerHTML = `<td>${key}[${index}].${prop}</td><td>${item[prop]}</td>`;
+              tbody.appendChild(row);
             }
           });
         } else {
-          const dataItem = document.createElement('div');
-          dataItem.classList.add('data-item');
-          let label = key.replace(/_/g, " ").toUpperCase();
-          if (label === "CURRENCY") label = "Currency";
-          if (label === "VALUE") label = "Total Value";
-          if (label === "COUPON") label = "Coupon Code";
-
-          dataItem.innerHTML = `<div><strong>${label}</strong></div><div>${ecommerce[key]}</div>`;
-          container.appendChild(dataItem);
+          const row = document.createElement('tr');
+          row.innerHTML = `<td>${key}</td><td>${ecommerce[key]}</td>`;
+          tbody.appendChild(row);
         }
       }
     };
 
     displayDataLayer();
 
-    // Trigger the view_item event
+    // Trigger the purchase event
     document.getElementById('trigger-event').addEventListener('click', () => {
-      dataLayer.push(eventData);
-      alert('view_item event triggered!');
+      dataLayer.push(purchaseData);
+      alert('purchase event triggered!');
     });
   </script>
 </body>

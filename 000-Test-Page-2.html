@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lead Generation Example</title>
+  <script>
+    // Initialize the dataLayer for GTM
+    window.dataLayer = window.dataLayer || [];
+  </script>
+  <!-- Include GTM script -->
+  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-XXXXXX"></script>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript fallback) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXX"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <h1>Newsletter Signup</h1>
+  <p>Sign up to receive updates and exclusive offers:</p>
+  
+  <!-- Lead form -->
+  <form id="leadForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    // Add an event listener to the form submission
+    document.getElementById('leadForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form from actually submitting
+
+      // Push the close_convert_lead event to the dataLayer
+      window.dataLayer.push({
+        event: 'close_convert_lead',
+        value: 0, // Optional: Specify a monetary value if applicable
+        currency: 'USD', // Optional: Specify the currency
+        lead_type: 'newsletter', // Custom parameter for lead type
+        method: 'form_submit' // Custom parameter for submission method
+      });
+
+      // Optionally display a confirmation message
+      alert('Thank you for signing up! Your submission has been received.');
+    });
+  </script>
+</body>
+</html>
