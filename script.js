@@ -2,6 +2,7 @@
 function openFile(fileName) {
     if (fileName) {
       window.location.href = fileName;
+      alert(fileName);
     } else {
       alert("Please select a file first.");
     }
