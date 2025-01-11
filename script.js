@@ -20,3 +20,13 @@ function loadScript() {
   script.src = 'script.js';
   document.body.appendChild(script); // Append the script to the body
 }
+
+// Get today's date and time
+function formatDate() {
+  const today = new Date();
+  return today.toLocaleDateString(); // Formats the date
+}
+
+function formatTime() {
+  const today = new Date();
+  return today.toLocaleTimeString(); // Formats the time

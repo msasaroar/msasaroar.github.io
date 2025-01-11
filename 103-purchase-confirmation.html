@@ -11,7 +11,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Purchase Confirmation</title>
+  <title>Non-Compliant Purchase Confirmation</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -98,7 +98,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <header>
   <a href="index.html" class="home-button">Home</a>
-  <h1>Purchase Confirmation</h1>
+  <h1>Non-Compliant Purchase Confirmation</h1>
 </header>
 
 <div class="confirmation-container">
@@ -117,6 +117,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div id="footer"></div>
 <script>
+    // Missing GA4-compliant event tracking
+    console.log("No purchase event tracking implemented");
     fetch('footer.html')
         .then(response => response.text())
         .then(data => {

@@ -2,30 +2,44 @@
 <html lang="en">
 <head>
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PPBVCLNF');</script>
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
+    </script>
     <!-- End Google Tag Manager -->
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page View Tag Practice</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        /* মূল CSS */
+        html, body {
+            height: 98%;
             margin: 0;
             padding: 0;
-            background-color: white;
-            color: black;
             display: flex;
             flex-direction: column;
-            height: 100vh;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: black;
         }
 
         header {
-            position: fixed;
+            //position: fixed;
             top: 0;
             left: 0;
             width: 100%;
@@ -37,16 +51,18 @@
         }
 
         section {
-            margin: 80px 20px 20px; /* Offset for fixed header */
-            padding: 20px;
+            flex: 1; /* Content বাকি জায়গা নেবে */
+            margin: 30px auto;
+            padding: 50px;
+            max-width: 800px;
             border-radius: 10px;
-            background: white;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background: rgb(26, 175, 225);
+            box-shadow: 0 4px 6px rgba(5, 95, 136, 0.1);
+            text-align: center;
         }
 
         section h2 {
             color: black;
-            text-align: center;
         }
 
         .button {
@@ -58,36 +74,47 @@
             background-color: orange;
             border: none;
             border-radius: 5px;
-            text-align: center;
             text-decoration: none;
             cursor: pointer;
         }
 
         .button:hover {
             background-color: white;
+            color: black;
         }
 
         .home-button {
-            position: fixed;
-            top: 10px;
-            left: 10px;
             background-color: orange;
-            color: black;
+            color: blue;
             padding: 10px 15px;
             text-decoration: none;
             border-radius: 5px;
+            position: fixed;
+            top: 10px;
+            left: 10px;
         }
 
         .home-button:hover {
-            background-color: white;
+            background-color: blue;
+            color: orange;
+        }
+
+        #footer {
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 10px 0;
+            margin-top: auto; /* Footer বটমে রাখে */
+            width: 100%;
         }
     </style>
 </head>
 
 <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" 
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
     <!-- End Google Tag Manager (noscript) -->
 
     <a href="index.html" class="home-button">Home</a>
@@ -99,15 +126,23 @@
 
     <section>
         <h2>Page View Tag Simulation</h2>
-        <div id="message" style="text-align: center;">
+        <div id="message">
             <p>Simulate a page view event by loading this page.</p>
         </div>
     </section>
 
-    <div id="footer"></div>
+    <div id="footer">
+        <p>Footer Content Loaded Dynamically</p>
+    </div>
     <script>
+        // Footer লোড করার জন্য Fetch API ব্যবহার
         fetch('footer.html')
-            .then(response => response.text())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
             .then(data => {
                 document.getElementById('footer').innerHTML = data;
             })
