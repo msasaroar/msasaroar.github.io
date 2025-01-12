@@ -3,23 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Purchase Event - GA4 Compliant</title>
+  <title>Purchase Event</title>
   <script>
     // Google Tag Manager - GTM-PPBVCLNF
-    (function(w, d, s, l, i) {
-      w[l] = w[l] || [];
-      w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-      var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
-      j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-      f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'}); 
+    var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); 
+    })(window,document,'script','dataLayer','GTM-PPBVCLNF');
   </script>
+  <script src="script.js"></script>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
+      background-color: white;
+      color: black;
       margin: 0;
       padding: 0;
     }
@@ -27,32 +24,50 @@
       position: fixed;
       top: 0;
       width: 100%;
-      background-color: #0073e6;
+      background-color: green;
       color: white;
       text-align: center;
-      padding: 15px 0;
+      padding: 10px 0;
     }
     header a {
       position: absolute;
-      top: 15px;
-      left: 15px;
-      background-color: #ffa500;
-      color: #333;
+      top: 10px;
+      left: 10px;
+      background-color: orange;
+      color: blue;
       text-decoration: none;
       padding: 5px 10px;
       border-radius: 5px;
     }
     header a:hover {
-      background-color: #333;
-      color: #ffa500;
+      background-color: blue;
+      color: orange;
     }
     main {
-      margin: 100px 20px;
+      margin: 125px 20px;
       text-align: center;
     }
+    .data-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .data-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid #ddd;
+      padding: 10px;
+      width: 150px;
+      text-align: center;
+    }
+    .data-item > div {
+      margin: 5px 0;
+    }
     button {
-      background-color: #0073e6;
-      color: white;
+      background-color: orange;
+      color: blue;
       border: none;
       padding: 10px 20px;
       font-size: 16px;
@@ -61,91 +76,162 @@
       margin: 20px;
     }
     button:hover {
-      background-color: #005bb5;
+      background-color: blue;
+      color: orange;
     }
     footer {
       position: fixed;
       bottom: 0;
       width: 100%;
-      background-color: #333;
-      color: white;
+      background-color: #f1f1f1;
       text-align: center;
-      padding: 10px 0;
+      height: 50px;
+    }
+    footer object {
+      width: 100%;
+      height: 100%;
     }
   </style>
 </head>
 <body>
   <!-- Google Tag Manager NoScript -->
-  <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-  </noscript>
-
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  
   <header>
     <a href="index.html">Home</a>
-    <h1>Purchase Event</h1>
+    <h1>Purchase</h1>
   </header>
 
   <main>
     <h2>Purchase Information</h2>
-    <p>Click the button below to simulate a purchase event being sent to GA4.</p>
+    <div class="data-container" id="data-layer-display">
+      <!-- DataLayer information will be dynamically added here -->
+    </div>
     <button id="triggerPurchaseEvent">Trigger Purchase Event</button>
+    <button onclick="navigateToURL('purchase')">Show Google Reference</button>
   </main>
 
   <footer>
-    &copy; 2024 Md. Saiful Alam Saroar. All rights reserved.
+    <object type="text/html" data="footer.html"></object>
   </footer>
 
   <script>
-    // Initialize the GA4-compliant data layer
-    const dataLayer = window.dataLayer || [];
+    // Initialize dataLayer with the provided data
     const purchaseData = {
       event: "purchase",
       ecommerce: {
         transaction_id: "T_12345",
         value: 72.05,
-        currency: "USD",
         tax: 3.60,
         shipping: 5.99,
+        currency: "USD",
         coupon: "SUMMER_SALE",
         items: [
           {
             item_id: "SKU_12345",
             item_name: "Stan and Friends Tee",
+            affiliation: "Google Merchandise Store",
+            coupon: "SUMMER_FUN",
+            discount: 2.22,
+            index: 0,
             item_brand: "Google",
             item_category: "Apparel",
             item_category2: "Adult",
             item_category3: "Shirts",
+            item_category4: "Crew",
+            item_category5: "Short sleeve",
+            item_list_id: "related_products",
+            item_list_name: "Related Products",
             item_variant: "green",
-            affiliation: "Google Merchandise Store",
+            location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
             price: 10.01,
-            quantity: 3,
-            discount: 2.22,
-            coupon: "SUMMER_FUN"
+            quantity: 3
           },
           {
             item_id: "SKU_12346",
             item_name: "Google Grey Women's Tee",
+            affiliation: "Google Merchandise Store",
+            coupon: "SUMMER_FUN",
+            discount: 3.33,
+            index: 1,
             item_brand: "Google",
             item_category: "Apparel",
             item_category2: "Adult",
             item_category3: "Shirts",
+            item_category4: "Crew",
+            item_category5: "Short sleeve",
+            item_list_id: "related_products",
+            item_list_name: "Related Products",
             item_variant: "gray",
-            affiliation: "Google Merchandise Store",
+            location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
             price: 21.01,
-            quantity: 2,
-            discount: 3.33,
             promotion_id: "P_12345",
-            promotion_name: "Summer Sale"
+            promotion_name: "Summer Sale",
+            quantity: 2
           }
         ]
       }
     };
 
-    // Trigger the purchase event on button click
+    dataLayer.push(purchaseData);
+
+    // Display dataLayer information in a side-by-side layout
+    const displayDataLayer = () => {
+      const container = document.getElementById('data-layer-display');
+      container.innerHTML = '';
+
+      const ecommerce = purchaseData.ecommerce;
+      for (const key in ecommerce) {
+        if (Array.isArray(ecommerce[key])) {
+          ecommerce[key].forEach((item, index) => {
+            for (const prop in item) {
+              const dataItem = document.createElement('div');
+              dataItem.classList.add('data-item');
+              let label = prop.replace(/_/g, " ").toUpperCase();
+              // Make the label more readable and descriptive
+              if (label === "ITEM_ID") label = "Product ID";
+              if (label === "ITEM_NAME") label = "Product Name";
+              if (label === "AFFILIATION") label = "Store Affiliation";
+              if (label === "DISCOUNT") label = "Product Discount";
+              if (label === "ITEM_BRAND") label = "Brand";
+              if (label === "ITEM_CATEGORY") label = "Main Category";
+              if (label === "ITEM_CATEGORY2") label = "Sub Category 1";
+              if (label === "ITEM_CATEGORY3") label = "Sub Category 2";
+              if (label === "ITEM_CATEGORY4") label = "Sub Category 3";
+              if (label === "ITEM_CATEGORY5") label = "Sub Category 4";
+              if (label === "ITEM_LIST_ID") label = "Item List ID";
+              if (label === "ITEM_LIST_NAME") label = "Item List Name";
+              if (label === "ITEM_VARIANT") label = "Variant";
+              if (label === "LOCATION_ID") label = "Location ID";
+              if (label === "PRICE") label = "Price";
+              if (label === "QUANTITY") label = "Quantity";
+
+              dataItem.innerHTML = `<div><strong>${label}</strong></div><div>${item[prop]}</div>`;
+              container.appendChild(dataItem);
+            }
+          });
+        } else {
+          const dataItem = document.createElement('div');
+          dataItem.classList.add('data-item');
+          let label = key.replace(/_/g, " ").toUpperCase();
+          if (label === "CURRENCY") label = "Currency";
+          if (label === "VALUE") label = "Total Value";
+          if (label === "COUPON") label = "Coupon Code";
+
+          dataItem.innerHTML = `<div><strong>${label}</strong></div><div>${ecommerce[key]}</div>`;
+          container.appendChild(dataItem);
+        }
+      }
+    };
+
+    displayDataLayer();
+
+    // Trigger the purchase event
     document.getElementById('triggerPurchaseEvent').addEventListener('click', () => {
       dataLayer.push(purchaseData);
-      alert('GA4-compliant purchase event has been triggered!');
+      alert('purchase event triggered!');
     });
   </script>
 </body>
 </html>
+ 
