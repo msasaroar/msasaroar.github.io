@@ -20,7 +20,6 @@
         })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
     </script>
     <!-- End Google Tag Manager -->
-
     <script src="script.js"></script>
     <style>
         body {
@@ -37,12 +36,29 @@
             box-shadow: 0 8px 8px #2bcfbf;
             border-radius: 20px;
         }
+/*
         h1 {
             font-weight: bold;
             text-align: center;
             margin-bottom: 30px;
+            color: rgb(0, 0, 0);
             box-shadow: 0 8px 8px #2bcfbf;
         }
+*/
+        h1 {
+            font-weight: bold;
+            text-align: center; /* Aligns text horizontally */
+            margin: 0; /* Removes unnecessary margin */
+            padding: 0; /* Removes unnecessary padding */
+            color: black;
+            box-shadow: 0 8px 8px #2bcfbf;
+            display: flex; /* Enables flexbox */
+            align-items: flex-start; /* Aligns text to the top */
+            justify-content: center; /* Centers text horizontally */
+            height: 100%; /* Ensures the header space is fully utilized */
+        }
+
+/*
         h2 {
             text-align: center;
             margin-bottom: 30px;
@@ -50,6 +66,21 @@
             font-weight: bold;
             box-shadow: 0 8px 8px #2bcfbf;
         }
+*/
+        h2 {
+            font-weight: bold;
+            text-align: center; /* Aligns text horizontally */
+            margin: 0; /* Removes unnecessary margin */
+            padding: 0; /* Removes unnecessary padding */
+            color: black;
+            box-shadow: 0 8px 8px #2bcfbf;
+            display: flex; /* Enables flexbox */
+            align-items: flex-start; /* Aligns text to the top */
+            justify-content: center; /* Centers text horizontally */
+            height: 100%; /* Ensures the header space is fully utilized */
+        }
+
+
         .dropdown-group {
             margin-bottom: 10px;
             display: flex;
@@ -82,6 +113,7 @@
             background-color: #2bcfbf;
         }
     </style>
+
 </head>
 
 <body>
@@ -261,11 +293,13 @@
   </div>
 
 
-  <footer>
-    <p>&copy; 2024 Md. Saiful Alam Saroar. All rights reserved. This demo website is provided solely for educational purposes related to Google Analytics and Conversion Tracking.</p>
-    <a href="https://www.facebook.com/msasaroar" target="_blank">Facebook</a> |
-    <a href="mailto:msasaroar@gmail.com">Email</a> |
-    <a href="https://wa.me/8801917530031" target="_blank">WhatsApp</a>
+<footer style="background-color: green; color: orange; padding: 0px; text-align: center; height: 25px;">
+    <p style="font-family: Arial, sans-serif; color: orange; font-size: 12px;">
+        &copy; 2024 Md. Saiful Alam Saroar. All rights reserved. This demo website is provided solely for educational and demonstration purposes related to Google Analytics and Conversion Tracking.
+    </p>
+    <a href="https://www.facebook.com/msasaroar" target="_blank" style="background-color: green; color: orange; text-decoration: none; margin: 0 5px;">Facebook</a> | 
+    <a href="mailto:msasaroar@gmail.com" style="background-color: green; color: orange; text-decoration: none; margin: 0 5px;">Email</a> | 
+    <a href="https://wa.me/8801917530031" target="_blank" style="background-color: green; color: orange; text-decoration: none; margin: 0 5px;">WhatsApp</a>
 </footer>
 
 <script>

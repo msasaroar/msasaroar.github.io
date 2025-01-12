@@ -3,3 +3,29 @@
 03. Prepare a requirement specification for Events and Conversion Tracking Requirements on an blogging web site. Present answer document as an html page.
 04. Prepare a standard format for User Acceptance Test for Events and Conversion Tracking Requirements. Present answer document as an html page.
 
+Q2GPT >> 
+When mapping is not a must in Google Tag Manager (GTM) to send specific custom data (parameters) from data layer or other sources to Google Analytics (GA4) ?
+
+
+Q2GPT >>
+Tag Type : Google Analytics: GA4 Event
+
+Firing Trigger Name: Trigger | 526 | Ecommerce Purchase
+Trigger Type: Custom Event
+Evant Name: Purchase
+Trigger fires on : Some Custom Events
+
+I want to push data layer of the custom event into google analytics.
+What if the event name configuring tag in GTM be "purchase" ? 
+
+
+Q2GPT >>
+Tag Type : Google Analytics: GA4 Event
+
+Firing Trigger Name: Trigger | 526 | Ecommerce Purchase
+Trigger Type: Custom Event
+Evant Name: Purchase
+Trigger fires on : Some Custom Events
+
+I want to push data layer of the custom event into google analytics.
+What should be the event name configuring tag in GTM ? 
