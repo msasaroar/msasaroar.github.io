@@ -107,7 +107,7 @@
     <div class="data-container" id="data-layer-display">
       <!-- DataLayer information will be dynamically added here -->
     </div>
-    <button id="trigger-event">Trigger Refund Event</button>
+    <button id="triggerRefundEevent">Trigger Refund Event</button>
     <button onclick="navigateToURL('refund')">Show Google Reference</button>
   </main>
 
@@ -208,7 +208,7 @@
     displayDataLayer();
 
     // Trigger the refund event
-    document.getElementById('trigger-event').addEventListener('click', () => {
+    document.getElementById('triggerRefundEevent').addEventListener('click', () => {
       dataLayer.push(eventData);
       alert('refund event triggered!');
     });
