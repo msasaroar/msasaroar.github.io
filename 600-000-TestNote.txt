@@ -9,3 +9,11 @@ Both page working fine on preview mode.
 
 5. purchase is not showing on report. (526)
 6. add_payment_info is showing on report (not showing item). (601)
+
+
+
+debug => 526 => purchase + purchase => Doesn't Fire
+debug => 526 => purchase + purchase_1 => Fired => user defined parameter passed + data layer item info not passed
+
+debug => 601 => add_payment_info + add_payment_info => Fired => user defined parameter passed + data layer item info passed
+debug => 601 => add_payment_info + add_payment_info_1 => Fired => user defined parameter passed + data layer item info not passed
