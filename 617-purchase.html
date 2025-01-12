@@ -107,7 +107,7 @@
     <div class="data-container" id="data-layer-display">
       <!-- DataLayer information will be dynamically added here -->
     </div>
-    <button id="trigger-event">Trigger Purchase Event</button>
+    <button id="triggerPurchaseEvent">Trigger Purchase Event</button>
     <button onclick="navigateToURL('purchase')">Show Google Reference</button>
   </main>
 
@@ -227,7 +227,7 @@
     displayDataLayer();
 
     // Trigger the purchase event
-    document.getElementById('trigger-event').addEventListener('click', () => {
+    document.getElementById('triggerPurchaseEvent').addEventListener('click', () => {
       dataLayer.push(purchaseData);
       alert('purchase event triggered!');
     });
