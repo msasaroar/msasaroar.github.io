@@ -107,7 +107,7 @@
     <div class="data-container" id="data-layer-display">
       <!-- DataLayer information will be dynamically added here -->
     </div>
-    <button id="trigger-event">Trigger View Promotion Event</button>
+    <button id="triggerViewPromotionEvent">Trigger View Promotion Event</button>
     <button onclick="navigateToURL('view_promotion')">Show Google Reference</button>
   </main>
 
@@ -204,7 +204,7 @@
     displayDataLayer();
 
     // Trigger the view_promotion event
-    document.getElementById('trigger-event').addEventListener('click', () => {
+    document.getElementById('triggerViewPromotionEvent').addEventListener('click', () => {
       dataLayer.push(eventData);
       alert('view_promotion event triggered!');
     });

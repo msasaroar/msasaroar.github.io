@@ -107,7 +107,7 @@
     <div class="data-container" id="data-layer-display">
       <!-- DataLayer information will be dynamically added here -->
     </div>
-    <button id="trigger-event">Trigger Add to Wishlist Event</button>
+    <button id="triggerAddToWishlistEvent">Trigger Add to Wishlist Event</button>
     <button onclick="navigateToURL('add_to_wishlist')">Show Google Reference</button>
   </main>
 
@@ -201,7 +201,7 @@
     displayDataLayer();
 
     // Trigger the add_to_wishlist event
-    document.getElementById('trigger-event').addEventListener('click', () => {
+    document.getElementById('triggerAddToWishlistEvent').addEventListener('click', () => {
       dataLayer.push(eventData);
       alert('add_to_wishlist event triggered!');
     });

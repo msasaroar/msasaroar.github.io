@@ -107,7 +107,7 @@
     <div class="data-container" id="data-layer-display">
       <!-- DataLayer information will be dynamically added here -->
     </div>
-    <button id="trigger-event">Trigger Remove from Cart Event</button>
+    <button id="triggerRemoveFromCartEvent">Trigger Remove from Cart Event</button>
     <button onclick="navigateToURL('remove_from_cart')">Show Google Reference</button>
   </main>
 
@@ -201,7 +201,7 @@
     displayDataLayer();
 
     // Trigger the remove_from_cart event
-    document.getElementById('trigger-event').addEventListener('click', () => {
+    document.getElementById('triggerRemoveFromCartEvent').addEventListener('click', () => {
       dataLayer.push(eventData);
       alert('remove_from_cart event triggered!');
     });

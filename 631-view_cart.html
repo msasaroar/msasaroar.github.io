@@ -107,7 +107,7 @@
     <div class="data-container" id="data-layer-display">
       <!-- DataLayer information will be dynamically added here -->
     </div>
-    <button id="trigger-event">Trigger View Cart Event</button>
+    <button id="triggerViewCartEvent">Trigger View Cart Event</button>
     <button onclick="navigateToURL('view_cart')">Show Google Reference</button>
   </main>
 
@@ -201,7 +201,7 @@
     displayDataLayer();
 
     // Trigger the view_cart event
-    document.getElementById('trigger-event').addEventListener('click', () => {
+    document.getElementById('triggerViewCartEvent').addEventListener('click', () => {
       dataLayer.push(eventData);
       alert('view_cart event triggered!');
     });

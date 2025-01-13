@@ -107,7 +107,7 @@
     <div class="data-container" id="data-layer-display">
       <!-- DataLayer information will be dynamically added here -->
     </div>
-    <button id="trigger-event">Trigger Select Promotion Event</button>
+    <button id="triggerSelectPromotionEvent">Trigger Select Promotion Event</button>
     <button onclick="navigateToURL('select_promotion')">Show Google Reference</button>
   </main>
 
@@ -203,7 +203,7 @@
     displayDataLayer();
 
     // Trigger the select_promotion event
-    document.getElementById('trigger-event').addEventListener('click', () => {
+    document.getElementById('triggerSelectPromotionEvent').addEventListener('click', () => {
       dataLayer.push(eventData);
       alert('select_promotion event triggered!');
     });

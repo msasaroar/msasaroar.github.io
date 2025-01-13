@@ -107,7 +107,7 @@
     <div class="data-container" id="data-layer-display">
       <!-- DataLayer information will be dynamically added here -->
     </div>
-    <button id="trigger-event">Trigger Begin Checkout Event</button>
+    <button id="triggerBeginCheckoutEvent">Trigger Begin Checkout Event</button>
     <button onclick="navigateToURL('begin_checkout')">Show Google Reference</button>
   </main>
 
@@ -202,7 +202,7 @@
     displayDataLayer();
 
     // Trigger the begin_checkout event
-    document.getElementById('trigger-event').addEventListener('click', () => {
+    document.getElementById('triggerBeginCheckoutEvent').addEventListener('click', () => {
       dataLayer.push(eventData);
       alert('begin_checkout event triggered!');
     });
