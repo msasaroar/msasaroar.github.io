@@ -1,133 +1,88 @@
+<!-- Signup Confirmation Page -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PPBVCLNF');</script>
-<!-- End Google Tag Manager -->
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup Confirmation</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: white;
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-    }
-
-    header {
-        background-color: green;
-        text-align: center;
-        position: fixed;
-        width: 100%;
-        top: 0;
-        color: black;
-        padding: 10px;
-    }
-
-    .confirmation-container {
-        background: green;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        max-width: 400px;
-        text-align: center;
-        margin: auto;
-        flex: 1;
-    }
-
-    h1 {
-        color: black;
-        margin-bottom: 10px;
-    }
-
-    p {
-        color: black;
-        margin: 10px 0;
-    }
-
-    .order-details h2 {
-        margin-bottom: 10px;
-        color: black;
-    }
-
-    .order-details p {
-        margin: 5px 0;
-    }
-
-    .button {
-        display: inline-block;
-        margin-top: 20px;
-        padding: 10px 20px;
-        background-color: orange;
-        color: black;
-        text-decoration: none;
-        border-radius: 5px;
-        transition: background 0.3s;
-    }
-
-    .button:hover {
-        background-color: white;
-        color: black;
-    }
-
-    .home-button {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        padding: 5px 10px;
-        background-color: orange;
-        color: black;
-        text-decoration: none;
-        border-radius: 3px;
-        transition: background 0.3s;
-    }
-
-    .home-button:hover {
-        background-color: white;
-        color: black;
-    }
-</style>
-
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-PPBVCLNF');
+    </script>
+    <!-- End Google Tag Manager -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        .confirmation-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .confirmation-message {
+            background: green;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            text-align: center;
+        }
+        h1 {
+            color: black;
+        }
+        p {
+            color: white;
+        }
+    </style>
 </head>
 <body>
-
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-    
-    <header>
-        <a href="index.html" class="home-button">Home</a>
-    </header>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" 
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <div class="confirmation-container">
-        <h1>Signup Successful!</h1>
-        <p>Thank you for joining us, <span id="user-name">[User Name]</span>.</p>
-        <p>A confirmation email has been sent to your email address.</p>
-        <p>Please check your inbox (or spam folder) to verify your email.</p>
-        <a href="index.html" class="button">Return to Home</a>
+        <div class="confirmation-message">
+            <h1>Signup Confirmation</h1>
+            <p>Thank you for signing up! Your account has been successfully created.</p>
+            <div id="signup-details">
+                <!-- User details will be displayed here -->
+            </div>
+        </div>
     </div>
 
-    <div id="footer"></div>
     <script>
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer').innerHTML = data;
-            })
-            .catch(error => console.error('Error loading footer:', error));
-    </script>
+        // Retrieve and display signup details from sessionStorage
+        const signupDetails = JSON.parse(sessionStorage.getItem("signupDetails"));
+        if (signupDetails) {
+            const detailsDiv = document.getElementById("signup-details");
+            detailsDiv.innerHTML = `
+                <p><strong>First Name:</strong> ${signupDetails.firstName}</p>
+                <p><strong>Last Name:</strong> ${signupDetails.lastName}</p>
+                <p><strong>Email:</strong> ${signupDetails.email}</p>
+            `;
+        }
 
-    <!-- No dataLayer events or custom tracking logic -->
+        // Push signup confirmation event to dataLayer for GA4
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: "signup_confirmed",
+            signup_details: {
+                confirmation_time: new Date().toISOString()
+            }
+        });
+    </script>
 </body>
 </html>

@@ -21,8 +21,8 @@
             background-color: #f9f9f9;
         }
         header {
-            background-color: #333;
-            color: #fff;
+            background-color: green;
+            color: black;
             padding: 10px 20px;
             text-align: center;
         }
@@ -30,10 +30,10 @@
             padding: 20px;
         }
         .form-container {
-            max-width: 400px;
+            max-width: 500px;
             margin: 0 auto;
-            background: #fff;
-            padding: 20px;
+            background: green;
+            padding: 40px;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
@@ -44,17 +44,20 @@
             border: 1px solid #ddd;
             border-radius: 4px;
         }
+
         button {
+            background-color: orange;
+            color: blue;
             padding: 10px 20px;
-            background-color: #28a745;
-            color: #fff;
-            border: none;
             border-radius: 4px;
+            border: none;
             cursor: pointer;
         }
         button:hover {
-            background-color: #218838;
+            background-color: blue;
+            color: orange;
         }
+
     </style>
 </head>
 <body>
@@ -73,7 +76,7 @@
         <!-- Signup Page -->
         <div class="form-container">
             <h2>Create Your Account</h2>
-            <form id="signup-form" action="signup-confirmation.html" method="get" onsubmit="trackSignup()">
+            <form id="signup-form" action="105-signup-confirmation.html" method="get" onsubmit="trackSignup()">
                 <input type="text" name="first_name" placeholder="First Name" required>
                 <input type="text" name="last_name" placeholder="Last Name" required>
                 <input type="email" name="email" placeholder="Email Address" required>
