@@ -1,122 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-PPBVCLNF');</script>
-  <!-- End Google Tag Manager -->
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Purchase Confirmation</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      line-height: 1.6;
       margin: 0;
       padding: 0;
-      background-color: white;
-      color: black;
+      background-color: #f9f9f9;
+      color: #333;
     }
 
     header {
-      background-color: green;
-      color: black;
+      background-color: #4CAF50;
+      color: white;
       text-align: center;
-      padding: 10px 0;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
+      padding: 20px 0;
     }
 
-    .confirmation-container {
-      text-align: center;
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
       padding: 20px;
-      max-width: 500px;
-      margin: 80px auto 80px; /* Adjusted for header and footer space */
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
     }
 
-    .confirmation-container h1 {
-      color: black;
+    h1 {
+      color: #4CAF50;
     }
 
-    .confirmation-container p {
-      color: black;
-    }
-
-    .confirmation-container .order-summary {
+    .order-summary {
       margin-top: 20px;
-      text-align: left;
-      font-size: 14px;
       border: 1px solid #ddd;
-      padding: 10px;
       border-radius: 5px;
-      background: #f4f4f4;
-      color: black;
+      padding: 15px;
+      background-color: #f4f4f4;
     }
 
-    .button, button {
-      background-color: orange;
-      color: black;
+    .order-summary p {
+      margin: 5px 0;
+    }
+
+    .next-steps {
+      margin-top: 20px;
+    }
+
+    .button {
+      display: inline-block;
+      background-color: #4CAF50;
+      color: white;
+      text-decoration: none;
       padding: 10px 20px;
-      text-decoration: none;
-      border: none;
       border-radius: 5px;
-      cursor: pointer;
+      margin-top: 10px;
     }
 
-    .button:hover, button:hover {
-      background-color: white;
+    .button:hover {
+      background-color: #45a049;
     }
 
-    .home-button {
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      background-color: orange;
-      color: black;
-      text-decoration: none;
-      padding: 10px;
-      border-radius: 5px;
+    .recommendations, .support {
+      margin-top: 30px;
     }
 
-    .home-button:hover {
-      background-color: white;
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 0.9em;
+      color: #777;
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>Thank You for Your Purchase!</h1>
+  </header>
 
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+  <div class="container">
+    <h2>Order Confirmation</h2>
+    <p>Your order has been successfully placed. Thank you for shopping with us!</p>
 
-<header>
-  <a href="index.html" class="home-button">Home</a>
-  <h1>Purchase Confirmation</h1>
-</header>
+    <div class="order-summary">
+      <h3>Order Details</h3>
+      <p><strong>Order ID:</strong> 12345</p>
+      <p><strong>Product 1</strong> - $50.00 x 1</p>
+      <p><strong>Product 2</strong> - $50.00 x 1</p>
+      <p><strong>Total:</strong> $100.00</p>
+    </div>
 
-<div class="confirmation-container">
-  <h1>Thank You for Your Purchase!</h1>
-  <p>Your order has been successfully placed.</p>
-  <p>Order ID: <strong>12345</strong></p>
-  <div class="order-summary">
-    <h3>Order Summary</h3>
-    <p><strong>Product 1</strong> - $50.00 x 1</p>
-    <p><strong>Product 2</strong> - $50.00 x 1</p>
-    <p><strong>Total:</strong> $100.00</p>
+    <div class="next-steps">
+      <h3>What Happens Next?</h3>
+      <ul>
+        <li>You will receive a confirmation email shortly.</li>
+        <li>Your order will be processed and shipped within 2-3 business days.</li>
+        <li>Tracking details will be sent to your email once your order ships.</li>
+      </ul>
+    </div>
+
+    <a href="index.html" class="button">Return to Home</a>
+
+    <div class="recommendations">
+      <h3>You May Also Like</h3>
+      <p>Check out related products that you might find interesting!</p>
+    </div>
+
+    <div class="support">
+      <h3>Need Help?</h3>
+      <p>If you have any questions about your order, please visit our <a href="support.html">Support Page</a> or contact us at <strong>support@example.com</strong>.</p>
+    </div>
   </div>
-  <p>You will receive a confirmation email shortly.</p>
-  <a href="index.html" class="button">Return to Home</a>
-</div>
 
-<div id="footer"></div>
-<script>
+  <footer>
+    &copy; 2025 Your Company Name. All rights reserved.
+  </footer>
+
+  <script>
     // GA4 Purchase Event Tracking
     document.addEventListener('DOMContentLoaded', function () {
         if (typeof gtag === 'function') {
@@ -133,16 +135,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         } else {
             console.error('gtag function not available. Ensure Google Analytics is properly configured.');
         }
-
-        // Load footer dynamically
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer').innerHTML = data;
-            })
-            .catch(error => console.error('Error loading footer:', error));
     });
-</script>
-
+  </script>
 </body>
 </html>
