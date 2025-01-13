@@ -3,103 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup Process</title>
-    <!-- Google Tag Manager -->
-    <script>
-        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-PPBVCLNF');
-    </script>
-    <!-- End Google Tag Manager -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 20px;
-            text-align: center;
-        }
-        main {
-            padding: 20px;
-        }
-        .form-container {
-            max-width: 400px;
-            margin: 0 auto;
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        input[type="text"], input[type="email"], input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #28a745;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #218838;
-        }
-    </style>
+    <title>GA4 Add to Cart Demo</title>
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" 
-                height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
-    <header>
-        <h1>Signup Process</h1>
-    </header>
-
-    <main>
-        <!-- Signup Page -->
-        <div class="form-container">
-            <h2>Create Your Account</h2>
-            <form id="signup-form" action="signup-confirmation.html" method="get" onsubmit="trackSignup()">
-                <input type="text" name="first_name" placeholder="First Name" required>
-                <input type="text" name="last_name" placeholder="Last Name" required>
-                <input type="email" name="email" placeholder="Email Address" required>
-                <input type="password" name="password" placeholder="Password" required>
-                <button type="submit">Sign Up</button>
-            </form>
+    <h1>GA4 Add to Cart Event Example</h1>
+    <div id="product-list">
+        <!-- Example Product -->
+        <div class="product" id="product-1" data-name="Product A" data-id="12345" data-price="29.99" data-category="Electronics">
+            <h2>Product A</h2>
+            <p>Price: $29.99</p>
+            <button class="add-to-cart" onclick="addToCart('product-1')">Add to Cart</button>
         </div>
-    </main>
+    </div>
 
+    <!-- Google Tag Manager -->
     <script>
-        function trackSignup() {
-            // Push signup event to dataLayer for GA4
-            window.dataLayer = window.dataLayer || [];
-            const firstName = document.querySelector('input[name="first_name"]').value;
-            const lastName = document.querySelector('input[name="last_name"]').value;
-            const email = document.querySelector('input[name="email"]').value;
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l !== 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Add to Cart Script -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function addToCart(productId) {
+            const productElement = document.getElementById(productId);
+            const productName = productElement.getAttribute('data-name');
+            const productIdValue = productElement.getAttribute('data-id');
+            const productPrice = parseFloat(productElement.getAttribute('data-price'));
+            const productCategory = productElement.getAttribute('data-category');
+
+            // Push the "add_to_cart" event to the dataLayer
             window.dataLayer.push({
-                event: "signup_initiated",
-                user_details: {
-                    first_name: firstName,
-                    last_name: lastName,
-                    email: email
+                event: 'add_to_cart',
+                ecommerce: {
+                    items: [{
+                        item_name: productName,
+                        item_id: productIdValue,
+                        price: productPrice,
+                        item_category: productCategory,
+                        quantity: 1
+                    }]
                 }
             });
-            // Store details in sessionStorage to show on confirmation page
-            sessionStorage.setItem("signupDetails", JSON.stringify({ firstName, lastName, email }));
+
+            alert(`Added ${productName} to the cart!`);
         }
     </script>
 </body>
