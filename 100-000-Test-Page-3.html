@@ -1,75 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Form</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      max-width: 600px;
-      margin: 50px auto;
-      padding: 20px;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    h1 {
-      text-align: center;
-      color: #007bff;
-    }
-    form {
-      margin-top: 20px;
-    }
-    label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: bold;
-    }
-    input, textarea {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 20px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-    }
-    button {
-      background-color: #007bff;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      font-size: 16px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #0056b3;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Confirmation</title>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-PPBVCLNF');
+    </script>
+    <!-- End Google Tag Manager -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        .confirmation-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .confirmation-message {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #555;
+        }
+    </style>
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" 
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
-<div class="container">
-  <h1>Contact Us</h1>
-  <form id="contact-form" action="submit-form.html" method="post">
-    <label for="name">Name</label>
-    <input type="text" id="name" name="name" placeholder="Enter your name" required>
-    
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" placeholder="Enter your email" required>
-    
-    <label for="message">Message</label>
-    <textarea id="message" name="message" rows="5" placeholder="Enter your message" required></textarea>
-    <a href="104-submit-form.html" style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; text-align: center;">Submit</a>
+    <div class="confirmation-container">
+        <div class="confirmation-message">
+            <h1>Signup Confirmed</h1>
+            <p>Thank you for signing up! Your account has been successfully created.</p>
+        </div>
+    </div>
 
-  </form>
-</div>
+    <script>
+        // Extract signup particulars from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const firstName = urlParams.get('first_name');
+        const lastName = urlParams.get('last_name');
+        const email = urlParams.get('email');
 
+        // Push signup particulars and confirmation event to dataLayer for GA4
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: "signup_confirmed",
+            signup_details: {
+                first_name: firstName,
+                last_name: lastName,
+                email: email,
+                confirmation_time: new Date().toISOString()
+            }
+        });
+    </script>
 </body>
 </html>
+
+=============================================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Confirmation</title>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-PPBVCLNF');
+    </script>
+    <!-- End Google Tag Manager -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        .confirmation-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .confirmation-message {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" 
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div class="confirmation-container">
+        <div class="confirmation-message">
+            <h1>Signup Confirmed</h1>
+            <p>Thank you for signing up! Your account has been successfully created.</p>
+        </div>
+    </div>
+
+    <script>
+        // Extract signup particulars from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const firstName = urlParams.get('first_name');
+        const lastName = urlParams.get('last_name');
+        const email = urlParams.get('email');
+
+        // Push signup particulars and confirmation event to dataLayer for GA4
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: "signup_confirmed",
+            signup_details: {
+                first_name: firstName,
+                last_name: lastName,
+                email: email,
+                confirmation_time: new Date().toISOString()
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

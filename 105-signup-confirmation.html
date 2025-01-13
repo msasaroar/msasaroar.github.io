@@ -55,18 +55,23 @@
     <div class="confirmation-container">
         <div class="confirmation-message">
             <h1>Signup Confirmed</h1>
-            <p>Thank you for signing up! Your account has been successfully created.</p>
+            <p>Thank you for signing up, <span id="user-name">User</span>!</p>
+            <p>Your email: <span id="user-email">example@example.com</span></p>
         </div>
     </div>
 
     <script>
-        // Extract signup particulars from URL parameters
+        // Get URL parameters
         const urlParams = new URLSearchParams(window.location.search);
         const firstName = urlParams.get('first_name');
         const lastName = urlParams.get('last_name');
         const email = urlParams.get('email');
 
-        // Push signup particulars and confirmation event to dataLayer for GA4
+        // Display user details on the confirmation page
+        document.getElementById('user-name').textContent = `${firstName} ${lastName}`;
+        document.getElementById('user-email').textContent = email;
+
+        // Push signup confirmation event to dataLayer for GA4
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
             event: "signup_confirmed",
