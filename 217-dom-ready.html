@@ -3,136 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOM Ready Trigger Demonstration</title>
-    <!-- GTM Script -->
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
-    </script>
+    <title>DOM Ready Event</title>
     <style>
-        /* General Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        /* Header Styling */
-        header {
-            background-color: green;
-            color: black;
-            text-align: center;
-            padding: 15px 0;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-        }
-
-        /* Home Button */
-        .home-button {
-            position: absolute;
-            left: 10px;
-            top: 10px;
-            background-color: orange;
-            color: black;
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-            font-size: 14px;
-            text-decoration: none;
-        }
-
-        .home-button:hover {
-            background-color: white;
-            color: black;
-        }
-
-        /* Main Body Styling */
         body {
-            background-color: white;
-            margin-top: 70px; /* To avoid header overlap */
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
         }
-
-        /* Footer Styling */
-        footer {
-            position: relative;
-            width: 100%;
-            height: 50px;
-            bottom: 0;
-        }
-
-        /* Button Styles */
-        button {
-            background-color: orange;
-            color: black;
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-            font-size: 14px;
-        }
-
-        button:hover {
-            background-color: white;
-            color: black;
+        #message {
+            color: green;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
-                height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
+    <h1>Demonstration of DOM Ready Event</h1>
+    <p id="message">Waiting for the DOM to be ready...</p>
 
-    <!-- Header -->
-    <header>
-        <a href="index.html" class="home-button">Home</a>
-        <h1>DOM Ready Trigger Demonstration</h1>
-    </header>
-
-    <!-- Main Content -->
-    <main style="padding: 20px;">
-        <h2>About the Page</h2>
-        <p>This page demonstrates how to create a 'DOM Ready Trigger' using Google Tag Manager (GTM).</p>
-
-        <h3>Steps to Create the DOM Ready Trigger and Tag:</h3>
-        <ol>
-            <li>Log in to your Google Tag Manager account.</li>
-            <li>Go to the workspace containing your container.</li>
-            <li>Click on <strong>Triggers</strong> in the left navigation panel.</li>
-            <li>Click on <strong>New</strong> to create a new trigger.</li>
-            <li>Name your trigger: <strong>DOM Ready Trigger</strong>.</li>
-            <li>Select <strong>Trigger Type</strong> as <strong>DOM Ready</strong>.</li>
-            <li>Save the trigger.</li>
-            <li>Next, create a tag that fires on this trigger:
-                <ul>
-                    <li>Go to <strong>Tags</strong> in the left navigation panel.</li>
-                    <li>Click <strong>New</strong>.</li>
-                    <li>Name your tag: <strong>DOM Ready Tag</strong>.</li>
-                    <li>Choose <strong>Tag Configuration</strong> and select a tag type (e.g., Custom HTML).</li>
-                    <li>Add your desired script or content.</li>
-                    <li>Under <strong>Triggering</strong>, choose the <strong>DOM Ready Trigger</strong> you created.</li>
-                </ul>
-            </li>
-            <li>Click <strong>Save</strong> and submit the container changes.</li>
-        </ol>
-
-        <p>Now the tag will fire when the DOM is fully loaded!</p>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <object type="text/html" data="footer.html" style="width: 100%; height: 50px;"></object>
-    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const message = document.getElementById('message');
+            message.textContent = 'The DOM is fully loaded and parsed!';
+        });
+    </script>
 </body>
 </html>
-
