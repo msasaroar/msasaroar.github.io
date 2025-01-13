@@ -17,14 +17,13 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: white;
+      background-color: green;
     }
     header {
       background-color: green;
       text-align: center;
       color: black;
       padding: 10px;
-      position: fixed;
       width: 100%;
       top: 0;
     }
@@ -42,12 +41,12 @@
       background: green;
       text-align: center;
       padding-top: 20px;
-      color: white;
+      color: rgb(0, 0, 0);
     }
     .horizontal-content-wrapper {
       overflow-x: scroll;
       white-space: nowrap;
-      background-color: #f0f0f0;
+      background-color: green;
     }
     .horizontal-content {
       display: inline-block;
@@ -55,7 +54,7 @@
       width: 5000px;
       background: linear-gradient(to right, #6a11cb, #2575fc);
       text-align: center;
-      color: white;
+      color: green;
     }
     h1, h2 {
       margin: 20px;
@@ -63,7 +62,7 @@
    
     button {
       background-color: orange;
-      color: black;
+      color: blue;
       border: none;
       padding: 14px 20px;
       text-align: center;
@@ -73,7 +72,7 @@
       cursor: pointer;
     }
     button:hover {
-      background-color: white;
+      background-color: blue;
     }
   </style>
 </head>
@@ -103,5 +102,6 @@
           })
           .catch(error => console.error('Error loading footer:', error));
   </script>
+  
 </body>
 </html>
