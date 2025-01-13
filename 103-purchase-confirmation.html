@@ -11,7 +11,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Non-Compliant Purchase Confirmation</title>
+  <title>Purchase Confirmation</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -98,7 +98,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <header>
   <a href="index.html" class="home-button">Home</a>
-  <h1>Non-Compliant Purchase Confirmation</h1>
+  <h1>Purchase Confirmation</h1>
 </header>
 
 <div class="confirmation-container">
@@ -117,14 +117,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div id="footer"></div>
 <script>
-    // Missing GA4-compliant event tracking
-    console.log("No purchase event tracking implemented");
-    fetch('footer.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('footer').innerHTML = data;
-        })
-        .catch(error => console.error('Error loading footer:', error));
+    // GA4 Purchase Event Tracking
+    document.addEventListener('DOMContentLoaded', function () {
+        if (typeof gtag === 'function') {
+            gtag('event', 'purchase', {
+                transaction_id: '12345',
+                value: 100.00,
+                currency: 'USD',
+                items: [
+                    { id: 'product1', name: 'Product 1', price: 50.00, quantity: 1 },
+                    { id: 'product2', name: 'Product 2', price: 50.00, quantity: 1 }
+                ]
+            });
+            console.log('Purchase event sent to Google Analytics');
+        } else {
+            console.error('gtag function not available. Ensure Google Analytics is properly configured.');
+        }
+
+        // Load footer dynamically
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
+    });
 </script>
 
 </body>
