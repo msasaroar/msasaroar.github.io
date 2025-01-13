@@ -1,4 +1,3 @@
-<!-- Signup Confirmation Page -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,7 +29,7 @@
             height: 100vh;
         }
         .confirmation-message {
-            background: green;
+            background: #ffffff;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -38,10 +37,10 @@
             text-align: center;
         }
         h1 {
-            color: black;
+            color: #333;
         }
         p {
-            color: white;
+            color: #555;
         }
     </style>
 </head>
@@ -55,31 +54,26 @@
 
     <div class="confirmation-container">
         <div class="confirmation-message">
-            <h1>Signup Confirmation</h1>
+            <h1>Signup Confirmed</h1>
             <p>Thank you for signing up! Your account has been successfully created.</p>
-            <div id="signup-details">
-                <!-- User details will be displayed here -->
-            </div>
         </div>
     </div>
 
     <script>
-        // Retrieve and display signup details from sessionStorage
-        const signupDetails = JSON.parse(sessionStorage.getItem("signupDetails"));
-        if (signupDetails) {
-            const detailsDiv = document.getElementById("signup-details");
-            detailsDiv.innerHTML = `
-                <p><strong>First Name:</strong> ${signupDetails.firstName}</p>
-                <p><strong>Last Name:</strong> ${signupDetails.lastName}</p>
-                <p><strong>Email:</strong> ${signupDetails.email}</p>
-            `;
-        }
+        // Extract signup particulars from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const firstName = urlParams.get('first_name');
+        const lastName = urlParams.get('last_name');
+        const email = urlParams.get('email');
 
-        // Push signup confirmation event to dataLayer for GA4
+        // Push signup particulars and confirmation event to dataLayer for GA4
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
             event: "signup_confirmed",
             signup_details: {
+                first_name: firstName,
+                last_name: lastName,
+                email: email,
                 confirmation_time: new Date().toISOString()
             }
         });
