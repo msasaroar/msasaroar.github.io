@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    .container {
+      max-width: 600px;
+      margin: 100px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      color: #007bff;
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    a:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Thank You, <span id="display-name"></span>!</h1>
+    <p>We have received your submission with the following details:</p>
+    <p><strong>Email:</strong> <span id="display-email"></span></p>
+    <p><strong>Message:</strong> <span id="display-message"></span></p>
+    <a href="index.html">Back to Home</a>
+  </div>
+
+  <script>
+    // Retrieve data from localStorage
+    const name = localStorage.getItem('name');
+    const email = localStorage.getItem('email');
+    const message = localStorage.getItem('message');
+    
+    // Display the data on the page
+    document.getElementById('display-name').textContent = name || 'Guest';
+    document.getElementById('display-email').textContent = email || 'N/A';
+    document.getElementById('display-message').textContent = message || 'No message provided.';
+  </script>
+</body>
+</html>
