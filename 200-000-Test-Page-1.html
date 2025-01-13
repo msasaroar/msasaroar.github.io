@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom HTML Tag Demonstration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        #message {
+            color: green;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        #cta-button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Custom HTML Tag Demonstration</h1>
+    <p>Click the button below to see a Custom HTML Tag in action:</p>
+    <button id="cta-button">Click Me!</button>
+    <p id="message">Waiting for interaction...</p>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var button = document.getElementById('cta-button');
+            var message = document.getElementById('message');
+
+            if (button) {
+                button.addEventListener('click', function () {
+                    // Custom HTML Tag action
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'custom_html_tag_click', {
+                            event_category: 'interaction',
+                            event_label: 'CTA Button',
+                            value: 1
+                        });
+                        console.log('Custom HTML Tag fired: Button Click Event');
+                    } else {
+                        console.warn('gtag is not defined. Make sure Google Analytics is properly set up.');
+                    }
+
+                    // Update the message
+                    message.textContent = 'Button clicked! Event sent to Google Analytics.';
+                });
+            }
+        });
+    </script>
+</body>
+</html>

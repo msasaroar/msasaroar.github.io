@@ -32,3 +32,8 @@ What should be the event name configuring tag in GTM ?
 
 Q2GPT >>
 In GTM Tag Configuration what is the use of checkbox "Send Ecommerce data" under "More Settings/Ecommerec" ?
+
+Q2GPT >>
+What should happen on purchase confirmation page ?
+
+
