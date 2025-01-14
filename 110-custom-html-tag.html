@@ -1,158 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tag Practice : Custom HTML Tag</title>
-      <!-- Google Tag Manager -->
-      <script>
-        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-PPBVCLNF');
-    </script>
-    <!-- End Google Tag Manager -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <style>
-    body {
-      background-color: white;
-      color: black;
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background-color: green;
-      color: black;
-      text-align: center;
-      padding: 10px 0;
-    }
-
-
-    .home-button {
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      background-color: orange;
-      color: black;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .home-button:hover {
-      background-color: white;
-      color: black;
-    }
-
-    button, input, a {
-      background-color: orange;
-      color: black;
-      border: 1px solid black;
-      border-radius: 5px;
-      padding: 10px;
-      margin-top: 10px;
-      cursor: pointer;
-      text-align: center;
-    }
-
-    button:hover, input:hover, a:hover {
-      background-color: white;
-      color: black;
-    }
-
-    .container {
-      max-width: 600px;
-      margin: 120px auto 80px auto; /* Adjusted margin to account for fixed header and footer */
-      padding: 20px;
-      background: #ffffff;
-      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      color: black;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    p {
-      font-size: 1.2rem;
-      text-align: center;
-    }
-
-    .gradient-section {
-      margin-top: 30px;
-      height: 200vh;
-      background: linear-gradient(to bottom, #b6e2a1, #99c38e);
-    }
-
-    .gradient-section p {
-      text-align: center;
-      margin-top: 100vh;
-      font-size: 1.5rem;
-      color: black;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Load Custom HTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #007BFF;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <button class="home-button">Home</button>
-    <h1>Tag Practice : Custom HTML Tag</h1>
-  </header>
+    <h1>Welcome to Page Load Custom HTML Demo</h1>
+    <p>This page will log a message when it loads.</p>
 
-  <div class="container">
-    <p>Click the button below to simulate an action:</p>
-    <button id="practiceButton">Click Me!</button>
-
-    <p>Fill out the form below:</p>
-    <form id="practiceForm">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" placeholder="Your Name">
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" placeholder="Your Email">
-      <button type="submit">Submit</button>
-    </form>
-
-    <p>Click the link below:</p>
-    <a href="https://www.example.com" id="practiceLink" target="_blank">Visit Example</a>
-  </div>
-
-  <div class="gradient-section">
-    <p>You have reached the bottom of the page!</p>
-  </div>
-
-  <div id="footer"></div>
-  <script>
-      fetch('footer.html')
-          .then(response => response.text())
-          .then(data => {
-              document.getElementById('footer').innerHTML = data;
-          })
-          .catch(error => console.error('Error loading footer:', error));
-  </script>
-
-  <script>
-    // Custom interactions for practice
-    document.getElementById('practiceButton').addEventListener('click', function() {
-      alert("Button clicked!");
-    });
-
-    document.getElementById('practiceForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert("Form submitted!");
-    });
-
-    document.getElementById('practiceLink').addEventListener('click', function() {
-      console.log("Link clicked!");
-    });
-  </script>
+    <script>
+        // Custom JavaScript to log a message on page load
+        document.addEventListener("DOMContentLoaded", function () {
+            console.log("Page has loaded successfully!");
+            // Sending data to the dataLayer for tracking
+            window.dataLayer = window.dataLayer || [];
+            dataLayer.push({
+                event: "pageLoadEvent",
+                eventCategory: "Page Interaction",
+                eventAction: "Page Load",
+                eventLabel: "Page Loaded Successfully"
+            });
+        });
+    </script>
 </body>
 </html>
