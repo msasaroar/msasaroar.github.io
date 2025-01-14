@@ -19,6 +19,9 @@
             color: black; /* Black font color */
             font-family: Arial, sans-serif;
             margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 93vh;
         }
 
         header {
@@ -36,7 +39,7 @@
             top: 10px;
             left: 10px;
             background-color: orange; /* Orange button background */
-            color: black; /* Black font color */
+            color: blue; /* Black font color */
             border: none;
             padding: 10px 20px;
             text-decoration: none;
@@ -45,8 +48,8 @@
         }
 
         .home-button:hover {
-            background-color: white; /* White hover color */
-            color: black; /* Black font color */
+            background-color: blue; /* White hover color */
+            color: orange; /* Black font color */
         }
 
         a {
@@ -55,22 +58,37 @@
             padding: 10px 20px;
             text-decoration: none;
             background-color: orange; /* Orange button background */
-            color: black; /* Black font color */
+            color: blue; /* Black font color */
             border-radius: 5px;
             font-size: 16px;
         }
 
         a:hover {
-            background-color: white; /* White hover color */
-            color: black; /* Black font color */
+            background-color: blue; /* White hover color */
+            color: orange; /* Black font color */
         }
 
         main {
-            padding: 80px 20px 60px; /* Adjusted for header and footer spacing */
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .links-container {
             text-align: center;
         }
-    </style>
 
+        footer {
+            background-color: green; /* Footer background color */
+            color: green;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -85,11 +103,13 @@
     <a href="#" class="home-button">Home</a>
 
     <main>
-        <p>Click on the following outbound links to test tracking.</p>
-        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
-        <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">Google</a>
-        <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a>
-        <a href="https://www.github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <div class="links-container">
+            <p>Click on the following outbound links to test tracking.</p>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">Google</a>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a>
+            <a href="https://www.github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
     </main>
 
     <div id="footer"></div>

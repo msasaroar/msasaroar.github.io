@@ -3,66 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom HTML Tag Examples</title>
+    <title>Tag Practice : Outbound Link Click</title>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-PPBVCLNF');
+    </script>
+    <!-- End Google Tag Manager -->
     <style>
         body {
+            background-color: white; /* White body background */
+            color: black; /* Black font color */
             font-family: Arial, sans-serif;
-            line-height: 1.6;
+            margin: 0; /* Remove default margin */
+            height: 100vh; /* Full height of the viewport */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Ensure footer is at the bottom */
         }
-        section {
-            margin: 20px 0;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+
+        header {
+            background-color: green; /* Green header background */
+            width: 100%;
+            text-align: center;
+            color: black; /* Black text color */
+            padding: 10px 0;
+            position: relative; /* Keep header at the top */
         }
-        h2 {
-            color: #007BFF;
-        }
-        button {
-            padding: 10px 20px;
-            color: white;
-            background-color: #007BFF;
+
+        .home-button {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background-color: orange; /* Orange button background */
+            color: black; /* Black font color */
             border: none;
+            padding: 10px 20px;
+            text-decoration: none;
             border-radius: 5px;
-            cursor: pointer;
+            font-size: 16px;
         }
-        button:hover {
-            background-color: #0056b3;
+
+        .home-button:hover {
+            background-color: white; /* White hover color */
+            color: black; /* Black font color */
+        }
+
+        main {
+            flex-grow: 1; /* Take up all remaining space */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Center links vertically */
+            text-align: center;
+            padding: 20px;
+        }
+
+        a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            text-decoration: none;
+            background-color: orange; /* Orange button background */
+            color: black; /* Black font color */
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        a:hover {
+            background-color: white; /* White hover color */
+            color: black; /* Black font color */
+        }
+
+        #footer {
+            background-color: gray;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
         }
     </style>
-    <script>
-        // Example of a global script used in custom HTML
-        function sendAnalyticsEvent(eventCategory, eventAction, eventLabel) {
-            console.log(`Event sent: ${eventCategory}, ${eventAction}, ${eventLabel}`);
-        }
-    </script>
+
 </head>
 <body>
-    <h1>Custom HTML Tag Examples</h1>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
-    <!-- Example 1: Page Load Event -->
-    <section>
-        <h2>1. Page Load Custom HTML</h2>
-        <p>This tag triggers a script that logs a message when the page loads.</p>
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                console.log("Custom HTML: Page has loaded!");
-                sendAnalyticsEvent("Page Load", "Trigger", "Page Loaded");
-            });
-        </script>
-    </section>
+    <header>
+        <h1>Tag Practice : Outbound Link Click</h1>
+    </header>
 
-    <!-- Example 2: Button Click Event -->
-    <section>
-        <h2>2. Button Click Custom HTML</h2>
-        <p>Clicking the button triggers a custom event.</p>
-        <button onclick="sendAnalyticsEvent('Button', 'Click', 'Custom Button')">Click Me</button>
-    </section>
+    <a href="#" class="home-button">Home</a>
 
+    <main>
+        <p>Click on the following outbound links to test tracking.</p>
+        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">Google</a>
+        <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a href="https://www.github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </main>
 
+    <div id="footer">Footer Content</div>
 
-
-
-    
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
+    </script>
 </body>
 </html>

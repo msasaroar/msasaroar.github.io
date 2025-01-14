@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tag Practice : Outbound Link Click</title>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-PPBVCLNF');
+    </script>
+    <!-- End Google Tag Manager -->
+    <style>
+        body {
+            background-color: white; /* White body background */
+            color: black; /* Black font color */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: green; /* Green header background */
+            position: fixed;
+            top: 0;
+            width: 100%;
+            text-align: center;
+            color: black; /* Black text color */
+            padding: 10px 0;
+        }
+
+        .home-button {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background-color: orange; /* Orange button background */
+            color: black; /* Black font color */
+            border: none;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .home-button:hover {
+            background-color: white; /* White hover color */
+            color: black; /* Black font color */
+        }
+
+        a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            text-decoration: none;
+            background-color: orange; /* Orange button background */
+            color: black; /* Black font color */
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        a:hover {
+            background-color: white; /* White hover color */
+            color: black; /* Black font color */
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .links-container {
+            text-align: center;
+        }
+
+        footer {
+            background-color: green; /* Footer background color */
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header>
+        <h1>Tag Practice : Outbound Link Click</h1>
+    </header>
+
+    <a href="#" class="home-button">Home</a>
+
+    <main>
+        <div class="links-container">
+            <p>Click on the following outbound links to test tracking.</p>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">Google</a>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a>
+            <a href="https://www.github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2025 Footer Content
+    </footer>
+</body>
+</html>
