@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Load Custom HTML</title>
+    <title>Custom HTML Tag</title>
 
     <!-- Google Tag Manager -->
     <script>
@@ -16,41 +16,76 @@
     <!-- End Google Tag Manager -->
 
     <style>
+        /* General Page Styling */
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            height: 100vh;
+            background-color: white;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
-        h1 {
-            color: #007BFF;
+
+        /* Header Styling */
+        header {
+            background-color: green;
+            color: black;
+            text-align: center;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        /* Button Styling */
+        button, a {
+            background-color: orange;
+            width: 10%;
+            color: blue;
+            border: none;
+            padding: 10px 20px;
+            text-decoration: center;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+
+
+        button:hover, a:hover {
+            background-color: blue;
+            color: orange;
+        }
+
+        /* Home Button Styling */
+        .home-button {
+            position: fixed;
+            top: 15px;
+            left: 20px;
+            padding: 15px 20px;
+        }
+
+        /* Main Container Styling */
+        .container {
+            text-align: center;
+            padding: 100px 20px 60px; /* Adjust padding for fixed header/footer */
         }
     </style>
 </head>
 <body>
-    <h1>Welcome to Page Load Custom HTML Demo</h1>
-    <p>This page will log a message when it loads.</p>
+
 
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
-    <!--
-    <script>
-        // Custom JavaScript to log a message on page load
-        document.addEventListener("DOMContentLoaded", function () {
-            console.log("Page has loaded successfully!");
-            // Sending data to the dataLayer for tracking
-            window.dataLayer = window.dataLayer || [];
-            dataLayer.push({
-                event: "pageLoadEvent",
-                eventCategory: "Page Interaction",
-                eventAction: "Page Load",
-                eventLabel: "Page Loaded Successfully"
-            });
-        });
-    </script>
-    -->
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
     
+    <header>
+        <button class="home-button" onclick="location.href='index.html'">Home</button>
+        <h1>Demonstration : Custom HTML Tag</h1>
+    </header>
+
 </body>
 </html>
