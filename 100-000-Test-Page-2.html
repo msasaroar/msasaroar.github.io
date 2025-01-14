@@ -1,87 +1,61 @@
-<!-- Signup Confirmation Page -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup Confirmation</title>
-    <!-- Google Tag Manager -->
+    <title>GA4 Checkout Event Demo</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
-        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-PPBVCLNF');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-XXXXXXXXXX');
     </script>
-    <!-- End Google Tag Manager -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-        }
-        .confirmation-container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .confirmation-message {
-            background: #ffffff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            text-align: center;
-        }
-        h1 {
-            color: #333;
-        }
-        p {
-            color: #555;
-        }
-    </style>
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" 
-                height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
+    <header>
+        <h1>GA4 Checkout Event Demo</h1>
+    </header>
 
-    <div class="confirmation-container">
-        <div class="confirmation-message">
-            <h1>Signup Confirmed</h1>
-            <p>Thank you for signing up! Your account has been successfully created.</p>
-            <div id="signup-details">
-                <!-- User details will be displayed here -->
-            </div>
-        </div>
-    </div>
+    <main>
+        <!-- Checkout Form -->
+        <section id="checkout-form">
+            <h2>Checkout</h2>
+            <form id="checkout-process">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+
+                <label for="total">Total Amount:</label>
+                <input type="number" id="total" name="total" value="100.00" readonly>
+
+                <button type="submit">Complete Checkout</button>
+            </form>
+        </section>
+    </main>
 
     <script>
-        // Retrieve and display signup details from sessionStorage
-        const signupDetails = JSON.parse(sessionStorage.getItem("signupDetails"));
-        if (signupDetails) {
-            const detailsDiv = document.getElementById("signup-details");
-            detailsDiv.innerHTML = `
-                <p><strong>First Name:</strong> ${signupDetails.firstName}</p>
-                <p><strong>Last Name:</strong> ${signupDetails.lastName}</p>
-                <p><strong>Email:</strong> ${signupDetails.email}</p>
-            `;
-        }
+        // Tracking Checkout Event
+        document.getElementById('checkout-process').addEventListener('submit', (e) => {
+            e.preventDefault();
 
-        // Push signup confirmation event to dataLayer for GA4
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-            event: "signup_confirmed",
-            signup_details: {
-                confirmation_time: new Date().toISOString()
-            }
+            const totalAmount = parseFloat(document.getElementById('total').value);
+
+            gtag('event', 'purchase', {
+                currency: 'USD',
+                transaction_id: 'T12345',
+                value: totalAmount,
+                items: [{
+                    item_id: 'example_product_id',
+                    item_name: 'Example Product',
+                    price: totalAmount
+                }]
+            });
+
+            alert('Checkout event tracked successfully!');
         });
     </script>
 </body>

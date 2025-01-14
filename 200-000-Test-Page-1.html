@@ -3,58 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom HTML Tag Demonstration</title>
+    <title>Checkout</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;
+            background-color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background-color: green;
+            color: black;
+            padding: 10px 20px;
+            text-align: center;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .home-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: orange;
+            color: black;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            margin: 80px 20px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1200px;
+        }
+
+        .form-section, .summary-section {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             padding: 20px;
         }
-        #message {
-            color: green;
-            font-weight: bold;
-            margin-top: 20px;
+
+        .form-section {
+            flex: 2;
+            min-width: 300px;
         }
-        #cta-button {
-            padding: 10px 20px;
-            background-color: #007BFF;
-            color: white;
+
+        .summary-section {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        fieldset {
             border: none;
-            border-radius: 5px;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            background-color: orange;
+            color: black;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
             cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: white;
+        }
+
+        .summary-section p {
+            margin: 8px 0;
         }
     </style>
 </head>
+
 <body>
-    <h1>Custom HTML Tag Demonstration</h1>
-    <p>Click the button below to see a Custom HTML Tag in action:</p>
-    <button id="cta-button">Click Me!</button>
-    <p id="message">Waiting for interaction...</p>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var button = document.getElementById('cta-button');
-            var message = document.getElementById('message');
+    <header>
+        <a href="#" class="home-button">Home</a>
+        <h1>Checkout</h1>
+    </header>
 
-            if (button) {
-                button.addEventListener('click', function () {
-                    // Custom HTML Tag action
-                    if (typeof gtag === 'function') {
-                        gtag('event', 'custom_html_tag_click', {
-                            event_category: 'interaction',
-                            event_label: 'CTA Button',
-                            value: 1
-                        });
-                        console.log('Custom HTML Tag fired: Button Click Event');
-                    } else {
-                        console.warn('gtag is not defined. Make sure Google Analytics is properly set up.');
-                    }
+    <div class="container">
 
-                    // Update the message
-                    message.textContent = 'Button clicked! Event sent to Google Analytics.';
-                });
-            }
-        });
-    </script>
+        <div class="summary-section">
+            <h2>Order Summary</h2>
+            <p><strong>Items:</strong> <span id="order-items">3</span></p>
+            <p><strong>Total Price:</strong> $<span id="order-total">75.00</span></p>
+        </div>
+
+        <div class="form-section">
+
+            <form id="checkout-form">
+                <fieldset>
+                    <legend>Billing Information</legend>
+                    <label for="full-name">Full Name:</label>
+                    <input type="text" id="full-name" name="full-name" placeholder="John Doe" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+                    
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="123-456-7890" required>
+                    
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" placeholder="123 Main St" required>
+                    
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city" placeholder="New York" required>
+                    
+                    <label for="zip">ZIP Code:</label>
+                    <input type="text" id="zip" name="zip" placeholder="10001" required>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Payment Information</legend>
+                    <label for="card-number">Card Number:</label>
+                    <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" required>
+
+                    <label for="expiry">Expiry Date:</label>
+                    <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required>
+
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" name="cvv" placeholder="123" required>
+                </fieldset>
+                <button type="submit">Place Order</button>
+            </form>
+
+        </div>
+    </div>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup Confirmation</title>
+    <title>Checkout</title>
     <!-- Google Tag Manager -->
     <script>
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -13,161 +13,222 @@
         })(window,document,'script','dataLayer','GTM-PPBVCLNF');
     </script>
     <!-- End Google Tag Manager -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
+            background-color: white;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
-        }
-        .confirmation-container {
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            min-height: 100vh;
         }
-        .confirmation-message {
-            background: #ffffff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
+
+        header {
+            background-color: green;
+            color: black;
+            padding: 10px 0;
             text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
         }
-        h1 {
-            color: #333;
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
         }
-        p {
-            color: #555;
+
+        .home-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: orange;
+            color: black;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
         }
+
+        .home-button:hover {
+            background-color: white;
+        }
+
+        .checkout-container {
+            max-width: 800px;
+            margin: 120px auto 20px; /* Adjusted margin for fixed header */
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .checkout-container h1 {
+            text-align: center;
+            color: black;
+            font-size: 26px;
+        }
+
+        fieldset {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            font-size: 18px;
+            color: black;
+            font-weight: bold;
+            padding: 0 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: black;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            background-color: orange;
+            color: black;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: white;
+        }
+
     </style>
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" 
-                height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
+    <header>
+        <a href="#" class="home-button">Home</a>
+        <h1>Checkout</h1>
+    </header>
+    <div class="checkout-container">
+        <h1>Complete Your Order</h1>
+        <form id="checkout-form">
+            <fieldset>
+                <legend>Billing Information</legend>
+                <label for="full-name">Full Name:</label>
+                <input type="text" id="full-name" name="full-name" placeholder="John Doe" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+                
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="123-456-7890" required>
+                
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" placeholder="123 Main St" required>
+                
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" placeholder="New York" required>
+                
+                <label for="zip">ZIP Code:</label>
+                <input type="text" id="zip" name="zip" placeholder="10001" required>
+            </fieldset>
 
-    <div class="confirmation-container">
-        <div class="confirmation-message">
-            <h1>Signup Confirmed</h1>
-            <p>Thank you for signing up! Your account has been successfully created.</p>
-        </div>
+            <fieldset>
+                <legend>Payment Information</legend>
+                <label for="card-number">Card Number:</label>
+                <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" required>
+
+                <label for="expiry">Expiry Date:</label>
+                <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required>
+
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" placeholder="123" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Order Summary</legend>
+                <p><strong>Items:</strong> <span id="order-items">3</span></p>
+                <p><strong>Total Price:</strong> $<span id="order-total">75.00</span></p>
+            </fieldset>
+
+            <button type="submit">Place Order</button>
+        </form>
     </div>
-
+    <div id="footer"></div>
     <script>
-        // Extract signup particulars from URL parameters
-        const urlParams = new URLSearchParams(window.location.search);
-        const firstName = urlParams.get('first_name');
-        const lastName = urlParams.get('last_name');
-        const email = urlParams.get('email');
-
-        // Push signup particulars and confirmation event to dataLayer for GA4
+        // Google Tag Manager Data Layer Initialization
         window.dataLayer = window.dataLayer || [];
+
+        // Push the begin_checkout event when the page loads
         window.dataLayer.push({
-            event: "signup_confirmed",
-            signup_details: {
-                first_name: firstName,
-                last_name: lastName,
-                email: email,
-                confirmation_time: new Date().toISOString()
+            event: 'begin_checkout',
+            ecommerce: {
+                items: [
+                    {
+                        item_name: 'Sample Product',
+                        item_id: 'product_123',
+                        price: 25.00,
+                        quantity: 3
+                    }
+                ]
             }
         });
+
+        // Handle form submission and push the place_order event
+        document.getElementById('checkout-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Push the place_order event to the data layer
+            window.dataLayer.push({
+                event: 'place_order',
+                ecommerce: {
+                    transaction_id: 'txn_123456',
+                    value: 75.00,
+                    currency: 'USD',
+                    items: [
+                        {
+                            item_name: 'Sample Product',
+                            item_id: 'product_123',
+                            price: 25.00,
+                            quantity: 3
+                        }
+                    ]
+                }
+            });
+
+            // Optionally, proceed with form submission
+            alert('Order placed successfully! Tracking data sent to GA4.');
+            this.submit();
+        });
+
+        // Load footer content
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
     </script>
 </body>
 </html>
-
-=============================================
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup Confirmation</title>
-    <!-- Google Tag Manager -->
-    <script>
-        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-PPBVCLNF');
-    </script>
-    <!-- End Google Tag Manager -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-        }
-        .confirmation-container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .confirmation-message {
-            background: #ffffff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            text-align: center;
-        }
-        h1 {
-            color: #333;
-        }
-        p {
-            color: #555;
-        }
-    </style>
-</head>
-<body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" 
-                height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
-    <div class="confirmation-container">
-        <div class="confirmation-message">
-            <h1>Signup Confirmed</h1>
-            <p>Thank you for signing up! Your account has been successfully created.</p>
-        </div>
-    </div>
-
-    <script>
-        // Extract signup particulars from URL parameters
-        const urlParams = new URLSearchParams(window.location.search);
-        const firstName = urlParams.get('first_name');
-        const lastName = urlParams.get('last_name');
-        const email = urlParams.get('email');
-
-        // Push signup particulars and confirmation event to dataLayer for GA4
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-            event: "signup_confirmed",
-            signup_details: {
-                first_name: firstName,
-                last_name: lastName,
-                email: email,
-                confirmation_time: new Date().toISOString()
-            }
-        });
-    </script>
-</body>
-</html>
-
-
-
-
-
-
-
