@@ -3,83 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Outbound Link Click Event Demo</title>
+    <title>Timer Tag Demo</title>
     <!-- Google Tag Manager -->
     <script>
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-PPBVCLNF'); // Replace with your GTM ID
+        })(window,document,'script','dataLayer','GTM-XXXXXXX');
     </script>
     <!-- End Google Tag Manager -->
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+        }
+        main {
             padding: 50px;
         }
-        a {
-            display: inline-block;
-            margin: 10px;
-            padding: 10px 20px;
-            text-decoration: none;
-            background-color: orange;
-            color: white;
-            border-radius: 5px;
-            font-size: 18px;
-        }
-        a:hover {
-            background-color: darkorange;
+        footer {
+            background-color: #f1f1f1;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
     <header>
-        <h1>Outbound Link Click Event Demo</h1>
+        <h1>Timer Tag Demonstration</h1>
     </header>
 
     <main>
-        <p>Click any of the links below to test outbound link tracking.</p>
-        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
-        <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">Google</a>
-        <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a>
-        <a href="https://www.github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <p>This page demonstrates a Timer Tag in action using Google Tag Manager.</p>
+        <p>The timer is set to track every 5 seconds while this page is open.</p>
+        <p>Open the GTM debugger or Google Analytics to verify the events.</p>
     </main>
 
     <footer>
-        <p>&copy; 2025 Outbound Link Demo</p>
+        &copy; 2025 Timer Tag Demo
     </footer>
 
     <script>
-        // Add a click event listener to all outbound links
-        document.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', function(event) {
-                const outboundUrl = this.href;
-
-                // Push an event to the dataLayer
-                window.dataLayer = window.dataLayer || [];
-                window.dataLayer.push({
-                    'event': 'outbound_link_click',
-                    'link_url': outboundUrl
-                });
-
-                console.log('Outbound link clicked:', outboundUrl);
-
-                // Optional: Delay navigation to allow GTM to process the event
-                setTimeout(() => {
-                    window.location.href = outboundUrl;
-                }, 300);
-
-                // Prevent default behavior to handle delay
-                event.preventDefault();
+        // Simulating a timer event for demonstration
+        const timerInterval = 5000; // Timer fires every 5 seconds
+        setInterval(() => {
+            // Push event to dataLayer
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                event: 'timer_event',
+                timerTime: timerInterval / 1000 // Seconds
             });
-        });
+            console.log('Timer Event Triggered:', timerInterval / 1000, 'seconds');
+        }, timerInterval);
     </script>
 </body>
 </html>

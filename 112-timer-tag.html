@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer Tag Demo</title>
     <!-- Google Tag Manager -->
     <script>
         (function(w, d, s, l, i) {
@@ -16,81 +18,63 @@
         })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
     </script>
     <!-- End Google Tag Manager -->
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GTM Timer Tag Demo</title>
     <style>
-        /* General Styles */
         body {
-            background-color: white;
-            color: black;
             font-family: Arial, sans-serif;
+            text-align: center;
             margin: 0;
             padding: 0;
         }
-
-        /* Header Styles */
         header {
             background-color: green;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            text-align: center;
-            padding: 10px 0;
-            z-index: 1000;
-        }
-
-        header h1 {
-            margin: 0;
             color: black;
+            padding: 20px;
         }
-
-        /* Home Button */
-        .home-button {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background-color: orange;
-            color: black;
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 14px;
+        main {
+            padding: 50px;
         }
-
-        .home-button:hover {
-            background-color: white;
-            color: black;
-        }
-
-        /* Footer Styles */
         footer {
-            margin-top: 60px; /* Adjust for content */
+            background-color: #f1f1f1;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
 <body>
-
     <!-- Google Tag Manager (noscript) -->
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLN"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <!-- Header Section -->
     <header>
-        <a href="#" class="home-button">Home</a>
         <h1>Timer Tag Demonstration</h1>
     </header>
 
-    <!-- Content Section -->
-    <main style="padding-top: 80px; text-align: center;">
-        <p>Welcome to the Timer Tag demonstration page!</p>
+    <main>
+        <p>This page demonstrates a Timer Tag in action using Google Tag Manager.</p>
+        <p>The timer is set to track every 5 seconds while this page is open.</p>
+        <p>Open the GTM debugger or Google Analytics to verify the events.</p>
     </main>
+
+    <footer>
+        &copy; 2025 Timer Tag Demo
+    </footer>
+
+    <script>
+        // Simulating a timer event for demonstration
+        const timerInterval = 5000; // Timer fires every 5 seconds
+        setInterval(() => {
+            // Push event to dataLayer
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                event: 'timer_event',
+                timerTime: timerInterval / 1000 // Seconds
+            });
+            console.log('Timer Event Triggered:', timerInterval / 1000, 'seconds');
+        }, timerInterval);
+    </script>
 
     <div id="footer"></div>
     <script>
