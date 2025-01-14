@@ -30,8 +30,8 @@
             background-color: green;
             color: black;
             text-align: center;
-            padding: 20px;
-            position: fixed;
+            //padding: 20px;
+            //position: fixed;
             top: 0;
             left: 0;
             width: 100%;
@@ -41,25 +41,29 @@
         /* Button Styling */
         button, a {
             background-color: orange;
-            color: black;
+            width: 10%;
+            color: blue;
             border: none;
             padding: 10px 20px;
-            text-decoration: none;
+            text-decoration: center;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
 
+
+
         button:hover, a:hover {
-            background-color: white;
-            color: black;
+            background-color: blue;
+            color: orange;
         }
 
         /* Home Button Styling */
         .home-button {
             position: fixed;
-            top: 10px;
-            left: 10px;
+            top: 15px;
+            left: 20px;
+            padding: 15px 20px;
         }
 
         /* Main Container Styling */
@@ -77,23 +81,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 <header>
-    <h1>Tag Practice : Element Click</h1>
+    <button class="home-button" onclick="location.href='index.html'">Home</button>
+    <h1>Demonstrating : Element Click</h1>
 </header>
 
-<button class="home-button">Home</button>
-
 <div class="container">
-    <p>নিচের লিঙ্কগুলোতে ক্লিক করুন এবং GTM-এ "Link Click" ট্র্যাকিং পরীক্ষা করুন।</p>
+
+    <p>Click on the following links and test the "Link Click" tracking in GTM</p>
 
     <div class="link-container">
         <a href="https://example.com" target="_blank" class="link1">Visit Example.com</a>
-    </div>
-    <div class="link-container">
+
         <a href="https://example.com/download.pdf" target="_blank" class="link2">Download PDF</a>
-    </div>
-    <div class="link-container">
+
         <a href="https://example.com/contact" target="_blank" class="link3">Contact Us</a>
     </div>
+
 </div>
 
 <div id="footer"></div>
