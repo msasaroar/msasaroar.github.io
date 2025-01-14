@@ -3,14 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Timer Tag Demo</title>
+    <title>Tag Practice : JavaScript Error Tag</title>
     <!-- Google Tag Manager -->
     <script>
-        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-XXXXXXX');
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
     </script>
     <!-- End Google Tag Manager -->
     <style>
@@ -21,8 +29,8 @@
             padding: 0;
         }
         header {
-            background-color: #4CAF50;
-            color: white;
+            background-color: green;
+            color: black;
             padding: 20px;
         }
         main {
@@ -35,40 +43,52 @@
             bottom: 0;
             width: 100%;
         }
+        .home-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .home-button:hover {
+            background-color: darkblue;
+        }
     </style>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
     <!-- End Google Tag Manager (noscript) -->
 
     <header>
-        <h1>Timer Tag Demonstration</h1>
+        <h1>Tag Practice : JavaScript Error Tag</h1>
     </header>
 
-    <main>
-        <p>This page demonstrates a Timer Tag in action using Google Tag Manager.</p>
-        <p>The timer is set to track every 5 seconds while this page is open.</p>
-        <p>Open the GTM debugger or Google Analytics to verify the events.</p>
-    </main>
+    <button class="home-button">Home</button>
 
-    <footer>
-        &copy; 2025 Timer Tag Demo
-    </footer>
+    <div class="content">
+        <p>This page is created to demonstrate the implementation of a "JavaScript Error Tag" in Google Tag Manager. Please explore the console to check for errors captured by GTM.</p>
+    </div>
+
+    <div id="footer"></div>
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
+    </script>
 
     <script>
-        // Simulating a timer event for demonstration
-        const timerInterval = 5000; // Timer fires every 5 seconds
-        setInterval(() => {
-            // Push event to dataLayer
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({
-                event: 'timer_event',
-                timerTime: timerInterval / 1000 // Seconds
-            });
-            console.log('Timer Event Triggered:', timerInterval / 1000, 'seconds');
-        }, timerInterval);
+        // Example of an intentional JavaScript error for testing
+        console.log(undeclaredVariable);
     </script>
 </body>
 </html>
