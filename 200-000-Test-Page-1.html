@@ -1,4 +1,85 @@
-https://www.facebook.com
-https://www.google.com
-https://www.youtube.com
-https://www.github.com
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outbound Link Click Event Demo</title>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-PPBVCLNF'); // Replace with your GTM ID
+    </script>
+    <!-- End Google Tag Manager -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            text-decoration: none;
+            background-color: orange;
+            color: white;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+        a:hover {
+            background-color: darkorange;
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header>
+        <h1>Outbound Link Click Event Demo</h1>
+    </header>
+
+    <main>
+        <p>Click any of the links below to test outbound link tracking.</p>
+        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">Google</a>
+        <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a href="https://www.github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Outbound Link Demo</p>
+    </footer>
+
+    <script>
+        // Add a click event listener to all outbound links
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function(event) {
+                const outboundUrl = this.href;
+
+                // Push an event to the dataLayer
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                    'event': 'outbound_link_click',
+                    'link_url': outboundUrl
+                });
+
+                console.log('Outbound link clicked:', outboundUrl);
+
+                // Optional: Delay navigation to allow GTM to process the event
+                setTimeout(() => {
+                    window.location.href = outboundUrl;
+                }, 300);
+
+                // Prevent default behavior to handle delay
+                event.preventDefault();
+            });
+        });
+    </script>
+</body>
+</html>
