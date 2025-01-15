@@ -21,146 +21,73 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tag Practice: Element Click</title>
+    <title>Video Engagement Tracking</title>
     <style>
         body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #50cbc7;
-            color: #000;
+            text-align: center;
+            background-color: #f9f9f9;
         }
 
         header {
-            background-color: green;
-            color: black;
-            position: fixed;
-            top: 0;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+        }
+
+        .video-container {
+            margin: 20px auto;
+            max-width: 640px;
+        }
+
+        video {
             width: 100%;
-            text-align: center;
-            padding: 0px 0;
-            z-index: 1000;
-        }
-
-        .container {
-            padding: 350px 20px 60px;
-            text-align: center;
-        }
-
-        .button {
-            display: inline-block;
-            font-size: 18px;
-            color: blue;
-            background-color: orange;
-            text-decoration: none;
-            padding: 12px 25px;
-            border: none;
+            border: 2px solid #ccc;
             border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s, color 0.3s;
-            margin: 5px;
-        }
-
-        .button:hover {
-            background-color: blue;
-            color: orange;
-        }
-
-        .home-button {
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            color: blue;
-            background-color: orange;
-            padding: 8px 16px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .home-button:hover {
-            background-color: blue;
-            color: orange;
         }
     </style>
-    <script defer>
-        function trackElementClick(event) {
-            const element = event.target;
-            const elementType = element.tagName;
-            const elementClass = element.className;
-            const elementText = element.innerText || element.alt || element.value || 'N/A';
-
-            // Push event to dataLayer
-            dataLayer.push({
-                event: 'trackElementClick',
-                elementType,
-                elementClass,
-                elementText,
-                tagId: 'GA4 | 206 | Track Clicks on Any Element'
-            });
-
-            console.log('Event pushed to dataLayer:', {
-                elementType,
-                elementClass,
-                elementText
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.button').forEach(button => {
-                button.addEventListener('click', trackElementClick);
-            });
-        });
-    </script>
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <header>
-        <h1>Tag Practice: Element Click</h1>
-        <button class="home-button" onclick="window.location.href='index.html'">Home</button>
+        <h1>Video Engagement Tracking</h1>
     </header>
 
-    <a href="#" class="home-button" aria-label="Home">Home</a>
-
-    <div class="container">
-        <button class="button">Default Button</button>
-        <button class="button">Primary Button</button>
-        <button class="button">Danger Button</button>
-
-        <a href="#" class="button" aria-label="Link Button">Link Button</a>
-        <span class="button" tabindex="0">Span Button</span>
-        <div class="button" tabindex="0">Div Button</div>
-
-        <input type="button" class="button" value="Input Button">
-
-        <form onsubmit="return false;">
-            <input type="submit" class="button" value="Submit Button">
-        </form>
-
-        <label class="button" tabindex="0">Label Button</label>
-        <li class="button" tabindex="0">List Item Button</li>
-        <img src="https://via.placeholder.com/100" class="button" alt="Image Button">
-
-        <p class="button" tabindex="0">Paragraph Button</p>
-        <fieldset class="button" tabindex="0">Fieldset Button</fieldset>
-        <table class="button" tabindex="0" style="width: 250px; margin: 10px auto;">
-            <tr>
-                <td>Table Button</td>
-            </tr>
-        </table>
-        <blockquote class="button" tabindex="0">Blockquote Button</blockquote>
+    <div class="video-container">
+        <video id="trackedVideo" controls>
+            <source src="sample.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
 
-    <div id="footer"></div>
-    <script defer>
-        fetch('footer.html')
-            .then(response => {
-                if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById('footer').innerHTML = data;
-            })
-            .catch(error => console.error('Error loading footer:', error));
+    <script>
+        // Track video engagement events
+        const video = document.getElementById('trackedVideo');
+
+        // Helper function to push events to the dataLayer
+        function trackVideoEvent(action, currentTime) {
+            dataLayer.push({
+                'event': 'videoEngagement',
+                'videoAction': action,
+                'videoTitle': video.getAttribute('src'),
+                'currentTime': Math.round(currentTime),
+                'tagId': 'GA4 | Video Engagement Tracking'
+            });
+            console.log(`Event: ${action}, Time: ${Math.round(currentTime)} seconds`);
+        }
+
+        // Event listeners for tracking engagement
+        video.addEventListener('play', () => trackVideoEvent('play', video.currentTime));
+        video.addEventListener('pause', () => trackVideoEvent('pause', video.currentTime));
+        video.addEventListener('seeked', () => trackVideoEvent('seek', video.currentTime));
+        video.addEventListener('ended', () => trackVideoEvent('complete', video.currentTime));
     </script>
 </body>
 </html>
