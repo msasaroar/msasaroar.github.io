@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Image Tag Demo</title>
+    <title>Custom Image Tag</title>
     <script>
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -19,7 +19,8 @@
             // Push a custom event to the dataLayer
             dataLayer.push({
                 'event': 'imageClick',
-                'imageId': imageId
+                'imageId': imageId,
+                'tagId': 'GA4 | 205 | Custom Image Tag'
             });
             alert(`Image ${imageId} clicked! Event pushed to dataLayer.`);
         }
@@ -31,33 +32,30 @@
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
                 height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </noscript>
-    <h1>Custom Image Tag Demo</h1>
+    <h1>Demonstration : Custom Image Tag</h1>
     <p>Click on any image below to trigger a custom event.</p>
 
     <div>
         <img 
-            src="https://via.placeholder.com/200" 
-            src="sample-1.png"
+            src="https://placebear.com/300/200" 
             alt="Sample Image 1" 
             id="image1" 
             style="cursor: pointer; margin: 10px;"
-            onclick="handleImageClick('image1')"
+            onclick="handleImageClick('Sample Image-2')"
         />
         <img 
-            src="https://via.placeholder.com/200"
-            src="sample-2.png"
+            src="https://fakeimg.pl/300x200/?text=Sample"
             alt="Sample Image 2" 
             id="image2" 
             style="cursor: pointer; margin: 10px;"
-            onclick="handleImageClick('image2')"
+            onclick="handleImageClick('Sample Image-2')"
         />
         <img 
-            src="https://via.placeholder.com/200"
-            src="sample-3.png"
+            src="https://dummyimage.com/300x200/000/fff&text=Hello+World"
             alt="Sample Image 3" 
             id="image3" 
             style="cursor: pointer; margin: 10px;"
-            onclick="handleImageClick('image3')"
+            onclick="handleImageClick('Sample Image-3')"
         />
     </div>
 
