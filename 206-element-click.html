@@ -96,40 +96,40 @@
     <a href="#" class="home-button">Home</a>
 
     <div class="container">
-        <button class="button" onclick="trackElementClick(Button, elementClass, elementText)">Default Button</button>
-        <button class="button" onclick="trackElementClick(Button, elementClass, elementText)">Primary Button</button>
-        <button class="button" onclick="trackElementClick(Button, elementClass, elementText)">Danger Button</button>
+        <button class="button" onclick="trackElementClick('Button', 'Button', 'Default Button')">Default Button</button>
+        <button class="button" onclick="trackElementClick('Button', 'Button', 'Primary Button')">Primary Button</button>
+        <button class="button" onclick="trackElementClick('Button', 'Button', 'Danger Button')">Danger Button</button>
 
-        <a href="#" class="button" onclick="trackElementClick(Link, elementClass, elementText)">Link Button</a>
+        <a href="#" class="button" onclick="trackElementClick('Link', 'Button', 'Link Button')">Link Button</a>
 
-        <span class="button" onclick="trackElementClick(Span, elementClass, elementText)">Span Button</span>
+        <span class="button" onclick="trackElementClick('Span', 'Button', 'Span Button')">Span Button</span>
 
-        <div class="button" onclick="trackElementClick(Div, elementClass, elementText)">Div Button</div>
+        <div class="button" onclick="trackElementClick('Div', 'Button', 'Div Button')">Div Button</div>
 
-        <input type="button" class="button" value="Input Button" onclick="trackElementClick(Input, elementClass, elementText)">
+        <input type="button" class="button" value="Input Button" onclick="trackElementClick('Input', 'Button', 'N/A')">
         
         
-        <form onsubmit="trackElementClick(Form, elementClass, elementText); return false;">
+        <form onsubmit="trackElementClick('Form Submit', 'Form+Button', 'N/A'); return false;">
             <input type="submit" class="button" value="Submit Button">
         </form>
 
-        <label class="button" onclick="trackElementClick(Label, elementClass, elementText)">Label Button</label>
+        <label class="button" onclick="trackElementClick('Label', 'Button', 'Label Button')">Label Button</label>
 
-        <li class="button" onclick="trackElementClick(List Item, elementClass, elementText)">List Item Button</li>
+        <li class="button" onclick="trackElementClick('List Item', 'Button', 'List Item Button')">List Item Button</li>
 
-        <img src="https://via.placeholder.com/100" class="button" alt="Image Button" onclick="trackElementClick(Image, elementClass, elementText)" style="display: block; margin: 10px auto; border-radius: 8px;">
+        <img src="https://via.placeholder.com/100" class="button" alt="Image Button" onclick="trackElementClick('Image', 'Button', 'Image Button')" style="display: block; margin: 10px auto; border-radius: 8px;">
 
-        <p class="button" onclick="trackElementClick(Paragraph, elementClass, elementText)">Paragraph Button</p>
+        <p class="button" onclick="trackElementClick('Paragraph', 'Button', 'Paragraph Button')">Paragraph Button</p>
 
-        <fieldset class="button" onclick="trackElementClick(Fieldset, elementClass, elementText)">Fieldset Button</fieldset>
+        <fieldset class="button" onclick="trackElementClick('Fieldset', 'Button', 'Fieldset Button')">Fieldset Button</fieldset>
 
-        <table class="button" onclick="trackElementClick(Blockquote, elementClass, elementText)" style="width: 250px; margin: 10px auto; text-align: center; padding: 15px; border-radius: 8px;">
+        <table class="button" onclick="trackElementClick('Blockquote', 'Button', 'Table Button')" style="width: 250px; margin: 10px auto; text-align: center; padding: 15px; border-radius: 8px;">
             <tr>
                 <td>Table Button</td>
             </tr>
         </table>
 
-        <blockquote class="button" onclick="trackElementClick(Blockquote, elementClass, elementText)">Blockquote Button</blockquote>
+        <blockquote class="button" onclick="trackElementClick('Blockquote', 'Button', 'Blockquote Button')">Blockquote Button</blockquote>
     </div>
 
     <div id="footer"></div>
