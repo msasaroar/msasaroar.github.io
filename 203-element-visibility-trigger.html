@@ -19,12 +19,12 @@
             margin: 0;
             padding: 0;
             text-align: center;
-            background-color: #f9f9f9;
+            background-color: green;
         }
 
         header {
             background-color: green;
-            color: white;
+            color: black;
             padding: 10px;
         }
 
@@ -42,7 +42,7 @@
 
         #demoButton {
             background-color: orange;
-            color: black;
+            color: blue;
             border: none;
             padding: 150px 300px;
             font-size: 16px;
@@ -52,8 +52,8 @@
         }
 
         #demoButton:hover {
-            background-color: white;
-            color: black;
+            background-color: blue;
+            color: orange;
             border: 1px solid orange;
         }
 
@@ -78,18 +78,24 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <header>
-        <h1>Element Visibility Trigger - Button Demo</h1>
+        <h1>Demonstration : Element Visibility Trigger - Button</h1>
     </header>
 
     <main>
         <h2>Scroll Down to See the Button</h2>
-        <p>The button will appear after you scroll down the page.</p>
+        <h3>The button will appear after you scroll down the page.</h3>
         <div class="spacer"></div>
     </main>
     <button id="demoButton">Click Me!</button>
-    <footer>
-        <p>Footer Content Here</p>
-    </footer>
+    <div id="footer"></div>
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
+    </script>
 
 
 </body>
