@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Image Tag Demo</title>
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-PPBVCLNF'); // Replace GTM-XXXXXX with your GTM container ID
+    </script>
+    <script>
+        // GTM Data Layer initialization
+        window.dataLayer = window.dataLayer || [];
+        
+        function handleImageClick(imageId) {
+            // Push a custom event to the dataLayer
+            dataLayer.push({
+                'event': 'imageClick',
+                'imageId': imageId
+            });
+            alert(`Image ${imageId} clicked! Event pushed to dataLayer.`);
+        }
+    </script>
+</head>
+<body>
+    <!-- Google Tag Manager script -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <h1>Custom Image Tag Demo</h1>
+    <p>Click on any image below to trigger a custom event.</p>
+
+    <div>
+        <img 
+            src="https://via.placeholder.com/200" 
+            src="msasaroar.github.io\sample-1.png"
+            alt="Sample Image 1" 
+            id="image1" 
+            style="cursor: pointer; margin: 10px;"
+            onclick="handleImageClick('image1')"
+        />
+        <img 
+            src="https://via.placeholder.com/200"
+            src="msasaroar.github.io\sample-2.png"
+            alt="Sample Image 2" 
+            id="image2" 
+            style="cursor: pointer; margin: 10px;"
+            onclick="handleImageClick('image2')"
+        />
+        <img 
+            src="https://via.placeholder.com/200"
+            src="msasaroar.github.io\sample-3.png"
+            alt="Sample Image 3" 
+            id="image3" 
+            style="cursor: pointer; margin: 10px;"
+            onclick="handleImageClick('image3')"
+        />
+    </div>
+
+</body>
+</html>
