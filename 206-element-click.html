@@ -75,8 +75,16 @@
     </style>
     <script>
         // Button click event handler
-        function showMessage(message) {
-            alert(message);
+        function trackElementClick(elementType, elementClass, elementText) {
+            // Push a custom event to the dataLayer
+            dataLayer.push({
+                'event': 'trackElementClick',
+                'elementType': elementType,
+                'elementClass': elementClass,
+                'elementText': elementText,                
+                'tagId': 'GA4 | 206 | Track Clicks on Any Element'
+            });
+            alert(`Image ${imageId} clicked! Event pushed to dataLayer.`);
         }
     </script>
 </head>
@@ -88,38 +96,40 @@
     <a href="#" class="home-button">Home</a>
 
     <div class="container">
-        <button class="button" onclick="showMessage('This is a default button')">Default Button</button>
-        <button class="button" onclick="showMessage('This is a primary button')">Primary Button</button>
-        <button class="button" onclick="showMessage('This is a danger button')">Danger Button</button>
+        <button class="button" onclick="trackElementClick(Button, elementClass, elementText)">Default Button</button>
+        <button class="button" onclick="trackElementClick(Button, elementClass, elementText)">Primary Button</button>
+        <button class="button" onclick="trackElementClick(Button, elementClass, elementText)">Danger Button</button>
 
-        <a href="#" class="button" onclick="showMessage('This is a link acting as a button')">Link Button</a>
+        <a href="#" class="button" onclick="trackElementClick(Link, elementClass, elementText)">Link Button</a>
 
-        <span class="button" onclick="showMessage('This is a span acting as a button')">Span Button</span>
+        <span class="button" onclick="trackElementClick(Span, elementClass, elementText)">Span Button</span>
 
-        <div class="button" onclick="showMessage('This is a div acting as a button')">Div Button</div>
+        <div class="button" onclick="trackElementClick(Div, elementClass, elementText)">Div Button</div>
 
-        <input type="button" class="button" value="Input Button" onclick="showMessage('This is an input button')">
-        <form onsubmit="showMessage('This is a submit button'); return false;">
+        <input type="button" class="button" value="Input Button" onclick="trackElementClick(Input, elementClass, elementText)">
+        
+        
+        <form onsubmit="trackElementClick(Form, elementClass, elementText); return false;">
             <input type="submit" class="button" value="Submit Button">
         </form>
 
-        <label class="button" onclick="showMessage('This is a label acting as a button')">Label Button</label>
+        <label class="button" onclick="trackElementClick(Label, elementClass, elementText)">Label Button</label>
 
-        <li class="button" onclick="showMessage('This is a list item button')">List Item Button</li>
+        <li class="button" onclick="trackElementClick(List Item, elementClass, elementText)">List Item Button</li>
 
-        <img src="https://via.placeholder.com/100" class="button" alt="Image Button" onclick="showMessage('This is an image button')" style="display: block; margin: 10px auto; border-radius: 8px;">
+        <img src="https://via.placeholder.com/100" class="button" alt="Image Button" onclick="trackElementClick(Image, elementClass, elementText)" style="display: block; margin: 10px auto; border-radius: 8px;">
 
-        <p class="button" onclick="showMessage('This is a paragraph button')">Paragraph Button</p>
+        <p class="button" onclick="trackElementClick(Paragraph, elementClass, elementText)">Paragraph Button</p>
 
-        <fieldset class="button" onclick="showMessage('This is a fieldset button')">Fieldset Button</fieldset>
+        <fieldset class="button" onclick="trackElementClick(Fieldset, elementClass, elementText)">Fieldset Button</fieldset>
 
-        <table class="button" onclick="showMessage('This is a table button')" style="width: 250px; margin: 10px auto; text-align: center; padding: 15px; border-radius: 8px;">
+        <table class="button" onclick="trackElementClick(Blockquote, elementClass, elementText)" style="width: 250px; margin: 10px auto; text-align: center; padding: 15px; border-radius: 8px;">
             <tr>
                 <td>Table Button</td>
             </tr>
         </table>
 
-        <blockquote class="button" onclick="showMessage('This is a blockquote button')">Blockquote Button</blockquote>
+        <blockquote class="button" onclick="trackElementClick(Blockquote, elementClass, elementText)">Blockquote Button</blockquote>
     </div>
 
     <div id="footer"></div>
