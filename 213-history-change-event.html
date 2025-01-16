@@ -4,14 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>History Change Event Tracking</title>
-        <!-- GTM Code -->
-        <script>
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-PPBVCLNF');
-        </script>
+    <!-- GTM Code -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
+    </script>
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
     <style>
         /* General styles */
         body {
@@ -22,7 +28,6 @@
             color: black;
         }
 
-        /* Header styles */
         header {
             background-color: green;
             color: black;
@@ -46,17 +51,11 @@
             cursor: pointer;
         }
 
-        header .home-button:hover {
-            background-color: white;
-        }
-
-        /* Main content */
         main {
             margin-top: 60px;
             padding: 20px;
         }
 
-        /* Button styles */
         button {
             background-color: orange;
             color: black;
@@ -66,58 +65,59 @@
             cursor: pointer;
         }
 
-        button:hover {
-            background-color: white;
-        }
-
-        /* Footer styles */
         footer {
             margin-top: 20px;
             text-align: center;
         }
     </style>
-
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
     <header>
-        <button class="home-button" onclick="navigateHome()">Home</button>
+        <button class="home-button" id="homeButton">Home</button>
         <h1>History Change Event Tracking</h1>
     </header>
     <main>
         <p>Welcome to our Single Page Application (SPA) designed to track the 'History Change Event' using Google Tag Manager (GTM).</p>
-        <button onclick="simulateHistoryChange()">Simulate History Change</button>
+        <button id="simulateHistoryChangeButton">Simulate History Change</button>
     </main>
     <footer>
         <object type="text/html" data="footer.html" style="width: 100%; height: 100px;"></object>
     </footer>
 
     <script>
-        // SPA navigation simulation
-        function navigateHome() {
-            alert('Navigating to Home');
-            window.history.pushState({page: 'home'}, 'Home', '/home');
-            trackHistoryChange('home');
-        }
+        // Initialize dataLayer
+        window.dataLayer = window.dataLayer || [];
 
-        function simulateHistoryChange() {
-            alert('Simulating history change to "about" page.');
-            window.history.pushState({page: 'about'}, 'About', '/about');
-            trackHistoryChange('about');
-        }
-
+        // Track history change
         function trackHistoryChange(page) {
             console.log('History changed to:', page);
-            dataLayer.push({
+            window.dataLayer.push({
                 event: 'historyChange',
                 page: page
             });
         }
 
+        // Add event listeners
+        document.getElementById('homeButton').addEventListener('click', function() {
+            alert('Navigating to Home');
+            window.history.pushState({ page: 'home' }, 'Home', '/home');
+            trackHistoryChange('home');
+        });
+
+        document.getElementById('simulateHistoryChangeButton').addEventListener('click', function() {
+            alert('Simulating history change to "about" page.');
+            window.history.pushState({ page: 'about' }, 'About', '/about');
+            trackHistoryChange('about');
+        });
+
         // Capture browser back/forward navigation
         window.onpopstate = function(event) {
-            if (event.state) {
+            if (event.state && event.state.page) {
                 console.log('State changed to:', event.state);
                 trackHistoryChange(event.state.page);
+            } else {
+                console.warn('No state data available');
             }
         };
     </script>
