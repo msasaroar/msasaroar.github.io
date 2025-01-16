@@ -20,7 +20,6 @@
             margin: 0;
             font-family: Arial, sans-serif;
         }
-
         header {
             background-color: green;
             color: black;
@@ -31,7 +30,6 @@
             width: 100%;
             z-index: 1000;
         }
-
         .home-button {
             position: absolute;
             left: 10px;
@@ -43,22 +41,18 @@
             cursor: pointer;
             font-size: 14px;
         }
-
         .home-button:hover {
             background-color: white;
             color: black;
         }
-
         main {
             margin-top: 60px;
             padding: 20px;
         }
-
         nav {
             margin: 40px 0;
             text-align: center;
         }
-
         nav a {
             margin: 0 10px;
             text-decoration: none;
@@ -68,12 +62,10 @@
             padding: 10px;
             border-radius: 5px;
         }
-
         nav a:hover {
             background-color: blue;
             color: orange;
         }
-
         button {
             background-color: orange;
             color: black;
@@ -82,12 +74,10 @@
             cursor: pointer;
             font-size: 14px;
         }
-
         button:hover {
             background-color: blue;
             color: orange;
         }
-
         iframe {
             border: none;
             width: 100%;
@@ -111,7 +101,7 @@
         <nav>
             <a href="#SectionGA4">Hash : Google Analytics 4</a>
             <a href="#SectionGTM">Hash : Google Tag Manager</a>
-            <a href="#SectionGADs">Hash : Google Ads</a>
+            <a href="#SectionGAds">Hash : Google Ads</a>
             <a href="#SectionGitHub">Hash : GitHub</a>
         </nav>
 
@@ -126,20 +116,10 @@
     </footer>
 
     <script>
-        // Hash change event listener
-        window.addEventListener('hashchange', function() {
-            console.log('Hash changed to:', location.hash);
-
-            // Push the hash change event to the data layer for GTM
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({
-                'event': 'hashChange',
-                'newHash': location.hash
-            });
-        
-            // Update content dynamically based on hash
+        // Function to update content dynamically based on hash
+        function updateContent(hash) {
             const content = document.getElementById('content');
-            switch (location.hash) {
+            switch (hash) {
                 case '#SectionGA4':
                     content.innerHTML = '<h2>Google Analytics 4</h2><p>Welcome to the Google Analytics 4 section!</p>';
                     break;
@@ -147,7 +127,7 @@
                     content.innerHTML = '<h2>Google Tag Manager</h2><p>Welcome to the Google Tag Manager section!</p>';
                     break;
                 case '#SectionGAds':
-                    content.innerHTML = '<h2>Coogle Ads</h2><p>Welcome to the Google Ads section!</p>';
+                    content.innerHTML = '<h2>Google Ads</h2><p>Welcome to the Google Ads section!</p>';
                     break;
                 case '#SectionGitHub':
                     content.innerHTML = '<h2>GitHub</h2><p>Welcome to the GitHub section!</p>';
@@ -155,6 +135,27 @@
                 default:
                     content.innerHTML = '<h2>Welcome</h2><p>This is a simple Single Page Application(SPA) page to demonstrate hash change event tracking with GTM.</p>';
             }
+        }
+
+        // Event listener for hash changes
+        window.addEventListener('hashchange', function() {
+            const newHash = location.hash;
+            console.log('Hash changed to:', newHash);
+
+            // Push the hash change event to the data layer for GTM
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'hashChange',
+                'newHash': newHash
+            });
+
+            // Update content
+            updateContent(newHash);
+        });
+
+        // Initial content update based on current hash
+        document.addEventListener('DOMContentLoaded', function() {
+            updateContent(location.hash);
         });
     </script>
 </body>
