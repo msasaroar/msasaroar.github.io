@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Demonstration of GTM Window Loaded Trigger">
     <title>Window Loaded Trigger Demonstration</title>
-    <!-- GTM Code -->
+    
+    <!-- Google Tag Manager -->
     <script>
+        window.dataLayer = window.dataLayer || [];
         (function(w, d, s, l, i) {
             w[l] = w[l] || [];
             w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
@@ -16,17 +19,16 @@
             f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
     </script>
-    <!-- CSS Styling -->
+    <!-- End Google Tag Manager -->
+
     <style>
-        /* General Styles */
         body {
             margin: 0;
-            background-color: white;
             font-family: Arial, sans-serif;
             color: black;
+            background-color: white;
         }
 
-        /* Header */
         header {
             background-color: green;
             color: black;
@@ -38,7 +40,6 @@
             z-index: 1000;
         }
 
-        /* Home Button */
         .home-button {
             position: absolute;
             top: 10px;
@@ -56,14 +57,12 @@
             color: orange;
         }
 
-        /* Main Content */
         .content {
-            margin-top: 80px; /* To avoid overlap with the fixed header */
+            margin-top: 80px;
             padding: 20px;
             text-align: center;
         }
 
-        /* Footer */
         footer {
             width: 100%;
             position: fixed;
@@ -71,7 +70,6 @@
             background-color: white;
         }
 
-        /* Buttons */
         button {
             background-color: orange;
             color: blue;
@@ -88,34 +86,31 @@
     </style>
 </head>
 <body>
-    <!-- Google Tag Manager (noscript fallback) -->
+    <!-- Google Tag Manager (noscript) -->
     <noscript>
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
-    <!-- Header -->
     <header>
         <button class="home-button" onclick="navigateHome()">Home</button>
-        <h1>Demonstration of 'Window Loaded Trigger' using GTM</h1>
+        <h1>Window Loaded Trigger Demonstration</h1>
     </header>
 
-    <!-- Main Content -->
-    <div class="content">
+    <main class="content">
         <h2>Welcome to the SPA</h2>
         <p>This Single Page Application demonstrates the use of the 'Window Loaded Trigger' in Google Tag Manager.</p>
         <button onclick="loadPage('index')">Index Page</button>
         <button onclick="loadPage('about')">About Page</button>
-        <div id="spa-content">
+        <div id="spa-content" aria-live="polite">
             <!-- SPA Content will load here -->
         </div>
-    </div>
+    </main>
 
-    <!-- Footer -->
     <footer>
-        <object type="text/html" data="footer.html" style="width: 100%; height: 50px;"></object>
+        <object type="text/html" data="footer.html" aria-label="Footer Content" style="width: 100%; height: 50px;"></object>
     </footer>
 
-    <!-- JavaScript for SPA and Navigation -->
     <script>
         function navigateHome() {
             window.location.href = 'index.html';
@@ -127,13 +122,13 @@
                 content.innerHTML = '<h3>Index Page</h3><p>This is the index page loaded dynamically.</p>';
             } else if (page === 'about') {
                 content.innerHTML = '<h3>About Page</h3><p>This is the about page loaded dynamically.</p>';
+            } else {
+                content.innerHTML = '<p>Error: Page not found.</p>';
             }
         }
 
-        // Simulating Window Loaded Event for GTM
         window.addEventListener('load', function() {
             console.log('Window Loaded - GTM Trigger Demonstrated');
-            window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({ event: 'windowLoaded' });
         });
     </script>
