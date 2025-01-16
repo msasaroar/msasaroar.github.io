@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Visibility Trigger Demo</title>
-    <!-- Adding GTM Script -->
+    <!-- Google Tag Manager Script -->
     <script>
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -13,7 +13,7 @@
       })(window,document,'script','dataLayer','GTM-PPBVCLNF');
     </script>
     <style>
-        /* Global Styling */
+        /* General Styling */
         body {
             background-color: white;
             color: black;
@@ -22,8 +22,6 @@
             padding: 0;
             text-align: center;
         }
-
-        /* Header Styles */
         header {
             background-color: green;
             color: black;
@@ -34,10 +32,7 @@
             top: 0;
             height: 60px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
         }
-
-        /* Home Button Styles */
         #home-button {
             position: absolute;
             left: 10px;
@@ -48,29 +43,22 @@
             padding: 10px 25px;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 14px bold;
+            font-size: 14px;
         }
-    
         #home-button:hover {
             background-color: blue;
             color: orange;
             border: 2px solid orange;
         }
-
-        /* Main Content */
         main {
-            margin-top: 60px; /* Space to avoid overlap with fixed header */
+            margin-top: 60px;
             padding: 20px;
-            text-align: center;
         }
-
-        /* Footer */
         iframe {
             width: 100%;
             border: none;
             margin-top: 280px;
         }
-
     </style>
 </head>
 <body>
@@ -81,20 +69,30 @@
 
     <!-- Header -->
     <header>
-        <!--<a href="index.html" class="home-button">Home</a>-->
         <button id="home-button" onclick="window.location.href='index.html';">Home</button>
         <h1>Page Visibility Trigger Demo</h1>
     </header>
 
     <!-- Main Content -->
     <main>
-        <h2>Subject: Demonstrating 'Page Visibility Trigger' Event Using GTM</h2>
-        <p>This page demonstrates how to track when a user switches between browser tabs or hides/shows the page using Google Tag Manager's Page Visibility Trigger.</p>
-        <p>Ensure GTM code is implemented on this page to test the trigger.</p>
+        <h2>Demonstrating Page Visibility Trigger with GTM</h2>
+        <p>Use this page to test a Page Visibility Trigger in Google Tag Manager. Switch tabs or minimize the browser to simulate visibility changes.</p>
+        <p>Ensure GTM code is correctly implemented for the trigger to function.</p>
     </main>
 
     <!-- Footer -->
     <iframe src="footer.html"></iframe>
 
+    <!-- Page Visibility Event Script -->
+    <script>
+        document.addEventListener('visibilitychange', function() {
+            // Push visibility state changes to the dataLayer
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'pageVisibilityChange',
+                'visibilityState': document.visibilityState
+            });
+        });
+    </script>
 </body>
 </html>
