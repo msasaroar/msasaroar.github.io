@@ -23,88 +23,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page View Tag Practice</title>
     <style>
-        /* মূল CSS */
-        html, body {
-            height: 98%;
+        /* General Styles */
+        body {
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
+            text-align: center;
         }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: white;
-            color: black;
-        }
-
+    
+        /* Header Styles */
         header {
-            //position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
             background-color: green;
             color: black;
-            text-align: center;
-            padding: 1rem 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            height: 60px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             z-index: 1000;
         }
-
-        section {
-            flex: 1; /* Content বাকি জায়গা নেবে */
-            margin: 30px auto;
-            padding: 50px;
-            max-width: 800px;
-            border-radius: 10px;
-            background: rgb(26, 175, 225);
-            box-shadow: 0 4px 6px rgba(5, 95, 136, 0.1);
+    
+        header h1 {
             text-align: center;
+            font-size: 25px bold;
         }
-
-        section h2 {
-            color: black;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 10px;
-            font-size: 16px;
-            color: black;
-            background-color: orange;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .button:hover {
-            background-color: white;
-            color: black;
-        }
-
-        .home-button {
+    
+        /* Home Button Styles */
+        #home-button {
+            position: absolute;
+            left: 10px;
+            top: 10px;
             background-color: orange;
             color: blue;
-            padding: 10px 15px;
-            text-decoration: none;
+            border: none;
+            padding: 10px 25px;
             border-radius: 5px;
-            position: fixed;
-            top: 10px;
-            left: 10px;
+            cursor: pointer;
+            font-size: 14px bold;
         }
-
-        .home-button:hover {
+    
+        #home-button:hover {
             background-color: blue;
             color: orange;
+            border: 2px solid orange;
         }
-
-        #footer {
+    
+        /* Button Styles */
+        button {
+            background-color: orange;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+    
+        button:hover {
+            background-color: white;
+            color: black;
+            border: 1px solid orange;
+        }
+    
+        /* Footer include */
+        footer {
             text-align: center;
-            background-color: #f4f4f4;
-            padding: 10px 0;
-            margin-top: auto; /* Footer বটমে রাখে */
-            width: 100%;
+            margin-top: 500px;
         }
     </style>
 </head>
@@ -117,18 +105,13 @@
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <a href="index.html" class="home-button">Home</a>
-
     <header>
-        <h1>Page View Tag Practice</h1>
-        <p>Simulate tracking page views using a 'Page View Tag'.</p>
+        <h1>Demonstration : Page View Tag</h1>
+        <button id="home-button" onclick="window.location.href='index.html';">Home</button>
     </header>
 
     <section>
-        <h2>Page View Tag Simulation</h2>
-        <div id="message">
-            <p>Simulate a page view event by loading this page.</p>
-        </div>
+        <h1>Simulate a page view event by loading this page.</h1>
     </section>
 
     <div id="footer">
