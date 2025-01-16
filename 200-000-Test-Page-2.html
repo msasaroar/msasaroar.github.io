@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Track Video Pause Event</title>
+    <title>Track Video Complete Event</title>
     <!-- Google Tag Manager -->
     <script>
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -14,7 +14,6 @@
     </script>
     <!-- End Google Tag Manager -->
     <style>
-        /* General Styles */
         body {
             background-color: white;
             color: black;
@@ -23,7 +22,6 @@
             padding: 0;
         }
 
-        /* Header Styles */
         header {
             background-color: green;
             color: black;
@@ -39,30 +37,28 @@
 
         header h1 {
             margin: 0;
-            font-size: 25px bold;
+            font-size: 20px;
         }
 
-        /* Home Button Styles */
         #home-button {
             position: absolute;
             left: 10px;
-            top: 10px;
+            top: 15px;
             background-color: orange;
-            color: blue;
+            color: black;
             border: none;
-            padding: 10px 25px;
+            padding: 10px 15px;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 14px bold;
+            font-size: 14px;
         }
 
         #home-button:hover {
-            background-color: blue;
-            color: orange;
-            border: 2px solid orange;
+            background-color: white;
+            color: black;
+            border: 1px solid orange;
         }
 
-        /* Footer include */
         footer {
             text-align: center;
             margin-top: 30px;
@@ -77,33 +73,36 @@
 
     <header>
         <button id="home-button" onclick="window.location.href='index.html';">Home</button>
-        <h1>Track Video Pause Event Using GTM</h1>
+        <h1>Track Video Complete Event Using GTM</h1>
     </header>
 
-<main>
-    <section style="padding: 20px;">
-        <h2>About Video Pause Tracking</h2>
-        <p>This page is designed to track the 'Video Pause' event using Google Tag Manager. Ensure your GTM setup includes the necessary triggers and tags to capture the event effectively.</p>
-        <p>To test this functionality, embed a video below:</p>
+    <main>
+        <section style="padding: 20px;">
+            <h2>About Video Complete Event Tracking</h2>
+            <p>This page is designed to track the 'Video Complete Event' using Google Tag Manager. Ensure your GTM setup includes the necessary triggers and tags to capture the event effectively.</p>
+            <p>To test this functionality, watch the video below until completion:</p>
 
-        <iframe id="demo-video" width="600" height="400" 
-                src="https://www.youtube.com/embed/pByLJEV_ylQ?enablejsapi=1" 
-                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-        </iframe>
-
-        <p>Pause the video above to trigger the event.</p>
-    </section>
-</main>
+            <iframe id="demo-video" width="600" height="400" 
+                    src="https://www.youtube.com/embed/pByLJEV_ylQ?enablejsapi=1" 
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+            </iframe>
+        </section>
+    </main>
 
     <footer>
-        <!-- Footer content is included from footer.html -->
-        <object type="text/html" data="footer.html" style="width: 100%; height: 50px;"></object>
+        <p>&copy; 2025 Your Website</p>
     </footer>
 
     <script>
-        // Load YouTube Iframe API
-        let player;
+        // Load the YouTube API
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        // Initialize YouTube Player API
+        var player;
         function onYouTubeIframeAPIReady() {
             player = new YT.Player('demo-video', {
                 events: {
@@ -112,23 +111,18 @@
             });
         }
 
+        // Listen for video state changes
         function onPlayerStateChange(event) {
-            if (event.data === YT.PlayerState.PAUSED) {
+            if (event.data === YT.PlayerState.ENDED) {
+                // Push 'video_complete' event to the dataLayer
                 window.dataLayer = window.dataLayer || [];
                 window.dataLayer.push({
-                    'event': 'video_pause',
-                    'video_title': player.getVideoData().title,
-                    'current_time': player.getCurrentTime()
+                    'event': 'video_complete',
+                    'video_title': player.getVideoData().title
                 });
-                console.log('Video Pause Event Sent to GTM');
+                console.log('Video Complete Event Sent to GTM');
             }
         }
-
-        // Inject YouTube API script
-        const tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        const firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
     </script>
 </body>
 </html>

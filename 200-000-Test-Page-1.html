@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Track Video Pause Event</title>
+    <title>To Track Video Complete Event</title>
     <!-- Google Tag Manager -->
     <script>
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -39,27 +39,27 @@
 
         header h1 {
             margin: 0;
-            font-size: 25px bold;
+            font-size: 20px;
         }
 
         /* Home Button Styles */
         #home-button {
             position: absolute;
             left: 10px;
-            top: 10px;
+            top: 15px;
             background-color: orange;
-            color: blue;
+            color: black;
             border: none;
-            padding: 10px 25px;
+            padding: 10px 15px;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 14px bold;
+            font-size: 14px;
         }
 
         #home-button:hover {
-            background-color: blue;
-            color: orange;
-            border: 2px solid orange;
+            background-color: white;
+            color: black;
+            border: 1px solid orange;
         }
 
         /* Button Styles */
@@ -95,13 +95,13 @@
 
     <header>
         <button id="home-button" onclick="window.location.href='index.html';">Home</button>
-        <h1>Track Video Pause Event Using GTM</h1>
+        <h1>Track Video Complete Event Using GTM</h1>
     </header>
 
 <main>
     <section style="padding: 20px;">
-        <h2>About Video Pause Tracking</h2>
-        <p>This page is designed to track the 'Video Pause' event using Google Tag Manager. Ensure your GTM setup includes the necessary triggers and tags to capture the event effectively.</p>
+        <h2>About Video Complete Event Tracking</h2>
+        <p>This page is designed to track the 'Video Complete Event' using Google Tag Manager. Ensure your GTM setup includes the necessary triggers and tags to capture the event effectively.</p>
         <p>To test this functionality, embed a video below:</p>
 
         <iframe id="demo-video" width="600" height="400" 
@@ -110,7 +110,7 @@
                 allowfullscreen>
         </iframe>
 
-        <p>Pause the video above to trigger the event.</p>
+        <p>Complete the video above to trigger the event.</p>
     </section>
 </main>
 
@@ -129,7 +129,7 @@
                 'event': 'video_pause',
                 'video_title': video.currentSrc
             });
-            console.log('Video Pause Event Sent to GTM');
+            console.log('Video Complete Event Sent to GTM');
         });
     </script>
 </body>
