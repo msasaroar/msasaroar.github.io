@@ -15,46 +15,51 @@
     <style>
         /* Global Styling */
         body {
-            margin: 0;
-            background-color: white; /* Body background color */
+            background-color: white;
+            color: black;
             font-family: Arial, sans-serif;
-            color: black; /* Font color */
+            margin: 0;
+            padding: 0;
+            text-align: center;
         }
 
-        /* Header Styling */
+        /* Header Styles */
         header {
-            background-color: green; /* Header background color */
-            color: black; /* Header font color */
-            text-align: center; /* Center header text */
-            padding: 10px 0;
-            position: fixed;
-            width: 100%;
-            top: 0; /* Position at the top */
-            left: 0;
+            background-color: green;
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            height: 60px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             z-index: 1000;
         }
 
-        /* Home Button Styling */
-        .home-button {
+        /* Home Button Styles */
+        #home-button {
             position: absolute;
-            top: 10px;
             left: 10px;
-            background-color: orange; /* Button color */
-            color: black; /* Button font color */
-            text-decoration: none;
-            padding: 8px 12px;
+            top: 10px;
+            background-color: orange;
+            color: blue;
+            border: none;
+            padding: 10px 25px;
             border-radius: 5px;
-            font-weight: bold;
+            cursor: pointer;
+            font-size: 14px bold;
         }
-
-        .home-button:hover {
-            background-color: white; /* Hover color */
-            color: black;
+    
+        #home-button:hover {
+            background-color: blue;
+            color: orange;
+            border: 2px solid orange;
         }
 
         /* Main Content */
         main {
-            margin-top: 80px; /* Space to avoid overlap with fixed header */
+            margin-top: 60px; /* Space to avoid overlap with fixed header */
             padding: 20px;
             text-align: center;
         }
@@ -63,8 +68,9 @@
         iframe {
             width: 100%;
             border: none;
-            margin-top: 20px;
+            margin-top: 280px;
         }
+
     </style>
 </head>
 <body>
@@ -89,5 +95,6 @@
 
     <!-- Footer -->
     <iframe src="footer.html"></iframe>
+
 </body>
 </html>
