@@ -31,22 +31,55 @@
             background-color: #f9f9f9;
         }
 
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px;
-        }
+    /* Header Styles */
+    header {
+        background-color: green;
+        color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        height: 60px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 25px bold;
+    }
 
         .video-container {
-            margin: 20px auto;
-            max-width: 640px;
+            margin: 100px auto;
+            max-width: 300px; /* Reduced from 640px to 480px */
         }
 
         video {
             width: 100%;
-            border: 2px solid #ccc;
+            border: 5px solid #ccc;
             border-radius: 8px;
         }
+
+            /* Home Button Styles */
+    #home-button {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        background-color: orange;
+        color: blue;
+        border: none;
+        padding: 10px 25px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px bold;
+    }
+
+    #home-button:hover {
+        background-color: blue;
+        color: orange;
+        border: 2px solid orange;
+    }
     </style>
 </head>
 <body>
@@ -58,6 +91,7 @@
 
     <header>
         <h1>Video Engagement Tracking</h1>
+        <button id="home-button" onclick="window.location.href='index.html';">Home</button>
     </header>
 
     <div class="video-container">
