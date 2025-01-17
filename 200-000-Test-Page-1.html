@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Track Video Complete Event</title>
-    <!-- Google Tag Manager -->
+    <title>Page Visibility Trigger Demo</title>
+    <!-- Adding GTM Script -->
     <script>
-        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-PPBVCLNF');
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-PPBVCLNF');
     </script>
-    <!-- End Google Tag Manager -->
     <style>
-        /* General Styles */
+        /* Global Styling */
         body {
             background-color: white;
             color: black;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            text-align: center;
         }
 
         /* Header Styles */
@@ -37,100 +37,64 @@
             z-index: 1000;
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 20px;
-        }
-
         /* Home Button Styles */
         #home-button {
             position: absolute;
             left: 10px;
-            top: 15px;
+            top: 10px;
             background-color: orange;
-            color: black;
+            color: blue;
             border: none;
-            padding: 10px 15px;
+            padding: 10px 25px;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 14px;
+            font-size: 14px bold;
         }
-
+    
         #home-button:hover {
-            background-color: white;
-            color: black;
-            border: 1px solid orange;
+            background-color: blue;
+            color: orange;
+            border: 2px solid orange;
         }
 
-        /* Button Styles */
-        button {
-            background-color: orange;
-            color: black;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
-        button:hover {
-            background-color: white;
-            color: black;
-            border: 1px solid orange;
-        }
-
-        /* Footer include */
-        footer {
+        /* Main Content */
+        main {
+            margin-top: 60px; /* Space to avoid overlap with fixed header */
+            padding: 20px;
             text-align: center;
-            margin-top: 30px;
         }
-    </style>
 
+        /* Footer */
+        iframe {
+            width: 100%;
+            border: none;
+            margin-top: 280px;
+        }
+
+    </style>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
 
+    <!-- Header -->
     <header>
+        <!--<a href="index.html" class="home-button">Home</a>-->
         <button id="home-button" onclick="window.location.href='index.html';">Home</button>
-        <h1>Track Video Complete Event Using GTM</h1>
+        <h1>Page Visibility Trigger Demo</h1>
     </header>
 
-<main>
-    <section style="padding: 20px;">
-        <h2>About Video Complete Event Tracking</h2>
-        <p>This page is designed to track the 'Video Complete Event' using Google Tag Manager. Ensure your GTM setup includes the necessary triggers and tags to capture the event effectively.</p>
-        <p>To test this functionality, embed a video below:</p>
+    <!-- Main Content -->
+    <main>
+        <h2>Subject: Demonstrating 'Page Visibility Trigger' Event Using GTM</h2>
+        <p>This page demonstrates how to track when a user switches between browser tabs or hides/shows the page using Google Tag Manager's Page Visibility Trigger.</p>
+        <p>Ensure GTM code is implemented on this page to test the trigger.</p>
+    </main>
 
-        <iframe id="demo-video" width="600" height="400" 
-                src="https://www.youtube.com/embed/pByLJEV_ylQ?enablejsapi=1" 
-                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-        </iframe>
+    <!-- Footer -->
+    <iframe src="footer.html"></iframe>
 
-        <p>Complete the video above to trigger the event.</p>
-    </section>
-</main>
-
-
-    <footer>
-        <!-- Footer content is included from footer.html -->
-        <object type="text/html" data="footer.html" style="width: 100%; height: 50px;"></object>
-    </footer>
-
-    <script>
-        // Track 'Video Pause' event
-        const video = document.getElementById('demo-video');
-        video.addEventListener('pause', function() {
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({
-                'event': 'video_pause',
-                'video_title': video.currentSrc
-            });
-            console.log('Video Complete Event Sent to GTM');
-        });
-    </script>
 </body>
 </html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GTM Variables Configuration and Demonstration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: #007bff;
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+    }
+    main {
+      padding: 20px;
+    }
+    section {
+      margin-bottom: 30px;
+      background: #fff;
+      padding: 15px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+    h2 {
+      color: #007bff;
+    }
+    pre {
+      background: #f4f4f4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow: auto;
+    }
+    button {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background-color: orange;
+      color: blue;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 15px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background-color: blue;
+      color: orange;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      background: #f1f1f1;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    /* Popup styling */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      max-width: 600px;
+      max-height: 80%;
+      background: #fff;
+      border: 1px solid #ddd;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      overflow: auto;
+    }
+    .popup img {
+      width: 100%;
+    }
+    .popup-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #f44336;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    .popup-close:hover {
+      background: #d32f2f;
+    }
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 500;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Google Tag Manager Variables</h1>
+    <p>A guide to configure, explain, and demonstrate GTM variables.</p>
+  </header>
+  <main>
+
+    <section>
+        <h2>1. Page URL Variable</h2>
+        <p>
+          The Page URL variable captures the full URL of the page, including the protocol, hostname, path, and query string.
+        </p>
+        <h3>Configuration Steps:</h3>
+        <ol>
+          <li>Go to GTM > Variables > Configure.</li>
+          <li>Enable the built-in variable: <strong>Page URL</strong>.</li>
+        </ol>
+        <h3>Demonstration:</h3>
+        <pre>https://example.com/products?category=shoes</pre>
+      </section>
+
+    <section>
+        <h2>1. Page URL Variable</h2>
+        <p>The Page URL variable captures the full URL of the page, including the protocol, hostname, path, and query string.</p>
+        <h3 onclick="openPopup('301-all-url-variable.png')" style="cursor: pointer; color: blue;">Configuration Steps [Click On The Line]</h3>
+
+      <ol>
+        <li>Go to GTM > Variables > Configure.</li>
+        <li>Enable the built-in variable: <strong>Page URL</strong>.</li>
+      </ol>
+      <h3>Demonstration:</h3>
+      <pre>https://example.com/products?category=shoes</pre>
+      <button onclick="openPopup('301-all-url-variable.png')">View Example</button>
+    </section>
+
+    <section>
+      <h2>2. Page Hostname Variable</h2>
+      <p>The Page Hostname variable captures the hostname portion of the URL (e.g., <code>example.com</code>).</p>
+      <h3>Configuration Steps:</h3>
+      <ol>
+        <li>Go to GTM > Variables > Configure.</li>
+        <li>Enable the built-in variable: <strong>Page Hostname</strong>.</li>
+      </ol>
+      <h3>Demonstration:</h3>
+      <pre>example.com</pre>
+      <button onclick="openPopup('301-all-url-variable.png')">View Example</button>
+    </section>
+
+    <section>
+      <h2>3. Page Path Variable</h2>
+      <p>Captures the path portion of the URL (e.g., <code>/products</code>).</p>
+      <h3>Configuration Steps:</h3>
+      <ol>
+        <li>Go to GTM > Variables > Configure.</li>
+        <li>Enable the built-in variable: <strong>Page Path</strong>.</li>
+      </ol>
+      <h3>Demonstration:</h3>
+      <pre>/products</pre>
+      <button onclick="openPopup('301-all-url-variable.png')">View Example</button>
+    </section>
+
+    <section>
+      <h2>4. Click URL Variable</h2>
+      <p>Captures the URL of the clicked link.</p>
+      <h3>Configuration Steps:</h3>
+      <ol>
+        <li>Go to GTM > Variables > Configure.</li>
+        <li>Enable the built-in variable: <strong>Click URL</strong>.</li>
+      </ol>
+      <h3>Demonstration:</h3>
+      <pre>https://example.com/signup</pre>
+      <button onclick="openPopup('301-all-url-variable.png')">View Example</button>
+    </section>
+
+    <!-- Additional sections for all variables can follow the same pattern -->
+
+  </main>
+  <footer>
+    &copy; 2025 GTM Variable Guide. All rights reserved.
+  </footer>
+
+  <!-- Popup Window -->
+  <div class="popup" id="popup">
+    <button class="popup-close" onclick="closePopup()">Close</button>
+    <img src="" alt="Popup Example" id="popup-img">
+  </div>
+  <div class="overlay" id="overlay" onclick="closePopup()"></div>
+
+  <script>
+    // Open Popup
+    function openPopup(imageSrc) {
+      document.getElementById('popup-img').src = imageSrc;
+      document.getElementById('popup').style.display = 'block';
+      document.getElementById('overlay').style.display = 'block';
+    }
+
+    // Close Popup
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+      document.getElementById('overlay').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
