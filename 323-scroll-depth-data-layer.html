@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>53 : Scroll Depth</title>
+  <title>Scroll Depth Tracking with DataLayer</title>
 
   <!-- Google Tag Manager -->
   <script>
@@ -79,14 +79,13 @@
   </header>
 
   <main>
-    <h1>53 : Demonstration of Scroll Depth</h1>
-    <p>Scroll down the page to track the scroll depth.</p>
+    <h1>Scroll Depth Tracking</h1>
+    <p>Scroll down to see scroll depth events pushed to the dataLayer.</p>
     
     <!-- Dummy content for scrolling demonstration -->
     <div class="content">
-      <p>Some content...</p>
-      <p>Scroll down to see the data layer in action.</p>
-      <div style="height: 1500px;"></div>
+      <p>Keep scrolling to track your progress...</p>
+      <div style="height: 2000px;"></div>
     </div>
   </main>
 
@@ -94,6 +93,35 @@
     <object type="text/html" data="footer.html" style="width: 100%; height: 100%;"></object>
   </footer>
 
+  <script>
+    // Scroll depth tracking
+    let scrollDepths = [25, 50, 75, 100];
+    let trackedDepths = [];
+
+    window.addEventListener('scroll', () => {
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollTop = window.scrollY;
+      const scrollPercentage = Math.round((scrollTop / scrollHeight) * 100);
+
+      scrollDepths.forEach(depth => {
+        if (!trackedDepths.includes(depth) && scrollPercentage >= depth) {
+          // Push event to dataLayer
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: 'scrollDepth',
+            scrollDepth: depth,
+            tagCode: 323
+          });
+          trackedDepths.push(depth);
+          console.log(`Scroll depth reached: ${depth}%`);
+        }
+      });
+    });
+
+    // Home button function
+    function goHome() {
+      window.location.href = 'index.html';
+    }
+  </script>
 </body>
 </html>
-
