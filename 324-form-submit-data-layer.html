@@ -120,9 +120,10 @@
       dataLayer.push({
         event: 'formSubmit',
         formData: {
-          tag_code: 325,
+          htmlFileName: FileSystem.htmlFileName(),
+          tagCode: 325,
           visitorsName: name,
-          visitorsEmail: email,
+          visitorsEmail: email, 
           timestamp: new Date().toISOString()
         }
       });
