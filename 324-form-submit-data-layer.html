@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Form Submit Data Layer</title>
-  <script>
+  <script async>
     // Google Tag Manager
     (function(w, d, s, l, i) {
       w[l] = w[l] || [];
@@ -56,6 +56,18 @@
       text-align: center;
     }
 
+    label {
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
     button {
       background-color: orange;
       color: blue;
@@ -88,24 +100,26 @@
 
   <form id="exampleForm">
     <label for="name">Name:</label><br>
-    <input type="text" id="name" name="name" required><br><br>
+    <input type="text" id="name" name="name" placeholder="Enter your name" required><br>
     <label for="email">Email:</label><br>
-    <input type="email" id="email" name="email" required><br><br>
+    <input type="email" id="email" name="email" placeholder="Enter your email" required><br>
     <button type="submit">Submit</button>
   </form>
 
   <script>
-    // Push form data to the dataLayer on submit
+    // Form submission tracking
     document.getElementById('exampleForm').addEventListener('submit', function(event) {
-      event.preventDefault(); // Prevent actual form submission for demo purposes
+      event.preventDefault(); // Prevent form submission for demo purposes
+
+      // Collect form data
       const name = document.getElementById('name').value;
       const email = document.getElementById('email').value;
 
-      // Push form data to the dataLayer
+      // Push data to dataLayer
       window.dataLayer = window.dataLayer || [];
       dataLayer.push({
-          event: 'formSubmit',
-          formData: {
+        event: 'formSubmit',
+        formData: {
           page_name: '054-form-submit-data-layer',
           visitors_name: name,
           visitors_email: email,
@@ -113,8 +127,9 @@
         }
       });
 
+      // Provide feedback and log for debugging
       console.log('Form data pushed to dataLayer:', { name, email });
-      alert('Form data sent to dataLayer!');
+      alert('Form submitted! Data sent to the dataLayer.');
     });
   </script>
 
