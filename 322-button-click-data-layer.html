@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Click DataLayer Example</title>
+    <title>Track Button Clicks Using DataLayer</title>
     <!-- Google Tag Manager -->
     <script>
         (function(w, d, s, l, i) {
@@ -26,17 +26,17 @@
             padding: 0;
         }
 
-header {
-    position: fixed; /* হেডারকে ফিক্সড করে, যাতে এটি সবসময় স্ক্রিনের টপে থাকে */
-    top: 0; /* পৃষ্ঠার একদম টপে অবস্থান নির্ধারণ */
-    width: 100%; /* পুরো পৃষ্ঠার প্রস্থ জুড়ে থাকবে */
-    background-color: green; /* হেডারের ব্যাকগ্রাউন্ড রঙ */
-    color: black; /* টেক্সটের রঙ */
-    text-align: center; /* টেক্সটকে হেডারের সেন্টারে রাখে */
-    height: 100px; /* হেডারের উচ্চতা */
-    line-height: 50px; /* ভর্টিক্যালি সেন্টারে টেক্সট রাখার জন্য */
-    padding: 0; /* প্যাডিং সরিয়ে দেওয়া */
-}
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: green;
+            color: black;
+            text-align: center;
+            height: 100px;
+            line-height: 100px;
+            z-index: 1000;
+        }
 
         .home-button {
             position: absolute;
@@ -55,7 +55,7 @@ header {
         }
 
         main {
-            margin-top: 80px;
+            margin-top: 120px;
             text-align: center;
             padding: 20px;
         }
@@ -86,48 +86,40 @@ header {
     </style>
 </head>
 <body>
-	<!-- Google Tag Manager (noscript) -->
-	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<!-- End Google Tag Manager (noscript) -->
-	
-	<header>
-		<button class="home-button" onclick="location.href='index.html'">Home</button>
-		<h1>Track Button Clicks Using DataLayer</h1>
-	</header>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
-	<main>
-		<button id="sampleButton">Click Me</button>
-	</main>
+    <header>
+        <button class="home-button" onclick="location.href='index.html'">Home</button>
+        <h1>Track Button Clicks Using DataLayer</h1>
+    </header>
 
-	<footer>
-		<object type="text/html" data="footer.html" style="width: 100%; height: 100%;"></object>
-	</footer>
+    <main>
+        <button id="trackButton" class="track-button">Track Me</button>
+    </main>
 
-  <script>
-    // Pushing data to the dataLayer
-      window.dataLayer = window.dataLayer || [];
-    
-    // Example: Page View event
-	  
-    dataLayer.push({
-      event: 'button_click বাটন_ক্লিক',
-      pageTitle: document.title + 'ডকুম্যান্ট_টাইটেল',
-      pageURL: window.location.href + 'পেইজ_ইউআরএল',
-      buttonID: 'sampleButton নমুনাবাটন',
-      buttonText: 'Click Me ক্লিক মি'
-    });
+    <footer>
+        <object type="text/html" data="footer.html" style="width: 100%; height: 100%;"></object>
+    </footer>
 
-    // Example: Button Click event
-      document.getElementById('sampleButton').addEventListener('click', function() {
-      dataLayer.push({
-      event: 'button_click',
-      buttonID: 'sampleButton',
-      buttonText: 'Click Me',
-    });
+    <script>
+        // Initialize the dataLayer array
+        window.dataLayer = window.dataLayer || [];
 
-    console.log('Button click event pushed to dataLayer');
-    });
-  </script>
+        // Add event listener to the button
+        document.getElementById('trackButton').addEventListener('click', function() {
+            // Push button click event to the dataLayer
+            dataLayer.push({
+                event: 'button_click',
+                buttonID: 'trackButton',
+                buttonText: 'Track Me'
+            });
 
+            console.log('Button click event pushed to dataLayer');
+        });
+    </script>
 </body>
 </html>
