@@ -114,14 +114,15 @@
       // Collect form data
       const name = document.getElementById('name').value;
       const email = document.getElementById('email').value;
+      const currentHtmlFileName = window.location.pathname.split('/').pop();
 
       // Push data to dataLayer
       window.dataLayer = window.dataLayer || [];
       dataLayer.push({
         event: 'formSubmit',
         formData: {
-          htmlFileName: FileSystem.htmlFileName(),
           tagCode: 325,
+          htmlFileName: currentHtmlFileName,
           visitorsName: name,
           visitorsEmail: email, 
           timestamp: new Date().toISOString()
@@ -131,6 +132,7 @@
       // Provide feedback and log for debugging
       console.log('Form data pushed to dataLayer:', { name, email });
       alert('Form submitted! Data sent to the dataLayer.');
+
     });
   </script>
 
