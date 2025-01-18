@@ -1,213 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Data Layer</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Data Layer</title>
   <!-- Google Tag Manager -->
   <script>
     (function(w, d, s, l, i) {
       w[l] = w[l] || [];
       w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
       var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s),
-        dl = l != 'dataLayer' ? '&l=' + l : '';
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
       j.async = true;
       j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
       f.parentNode.insertBefore(j, f);
     })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
   </script>
   <!-- End Google Tag Manager -->
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb);
+      color: #333;
+    }
 
+    header {
+      background: linear-gradient(90deg, #6a11cb, #2575fc);
+      color: black;
+      padding: 20px 0;
+      font-size: 24px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
 
-    
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #8f8585;
-            color: #000;
-        }
+    header button {
+      position: absolute;
+      left: 20px;
+      top: 10px;
+      padding: 10px 15px;
+      background-color: orange;
+      color: blue;
+      border: none;
+      border-radius: 20px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
 
-        header {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        height: 50px;
-        background-color: green;
-        color: rgb(0, 0, 0);
-        text-align: center;
-        padding: 10px 0;
-        font-size: 40px;
-        }
-  header .home-button {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        background-color: orange;
-        color: blue;
-        border: none;
-        padding: 10px;
-        cursor: pointer;
-        }
-  header .home-button:hover {
-    background-color: blue;
-    color: orange;
-  }
+    header button:hover {
+      background-color: blue;
+      color: orange;
+    }
 
-        main {
-            margin-top: 50px;
-            padding: 20px;
-        }
+    main {
+      margin-top: 120px;
+      padding: 20px;
+    }
 
-        .search-bar {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
+    .search-container {
+      display: inline-block;
+      margin: 30px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
 
-        input, select, button {
-            padding: 10px;
-            font-size: 16px;
-        }
+    .search-container input[type="text"] {
+      padding: 10px;
+      width: 300px;
+      font-size: 18px;
+      border: 2px solid #6a11cb;
+      border-radius: 8px;
+      margin-right: 10px;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
 
-        button {
-            background-color: orange;
-            color: blue;
-            border: none;
-            cursor: pointer;
-        }
+    .search-container input[type="text"]:focus {
+      border-color: #2575fc;
+    }
 
-        button:hover {
-            background-color: blue;
-            color: orange;
-        }
+    .search-container button {
+      padding: 10px 20px;
+      background: linear-gradient(90deg, #6a11cb, #2575fc);
+      color: white;
+      border: none;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
 
-        .results {
-            margin-top: 20px;
-        }
+    .search-container button:hover {
+      transform: scale(1.1);
+    }
 
-        .result-item {
-            padding: 10px;
-            border: 1px solid #ccc;
-            margin: 5px 0;
-            cursor: pointer;
-        }
+    footer {
+      margin-top: 50px;
+      background: linear-gradient(90deg, #ff758c, #ff7eb3);
+      padding: 15px 0;
+      color: white;
+      box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    }
 
-        footer {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background-color: #f1f1f1;
-            text-align: center;
-            padding: 10px;
-            height: 50px;
-        }
-    </style>
-    <script>
-        // Function to simulate pushing data to the data layer
-        function pushSearchDataLayer(eventType, data) {
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({
-                event: eventType,
-                ...data
-            });
-            console.log("Data Layer Push:", { event: eventType, ...data });
-        }
-
-        // Function to perform a search
-        function performSearch() {
-            const searchQuery = document.getElementById('searchInput').value;
-            const filters = {
-                category: document.getElementById('categoryFilter').value,
-                size: document.getElementById('sizeFilter').value
-            };
-
-            // Simulate search results
-            const results = [
-                { id: '1', name: `${searchQuery} - Red Shoes` },
-                { id: '2', name: `${searchQuery} - Blue Shirt` },
-                { id: '3', name: `${searchQuery} - Green Jacket` }
-            ];
-
-            // Update the results display
-            displayResults(results);
-
-            // Push data to the data layer
-            pushSearchDataLayer('searchPerformed', {
-                searchQuery,
-                filters,
-                results: { totalResults: results.length, searchTime: '0.3s' }
-            });
-        }
-
-        // Function to display search results
-        function displayResults(results) {
-            const resultsContainer = document.getElementById('searchResults');
-            resultsContainer.innerHTML = ''; // Clear previous results
-
-            results.forEach(result => {
-                const resultDiv = document.createElement('div');
-                resultDiv.className = 'result-item';
-                resultDiv.textContent = result.name;
-                resultDiv.onclick = () => handleResultClick(result);
-                resultsContainer.appendChild(resultDiv);
-            });
-        }
-
-        // Function to handle result clicks
-        function handleResultClick(result) {
-            pushSearchDataLayer('resultClicked', {
-                resultId: result.id,
-                resultName: result.name
-            });
-            alert(`You clicked on: ${result.name}`);
-        }
-    </script>
+    footer p {
+      margin: 0;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript>
-	<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
-height="0" width="0" style="display:none;visibility:hidden"></iframe>
-</noscript>
-<!-- End Google Tag Manager (noscript) -->
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
+  <header>
+    <h1>Search Data Layer Demonstration</h1>
+    <button id="home-button" onclick="window.location.href='index.html';">Home</button>
+  </header>
 
-    
-    <header>
-        <button onclick="window.location.href='index.html';">Home</button>
-        <h1>Demonstration : Search Data Layer</h1>
-    </header>
+  <main>
+    <p style="font-size: 18px;">Enter a search query and click "Search" to simulate a search event.</p>
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Type your query here" />
+      <button id="searchButton">Search</button>
+    </div>
+  </main>
 
-    <main>
-        <h2>Search for Products</h2>
+  <footer>
+    <p>Footer Content Here</p>
+  </footer>
 
-        <div class="search-bar">
-            <input type="text" id="searchInput" placeholder="Enter search term" />
-            <select id="categoryFilter">
-                <option value="Men">Men</option>
-                <option value="Women">Women</option>
-                <option value="Kids">Kids</option>
-            </select>
-            <select id="sizeFilter">
-                <option value="Small">Small</option>
-                <option value="Medium">Medium</option>
-                <option value="Large">Large</option>
-            </select>
-            <button onclick="performSearch()">Search</button>
-        </div>
+  <script>
+    // Initialize dataLayer
+    window.dataLayer = window.dataLayer || [];
 
-        <div id="searchResults" class="results">
-            <!-- Dynamic search results will appear here -->
-        </div>
-    </main>
+    // Search Button Event Listener
+    const searchButton = document.getElementById("searchButton");
+    const searchInput = document.getElementById("searchInput");
 
-    <footer>
-        <p>Footer Content</p>
-    </footer>
+    if (searchButton && searchInput) {
+      searchButton.addEventListener("click", function () {
+        const searchQuery = searchInput.value.trim();
 
+        if (searchQuery) {
+          // Prepare search data
+          const searchData = {
+            event: "search",
+            searchQuery: searchQuery,
+            searchTimestamp: new Date().toISOString(),
+            page: {
+              url: window.location.href,
+              title: document.title
+            }
+          };
+
+          // Push search data to the dataLayer
+          dataLayer.push(searchData);
+
+          // Display a confirmation message
+          alert(`Search event tracked: "${searchQuery}"`);
+        } else {
+          alert("Please enter a search query.");
+        }
+      });
+    }
+  </script>
 </body>
 </html>
