@@ -19,7 +19,7 @@
     </script>
     <!-- End Google Tag Manager -->
     <style>
-        /* General Styles */
+        /* General Styling */
         body {
             background-color: white;
             color: black;
@@ -27,25 +27,24 @@
             margin: 0;
         }
 
-        /* Header Styles */
         header {
-            top: 0;
-            width: 100%;
             background-color: green;
             color: black;
             text-align: center;
-            padding: 1px 0;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
             z-index: 1000;
         }
 
         header a {
             position: absolute;
-            left: 10px;
+            left: 15px;
             top: 10px;
             background-color: orange;
             color: blue;
-            padding: 10px 15px;
             text-decoration: none;
+            padding: 10px 15px;
             border-radius: 5px;
         }
 
@@ -54,9 +53,23 @@
             color: orange;
         }
 
-        /* Main Content */
+        .button {
+            background-color: orange;
+            color: blue;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: blue;
+            color: orange;
+        }
+
         main {
-            margin: 80px 20px 70px; /* Adjust for fixed header and footer */
+            margin: 80px 20px 70px;
         }
 
         .content {
@@ -65,86 +78,50 @@
             gap: 20px;
         }
 
-        /* Checkout Styles */
-        .checkout-container {
+        .checkout-container,
+        .ecommerce-data {
             width: 48%;
-            border: 1px solid #581010;
+            background-color: #e6f9fc;
+            border: 1px solid #b3d9ff;
+            border-radius: 8px;
             padding: 20px;
-            border-radius: 5px;
-            background-color: #39d2da;
         }
 
         .checkout-item {
             display: flex;
             justify-content: space-between;
             margin-bottom: 10px;
-            padding: 10px;
+            padding-bottom: 10px;
             border-bottom: 1px solid #ddd;
-        }
-
-        .checkout-item:last-child {
-            border-bottom: none;
         }
 
         .checkout-summary {
             text-align: right;
-            margin-top: 20px;
             font-weight: bold;
+            margin-top: 20px;
         }
 
-        /* Footer Styles */
         footer {
             position: fixed;
             bottom: 0;
             width: 100%;
             background-color: #f1f1f1;
             text-align: center;
-            height: 50px;
+            padding: 10px 0;
         }
 
-        footer object {
-            width: 100%;
-            height: 100%;
-        }
-
-        .button {
-            display: inline-block;
-            background-color: orange;
-            color: blue;
-            text-align: center;
-            padding: 10px 20px;
-            margin-top: 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        .button:hover {
-            background-color: blue;
-            color: orange;
-        }
-
-        .ecommerce-data {
-            width: 48%;
-            background-color: #39d2da;
-            padding: 10px;
-            border: 1px solid #571212;
-            border-radius: 5px;
-        }
-
-        .ecommerce-data pre {
+        #ecommerceOutput {
+            font-family: monospace;
             background-color: #fff;
-            padding: 10px;
             border: 1px solid #ddd;
+            padding: 10px;
             border-radius: 5px;
             overflow-x: auto;
+            max-height: 200px;
         }
     </style>
 </head>
 <body>
-
-
     <header>
         <a href="index.html">Home</a>
         <h1>Checkout</h1>
@@ -152,7 +129,9 @@
 
     <main>
         <div class="content">
+            <!-- Checkout Section -->
             <div class="checkout-container">
+                <h2>Your Items</h2>
                 <div class="checkout-item">
                     <span>Wireless Headphones</span>
                     <span>$99.99</span>
@@ -161,25 +140,30 @@
                     <span>Charging Cable (2)</span>
                     <span>$39.98</span>
                 </div>
-                <div class="checkout-summary">
-                    Total: $149.97
-                </div>
-                <button class="button" onclick="triggerBeginCheckoutEvent()">Begin Checkout</button>
+                <div class="checkout-summary">Total: $149.97</div>
+                <button
+                    class="button"
+                    aria-label="Begin Checkout"
+                    onclick="triggerBeginCheckoutEvent()"
+                >
+                    Begin Checkout
+                </button>
             </div>
 
+            <!-- eCommerce Data Display -->
             <div class="ecommerce-data">
-                <h3>eCommerce Data (JSON Format)</h3>
+                <h3>eCommerce Data (JSON)</h3>
                 <pre id="ecommerceOutput">No data yet...</pre>
             </div>
         </div>
     </main>
 
     <footer>
-        <object type="text/html" data="footer.html"></object>
+        <p>&copy; 2025 Your Store</p>
     </footer>
 
-    <!-- Data Layer Example -->
     <script>
+        // Initialize Data Layer
         window.dataLayer = window.dataLayer || [];
 
         function triggerBeginCheckoutEvent() {
@@ -194,22 +178,26 @@
                             item_id: 'sku123',
                             price: 99.99,
                             quantity: 1,
-                            item_category: 'Electronics'
+                            item_category: 'Electronics',
+                            item_variant: 'Black'
                         },
                         {
                             item_name: 'Charging Cable',
                             item_id: 'sku456',
                             price: 19.99,
                             quantity: 2,
-                            item_category: 'Accessories'
+                            item_category: 'Accessories',
+                            item_variant: 'Standard'
                         }
                     ]
                 }
             };
 
+            // Push to Data Layer
             dataLayer.push(ecommerceData);
             alert('Begin Checkout Event Triggered! Check GTM Debug Mode.');
 
+            // Update Displayed JSON
             document.getElementById('ecommerceOutput').textContent = JSON.stringify(ecommerceData, null, 2);
         }
     </script>
