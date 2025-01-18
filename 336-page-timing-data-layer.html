@@ -20,63 +20,62 @@
     <script>
         // Page Timing Data Layer Initialization
         window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-            'event': 'pageTiming',
-            'pageLoadTime': window.performance.timing.loadEventEnd - window.performance.timing.navigationStart,
-            'domInteractiveTime': window.performance.timing.domInteractive - window.performance.timing.navigationStart,
-            'firstContentfulPaint': window.performance.getEntriesByName('first-contentful-paint')[0]?.startTime || null,
-            'timeToInteractive': null // Placeholder for advanced calculations
+        window.addEventListener('load', () => {
+            const timing = window.performance.timing;
+            const firstContentfulPaint = performance.getEntriesByName('first-contentful-paint')[0]?.startTime || null;
+
+            window.dataLayer.push({
+                event: 'pageTiming',
+                pageLoadTime: timing.loadEventEnd && timing.navigationStart 
+                              ? timing.loadEventEnd - timing.navigationStart 
+                              : null,
+                domInteractiveTime: timing.domInteractive && timing.navigationStart 
+                                    ? timing.domInteractive - timing.navigationStart 
+                                    : null,
+                firstContentfulPaint: firstContentfulPaint,
+                timeToInteractive: null // Placeholder for advanced TTI calculations
+            });
+
+            console.log('Page Timing Data Layer Pushed:', window.dataLayer);
         });
     </script>
     <style>
         body {
-            background-color: white;
-            color: black;
-            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb);
+            color: #333333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
         }
 
-    header {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        height: 50px;
-        background-color: green;
-        color: rgb(0, 0, 0);
-        text-align: center;
-        padding: 10px 0;
-        font-size: 40px;
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 60px;
+            background: linear-gradient(90deg, #2196F3, #21CBF3);
+            color: white;
+            text-align: center;
+            line-height: 60px;
+            font-size: 24px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-  header .home-button {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        background-color: orange;
-        color: blue;
-        border: none;
-        padding: 10px;
-        cursor: pointer;
-        }
-  header .home-button:hover {
-    background-color: blue;
-    color: orange;
-  }
 
-        header a {
+        header .home-button {
             position: absolute;
-            left: 10px;
-            top: 10px;
-            text-decoration: none;
-            padding: 5px 10px;
-            background-color: orange;
-            color: blue;
+            top: 15px;
+            left: 15px;
+            background: linear-gradient(90deg, #FF9800, #FFC107);
+            color: #ffffff;
+            border: none;
+            padding: 10px;
             border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
         }
 
-        header a:hover {
-            background-color: blue;
-            color: orange;
+        header .home-button:hover {
+            background: linear-gradient(90deg, #FFC107, #FF9800);
         }
 
         .content {
@@ -85,33 +84,48 @@
             padding: 20px;
         }
 
+        .content h2 {
+            color: #4CAF50;
+            font-size: 28px;
+        }
+
+        .content p {
+            font-size: 18px;
+            color: #666666;
+        }
+
         button {
-            background-color: orange;
-            color: blue;
+            background: linear-gradient(90deg, #FF5722, #FFC107);
+            color: white;
             padding: 10px 20px;
             border: none;
-            border-radius: 5px;
-            font-size: 16px;
+            border-radius: 25px;
+            font-size: 18px;
+            font-weight: bold;
             cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
         }
 
         button:hover {
-            background-color: blue;
-            color: orange;
+            background: linear-gradient(90deg, #FFC107, #FF5722);
+            transform: scale(1.1);
         }
 
         footer {
             position: fixed;
             bottom: 0;
             width: 100%;
-            background-color: #f1f1f1;
+            background: linear-gradient(90deg, #673AB7, #9575CD);
+            color: white;
             text-align: center;
             height: 50px;
+            line-height: 50px;
+            font-size: 16px;
         }
 
-        footer object {
-            width: 100%;
-            height: 100%;
+        footer p {
+            margin: 0;
         }
     </style>
 </head>
@@ -122,22 +136,22 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <header>
-        <a href="index.html">Home</a>
+        <button class="home-button" onclick="window.location.href='index.html';">Home</button>
         <h1>Page Timing Data Layer</h1>
     </header>
 
-    <div class="content">
+    <main class="content">
         <h2>Real-World Problem</h2>
         <p>Tracking page load times and user interactions can significantly improve website performance and user experience.</p>
 
         <h2>Solution</h2>
         <p>Using Google Tag Manager, you can collect and analyze page timing data effortlessly.</p>
 
-        <button onclick="alert('Collecting Page Timing Data!')">Learn More</button>
-    </div>
+        <button onclick="alert('Collecting Page Timing Data!')">Track Page Timing Data Layer</button>
+    </main>
 
     <footer>
-        <object type="text/html" data="footer.html"></object>
+        <p>© 2025 Your Website</p>
     </footer>
 </body>
 </html>
