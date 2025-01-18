@@ -5,18 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Track User Interactions</title>
 
-    <!-- Google Tag Manager -->
-    <script>
-      (function(w, d, s, l, i) {
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w, d, s, l, i) {
       w[l] = w[l] || [];
       w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
       var f = d.getElementsByTagName(s)[0],
-      j = d.createElement(s),
-      dl = l != 'dataLayer' ? '&l=' + l : '';
+        j = d.createElement(s),
+        dl = l !== 'dataLayer' ? '&l=' + l : '';
       j.async = true;
       j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
       f.parentNode.insertBefore(j, f);
-      })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
+    })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
   </script>
   <!-- End Google Tag Manager -->
 
@@ -24,110 +24,119 @@
     // Initialize the data layer
     window.dataLayer = window.dataLayer || [];
     
-    // Function to push user interactions to the data layer
-    function trackInteraction(action) {
-      console.log(`User performed action: ${action}`);
-      dataLayer.push({ 
-        event: action,
+    // Function to track user interactions
+    function trackInteraction(action, label) {
+      console.log(`User action tracked: ${action}, Label: ${label}`);
+      dataLayer.push({
+        event: 'user_interaction',
         event_category: 'User Interaction',
-        event_label: action
+        event_action: action,
+        event_label: label || action,
       });
     }
   </script>
   <style>
-    /* Inline CSS for simplicity */
+    /* Vibrant Color Scheme and Styling */
     body {
-      background-color: white;
       font-family: Arial, sans-serif;
-      color: black;
       margin: 0;
       padding: 0;
-      text-align: center;
+      color: #333;
+      background: linear-gradient(to bottom, #ffecd2, #fcb69f);
     }
     header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background-color: green;
+      background-color: #ff6f61;
       color: white;
-      padding: 10px 0;
+      padding: 20px;
+      text-align: center;
     }
     header h1 {
+      font-size: 2.5rem;
       margin: 0;
     }
     header button {
-      position: absolute;
-      left: 10px;
-      background-color: orange;
-      color: blue;
-      border: none;
-      padding: 10px;
-      cursor: pointer;
-    }
-    header button:hover {
-      background-color: blue;
-      color: orange;
-    }
-    .container {
-      margin-top: 80px;
-      padding: 20px;
-    }
-    button {
-      background-color: orange;
-      color: blue;
+      background-color: #ffcc00;
+      color: #333;
       border: none;
       padding: 10px 20px;
       margin: 10px;
       cursor: pointer;
+      font-weight: bold;
     }
-    button:hover {
-      background-color: blue;
-      color: orange;
+    header button:hover {
+      background-color: #333;
+      color: #ffcc00;
+    }
+    .container {
+      text-align: center;
+      padding: 30px 20px;
+    }
+    .container h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #2d4059;
+    }
+    .container p {
+      font-size: 1.2rem;
+      color: #4a4e69;
+      margin-bottom: 20px;
+    }
+    .buttons-container {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+    .buttons-container button {
+      background-color: #57cc99;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    .buttons-container button:hover {
+      background-color: #22577a;
     }
     footer {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background-color: #f1f1f1;
+      background-color: #2d4059;
+      color: white;
       text-align: center;
-      padding: 10px 0;
+      padding: 15px 0;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+    footer p {
+      margin: 0;
     }
   </style>
-  <!-- GTM Head Script -->
-  <script>
-    (function(w, d, s, l, i) {
-      w[l] = w[l] || [];
-      w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-      var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s),
-        dl = l != 'dataLayer' ? '&l=' + l : '';
-      j.async = true;
-      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-      f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
-  </script>
 </head>
 <body>
-  <!-- GTM Body Script -->
+  <!-- Google Tag Manager (noscript) -->
   <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe>
   </noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
   <header>
-    <button onclick="window.location.href='index.html'">Home</button>
+    <button onclick="window.location.href='index.html'" aria-label="Go to Home">Home</button>
     <h1>Track User Interactions</h1>
   </header>
 
-  <div class="container">
-    <h2>How to Track User Interactions</h2>
-    <p>This article demonstrates tracking interactions with Share, Like, and Dislike buttons.</p>
-    <button onclick="trackInteraction('share')">Share</button>
-    <button onclick="trackInteraction('like')">Like</button>
-    <button onclick="trackInteraction('dislike')">Dislike</button>
-  </div>
+  <main class="container">
+    <h2>Explore Interaction Tracking</h2>
+    <p>Click on the buttons below to track Share, Like, and Dislike interactions in GTM.</p>
+    <div class="buttons-container">
+      <button onclick="trackInteraction('share', 'Share Button')" aria-label="Share this content">Share</button>
+      <button onclick="trackInteraction('like', 'Like Button')" aria-label="Like this content">Like</button>
+      <button onclick="trackInteraction('dislike', 'Dislike Button')" aria-label="Dislike this content">Dislike</button>
+    </div>
+  </main>
 
   <footer>
-    <object type="text/html" data="footer.html" style="width: 100%; height: 100%;"></object>
+    <p>&copy; 2025 Your Company. Designed with <span style="color: #ff6f61;">♥</span> for GTM enthusiasts.</p>
   </footer>
 </body>
 </html>
