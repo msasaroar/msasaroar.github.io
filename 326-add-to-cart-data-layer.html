@@ -150,6 +150,11 @@
 
             // Push data to the data layer
             // একাধিক আইটেম/Row থাকলে কিভাবে হ্যান্ডেল করতে হবে ?
+            // Index (0,1,2 etc) ব্যবহার করতে হবে
+            // ecommerce.add.products.0.id  
+            // ecommerce.add.products.1.id
+            // ecommerce.add.products.2.id
+
             window.dataLayer.push({
                 event: 'addToCart',
                 ecommerce: {
