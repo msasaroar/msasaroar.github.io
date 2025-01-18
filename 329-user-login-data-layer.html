@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>User Login</title>
-
   <!-- Google Tag Manager -->
   <script>
     (function(w, d, s, l, i) {
@@ -16,122 +15,120 @@
       j.async = true;
       j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
       f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF'); // Replace 'GTM-XXXXXXX' with your GTM ID
+    })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
   </script>
   <!-- End Google Tag Manager -->
-
   <style>
-    /* Basic styling for simplicity */
+    /* Page styling */
     body {
       font-family: Arial, sans-serif;
-      background: #f0f4f8;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      text-align: center;
+      background-color: #f9f9f9;
+      color: #333;
       margin: 0;
+      padding: 0;
     }
 
-    .login-container {
-      background: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      width: 100%;
-      max-width: 400px;
+    header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      font-size: 24px;
       text-align: center;
     }
 
-    input {
-      width: calc(100% - 20px);
-      padding: 10px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+    main {
+      margin-top: 100px;
     }
 
-    button {
-      padding: 10px 20px;
-      color: #fff;
-      background: #007bff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
+    input {
+      margin: 10px;
+      padding: 10px;
       font-size: 16px;
     }
 
-    button:hover {
-      background: #0056b3;
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
     }
 
-    #message {
-      margin-top: 10px;
-      color: #d63031;
+    button:hover {
+      background-color: #45a049;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #f1f1f1;
+      text-align: center;
+      padding: 10px;
     }
   </style>
-
-  <script>
-    // Initialize the data layer
-    window.dataLayer = window.dataLayer || [];
-
-    /**
-     * Handle user login
-     * Simulates a login process and pushes login data to the GTM Data Layer.
-     */
-    function handleLogin(event) {
-      event.preventDefault();
-
-      const username = document.getElementById('username').value.trim();
-      const password = document.getElementById('password').value.trim();
-
-      let loginStatus = "failure";
-      let errorMessage = "Invalid credentials";
-
-      // Dummy validation logic for demonstration purposes
-      if (username === "123" && password === "123") {
-        loginStatus = "success";
-        errorMessage = "";
-      }
-
-      // Push login event to the data layer
-      window.dataLayer.push({
-        event: "userLogin",
-        userId: username || "anonymous",
-        loginStatus: loginStatus,
-        errorMessage: errorMessage,
-        timestamp: new Date().toISOString(),
-        platform: "web"
-      });
-
-      // Provide user feedback
-      document.getElementById('message').innerText = loginStatus === "success"
-        ? "Login successful!"
-        : `Login failed: ${errorMessage}`;
-    }
-  </script>
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
-<!-- Google Tag Manager (noscript) -->
-<noscript>
-  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
-          height="0" width="0" style="display:none;visibility:hidden"></iframe>
-</noscript>
-<!-- End Google Tag Manager (noscript) -->
+  <header>
+    <h1>User Login Data Layer Demonstration</h1>
+  </header>
 
-<div class="login-container">
-  <h2>User Login</h2>
-  <form onsubmit="handleLogin(event)">
-    <label for="username">Username</label>
-    <input type="text" id="username" name="username" placeholder="Enter your username" required>
-    
-    <label for="password">Password</label>
-    <input type="password" id="password" name="password" placeholder="Enter your password" required>
-    
-    <button type="submit">Login</button>
-  </form>
-  <p id="message"></p>
-</div>
+  <main>
+    <p>Enter your credentials to log in:</p>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="msasaroar" required>
+      <input type="password" id="password" placeholder="123" required>
+      <button type="submit">Log In</button>
+    </form>
+  </main>
 
+  <footer>
+    <p>Footer Content Here</p>
+  </footer>
+
+  <script>
+    // Initialize dataLayer
+    window.dataLayer = window.dataLayer || [];
+
+    // Login Form Event Listener
+    const loginForm = document.getElementById("loginForm");
+
+    loginForm.addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent form submission
+
+      // Simulated user data
+      const username = document.getElementById("username").value;
+      const userId = "user-" + Math.floor(Math.random() * 1000); // Generate a sample user ID
+      const userType = username === "admin" ? "admin" : "regular"; // Determine user type based on input
+
+      // Prepare login data
+      const loginData = {
+        event: "userLogin",
+        userId: userId,
+        userName: username,
+        userType: userType,
+        loginTime: new Date().toISOString(),
+        page: {
+          url: window.location.href,
+          title: document.title
+        }
+      };
+
+      // Push data to the dataLayer
+      dataLayer.push(loginData);
+
+      // Display confirmation
+      alert("Login event tracked: " + JSON.stringify(loginData, null, 2));
+    });
+  </script>
 </body>
 </html>
