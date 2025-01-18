@@ -3,96 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download File Data Layer</title>
+    <title>Track File Downloads with GTM</title>
     <script>
-        // Google Tag Manager Setup
-        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
-        var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:''; j.async=true; j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-        f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-PPBVCLNF');
+        // Initialize Google Tag Manager
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
 
-        // Function to push download event to the data layer
-        function trackDownload(fileName, fileType) {
+        // Ensure dataLayer is initialized
+        window.dataLayer = window.dataLayer || [];
+
+        /**
+         * Function to push download event details to the data layer
+         * @param {string} fileName - Name of the file being downloaded
+         * @param {string} fileType - Type of the file being downloaded (e.g., pdf, jpg)
+         */
+        function trackFileDownload(fileName, fileType) {
             dataLayer.push({
-                'event': 'fileDownload',
-                'fileName': fileName,
-                'fileType': fileType
+                event: 'fileDownload',
+                fileName: fileName,
+                fileType: fileType
             });
+            console.log(`File Download Tracked: ${fileName}.${fileType}`);
         }
     </script>
     <style>
         body {
-            background-color: rgb(255, 255, 255);
-            color: black;
+            background-color: #fff;
+            color: #000;
             font-family: Arial, sans-serif;
             margin: 0;
-            margin-top: 150px;
+            padding-top: 60px;
         }
         header {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        height: 50px;
-        background-color: green;
-        color: rgb(0, 0, 0);
-        text-align: center;
-        padding: 10px 0;
-        font-size: 40px;
-        }
-  header .home-button {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        background-color: orange;
-        color: blue;
-        border: none;
-        padding: 10px;
-        cursor: pointer;
-        }
-  header .home-button:hover {
-    background-color: blue;
-    color: orange;
-  }
-        .content {
-            margin-top: 80px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 60px;
+            background-color: #4CAF50;
+            color: #fff;
             text-align: center;
+            font-size: 20px;
+            line-height: 60px;
+            z-index: 1000;
+        }
+        .home-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #FFA500;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .home-button:hover {
+            background-color: #007BFF;
+            color: #fff;
+        }
+        .content {
+            text-align: center;
+            margin: 20px;
         }
         .download-button {
-            background-color: orange;
-            color: blue;
+            background-color: #FFA500;
+            color: #000;
             padding: 10px 20px;
             border: none;
             cursor: pointer;
             margin: 10px;
+            font-size: 16px;
         }
         .download-button:hover {
-            background-color: blue;
-            color: orange;
+            background-color: #007BFF;
+            color: #fff;
         }
         footer {
             position: fixed;
             bottom: 0;
             width: 100%;
-            background-color: #ffffff;
+            background-color: #f1f1f1;
             text-align: center;
-            height: 50px;
-            line-height: 50px;
+            padding: 10px 0;
         }
     </style>
 </head>
 <body>
+    <!-- GTM NoScript Fallback -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+
     <header>
-        <button class="home-button" onclick="window.location.href='index.html'">Home</button>
-        <h1>Demonstration : Track File Downloads</h1>
+        <button class="home-button" onclick="window.location.href='index.html'" aria-label="Go to Home">Home</button>
+        <span>Track File Downloads with GTM</span>
     </header>
+
     <div class="content">
         <h2>Download Files</h2>
-        <button class="download-button" onclick="trackDownload('sample', 'pdf')">Download PDF</button>
-        <button class="download-button" onclick="trackDownload('sample', 'jpg')">Download Image</button>
+        <!-- PDF Download Button -->
+        <button class="download-button" onclick="trackFileDownload('sample', 'pdf')" aria-label="Download PDF File">
+            Download PDF
+        </button>
+        <!-- Image Download Button -->
+        <button class="download-button" onclick="trackFileDownload('sample', 'jpg')" aria-label="Download Image File">
+            Download Image
+        </button>
     </div>
+
     <footer>
         Footer Content Goes Here
     </footer>
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </body>
 </html>
