@@ -1,11 +1,9 @@
-Is the following page perfect for demonstrating Track Video Start Using DataLayer in GTM ? If not rewrite the code. 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Start Data Layer</title>
+    <title>Track Video Start with Data Layer</title>
     <style>
         /* General Styling */
         body {
@@ -84,7 +82,7 @@ Is the following page perfect for demonstrating Track Video Start Using DataLaye
 
     <header>
         <a href="index.html">Home</a>
-        <h1>Video Start Data Layer</h1>
+        <h1>Track Video Start</h1>
     </header>
 
     <video id="demoVideo" width="640" height="360" controls>
@@ -100,7 +98,9 @@ Is the following page perfect for demonstrating Track Video Start Using DataLaye
     </footer>
 
     <script>
+        // Add event listener for video play event
         document.getElementById('demoVideo').addEventListener('play', function () {
+            // Collect data for the event
             const currentHtmlFileName = window.location.pathname.split('/').pop();
             const videoData = {
                 eventName: 'videoStart', // ইভেন্ট নাম GTM-এ একই হতে হবে
@@ -110,44 +110,16 @@ Is the following page perfect for demonstrating Track Video Start Using DataLaye
                 htmlFileName: currentHtmlFileName
             };
 
-
-
-
-            // ডেটা লেয়ার পুশ
+            // Push the video data to the GTM data layer
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push(videoData);
 
-            // ডিবাগিং-এর জন্য কনসোলে দেখানো
-            console.log('Data Layer:=>', window.dataLayer);
+            // Log data layer for debugging
+            console.log('Data Layer:', window.dataLayer);
+
+            // Display data in the <pre> tag for visualization
+            document.getElementById('dataLayerOutput').textContent = JSON.stringify(videoData, null, 2);
         });
     </script>
-
 </body>
 </html>
-
-
-<!-- এটি পূর্বেকার ডেটা লেয়ার
-// Add event listener for video play
-document.getElementById('demoVideo').addEventListener('play', function () {
-    const videoData = {
-            eventName: 'videoStart',
-            topicTitle: '055 : Video Start Data Layer',
-            videoTitle: 'Big Buck Bunny',
-            videoURL: this.currentSrc,
-            timeStamp: new Date().toISOString()
-        };
-
-    // Push video data to dataLayer
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push(videoData);
-
-    // Log dataLayer to console for debugging
-    console.log('Data Layer:', window.dataLayer);
-
-    // Display the data in the pre tag
-    document.getElementById('dataLayerOutput').textContent = JSON.stringify(videoData, null, 2);
-
-    // Display alert
-    alert(videoData.videoTitle);
-});
--->
