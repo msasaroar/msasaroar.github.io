@@ -105,10 +105,10 @@
             const videoData = {
                 eventName: 'videoStart', // ইভেন্ট নাম GTM-এ একই হতে হবে
                 videoURL: this.currentSrc,
-                timeStamp: new Date().toISOString(),
-                tagCode: 325,
-                htmlFileName: currentHtmlFileName
+                timeStamp: new Date().toISOString()
             };
+            // tagCode: 325,
+            // htmlFileName: currentHtmlFileName
 
             // Push the video data to the GTM data layer
             window.dataLayer = window.dataLayer || [];
@@ -116,6 +116,7 @@
 
             // Log data layer for debugging
             console.log('Data Layer:', window.dataLayer);
+            //alert(videoData);
 
             // Display data in the <pre> tag for visualization
             document.getElementById('dataLayerOutput').textContent = JSON.stringify(videoData, null, 2);
