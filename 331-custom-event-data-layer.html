@@ -124,6 +124,7 @@
 
     // Function to handle custom events
     function handleCustomEvent(eventName, message) {
+      const timestamp = new Date().toLocaleString();
       // Push event to the dataLayer
       window.dataLayer.push({
         event: eventName,
@@ -132,7 +133,9 @@
       });
 
       // Display the message in the output area
-      output.value = message;
+      //output.value = eventName + message;
+
+      output.value = "Time    :" + timestamp + "\n\n" + "Message : " + message;
     }
   </script>
 </body>
