@@ -21,23 +21,23 @@
   <style>
     /* Global Styles */
     body {
-      background-color: white;
-      color: black;
       font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
+      background-color: #fff;
+      color: #000;
     }
 
-    /* Header Styles */
-    header {
+    header, footer {
       background-color: green;
-      color: black;
       text-align: center;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
       padding: 10px 0;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     .home-button {
@@ -48,36 +48,36 @@
       background-color: orange;
       color: blue;
       border: none;
-      padding: 8px 12px;
+      padding: 10px 25px;
       border-radius: 5px;
-      font-size: 16px;
       cursor: pointer;
-      transition: 0.3s;
     }
 
-    .home-button:hover {
-      background-color: blue;
-      color: orange;
-    }
-
-    /* Main Content */
     main {
-      margin: 120px auto 80px;
-      text-align: center;
+      max-width: 800px;
+      margin: 80px auto;
       padding: 20px;
     }
 
-    /* Button Styles */
+    .order-summary {
+      margin: 20px 0;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      margin: 5px 0;
+    }
+
     button {
       background-color: orange;
       color: blue;
       border: none;
-      padding: 12px 20px;
-      font-size: 16px;
-      border-radius: 5px;
+      padding: 10px 30px;
       cursor: pointer;
-      transition: 0.3s;
-      margin-top: 20px;
     }
 
     button:hover {
@@ -85,27 +85,17 @@
       color: orange;
     }
 
-    /* Footer Styles */
     footer {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background-color: #f1f1f1;
-      text-align: center;
-      height: 50px;
-    }
-
-    footer object {
-      width: 100%;
-      height: 100%;
+      margin-top: 10px;
+      padding: 22px;
     }
   </style>
 </head>
 <body>
   <!-- Header -->
   <header>
-    <button class="home-button" onclick="location.href='index.html'">Home</button>
-    <h1>Order Confirmation</h1>
+    <button class="home-button" onclick="location.href='index.html'" aria-label="Go to Home Page">Home</button>
+    <h1>Order / Purchase Confirmation</h1>
   </header>
 
   <!-- Main Content -->
@@ -122,18 +112,18 @@
       <li>Mega Widget - Quantity: 1 - Price: $49.99 each</li>
       <li>Ultra Widget - Quantity: 3 - Price: $14.99 each</li>
     </ul>
-    <button onclick="window.location.href='shop.html'">Continue Shopping</button>
+    <button onclick="window.location.href='shop.html'" aria-label="Continue Shopping">Continue Shopping</button>
   </main>
 
   <!-- Footer -->
   <footer>
-    <object type="text/html" data="footer.html"></object>
+    &copy; 2025 My E-commerce Store
   </footer>
 
   <!-- Data Layer -->
   <script>
     window.dataLayer = window.dataLayer || [];
-    // একাধিক আইটেম/Row থাকলে কিভাবে হ্যান্ডেল করতে হবে ?
+    // Example Enhanced Ecommerce purchase event
     dataLayer.push({
       event: "purchase",
       ecommerce: {
@@ -141,12 +131,27 @@
         affiliation: "My E-commerce Store",
         value: 179.93,
         currency: "USD",
-        tax: 0,
+        tax: 0.00,
         shipping: 5.00,
         items: [
-          { item_name: "Super Widget", item_id: "SW123", price: 24.99, quantity: 2 },
-          { item_name: "Mega Widget", item_id: "MW456", price: 49.99, quantity: 1 },
-          { item_name: "Ultra Widget", item_id: "UW789", price: 14.99, quantity: 3 }
+          {
+            item_name: "Super Widget",
+            item_id: "SW123",
+            price: 24.99,
+            quantity: 2
+          },
+          {
+            item_name: "Mega Widget",
+            item_id: "MW456",
+            price: 49.99,
+            quantity: 1
+          },
+          {
+            item_name: "Ultra Widget",
+            item_id: "UW789",
+            price: 14.99,
+            quantity: 3
+          }
         ]
       }
     });
