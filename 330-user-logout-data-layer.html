@@ -10,8 +10,8 @@
       w[l] = w[l] || [];
       w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
       var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s),
-        dl = l != 'dataLayer' ? '&l=' + l : '';
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
       j.async = true;
       j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
       f.parentNode.insertBefore(j, f);
@@ -19,32 +19,35 @@
   </script>
   <!-- End Google Tag Manager -->
   <style>
-  header {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        height: 50px;
-        background-color: green;
-        color: rgb(0, 0, 0);
-        text-align: center;
-        padding: 10px 0;
-        font-size: 40px;
-        }
-  header .home-button {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        background-color: orange;
-        color: blue;
-        border: none;
-        padding: 10px;
-        cursor: pointer;
-        }
-  header .home-button:hover {
-    background-color: blue;
-    color: orange;
-  }
-    
+    /* Styles for header, button, body, and footer */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 50px;
+      background-color: green;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 24px;
+    }
+
+    header .home-button {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: orange;
+      color: blue;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    header .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
     body {
       font-family: Arial, sans-serif;
       text-align: center;
@@ -55,22 +58,23 @@
     }
 
     button {
-      background-color: orange; /* Button background color */
-      color: blue; /* Button text color */
-      border: none; /* Removes border */
-      padding: 10px 20px; /* Spacing inside the button */
-      font-size: 16px; /* Font size */
-      cursor: pointer; /* Changes cursor to pointer on hover */
-      margin: 20px auto; /* Centers the button horizontally */
-      display: block; /* Ensures block-level behavior for centering */
-      position: relative; /* Needed for `top` property to take effect */
-      top: 60px; /* Moves button 60px down relative to its original position */
+      background-color: orange;
+      color: blue;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 20px auto;
+      display: block;
+      position: relative;
+      top: 60px;
     }
-    
+
     button:hover {
       background-color: blue;
       color: orange;
     }
+
     footer {
       position: fixed;
       bottom: 0;
@@ -79,6 +83,7 @@
       text-align: center;
       padding: 10px;
     }
+
     main {
       margin-top: 160px;
       margin-bottom: 60px;
@@ -91,7 +96,7 @@
   <!-- End Google Tag Manager (noscript) -->
 
   <header>
-    <h1>Demonstration : User Logout Data Layer</h1>
+    <h1>User Logout Data Layer Demonstration</h1>
   </header>
 
   <main>
@@ -107,28 +112,40 @@
     // Initialize dataLayer
     window.dataLayer = window.dataLayer || [];
 
+    // Simulate user details and session start time
+    const userId = "12345"; // Replace with dynamic logic if available
+    const userType = "premium"; // Replace with actual user type logic
+    const sessionStart = new Date(); // Simulated session start time
+
     // Logout Button Event Listener
-    document.getElementById("logoutButton").addEventListener("click", function () {
-      var logoutData = {
-        event: "userLogout",
-        userId: "12345", // Replace with dynamic user ID
-        userType: "premium", // Replace with dynamic user type
-        logoutTime: new Date().toISOString(),
-        sessionDuration: "45m30s", // Replace with dynamic session duration
-        logoutReason: "manual", // Example reason
-        page: {
-          url: window.location.href,
-          title: document.title
-        }
-      };
+    const logoutButton = document.getElementById("logoutButton");
+    if (logoutButton) {
+      logoutButton.addEventListener("click", function () {
+        // Calculate session duration (example logic)
+        const sessionEnd = new Date();
+        const sessionDuration = `${Math.floor((sessionEnd - sessionStart) / 60000)}m${((sessionEnd - sessionStart) % 60000) / 1000}s`;
 
-      
-      // Push data to the dataLayer
-      dataLayer.push(logoutData);
+        // Prepare logout data
+        const logoutData = {
+          event: "userLogout",
+          userId: userId,
+          userType: userType,
+          logoutTime: sessionEnd.toISOString(),
+          sessionDuration: sessionDuration,
+          logoutReason: "manual", // Example reason
+          page: {
+            url: window.location.href,
+            title: document.title
+          }
+        };
 
-      // Display a confirmation message
-      alert("Logout event tracked!");
-    });
+        // Push data to the dataLayer
+        dataLayer.push(logoutData);
+
+        // Display a confirmation message
+        alert("Logout event tracked!");
+      });
+    }
   </script>
 </body>
 </html>
