@@ -1,421 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GTM Variables Configuration and Demonstration</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f9f9f9;
-      color: black;
-    }
-    header {
-      background: green;
-      color: black;
-      text-align: center;
-    }
-    main {
-      padding: 20px;
-    }
-    section {
-      margin-bottom: 30px;
-      background: #89e2ed;
-      padding: 15px;
-      border-radius: 5px;
-      box-shadow: 0 4px 8px rgba(15, 9, 192, 0.1);
-    }
-    h2 {
-      color: green;
-    }
-    pre {
-      background: rgb(255, 174, 0);
-      padding: 10px;
-      border-radius: 5px;
-      overflow: auto;
-    }
-    footer {
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ad Click Tracking</title>
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+    </script>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: black;
+        }
+        header {
+            position: fixed;
+            top: 0;
             width: 100%;
+            background-color: green;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+        .home-button {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            background-color: orange;
+            color: blue;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .home-button:hover {
+            background-color: blue;
+            color: orange;
+        }
+        main {
+            padding: 80px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .ad-container {
+            width: 320px;
+            padding: 20px;
+            border-radius: 15px;
+            background-color: rgb(89, 213, 197);
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.825);
+            margin: 100px 0;
+        }
+        .ad-logo {
+            width: 100px;
+            margin: 0 auto 15px;
+        }
+        .ad-headline {
+            font-size: 22px;
+            font-weight: bold;
+            color: #000000;
+            margin-bottom: 15px;
+        }
+        .ad-carousel {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+        .ad-carousel img {
+            width: 60px;
+            height: 60px;
+            margin: 0 5px;
+            border-radius: 10px;
+            border: 2px solid #ddd;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .ad-carousel img:hover {
+            transform: scale(1.1);
+            border-color: #ff5722;
+        }
+        .ad-body {
+            font-size: 16px;
+            color: #08127c;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        .ad-cta {
+            background-color: orange;
+            color: blue;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 25px;
+            display: inline-block;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .ad-cta:hover {
+            background-color: green;
+            transform: scale(1.05);
+        }
+        .ad-footer {
+            font-size: 12px;
+            color: #5a0202;
+            margin-top: 15px;
+        }
+        footer {
             position: fixed;
             bottom: 0;
-            background-color: white;
+            width: 100%;
+            background-color: #f1f1f1;
+            text-align: center;
+            height: 50px;
         }
-
-
-        /* Popup styling */
-        .popup {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 80%;
-      max-width: 1000px;
-      max-height: 80%;
-      background: #fff;
-      border: 1px solid #ddd;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      z-index: 1000;
-      overflow: auto;
-    }
-    .popup img {
-      width: 100%;
-    }
-    .popup-close {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: #f44336;
-      color: white;
-      border: none;
-      padding: 5px 10px;
-      cursor: pointer;
-    }
-    .popup-close:hover {
-      background: #d32f2f;
-    }
-    .overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: 500;
-    }
-  </style>
+        footer object {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Google Tag Manager Built-In Variables</h1>
-    <p>A guide to configure, explain, and demonstrate GTM Built-In Variables.</p>
-  </header>
-  <main>
-    <section>
-      <h2>1. Page URL Variable</h2>
-      <p>
-        The Page URL variable captures the full URL of the page, including the protocol, hostname, path, and query string.
-      </p>
-      <h3 onclick="openPopup('301-all-url-variable.png')" style="cursor: pointer; color: blue;">Configuration Steps [ Click ]</h3>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
-      <ol>
-        <li>Go to GTM > Variables > Configure.</li>
-        <li>Enable the built-in variable: <strong>Page URL</strong>.</li>
-      </ol>
-      <h3>Demonstration:</h3>
-      <pre>https://example.com/products?category=shoes</pre>
-    </section>
+    <header>
+        <a href="index.html" class="home-button">Home</a>
+        <h1>Demonstration: Ad Click Tracking Using Data Layer</h1>
+    </header>
 
-    <section>
-      <h2>2. Page Hostname Variable</h2>
-      <p>
-        The Page Hostname variable captures the hostname portion of the URL (e.g., <code>example.com</code>).
-      </p>
-      <h3 onclick="openPopup('301-all-url-variable.png')" style="cursor: pointer; color: blue;">Configuration Steps [ Click ]</h3>
+    <main>
+        <section class="ad-container">
+            <img src="product-1.png" alt="App Logo" class="ad-logo">
+            <h2 class="ad-headline">Transform Your Fitness Journey!</h2>
+            <div class="ad-carousel">
+                <img src="product-1.png" alt="Feature 1">
+                <img src="product-2.png" alt="Feature 2">
+                <img src="product-3.png" alt="Feature 3">
+            </div>
+            <p class="ad-body">
+                Discover the easiest way to track workouts, meals, and progress. Join millions transforming their lives with our app today!
+            </p>
+            <a href="https://example.com" class="ad-cta" onclick="trackAdClick()">Start Free Trial</a>
+            <p class="ad-footer">*Limited offer: 1-month free trial for new users.</p>
+        </section>
+    </main>
 
-      <ol>
-        <li>Go to GTM > Variables > Configure.</li>
-        <li>Enable the built-in variable: <strong>Page Hostname</strong>.</li>
-      </ol>
-      <h3>Demonstration:</h3>
-      <pre>example.com</pre>
-    </section>
+    <footer>
+        <object type="text/html" data="footer.html"></object>
+    </footer>
 
-    <section>
-      <h2>3. Page Path Variable</h2>
-      <p>
-        Captures the path portion of the URL (e.g., <code>/products</code>).
-      </p>
-      <h3 onclick="openPopup('301-all-url-variable.png')" style="cursor: pointer; color: blue;">Configuration Steps [ Click ]</h3>
-
-      <ol>
-        <li>Go to GTM > Variables > Configure.</li>
-        <li>Enable the built-in variable: <strong>Page Path</strong>.</li>
-      </ol>
-      <h3>Demonstration:</h3>
-      <pre>/products</pre>
-    </section>
-
-    <section>
-      <h2>4. Click URL Variable</h2>
-      <p>
-        Captures the URL of the clicked link.
-      </p>
-      <h3 onclick="openPopup('301-all-url-variable.png')" style="cursor: pointer; color: blue;">Configuration Steps [ Click ]</h3>
-
-      <ol>
-        <li>Go to GTM > Variables > Configure.</li>
-        <li>Enable the built-in variable: <strong>Click URL</strong>.</li>
-      </ol>
-      <h3>Demonstration:</h3>
-      <pre>https://example.com/signup</pre>
-    </section>
-
-    <section>
-        <h2>5. Click Text Variable</h2>
-        <p>
-          The Click Text variable captures the text content of the clicked element. It is commonly used to track user interactions like button clicks, link clicks, or specific elements on the page.
-        </p>
-        <h3 onclick="openPopup('301-all-url-variable.png')" style="cursor: pointer; color: blue;">Configuration Steps [ Click ]</h3>
-      
-        <ol>
-          <li>Go to GTM > Variables > Configure.</li>
-          <li>Enable the built-in variable: <strong>Click Text</strong>.</li>
-        </ol>
-        <h3>Demonstration:</h3>
-        <pre>Clicked Element Text: "Buy Now"</pre>
-      </section>
-      
-      <section>
-        <h2>6. Click Classes Variable</h2>
-        <p>
-          The Click Classes variable retrieves the CSS classes of the clicked element, making it useful for tracking specific user interactions on your website.
-        </p>
-        <h3 onclick="openPopup('301-all-url-variable.png')" style="cursor: pointer; color: blue;">Configuration Steps [ Click ]</h3>
-      
-        <ol>
-          <li>Go to GTM > Variables > Configure.</li>
-          <li>Enable the built-in variable: <strong>Click Classes</strong>.</li>
-        </ol>
-        <h3>Demonstration:</h3>
-        <pre>btn-primary btn-add-to-cart</pre>
-      </section>
-      
-      <section>
-        <h2>7. Click ID Variable</h2>
-        <p>
-          The Click ID variable captures the ID attribute of the clicked element on the page, allowing you to track interactions with specific elements.
-        </p>
-        <h3 onclick="openPopup('301-all-url-variable.png')" style="cursor: pointer; color: blue;">Configuration Steps [ Click ]</h3>
-      
-        <ol>
-          <li>Go to GTM > Variables > Configure.</li>
-          <li>Enable the built-in variable: <strong>Click ID</strong>.</li>
-        </ol>
-        <h3>Demonstration:</h3>
-        <pre>button-123</pre>
-      </section>
-      
-      <section>
-        <h2>8. Form ID Variable</h2>
-        <p>
-          The Form ID variable captures the unique ID attribute of a form on your webpage, allowing you to track specific form submissions effectively.
-        </p>
-        <h3 onclick="openPopup('301-all-url-variable.png')" style="cursor: pointer; color: blue;">Configuration Steps [ Click ]</h3>
-      
-        <ol>
-          <li>Go to GTM > Variables > Configure.</li>
-          <li>Enable the built-in variable: <strong>Form ID</strong>.</li>
-        </ol>
-        <h3>Demonstration:</h3>
-        <pre>form-id-example</pre>
-      </section>
-
-      <section>
-        <h2>9. Form Classes Variable</h2>
-        <p>
-          The Form Classes variable captures the class attribute of the form element that was interacted with. This is useful for tracking form submissions or other interactions with specific forms on a webpage.
-        </p>
-        <h3 onclick="openPopup('301-all-url-variable.png')" style="cursor: pointer; color: blue;">Configuration Steps [ Click ]</h3>
-      
-        <ol>
-          <li>Go to GTM > Variables > Configure.</li>
-          <li>Enable the built-in variable: <strong>Form Classes</strong>.</li>
-        </ol>
-        <h3>Demonstration:</h3>
-        <pre>.form-class.example-class</pre>
-      </section>
-
-    <section>
-        <h2>10. Form Target Variable</h2>
-        <p>
-          The Form Target variable captures the target attribute of a submitted form, indicating where the form data is sent.
-        </p>
-        <h3 onclick="openPopup('301-all-url-variable.png')" style="cursor: pointer; color: blue;">Configuration Steps [ Click ]</h3>
-        <ol>
-          <li>Go to GTM > Variables > Configure.</li>
-          <li>Enable the built-in variable: <strong>Form Target</strong>.</li>
-        </ol>
-        <h3>Demonstration:</h3>
-        <pre>https://example.com/form-handler</pre>
-      </section>
-      
-      <section>
-        <h2>11. Video Title Variable</h2>
-        <p>
-          The Video Title variable captures the title of a video being played on the page, as specified by the video player.
-        </p>
-        <h3 onclick="openPopup('301-all-url-variable.png')" style="cursor: pointer; color: blue;">Configuration Steps [ Click ]</h3>
-        <ol>
-          <li>Go to GTM > Variables > Configure.</li>
-          <li>Enable the built-in variable: <strong>Video Title</strong>.</li>
-        </ol>
-        <h3>Demonstration:</h3>
-        <pre>"How to Use GTM Effectively"</pre>
-      </section>
-      
-      <section>
-        <h2>12. Video Duration Variable</h2>
-        <p>
-          The Video Duration variable captures the total duration of a video in seconds.
-        </p>
-        <h3 onclick="openPopup('301-all-url-variable.png')" style="cursor: pointer; color: blue;">Configuration Steps [ Click ]</h3>
-        <ol>
-          <li>Go to GTM > Variables > Configure.</li>
-          <li>Enable the built-in variable: <strong>Video Duration</strong>.</li>
-        </ol>
-        <h3>Demonstration:</h3>
-        <pre>120 (2 minutes)</pre>
-      </section>
-      
-      <section>
-        <h2>13. Video Percentage Variable</h2>
-        <p>
-          The Video Percentage variable captures the percentage of the video watched by the user.
-        </p>
-        <h3 onclick="openPopup('301-all-url-variable.png')" style="cursor: pointer; color: blue;">Configuration Steps [ Click ]</h3>
-        <ol>
-          <li>Go to GTM > Variables > Configure.</li>
-          <li>Enable the built-in variable: <strong>Video Percentage</strong>.</li>
-        </ol>
-        <h3>Demonstration:</h3>
-        <pre>75%</pre>
-      </section>
-      
-      <section>
-        <h2>14. Video URL Variable</h2>
-        <p>
-          The Video URL variable captures the URL of the video being played on the page.
-        </p>
-        <h3 onclick="openPopup('301-all-url-variable.png')" style="cursor: pointer; color: blue;">Configuration Steps [ Click ]</h3>
-        <ol>
-          <li>Go to GTM > Variables > Configure.</li>
-          <li>Enable the built-in variable: <strong>Video URL</strong>.</li>
-        </ol>
-        <h3>Demonstration:</h3>
-        <pre>https://cdn.example.com/video.mp4</pre>
-      </section>
-      
-      <section>
-        <h2>15. Event Name Variable</h2>
-        <p>
-          The Event Name variable captures the name of the event triggered in GTM, such as a click or a page view.
-        </p>
-        <h3 onclick="openPopup('301-all-url-variable.png')" style="cursor: pointer; color: blue;">Configuration Steps [ Click ]</h3>
-        <ol>
-          <li>Go to GTM > Variables > Configure.</li>
-          <li>Enable the built-in variable: <strong>Event Name</strong>.</li>
-        </ol>
-        <h3>Demonstration:</h3>
-        <pre>"button_click"</pre>
-      </section>
-      
-      <section>
-        <h2>16. First Party Cookie Variable</h2>
-        <p>
-          The First Party Cookie variable captures the value of a specified cookie set by your website.
-        </p>
-        <h3 onclick="openPopup('301-all-url-variable.png')" style="cursor: pointer; color: blue;">Configuration Steps [ Click ]</h3>
-        <ol>
-          <li>Go to GTM > Variables > New > First Party Cookie.</li>
-          <li>Configure the cookie name and other details as needed.</li>
-        </ol>
-        <h3>Demonstration:</h3>
-        <pre>user_id=12345</pre>
-      </section>
-
-      <section>
-        <h2>17. Custom JavaScript Variable</h2>
-        <p>
-          Allows you to write custom JavaScript to create advanced variables. The custom JavaScript code must return a value.
-        </p>
-        <h3 onclick="openPopup('301-all-url-variable.png')" style="cursor: pointer; color: blue;">Configuration Steps [ Click ]</h3>
-  
-        <ol>
-          <li>Go to GTM > Variables > New > Variable Configuration.</li>
-          <li>Select <strong>Custom JavaScript</strong>.</li>
-          <li>Add your custom JavaScript code.</li>
-        </ol>
-        <h3>Example Code:</h3>
-        <pre>
-  function() {
-    return document.title; // Returns the current page title
-  }
-        </pre>
-      </section>
-
-      <section>
-        <h2>18. Data Layer Variable</h2>
-        <p>
-          The Data Layer variable captures a value from the data layer based on the specified key.
-        </p>
-        <h3 onclick="openPopup('301-all-url-variable.png')" style="cursor: pointer; color: blue;">Configuration Steps [ Click ]</h3>
-        <ol>
-          <li>Go to GTM > Variables > New > Data Layer Variable.</li>
-          <li>Specify the data layer key to extract the value.</li>
-        </ol>
-        <h3>Demonstration:</h3>
-        <pre>{"product_id": "12345"}</pre>
-      </section>
-      
-      <section>
-        <h2>19. JavaScript Variable</h2>
-        <p>
-          The JavaScript variable captures a value from custom JavaScript code executed on the page.
-        </p>
-        <h3 onclick="openPopup('301-all-url-variable.png')" style="cursor: pointer; color: blue;">Configuration Steps [ Click ]</h3>
-        <ol>
-          <li>Go to GTM > Variables > New > JavaScript Variable.</li>
-          <li>Enter the custom JavaScript code to define the variable's value.</li>
-        </ol>
-        <h3>Demonstration:</h3>
-        <pre>function() { return document.title; }</pre>
-      </section>
-      
-    <section>
-      <h2>20. Environment Name Variable</h2>
-      <p>
-        The Environment Name variable captures the environment (e.g., Development, Testing, or Live) used in GTM.
-      </p>
-      <h3 onclick="openPopup('301-all-url-variable.png')" style="cursor: pointer; color: blue;">Configuration Steps [ Click ]</h3>
-
-      <ol>
-        <li>Ensure environments are set up in GTM (Admin > Environments).</li>
-        <li>The Environment Name is available in GTM by default.</li>
-      </ol>
-      <h3>Demonstration:</h3>
-      <pre>Live</pre>
-    </section>
-</main>
-  <footer>
-    <object type="text/html" data="footer.html" aria-label="Footer Content" style="width: 100%; height: 50px;"></object>
-</footer>
-
-  <!-- Popup Window -->
-  <div class="popup" id="popup">
-    <button class="popup-close" onclick="closePopup()">Close</button>
-    <img src="" alt="Popup Example" id="popup-img">
-  </div>
-  <div class="overlay" id="overlay" onclick="closePopup()"></div>
-
-  <script>
-    // Open Popup
-    function openPopup(imageSrc) {
-      document.getElementById('popup-img').src = imageSrc;
-      document.getElementById('popup').style.display = 'block';
-      document.getElementById('overlay').style.display = 'block';
-    }
-
-    // Close Popup
-    function closePopup() {
-      document.getElementById('popup').style.display = 'none';
-      document.getElementById('overlay').style.display = 'none';
-    }
-  </script>
-
-
+    <script>
+        function trackAdClick() {
+            window.dataLayer.push({
+                event: "adClick",
+                adDetails: {
+                    adName: "Fitness App Free Trial",
+                    adType: "Banner",
+                    destinationURL: "https://example.com",
+                    timestamp: new Date().toISOString()
+                }
+            });
+            console.log("Ad Click Event Pushed to Data Layer: ", {
+                event: "adClick",
+                adDetails: {
+                    adName: "Fitness App Free Trial",
+                    adType: "Banner",
+                    destinationURL: "https://example.com",
+                    timestamp: new Date().toISOString()
+                }
+            });
+            alert("Ad Click Tracked!");
+        }
+    </script>
 </body>
 </html>

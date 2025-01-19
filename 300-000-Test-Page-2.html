@@ -3,211 +3,111 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GTM Variables Configuration and Demonstration</title>
+  <title>User Logout</title>
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+      var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-XXXXXXX'); /* Replace GTM-XXXXXXX with your GTM ID */
+  </script>
+  <!-- End Google Tag Manager -->
   <style>
     body {
       font-family: Arial, sans-serif;
-      line-height: 1.6;
+      text-align: center;
+      background-color: #f4f4f4;
       margin: 0;
       padding: 0;
-      background-color: #f9f9f9;
-      color: #333;
     }
     header {
-      background: #007bff;
-      color: #fff;
-      text-align: center;
-      padding: 10px 0;
+      background-color: #4CAF50;
+      color: white;
+      padding: 15px;
+      font-size: 24px;
     }
     main {
       padding: 20px;
     }
-    section {
-      margin-bottom: 30px;
-      background: #fff;
-      padding: 15px;
-      border-radius: 5px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      position: relative;
-    }
-    h2 {
-      color: #007bff;
-    }
-    pre {
-      background: #f4f4f4;
-      padding: 10px;
-      border-radius: 5px;
-      overflow: auto;
-    }
     button {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      background-color: orange;
-      color: blue;
-      border: none;
-      border-radius: 5px;
-      padding: 10px 15px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    button:hover {
-      background-color: blue;
-      color: orange;
-    }
-    footer {
-      text-align: center;
-      padding: 10px;
-      background: #f1f1f1;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-    }
-    /* Popup styling */
-    .popup {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 80%;
-      max-width: 600px;
-      max-height: 80%;
-      background: #fff;
-      border: 1px solid #ddd;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      z-index: 1000;
-      overflow: auto;
-    }
-    .popup img {
-      width: 100%;
-    }
-    .popup-close {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: #f44336;
+      background-color: #ff5722;
       color: white;
       border: none;
-      padding: 5px 10px;
+      padding: 15px 30px;
+      font-size: 18px;
       cursor: pointer;
+      margin-top: 20px;
+      border-radius: 5px;
     }
-    .popup-close:hover {
-      background: #d32f2f;
+    button:hover {
+      background-color: #e64a19;
     }
-    .overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: 500;
+    footer {
+      margin-top: 50px;
+      background-color: #ddd;
+      padding: 10px;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Google Tag Manager Variables</h1>
-    <p>A guide to configure, explain, and demonstrate GTM variables.</p>
-  </header>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" /* Replace GTM-XXXXXXX with your GTM ID */
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header>User Logout Demonstration</header>
   <main>
-
-    <section>
-        <h2>1. Page URL Variable</h2>
-        <p>
-          The Page URL variable captures the full URL of the page, including the protocol, hostname, path, and query string.
-        </p>
-        <h3>Configuration Steps:</h3>
-        <ol>
-          <li>Go to GTM > Variables > Configure.</li>
-          <li>Enable the built-in variable: <strong>Page URL</strong>.</li>
-        </ol>
-        <h3>Demonstration:</h3>
-        <pre>https://example.com/products?category=shoes</pre>
-      </section>
-
-    <section>
-        <h2>1. Page URL Variable</h2>
-        <p>The Page URL variable captures the full URL of the page, including the protocol, hostname, path, and query string.</p>
-        <h3 onclick="openPopup('301-all-url-variable.png')" style="cursor: pointer; color: blue;">Configuration Steps [Click On The Line]</h3>
-
-      <ol>
-        <li>Go to GTM > Variables > Configure.</li>
-        <li>Enable the built-in variable: <strong>Page URL</strong>.</li>
-      </ol>
-      <h3>Demonstration:</h3>
-      <pre>https://example.com/products?category=shoes</pre>
-      <button onclick="openPopup('301-all-url-variable.png')">View Example</button>
-    </section>
-
-    <section>
-      <h2>2. Page Hostname Variable</h2>
-      <p>The Page Hostname variable captures the hostname portion of the URL (e.g., <code>example.com</code>).</p>
-      <h3>Configuration Steps:</h3>
-      <ol>
-        <li>Go to GTM > Variables > Configure.</li>
-        <li>Enable the built-in variable: <strong>Page Hostname</strong>.</li>
-      </ol>
-      <h3>Demonstration:</h3>
-      <pre>example.com</pre>
-      <button onclick="openPopup('301-all-url-variable.png')">View Example</button>
-    </section>
-
-    <section>
-      <h2>3. Page Path Variable</h2>
-      <p>Captures the path portion of the URL (e.g., <code>/products</code>).</p>
-      <h3>Configuration Steps:</h3>
-      <ol>
-        <li>Go to GTM > Variables > Configure.</li>
-        <li>Enable the built-in variable: <strong>Page Path</strong>.</li>
-      </ol>
-      <h3>Demonstration:</h3>
-      <pre>/products</pre>
-      <button onclick="openPopup('301-all-url-variable.png')">View Example</button>
-    </section>
-
-    <section>
-      <h2>4. Click URL Variable</h2>
-      <p>Captures the URL of the clicked link.</p>
-      <h3>Configuration Steps:</h3>
-      <ol>
-        <li>Go to GTM > Variables > Configure.</li>
-        <li>Enable the built-in variable: <strong>Click URL</strong>.</li>
-      </ol>
-      <h3>Demonstration:</h3>
-      <pre>https://example.com/signup</pre>
-      <button onclick="openPopup('301-all-url-variable.png')">View Example</button>
-    </section>
-
-    <!-- Additional sections for all variables can follow the same pattern -->
-
+    <p>Click the button below to simulate a user logout event.</p>
+    <button id="logoutButton">Logout</button>
   </main>
   <footer>
-    &copy; 2025 GTM Variable Guide. All rights reserved.
+    © 2025 Your Company
   </footer>
 
-  <!-- Popup Window -->
-  <div class="popup" id="popup">
-    <button class="popup-close" onclick="closePopup()">Close</button>
-    <img src="" alt="Popup Example" id="popup-img">
-  </div>
-  <div class="overlay" id="overlay" onclick="closePopup()"></div>
-
   <script>
-    // Open Popup
-    function openPopup(imageSrc) {
-      document.getElementById('popup-img').src = imageSrc;
-      document.getElementById('popup').style.display = 'block';
-      document.getElementById('overlay').style.display = 'block';
-    }
+    // Initialize the dataLayer
+    window.dataLayer = window.dataLayer || [];
 
-    // Close Popup
-    function closePopup() {
-      document.getElementById('popup').style.display = 'none';
-      document.getElementById('overlay').style.display = 'none';
-    }
+    // Simulate user data
+    const userId = "12345";  // Replace with dynamic user ID
+    const userType = "premium";  // Replace with dynamic user type
+    const sessionStart = new Date(); // Simulated session start time
+
+    // Add event listener to the Logout button
+    document.getElementById("logoutButton").addEventListener("click", function () {
+      // Calculate session duration
+      const sessionEnd = new Date();
+      const sessionDuration = `${Math.floor((sessionEnd - sessionStart) / 60000)}m ${((sessionEnd - sessionStart) % 60000) / 1000}s`;
+
+      // Create the logout event object
+      const logoutEvent = {
+        event: "userLogout",
+        userId: userId,
+        userType: userType,
+        logoutTime: sessionEnd.toISOString(),
+        sessionDuration: sessionDuration,
+        page: {
+          url: window.location.href,
+          title: document.title
+        },
+        logoutReason: "manual" // Example: Replace with actual logout reason if available
+      };
+
+      // Push the logout event to the dataLayer
+      dataLayer.push(logoutEvent);
+
+      // Notify the user
+      alert("Logout event has been tracked in the Data Layer!");
+    });
   </script>
 </body>
 </html>

@@ -1,20 +1,3 @@
-
-The html file name of the page is "/339-Ad-Click-Tracking-Data-Layer.html"
-I have set following triggering condition on triger configuration UI:
-
-1. "Page URL" contains "/339-Ad-Click-Tracking-Data-Layer"
-
-2. "Click Text" equals "Start Free Trial"
-
-
-
-Trigger Type: Click - Just Links
-Conditions:
-   Page URL contains "/339-Ad-Click-Tracking-Data-Layer.html"
-   Click Text equals "Start Free Trial"
-
-Trigger is not firing. Following is the html code:
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,20 +5,20 @@ Trigger is not firing. Following is the html code:
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ad Click Tracking</title>
 
-  <!-- Google Tag Manager -->
-  <script>
-    (function(w, d, s, l, i) {
-      w[l] = w[l] || [];
-      w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-      var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s),
-        dl = l !== 'dataLayer' ? '&l=' + l : '';
-      j.async = true;
-      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-      f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
-  </script>
-  <!-- End Google Tag Manager -->
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l !== 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
+    </script>
+    <!-- End Google Tag Manager -->
 
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -157,11 +140,11 @@ Trigger is not firing. Following is the html code:
     </style>
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-  </noscript>
-  <!-- End Google Tag Manager (noscript) -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <header>
         <a href="index.html" class="home-button">Home</a>
@@ -190,49 +173,23 @@ Trigger is not firing. Following is the html code:
     </footer>
 
     <script>
+        // Function to track ad click using the dataLayer.
         function trackAdClick() {
+            const adDetails = {
+                adName: "Fitness App Free Trial",
+                adType: "Banner",
+                destinationURL: "https://example.com",
+                timestamp: new Date().toISOString()
+            };
+
             window.dataLayer.push({
                 event: "adClick",
-                adDetails: {
-                    adName: "Fitness App Free Trial",
-                    adType: "Banner",
-                    destinationURL: "https://example.com",
-                    timestamp: new Date().toISOString()
-                }
+                adDetails
             });
-            console.log("Ad Click Event Pushed to Data Layer: ", {
-                event: "adClick",
-                adDetails: {
-                    adName: "Fitness App Free Trial",
-                    adType: "Banner",
-                    destinationURL: "https://example.com",
-                    timestamp: new Date().toISOString()
-                }
-            });
+
+            console.log("Ad Click Event Pushed to Data Layer: ", { event: "adClick", adDetails });
             alert("Ad Click Tracked!");
         }
-
-        function trackAdClick_new(event) {
-            // Prevent default link behavior to ensure the GTM event registers
-            event.preventDefault();
-
-            // Push the event to the data layer
-            window.dataLayer.push({
-                event: "adClick",
-                adDetails: {
-                    adName: "Fitness App Free Trial",
-                    adType: "Banner",
-                    destinationURL: "https://example.com",
-                    timestamp: new Date().toISOString()
-                }
-            });
-
-            // Delay redirection to ensure data layer processing
-            setTimeout(() => {
-                window.location.href = event.target.href; // Redirect to the clicked link's destination
-            }, 300);
-        }
-
     </script>
 </body>
 </html>
