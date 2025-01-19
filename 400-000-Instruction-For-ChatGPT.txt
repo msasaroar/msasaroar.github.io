@@ -42,4 +42,16 @@ What is the "Trigger Type" and "Conditions" to fire the event "adClick". Rewrite
 Write an html page which demonstrate "Refund Event Data Layer" in GTM.
 GTM code is "GTM-PPBVCLNF".
 Make the page colourful.
+=====================================================================
 
+Above html page named "341-Form-Field-And-Focus-Changes-Data-Layer.html" is for demonstrate "Form Field and Focus Changes Data Layer".
+What is the "Trigger Type" and "Conditions" to fire the event "formFieldChange" and "formFieldFocus". Rewrite the html code if required.
+
+
+Form Field and Focus Changes Data Layer
+
+======================================================
+Create an html page demonstrate "eCommerce Purchase Data Layer". 
+Make the page colourful and attractive. 
+Use Green, White, Blue, Black, orange colour only. 
+Show data on table/grid. GTM Code is "GTM-PPBVCLNF".
