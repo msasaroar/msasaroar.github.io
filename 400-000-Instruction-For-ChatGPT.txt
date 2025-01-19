@@ -39,3 +39,7 @@ What is the "Trigger Type" and "Conditions" to fire the event "adClick". Rewrite
 
 
 
+Write an html page which demonstrate "Refund Event Data Layer" in GTM.
+GTM code is "GTM-PPBVCLNF".
+Make the page colourful.
+
