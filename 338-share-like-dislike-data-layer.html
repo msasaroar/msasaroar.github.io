@@ -130,16 +130,19 @@
     <h2>Explore Interaction Tracking</h2>
     <p>Click on the buttons below to track Share, Like, and Dislike interactions in GTM.</p>
     <div class="buttons-container">
+      <h5>Trigger | 338 | User Interaction DL <br> is used for this group</h5>
       <button onclick="trackInteraction('share', 'Share Button')" aria-label="Share this content">Share</button>
       <button onclick="trackInteraction('like', 'Like Button')" aria-label="Like this content">Like</button>
       <button onclick="trackInteraction('dislike', 'Dislike Button')" aria-label="Dislike this content">Dislike</button>
-
-  <button data-action="share" onclick="trackInteraction('share', 'Share Button')" aria-label="Share this content">Share</button>
-  <button data-action="like" onclick="trackInteraction('like', 'Like Button')" aria-label="Like this content">Like</button>
-  <button data-action="dislike" onclick="trackInteraction('dislike', 'Dislike Button')" aria-label="Dislike this content">Dislike</button>
-
-
     </div>
+    <br>
+    <div class="buttons-container">
+      <h5>Trigger | 338 | User Interaction DL | Using CSS selector <br> is used for this group</h5>
+      <button data-action="share" onclick="trackInteraction('share', 'Share Button')" aria-label="Share this content">Share</button>
+      <button data-action="like" onclick="trackInteraction('like', 'Like Button')" aria-label="Like this content">Like</button>
+      <button data-action="dislike" onclick="trackInteraction('dislike', 'Dislike Button')" aria-label="Dislike this content">Dislike</button>
+    </div>
+
   </main>
 
 
