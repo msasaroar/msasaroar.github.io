@@ -190,7 +190,7 @@ Trigger is not firing. Following is the html code:
     </footer>
 
     <script>
-        function trackAdClick_old() {
+        function trackAdClick() {
             window.dataLayer.push({
                 event: "adClick",
                 adDetails: {
@@ -212,7 +212,7 @@ Trigger is not firing. Following is the html code:
             alert("Ad Click Tracked!");
         }
 
-        function trackAdClick(event) {
+        function trackAdClick_new(event) {
             // Prevent default link behavior to ensure the GTM event registers
             event.preventDefault();
 
