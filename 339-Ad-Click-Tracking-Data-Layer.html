@@ -1,3 +1,20 @@
+
+The html file name of the page is "/339-Ad-Click-Tracking-Data-Layer.html"
+I have set following triggering condition on triger configuration UI:
+
+1. "Page URL" contains "/339-Ad-Click-Tracking-Data-Layer"
+
+2. "Click Text" equals "Start Free Trial"
+
+
+
+Trigger Type: Click - Just Links
+Conditions:
+   Page URL contains "/339-Ad-Click-Tracking-Data-Layer.html"
+   Click Text equals "Start Free Trial"
+
+Trigger is not firing. Following is the html code:
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -173,7 +190,7 @@
     </footer>
 
     <script>
-        function trackAdClick() {
+        function trackAdClick_old() {
             window.dataLayer.push({
                 event: "adClick",
                 adDetails: {
@@ -194,6 +211,28 @@
             });
             alert("Ad Click Tracked!");
         }
+
+        function trackAdClick(event) {
+            // Prevent default link behavior to ensure the GTM event registers
+            event.preventDefault();
+
+            // Push the event to the data layer
+            window.dataLayer.push({
+                event: "adClick",
+                adDetails: {
+                    adName: "Fitness App Free Trial",
+                    adType: "Banner",
+                    destinationURL: "https://example.com",
+                    timestamp: new Date().toISOString()
+                }
+            });
+
+            // Delay redirection to ensure data layer processing
+            setTimeout(() => {
+                window.location.href = event.target.href; // Redirect to the clicked link's destination
+            }, 300);
+        }
+
     </script>
 </body>
 </html>
