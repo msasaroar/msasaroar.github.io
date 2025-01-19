@@ -8,38 +8,35 @@
     <!-- Google Tag Manager -->
     <script>
         (function(w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-        var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s),
-        dl = l != 'dataLayer' ? '&l=' + l : '';
-        j.async = true;
-        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-        f.parentNode.insertBefore(j, f);
+            w[l] = w[l] || [];
+            w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
     </script>
     <!-- End Google Tag Manager -->
 
     <script>
-        // Initialize Data Layer
         window.dataLayer = window.dataLayer || [];
     </script>
+
     <style>
-        /* General Styles */
         body {
             margin: 0;
             font-family: Arial, sans-serif;
             background-color: white;
             color: black;
         }
-
-        /* Header Styles */
         header {
             position: fixed;
             top: 0;
             width: 100%;
             background-color: green;
-            color: black;
+            color: white;
             text-align: center;
             padding: 10px 0;
             z-index: 1000;
@@ -60,16 +57,12 @@
             background-color: blue;
             color: orange;
         }
-
-        /* Main Content Styles */
         main {
             padding: 80px 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-
-        /* Ad Section Styles */
         .ad-container {
             width: 320px;
             padding: 20px;
@@ -132,8 +125,6 @@
             color: #5a0202;
             margin-top: 15px;
         }
-
-        /* Footer Styles */
         footer {
             position: fixed;
             bottom: 0;
@@ -150,55 +141,37 @@
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
-        <noscript>
-            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-        </noscript>
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
     <!-- End Google Tag Manager (noscript) -->
-    
-    <header>
-        <button 
-          style="position: fixed; top: 20px; left: 10px; background-color: orange; color: blue; border: none; padding: 10px 15px; cursor: pointer; font-size: 16px;"
-          onclick="location.href='index.html';">
-          Home
-        </button>
-        <h1 style="text-align: center;">Demonstration : Ad Click Tracking Using Data Layer</h1>
-      </header>
 
+    <header>
+        <a href="index.html" class="home-button">Home</a>
+        <h1>Demonstration: Ad Click Tracking Using Data Layer</h1>
+    </header>
 
     <main>
         <section class="ad-container">
-            <!-- Branding -->
             <img src="product-1.png" alt="App Logo" class="ad-logo">
-            
-            <!-- Headline -->
-            <div class="ad-headline">Transform Your Fitness Journey!</div>
-            
-            <!-- Image Carousel -->
+            <h2 class="ad-headline">Transform Your Fitness Journey!</h2>
             <div class="ad-carousel">
                 <img src="product-1.png" alt="Feature 1">
                 <img src="product-2.png" alt="Feature 2">
                 <img src="product-3.png" alt="Feature 3">
             </div>
-            
-            <!-- Body Copy -->
-            <div class="ad-body">
+            <p class="ad-body">
                 Discover the easiest way to track workouts, meals, and progress. Join millions transforming their lives with our app today!
-            </div>
-            
-            <!-- Call-to-Action -->
+            </p>
             <a href="https://example.com" class="ad-cta" onclick="trackAdClick()">Start Free Trial</a>
-            
-            <!-- Footer Note -->
-            <div class="ad-footer">*Limited offer: 1-month free trial for new users.</div>
+            <p class="ad-footer">*Limited offer: 1-month free trial for new users.</p>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer>
         <object type="text/html" data="footer.html"></object>
     </footer>
 
-    <!-- Data Layer Push Script -->
     <script>
         function trackAdClick() {
             window.dataLayer.push({
@@ -206,10 +179,19 @@
                 adDetails: {
                     adName: "Fitness App Free Trial",
                     adType: "Banner",
-                    destinationURL: "https://example.com"
+                    destinationURL: "https://example.com",
+                    timestamp: new Date().toISOString()
                 }
             });
-            console.log("Ad Click Tracked!");
+            console.log("Ad Click Event Pushed to Data Layer: ", {
+                event: "adClick",
+                adDetails: {
+                    adName: "Fitness App Free Trial",
+                    adType: "Banner",
+                    destinationURL: "https://example.com",
+                    timestamp: new Date().toISOString()
+                }
+            });
             alert("Ad Click Tracked!");
         }
     </script>
