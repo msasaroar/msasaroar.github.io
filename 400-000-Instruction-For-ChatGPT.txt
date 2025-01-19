@@ -55,3 +55,198 @@ Create an html page demonstrate "eCommerce Purchase Data Layer".
 Make the page colourful and attractive. 
 Use Green, White, Blue, Black, orange colour only. 
 Show data on table/grid. GTM Code is "GTM-PPBVCLNF".
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+      var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiple Data Layer</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      background-color: white;
+      color: #333;
+    }
+    header {
+      background-color: green;
+      color: black;
+      padding: 10px 20px;
+      text-align: center;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+    main {
+      margin: 0px auto;
+      max-width: 600px;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    button {
+      background-color: orange;
+      color: blue;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      font-size: 1em;
+      border-radius: 5px;
+      margin: 5px 0;
+    }
+    button:hover {
+      background-color: blue;
+      color: orange;
+    }
+    textarea {
+        background-color: rgb(147, 236, 234);
+        color: blue;
+      width: 100%;
+      height: 200px;
+      margin-top: 20px;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+      resize: none;
+      overflow-y: auto;
+    }
+  </style>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    const dataLayerEntries = [
+      {
+        event: "pageView",
+        pageTitle: "Product Page - Sample Products",
+        pageURL: "https://www.example.com/products/wireless-headphones",
+        pagePath: "/product/sample-product",
+        pageCategory: "Product",
+        pageTemplate: "product-template",
+        userType: "guest",
+        timestamp: new Date().toISOString()
+      },
+      {
+        event: "userInfo",
+        userId: "user12345",
+        userType: "registered",
+        userRegion: "US",
+        userLanguage: "en-US",
+        timestamp: new Date().toISOString()
+      },
+      {
+        event: "navigationEvent",
+        eventCategory: "navigation",
+        eventAction: "load",
+        eventLabel: "product-page-load",
+        timestamp: new Date().toISOString()
+      },
+      {
+        event: "siteInfo",
+        siteName: "Example E-commerce",
+        siteVersion: "3.0.1",
+        businessUnit: "Consumer Electronics",
+        timestamp: new Date().toISOString()
+      },
+      {
+        event: "contentMetadata",
+        contentId: "product-98765",
+        contentType: "product",
+        contentTags: ["electronics", "headphones", "wireless"],
+        contentAuthor: "Example Team",
+        contentPublishedDate: "2024-01-15",
+        timestamp: new Date().toISOString()
+      },
+      {
+        event: "campaignInfo",
+        trafficSource: "organic",
+        campaignName: "Winter Deals 2024",
+        utmSource: "google",
+        utmMedium: "cpc",
+        utmCampaign: "winter_deals",
+        timestamp: new Date().toISOString()
+      },
+      {
+        event: "ecommerceInfo",
+        productId: "98765",
+        productCategory: "Headphones",
+        productPrice: 129.99,
+        cartValue: 259.98,
+        transactionId: "txn12345",
+        timestamp: new Date().toISOString()
+      },
+      {
+        event: "customVariables",
+        loggedInStatus: true,
+        pageEnvironment: "production",
+        timestamp: new Date().toISOString()
+      }
+    ];
+
+    function pushDataLayer(index) {
+      const entry = dataLayerEntries[index];
+      window.dataLayer.push(entry);
+      document.getElementById('output').value = JSON.stringify(entry, null, 2);
+    }
+  </script>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+<header>
+    <button 
+      style="position: fixed; top: 20px; left: 10px; background-color: orange; color: blue; border: none; padding: 10px 15px; cursor: pointer; font-size: 16px;"
+      onclick="location.href='index.html';">
+      Home
+    </button>
+    <h1 style="text-align: center;">Demonstration : Frequently Used Data Layer</h1>
+</header>
+
+  <main>
+    <h2>Click a button below to push a specific data layer entry:</h2>
+    <div>
+      <button onclick="pushDataLayer(0)">Push Page View</button>
+      <button onclick="pushDataLayer(1)">Push User Info</button>
+      <button onclick="pushDataLayer(2)">Push Navigation Event</button>
+      <button onclick="pushDataLayer(3)">Push Site Info</button>
+      <button onclick="pushDataLayer(4)">Push Content Metadata</button>
+      <button onclick="pushDataLayer(5)">Push Campaign Info</button>
+      <button onclick="pushDataLayer(6)">Push eCommerce Info</button>
+      <button onclick="pushDataLayer(7)">Push Custom Variables</button>
+    </div>
+    <textarea id="output" placeholder="Pushed data layer entries will appear here..."></textarea>
+  </main>
+</body>
+</html>
+
+Above html page named "342-Frequently-Used-Data-Layers.html" is for demonstrate "Frequently Used Data Layers".
+I want, click on the buttons on this page show the data layer as well as push respective data layer through an event.
+Make the page colourful and attractive. 
+Use Green, White, Blue, Black, orange colour only. 
+Show data on table/grid. GTM Code is "GTM-PPBVCLNF".
+
