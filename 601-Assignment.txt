@@ -1,0 +1,37 @@
+GTM Tracking Tasks
+
+Page View Tracking:
+Trigger : When the page is loaded.
+Tag : Send pageview data to GA4 (custom event with the data layer values such as pageCategory and userStatus).
+Non-Compliant Data  : Track customData like 'section' and 'contentType' which may not comply with GA4 standard properties.
+
+CTA Button Click (Custom Event):
+Trigger : When the CTA button (#ctaButton) is clicked.
+Tag : Send a custom event (buttonClick) to GA4, with parameters like buttonId, buttonAction, and customEvent (e.g., 'buttonLocation').
+Non-Compliant Data  : Track buttonLocation to identify where the button was clicked within the page (e.g., 'mainContent').
+
+Video Interaction (Custom Event):
+Trigger : When the video (#videoPlayer) starts playing.
+Tag : Send a custom event (videoInteraction) to GA4, including video-related data like videoId, videoAction, and customVideoData.
+Non-Compliant Data  : Track videoType and videoCategory, which are not part of GA4's default video interaction structure but are useful for custom reporting.
+
+Page Scroll Depth (User Engagement):
+Trigger : When the user scrolls a certain percentage down the page (e.g., 50%).
+Tag : Send a scroll event (e.g., pageScroll) to GA4.
+Non-Compliant Data  : Include scrollPercentage to show how far the user has scrolled without using GA4’s predefined events.
+
+Footer Interaction (Link Click):
+Trigger : When a link inside the footer (#footerLink) is clicked.
+Tag : Track the link click (footerLinkClick) as an event.
+Non-Compliant Data  : Include information about the link destination or content like footerLinkDestination.
+
+Custom Data Layer Event on User Interaction:
+Trigger : When a user interacts with any page element (e.g., clicking a button or interacting with a form).
+Tag : Send a custom event to GA4 containing dynamic data based on the interaction (e.g., userInteraction).
+Non-Compliant Data  : Push custom attributes into the data layer such as interactionType, interactionLocation, or interactionDetails that are non-standard for GA4.
+
+Notes:
+GTM can be used to create triggers for each of these actions based on the custom events (e.g., buttonClick, videoInteraction) that are pushed to the data layer.
+Non-compliant data is considered non-standard, which may lead to difficulties in GA4’s reporting if not handled correctly. 
+You may need to use custom dimensions, metrics, or event parameters in GA4 for such tracking.
+Ensure that these custom data layers are mapped correctly in GTM and GA4 to avoid any misinterpretation of data.

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complex HTML Page with GA4 Tracking</title>
+    <script>
+        // Non-compliant pushed data layer (example)
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            'event': 'pageView',
+            'pageCategory': 'Products', // Non-compliant field (should use 'page_path' in GA4)
+            'userID': 'user_12345', // Non-compliant field (missing required fields like 'client_id')
+            'currency': 'USD'
+        });
+    </script>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to Our Online Store</h1>
+        <nav>
+            <ul>
+                <li><a href="#home" id="homeBtn">Home</a></li>
+                <li><a href="#products" id="productsBtn">Products</a></li>
+                <li><a href="#checkout" id="checkoutBtn">Checkout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Featured Products</h2>
+        <div id="product-list">
+            <div class="product" id="product_1">
+                <h3>Product 1</h3>
+                <p>Price: $50</p>
+                <button class="add-to-cart" data-product="product_1">Add to Cart</button>
+            </div>
+            <div class="product" id="product_2">
+                <h3>Product 2</h3>
+                <p>Price: $30</p>
+                <button class="add-to-cart" data-product="product_2">Add to Cart</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 Online Store</p>
+    </footer>
+
+    <script>
+        // Simulating an event (non-compliant data layer push example)
+        document.querySelector('.add-to-cart').addEventListener('click', function(event) {
+            var productID = event.target.getAttribute('data-product');
+            window.dataLayer.push({
+                'event': 'addToCart',  // Event type
+                'productID': productID,
+                'action': 'add_to_cart'
+            });
+        });
+    </script>
+
+</body>
+</html>

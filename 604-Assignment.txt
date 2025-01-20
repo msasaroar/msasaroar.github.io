@@ -1,0 +1,42 @@
+Tasks to Track Using GTM
+
+Page Load Tracking:
+Trigger: Pageview event on page load.
+Tag: Send custom pageCategory, userStatus, and userDetails (e.g., membershipLevel, preferredCategory) to GA4.
+Hero Button Click:
+
+Trigger: Click on the "View Deals" button.
+Tag: Send ctaClick event with parameters:
+ctaId: heroPromoButton
+ctaAction: promoClicked.
+
+Add to Cart:
+Trigger: Click on any "Add to Cart" button in the product grid.
+Tag: Send addToCart event with parameters:
+productId: Captures the data-product-id of the clicked product.
+productAction: added.
+
+Blog Read More:
+Trigger: Click on the "Read More" button in any blog post.
+Tag: Send blogRead event with parameters:
+blogId: ID of the blog post.
+blogAction: readMoreClicked.
+
+Scroll Depth Tracking:
+Trigger: When the user scrolls 50% and 75% through the page.
+Tag: Send scrollEvent with parameters:
+scrollDepth: 50%, 75%.
+scrollSection: Specify the section (hero, productGrid, blogSection).
+
+Key Features:
+Tracks multiple interaction types: clicks, form submissions, and scroll depth.
+Non-compliant data includes userDetails and dynamic parameters such as blogId and productId.
+The page uses dynamic data layer pushes for real-time tracking.
+Would you like a step-by-step guide for GTM setup based on this page?
+
+
+
+
+
+
+

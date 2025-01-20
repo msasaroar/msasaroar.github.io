@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Multi-Feature Page</title>
+
+  <!-- Google Tag Manager -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+      'event': 'pageview',
+      'pageType': 'InteractivePage',
+      'userTier': 'premium',
+      'preferences': {
+        'preferredLanguage': 'English',
+        'interests': ['technology', 'health']
+      }
+    });
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f9f9f9; color: #333;">
+
+  <!-- Header -->
+  <header style="background-color: green; padding: 15px; text-align: center; position: sticky; top: 0; z-index: 10;">
+    <a href="index.html" style="color: white; text-decoration: none; position: absolute; left: 15px;">Home</a>
+    <h1>Dynamic Interactive Page</h1>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" style="background-color: #dcedc8; padding: 40px; text-align: center;">
+    <h2>Welcome to the Future of Interaction</h2>
+    <p>Experience unparalleled functionality and dynamic content.</p>
+    <button id="heroMainButton" style="background-color: orange; color: blue; padding: 10px 20px; border: none; cursor: pointer;">
+      Get Started
+    </button>
+  </section>
+
+  <!-- Multi-Step Form -->
+  <section id="multiStepForm" style="padding: 40px; background-color: #fff;">
+    <h2>Sign Up in 3 Easy Steps</h2>
+    <form id="dynamicForm">
+      <div id="step1" class="formStep">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required style="margin-left: 10px; padding: 5px;">
+        <button type="button" class="nextStep" style="margin-left: 10px; background-color: orange; color: blue; padding: 5px 15px; border: none; cursor: pointer;">
+          Next
+        </button>
+      </div>
+      <div id="step2" class="formStep" style="display: none;">
+        <label for="email">Email:</label>
+        <input type="email" id="email" required style="margin-left: 10px; padding: 5px;">
+        <button type="button" class="nextStep" style="margin-left: 10px; background-color: orange; color: blue; padding: 5px 15px; border: none; cursor: pointer;">
+          Next
+        </button>
+      </div>
+      <div id="step3" class="formStep" style="display: none;">
+        <label for="password">Password:</label>
+        <input type="password" id="password" required style="margin-left: 10px; padding: 5px;">
+        <button type="submit" style="margin-left: 10px; background-color: orange; color: blue; padding: 5px 15px; border: none; cursor: pointer;">
+          Submit
+        </button>
+      </div>
+    </form>
+  </section>
+
+  <!-- Interactive Product Carousel -->
+  <section id="productCarousel" style="padding: 40px; background-color: #eceff1;">
+    <h2>Featured Products</h2>
+    <div id="carousel" style="display: flex; overflow-x: auto; gap: 20px;">
+      <div class="productCard" data-product-id="201" style="flex: 0 0 300px; border: 1px solid #ddd; padding: 20px; text-align: center;">
+        <img src="product1.jpg" alt="Product 1" style="width: 100%; height: auto;">
+        <h3>Product 1</h3>
+        <p>Price: $299</p>
+        <button class="addToWishlist" style="background-color: orange; color: blue; padding: 5px 15px; border: none; cursor: pointer;">
+          Add to Wishlist
+        </button>
+      </div>
+      <div class="productCard" data-product-id="202" style="flex: 0 0 300px; border: 1px solid #ddd; padding: 20px; text-align: center;">
+        <img src="product2.jpg" alt="Product 2" style="width: 100%; height: auto;">
+        <h3>Product 2</h3>
+        <p>Price: $399</p>
+        <button class="addToWishlist" style="background-color: orange; color: blue; padding: 5px 15px; border: none; cursor: pointer;">
+          Add to Wishlist
+        </button>
+      </div>
+      <div class="productCard" data-product-id="203" style="flex: 0 0 300px; border: 1px solid #ddd; padding: 20px; text-align: center;">
+        <img src="product3.jpg" alt="Product 3" style="width: 100%; height: auto;">
+        <h3>Product 3</h3>
+        <p>Price: $499</p>
+        <button class="addToWishlist" style="background-color: orange; color: blue; padding: 5px 15px; border: none; cursor: pointer;">
+          Add to Wishlist
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="background-color: #f1f1f1; text-align: center; padding: 20px;">
+    <p>&copy; 2025 Interactive Page</p>
+  </footer>
+
+  <!-- Google Tag Manager -->
+  <script>
+    // Hero Button Click
+    document.getElementById('heroMainButton').addEventListener('click', () => {
+      dataLayer.push({
+        'event': 'ctaClick',
+        'ctaId': 'heroMainButton',
+        'ctaLocation': 'hero'
+      });
+    });
+
+    // Multi-Step Form Tracking
+    document.querySelectorAll('.nextStep').forEach(button => {
+      button.addEventListener('click', (e) => {
+        const currentStep = e.target.closest('.formStep');
+        currentStep.style.display = 'none';
+        currentStep.nextElementSibling.style.display = 'block';
+
+        dataLayer.push({
+          'event': 'formStepCompleted',
+          'formStep': currentStep.id
+        });
+      });
+    });
+
+    document.getElementById('dynamicForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      dataLayer.push({
+        'event': 'formSubmission',
+        'formId': 'dynamicForm',
+        'formData': {
+          'name': document.getElementById('name').value,
+          'email': document.getElementById('email').value
+        }
+      });
+      alert('Form Submitted!');
+    });
+
+    // Product Wishlist Tracking
+    document.querySelectorAll('.addToWishlist').forEach(button => {
+      button.addEventListener('click', (e) => {
+        const productId = e.target.closest('.productCard').dataset.productId;
+        dataLayer.push({
+          'event': 'addToWishlist',
+          'productId': productId,
+          'action': 'wishlistAdded'
+        });
+      });
+    });
+  </script>
+  <!-- End Google Tag Manager -->
+
+</body>
+</html>

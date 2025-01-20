@@ -1,147 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resources On GA4 & GTM</title>
-    <!-- Google Tag Manager -->
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
-    </script>
-    <!-- End Google Tag Manager -->
-    <script src="script.js"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: green;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 100px auto;
-            padding: 20px;
-            background-color: #2a913f;
-            box-shadow: 0 8px 8px #2bcfbf;
-            border-radius: 20px;
-        }
-        h1, h2 {
-            text-align: center;
-            margin-bottom: 30px;
-            font-weight: bold;
-            box-shadow: 0 8px 8px #2bcfbf;
-        }
-        h2 {
-            color: blue;
-        }
-        .dropdown-group {
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        label {
-            width: 18%;
-            text-align: left;
-        }
-        select {
-            width: 65%;
-            padding: 10px;
-            font-size: 16px;
-            background-color: #2bcfbf;
-        }
-        button {
-            width: 15%;
-            padding: 10px;
-            font-size: 16px;
-            background-color: #4CAF50;
-            color: rgb(0, 0, 0);
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        button:hover {
-            background-color: #2bcfbf;
-        }
-        footer {
-            background-color: green;
-            color: blue;
-            padding: 5px;
-            text-align: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-        footer a {
-            color: blue;
-            text-decoration: none;
-            margin: 0 5px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Payment Info Event</title>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+    var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PPBVCLNF');
+  </script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: white;
+      color: black;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: green;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+    header a {
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      transform: translateY(-50%);
+      background-color: orange;
+      color: blue;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+    header a:hover {
+      background-color: blue;
+      color: orange;
+    }
+    main {
+      margin: 150px 20px;
+      text-align: center;
+    }
+    h2 {
+      color: green;
+    }
+    .data-table {
+      margin: 20px auto;
+      border-collapse: collapse;
+      width: 90%;
+      max-width: 1200px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+    .data-table th, .data-table td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+    .data-table th {
+      background-color: green;
+      color: white;
+    }
+    .data-table tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    .data-table tr:hover {
+      background-color: #f1f1f1;
+    }
+    button {
+      background-color: orange;
+      color: blue;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      margin: 20px;
+    }
+    button:hover {
+      background-color: blue;
+      color: orange;
+    }
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #f1f1f1;
+      text-align: center;
+      height: 50px;
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+    }
+    footer object {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
 </head>
+
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
-                height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
+  <!-- Google Tag Manager NoScript -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-    <h1>Resources For Learning Google Analytics 4 (GA4) & Google Tag Manager (GTM)</h1>
-    <h2>Explore tags, triggers, variables, events, and data layers!</h2>
+  <header>
+    <h1>Add Payment Info</h1>
+    <a href="index.html">Home</a>
+  </header>
 
-    <div class="container">
-        <div class="dropdown-group">
-            <label for="workoutLevel-1" aria-label="Workout Level 1">Workouts Level-1</label>
-            <select id="workoutLevel-1">
-                <option value="">Select an item</option>
-                <option value="101-ga4-config.html">101. GA4 Configuration</option>
-                <option value="102-page-view.html">102. Page View</option>
-                <!-- Other options here -->
-            </select>
-            <button onclick="openFile('workoutLevel-1')">Proceed</button>
-        </div>
+  <main>
+    <h2>Payment Information</h2>
+    <button id="triggerAddPaymentInfoEvent">Trigger Add Payment Info Event</button>
+    <button onclick="navigateToURL('add_payment_info')">Show Google Reference</button>
 
-        <div class="dropdown-group">
-            <label for="workoutLevel-2" aria-label="Workout Level 2">Workouts Level-2</label>
-            <select id="workoutLevel-2">
-                <option value="">Select an item</option>
-                <option value="201-JavaScript-Error-Tag.html">201. JavaScript Error Tag</option>
-                <!-- Other options here -->
-            </select>
-            <button onclick="openFile('workoutLevel-2')">Proceed</button>
-        </div>
-        <!-- Additional dropdown groups as needed -->
-    </div>
+    <table class="data-table" id="data-layer-display">
+      <thead>
+        <tr>
+          <th>Key</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- DataLayer information will be dynamically added here -->
+      </tbody>
+    </table>
+  </main>
 
-    <footer>
-        <p>
-            &copy; 2024 Md. Saiful Alam Saroar. All rights reserved. 
-            This demo website is provided solely for educational purposes related to Google Analytics and Conversion Tracking.
-        </p>
-        <a href="https://www.facebook.com/msasaroar" target="_blank">Facebook</a> | 
-        <a href="mailto:msasaroar@gmail.com">Email</a> | 
-        <a href="https://wa.me/8801917530031" target="_blank">WhatsApp</a>
-    </footer>
+  <footer>
+    <object type="text/html" data="footer.html"></object>
+  </footer>
 
-    <script>
-        function openFile(selectId) {
-            const selectedValue = document.getElementById(selectId).value;
-            if (selectedValue) {
-                window.location.href = selectedValue;
-            } else {
-                alert("Please select an item to proceed.");
+  <script>
+    // Clear the previous ecommerce object
+    dataLayer.push({ ecommerce: null });
+
+    const eventData = {
+      event: "add_payment_info",
+      ecommerce: {
+        currency: "USD",
+        value: 30.03,
+        coupon: "SUMMER_FUN",
+        payment_type: "Credit Card",
+        items: [
+          {
+            item_id: "SKU_12345",
+            item_name: "Stan and Friends Tee",
+            affiliation: "Google Merchandise Store",
+            coupon: "SUMMER_FUN",
+            discount: 2.22,
+            index: 0,
+            item_brand: "Google",
+            item_category: "Apparel",
+            item_category2: "Adult",
+            item_category3: "Shirts",
+            item_category4: "Crew",
+            item_category5: "Short sleeve",
+            item_list_id: "related_products",
+            item_list_name: "Related Products",
+            item_variant: "green",
+            location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo-1",
+            price: 10.01,
+            quantity: 3
+          }
+        ]
+      }
+    };
+
+    dataLayer.push(eventData);
+
+    const displayDataLayer = () => {
+      const tableBody = document.getElementById('data-layer-display').querySelector('tbody');
+      tableBody.innerHTML = '';
+
+      const ecommerce = eventData.ecommerce;
+      for (const key in ecommerce) {
+        if (Array.isArray(ecommerce[key])) {
+          ecommerce[key].forEach(item => {
+            for (const prop in item) {
+              const row = document.createElement('tr');
+              row.innerHTML = `<td>${prop.replace(/_/g, ' ')}</td><td>${item[prop]}</td>`;
+              tableBody.appendChild(row);
             }
+          });
+        } else {
+          const row = document.createElement('tr');
+          row.innerHTML = `<td>${key.replace(/_/g, ' ')}</td><td>${ecommerce[key]}</td>`;
+          tableBody.appendChild(row);
         }
-    </script>
+      }
+    };
+
+    displayDataLayer();
+
+    document.getElementById('triggerAddPaymentInfoEvent').addEventListener('click', () => {
+      dataLayer.push(eventData);
+      alert('add_payment_info event triggered!');
+      displayDataLayer();
+    });
+  </script>
 </body>
 </html>

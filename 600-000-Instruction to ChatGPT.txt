@@ -1,0 +1,1 @@
+Task-01: Create a complex HTML page using a non-compliant pushed data layer for GA4, and prepare a list of tasks based on that HTML page to be tracked using GTM.

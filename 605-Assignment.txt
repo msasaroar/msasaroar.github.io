@@ -1,0 +1,25 @@
+Tasks to Track Using GTM
+
+Page View:
+Trigger: On page load.
+Tag: Track pageType, userTier, and preferences (non-compliant dimensions).
+
+Hero Button Click:
+Trigger: Click on the "Get Started" button.
+Tag: Track ctaClick with ctaId and ctaLocation.
+
+Multi-Step Form:
+Step Completion Trigger: When a form step is completed.
+Tag: Track formStepCompleted with formStep value.
+Form Submission Trigger: On form submission.
+Tag: Track formSubmission with formId and collected data (name and email).
+
+Add to Wishlist:
+Trigger: Click on "Add to Wishlist" for any product.
+Tag: Track addToWishlist with productId and action.
+
+Carousel Interaction:
+Trigger: When the user scrolls or clicks within the carousel.
+Tag: Track carouselInteraction with dynamic tracking for productId.
+
+This version includes multi-step interactions and dynamic data collection. Let me know if you'd like further refinements or GTM mapping guidance!

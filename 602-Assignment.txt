@@ -1,0 +1,62 @@
+GTM Tracking Tasks
+
+1. Page View Tracking
+Task    : Track page views and categorize pages (currently non-compliant data layer uses pageCategory instead of page_path).
+GTM Implementation:
+Create a GA4 Event Tag for page view tracking.
+Trigger: Page View trigger.
+Action: Push data layer fields into GA4 parameters.
+
+
+2. Add to Cart
+Task: Track product additions to the shopping cart.
+GTM Implementation:
+Create a GA4 Event Tag for the addToCart event.
+Trigger: Click trigger on .add-to-cart buttons.
+Action: Pull productID and action from the data layer and send it as event parameters.
+
+
+3. Navigation Tracking
+Task: Track when a user clicks on any navigation link (e.g., "Home," "Products," "Checkout").
+GTM Implementation:
+Create a GA4 Event Tag for navigation tracking.
+Trigger: Click trigger on navigation links.
+Action: Send the event name (e.g., navigationClick) and the clickedPage (e.g., "Home" or "Products").
+
+
+4. Checkout Button Click
+Task: Track when a user clicks on the "Checkout" button.
+GTM Implementation:
+Create a GA4 Event Tag for tracking checkout clicks.
+Trigger: Click trigger on the #checkoutBtn element.
+Action: Send event data such as event: 'checkoutStart'.
+
+
+5. Product Page Views
+Task: Track when a user views a specific product (e.g., product_1 or product_2).
+GTM Implementation:
+Create a GA4 Event Tag for product views.
+Trigger: Page View or Click on product links.
+Action: Track productID or productName as parameters.
+
+
+6. Custom Data Layer Fields (non-compliant)
+Task: Track custom data that may not be fully compliant with GA4’s expectations (e.g., userID, currency).
+GTM Implementation:
+Create a Custom Event tag to track fields like userID or currency.
+Trigger: Data Layer Event trigger on custom event pushes.
+Action: Map these non-compliant fields to GA4 event parameters (note that GA4 may require restructuring for compliance).
+
+GTM Tag Configuration:
+For each of the above tasks, you will need to configure a GA4 Event Tag in Google Tag Manager:
+Set the Event Name (e.g., page_view, add_to_cart).
+Set Event Parameters (e.g., productID, currency, userID).
+Set the Triggering Conditions (e.g., Page View, Click, Data Layer Event).
+
+Note on Non-Compliant Data Layer:
+In real-world scenarios, a non-compliant data layer might contain data in formats or fields that GA4 doesn't expect or recommend. 
+In this case, you'll likely need to reshape or map the data appropriately within GTM to ensure it is compatible with GA4. For example:
+
+
+Replace pageCategory with page_path or page_title as per GA4 standards.
+Include mandatory fields like client_id or user_id for user-level tracking.

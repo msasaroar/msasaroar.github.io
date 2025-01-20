@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ultimate Interactive Page</title>
+
+  <!-- Google Tag Manager -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+      'event': 'pageview',
+      'pageCategory': 'AdvancedInteractivePage',
+      'userDetails': {
+        'userId': 'USER12345',
+        'subscriptionType': 'gold',
+        'membershipDuration': '24 months'
+      },
+      'deviceInfo': {
+        'browser': navigator.userAgent,
+        'screenResolution': `${screen.width}x${screen.height}`
+      }
+    });
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #eef1f5;
+      color: #333;
+    }
+    header {
+      background-color: #004d40;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    a.home {
+      color: white;
+      text-decoration: none;
+      position: absolute;
+      left: 20px;
+      top: 20px;
+    }
+    .container {
+      padding: 20px;
+    }
+    .section {
+      margin: 20px 0;
+      padding: 20px;
+      background: white;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .interactive-map, .chatbot {
+      height: 300px;
+      background-color: #ddd;
+      text-align: center;
+      line-height: 300px;
+    }
+    button {
+      background-color: orange;
+      color: blue;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: blue;
+      color: orange;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <a href="index.html" class="home">Home</a>
+    <h1>Advanced Interactive Features</h1>
+  </header>
+
+  <div class="container">
+    <!-- Dynamic Hero Section -->
+    <section class="section">
+      <h2>Hero Section with Dynamic Content</h2>
+      <p id="dynamicQuote">"Loading inspirational quote..."</p>
+      <button id="refreshQuote">Refresh Quote</button>
+    </section>
+
+    <!-- Multi-Step Purchase Process -->
+    <section class="section">
+      <h2>Purchase Product in Steps</h2>
+      <form id="purchaseForm">
+        <div id="purchaseStep1" class="purchaseStep">
+          <label for="productSelection">Select Product:</label>
+          <select id="productSelection">
+            <option value="Product A">Product A - $100</option>
+            <option value="Product B">Product B - $150</option>
+            <option value="Product C">Product C - $200</option>
+          </select>
+          <button type="button" class="nextPurchaseStep">Next</button>
+        </div>
+        <div id="purchaseStep2" class="purchaseStep" style="display: none;">
+          <label for="paymentMethod">Payment Method:</label>
+          <select id="paymentMethod">
+            <option value="Credit Card">Credit Card</option>
+            <option value="PayPal">PayPal</option>
+            <option value="Bitcoin">Bitcoin</option>
+          </select>
+          <button type="button" class="nextPurchaseStep">Next</button>
+        </div>
+        <div id="purchaseStep3" class="purchaseStep" style="display: none;">
+          <label for="shippingAddress">Shipping Address:</label>
+          <textarea id="shippingAddress" rows="3"></textarea>
+          <button type="submit">Submit Purchase</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Interactive Map -->
+    <section class="section">
+      <h2>Interactive Map</h2>
+      <div class="interactive-map" id="map">Map will load here...</div>
+      <button id="locateUser">Locate Me</button>
+    </section>
+
+    <!-- Live Chatbot -->
+    <section class="section">
+      <h2>AI Chatbot Assistance</h2>
+      <div class="chatbot" id="chatbotWindow">Chatbot active. Start chatting!</div>
+      <button id="chatbotToggle">Toggle Chatbot</button>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer style="background: #004d40; color: white; text-align: center; padding: 20px;">
+    <p>&copy; 2025 Ultimate Interactive Page</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Hero Section: Fetch and Display Quote
+    async function loadQuote() {
+      const response = await fetch('https://api.quotable.io/random');
+      const data = await response.json();
+      document.getElementById('dynamicQuote').innerText = `"${data.content}" - ${data.author}`;
+      dataLayer.push({
+        'event': 'quoteRefreshed',
+        'quote': data.content,
+        'author': data.author
+      });
+    }
+    document.getElementById('refreshQuote').addEventListener('click', loadQuote);
+    loadQuote();
+
+    // Multi-Step Purchase Process
+    document.querySelectorAll('.nextPurchaseStep').forEach(button => {
+      button.addEventListener('click', (e) => {
+        const currentStep = e.target.closest('.purchaseStep');
+        currentStep.style.display = 'none';
+        currentStep.nextElementSibling.style.display = 'block';
+        dataLayer.push({
+          'event': 'purchaseStepCompleted',
+          'stepId': currentStep.id
+        });
+      });
+    });
+    document.getElementById('purchaseForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const product = document.getElementById('productSelection').value;
+      const payment = document.getElementById('paymentMethod').value;
+      const address = document.getElementById('shippingAddress').value;
+      dataLayer.push({
+        'event': 'purchaseCompleted',
+        'product': product,
+        'paymentMethod': payment,
+        'shippingAddress': address
+      });
+      alert('Purchase Submitted!');
+    });
+
+    // Interactive Map
+    document.getElementById('locateUser').addEventListener('click', () => {
+      navigator.geolocation.getCurrentPosition((position) => {
+        const coords = `${position.coords.latitude}, ${position.coords.longitude}`;
+        document.getElementById('map').innerText = `You are located at: ${coords}`;
+        dataLayer.push({
+          'event': 'userLocated',
+          'coordinates': coords
+        });
+      });
+    });
+
+    // Chatbot Toggle
+    let chatbotActive = true;
+    document.getElementById('chatbotToggle').addEventListener('click', () => {
+      chatbotActive = !chatbotActive;
+      document.getElementById('chatbotWindow').innerText = chatbotActive 
+        ? 'Chatbot active. Start chatting!' 
+        : 'Chatbot inactive.';
+      dataLayer.push({
+        'event': 'chatbotToggle',
+        'status': chatbotActive ? 'active' : 'inactive'
+      });
+    });
+  </script>
+</body>
+</html>
