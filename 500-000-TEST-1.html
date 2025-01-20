@@ -3,303 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resources On GA4 & GTM</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Custom Event Tracking with gtag.js and GTM</title>
+
     <!-- Google Tag Manager -->
     <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l !== 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-PPBVCLNF');
     </script>
     <!-- End Google Tag Manager -->
+
     <style>
         body {
+            background-color: white;
             font-family: Arial, sans-serif;
+            color: black;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
         }
-        .container {
-            max-width: 1200px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #ffffff;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            border-radius: 8px;
-        }
-        h1, h2 {
+        header {
+            background-color: green;
+            color: black;
             text-align: center;
-            color: #333;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
         }
-        h1 {
-            margin-bottom: 10px;
-            font-size: 2rem;
-        }
-        h2 {
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-        }
-        .dropdown-group {
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        label {
-            flex: 1;
-            font-weight: bold;
-            text-align: right;
-            margin-right: 10px;
-        }
-        select {
-            flex: 2;
-            padding: 8px;
-            font-size: 1rem;
-        }
-        button {
-            flex: 1;
-            padding: 10px;
-            font-size: 1rem;
-            background-color: #28a745;
-            color: #fff;
+        header button {
+            background-color: orange;
+            color: blue;
             border: none;
+            padding: 10px 20px;
+            font-size: 16px;
             cursor: pointer;
-            border-radius: 4px;
-            transition: background-color 0.3s ease;
+            position: absolute;
+            top: 10px;
+            left: 10px;
         }
-        button:hover {
-            background-color: #218838;
+        header button:hover {
+            background-color: blue;
+            color: orange;
+        }
+        .content {
+            margin: 100px auto 80px;
+            text-align: center;
+            padding: 0 20px;
+            max-width: 800px;
+        }
+        .content h2, .content h3 {
+            margin: 20px 0;
+        }
+        .content button {
+            background-color: orange;
+            color: blue;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .content button:hover {
+            background-color: blue;
+            color: orange;
         }
         footer {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
             position: fixed;
             bottom: 0;
             width: 100%;
+            background-color: #f1f1f1;
+            text-align: center;
+            height: 50px;
+            line-height: 50px;
         }
-        footer a {
-            color: #00aced;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-        footer a:hover {
-            text-decoration: underline;
+        footer object {
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
-
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
 
-    <div class="container">
-        <h1>Resources For Learning Google Analytics 4 (GA4) & Google Tag Manager (GTM)</h1>
-        <h2>Explore tags, triggers, variables, events, and data layers!</h2>
+<header>
+    <button onclick="window.location.href='index.html'">Home</button>
+    <h1>Custom Event Tracking with gtag.js and GTM</h1>
+</header>
 
-        <div class="dropdown-group">
-            <label for="workoutLevel-1">Workouts Level-1</label>
-            <select id="workoutLevel-1">
-                <option value="">Select an item</option>
-                <option value="101-ga4-config.html">101. GA4 Configuration</option>
-                <option value="102-page-view.html">102. Page View</option>
-                <option value="103-purchase-confirmation.html">103. Purchase Confirmation</option>
-                <option value="104-contact.html">104. Contact Form Submission</option>
-                <option value="105-signup-confirmation.html">105. Signup Confirmation</option>
-                <option value="106-add-to-cart.html">106. Add to Cart</option>
-                <option value="107-checkout.html">107. Checkout</option>
-                <option value="108-link-click.html">108. Link Click</option>
-                <option value="109-scroll-depth.html">109. Scroll (Vertical & Horizontal) Tag</option>
-                <option value="110-custom-html-tag.html">110. Custom HTML Tag</option>
-                <option value="111-outbound-link-click.html">111. Outbound Click Tag</option>
-                <option value="112-timer-tag.html">112. Timer Tag</option>
-            </select>
-            <button onclick="openFile(document.getElementById('workoutLevel-1').value)">Proceed</button>
-        </div>
+<div class="content">
+    <h2>Real-World Problem: Tracking User Interactions</h2>
+    <p>Understanding user behavior is essential for optimizing websites. In this example, we'll track a button click using <strong>gtag.js</strong> and <strong>Google Tag Manager (GTM)</strong>. This will help in understanding how users interact with the website, improving conversion rates, and monitoring user engagement.</p>
 
+    <h3>Solution: Implement Custom Event Tracking</h3>
+    <p>We can implement custom event tracking to measure user interactions. Using <strong>gtag.js</strong> and <strong>GTM</strong>, we will track when a user clicks a button and send this event data to <strong>Google Analytics</strong> for reporting and analysis.</p>
 
-        <div class="dropdown-group">
-            <label for="workoutLevel-2">Workouts Level-2</label>
-            <select id="workoutLevel-2">
-                <option value="">Select an item</option>
-                <option value="201-JavaScript-Error-Tag.html">201. JavaScript Error Tag</option>
-                <option value="202-user-login-form.html">202. User Login Trigger</option>
-                <option value="203-element-visibility-trigger.html">203. Element Visibility Trigger</option>
-                <option value="204-social-media-click-tag.html">204. Social Media Click Tag</option>
-                <option value="205-custom-image-tag.html">205. Custom Image Tag</option>
-                <option value="206-element-click.html">206. Element Click</option>
-                <option value="207-video-engagement-with-embedded-youtube-video.html">207. Video Engagement [Embedded]</option>
-                <option value="208-video-engagement-with-non-embedded-video.html">208. Video Engagement [Link]</option>
-                <option value="209-video-engagement-with-repository-video.html">209. Video Engagement [Repository]</option>
-                <option value="210-video-pause-event.html">210. Video Pause Event</option>
-                <option value="211-video-complete-event.html">211. Video Complete Event</option>
-                <option value="212-hash-change-tag-and-trigger.html">212. Hash Change Tag and Trigger</option>
-                <option value="213-history-change-event.html">213. History Change Event</option>
-                <option value="214-custom-event-trigger.html">214. Custom Event Trigger</option>
-                <option value="215-page-visibility-trigger.html">215. Page Visibility Trigger</option>
-                <option value="216-window-loaded-trigger.html">216. Window Loaded Trigger</option>
-                <option value="217-dom-ready.html">217. DOM Ready Trigger</option>
-            </select>
-            <button onclick="openFile(document.getElementById('workoutLevel-2').value)">Proceed</button>
-        </div>
+    <button onclick="sendEvent()">Track Button Click</button>
 
-        <div class="dropdown-group">
-          <label for="workoutLevel-3">Workouts Level-3</label>
-          <select id="workoutLevel-3">
-              <option value="">Select an item</option>
-              <option value="301-all-url-variable.html">301. To 320. All GTM URL Variable</option>
-              <option value="321-page-view-data-layer.html">321. Page View Data Layer</option>
-              <option value="322-button-click-data-layer.html">322. Button Click Data Layer</option>
-              <option value="323-scroll-depth-data-layer.html">323. Scroll Depth Data Layer</option>
-              <option value="324-form-submit-data-layer.html">324. Form Submit Data Layer</option>
-              <option value="325-video-start-data-layer.html">325. Video Start Data Layer</option>
-              <option value="326-add-to-cart-data-layer.html">326. Add to Cart Data Layer</option>
-              <option value="327-remove-from-cart-data-layer.html">327. Remove from Cart Data Layer</option>
-              <option value="328-checkout-data-layer.html">328. Checkout Data Layer</option>
-              <option value="328-purchase-data-layer.html">328. Purchase Data Layer</option>
-              <option value="329-user-login-data-layer.html">329. User Login Data Layer</option>
-              <option value="330-user-logout-data-layer.html">330. User Logout Data Layer</option>
-              <option value="331-custom-event-data-layer.html">331. Custom Event Data Layer</option>
-              <option value="332-search-data-layer.html">332. Search Data Layer</option>
-              <option value="333-product-view-data-layer.html">333. Product View Data Layer</option>
-              <option value="334-download-file-data-layer.html">334. Download File Data Layer</option>
-              <option value="335-feedback-submit-data-layer.html">335. Feedback Submit Data Layer</option>
-              <option value="336-page-timing-data-layer.html">336. Page Timing Data Layer</option>
-              <option value="337-error-tracking-data-layer.html">337. Error Tracking Data Layer</option>
-              <option value="338-share-like-dislike-data-layer.html">338. Share, Like & Dislike Data Layer</option>
-              <option value="339-Ad-Click-Tracking-Data-Layer.html">339. Ad Click Trigger</option>
-              <option value="340-GA4-Refund-Event-Tag-Data-Layer.html">340. GA4 Refund Event Tag</option>
-              <option value="341-Form-Field-And-Focus-Changes-Data-Layer.html">341. Form Field & Focus Changes</option>
-              <option value="342-Frequently-Used-Data-Layers.html">342. Frequently Used Data Layer</option>
-          </select>
-          <button onclick="openFile(document.getElementById('workoutLevel-3').value)">Proceed</button>
-        </div>
+    <p>Click the button above to trigger a custom event that will be tracked by both <strong>gtag.js</strong> and <strong>GTM</strong>.</p>
+</div>
 
-      <div class="dropdown-group">
-        <label for="syllabusRSandUAT">Topics and Sample Formts</label>
-        <select id="syllabusRSandUAT">
-            <option value="">Select an item</option>
-            <option value="401-Syllabus-For-Learning-GA4.html">401. Syllabus For Learning GA4</option>
-            <option value="402-Syllabus-For-Learning-GTM.html">402. Syllabus For Learning GTM</option>
-            <option value="403-Requirements-on-General-Purpose-Website.html">403. Events and Conversion Tracking Requirements on General-Purpose Website</option>
-            <option value="404-Requirements-on-an-e-Commerce-Website.html">404. Events and Conversion Tracking Requirements on an e-Commerce Website</option>
-            <option value="405-Requirements-on-a-Blogging-Website.html">405. Events and Conversion Tracking Requirements on a Blogging Website</option>
-            <option value="406-UAT-Format.html">406. UAT Format</option>
-        </select>
-        <button onclick="openFile(document.getElementById('syllabusRSandUAT').value)">Proceed</button>
-      </div>
+<footer>
+    <object type="text/html" data="footer.html"></object>
+</footer>
 
+<script>
+    // Function to trigger a custom event via gtag.js and push to GTM dataLayer
+    function sendEvent() {
+        // Triggering the event using gtag.js
+        gtag('event', 'button_click', {
+            event_category: 'user_interaction',
+            event_label: 'track_button_click-gtag',
+            value: 1
+        });
 
-      <div class="dropdown-group">
-        <label for="ga4Schema">GA4 Schema</label>
-        <select id="ga4Schema">
-          <option value="">Select an item</option>
-          <option value="501-What-Is-GA4-Schema.html">501. About GA4 Schema</option>
-          <option value="502-GA4-Schema-Compliant-Events.html">502. GA4 Schema Compliant Events</option>
-          <option value="503-GA4-Schema-Add-To-Cart-Event.html">503. GA4 Schema : Add To Cart Event</option>
-          <option value="504-GA4-Schema-Add-To-Wishlist-Event.html">504. GA4 Schema : Add To Wishlist Event</option>
-          <option value="505-GA4-Schema-Begin-Checkout-Event.html">505. GA4 Schema : Begin Checkout Event</option>
-          <option value="506-GA4-Schema-Purchase-Event.html">506. GA4 Schema : Purchase Event</option>
-          <option value="507-GA4-Schema-Refund-Event.html">507. GA4 Schema : Refund Event</option>
-          <option value="508-GA4-Schema-View-Item-Event.html">508. GA4 Schema : View Item Event</option>
-          <option value="509-GA4-Schema-View-Item-List-Event.html">509. GA4 Schema : View Item List Event</option>
-          <option value="510-GA4-Schema-Select-Item-Event.html">510. GA4 Schema : Select Item Event</option>
-          <option value="511-GA4-Schema-Add-Payment-Info-Event.html">511. GA4 Schema : Add Payment Info Event</option>
-          <option value="512-GA4-Schema-Sign-Up-Event.html">512. GA4 Schema : Sign Up Event</option>
-          <option value="513-GA4-Schema-Login-Event.html">513. GA4 Schema : Login Event</option>
-          <option value="514-GA4-Schema-Subscribe-Event.html">514. GA4 Schema : Subscribe Event</option>
-          <option value="515-GA4-Schema-Share-Event.html">515. GA4 Schema : Share Event</option>
-          <option value="516-GA4-Schema-Form-Submission-Event.html">516. GA4 Schema : Form Submission Event</option>
-          <option value="517-GA4-Schema-Coupon-Applied-Event.html">517. GA4 Schema : Coupon Applied Event</option>
-          <option value="518-GA4-Schema-Compliant-VS-Non-Complaiant-Data-Layer.html">518. GA4 Schema Compliant VS Non-Compliant Data Layer</option>
-          <option value="519-custom-events-using-gtag-and-gtm.html">519. Custom events using gtag.js and GTM</option>
-          <option value="520-GA4-Schema-DLV-Product Details.html">520. GA4 Schema DLV Product Details</option>
-          <option value="521-GA4-Schema-DLV-Transaction-Details.html">521. GA4 Schema DLV Transaction Details</option>
-          <option value="522-GA4-Schema-Product-Interaction-Events.html">522. GA4 Schema Product Interaction Events</option>
-          <option value="523-GA4-Schema-Download-Events.html">523. GA4 Schema Download Events</option>
-          <option value="524-Resolve-Non-Complaiant-Data-Layer-Issues.html">524. Resolve Non-Compliant Data Layer Issues</option>
-          <option value="525-Sample-Mapping-Non-Compliant-Data-Layer.html">525. Sample Mapping Non-Compliant Data Layer</option>
-          <option value="526-Simulate-Ecommerce-Purchase.html">526. Simulate Ecommerce Purchase</option>
-        </select>
-        <button onclick="openFile(document.getElementById('ga4Schema').value)">Proceed</button>
-      </div>
+        // Pushing the event to the GTM dataLayer
+        window.dataLayer.push({
+            event: 'button_click',
+            event_category: 'user_interaction',
+            event_label: 'track_button_click-gtm',
+            value: 1
+        });
+    }
+</script>
 
-      <div class="dropdown-group">
-        <label for="ga4RecommendedEvents">GA4 Recommended Events</label>
-        <select id="ga4RecommendedEvents">
-          <option value="">Select an item</option>
-          <option value="601-add_payment_info.html">601. Add Payment Info</option>
-          <option value="602-add_shipping_info.html">602. Add Shipping Info</option>
-          <option value="603-add_to_cart.html">603. Add to Cart</option>
-          <option value="604-add_to_wishlist.html">604. Add to Wishlist</option>
-          <option value="605-begin_checkout.html">605. Begin Checkout</option>
-          <option style="background-color: red;" value="606-close_convert_lead.html">606. Close Convert Lead</option>
-          <option style="background-color: red;" value="607-close_unconvert_lead.html">607. Close Unconvert Lead</option>
-          <option style="background-color: red;" value="608-disqualify_lead.html">608. Disqualify Lead</option>
-          <option style="background-color: red;" value="609-earn_virtual_currency.html">609. Earn Virtual Currency</option>
-          <option style="background-color: red;" value="610-generate_lead.html">610. Generate Lead</option>
-          <option style="background-color: red;" value="611-join_group.html">611. Join Group</option>
-          <option style="background-color: red;" value="612-level_end.html">612. Level End</option>
-          <option style="background-color: red;" value="613-level_start.html">613. Level Start</option>
-          <option style="background-color: red;" value="614-level_up.html">614. Level Up</option>
-          <option style="background-color: red;" value="615-login.html">615. Login</option>
-          <option style="background-color: red;" value="616-post_score.html">616. Post Score</option>
-          <option value="617-purchase.html">617. Purchase</option>
-          <option style="background-color: red;" value="618-qualify_lead.html">618. Qualify Lead</option>
-          <option value="619-refund.html">619. Refund</option>
-          <option value="620-remove_from_cart.html">620. Remove From Cart</option>
-          <option style="background-color: red;" value="621-search.html">621. Search</option>
-          <option style="background-color: red;" value="622-select_content.html">622. Select Content</option>
-          <option value="623-select_item.html">623. Select Item</option>
-          <option value="624-select_promotion.html">624. Select Promotion</option>
-          <option style="background-color: red;" value="625-share.html">625. Share</option>
-          <option style="background-color: red;" value="626-sign_up.html">626. Sign Up</option>
-          <option style="background-color: red;" value="627-spend_virtual_currency.html">627. Spend Virtual Currency</option>
-          <option style="background-color: red;" value="628-tutorial_begin.html">628. Tutorial Begin</option>
-          <option style="background-color: red;" value="629-tutorial_complete.html">629. Tutorial Complete</option>
-          <option style="background-color: red;" value="630-unlock_achievement.html">630. Unlock Achievement</option>
-          <option value="631-view_cart.html">631. View Cart</option>
-          <option value="632-view_item.html">632. View Item</option>
-          <option value="633-view_item_list.html">633. View Item List</option>
-          <option value="634-view_promotion.html">634. View Promotion</option>
-          <option style="background-color: red;" value="635-working_lead.html">635. Working Lead</option>
-        </select>
-        <button onclick="openFile(document.getElementById('ga4RecommendedEvents').value)">Proceed</button>
-      </div>
-
-
-
-
-
-
-    </div>
-
-    <footer>
-        <p>&copy; 2024 Md. Saiful Alam Saroar. All rights reserved. This demo website is provided solely for educational purposes related to Google Analytics and Conversion Tracking.</p>
-        <a href="https://www.facebook.com/msasaroar" target="_blank">Facebook</a> |
-        <a href="mailto:msasaroar@gmail.com">Email</a> |
-        <a href="https://wa.me/8801917530031" target="_blank">WhatsApp</a>
-    </footer>
-
-    <script>
-        function openFile(url) {
-            if (url) {
-                window.location.href = url;
-            } else {
-                alert('Please select an item before proceeding.');
-            }
-        }
-    </script>
 </body>
 </html>

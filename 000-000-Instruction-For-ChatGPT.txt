@@ -250,3 +250,7 @@ Make the page colourful and attractive.
 Use Green, White, Blue, Black, orange colour only. 
 Show data on table/grid. GTM Code is "GTM-PPBVCLNF".
 
+
+
+Rewrite the following page so that each element is vissible:
+

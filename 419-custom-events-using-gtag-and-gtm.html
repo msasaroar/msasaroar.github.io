@@ -27,10 +27,10 @@
             background-color: green;
             color: black;
             text-align: center;
-            padding: 20px;
             position: fixed;
             top: 0;
             width: 100%;
+            z-index: 1000;
         }
         header button {
             background-color: orange;
@@ -39,14 +39,35 @@
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
+            position: absolute;
+            top: 10px;
+            left: 10px;
         }
         header button:hover {
             background-color: blue;
             color: orange;
         }
         .content {
-            margin-top: 80px;
+            margin: 100px auto 80px;
             text-align: center;
+            padding: 0 20px;
+            max-width: 800px;
+        }
+        .content h2, .content h3 {
+            margin: 20px 0;
+        }
+        .content button {
+            background-color: orange;
+            color: blue;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .content button:hover {
+            background-color: blue;
+            color: orange;
         }
         footer {
             position: fixed;
@@ -55,6 +76,11 @@
             background-color: #f1f1f1;
             text-align: center;
             height: 50px;
+            line-height: 50px;
+        }
+        footer object {
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
@@ -67,38 +93,38 @@
 
 <div class="content">
     <h2>Real-World Problem: Tracking User Interactions</h2>
-    <p>Understanding user behavior is essential for optimizing websites. In this example, we'll track a button click using **gtag.js** and **Google Tag Manager (GTM)**. This will help in understanding how users interact with the website, improving conversion rates, and monitoring user engagement.</p>
+    <p>Understanding user behavior is essential for optimizing websites. In this example, we'll track a button click using <strong>gtag.js</strong> and <strong>Google Tag Manager (GTM)</strong>. This will help in understanding how users interact with the website, improving conversion rates, and monitoring user engagement.</p>
 
     <h3>Solution: Implement Custom Event Tracking</h3>
-    <p>We can implement custom event tracking to measure user interactions. Using **gtag.js** and **GTM**, we will track when a user clicks a button and send this event data to **Google Analytics** for reporting and analysis.</p>
+    <p>We can implement custom event tracking to measure user interactions. Using <strong>gtag.js</strong> and <strong>GTM</strong>, we will track when a user clicks a button and send this event data to <strong>Google Analytics</strong> for reporting and analysis.</p>
 
     <button onclick="sendEvent()">Track Button Click</button>
 
-    <p>Click the button above to trigger a custom event that will be tracked by both **gtag.js** and **GTM**.</p>
+    <p>Click the button above to trigger a custom event that will be tracked by both <strong>gtag.js</strong> and <strong>GTM</strong>.</p>
 </div>
 
 <footer>
-    <object type="text/html" data="footer.html" style="width: 100%; height: 100%;"></object>
+    <object type="text/html" data="footer.html"></object>
 </footer>
 
 <script>
-  // Function to trigger a custom event via gtag.js and push to GTM dataLayer
-  function sendEvent() {
-    // Triggering the event using gtag.js
-    gtag('event', 'button_click', {
-      event_category: 'user_interaction',
-      event_label: 'track_button_click-gtag',
-      value: 1
-    });
+    // Function to trigger a custom event via gtag.js and push to GTM dataLayer
+    function sendEvent() {
+        // Triggering the event using gtag.js
+        gtag('event', 'button_click', {
+            event_category: 'user_interaction',
+            event_label: 'track_button_click-gtag',
+            value: 1
+        });
 
-    // Pushing the event to the GTM dataLayer
-    window.dataLayer.push({
-      event: 'button_click',
-      event_category: 'user_interaction',
-      event_label: 'track_button_click-gtm',
-      value: 1
-    });
-  }
+        // Pushing the event to the GTM dataLayer
+        window.dataLayer.push({
+            event: 'button_click',
+            event_category: 'user_interaction',
+            event_label: 'track_button_click-gtm',
+            value: 1
+        });
+    }
 </script>
 
 </body>
