@@ -121,7 +121,29 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
+
+
+
   <div class="container">
+
+    <div class="dropdown-group">
+        <label for="syllabusRSandUAT">Topics and Sample Formts</label>
+        <select id="syllabusRSandUAT">
+            <option value="">Select an item</option>
+            <option value="001-GA4-Beginners-Syllabus.html">001. GA4 Beginners Syllabus</option>
+            <option value="002-GA4-Advance-Syllabus.html">002. GA4 Advance Syllabus</option>
+            <option value="003-GTM-Beginners-Syllabus.html">003. GTM Beginners Syllabus</option>
+            <option value="004-GTM-Advance-Syllabus.html">004. GTM Advance Syllabus</option>
+            <option value="005-Requirements-on-an-e-Commerce-Website.html">005. Requirements on an eCommerce Website</option>
+            <option value="006-Requirements-on-a-Blogging-Website.html">006. Requirements on a Blogging Website</option>
+            <option value="007-Requirements-on-General-Purpose-Website.html">007. Requirements on General Purpose Website</option>
+            <option value="008-Setup-GA4-Compliant-Ecommerce-Tracking-In-GTM.html">008. Setup GA4 Compliant Ecommerce Tracking In GTM</option>
+            <option value="009-UAT-Format.html">009. UAT Format</option>
+        </select>
+        <button onclick="openFile(document.getElementById('syllabusRSandUAT').value)">Proceed</button>
+      </div>
+
+
       <div class="dropdown-group">
           <label for="workoutLevel-1">Workouts Level-1</label>
           <select id="workoutLevel-1">
@@ -199,53 +221,37 @@
           <button onclick="openFile(document.getElementById('workoutLevel-3').value)">Proceed</button>
         </div>
 
-      <div class="dropdown-group">
-        <label for="syllabusRSandUAT">Topics and Sample Formts</label>
-        <select id="syllabusRSandUAT">
-            <option value="">Select an item</option>
-            <option value="401-GA4-Beginners-Syllabus.html">401. GA4 Beginners Syllabus</option>
-            <option value="402-GA4-Advance-Syllabus.html">402. GA4 Advance Syllabus</option>
-            <option value="403-GTM-Beginners-Syllabus.html">403. GTM Beginners Syllabus</option>
-            <option value="404-GTM-Advance-Syllabus.html">404. GTM Advance Syllabus</option>
-            <option value="405-Requirements-on-an-e-Commerce-Website.html">405. Requirements on an eCommerce Website</option>
-            <option value="406-Requirements-on-a-Blogging-Website.html">406. Requirements on a Blogging Website</option>
-            <option value="407-Requirements-on-General-Purpose-Website.html">407. Requirements on General Purpose Website</option>
-            <option value="408-Setup-GA4-Compliant-Ecommerce-Tracking-In-GTM.html">408. Setup GA4 Compliant Ecommerce Tracking In GTM</option>
-            <option value="409-UAT-Format.html">409. UAT Format</option>
-        </select>
-        <button onclick="openFile(document.getElementById('syllabusRSandUAT').value)">Proceed</button>
-      </div>
 
       <div class="dropdown-group">
         <label for="ga4Schema">GA4 Schema</label>
         <select id="ga4Schema">
           <option value="">Select an item</option>
-          <option value="501-What-Is-GA4-Schema.html">501. About GA4 Schema</option>
-          <option value="502-GA4-Schema-Compliant-Events.html">502. GA4 Schema Compliant Events</option>
-          <option value="503-GA4-Schema-Add-To-Cart-Event.html">503. GA4 Schema : Add To Cart Event</option>
-          <option value="504-GA4-Schema-Add-To-Wishlist-Event.html">504. GA4 Schema : Add To Wishlist Event</option>
-          <option value="505-GA4-Schema-Begin-Checkout-Event.html">505. GA4 Schema : Begin Checkout Event</option>
-          <option value="506-GA4-Schema-Purchase-Event.html">506. GA4 Schema : Purchase Event</option>
-          <option value="507-GA4-Schema-Refund-Event.html">507. GA4 Schema : Refund Event</option>
-          <option value="508-GA4-Schema-View-Item-Event.html">508. GA4 Schema : View Item Event</option>
-          <option value="509-GA4-Schema-View-Item-List-Event.html">509. GA4 Schema : View Item List Event</option>
-          <option value="510-GA4-Schema-Select-Item-Event.html">510. GA4 Schema : Select Item Event</option>
-          <option value="511-GA4-Schema-Add-Payment-Info-Event.html">511. GA4 Schema : Add Payment Info Event</option>
-          <option value="512-GA4-Schema-Sign-Up-Event.html">512. GA4 Schema : Sign Up Event</option>
-          <option value="513-GA4-Schema-Login-Event.html">513. GA4 Schema : Login Event</option>
-          <option value="514-GA4-Schema-Subscribe-Event.html">514. GA4 Schema : Subscribe Event</option>
-          <option value="515-GA4-Schema-Share-Event.html">515. GA4 Schema : Share Event</option>
-          <option value="516-GA4-Schema-Form-Submission-Event.html">516. GA4 Schema : Form Submission Event</option>
-          <option value="517-GA4-Schema-Coupon-Applied-Event.html">517. GA4 Schema : Coupon Applied Event</option>
-          <option value="518-GA4-Schema-Compliant-VS-Non-Complaiant-Data-Layer.html">518. GA4 Schema Compliant VS Non-Compliant Data Layer</option>
-          <option value="519-custom-events-using-gtag-and-gtm.html">519. Custom events using gtag.js and GTM</option>
-          <option value="520-GA4-Schema-DLV-Product Details.html">520. GA4 Schema DLV Product Details</option>
-          <option value="521-GA4-Schema-DLV-Transaction-Details.html">521. GA4 Schema DLV Transaction Details</option>
-          <option value="522-GA4-Schema-Product-Interaction-Events.html">522. GA4 Schema Product Interaction Events</option>
-          <option value="523-GA4-Schema-Download-Events.html">523. GA4 Schema Download Events</option>
-          <option value="524-Resolve-Non-Complaiant-Data-Layer-Issues.html">524. Resolve Non-Compliant Data Layer Issues</option>
-          <option value="525-Sample-Mapping-Non-Compliant-Data-Layer.html">525. Sample Mapping Non-Compliant Data Layer</option>
-          <option value="526-Simulate-Ecommerce-Purchase.html">526. Simulate Ecommerce Purchase</option>
+          <option value="401-What-Is-GA4-Schema.html">401. About GA4 Schema</option>
+          <option value="402-GA4-Schema-Compliant-Events.html">402. GA4 Schema Compliant Events</option>
+          <option value="403-GA4-Schema-Add-To-Cart-Event.html">403. GA4 Schema : Add To Cart Event</option>
+          <option value="404-GA4-Schema-Add-To-Wishlist-Event.html">404. GA4 Schema : Add To Wishlist Event</option>
+          <option value="405-GA4-Schema-Begin-Checkout-Event.html">405. GA4 Schema : Begin Checkout Event</option>
+          <option value="406-GA4-Schema-Purchase-Event.html">406. GA4 Schema : Purchase Event</option>
+          <option value="407-GA4-Schema-Refund-Event.html">407. GA4 Schema : Refund Event</option>
+          <option value="408-GA4-Schema-View-Item-Event.html">408. GA4 Schema : View Item Event</option>
+          <option value="409-GA4-Schema-View-Item-List-Event.html">409. GA4 Schema : View Item List Event</option>
+          <option value="410-GA4-Schema-Select-Item-Event.html">410. GA4 Schema : Select Item Event</option>
+          <option value="411-GA4-Schema-Add-Payment-Info-Event.html">411. GA4 Schema : Add Payment Info Event</option>
+          <option value="412-GA4-Schema-Sign-Up-Event.html">412. GA4 Schema : Sign Up Event</option>
+          <option value="413-GA4-Schema-Login-Event.html">413. GA4 Schema : Login Event</option>
+          <option value="414-GA4-Schema-Subscribe-Event.html">414. GA4 Schema : Subscribe Event</option>
+          <option value="415-GA4-Schema-Share-Event.html">415. GA4 Schema : Share Event</option>
+          <option value="416-GA4-Schema-Form-Submission-Event.html">416. GA4 Schema : Form Submission Event</option>
+          <option value="417-GA4-Schema-Coupon-Applied-Event.html">417. GA4 Schema : Coupon Applied Event</option>
+          <option value="418-GA4-Schema-Compliant-VS-Non-Complaiant-Data-Layer.html">418. GA4 Schema Compliant VS Non-Compliant Data Layer</option>
+          <option value="419-custom-events-using-gtag-and-gtm.html">419. Custom events using gtag.js and GTM</option>
+          <option value="420-GA4-Schema-DLV-Product Details.html">420. GA4 Schema DLV Product Details</option>
+          <option value="421-GA4-Schema-DLV-Transaction-Details.html">421. GA4 Schema DLV Transaction Details</option>
+          <option value="422-GA4-Schema-Product-Interaction-Events.html">422. GA4 Schema Product Interaction Events</option>
+          <option value="423-GA4-Schema-Download-Events.html">423. GA4 Schema Download Events</option>
+          <option value="424-Resolve-Non-Complaiant-Data-Layer-Issues.html">424. Resolve Non-Compliant Data Layer Issues</option>
+          <option value="425-Sample-Mapping-Non-Compliant-Data-Layer.html">425. Sample Mapping Non-Compliant Data Layer</option>
+          <option value="426-Simulate-Ecommerce-Purchase.html">426. Simulate Ecommerce Purchase</option>
         </select>
         <button onclick="openFile(document.getElementById('ga4Schema').value)">Proceed</button>
       </div>
@@ -254,41 +260,41 @@
         <label for="ga4RecommendedEvents">GA4 Recommended Events</label>
         <select id="ga4RecommendedEvents">
           <option value="">Select an item</option>
-          <option value="601-add-payment-info.html">601. Add Payment Info</option>
-          <option value="602-add-shipping-info.html">602. Add Shipping Info</option>
-          <option value="603-add-to-cart.html">603. Add to Cart</option>
-          <option value="604-add-to-wishlist.html">604. Add to Wishlist</option>
-          <option value="605-begin-checkout.html">605. Begin Checkout</option>
-          <option value="606-close-convert-lead.html">606. Close Convert Lead?</option>
-          <option value="607-close-unconvert-lead.html">607. Close Unconvert Lead?</option>
-          <option value="608-disqualify-lead.html">608. Disqualify Lead?</option>
-          <option value="609-earn-virtual-currency.html">609. Earn Virtual Currency?</option>
-          <option value="610-generate-lead.html">610. Generate Lead?</option>
-          <option value="611-join-group.html">611. Join Group?</option>
-          <option value="612-level-end.html">612. Level End?</option>
-          <option value="613-level-start.html">613. Level Start?</option>
-          <option value="614-level-up.html">614. Level Up?</option>
-          <option value="615-login.html">615. Login?</option>
-          <option value="616-post-score.html">616. Post Score?</option>
-          <option value="617-purchase.html">617. Purchase</option>
-          <option value="618-qualify-lead.html">618. Qualify Lead?</option>
-          <option value="619-refund.html">619. Refund</option>
-          <option value="620-remove-from-cart.html">620. Remove From Cart</option>
-          <option value="621-search.html">621. Search?</option>
-          <option value="622-select-content.html">622. Select Content?</option>
-          <option value="623-select-item.html">623. Select Item</option>
-          <option value="624-select-promotion.html">624. Select Promotion</option>
-          <option value="625-share.html">625. Share?</option>
-          <option value="626-sign-up.html">626. Sign Up?</option>
-          <option value="627-spend-virtual-currency.html">627. Spend Virtual Currency?</option>
-          <option value="628-tutorial-begin.html">628. Tutorial Begin?</option>
-          <option value="629-tutorial-complete.html">629. Tutorial Complete?</option>
-          <option value="630-unlock-achievement.html">630. Unlock Achievement?</option>
-          <option value="631-view-cart.html">631. View Cart</option>
-          <option value="632-view-item.html">632. View Item</option>
-          <option value="633-view-item-list.html">633. View Item List</option>
-          <option value="634-view-promotion.html">634. View Promotion</option>
-          <option value="635-working-lead.html">635. Working Lead?</option>
+          <option value="501-add-payment-info.html">501. Add Payment Info</option>
+          <option value="502-add-shipping-info.html">502. Add Shipping Info</option>
+          <option value="503-add-to-cart.html">503. Add to Cart</option>
+          <option value="504-add-to-wishlist.html">504. Add to Wishlist</option>
+          <option value="505-begin-checkout.html">505. Begin Checkout</option>
+          <option value="506-close-convert-lead.html">506. Close Convert Lead?</option>
+          <option value="507-close-unconvert-lead.html">507. Close Unconvert Lead?</option>
+          <option value="508-disqualify-lead.html">508. Disqualify Lead?</option>
+          <option value="509-earn-virtual-currency.html">509. Earn Virtual Currency?</option>
+          <option value="510-generate-lead.html">510. Generate Lead?</option>
+          <option value="511-join-group.html">511. Join Group?</option>
+          <option value="512-level-end.html">512. Level End?</option>
+          <option value="513-level-start.html">513. Level Start?</option>
+          <option value="514-level-up.html">514. Level Up?</option>
+          <option value="515-login.html">515. Login?</option>
+          <option value="516-post-score.html">516. Post Score?</option>
+          <option value="517-purchase.html">517. Purchase</option>
+          <option value="518-qualify-lead.html">518. Qualify Lead?</option>
+          <option value="519-refund.html">519. Refund</option>
+          <option value="520-remove-from-cart.html">520. Remove From Cart</option>
+          <option value="521-search.html">521. Search?</option>
+          <option value="522-select-content.html">522. Select Content?</option>
+          <option value="523-select-item.html">523. Select Item</option>
+          <option value="524-select-promotion.html">524. Select Promotion</option>
+          <option value="525-share.html">525. Share?</option>
+          <option value="526-sign-up.html">526. Sign Up?</option>
+          <option value="527-spend-virtual-currency.html">527. Spend Virtual Currency?</option>
+          <option value="528-tutorial-begin.html">528. Tutorial Begin?</option>
+          <option value="529-tutorial-complete.html">529. Tutorial Complete?</option>
+          <option value="530-unlock-achievement.html">530. Unlock Achievement?</option>
+          <option value="531-view-cart.html">531. View Cart</option>
+          <option value="532-view-item.html">532. View Item</option>
+          <option value="533-view-item-list.html">533. View Item List</option>
+          <option value="534-view-promotion.html">534. View Promotion</option>
+          <option value="535-working-lead.html">535. Working Lead?</option>
         </select>
         <button onclick="openFile(document.getElementById('ga4RecommendedEvents').value)">Proceed</button>
       </div>
