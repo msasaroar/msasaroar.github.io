@@ -1,203 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Add Payment Info Event</title>
 
-  <!-- Google Tag Manager -->
-  <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
-    var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PPBVCLNF');
-  </script>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: white;
-      color: black;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background-color: green;
-      color: white;
-      text-align: center;
-      padding: 20px 0;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    }
-    header a {
-      position: absolute;
-      top: 50%;
-      left: 20px;
-      transform: translateY(-50%);
-      background-color: orange;
-      color: blue;
-      text-decoration: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-    }
-    header a:hover {
-      background-color: blue;
-      color: orange;
-    }
-    main {
-      margin: 150px 20px;
-      text-align: center;
-    }
-    h2 {
-      color: green;
-    }
-    .data-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 20px;
-      margin: 20px auto;
-      padding: 20px;
-      max-width: 1200px;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-      background-color: #f9f9f9;
-    }
-    .data-item {
-      background-color: white;
-      border: 1px solid #ddd;
-      padding: 15px;
-      border-radius: 5px;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-      text-align: left;
-    }
-    .data-item strong {
-      color: green;
-    }
-    button {
-      background-color: orange;
-      color: blue;
-      border: none;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      border-radius: 5px;
-      margin: 20px;
-    }
-    button:hover {
-      background-color: blue;
-      color: orange;
-    }
-    footer {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background-color: #f1f1f1;
-      text-align: center;
-      height: 50px;
-      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
-    }
-    footer object {
-      width: 100%;
-      height: 100%;
-    }
-  </style>
-</head>
 
-<body>
-  <!-- Google Tag Manager NoScript -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <header>
-    <h1>Add Payment Info</h1>
-    <a href="index.html">Home</a>
-  </header>
 
-  <main>
-    <h2>Payment Information</h2>
-    <button id="triggerAddPaymentInfoEvent">Trigger Add Payment Info Event</button>
-    <button onclick="navigateToURL('add_payment_info')">Show Google Reference</button>
+<div class="dropdown-group">
+  <label for="syllabusRSandUAT">Tools, Platforms, Topics & Template</label>
+  <select id="syllabusRSandUAT">
+      <option value="">Select an item</option>
+      <option value="001-GA4-Beginners-Syllabus.html">001. GA4 Beginners Syllabus</option>
+      <option value="002-GA4-Advance-Syllabus.html">002. GA4 Advance Syllabus</option>
+      <option value="003-GTM-Beginners-Syllabus.html">003. GTM Beginners Syllabus</option>
+      <option value="004-GTM-Advance-Syllabus.html">004. GTM Advance Syllabus</option>
+      <option value="005-Requirements-on-an-e-Commerce-Website.html">005. Requirements on an eCommerce Website</option>
+      <option value="006-Requirements-on-a-Blogging-Website.html">006. Requirements on a Blogging Website</option>
+      <option value="007-Requirements-on-General-Purpose-Website.html">007. Requirements on General Purpose Website</option>
+      <option value="008-Setup-GA4-Compliant-Ecommerce-Tracking-In-GTM.html">008. Setup GA4 Compliant Ecommerce Tracking In GTM</option>
+      <option value="009-UAT-Format.html">009. UAT Format</option>
+      <option value="010-2-My-Learning-Activities-On-GA4-and-GTM.html">010. My Learning Activities On GA4 and GTM</option>
+      <option value="011-Analytics-and-Conversion-Tracking-Tools-and-Platforms.html">011. Web Analytics and Conversion Tracking Tools & Platforms</option>
+  </select>
+  <button onclick="openFile(document.getElementById('syllabusRSandUAT').value)">Proceed</button>
+</div>
 
-    <div class="data-grid" id="data-layer-display">
-      <!-- DataLayer information will be dynamically added here -->
-    </div>
-  </main>
 
-  <footer>
-    <object type="text/html" data="footer.html"></object>
-  </footer>
-
-  <script>
-    // Clear the previous ecommerce object
-    dataLayer.push({ ecommerce: null });
-
-    const eventData = {
-      event: "add_payment_info",
-      ecommerce: {
-        currency: "USD",
-        value: 30.03,
-        coupon: "SUMMER_FUN",
-        payment_type: "Credit Card",
-        items: [
-          {
-            item_id: "SKU_12345",
-            item_name: "Stan and Friends Tee",
-            affiliation: "Google Merchandise Store",
-            coupon: "SUMMER_FUN",
-            discount: 2.22,
-            index: 0,
-            item_brand: "Google",
-            item_category: "Apparel",
-            item_category2: "Adult",
-            item_category3: "Shirts",
-            item_category4: "Crew",
-            item_category5: "Short sleeve",
-            item_list_id: "related_products",
-            item_list_name: "Related Products",
-            item_variant: "green",
-            location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo-1",
-            price: 10.01,
-            quantity: 3
-          }
-        ]
-      }
-    };
-
-    dataLayer.push(eventData);
-
-    const displayDataLayer = () => {
-      const gridContainer = document.getElementById('data-layer-display');
-      gridContainer.innerHTML = '';
-
-      const ecommerce = eventData.ecommerce;
-      for (const key in ecommerce) {
-        if (Array.isArray(ecommerce[key])) {
-          ecommerce[key].forEach(item => {
-            for (const prop in item) {
-              const itemDiv = document.createElement('div');
-              itemDiv.classList.add('data-item');
-              itemDiv.innerHTML = `<strong>${prop.replace(/_/g, ' ')}</strong>: ${item[prop]}`;
-              gridContainer.appendChild(itemDiv);
-            }
-          });
-        } else {
-          const itemDiv = document.createElement('div');
-          itemDiv.classList.add('data-item');
-          itemDiv.innerHTML = `<strong>${key.replace(/_/g, ' ')}</strong>: ${ecommerce[key]}`;
-          gridContainer.appendChild(itemDiv);
-        }
-      }
-    };
-
-    displayDataLayer();
-
-    document.getElementById('triggerAddPaymentInfoEvent').addEventListener('click', () => {
-      dataLayer.push(eventData);
-      alert('add_payment_info event triggered!');
-      displayDataLayer();
-    });
-  </script>
-</body>
-</html>
+<div class="dropdown-group">
+  <label for="workoutLevel-1">Workouts Level-1</label>
+  <select id="workoutLevel-1">
+      <option value="">Select an item</option>
+      <option value="101-ga4-config.html">101. GA4 Configuration</option>
+      <option value="102-page-view.html">102. Page View</option>
+      <option value="103-purchase-confirmation.html">103. Purchase Confirmation</option>
+      <option value="104-contact-form.html">104. Contact Form Submission</option>
+      <option value="105-signup-form.html">105. Signup Confirmation</option>
+      <option value="106-add-to-cart.html">106. Add to Cart</option>
+      <option value="107-checkout.html">107. Checkout >> CB >> How to track both begin_checkout & place_order event?</option>
+      <option value="108-link-click.html">108. Link Click</option>
+      <option value="109-scroll-depth.html">109. Scroll (Vertical & Horizontal) Tag</option>
+      <option value="110-custom-html-tag.html">110. Custom HTML Tag</option>
+      <option value="111-outbound-link-click.html">111. Outbound Click Tag >> CB >> Facebook, Youtube works but Google, GitHub Not</option>
+      <option value="112-timer-tag.html">112. Timer Tag</option>
+  </select>
+  <button onclick="openFile(document.getElementById('workoutLevel-1').value)">Proceed</button>
+</div>
