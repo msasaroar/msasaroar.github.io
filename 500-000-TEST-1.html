@@ -1,44 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add to Cart</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: white;
+      color: black;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: green;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+    }
+    header a {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: orange;
+      color: blue;
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+    header a:hover {
+      background-color: blue;
+      color: orange;
+    }
+    main {
+      margin: 125px 20px;
+      text-align: center;
+    }
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #f1f1f1;
+      text-align: center;
+      height: 50px;
+    }
+    footer object {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html">Home</a>
+    <h1>Add to Cart</h1>
+  </header>
 
+  <main>
+    <h2>Cart Information</h2>
+    <div>
+      <p>This is a static page without dynamic data handling.</p>
+    </div>
+    <button id="staticButton">Static Button</button>
+  </main>
 
-
-
-
-<div class="dropdown-group">
-  <label for="syllabusRSandUAT">Tools, Platforms, Topics & Template</label>
-  <select id="syllabusRSandUAT">
-      <option value="">Select an item</option>
-      <option value="001-GA4-Beginners-Syllabus.html">001. GA4 Beginners Syllabus</option>
-      <option value="002-GA4-Advance-Syllabus.html">002. GA4 Advance Syllabus</option>
-      <option value="003-GTM-Beginners-Syllabus.html">003. GTM Beginners Syllabus</option>
-      <option value="004-GTM-Advance-Syllabus.html">004. GTM Advance Syllabus</option>
-      <option value="005-Requirements-on-an-e-Commerce-Website.html">005. Requirements on an eCommerce Website</option>
-      <option value="006-Requirements-on-a-Blogging-Website.html">006. Requirements on a Blogging Website</option>
-      <option value="007-Requirements-on-General-Purpose-Website.html">007. Requirements on General Purpose Website</option>
-      <option value="008-Setup-GA4-Compliant-Ecommerce-Tracking-In-GTM.html">008. Setup GA4 Compliant Ecommerce Tracking In GTM</option>
-      <option value="009-UAT-Format.html">009. UAT Format</option>
-      <option value="010-2-My-Learning-Activities-On-GA4-and-GTM.html">010. My Learning Activities On GA4 and GTM</option>
-      <option value="011-Analytics-and-Conversion-Tracking-Tools-and-Platforms.html">011. Web Analytics and Conversion Tracking Tools & Platforms</option>
-  </select>
-  <button onclick="openFile(document.getElementById('syllabusRSandUAT').value)">Proceed</button>
-</div>
-
-
-<div class="dropdown-group">
-  <label for="workoutLevel-1">Workouts Level-1</label>
-  <select id="workoutLevel-1">
-      <option value="">Select an item</option>
-      <option value="101-ga4-config.html">101. GA4 Configuration</option>
-      <option value="102-page-view.html">102. Page View</option>
-      <option value="103-purchase-confirmation.html">103. Purchase Confirmation</option>
-      <option value="104-contact-form.html">104. Contact Form Submission</option>
-      <option value="105-signup-form.html">105. Signup Confirmation</option>
-      <option value="106-add-to-cart.html">106. Add to Cart</option>
-      <option value="107-checkout.html">107. Checkout >> CB >> How to track both begin_checkout & place_order event?</option>
-      <option value="108-link-click.html">108. Link Click</option>
-      <option value="109-scroll-depth.html">109. Scroll (Vertical & Horizontal) Tag</option>
-      <option value="110-custom-html-tag.html">110. Custom HTML Tag</option>
-      <option value="111-outbound-link-click.html">111. Outbound Click Tag >> CB >> Facebook, Youtube works but Google, GitHub Not</option>
-      <option value="112-timer-tag.html">112. Timer Tag</option>
-  </select>
-  <button onclick="openFile(document.getElementById('workoutLevel-1').value)">Proceed</button>
-</div>
+  <footer>
+    <object type="text/html" data="footer.html"></object>
+  </footer>
+</body>
+</html>
