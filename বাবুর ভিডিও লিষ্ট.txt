@@ -1,0 +1,79 @@
+SL.NO.	LENGTH	TITLE
+1	0.52	 Shopify Facebook Pixel  Conversion API  Server Side tracking  Eneble Data layer EEC track  
+2	1.03	 Shopify Patment Method setup for Practice | Bogus Payment Method 
+3	1.04	 Setup facebook pixel and conversion API with server side tracking via GTM 
+4	1.09	 facebook ads campaign manager  pixel  capi server side tracking  ga4 setup
+5	1.13	 Setup or Fix Facebook Pixel Conversion API  GTM and Google Analytics install 
+6	1.13	 Setup and Fix Facebook Instagram Catalog Shop  Dynamic Ads Campaign Pixel CAPI
+7	2.18	 How to delete google tag manager account or restore it | Google tag manager account 
+8	2.30	 Claim website in Pinterest | Verify domain on Pinterest|How to claim website in pinterest  
+9	2.40	 Remove someone from Google Tag Manager | How to remove somebody from Google Tag manager  
+10	2.51	 Google Tag Manager Error solve | google tag manager problem fix 
+11	2.57	 Enable Data Layer on Website very easily | Google Analytics 4 with Google Tag Manager | Part - 02  
+12	3.24	 How to delete Google Tag Manager container 2023 | Delete GTM container | GTM container 
+13	3.24	 Google Ads Conversion Tracking with Google Tag Manager | Tag ID | Conversion Linker  
+14	3.26	 Google Analytics 4 setup with Google Tag Manager | GA4 setup with GTM 
+15	4.15	 Google Analytics 4 account create 2023 | How to create GA4 account | GA4 account 
+16	4.22	 Shopify Newsletter Subscription Tag setup for Google Analytics 4 with Google Tag Manager  
+17	4.40	 Custom Domain in Server Side Tracking setup with Google Tag Manager and Stapeio
+18	4.50	 Google Analytics 4 Add to Cart event tracking with Parameters with Google Tag Manager | Part - 04  
+19	5.00	 Fiverr English Language Test 2023 | English Language test on fiverr 2023 | 8 out of 10
+20	5.07	 Google Analytics 4 setup issue solution | GA4 complete setup | GA4 errors solution 
+21	5.12	 Connect Messenger to WordPress website 2023 | Setup messenger in wordpress website 
+22	5.17	 Snapchat Ad account create 2023 | How to Create Snapchat Ad account 2023 
+23	5.20	 Google Tag Manager setup live project 
+24	5.23	 Fiverr Customer Service skill test Answers 2023 
+25	5.26	 Google Analytics 4 setup Error solution | GA4 problem fixing | GA4 Error fixing | Fix GA4
+26	5.27	 Google Tag Manager Error Solving | GTM Container Quality | GTM Container Status  
+27	5.28	 Shopify Contact Form Submit Tag setup with Parameters for Google Analytics 4 with Google Tag Manager  
+28	5.32	 How to create Google Tag Manager account in 2023 | GTM account create by  
+29	5.38	 Google Analytics 4 set up in website 2023 | connect Google analytics 4 with website 
+30	5.41	 Shopify Add to Cart Tag with Parameters for Google Analytics 4 with Google Tag Manager 
+31	5.42	 How to install Google Tag Manager on Wordpress website | Install Google tag manager 
+32	6.01	 Fiverr Social Media Marketing Skill Test 2023 
+33	6.01	 Shopify Begin Checkout Tag with Parameters for Google Analytics 4 with GTM 
+34	6.10	 Google Analytics 4 Begin checkout event tracking with Parameters with Google Tag Manager | Part - 05  
+35	6.15	 Snapchat Pixel setup with Google Tag Manager | Install Snapchat Pixel in your Website 
+36	6.23	 Linkedin Insight Tag setup with Google Tag Manager | Linkedin pixel | Linkedin Tag setup  
+37	6.23	 Pinterest Tag Setup with Google Tag Manager | Install Pinterest tag with GTM 
+38	6.27	 Google Consent Mode v2 Banner setup with Google Tag Manager  
+39	6.29	 How to pass Fiverr English Test in 2023 | Fiverr English test 2023 
+40	6.32	 Google Ads Conversion Page View Tricking with Google Tag Manager  
+41	6.37	 Facebook Pixel Setup with Google Tag Manager 
+42	6.52	 Google Tag Manager Error 2023 | Google Tag Assistant Error | GTM Code install Error 
+43	6.52	 Email Click tracking setup for Google Analytics 4 with Google Tag Manager  
+44	6.53	 Shopify View Item Tag with Parameters for Google Analytics 4 with Google Tag Manager 
+45	7.08	 Grant access to Google Tag Manger 2023 | How to give access to google tag manager 
+46	7.20	 install google tag manager on a wordpress site | how to install gtm on wordpress site 
+47	7.21	 Phone Number Click tracking setup for Google Analytics 4 with Google Tag Manager  
+48	7.26	 Fiverr Analytical Skill Test 2023 
+49	7.31	 Pinterest Video Tag Setup with Google Tag Manager | Install Pinterest tag with GTM 
+50	7.37	 Google Analytics 4 Purchase Event Tracking with Parameters with Google Tag Manager | Part - 06  
+51	7.43	 Shopify Connect to Google Analytics 4 through Google Tag Manager 
+52	7.50	 Pinterest Page Visit Tag Setup with Google Tag Manager | Install Pinterest tag with GTM 
+53	7.54	 SnapChat Add To Cart Event with Parameters 2023 | Snapchat add to cart event GTM 
+54	8.01	 Enable data layer on wordpress website 2023 | How to enable data layer on wordpress 
+55	8.14	 GA4 View Item Tag with Parameters setup with Google Tag Manager | Part - 03 
+56	8.17	 Linkedin Conversion Tag Lead Setup with Google Tag Manager | Linkedin tag | Linkedin Pixel  
+57	8.21	 Pinterest Add to Cart setup with Google Tag Manager | Pinterest Conversion tracking 
+58	8.41	 SnapChat Purchase Event Setup with Google Tag Manager 
+59	8.45	 Pinterest Purchase Tag setup with Google Tag Manager | Pinterest Checkout tag 
+60	9.01	 Google Analytics 4 setup with Google Tag Manager | Part - 01 
+61	9.13	 Shopify Data Layer Enable and Connect Google Tag Manager | Shopify Tracking Setup | Part 01  
+62	9.34	 Shopify Purchase Tag with Parameters for Google Analytics 4 with Google Tag Manager 
+63	9.50	 Google Ads Conversion View Item Setup with Google Tag Manager  
+64	10.36	 Google Analytics 4 Server Side Tracking with Google Tag Manager | GA4 Server side tracking | Part-07  
+65	10.36	 Google Ads Conversion Add to Cart Setup with Google Tag Manager  
+66	11.38	 Google Ads Conversion Begin Checkout Tag Setup with Google Tag Manager  
+67	11.40	 Pinterest Conversion API Setup with Google Tag Manager | Pinterest Conversion API 
+68	11.59	 Google Ads Conversion Purchase Tag Setup with Google Tag Manager  
+69	12.04	 How to Configure Tags and Triggers in Server Side Container based on Users Cookie Consent  
+70	12.20	 Enable Data layer on Shopify Website 2023 | How to Enable Data layer Shopify Website 2023  
+71	12.30	 SnapChat Checkout event setup with Google Tag Manager 
+72	12.48	 Setup Facebook Pixel View Content Event with GTM in 2023 | track view content event FB pixel
+73	13.49	 Facebook Conversion API and Server Side Tracking with Google Tag Manager | Facebook Conversion API 
+74	15.16	 Snapchat View Content Event setup with Parameters 2023 
+75	16.40	 How to configure tags and triggers based on users cookie consent | Basic and Advanced Consent Mode  
+76	20.40	 Facebook Add to cart Event Tracking with Parameter objectives in advanced way 2023 
+77	21.29	 Facebook View Content Event Tracking with Parameter objectives in advanced way 2023 
+78	24.01	 Facebook Purchase Event Tracking with Parameter objectives in advanced way 2023
