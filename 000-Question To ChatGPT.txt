@@ -1,13 +1,12 @@
-01. Prepare a requirement specification for Events and Conversion Tracking Requirements on a general purpose website. Present answer document as an html page.
-02. Prepare a requirement specification for Events and Conversion Tracking Requirements on an e-commerce web site. Present answer document as an html page.
-03. Prepare a requirement specification for Events and Conversion Tracking Requirements on an blogging web site. Present answer document as an html page.
-04. Prepare a standard format for User Acceptance Test for Events and Conversion Tracking Requirements. Present answer document as an html page.
+===================
+QUESTION TO ChatGPT(Q2GPT)
+===================
 
-Q2GPT >> 
-When mapping is not a must in Google Tag Manager (GTM) to send specific custom data (parameters) from data layer or other sources to Google Analytics (GA4) ?
+Q2GPT >>> 001
+When mapping is not a must in Google Tag Manager (GTM) to send specific custom data (parameters) from data layer or other sources to 
+Google Analytics (GA4) ?
 
-
-Q2GPT >>
+Q2GPT >>> 002
 Tag Type : Google Analytics: GA4 Event
 
 Firing Trigger Name: Trigger | 526 | Ecommerce Purchase
@@ -18,8 +17,7 @@ Trigger fires on : Some Custom Events
 I want to push data layer of the custom event into google analytics.
 What if the event name configuring tag in GTM be "purchase" ? 
 
-
-Q2GPT >>
+Q2GPT >>> 003
 Tag Type : Google Analytics: GA4 Event
 
 Firing Trigger Name: Trigger | 526 | Ecommerce Purchase
@@ -30,10 +28,34 @@ Trigger fires on : Some Custom Events
 I want to push data layer of the custom event into google analytics.
 What should be the event name configuring tag in GTM ? 
 
-Q2GPT >>
+Q2GPT >>> 004
 In GTM Tag Configuration what is the use of checkbox "Send Ecommerce data" under "More Settings/Ecommerec" ?
 
-Q2GPT >>
+Q2GPT >>> 005
 What should happen on purchase confirmation page ?
+
+Q2GPT >>> 006
+1. GTM Tag > Tag Configuration > More Settings > Ecommerce > Send Ecommerce data: Unchecked
+2. GTM Tag > Tag Configuration > More Settings > Ecommerce > Send Ecommerce data: Checked
+What is the impact of above settings on a tag while it fires ?
+
+Q2GPT >>> 007
+My knowledge level is intermediate on Google Analytics 4 and Google Tag Manager. 
+In Wordpress, for tracking and measurement, what are the task should I know?
+
+Q2GPT >>> 008
+My knowledge level is intermediate on Google Analytics 4 and Google Tag Manager. 
+In Shopify, for tracking and measurement, what are the task should I know?
+
+Q2GPT >>> 009
+Q2GPT >>> 010
+Q2GPT >>> 011
+Q2GPT >>> 012
+Q2GPT >>> 013
+Q2GPT >>> 014
+Q2GPT >>> 015
+Q2GPT >>> 016
+
+
 
 
