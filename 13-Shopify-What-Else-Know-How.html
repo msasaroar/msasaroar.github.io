@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopify Tracking Tasks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        ol {
+            padding-left: 20px;
+        }
+        ol li {
+            margin-bottom: 15px;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Shopify Tracking and Measurement Tasks</h1>
+
+    <ol>
+        <li>
+            <strong>Setting up Google Analytics 4 (GA4) on Shopify</strong>
+            <ul>
+                <li><strong>Install GA4 via GTM</strong>: Use Google Tag Manager to add the GA4 configuration tag to your Shopify store.</li>
+                <li><strong>Add the GA4 measurement ID</strong>: Place the measurement ID in your GA4 configuration tag to link your store to GA4.</li>
+                <li><strong>Enhanced Ecommerce</strong>: Ensure you're using the enhanced eCommerce setup in GA4 to track product views, add-to-carts, and purchases.</li>
+            </ul>
+        </li>
+
+        <li>
+            <strong>Shopify Purchase Tracking</strong>
+            <ul>
+                <li><strong>Track purchases</strong>: Use GTM to track the purchase event (typically using the <code>purchase</code> event from GA4) on the Shopify order confirmation page. Set up the necessary tags and variables to pull transaction data (order value, product names, quantities, etc.).</li>
+                <li><strong>Data Layer</strong>: Ensure you push Shopify transaction data (like product name, price, quantity, order value, etc.) to the data layer for GA4 to capture.</li>
+            </ul>
+        </li>
+
+        <li>
+            <strong>Cross-Domain Tracking (if applicable)</strong>
+            <ul>
+                <li>If you’re using multiple domains (e.g., Shopify store and blog), configure cross-domain tracking to ensure the session data is consistent across all domains.</li>
+            </ul>
+        </li>
+
+        <li>
+            <strong>Implementing Shopify Cart Tracking</strong>
+            <ul>
+                <li><strong>Add to Cart</strong>: Track events like when a product is added to the cart using a GTM tag that listens for the <code>add_to_cart</code> event in Shopify.</li>
+                <li><strong>Cart Updates</strong>: Track changes when users modify the cart (e.g., item quantity changes or product removals).</li>
+            </ul>
+        </li>
+
+        <li>
+            <strong>Custom Events & Goals</strong>
+            <ul>
+                <li>Set up custom events in Shopify that correspond to specific actions or stages in the user’s journey (e.g., initiate checkout, view product details, etc.).</li>
+                <li>In GA4, set up goals and conversions based on these custom events.</li>
+            </ul>
+        </li>
+
+        <li>
+            <strong>Product and Category Tracking</strong>
+            <ul>
+                <li>Ensure that the data layer captures the necessary information about products and categories (product IDs, categories, prices, etc.).</li>
+                <li>Track views and interactions with specific product categories and detail pages.</li>
+            </ul>
+        </li>
+
+        <li>
+            <strong>Customer Segmentation and User Properties</strong>
+            <ul>
+                <li>Use GA4 to track customer data like logged-in status or membership tier.</li>
+                <li>Segment users based on behavior (e.g., first-time buyers vs. returning customers) for more granular reporting.</li>
+            </ul>
+        </li>
+
+        <li>
+            <strong>A/B Testing with Google Optimize</strong>
+            <ul>
+                <li>Integrate Google Optimize with Shopify to run A/B tests on product pages, pricing, checkout flow, etc.</li>
+                <li>Use GA4 as the analytics platform to track performance and results.</li>
+            </ul>
+        </li>
+
+        <li>
+            <strong>Customizing Shopify Checkout with GTM</strong>
+            <ul>
+                <li>Use GTM to customize the checkout process (e.g., tracking checkout steps, form submissions, or abandoned cart events).</li>
+                <li>Configure GTM to track when users complete certain actions during checkout, like entering shipping information or selecting a payment method.</li>
+            </ul>
+        </li>
+
+        <li>
+            <strong>Event Tracking for Shopify Apps and Features</strong>
+            <ul>
+                <li>If you use additional Shopify apps (e.g., discount codes, upsell apps), ensure that you are tracking events that relate to the app interactions.</li>
+                <li>For apps like Shopify Plus’ native tools, integrate custom GTM triggers to capture app interactions for comprehensive reporting.</li>
+            </ul>
+        </li>
+
+        <li>
+            <strong>Error Tracking</strong>
+            <ul>
+                <li>Track and resolve any errors that might affect user experience, such as checkout issues, form validation errors, or page loading problems.</li>
+            </ul>
+        </li>
+    </ol>
+</body>
+</html>
