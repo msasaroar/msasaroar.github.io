@@ -23,6 +23,8 @@ SL	TIME	TITLE
 60	09.01	 Google Analytics 4 setup with Google Tag Manager | Part - 01        
 43	06.52    Email Click tracking setup for Google Analytics 4 with Google Tag Manager
 47	07.21	 Phone Number Click tracking setup for Google Analytics 4 with Google Tag Manager 
+12	03.24	 How to delete Google Tag Manager container 2023 | Delete GTM container | GTM container 
+41	06.37	 Facebook Pixel Setup with Google Tag Manager 
 
 
 ========Yet To See===================================================
@@ -33,7 +35,6 @@ SL	TIME	TITLE
 05	01.13	 Setup or Fix Facebook Pixel Conversion API  GTM and Google Analytics install 
 06	01.13	 Setup and Fix Facebook Instagram Catalog Shop  Dynamic Ads Campaign Pixel CAPI
 08	02.30	 Claim website in Pinterest | Verify domain on Pinterest|How to claim website in pinterest  
-12	03.24	 How to delete Google Tag Manager container 2023 | Delete GTM container | GTM container 
 13	03.24	 Google Ads Conversion Tracking with Google Tag Manager | Tag ID | Conversion Linker  
 16	04.22	 Shopify Newsletter Subscription Tag setup for Google Analytics 4 with Google Tag Manager  
 17	04.40	 Custom Domain in Server Side Tracking setup with Google Tag Manager and Stapeio
@@ -51,7 +52,6 @@ SL	TIME	TITLE
 38	06.27	 Google Consent Mode v2 Banner setup with Google Tag Manager  
 39	06.29	 How to pass Fiverr English Test in 2023 | Fiverr English test 2023 
 40	06.32	 Google Ads Conversion Page View Tricking with Google Tag Manager  
-41	06.37	 Facebook Pixel Setup with Google Tag Manager 
 	  
 
 44	06.53	 Shopify View Item Tag with Parameters for Google Analytics 4 with Google Tag Manager 
@@ -84,3 +84,6 @@ SL	TIME	TITLE
 76	20.40	 Facebook Add to cart Event Tracking with Parameter objectives in advanced way 2023 
 77	21.29	 Facebook View Content Event Tracking with Parameter objectives in advanced way 2023 
 78	24.01	 Facebook Purchase Event Tracking with Parameter objectives in advanced way 2023
+
+
+Cross-Domain Tracking with Google Tag Manager
