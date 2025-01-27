@@ -48,8 +48,14 @@ My knowledge level is intermediate on Google Analytics 4 and Google Tag Manager.
 In Shopify, for tracking and measurement, what are the task should I know?
 
 Q2GPT >>> 009
+"Meta Pixel Standard Event" VS "GA4 Schema"
+
 Q2GPT >>> 010
+Which concepts and functionalities from Google (e.g., Google Analytics 4, Google Tag Manager, and Google Ads) align with those in Meta Pixel.
+
 Q2GPT >>> 011
+Which tools from Meta is similar to Google Tag Manager from Google ?
+
 Q2GPT >>> 012
 Q2GPT >>> 013
 Q2GPT >>> 014
