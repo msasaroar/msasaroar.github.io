@@ -49,18 +49,36 @@
             width: 100%;
             z-index: 1000;
             border: 2px solid black;
+
         }
-        header a {
-            left: 0px;
+
+        #goToPageTop {
             background-color: orange;
             color: blue;
-            padding: 10px 10px;
-            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
             border-radius: 5px;
+            padding: 0px 5px;
         }
-        header a:hover {
+
+        #goToPageTop:hover {
             background-color: blue;
             color: orange;
+        }
+
+        header button {
+                left: 0px;
+                background-color: orange;
+                color: blue;
+                padding: 5px 15px;
+                text-decoration: none;
+                border-radius: 5px;
+                font-size: 16px;
+        }
+
+        header button:hover {
+                background-color: blue;
+                color: orange;
         }
 
         section {
@@ -101,16 +119,14 @@
 </head>
 <body>
     <header>
-        <a href="index.html">Home</a>
-        <h1>Web Analytics & Conversion Tracking Related Popular CMS, Platform and Tools</h1>    
-        <div onclick="window.location='#Tasks-Within-The-Scope-Of-Tracking-Setup';" style="display: inline-block; padding: 10px 20px; background-color: orange; color: blue; text-align: center; cursor: pointer; border-radius: 5px;">
-            Tasks Within The Scope Of Tracking Setup
-        </div>
+        <button onclick="window.location.href='index.html'">Home</button>
+        <h1>Web Analytics & Conversion Tracking Related Popular CMS, Platform and Tools</h1>
+        <button onclick="window.location.href='#Tasks-Within-The-Scope-Of-Tracking-Setup'">Tasks Within The Scope Of Tracking Setup</button>
     </header>
 
 
-
 <pre>
+<a id="pageTop"></a>
 <h2><a href="#Popular-Content-Management-System">1. Top 10 Content Management System (CMS)</a></h2>  
     <a href="https://wordpress.org/" target="_blank">01. WordPress</a>
         <a href="#WordPress-Know-How-For-Tracking">=>WordPress : Know How For Tracking</a>
@@ -135,9 +151,8 @@
     <a href="https://www.sitecore.com/" target="_blank">10. Sitecore</a>
 </pre>
 
-
-
 <pre>
+<button id="goToPageTop" onclick="location.href='#pageTop';">Page Top</button>
 <h2><a href="Web-Analytics-Tools.png" target="_blank" rel="noopener noreferrer">2. Top 10 Web Analytics Tools</a></h2>    
     <a href="https://analytics.google.com/" target="_blank">01. Google Analytics 4 (GA4)</a>  
     <a href="https://experienceleague.adobe.com/" target="_blank">02. Adobe Analytics</a>  
@@ -152,7 +167,9 @@
 </pre>
 
 
+
 <pre>
+<button id="goToPageTop" onclick="location.href='#pageTop';">Page Top</button>
 <h2><a href="Ad-Conversion-Tracking-Tools.png" target="_blank" rel="noopener noreferrer">3. Ad Conversion Tracking Tools</a></h2>
     <a href="https://analytics.google.com" target="_blank">01. Google Analytics</a>
     <a href="https://tagmanager.google.com" target="_blank">02. Google Tag Manager</a>
@@ -208,12 +225,17 @@ Which tools from Meta is similar to Google Tag Manager from Google ?
 Q2GPT >>> 05
 Is the Facebook Pixel Events Setup within the scope of tracking setup ?
 
-</pre> 
+Q2GPT >>> 06
+List of standard event for ecommerce website.
+
+
+</pre>
 </pre>
 
 
 
 <pre>
+<button id="goToPageTop" onclick="location.href='#pageTop';">Page Top</button>
     <h2><a href="https://6sense.com/tech/tag-management" target="_blank" rel="noopener noreferrer">4. Tag Management Systems (TMS)</a></h2>
     <a href="https://tagmanager.google.com/">01. Google Tag Manager (GTM)</a>
     <a href="https://www.adobe.com/experience-platform/tags.html" target="_blank">02. Adobe Experience Platform Launch</a>
@@ -225,11 +247,13 @@ Is the Facebook Pixel Events Setup within the scope of tracking setup ?
     <a href="https://www.commandersact.com/" target="_blank">08. Commanders Act</a>
     <a href="https://www.datalicious.com/" target="_blank">09. Datalicious SuperTag</a>
     <a href="https://www.matomo.org/" target="_blank">10. Matomo Tag Manager</a>
+    <a href="https://msasaroar.github.io/011-Analytics-and-Conversion-Tracking-Tools-and-Platforms.html">Go To Top</a>
 </pre>
 
 
 
 <pre>
+<button id="goToPageTop" onclick="location.href='#pageTop';">Page Top</button>
     <h2><a href="https://www.hotjar.com/conversion-rate-optimization/tools/" target="_blank" rel="noopener noreferrer">5. Conversion Rate Optimization (CRO) Tools</a></h2>
     <a href="https://www.optimizely.com/" target="_blank">01. Optimizely</a>
     <a href="https://www.hotjar.com/" target="_blank">02. Hotjar</a>
@@ -245,6 +269,7 @@ Is the Facebook Pixel Events Setup within the scope of tracking setup ?
 
 
 <pre>
+<button id="goToPageTop" onclick="location.href='#pageTop';">Page Top</button>
     <h2>6. Behavior Analytics Tools</h2>
     <a href="https://www.hotjar.com/" target="_blank">01. Hotjar</a>
     <a href="https://www.optimizely.com/" target="_blank">02. Optimizely</a>
@@ -260,6 +285,7 @@ Is the Facebook Pixel Events Setup within the scope of tracking setup ?
 
 
 <pre>
+<button id="goToPageTop" onclick="location.href='#pageTop';">Page Top</button>
 <h2>7. eCommerce Analytics Tools</h2>
     <a href="https://www.google.com/analytics" target="_blank">01. Google Analytics 4</a>
     <a href="https://www.shopify.com/analytics" target="_blank">02. Shopify Analytics</a>
@@ -274,6 +300,7 @@ Is the Facebook Pixel Events Setup within the scope of tracking setup ?
 </pre>
 
 <pre>
+<button id="goToPageTop" onclick="location.href='#pageTop';">Page Top</button>
     <h2>8. Top 10 Customer Journey and Attribution Tools</h2>
     <a href="https://www.segment.com/" target="_blank">01. Segment</a>
     <a href="https://www.adobe.com/experience-platform.html" target="_blank">02. Adobe Experience Platform</a>
@@ -286,8 +313,8 @@ Is the Facebook Pixel Events Setup within the scope of tracking setup ?
     <a href="https://www.clevertap.com/" target="_blank">09. CleverTap</a>
     <a href="https://www.hardbacon.ca/" target="_blank">10. HardBacon</a>
 </pre>
-
 <pre>
+<button id="goToPageTop" onclick="location.href='#pageTop';">Page Top</button>
 <h2>9.  Custom Tracking and Analytics</h2>
     <a href="https://www.mixpanel.com/" target="_blank">01. Mixpanel</a>
     <a href="https://www.amplitude.com/" target="_blank">02. Amplitude</a>
@@ -304,6 +331,7 @@ Is the Facebook Pixel Events Setup within the scope of tracking setup ?
 <!--===========================================================================================-->
 
 <pre>
+<button id="goToPageTop" onclick="location.href='#pageTop';">Page Top</button>
 <h2 id="WordPress-Know-How-For-Tracking">WordPress : Know How For Tracking</h2>
     Tracking on WordPress: Key Know-How
 
@@ -348,11 +376,11 @@ Is the Facebook Pixel Events Setup within the scope of tracking setup ?
 
     9. Backup Before Changes:
         Always back up your site before editing code or installing plugins.
-
 </pre>
     
 
 <pre>
+<button id="goToPageTop" onclick="location.href='#pageTop';">Page Top</button>
 <h2 id="Shopify-Know-How-For-Tracking">Shopify : Know How For Tracking</h2>
     Tracking on Shopify involves integrating tools like Google Analytics, GTM, Meta Pixel, and others to 
     monitor user behavior and conversions. Here's a simplified guide:
@@ -392,10 +420,11 @@ Is the Facebook Pixel Events Setup within the scope of tracking setup ?
         Monitor real-time reports in Google Analytics.
 
     For advanced setups, consult Shopify documentation or a developer.
-    </pre>
+</pre>
     
 
 <pre>
+<button id="goToPageTop" onclick="location.href='#pageTop';">Page Top</button>
 <h2 id="Wix-Know-How-For-Tracking">Wix : Know How For Tracking</h2>
     Tracking on Wix: Key Know-How
     
@@ -432,10 +461,10 @@ Is the Facebook Pixel Events Setup within the scope of tracking setup ?
     
     8. Limitations:
         Some customizations require Wix's Velo (for developers).
-    
-    </pre>
+</pre>
 
 <pre>
+<button id="goToPageTop" onclick="location.href='#pageTop';">Page Top</button>
 <h2 id="Drupal-Know-How-For-Tracking">Drupal : Know How For Tracking</h2>
     Tracking on Drupal can be achieved by integrating tools like Google Analytics, Google Tag Manager, or Meta Pixel. 
     Here’s how you can set up tracking on Drupal:
@@ -475,12 +504,12 @@ Is the Facebook Pixel Events Setup within the scope of tracking setup ?
     Always clear Drupal cache after adding custom code or modules.
     Use the Devel module for debugging custom tracking implementations.
     Consult with developers for complex configurations like eCommerce tracking.
-
 </pre>
 
 
 
 <pre>
+<button id="goToPageTop" onclick="location.href='#pageTop';">Page Top</button>
 <h2 id="Joomla-Know-How-For-Tracking">Joomla : Know How For Tracking</h2>
     To implement tracking on Joomla, you can integrate tools like Google Analytics, GTM, or Meta Pixel. 
     Here's a simple guide:
@@ -522,6 +551,7 @@ Is the Facebook Pixel Events Setup within the scope of tracking setup ?
         
 
 <pre>
+<button id="goToPageTop" onclick="location.href='#pageTop';">Page Top</button>
 <h2 id="Squarespace-Know-How-For-Tracking">Squarespace : Know How For Tracking</h2>
     Tracking on Squarespace involves using built-in tools or adding tracking codes for third-party platforms 
     like Google Analytics, Google Tag Manager (GTM), or Meta Pixel. Here's how:
@@ -562,6 +592,7 @@ Is the Facebook Pixel Events Setup within the scope of tracking setup ?
 
 
 <pre>
+<button id="goToPageTop" onclick="location.href='#pageTop';">Page Top</button>
 <h2 id="Prerequisites-For-Tracking-With-Meta-Pixel">Prerequisites For Tracking With Meta Pixel</h2>
     Prerequisites for Tracking with Meta Pixel:
 
@@ -588,6 +619,7 @@ Is the Facebook Pixel Events Setup within the scope of tracking setup ?
 
 
 <pre>
+<button id="goToPageTop" onclick="location.href='#pageTop';">Page Top</button>
 <h2 id="How-To-Open-Meta-Business-Account">Opening Meta Business Account</h2>
     Steps to Create a Meta Business Account:
     
@@ -635,6 +667,7 @@ Is the Facebook Pixel Events Setup within the scope of tracking setup ?
 </pre>
 
 <pre>
+<button id="goToPageTop" onclick="location.href='#pageTop';">Page Top</button>
 <h2 id="WordPress-What-Else-Know-How">WordPress : What Else Should Know Besides Placing Tracking Scripts in the Header and Footer</h2>
     When working with WordPress for tracking and measurement, beyond placing tracking scripts in the header and footer, here are some key tasks and best practices to ensure comprehensive tracking:
 
@@ -702,6 +735,7 @@ Is the Facebook Pixel Events Setup within the scope of tracking setup ?
 
 
 <pre>
+<button id="goToPageTop" onclick="location.href='#pageTop';">Page Top</button>
 <h2 id="How-To-Configuring-GTM-With-WordPress">How to Configuring GTM with WordPress ?</h2>
     Step 1: Create a Google Tag Manager Account
     Go to Google Tag Manager and sign in with your Google account.
@@ -763,7 +797,9 @@ Is the Facebook Pixel Events Setup within the scope of tracking setup ?
 </pre>
 
 
+
 <pre>
+<button id="goToPageTop" onclick="location.href='#pageTop';">Page Top</button>
 <h2 id="How-To-Enable-Data-Layer-In-GTM-For-WordPress">How To Enable Data Layer In GTM For WordPress ?</h2>
 <a href="https://youtu.be/0ZClaH8kdmw?si=0aytKf-WrFyR9xv8">See Video</a>
     Enabling the Data Layer in the "Google Tag Manager for WordPress" plugin is straightforward. The Data Layer helps pass dynamic website information (like user roles, page types, or eCommerce events) to Google Tag Manager (GTM) for advanced tracking.
@@ -817,6 +853,7 @@ Is the Facebook Pixel Events Setup within the scope of tracking setup ?
 
 
 <pre>
+<button id="goToPageTop" onclick="location.href='#pageTop';">Page Top</button>
     <h2 id="Shopify-What-Else-Know-How">Shopify : What Else Should Know Besides Placing Tracking Scripts in the Header and Footer</h2>
     In Shopify, tracking and measurement tasks can vary depending on your goals, but here are the key tasks you should know to optimize your tracking setup:
     
@@ -866,6 +903,7 @@ Is the Facebook Pixel Events Setup within the scope of tracking setup ?
 </pre>
 
 <pre>
+<button id="goToPageTop" onclick="location.href='#pageTop';">Page Top</button>
 <h2 id="Meta-Pixel-Step-By-Step-Setup-Guide">Meta Pixel : Step By Step Setup Guide</h2>
 1. Create a Meta Business Account:
     Go to: https://business.facebook.com/
@@ -945,6 +983,7 @@ Is the Facebook Pixel Events Setup within the scope of tracking setup ?
 
 
 <pre>
+<button id="goToPageTop" onclick="location.href='#pageTop';">Page Top</button>
 <h2 id="Meta-Pixel-Step-By-Step-Events-Setup-Guide">Meta Pixel : Step By Step Events Setup Guide</h2>
 1. Create and Install Facebook Pixel
     Go to Events Manager in your Facebook Business Suite.
@@ -1008,6 +1047,7 @@ Is the Facebook Pixel Events Setup within the scope of tracking setup ?
 </pre>
 
 <pre>
+<button id="goToPageTop" onclick="location.href='#pageTop';">Page Top</button>
 <h2 id="Tasks-Within-The-Scope-Of-Tracking-Setup">Tasks Within The Scope Of Tracking Setup Including CMS, Platforms, and Tool Integrations</h2>
 
 <h3>Google Analytics 4 (GA4)</h3>
@@ -1184,12 +1224,9 @@ Is the Facebook Pixel Events Setup within the scope of tracking setup ?
 
 4. Tag Assistant by Google:
     Check if all tags are firing correctly and troubleshoot tag implementation issues.
+<button id="goToPageTop" onclick="location.href='#pageTop';">Page Top</button>
 </pre>
        
-
-
-
-
 
 
     <footer>

@@ -50,3 +50,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MDSCG7JW"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+
+
+
+
+আসসালামু আলাইকুম।
+আমি নিজে নিজে GA4 এবং GTM ব্যবহার করে ওয়েবট্র্যাকিং শিখছি।
+ইতিমধ্যে অনেকটা এগিয়ে গেছি।
+কিন্তু কি কি শিখলে মার্কেটপ্লেসে ফ্রিল্যান্সিং করার যোগ্য হতে পারবো তা বুঝতে পারলেও নিশ্চিত হতে পারছিনা।
+তাই সবার পরামর্শ চাচ্ছি।
+ChatGPT এর সহায়তায় আমি একটি সিলেবাস তৈরী করেছি তা লিংক এর মাধ্যমে শেয়ার করলাম।
+এই সিলেবাস যথেষ্ট কিনা তা জানাতে অভিজ্ঞদের মতামত আশা করছি।
+ধন্যবাদ।
+https://msasaroar.github.io/011-Analytics-and-Conversion-Tracking-Tools-and-Platforms.html#Tasks-Within-The-Scope-Of-Tracking-Setup
