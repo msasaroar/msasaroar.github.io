@@ -52,14 +52,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 
+=================Meta Pixel===================================
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '586409427593205');
+fbq('track', 'PageView');
+</script>
 
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=586409427593205&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 
-আসসালামু আলাইকুম।
-আমি নিজে নিজে GA4 এবং GTM ব্যবহার করে ওয়েবট্র্যাকিং শিখছি।
-ইতিমধ্যে অনেকটা এগিয়ে গেছি।
-কিন্তু কি কি শিখলে মার্কেটপ্লেসে ফ্রিল্যান্সিং করার যোগ্য হতে পারবো তা বুঝতে পারলেও নিশ্চিত হতে পারছিনা।
-তাই সবার পরামর্শ চাচ্ছি।
-ChatGPT এর সহায়তায় আমি একটি সিলেবাস তৈরী করেছি তা লিংক এর মাধ্যমে শেয়ার করলাম।
-এই সিলেবাস যথেষ্ট কিনা তা জানাতে অভিজ্ঞদের মতামত আশা করছি।
-ধন্যবাদ।
-https://msasaroar.github.io/011-Analytics-and-Conversion-Tracking-Tools-and-Platforms.html#Tasks-Within-The-Scope-Of-Tracking-Setup
+Whole script need to past in header ?

@@ -1,12 +1,12 @@
 ===================
-QUESTION TO ChatGPT(Q2GPT)
+QUESTION TO ChatGPT(Q2ChatGPT)
 ===================
 
-Q2GPT >>> 001
+Q2ChatGPT >>> 001
 When mapping is not a must in Google Tag Manager (GTM) to send specific custom data (parameters) from data layer or other sources to 
 Google Analytics (GA4) ?
 
-Q2GPT >>> 002
+Q2ChatGPT >>> 002
 Tag Type : Google Analytics: GA4 Event
 
 Firing Trigger Name: Trigger | 526 | Ecommerce Purchase
@@ -17,7 +17,7 @@ Trigger fires on : Some Custom Events
 I want to push data layer of the custom event into google analytics.
 What if the event name configuring tag in GTM be "purchase" ? 
 
-Q2GPT >>> 003
+Q2ChatGPT >>> 003
 Tag Type : Google Analytics: GA4 Event
 
 Firing Trigger Name: Trigger | 526 | Ecommerce Purchase
@@ -28,39 +28,53 @@ Trigger fires on : Some Custom Events
 I want to push data layer of the custom event into google analytics.
 What should be the event name configuring tag in GTM ? 
 
-Q2GPT >>> 004
+Q2ChatGPT >>> 004
 In GTM Tag Configuration what is the use of checkbox "Send Ecommerce data" under "More Settings/Ecommerec" ?
 
-Q2GPT >>> 005
+Q2ChatGPT >>> 005
 What should happen on purchase confirmation page ?
 
-Q2GPT >>> 006
+Q2ChatGPT >>> 006
 1. GTM Tag > Tag Configuration > More Settings > Ecommerce > Send Ecommerce data: Unchecked
 2. GTM Tag > Tag Configuration > More Settings > Ecommerce > Send Ecommerce data: Checked
 What is the impact of above settings on a tag while it fires ?
 
-Q2GPT >>> 007
+Q2ChatGPT >>> 007
 My knowledge level is intermediate on Google Analytics 4 and Google Tag Manager. 
 In Wordpress, for tracking and measurement, what are the task should I know?
 
-Q2GPT >>> 008
+Q2ChatGPT >>> 008
 My knowledge level is intermediate on Google Analytics 4 and Google Tag Manager. 
 In Shopify, for tracking and measurement, what are the task should I know?
 
-Q2GPT >>> 009
+Q2ChatGPT >>> 009
 "Meta Pixel Standard Event" VS "GA4 Schema"
 
-Q2GPT >>> 010
+Q2ChatGPT >>> 010
 Which concepts and functionalities from Google (e.g., Google Analytics 4, Google Tag Manager, and Google Ads) align with those in Meta Pixel.
 
-Q2GPT >>> 011
+Q2ChatGPT >>> 011
 Which tools from Meta is similar to Google Tag Manager from Google ?
 
-Q2GPT >>> 012
-Q2GPT >>> 013
-Q2GPT >>> 014
-Q2GPT >>> 015
-Q2GPT >>> 016
+Q2ChatGPT >>> 012
+Is there any concept in Meta Pixel as like GA4 Schema ?
+
+Q2ChatGPT >>> 013
+What is Event Data Structure or Meta Pixel Event Schema ? Describe in details.
+
+Q2ChatGPT >>> 014
+
+Q2ChatGPT >>> 015
+
+Q2ChatGPT >>> 016
+
+Q2ChatGPT >>> 017
+
+Q2ChatGPT >>> 018
+
+Q2ChatGPT >>> 019
+
+Q2ChatGPT >>> 020
 
 
 
