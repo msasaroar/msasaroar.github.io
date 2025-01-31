@@ -63,10 +63,13 @@ Q2ChatGPT >>> 013
 What is Event Data Structure or Meta Pixel Event Schema ? Describe in details.
 
 Q2ChatGPT >>> 014
+What is SSL certificate ?
 
 Q2ChatGPT >>> 015
+What is DNS record ?
 
 Q2ChatGPT >>> 016
+What is CNAME ? How can I get it ?
 
 Q2ChatGPT >>> 017
 
