@@ -1,103 +1,171 @@
-<style>
-    h1 {
-      color: blue;
-    }
-    h2 {
-      text-align: center;
-      color: green;
-    }
-    h3 {
-      text-align: center;
-      color: rgb(197, 8, 191);
-    }
-    div {
-      color: rgb(0, 255, 0);
-      font-size: 20px;
-      white-space: pre-wrap; /* Enables wrapping */
-      word-wrap: break-word; /* Breaks words to prevent overflow */
-      margin-left: 3px; /* Adds margin space outside the <pre> element */
-      margin-right: 3px; /* Adds margin space outside the <pre> element */
-      background-color: #333335; /* Optional: For better visibility */
-      border: 5px solid black; /* Optional: For styling */
-    }
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 5 LLMs</title>
+    <style>
+        body {
+            background-color: green;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
 
-<h2>GET DETAILS FROM ANY LLMs (ChatGPT / Gemini / DeepSeek)</h2>
-<h3>Copy The Text From The Following List And Past Into Message/Chat Box Of Respective LLM Interface</h3>
-<div>Popular plugins for setting up Meta Pixel.</div>
-<div>What is facebook base pixel?</div>
-<div>What is Event Data Structure or Meta Pixel Event Schema ? Describe in details.</div>
-<div>Meta Event Manager is Analytics On Meta Pixel" is this statement correct?</div>
-<div>The trigger which I have created in GTM for GA4 is working without any change for Pixel. Is it normal?</div>
-<div>List the tasks which are within the scope of tracking setup with GA4, GTM including details on Third-Party Integrations.</div>
-<div>List the the tasks which are within the scope of tracking setup with GA4, GTM, WordPress, Shopify, Meta Pixel, Instagram, Pinterest, LinkedIn, TikTok, Snapchat, Google Ads.</div>
-<div>Which tools from Meta is similar to Google Tag Manager from Google ?</div>
-<div>"Meta Pixel Standard Event" VS "GA4 Schema"</div>
-<div>Meta: Dataset VS Pixel</div>
-<div>Which concepts and functionalities from Google (e.g., Google Analytics 4, Google Tag Manager, and Google Ads) align with those in Meta Pixel?</div>
-<div>Which things/concept from google compatible to meta pixel?</div>
-<div>Comparison of different methods for inserting pixel in the website for tracking</div>
-<div>How suitable is a general-purpose website for tracking with Meta Pixel which doesn't contain data layer?</div>
-<div>Explain Facebook Server Side Tagging with diagram</div>
-<div>GTM Web Container VS GTM Server Container</div>
-<div>Is server-side tracking possible without setting up browser-side tracking?</div>
-<div>Pros & Cons of server-side tracking with and without setting up browser-side tracking.</div>
-<div>How to set up tagging server URL for server GTM in Stape.io ?</div>
-<div>When  Setting Up a Custom Domain for the Tagging Server is a must ?</div>
-<div>What additional tasks need to be done for server-side tracking after configuring the tagging server?</div>
+        /* Fixed Section */
+        .fixed-section {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: green;
+            text-align: center;
+            padding: 10px 0;
+        }
 
-<div>Which concepts and functionalities from Google (e.g., Google Analytics 4, Google Tag Manager, and Google Ads) align with those in Meta Pixel ?</div>
-<div>"Meta Pixel Standard Event" VS "GA4 Schema"</div>
-<div>Which concepts and functionalities from Google (e.g., Google Analytics 4, Google Tag Manager, and Google Ads) align with those in Meta Pixel?</div>
-<div>Which tools from Meta is similar to Google Tag Manager from Google ?</div>
-<div>Is the Facebook Pixel Events Setup within the scope of tracking setup ?</div>
-<div>List of standard event for ecommerce website</div>
-<div>What is Organic Shopping in GA4? How can I utilize this on my website ?</div>
+        .fixed-section h3 {
+            margin: 0;
+            color: black;
+        }
 
+        .fixed-section ul {
+            list-style: none;
+            padding: 0;
+        }
 
-<div></div>
-<div></div>    
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
+        .fixed-section li {
+            margin: 5px 0;
+        }
+
+        .fixed-section a {
+            text-decoration: none;
+            font-size: 18px;
+            color: darkblue;
+            font-weight: bold;
+        }
+
+        /* Scrollable Content */
+        .scrollable-container {
+            margin-top: 223px; /* Space for the fixed section */
+            padding: 10px;
+            max-height: 80vh;
+            overflow-y: auto;
+            background-color: black;
+            color: green;
+            border: 5px solid green;
+        }
+
+        .scrollable-container div {
+            font-size: 20px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            padding: 10px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fixed Section -->
+    <div class="fixed-section">
+        <h3>Top 5 LLMs and Their Chat Boxes</h3>
+        <ul>
+            <li><a href="https://chat.openai.com" target="_blank">ChatGPT by OpenAI</a></li>
+            <li><a href="https://bard.google.com" target="_blank">Bard by Google</a></li>
+            <li><a href="https://www.bing.com/chat" target="_blank">Bing Chat by Microsoft</a></li>
+            <li><a href="https://www.anthropic.com/claude" target="_blank">Claude by Anthropic</a></li>
+            <li><a href="https://deepseek.com" target="_blank">DeepSeek</a></li>
+        </ul>
+        <h3>Copy a suitable part from the above text, paste it into the chatbox of any LLM, and press Enter to see the details.</h3>
+    </div>
+
+    <!-- Scrollable Section -->
+    <div class="scrollable-container">
+
+      <div>Popular plugins for setting up Meta Pixel.</div>
+      <div>What is facebook base pixel?</div>
+      <div>What is Event Data Structure or Meta Pixel Event Schema ? Describe in details.</div>
+      <div>Meta Event Manager is Analytics On Meta Pixel" is this statement correct?</div>
+      <div>The trigger which I have created in GTM for GA4 is working without any change for Pixel. Is it normal?</div>
+      <div>List the tasks which are within the scope of tracking setup with GA4, GTM including details on Third-Party Integrations.</div>
+      <div>List the the tasks which are within the scope of tracking setup with GA4, GTM, WordPress, Shopify, Meta Pixel, Instagram, Pinterest, LinkedIn, TikTok, Snapchat, Google Ads.</div>
+      <div>Which tools from Meta is similar to Google Tag Manager from Google ?</div>
+      <div>"Meta Pixel Standard Event" VS "GA4 Schema"</div>
+      <div>Meta: Dataset VS Pixel</div>
+      <div>Which concepts and functionalities from Google (e.g., Google Analytics 4, Google Tag Manager, and Google Ads) align with those in Meta Pixel?</div>
+      <div>Which things/concept from google compatible to meta pixel?</div>
+      <div>Comparison of different methods for inserting pixel in the website for tracking</div>
+      <div>How suitable is a general-purpose website for tracking with Meta Pixel which doesn't contain data layer?</div>
+      <div>Explain Facebook Server Side Tagging with diagram</div>
+      <div>GTM Web Container VS GTM Server Container</div>
+      <div>Is server-side tracking possible without setting up browser-side tracking?</div>
+      <div>Pros & Cons of server-side tracking with and without setting up browser-side tracking.</div>
+      <div>How to set up tagging server URL for server GTM in Stape.io ?</div>
+      <div>When  Setting Up a Custom Domain for the Tagging Server is a must ?</div>
+      <div>What additional tasks need to be done for server-side tracking after configuring the tagging server?</div>
+      
+      <div>Which concepts and functionalities from Google (e.g., Google Analytics 4, Google Tag Manager, and Google Ads) align with those in Meta Pixel ?</div>
+      <div>"Meta Pixel Standard Event" VS "GA4 Schema"</div>
+      <div>Which concepts and functionalities from Google (e.g., Google Analytics 4, Google Tag Manager, and Google Ads) align with those in Meta Pixel?</div>
+      <div>Which tools from Meta is similar to Google Tag Manager from Google ?</div>
+      <div>Is the Facebook Pixel Events Setup within the scope of tracking setup ?</div>
+      <div>List of standard event for ecommerce website</div>
+      <div>What is Organic Shopping in GA4? How can I utilize this on my website ?</div>
+
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+</body>
+</html>

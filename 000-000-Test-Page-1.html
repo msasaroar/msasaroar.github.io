@@ -1,21 +1,88 @@
-<pre>
-  <button id="goToPageTop" onclick="location.href='#pageTop';">Page Top</button>
-  
-  <h2>
-    <a href="Ad-Conversion-Tracking-Tools.png" target="_blank" 
-       rel="noopener noreferrer" onclick="showAlert(event)">03. Ad Conversion Tracking Tools</a>
-  </h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 5 LLMs</title>
+    <style>
+        body {
+            background-color: green;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
 
-  <a href="https://analytics.google.com" target="_blank" onclick="showAlert(event)">01. Google Analytics</a>
+        /* Fixed Section */
+        .fixed-section {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: green;
+            text-align: center;
+            padding: 10px 0;
+        }
 
-  <a href="#Ask-Any-LLM" onclick="showAlert(event)">
-    =>Do I need to recreate the Tag, Trigger, and Variable in the Server Container if they have already been created in the Web Container?
-  </a>
-</pre>
+        .fixed-section h3 {
+            margin: 0;
+            color: black;
+        }
 
-<script>
-  function showAlert(event) {
-    event.preventDefault(); // লিংকে সরাসরি যাওয়া বন্ধ করবে
-    alert("You clicked on: " + event.target.innerText);
-  }
-</script>
+        .fixed-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .fixed-section li {
+            margin: 5px 0;
+        }
+
+        .fixed-section a {
+            text-decoration: none;
+            font-size: 18px;
+            color: darkblue;
+            font-weight: bold;
+        }
+
+        /* Scrollable Content */
+        .scrollable-container {
+            margin-top: 223px; /* Space for the fixed section */
+            padding: 10px;
+            max-height: 80vh;
+            overflow-y: auto;
+            background-color: black;
+            color: green;
+            border: 5px solid green;
+        }
+
+        .scrollable-container div {
+            font-size: 20px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            padding: 10px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fixed Section -->
+    <div class="fixed-section">
+        <h3>Top 5 LLMs and Their Chat Boxes</h3>
+        <ul>
+            <li><a href="https://chat.openai.com" target="_blank">ChatGPT by OpenAI</a></li>
+            <li><a href="https://bard.google.com" target="_blank">Bard by Google</a></li>
+            <li><a href="https://www.bing.com/chat" target="_blank">Bing Chat by Microsoft</a></li>
+            <li><a href="https://www.anthropic.com/claude" target="_blank">Claude by Anthropic</a></li>
+            <li><a href="https://deepseek.com" target="_blank">DeepSeek</a></li>
+        </ul>
+        <h3>Copy a suitable part from the above text, paste it into the chatbox of any LLM, and press Enter to see the details.</h3>
+    </div>
+
+    <!-- Scrollable Section -->
+    <div class="scrollable-container">
+
+    </div>
+
+</body>
+</html>
