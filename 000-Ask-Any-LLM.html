@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered H1</title>
+    <style>
+        body {
+        background-color: green;
+        color: green;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Centers content vertically */
+        align-items: center; /* Centers content horizontally */
+        text-align: center;
+        }
+
+        h1 {
+        color: green;
+        font-size: 40px;
+        margin-left: 10px;
+        margin-right: 10px;
+        max-width: 100%;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        padding: 20px;
+        background-color: black;
+        border: 5px solid rgb(0, 255, 162);
+        }
+
+        button {
+        background-color: orange;
+        color: blue;
+        padding: 10px 30px;
+        border-radius: 5px;
+        font-size: 20px;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        }
+
+        button:hover {
+        background-color: blue;
+        color: orange;
+        }
+
+        footer {
+        width: 100%;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        background-color: orange;
+        padding: 10px 0;
+        }
+
+        footer a {
+        text-decoration: none;
+        margin: 0 10px;
+        color: blue;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="window.location.href='index.html'">Home</button>
+
+    <h1 id="dynamicText" style="background-color: green; color: black;">TEXT_OF_THE_CLICKED_LINK</h1>
+    <h1>Copy a suitable part from the above text, paste it into the chatbox of any LLM, and press Enter to see the details.</h1>
+    
+    <h3 style="background-color: green; color: black;">Top 5 LLMs and Their Chat Boxes</h3>
+    <ul class="llm-list">
+        <li><a href="https://chat.openai.com" target="_blank">ChatGPT by OpenAI</a></li>
+        <li><a href="https://bard.google.com" target="_blank">Bard by Google</a></li>
+        <li><a href="https://www.bing.com/chat" target="_blank">Bing Chat by Microsoft</a></li>
+        <li><a href="https://www.anthropic.com/claude" target="_blank">Claude by Anthropic</a></li>
+        <li><a href="https://deepseek.com" target="_blank">DeepSeek</a></li>
+    </ul>
+
+    <footer>
+        <a href="https://www.facebook.com/msasaroar" target="_blank">Facebook</a> | 
+        <a href="mailto:msasaroar@gmail.com">Email</a> | 
+        <a href="https://wa.me/8801917530031" target="_blank">WhatsApp</a>
+    </footer>
+
+    <script>
+        // URL থেকে Query Parameter পড়া
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param) || "TEXT_OF_THE_CLICKED_LINK"; // যদি কিছু না থাকে, ডিফল্ট টেক্সট দেখাবে
+        }
+
+        // H1 এ পাঠানো টেক্সট বসানো
+        document.getElementById("dynamicText").innerText = getQueryParam("text");
+    </script>
+</body>
+</html>
