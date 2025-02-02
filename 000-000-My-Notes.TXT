@@ -72,4 +72,11 @@ src="https://www.facebook.com/tr?id=586409427593205&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
 
-Whole script need to past in header ?
+=============| sGTM CONTAINER FOR SERVER SIDE TRACKING ON stape.io |============
+Name			: DBS | Container | For Server
+Container config	: aWQ9R1RNLVBQUEhNTFM4JmVudj0xJmF1dGg9NmpzdVgtYXU2SzlIRVVGYnlzZjYxdw==
+sGTM container ID	: GTM-PPPHMLS8
+Container identifier	: wfgmlhro
+Container API Key	: apc:wfgmlhro:6cd4e749946c84ad762d31edd9f78e9a4f038225wfgmlhro
+Server location		: AP East (Singapore)
+Domain name		: https://wfgmlhro.apc.stape.io
