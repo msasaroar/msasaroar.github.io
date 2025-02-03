@@ -1,3 +1,4 @@
+
 SL	TIME	TITLE
 07	02.18	 How to delete google tag manager account or restore it | Google tag manager account        
 09	02.40	 Remove someone from Google Tag Manager | How to remove somebody from Google Tag manager    
@@ -29,16 +30,20 @@ SL	TIME	TITLE
 77	21.29	 Facebook View Content Event Tracking with Parameter objectives in advanced way 2023 
 76	20.40	 Facebook Add to cart Event Tracking with Parameter objectives in advanced way 2023 
 78	24.01	 Facebook Purchase Event Tracking with Parameter objectives in advanced way 2023
+64	10.36	 Google Analytics 4 Server Side Tracking with Google Tag Manager | GA4 Server side tracking | Part-07 
+17	04.40	 Custom Domain in Server Side Tracking setup with Google Tag Manager and Stapeio
+
+
 
 ========Yet To See===================================================
+38	06.27	 Google Consent Mode v2 Banner setup with Google Tag Manager  
+75	16.40	 How to configure tags and triggers based on users cookie consent | Basic and Advanced Consent Mode  
+69	12.04	 How to Configure Tags and Triggers in Server Side Container based on Users Cookie Consent
+
 73	13.49	 Facebook Conversion API and Server Side Tracking with Google Tag Manager | Facebook Conversion API
 05	01.13	 Setup or Fix Facebook Pixel Conversion API  GTM and Google Analytics install 
 04	01.09	 facebook ads campaign manager pixel capi server side tracking  ga4 setup
 06	01.13	 Setup and Fix Facebook Instagram Catalog Shop  Dynamic Ads Campaign Pixel CAPI
-
-38	06.27	 Google Consent Mode v2 Banner setup with Google Tag Manager  
-75	16.40	 How to configure tags and triggers based on users cookie consent | Basic and Advanced Consent Mode  
-64	10.36	 Google Analytics 4 Server Side Tracking with Google Tag Manager | GA4 Server side tracking | Part-07 
 
 63	09.50	 Google Ads Conversion View Item Setup with Google Tag Manager  
 13	03.24	 Google Ads Conversion Tracking with Google Tag Manager | Tag ID | Conversion Linker  
@@ -76,9 +81,6 @@ SL	TIME	TITLE
 58	08.41	 SnapChat Purchase Event Setup with Google Tag Manager 
 71	12.30	 SnapChat Checkout event setup with Google Tag Manager 
 74	15.16	 Snapchat View Content Event setup with Parameters 2023
-
-17	04.40	 Custom Domain in Server Side Tracking setup with Google Tag Manager and Stapeio
-69	12.04	 How to Configure Tags and Triggers in Server Side Container based on Users Cookie Consent  
 
 21	05.12	 Connect Messenger to WordPress website 2023 | Setup messenger in wordpress website
 
