@@ -80,3 +80,23 @@ Container identifier	: wfgmlhro
 Container API Key	: apc:wfgmlhro:6cd4e749946c84ad762d31edd9f78e9a4f038225wfgmlhro
 Server location		: AP East (Singapore)
 Domain name		: https://wfgmlhro.apc.stape.io
+
+==============================
+PARTICULARS OF MY SUB-DOMAIN
+==============================
+FTP server : ftp.webinbd.com
+FTP & explicit FTPS port:  21
+FTP User Name : msasaroar@msasaroar.webinbd.com
+FTP Password : DaBR5Zu^VjJ]
+
+Wordpress ID : msasaroar
+Password : DaBR5Zu^VjJ]
+Administrative URL : https://msasaroar.webinbd.com/wp-admin/
+
+Name : Saiful Alam
+Email : msasaroar@gmail.com
+User Name : msasaroar
+
+
+Advertisement of a freelancer.
+https://kwork.com/strategyandanalytics/30878945/setup-google-analytics-4-ga4-ecommerce-server-side-tracking-with-gtm
