@@ -10,39 +10,736 @@
         border: 10px solid #a19bc6;
     }
 </style>
-<h3>Syllabus For Learning About Server-Side Tracking.</h3>
+
+<h3>List of Tracking, Marketing & Advertising Tools</h3>
 <pre>
-==============================================================
-STAPE CONTAINER SETTINGS
-==============================================================
-Container Name: DBS | Container | For Server
-Container Config: aWQ9R1RNLVBQUEhNTFM4JmVudj0xJmF1dGg9NmpzdVgtYXU2SzlIRVVGYnlzZjYxdw==
-sGTM Container ID: GTM-PPPHMLS8
-Container Identifier: wfgmlhro
-Container API Key: apc:wfgmlhro:6cd4e749946c84ad762d31edd9f78e9a4f038225wfgmlhro
-Server Location: AP East (Singapore)
-Domain Name: https://wfgmlhro.apc.stape.io
-==============================================================
-Syllabus for Learning Server-Side Tracking in Web Analytics and Conversion Tracking
+&lt;!-- 1. Web Analytics & Tracking Tools --&gt;
+✅ Google Analytics 4 (GA4) – Website & app tracking, user behavior, traffic sources.  
+✅ Adobe Analytics – Enterprise-level analytics & reporting.  
+✅ Matomo – Privacy-focused alternative to GA4.  
+✅ Piwik PRO – GDPR-compliant analytics platform.  
+✅ Clicky – Real-time analytics with heatmaps.  
+✅ Mixpanel – Product & user behavior analytics.  
+✅ Heap – Auto-tracks user interactions without manual tagging.  
+✅ Fathom Analytics – Privacy-friendly alternative to GA4.  
 
-Module 1: Introduction to Web Analytics and Conversion Tracking
-Module 2: Basics of Server-Side Tracking
-Module 3: Key Tools and Technologies for Server-Side Tracking
-Module 4: Setting Up Server-Side Conversion Tracking
+&lt;!-- 2. Tag Management Systems (TMS) --&gt;
+✅ Google Tag Manager (GTM) – Manages tracking pixels & analytics tags.  
+✅ Adobe Launch – Adobe’s enterprise-level tag management system.  
+✅ Tealium iQ – Advanced tag management & CDP integration.  
+✅ Segment – Customer data management & tracking.  
+✅ Server-Side GTM (GTM SS) – First-party data collection & tracking.  
 
-- Other Conversion Tracking Tools and Server-Side Setup
-  - Conversion tracking for other advertising platforms (Google Ads, LinkedIn, etc.)
-  - How to handle different types of conversion events (form submissions, clicks, video views, etc.)
+&lt;!-- 3. Heatmaps & User Behavior Tracking --&gt;
+✅ Hotjar – Heatmaps, session recordings & surveys.  
+✅ Crazy Egg – Scroll maps, click tracking & A/B testing.  
+✅ Microsoft Clarity – Free session recording & heatmaps.  
+✅ FullStory – AI-powered session replays & analytics.  
+✅ Lucky Orange – Visitor recordings, heatmaps & form analytics.  
 
-- Handling User Privacy and Data Compliance
-  - How server-side tracking helps with GDPR, CCPA, and other privacy laws
-  - Anonymizing user data with server-side processing
-  - Implementing consent management solutions
+&lt;!-- 4. Marketing Pixels & Retargeting Tools --&gt;
+✅ Meta (Facebook) Pixel – Tracks Facebook & Instagram ads performance.  
+✅ TikTok Pixel – Ad tracking & audience insights for TikTok campaigns.  
+✅ Pinterest Tag – Pinterest ad conversion & engagement tracking.  
+✅ LinkedIn Insight Tag – Tracks LinkedIn ad performance.  
+✅ X (Twitter) Pixel – Monitors X (Twitter) ad interactions.  
+✅ Snapchat Pixel – Measures Snapchat ad conversions & engagement.  
+
+&lt;!-- 5. UTM & Link Tracking Tools --&gt;
+✅ Google Campaign URL Builder – Creates UTM links for tracking campaigns.  
+✅ Bitly – URL shortening & click tracking.  
+✅ UTM.io – UTM link management & tracking.  
+✅ Rebrandly – Custom branded short URLs with tracking.  
+✅ ClickMeter – Advanced link tracking & analytics.  
+
+&lt;!-- 6. Conversion Rate Optimization (CRO) & A/B Testing Tools --&gt;
+✅ Google Optimize – A/B testing & personalization (phased out in 2023).  
+✅ Optimizely – AI-powered A/B & multivariate testing.  
+✅ VWO (Visual Website Optimizer) – Split testing & heatmaps.  
+✅ Convert.com – A/B & server-side testing.  
+✅ Unbounce – Landing page optimization & AI-driven testing.  
+
+&lt;!-- 7. Social Media & Advertising Management Tools --&gt;
+✅ Meta Business Suite – Manages Facebook & Instagram ads.  
+✅ Google Ads Manager – Creates & manages Google ad campaigns.  
+✅ TikTok Ads Manager – TikTok ad creation & performance tracking.  
+✅ LinkedIn Ads Manager – LinkedIn ad campaign management.  
+✅ Pinterest Ads Manager – Ad setup & analytics for Pinterest.  
+✅ X (Twitter) Ads Manager – Runs & optimizes Twitter ad campaigns.  
+✅ Snapchat Ads Manager – Tracks Snapchat ad performance.  
+
+&lt;!-- 8. Email Marketing & Automation Tools --&gt;
+✅ Mailchimp – Email automation & audience segmentation.  
+✅ Klaviyo – E-commerce-focused email & SMS marketing.  
+✅ ActiveCampaign – Advanced automation & CRM integration.  
+✅ ConvertKit – Email marketing for creators.  
+✅ Brevo (formerly Sendinblue) – Email, SMS & chatbot automation.  
+✅ HubSpot Marketing Hub – Full CRM & email marketing automation.  
+
+&lt;!-- 9. Affiliate & Performance Marketing Tracking Tools --&gt;
+✅ Post Affiliate Pro – Affiliate tracking & referral management.  
+✅ Voluum – AI-powered ad tracking & optimization.  
+✅ ClickFunnels – Sales funnel tracking & affiliate management.  
+✅ Tapfiliate – Affiliate marketing & referral tracking.  
+✅ Everflow – Partner tracking for performance marketing.  
+
+&lt;!-- 10. Privacy & Consent Management Tools --&gt;
+✅ OneTrust – GDPR, CCPA & privacy compliance management.  
+✅ Cookiebot – Automatic cookie consent management.  
+✅ Quantcast Choice – Free GDPR consent tool.  
+✅ Usercentrics – Advanced consent & compliance platform.  
+</pre>
+
+
+<h3>Scope of Tracking Setup with Google Tag Manager and Google Analytics</h3>
+<pre>
+&lt;!-- 1. Initial Setup and Configuration --&gt;
+✅ Google Analytics Setup
+- Create and configure Google Analytics 4 (GA4) property.
+- Set up data streams for websites and apps.
+- Configure data retention settings and privacy settings.
+- Enable Enhanced Measurement for automatic tracking.
+
+✅ Google Tag Manager (GTM) Setup
+- Create and install GTM container on the website.
+- Link GTM with Google Analytics.
+- Configure GTM environment settings for staging/live deployments.
+
+✅ Basic Pageview Tracking
+- Set up GA4 Configuration Tag in GTM.
+- Enable pageview tracking for all website pages.
+- Configure IP anonymization for privacy compliance.
+
+&lt;!-- 2. User Interaction Tracking --&gt;
+✅ Standard User Engagement Tracking
+- Scroll tracking (detect when users scroll a certain percentage of a page).
+- Outbound link tracking (track clicks to external websites).
+- File download tracking (PDFs, docs, images, etc.).
+- Embedded video tracking (YouTube, Vimeo, etc.).
+- Internal site search tracking (capture user searches on the website).
+- Button click tracking (for non-conversion-related buttons).
+
+<pre style="background-color: red; color: white; padding: 10px;">
+✅ Advanced User Tracking (Optional, if needed)
+- Single Page Application (SPA) tracking (for React, Angular, Vue apps).
+- Tracking AJAX-based interactions (dynamic content loading).
+- User ID tracking for cross-device user behavior analysis.
+</pre>
+
+&lt;!-- 3. Data Layer and Custom Events Setup --&gt;
+✅ Data Layer Implementation
+- Define and set up data layer variables for structured data tracking.
+- Implement custom event tracking using the data layer.
+
+✅ Google Tag Manager Variable & Trigger Setup
+- Configure click-based triggers for interaction tracking.
+- Set up JavaScript and CSS selector-based triggers.
+- Implement custom JavaScript variables for dynamic data collection.
+
+&lt;!-- 4. Cross-Domain and Subdomain Tracking --&gt;
+✅ Cross-Domain Tracking Setup
+- Configure GA4 cross-domain tracking for multiple sites.
+- Implement first-party cookie tracking for better attribution.
+
+✅ Subdomain Tracking
+- Ensure smooth user tracking across subdomains without duplication.
+
+&lt;!-- 5. Privacy Compliance & Data Accuracy --&gt;
+✅ Privacy & Compliance
+- Enable IP anonymization in GA4.
+- Configure consent mode in GTM for GDPR/CCPA compliance.
+- Implement cookie consent banner integration (if required).
+
+✅ Data Quality & Debugging
+- Use GTM Preview Mode to test tags and triggers.
+- Validate tracking using Google Tag Assistant and DebugView.
+- Identify and fix GA4 and GTM setup errors.
+
+&lt;!-- 6. Testing, Debugging & Documentation --&gt;
+✅ Testing & Debugging
+- Use Google Tag Assistant for verifying tag implementation.
+- Validate GA4 event tracking in DebugView.
+
+✅ Documentation & Handover
+- Provide detailed tracking implementation documentation.
+- Train the client or team on how to use Google Analytics & GTM.
+
+&lt;!-- Out of Scope (NOT Included in Tracking Setup) --&gt;
+❌ Conversion Tracking Setup (E-commerce transactions, lead form submissions, etc.).
+❌ Custom GA4 Reporting & Dashboard Setup (Advanced data visualization).
+❌ A/B Testing or Personalization Setup.
+❌ Marketing Campaign Attribution Analysis.
+
+&lt;!-- Final Deliverables --&gt;
+📌 Fully configured Google Analytics 4 (GA4) tracking.
+📌 Google Tag Manager (GTM) setup with necessary tags, triggers, and variables.
+📌 Tested and verified tracking implementation.
+📌 Implementation documentation for future reference.
+</pre>
 
 
 
+<h3>Scope of Tracking Setup with Google Tag Manager (GTM) and Meta Pixel</h3>
+<pre>
+&lt;!-- 1. Initial Setup and Configuration --&gt;
+✅ Google Tag Manager (GTM) Setup
+- Create a GTM container and install it on the website.
+- Configure GTM environment settings for staging/live deployments.
+
+✅ Meta Pixel Setup
+- Create a Meta Pixel in Meta Business Manager.
+- Install Meta Pixel base code using GTM.
+- Verify Meta Pixel installation using the Meta Pixel Helper extension.
+
+&lt;!-- 2. Pageview and Basic User Interaction Tracking --&gt;
+✅ Standard Pageview Tracking
+- Set up Meta Pixel **PageView** event in GTM.
+- Ensure tracking for Single Page Applications (SPA) if necessary.
+
+✅ User Engagement Tracking (Non-Conversion)
+- Outbound link click tracking (Detect clicks to external websites).
+- File download tracking (Track PDFs, Docs, Images, etc.).
+- Video engagement tracking (YouTube, Vimeo interactions).
+- Scroll depth tracking (Trigger events when users scroll 25%, 50%, 75%, or 100% of a page).
+- Button click tracking (for non-conversion-related buttons).
+
+✅ Custom Event Tracking (Non-Conversion)
+- Track menu clicks, social media link clicks, and interactive elements.
+- Implement custom JavaScript triggers for dynamic interactions.
+
+&lt;!-- 3. Data Layer and Advanced Tracking --&gt;
+✅ Data Layer Implementation
+- Set up a structured data layer for custom tracking.
+- Push dynamic values (e.g., user roles, page categories) into the data layer.
+
+✅ GTM Trigger & Variable Setup
+- Create triggers for click-based interactions.
+- Implement JavaScript-based variables for extracting dynamic values.
+- Set up GTM event listeners for form interactions and AJAX-based elements.
+
+&lt;!-- 4. Cross-Domain and Subdomain Tracking --&gt;
+✅ Cross-Domain Tracking
+- Configure cross-domain tracking between multiple sites using GTM and Meta Pixel.
+- Adjust cookie settings to maintain user session consistency.
+
+✅ Subdomain Tracking
+- Ensure Meta Pixel data remains consistent across subdomains.
+- Prevent duplicate pageview tracking for subdomains.
+
+&lt;!-- 5. Privacy Compliance & Data Accuracy --&gt;
+✅ Privacy & Compliance
+- Implement **Meta Consent Mode** in GTM for GDPR/CCPA compliance.
+- Integrate a cookie consent banner to manage Meta Pixel tracking permissions.
+- Enable IP anonymization (if required for compliance).
+
+✅ Data Quality & Debugging
+- Test GTM and Meta Pixel setup using **Meta Pixel Helper**.
+- Verify events using the **Meta Events Manager Debugging Tool**.
+- Monitor data accuracy through **GTM Preview Mode**.
+
+&lt;!-- 6. Testing, Debugging & Documentation --&gt;
+✅ Testing & Debugging
+- Use **Meta Events Manager** to validate event tracking.
+- Utilize **GTM Debug Mode** to ensure correct event firing.
+
+✅ Documentation & Handover
+- Provide a detailed tracking implementation document.
+- Train the client or team on how to manage tracking settings.
+
+&lt;!-- Out of Scope (NOT Included in Tracking Setup) --&gt;
+❌ Conversion Tracking Setup (Purchases, Leads, Add to Cart, etc.).
+❌ Custom Audience and Remarketing Setup.
+❌ Attribution and Marketing Performance Analysis.
+❌ Advanced Facebook Ads Optimization.
+
+&lt;!-- Final Deliverables --&gt;
+📌 Fully configured Meta Pixel tracking via GTM.
+📌 Setup of standard events and custom interactions.
+📌 Tested and verified tracking implementation.
+📌 Documentation for reference and future modifications.
+</pre>
 
 
 
-    </pre>
-    
+<h3>Scope of Tracking Setup with Google Tag Manager (GTM) and TikTok Pixel</h3>
+<pre>
+&lt;!-- 1. Initial Setup and Configuration --&gt;
+✅ Google Tag Manager (GTM) Setup
+- Create a GTM container and install it on the website.
+- Configure GTM environment settings for staging/live deployments.
+
+✅ TikTok Pixel Setup
+- Create a TikTok Pixel in **TikTok Ads Manager**.
+- Install TikTok Pixel base code using GTM.
+- Verify TikTok Pixel installation using the **TikTok Pixel Helper** extension.
+
+&lt;!-- 2. Pageview and Basic User Interaction Tracking --&gt;
+✅ Standard Pageview Tracking
+- Set up the TikTok Pixel **PageView** event in GTM.
+- Ensure tracking works for **Single Page Applications (SPA)** if necessary.
+
+✅ User Engagement Tracking (Non-Conversion)
+- Outbound link click tracking (Detect clicks to external websites).
+- File download tracking (Track PDFs, Docs, Images, etc.).
+- Video engagement tracking (YouTube, Vimeo interactions).
+- Scroll depth tracking (Trigger events when users scroll 25%, 50%, 75%, or 100% of a page).
+- Button click tracking (for non-conversion-related buttons).
+
+✅ Custom Event Tracking (Non-Conversion)
+- Track menu clicks, social media link clicks, and interactive elements.
+- Implement custom JavaScript triggers for dynamic interactions.
+
+&lt;!-- 3. Data Layer and Advanced Tracking --&gt;
+✅ Data Layer Implementation
+- Set up a structured data layer for custom tracking.
+- Push dynamic values (e.g., user roles, page categories) into the data layer.
+
+✅ GTM Trigger & Variable Setup
+- Create triggers for click-based interactions.
+- Implement JavaScript-based variables for extracting dynamic values.
+- Set up GTM event listeners for form interactions and AJAX-based elements.
+
+&lt;!-- 4. Cross-Domain and Subdomain Tracking --&gt;
+✅ Cross-Domain Tracking
+- Configure cross-domain tracking between multiple sites using GTM and TikTok Pixel.
+- Adjust cookie settings to maintain user session consistency.
+
+✅ Subdomain Tracking
+- Ensure TikTok Pixel data remains consistent across subdomains.
+- Prevent duplicate pageview tracking for subdomains.
+
+&lt;!-- 5. Privacy Compliance & Data Accuracy --&gt;
+✅ Privacy & Compliance
+- Implement **TikTok Consent Mode** in GTM for GDPR/CCPA compliance.
+- Integrate a cookie consent banner to manage TikTok Pixel tracking permissions.
+- Enable IP anonymization (if required for compliance).
+
+✅ Data Quality & Debugging
+- Test GTM and TikTok Pixel setup using **TikTok Pixel Helper**.
+- Verify events using **TikTok Events Manager Debugging Tool**.
+- Monitor data accuracy through **GTM Preview Mode**.
+
+&lt;!-- 6. Testing, Debugging & Documentation --&gt;
+✅ Testing & Debugging
+- Use **TikTok Events Manager** to validate event tracking.
+- Utilize **GTM Debug Mode** to ensure correct event firing.
+
+✅ Documentation & Handover
+- Provide a detailed tracking implementation document.
+- Train the client or team on how to manage tracking settings.
+
+&lt;!-- Out of Scope (NOT Included in Tracking Setup) --&gt;
+❌ Conversion Tracking Setup (Purchases, Leads, Add to Cart, etc.).
+❌ Custom Audience and Remarketing Setup.
+❌ Attribution and Marketing Performance Analysis.
+❌ Advanced TikTok Ads Optimization.
+
+&lt;!-- Final Deliverables --&gt;
+📌 Fully configured TikTok Pixel tracking via GTM.
+📌 Setup of standard events and custom interactions.
+📌 Tested and verified tracking implementation.
+📌 Documentation for reference and future modifications.
+</pre>
+
+
+
+<h3>Scope of Tracking Setup with Google Tag Manager (GTM) and Pinterest Pixel</h3>
+<pre>
+&lt;!-- 1. Initial Setup and Configuration --&gt;
+✅ Google Tag Manager (GTM) Setup
+- Create a GTM container and install it on the website.
+- Configure GTM environment settings for staging/live deployments.
+
+✅ Pinterest Pixel Setup
+- Create a Pinterest Pixel in **Pinterest Ads Manager**.
+- Install Pinterest Pixel base code using GTM.
+- Verify Pinterest Pixel installation using the **Pinterest Tag Helper** extension.
+
+&lt;!-- 2. Pageview and Basic User Interaction Tracking --&gt;
+✅ Standard Pageview Tracking
+- Set up the Pinterest Pixel **PageVisit** event in GTM.
+- Ensure tracking works for **Single Page Applications (SPA)** if necessary.
+
+✅ User Engagement Tracking (Non-Conversion)
+- Outbound link click tracking (Detect clicks to external websites).
+- File download tracking (Track PDFs, Docs, Images, etc.).
+- Video engagement tracking (YouTube, Vimeo interactions).
+- Scroll depth tracking (Trigger events when users scroll 25%, 50%, 75%, or 100% of a page).
+- Button click tracking (for non-conversion-related buttons).
+
+✅ Custom Event Tracking (Non-Conversion)
+- Track menu clicks, social media link clicks, and interactive elements.
+- Implement custom JavaScript triggers for dynamic interactions.
+
+&lt;!-- 3. Data Layer and Advanced Tracking --&gt;
+✅ Data Layer Implementation
+- Set up a structured data layer for custom tracking.
+- Push dynamic values (e.g., user roles, page categories) into the data layer.
+
+✅ GTM Trigger & Variable Setup
+- Create triggers for click-based interactions.
+- Implement JavaScript-based variables for extracting dynamic values.
+- Set up GTM event listeners for form interactions and AJAX-based elements.
+
+&lt;!-- 4. Cross-Domain and Subdomain Tracking --&gt;
+✅ Cross-Domain Tracking
+- Configure cross-domain tracking between multiple sites using GTM and Pinterest Pixel.
+- Adjust cookie settings to maintain user session consistency.
+
+✅ Subdomain Tracking
+- Ensure Pinterest Pixel data remains consistent across subdomains.
+- Prevent duplicate pageview tracking for subdomains.
+
+&lt;!-- 5. Privacy Compliance & Data Accuracy --&gt;
+✅ Privacy & Compliance
+- Implement **Pinterest Consent Mode** in GTM for GDPR/CCPA compliance.
+- Integrate a cookie consent banner to manage Pinterest Pixel tracking permissions.
+- Enable IP anonymization (if required for compliance).
+
+✅ Data Quality & Debugging
+- Test GTM and Pinterest Pixel setup using **Pinterest Tag Helper**.
+- Verify events using **Pinterest Ads Manager Debugging Tool**.
+- Monitor data accuracy through **GTM Preview Mode**.
+
+&lt;!-- 6. Testing, Debugging & Documentation --&gt;
+✅ Testing & Debugging
+- Use **Pinterest Ads Manager** to validate event tracking.
+- Utilize **GTM Debug Mode** to ensure correct event firing.
+
+✅ Documentation & Handover
+- Provide a detailed tracking implementation document.
+- Train the client or team on how to manage tracking settings.
+
+&lt;!-- Out of Scope (NOT Included in Tracking Setup) --&gt;
+❌ Conversion Tracking Setup (Purchases, Leads, Add to Cart, etc.).
+❌ Custom Audience and Remarketing Setup.
+❌ Attribution and Marketing Performance Analysis.
+❌ Advanced Pinterest Ads Optimization.
+
+&lt;!-- Final Deliverables --&gt;
+📌 Fully configured Pinterest Pixel tracking via GTM.
+📌 Setup of standard events and custom interactions.
+📌 Tested and verified tracking implementation.
+📌 Documentation for reference and future modifications.
+</pre>
+
+
+
+<h3>Scope of Tracking Setup with Google Tag Manager (GTM) and Shopify</h3>
+<pre>
+&lt;!-- Important Note: --&gt;
+✅ Tracking on Shopify is done through **Shopify’s built-in analytics** and third-party pixels (e.g., Meta Pixel, TikTok Pixel, Google Analytics).  
+✅ GTM can be used to enhance Shopify tracking beyond its native capabilities.
+
+&lt;!-- 1. Initial Setup and Configuration --&gt;
+✅ Google Tag Manager (GTM) Setup for Shopify
+- Add GTM container to Shopify by inserting the GTM code in the **theme.liquid** file.
+- Configure GTM for Shopify **Checkout & Order Confirmation** (only available for Shopify Plus).
+- Use Shopify’s **Custom JavaScript Section** for tracking implementation.
+
+✅ Shopify Pixel Setup
+- Use Shopify’s native **Customer Events API** for event tracking.
+- Integrate third-party tracking pixels (Meta, TikTok, Pinterest, etc.) via GTM.
+- Verify installation using **Google Tag Assistant** or pixel-specific debugging tools.
+
+&lt;!-- 2. Pageview and Basic User Interaction Tracking --&gt;
+✅ Standard Pageview Tracking
+- Track **PageView** events across Shopify pages.
+- Ensure tracking works for **Single Page Applications (SPA)** if necessary.
+
+✅ User Engagement Tracking (Non-Conversion)
+- Outbound link click tracking (Detect clicks to external websites).
+- File download tracking (Track PDFs, Docs, Images, etc.).
+- Video engagement tracking (YouTube, Vimeo interactions).
+- Scroll depth tracking (Trigger events when users scroll 25%, 50%, 75%, or 100% of a page).
+- Button click tracking (for non-conversion-related buttons).
+
+✅ Custom Event Tracking (Non-Conversion)
+- Track menu clicks, social media link clicks, and interactive elements.
+- Implement custom JavaScript triggers for dynamic interactions.
+
+&lt;!-- 3. Data Layer and Advanced Tracking --&gt;
+✅ Data Layer Implementation for Shopify
+- Set up Shopify’s **Data Layer** to capture key information like:
+  - Product IDs, Prices, Categories.
+  - Cart interactions and checkout steps (Only for Shopify Plus).
+  - User login status.
+
+✅ GTM Trigger & Variable Setup
+- Create triggers for click-based interactions.
+- Implement JavaScript-based variables for extracting dynamic values.
+- Set up GTM event listeners for form interactions and AJAX-based elements.
+
+&lt;!-- 4. Privacy Compliance & Data Accuracy --&gt;
+✅ Privacy & Compliance
+- Implement **GTM Consent Mode** for GDPR/CCPA compliance.
+- Integrate a cookie consent banner to manage tracking permissions.
+- Enable IP anonymization (if required for compliance).
+
+✅ Data Quality & Debugging
+- Test GTM and Shopify tracking setup using **GTM Debug Mode**.
+- Verify events using Shopify’s **Customer Events Debugging Tool**.
+- Monitor data accuracy through **Google Analytics 4 DebugView**.
+
+&lt;!-- 5. Testing, Debugging & Documentation --&gt;
+✅ Testing & Debugging
+- Use **Google Tag Assistant** and **GTM Preview Mode** for debugging.
+- Utilize **Shopify’s Admin Dashboard** to validate event tracking.
+
+✅ Documentation & Handover
+- Provide a detailed tracking implementation document.
+- Train the client or team on how to manage Shopify tracking settings.
+
+&lt;!-- Out of Scope (NOT Included in Tracking Setup) --&gt;
+❌ Conversion Tracking Setup (Purchases, Add to Cart, Checkout).
+❌ Shopify Ads & Marketing Performance Analysis.
+❌ Advanced Shopify Checkout Customization (Limited to Shopify Plus).
+
+&lt;!-- Final Deliverables --&gt;
+📌 Fully configured GTM tracking for Shopify.  
+📌 Setup of standard events and custom interactions.  
+📌 Tested and verified tracking implementation.  
+📌 Documentation for reference and future modifications.  
+</pre>
+
+
+
+<h3>Scope of Tracking Setup with Google Tag Manager (GTM) and X (Twitter) Pixel</h3>
+<pre>
+&lt;!-- 1. Initial Setup and Configuration --&gt;
+✅ Google Tag Manager (GTM) Setup  
+- Create a GTM container and install it on the website.  
+- Configure GTM environment settings for staging/live deployments.  
+
+✅ X Pixel Setup  
+- Create an X Pixel in **X Ads Manager**.  
+- Install X Pixel base code using GTM.  
+- Verify X Pixel installation using **X Pixel Helper**.  
+
+&lt;!-- 2. Pageview and Basic User Interaction Tracking --&gt;
+✅ Standard Pageview Tracking  
+- Set up the X Pixel **PageView** event in GTM.  
+- Ensure tracking works for **Single Page Applications (SPA)** if necessary.  
+
+✅ User Engagement Tracking (Non-Conversion)  
+- Outbound link click tracking (Detect clicks to external websites).  
+- File download tracking (Track PDFs, Docs, Images, etc.).  
+- Video engagement tracking (YouTube, Vimeo interactions).  
+- Scroll depth tracking (Trigger events when users scroll 25%, 50%, 75%, or 100% of a page).  
+- Button click tracking (for non-conversion-related buttons).  
+
+✅ Custom Event Tracking (Non-Conversion)  
+- Track menu clicks, social media link clicks, and interactive elements.  
+- Implement custom JavaScript triggers for dynamic interactions.  
+
+&lt;!-- 3. Data Layer and Advanced Tracking --&gt;
+✅ Data Layer Implementation  
+- Set up a structured data layer for custom tracking.  
+- Push dynamic values (e.g., user roles, page categories) into the data layer.  
+
+✅ GTM Trigger & Variable Setup  
+- Create triggers for click-based interactions.  
+- Implement JavaScript-based variables for extracting dynamic values.  
+- Set up GTM event listeners for form interactions and AJAX-based elements.  
+
+&lt;!-- 4. Cross-Domain and Subdomain Tracking --&gt;
+✅ Cross-Domain Tracking  
+- Configure cross-domain tracking between multiple sites using GTM and X Pixel.  
+- Adjust cookie settings to maintain user session consistency.  
+
+✅ Subdomain Tracking  
+- Ensure X Pixel data remains consistent across subdomains.  
+- Prevent duplicate pageview tracking for subdomains.  
+
+&lt;!-- 5. Privacy Compliance & Data Accuracy --&gt;
+✅ Privacy & Compliance  
+- Implement **X Consent Mode** in GTM for GDPR/CCPA compliance.  
+- Integrate a cookie consent banner to manage X Pixel tracking permissions.  
+- Enable IP anonymization (if required for compliance).  
+
+✅ Data Quality & Debugging  
+- Test GTM and X Pixel setup using **X Pixel Helper**.  
+- Verify events using **X Ads Manager Debugging Tool**.  
+- Monitor data accuracy through **GTM Preview Mode**.  
+
+&lt;!-- 6. Testing, Debugging & Documentation --&gt;
+✅ Testing & Debugging  
+- Use **X Ads Manager** to validate event tracking.  
+- Utilize **GTM Debug Mode** to ensure correct event firing.  
+
+✅ Documentation & Handover  
+- Provide a detailed tracking implementation document.  
+- Train the client or team on how to manage tracking settings.  
+
+&lt;!-- Out of Scope (NOT Included in Tracking Setup) --&gt;
+❌ Conversion Tracking Setup (Purchases, Leads, Add to Cart, etc.).  
+❌ Custom Audience and Remarketing Setup.  
+❌ Attribution and Marketing Performance Analysis.  
+❌ Advanced X Ads Optimization.  
+
+&lt;!-- Final Deliverables --&gt;
+📌 Fully configured X Pixel tracking via GTM.  
+📌 Setup of standard events and custom interactions.  
+📌 Tested and verified tracking implementation.  
+📌 Documentation for reference and future modifications.  
+</pre>
+
+
+
+<h3>Scope of Tracking Setup with Google Tag Manager (GTM) and LinkedIn Pixel</h3>
+<pre>
+&lt;!-- 1. Initial Setup and Configuration --&gt;
+✅ Google Tag Manager (GTM) Setup  
+- Create a GTM container and install it on the website.  
+- Configure GTM environment settings for staging/live deployments.  
+
+✅ LinkedIn Insight Tag (Pixel) Setup  
+- Create a **LinkedIn Insight Tag** in **LinkedIn Campaign Manager**.  
+- Install LinkedIn Insight Tag base code via GTM.  
+- Verify installation using **LinkedIn Pixel Helper** Chrome extension.  
+
+&lt;!-- 2. Pageview and Basic User Interaction Tracking --&gt;
+✅ Standard Pageview Tracking  
+- Set up the **PageView** event for LinkedIn Insight Tag in GTM.  
+- Ensure tracking works for **Single Page Applications (SPA)** if necessary.  
+
+✅ User Engagement Tracking (Non-Conversion)  
+- Outbound link click tracking (Detect clicks to external websites).  
+- File download tracking (Track PDFs, Docs, Images, etc.).  
+- Video engagement tracking (YouTube, Vimeo interactions).  
+- Scroll depth tracking (Trigger events when users scroll 25%, 50%, 75%, or 100% of a page).  
+- Button click tracking (for non-conversion-related buttons).  
+
+✅ Custom Event Tracking (Non-Conversion)  
+- Track menu clicks, social media link clicks, and interactive elements.  
+- Implement custom JavaScript triggers for dynamic interactions.  
+
+&lt;!-- 3. Data Layer and Advanced Tracking --&gt;
+✅ Data Layer Implementation  
+- Set up a structured data layer to pass relevant information (e.g., product ID, categories, page names).  
+- Push dynamic values such as user roles, page categories, and user login status into the data layer.  
+
+✅ GTM Trigger & Variable Setup  
+- Create custom triggers for click-based interactions or page-specific events.  
+- Use JavaScript-based variables for dynamically extracted content like product names or prices.  
+
+&lt;!-- 4. Cross-Domain and Subdomain Tracking --&gt;
+✅ Cross-Domain Tracking  
+- Configure cross-domain tracking between multiple sites using GTM and LinkedIn Pixel.  
+- Adjust cookie settings to ensure user sessions are maintained across domains.  
+
+✅ Subdomain Tracking  
+- Ensure LinkedIn Pixel data remains consistent across subdomains.  
+- Prevent duplicate pageview tracking when navigating across subdomains.  
+
+&lt;!-- 5. Privacy Compliance & Data Accuracy --&gt;
+✅ Privacy & Compliance  
+- Implement **LinkedIn Consent Mode** in GTM for GDPR/CCPA compliance.  
+- Integrate a cookie consent banner that allows users to opt-in for LinkedIn Pixel tracking.  
+- Enable IP anonymization (if required by privacy regulations).  
+
+✅ Data Quality & Debugging  
+- Test GTM and LinkedIn Pixel setup using **LinkedIn Pixel Helper** and **GTM Preview Mode**.  
+- Verify events in **LinkedIn Campaign Manager** Debugging Tool.  
+
+&lt;!-- 6. Testing, Debugging & Documentation --&gt;
+✅ Testing & Debugging  
+- Use **LinkedIn Campaign Manager** to validate event tracking.  
+- Use **GTM Debug Mode** to ensure that LinkedIn events are firing correctly.  
+
+✅ Documentation & Handover  
+- Provide a detailed tracking implementation document.  
+- Train the client or team on managing LinkedIn Pixel settings and updates.  
+
+&lt;!-- Out of Scope (NOT Included in Tracking Setup) --&gt;
+❌ Conversion Tracking Setup (Leads, Add to Cart, Purchase, etc.).  
+❌ Custom Audience and Remarketing Setup.  
+❌ Attribution and Marketing Performance Analysis.  
+❌ Advanced LinkedIn Ads Optimization.  
+
+&lt;!-- Final Deliverables --&gt;
+📌 Fully configured LinkedIn Pixel tracking via GTM.  
+📌 Setup of standard events and custom user interaction tracking.  
+📌 Tested and verified LinkedIn Pixel tracking implementation.  
+📌 Documentation for reference and future modifications.  
+</pre>
+
+  
+
+
+<h3></h3>
+
+
+
+<h3></h3>
+
+
+
+<h3></h3>
+
+
+
+<h3></h3>
+
+
+
+<h3></h3>
+
+
+
+<h3></h3>
+
+
+
+<h3></h3>
+
+
+
+<h3></h3>
+
+
+
+<h3></h3>
+
+
+
+<h3></h3>
+
+
+
+<h3></h3>
+
+
+
+<h3></h3>
+
+
+
+<h3></h3>
+
+
+
+<h3></h3>
+
+
+
+<h3></h3>
+
+
+
+<h3></h3>
+
+
+
+<h3></h3>
+
+
+
+<h3></h3>
+
+
+
+<h3></h3>
+
+
+  
