@@ -32,8 +32,8 @@ SL	TIME	TITLE
 78	24.01	 Facebook Purchase Event Tracking with Parameter objectives in advanced way 2023
 64	10.36	 Google Analytics 4 Server Side Tracking with Google Tag Manager | GA4 Server side tracking | Part-07 
 17	04.40	 Custom Domain in Server Side Tracking setup with Google Tag Manager and Stapeio
-
-
+36	06.23	 Linkedin Insight Tag setup with Google Tag Manager | Linkedin pixel | Linkedin Tag setup
+56	08.17	 Linkedin Conversion Tag Lead Setup with Google Tag Manager | Linkedin tag | Linkedin Pixel
 
 ========Yet To See===================================================
 38	06.27	 Google Consent Mode v2 Banner setup with Google Tag Manager  
@@ -63,9 +63,6 @@ SL	TIME	TITLE
 61	09.13	 Shopify Data Layer Enable and Connect Google Tag Manager | Shopify Tracking Setup | Part 01  
 62	09.34	 Shopify Purchase Tag with Parameters for Google Analytics 4 with Google Tag Manager 
 70	12.20	 Enable Data layer on Shopify Website 2023 | How to Enable Data layer Shopify Website 2023  
-
-36	06.23	 Linkedin Insight Tag setup with Google Tag Manager | Linkedin pixel | Linkedin Tag setup  
-56	08.17	 Linkedin Conversion Tag Lead Setup with Google Tag Manager | Linkedin tag | Linkedin Pixel  
 
 08	02.30	 Claim website in Pinterest | Verify domain on Pinterest|How to claim website in pinterest 
 37	06.23	 Pinterest Tag Setup with Google Tag Manager | Install Pinterest tag with GTM 
