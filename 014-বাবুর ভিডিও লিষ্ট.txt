@@ -33,9 +33,19 @@ SL	TIME	TITLE
 64	10.36	 Google Analytics 4 Server Side Tracking with Google Tag Manager | GA4 Server side tracking | Part-07 
 17	04.40	 Custom Domain in Server Side Tracking setup with Google Tag Manager and Stapeio
 36	06.23	 Linkedin Insight Tag setup with Google Tag Manager | Linkedin pixel | Linkedin Tag setup
-56	08.17	 Linkedin Conversion Tag Lead Setup with Google Tag Manager | Linkedin tag | Linkedin Pixel
+35	06.15	 Snapchat Pixel setup with Google Tag Manager | Install Snapchat Pixel in your Website
+22	05.17	 Snapchat Ad account create 2023 | How to Create Snapchat Ad account 2023 
+
+
 
 ========Yet To See===================================================
+53	07.54	 SnapChat Add To Cart Event with Parameters 2023 | Snapchat add to cart event GTM 
+58	08.41	 SnapChat Purchase Event Setup with Google Tag Manager 
+71	12.30	 SnapChat Checkout event setup with Google Tag Manager 
+74	15.16	 Snapchat View Content Event setup with Parameters 2023
+
+56	08.17	 Linkedin Conversion Tag Lead Setup with Google Tag Manager | Linkedin tag | Linkedin Pixel
+
 38	06.27	 Google Consent Mode v2 Banner setup with Google Tag Manager  
 75	16.40	 How to configure tags and triggers based on users cookie consent | Basic and Advanced Consent Mode  
 69	12.04	 How to Configure Tags and Triggers in Server Side Container based on Users Cookie Consent
@@ -72,12 +82,8 @@ SL	TIME	TITLE
 59	08.45	 Pinterest Purchase Tag setup with Google Tag Manager | Pinterest Checkout tag 
 67	11.40	 Pinterest Conversion API Setup with Google Tag Manager | Pinterest Conversion API 
 
-22	05.17	 Snapchat Ad account create 2023 | How to Create Snapchat Ad account 2023 
-35	06.15	 Snapchat Pixel setup with Google Tag Manager | Install Snapchat Pixel in your Website 
-53	07.54	 SnapChat Add To Cart Event with Parameters 2023 | Snapchat add to cart event GTM 
-58	08.41	 SnapChat Purchase Event Setup with Google Tag Manager 
-71	12.30	 SnapChat Checkout event setup with Google Tag Manager 
-74	15.16	 Snapchat View Content Event setup with Parameters 2023
+
+
 
 21	05.12	 Connect Messenger to WordPress website 2023 | Setup messenger in wordpress website
 
