@@ -56,6 +56,15 @@ SL	TIME	TITLE
 32	06.01	 Fiverr Social Media Marketing Skill Test 2023 
 39	06.29	 How to pass Fiverr English Test in 2023 | Fiverr English test 2023 
 48	07.26	 Fiverr Analytical Skill Test 2023 
+51	07.43	 Shopify Connect to Google Analytics 4 through Google Tag Manager
+61	09.13	 Shopify Data Layer Enable and Connect Google Tag Manager | Shopify Tracking Setup | Part 01  
+70	12.20	 Enable Data layer on Shopify Website 2023 | How to Enable Data layer Shopify Website 2023
+27	05.28	 Shopify Contact Form Submit Tag setup with Parameters for Google Analytics 4 with Google Tag Manager 
+33	06.01	 Shopify Begin Checkout Tag with Parameters for Google Analytics 4 with GTM 
+16	04.22	 Shopify Newsletter Subscription Tag setup for Google Analytics 4 with Google Tag Manager  
+30	05.41	 Shopify Add to Cart Tag with Parameters for Google Analytics 4 with Google Tag Manager
+44	06.53	 Shopify View Item Tag with Parameters for Google Analytics 4 with Google Tag Manager 
+62	09.34	 Shopify Purchase Tag with Parameters for Google Analytics 4 with Google Tag Manager 
 
 
 
@@ -74,18 +83,9 @@ SL	TIME	TITLE
 04	01.09	 facebook ads campaign manager pixel capi server side tracking  ga4 setup
 06	01.13	 Setup and Fix Facebook Instagram Catalog Shop  Dynamic Ads Campaign Pixel CAPI
 
-51	07.43	 Shopify Connect to Google Analytics 4 through Google Tag Manager
-61	09.13	 Shopify Data Layer Enable and Connect Google Tag Manager | Shopify Tracking Setup | Part 01  
-70	12.20	 Enable Data layer on Shopify Website 2023 | How to Enable Data layer Shopify Website 2023
 
-01	00.52	 Shopify Facebook Pixel Conversion API  Server Side tracking  Eneble Data layer EEC track
 02	01.03	 Shopify Patment Method setup for Practice | Bogus Payment Method
-16	04.22	 Shopify Newsletter Subscription Tag setup for Google Analytics 4 with Google Tag Manager  
-27	05.28	 Shopify Contact Form Submit Tag setup with Parameters for Google Analytics 4 with Google Tag Manager  
-30	05.41	 Shopify Add to Cart Tag with Parameters for Google Analytics 4 with Google Tag Manager
-33	06.01	 Shopify Begin Checkout Tag with Parameters for Google Analytics 4 with GTM 
-44	06.53	 Shopify View Item Tag with Parameters for Google Analytics 4 with Google Tag Manager 
-62	09.34	 Shopify Purchase Tag with Parameters for Google Analytics 4 with Google Tag Manager 
+01	00.52	 Shopify Facebook Pixel Conversion API  Server Side tracking  Eneble Data layer EEC track
 
 21	05.12	 Connect Messenger to WordPress website 2023 | Setup messenger in wordpress website
 
