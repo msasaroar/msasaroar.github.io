@@ -1,0 +1,70 @@
+<pre>
+    <style>
+    .section-header {
+    background-color: Green; /* Green background */
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    display: block;
+    }
+    </style>
+<h1>Detailed Activities For Setting Up Conversion Tracking In Quora Pixel With GTM</h1>
+<span class="section-header">1. Create a Quora Pixel</span>
+- Log in to your Quora Ads Manager account.
+- Navigate to the "Pixels" section under "Tools."
+- Click on "Create a Pixel."
+- Name your pixel (e.g., "Website Conversions").
+- Click "Create" and copy the generated Pixel ID.
+
+<span class="section-header">2. Set Up the Quora Pixel in GTM</span>
+- Open Google Tag Manager and select your container.
+- Click on "Tags" in the left-hand menu, then click "New."
+- Name the tag (e.g., "Quora Base Pixel").
+- Click on "Tag Configuration" and choose "Custom HTML."
+- Paste the Quora Pixel base code into the HTML field.
+- Replace `'YOUR_PIXEL_ID'` in the code with your actual Quora Pixel ID.
+- Click on "Triggering" and select "All Pages" to fire the tag on every page.
+- Save the tag.
+
+<span class="section-header">3. Create a Conversion Event in Quora Ads</span>
+- Go back to Quora Ads Manager and navigate to the "Pixels" section.
+- Click on "Create Event" under the pixel you just created.
+- Name your conversion event (e.g., "Purchase").
+- Select the appropriate event type (e.g., "Purchase," "Sign-Up").
+- Set the conversion value and attribution window.
+- Save the conversion event.
+
+<span class="section-header">4. Create Conversion Tags in GTM</span>
+- In GTM, click on "Tags" > "New."
+- Name the tag (e.g., "Quora Purchase Conversion").
+- Click on "Tag Configuration" and choose "Custom HTML."
+- Paste the Quora conversion tracking code into the HTML field.
+- Replace `'YOUR_PIXEL_ID'` with your actual Quora Pixel ID.
+- Add the conversion event parameters (e.g., `window.quoraPixelConversion = window.quoraPixelConversion || []; window.quoraPixelConversion.push({ event: "Purchase", value: 100 });`).
+- Save the tag.
+
+<span class="section-header">5. Set Up Triggers for Conversion Events</span>
+- In GTM, click on "Triggers" > "New."
+- Name the trigger (e.g., "Purchase Event Trigger").
+- Choose the trigger type (e.g., "Page View" for a thank-you page or "Custom Event" for specific actions).
+- Configure the trigger to fire on the desired event (e.g., URL contains `/thank_you` for purchases).
+- Save the trigger and link it to the corresponding conversion tag.
+
+<span class="section-header">6. Test the Implementation</span>
+- Click on "Preview" in GTM to enter Preview Mode.
+- Open your website in a new tab and perform the actions that should trigger the Quora Pixel (e.g., page views, purchases).
+- Check the GTM Preview console to ensure the Quora base pixel and conversion tags are firing correctly.
+- Verify that the correct event parameters are being passed.
+
+<span class="section-header">7. Publish the GTM Container</span>
+- Once testing is complete and everything is working correctly, go back to GTM.
+- Click on "Submit" in the top-right corner to publish your container.
+- Add a version name and description (e.g., "Published Quora Pixel setup").
+- Click "Publish" to make your changes live.
+
+<span class="section-header">8. Monitor and Optimize</span>
+- Regularly check Quora Ads Manager's "Pixels" section to monitor event performance.
+- Use the data to optimize your ad campaigns and improve conversion rates.
+- If necessary, update your GTM tags and triggers to refine event tracking.
+- Stay updated with Quora Pixel documentation for any changes or new features.
+</pre>

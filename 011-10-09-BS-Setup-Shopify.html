@@ -1,0 +1,67 @@
+<pre>
+    <style>
+    .section-header {
+    background-color: Green; /* Green background */
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    display: block;
+    }
+    </style>
+<h1>Detailed Activities For Setting Up Conversion Tracking In Shopify Pixel With GTM</h1>
+<span class="section-header">1. Enable Google Tag Manager in Shopify</span>
+- Log in to your Shopify admin dashboard.
+- Go to "Online Store" > "Themes."
+- Click on "Actions" > "Edit code" for your current theme.
+- Locate the `theme.liquid` file under the "Layout" folder.
+- Paste the GTM container code (from your GTM account) just after the opening `<head>` tag.
+- Save the changes.
+
+<span class="section-header">2. Set Up GTM in Shopify Checkout (For Shopify Plus Only)</span>
+- Log in to your Shopify Plus admin dashboard.
+- Go to "Settings" > "Checkout."
+- Scroll down to the "Additional scripts" section.
+- Paste the GTM container code (from your GTM account) into the "Additional scripts" box.
+- Save the changes.
+
+<span class="section-header">3. Verify GTM Installation</span>
+- Open your website in a new browser tab.
+- Right-click and select "View Page Source."
+- Search for the GTM container code to ensure it is present in the `<head>` section.
+- Use browser extensions like "Tag Assistant" or GTM's Preview Mode to verify the installation.
+
+<span class="section-header">4. Set Up Shopify Pixel for Conversion Tracking</span>
+- Log in to your ad platform (e.g., Facebook, TikTok, Google Ads).
+- Create a new pixel or use an existing one for Shopify conversion tracking.
+- Copy the pixel base code provided by the ad platform.
+
+<span class="section-header">5. Create Conversion Tags in GTM</span>
+- Open Google Tag Manager and select your container.
+- Click on "Tags" > "New."
+- Name the tag (e.g., "Shopify Purchase Pixel").
+- Click on "Tag Configuration" and choose "Custom HTML."
+- Paste the pixel base code into the HTML field.
+- Replace any placeholders (e.g., `'PIXEL_ID'`) with your actual pixel ID.
+- Save the tag.
+
+<span class="section-header">6. Set Up Triggers for Conversion Events</span>
+- In GTM, click on "Triggers" > "New."
+- Name the trigger (e.g., "Purchase Event Trigger").
+- Choose the trigger type (e.g., "Page View" for a thank-you page or "Custom Event" for specific actions).
+- Configure the trigger to fire on the desired event (e.g., URL contains `/thank_you` for purchases).
+- Save the trigger and link it to the corresponding conversion tag.
+
+<span class="section-header">7. Publish and Test</span>
+- Click on "Submit" in GTM to publish your container.
+- Add a version name and description (e.g., "Published Shopify Pixel setup").
+- Use GTM Preview Mode to test the implementation.
+- Perform test conversions (e.g., make a purchase) and verify that the pixel fires correctly.
+- Check the ad platform's event manager to confirm data is being received.
+
+<span class="section-header">8. Monitor Conversions in Ad Platforms</span>
+- Log in to your ad platform (e.g., Facebook Ads Manager, TikTok Ads Manager).
+- Navigate to the "Events Manager" or "Conversion Tracking" section.
+- Monitor the performance of your conversion events.
+- Use the data to optimize your ad campaigns and improve ROI.
+- Regularly check for discrepancies or issues in tracking.
+</pre>

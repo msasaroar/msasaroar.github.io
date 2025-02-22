@@ -1,0 +1,65 @@
+<pre>
+<style>
+    .section-header {
+    background-color: green; /* Green background */
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    display: block;
+    }
+</style>
+<h1>Detailed Activities For Setting Up Conversion Tracking In GA4 With GTM</h1>
+<span class="section-header">1. Set Up GA4 in GTM</span>
+- Create a GA4 property in Google Analytics.
+- Copy the Measurement ID from the GA4 property (Format: G-XXXXXXXXXX).
+- Open Google Tag Manager and create a new tag.
+- Select "Google Analytics: GA4 Configuration" as the tag type.
+- Paste the Measurement ID in the "Measurement ID" field.
+- Set the trigger to "All Pages" to fire the tag on every page.
+- Save the tag and submit the GTM container.
+
+<span class="section-header">2. Define Conversion Events in GA4</span>
+- Navigate to GA4 Admin > Events.
+- Click "Create event" and define a new custom event.
+- Use parameters like "event_name" to define the conversion event.
+- Save and mark the event as a conversion in GA4.
+
+<span class="section-header">3. Create a GA4 Event Tag in GTM</span>
+- Open Google Tag Manager and create a new tag.
+- Choose "Google Analytics: GA4 Event" as the tag type.
+- Select the GA4 Configuration tag as the “Configuration Tag.”
+- Enter a custom event name (e.g., "purchase", "signup").
+- Add event parameters (e.g., transaction_id, value, currency).
+- Save the tag.
+
+<span class="section-header">4. Set Up Triggers in GTM</span>
+- Click "Triggers" in GTM and create a new trigger.
+- Select the appropriate trigger type (e.g., Click, Form Submission, Page View).
+- Define conditions (e.g., URL contains "thank-you", button click ID).
+- Assign the trigger to the GA4 Event Tag.
+- Save the trigger.
+
+<span class="section-header">5. Test in GTM Preview Mode</span>
+- Click "Preview" in Google Tag Manager.
+- Enter your website URL and interact with the conversion action.
+- Verify that the GA4 event tag fires when the action occurs.
+- Check event parameters to ensure they are captured correctly.
+
+<span class="section-header">6. Verify in GA4 Debug View</span>
+- Open Google Analytics and navigate to Admin > DebugView.
+- Trigger the conversion event on your website.
+- Check if the event appears in DebugView with correct parameters.
+- Ensure the event is categorized correctly as a conversion.
+
+<span class="section-header">7. Publish GTM Container</span>
+- If everything works correctly, go back to Google Tag Manager.
+- Click "Submit" and publish the updated GTM container.
+- Document the changes for reference.
+
+<span class="section-header">8. Monitor and Optimize GA4 Tracking</span>
+- Regularly check GA4 reports for conversion tracking accuracy.
+- Use Google Tag Assistant and GA4 DebugView for troubleshooting.
+- Adjust event parameters or triggers as needed.
+- Validate data consistency between GA4 and other analytics tools.
+</pre>
+    

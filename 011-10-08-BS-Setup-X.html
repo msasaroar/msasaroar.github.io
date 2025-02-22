@@ -1,0 +1,66 @@
+<pre>
+    <style>
+    .section-header {
+    background-color: Green; /* Green background */
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    display: block;
+    }
+    </style>
+<h1>Detailed Activities For Setting Up Conversion Tracking In X Pixel With GTM</h1>
+<span class="section-header">1. Create a Twitter Ads Account</span>
+- Go to <a href="https://ads.twitter.com" target="_blank">Twitter Ads</a> and sign up for an account.
+- Complete the onboarding process by providing necessary business details.
+- Verify your email address and set up billing information if required.
+
+<span class="section-header">2. Get Your Twitter Pixel ID</span>
+- Log in to your Twitter Ads account.
+- Navigate to the "Tools" section and click on "Conversion Tracking."
+- Click on "Create a Pixel" to generate a new Twitter Pixel.
+- Name your pixel (e.g., "Website Conversions") and click "Create."
+- Copy the generated Pixel ID from the Pixel Details page.
+
+<span class="section-header">3. Set Up the Twitter Pixel in GTM</span>
+- Open Google Tag Manager and select your container.
+- Click on "Tags" in the left-hand menu, then click "New."
+- Name the tag (e.g., "Twitter Base Pixel").
+- Click on "Tag Configuration" and choose "Custom HTML."
+- Paste the Twitter Pixel base code into the HTML field.
+- Replace `'PIXEL_ID'` in the code with your actual Twitter Pixel ID.
+- Click on "Triggering" and select "All Pages" to fire the tag on every page.
+- Save the tag.
+
+<span class="section-header">4. Set Up a Conversion Event</span>
+- Decide on the conversion event you want to track (e.g., Purchase, Sign-Up, etc.).
+- Identify the specific user action or page that triggers the event (e.g., a thank-you page or button click).
+- Use Twitter's predefined event types or create a custom event if needed.
+
+<span class="section-header">5. Create a GTM Tag for the Conversion Event</span>
+- In GTM, click on "Tags" and then "New."
+- Name the tag (e.g., "Twitter Purchase Event").
+- Click on "Tag Configuration" and choose "Custom HTML."
+- Paste the Twitter event code snippet for the specific conversion event.
+- Replace `'PIXEL_ID'` with your Twitter Pixel ID and add any required event parameters.
+- Set up a trigger for the event (e.g., "Page View" for a thank-you page or "Click" for a button).
+- Save the tag.
+
+<span class="section-header">6. Test the Pixel Implementation</span>
+- Click on "Preview" in GTM to enter Preview Mode.
+- Open your website in a new tab and perform the actions that should trigger the Twitter Pixel (e.g., page views, purchases).
+- Check the GTM Preview console to ensure the Twitter Pixel base code and event tags are firing correctly.
+- Verify that the correct event parameters are being passed.
+
+<span class="section-header">7. Set Up Conversion Tracking in Twitter Ads</span>
+- Go back to Twitter Ads and navigate to "Conversion Tracking."
+- Click on "Create Conversion Event" and select the appropriate event type (e.g., Purchase, Sign-Up).
+- Link the event to your Twitter Pixel.
+- Configure the event settings, such as attribution window and conversion value.
+- Save the conversion event.
+
+<span class="section-header">8. Monitor and Optimize</span>
+- Regularly check Twitter Ads' "Conversion Tracking" dashboard to monitor event performance.
+- Use the data to optimize your ad campaigns and improve conversion rates.
+- If necessary, update your GTM tags and triggers to refine event tracking.
+- Stay updated with Twitter Pixel documentation for any changes or new features.
+</pre>

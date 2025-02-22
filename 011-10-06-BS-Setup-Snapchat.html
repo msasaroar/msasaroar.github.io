@@ -1,0 +1,79 @@
+<pre>
+<style>
+.section-header {
+background-color: Green; /* Green background */
+color: white;
+font-weight: bold;
+padding: 5px;
+display: block;
+}
+</style>
+<h1>Detailed Activities For Setting Up Conversion Tracking In Snapchat Pixel With GTM</h1>
+<span class="section-header">1. Obtain the Snapchat Pixel ID</span>
+- Log in to Snapchat Ads Manager.
+- Navigate to "Events Manager" and select "Snap Pixel".
+- Copy your unique Snapchat Pixel ID.
+
+<span class="section-header">2. Set Up the Snapchat Pixel Base Code in GTM</span>
+- Open Google Tag Manager and create a new tag.
+- Choose "Custom HTML" as the tag type.
+- Paste the following Snapchat base pixel code inside the tag:
+    ```html
+    &lt;script&gt;
+    (function(e,t,n){if(!e.snaptr){var a=e.snaptr=function(){a.handleRequest?a.handleRequest.apply(a,arguments):a.queue.push(arguments)};a.queue=[];var s=t.createElement("script");s.async=!0,s.src=n;var r=t.getElementsByTagName("script")[0];r.parentNode.insertBefore(s,r)}})(window,document,"https://sc-static.net/scevent.min.js");
+
+    snaptr('init', 'YOUR_PIXEL_ID');
+    snaptr('track', 'PAGE_VIEW');
+    &lt;/script&gt;
+    ```
+- Replace `'YOUR_PIXEL_ID'` with your actual Snapchat Pixel ID.
+- Set the trigger to "All Pages" so the base pixel fires on every page.
+- Save the tag.
+
+<span class="section-header">3. Create a Conversion Event in GTM</span>
+- Create a new tag in GTM.
+- Select "Custom HTML" as the tag type.
+- Paste the Snapchat event tracking script inside the tag.
+- Modify the script to track the desired conversion event.
+- Example for a "Purchase" event:
+    ```html
+    &lt;script&gt;
+    snaptr('track', 'PURCHASE', {
+    'currency': 'USD',
+    'price': 49.99
+    });
+    &lt;/script&gt;
+    ```
+- Save the tag.
+
+<span class="section-header">4. Set Up Standard or Custom Events</span>
+- Click "Triggers" in GTM and create a new trigger.
+- Choose an appropriate trigger type (e.g., Click, Form Submission, Page View).
+- Define trigger conditions, such as:
+    - "Page URL contains /thank-you" (for form submission tracking).
+    - "Click ID equals 'purchase-button'" (for tracking button clicks).
+- Assign the trigger to the Snapchat event tag.
+- Save the trigger.
+
+<span class="section-header">5. Test in GTM Preview Mode</span>
+- Click "Preview" in Google Tag Manager.
+- Enter your website URL and perform the conversion action.
+- Check the GTM Debug Console to ensure the Snapchat event fires.
+- Use the Snapchat Pixel Helper Chrome Extension to verify tracking.
+
+<span class="section-header">6. Verify in Snapchat Events Manager</span>
+- Go to Snapchat Ads Manager and open "Events Manager".
+- Check if the event appears in the event logs.
+- Review real-time event tracking and ensure parameters are correct.
+
+<span class="section-header">7. Publish GTM Container</span>
+- If everything works correctly, go back to Google Tag Manager.
+- Click "Submit" and publish the updated GTM container.
+- Document the changes for reference.
+
+<span class="section-header">8. Monitor and Optimize</span>
+- Regularly check Snapchat Events Manager for tracking accuracy.
+- Use Snapchat Pixel Helper to debug any tracking issues.
+- Adjust event parameters or triggers as needed.
+- Compare Snapchat conversion data with GA4 and other analytics tools for consistency.
+</pre>
