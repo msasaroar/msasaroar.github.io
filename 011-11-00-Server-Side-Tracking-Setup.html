@@ -35,48 +35,6 @@
 </pre>
 
 
-<h3 id="SS-Conversion-Tracking-GA4">01. Activities for setting up Server Side Conversion Tracking in Google Analytics 4 with GTM</h3>
-<pre>
-1. Set Up a Server Container in GTM:
-Go to Google Tag Manager.
-Create a new Server container.
-Deploy it on Google Cloud or another server.
-
-2. Configure Google Cloud for GTM Server:
-Create a new Google Cloud project.
-Enable Cloud Run and App Engine.
-Deploy the GTM server container.
-
-3. Update GA4 to Use Server-Side Tracking:
-Modify GA4 event tags in the web GTM container.
-Change the destination to your server container URL.
-
-4. Configure Event Forwarding in the Server Container:
-Create a GA4 Client in the server GTM container.
-Create a GA4 event tag to forward data to GA4.
-Ensure the event data is sent correctly.
-
-5. Set Up Custom Domains for the GTM Server:
-Configure a custom subdomain (e.g., analytics.yourdomain.com).
-Update DNS settings to point to the Cloud Run instance.
-
-6. Modify Web GTM Tags for Server-Side:
-Update GA4 tags to send data to the new GTM server endpoint.
-Test and verify data is flowing correctly.
-
-7. Set Up Conversion Tracking:
-Define custom conversions in GA4.
-Ensure conversion events are correctly forwarded from the server container.
-
-8. Test the Implementation:
-Use Google Tag Assistant and Debug Mode in GTM.
-Check the GA4 DebugView to ensure data accuracy.
-
-9. Optimize and Maintain:
-Regularly monitor data quality.
-Optimize for performance and cost by filtering unwanted requests.
-</pre>
-
 <h3 id="SS-Conversion-Tracking-GAds">02. Activities for setting up Server Side Conversion Tracking in Google Ads with GTM</h3>
 <pre>
 1. Set Up a Server Container in GTM:
