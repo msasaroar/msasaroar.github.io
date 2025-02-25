@@ -114,24 +114,5 @@
         <div class="success-message" id="successMessage">Thank you for subscribing!</div>
     </div>
 
-    <script>
-        document.getElementById('subscribeForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the form from submitting
-
-            // Get the email value
-            const email = document.getElementById('email').value;
-
-            // Log the "subscribe" event to GA4
-            gtag('event', 'subscribe', {
-                'email': email // Optional: You can pass the email as a parameter
-            });
-
-            // Show success message
-            document.getElementById('successMessage').style.display = 'block';
-
-            // Clear the input field
-            document.getElementById('email').value = '';
-        });
-    </script>
 </body>
 </html>
