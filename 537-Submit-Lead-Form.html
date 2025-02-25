@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subscribe Event Demo - GA4</title>
-    
+    <title>Submit Lead Form - GA4 Event</title>
+
     <!-- Google Tag Manager -->
     <script>
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
@@ -22,7 +22,7 @@
             margin: 0;
             padding: 0;
             text-align: center;
-            background: linear-gradient(to right, green, blue);
+            background: linear-gradient(to right, #6a11cb, #2575fc);
             color: white;
         }
 
@@ -35,7 +35,7 @@
             font-weight: bold;
         }
 
-        /* Subscription Card */
+        /* Lead Form Container */
         .container {
             display: flex;
             justify-content: center;
@@ -43,7 +43,7 @@
             height: 80vh;
         }
 
-        .subscribe-box {
+        .lead-form-box {
             background: green;
             color: black;
             padding: 30px;
@@ -54,15 +54,15 @@
             transition: transform 0.3s ease-in-out;
         }
 
-        .subscribe-box:hover {
+        .lead-form-box:hover {
             transform: scale(1.05);
         }
 
-        .subscribe-box h2 {
+        .lead-form-box h2 {
             margin-bottom: 15px;
         }
 
-        .subscribe-input {
+        .lead-input {
             width: 90%;
             padding: 10px;
             margin: 10px 0;
@@ -71,7 +71,7 @@
             font-size: 16px;
         }
 
-        .subscribe-btn {
+        .lead-btn {
             background: orange;
             color: blue;
             border: none;
@@ -83,7 +83,7 @@
             transition: 0.3s;
         }
 
-        .subscribe-btn:hover {
+        .lead-btn:hover {
             background: blue;
             color: orange;
         }
@@ -109,15 +109,17 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <header>
-        Subscribe to Our Newsletter
+        Submit Your Lead Information
     </header>
 
     <div class="container">
-        <div class="subscribe-box">
-            <h2>Stay Updated!</h2>
-            <p>Subscribe to our newsletter and never miss an update.</p>
-            <input type="email" class="subscribe-input" id="email" placeholder="Enter your email">
-            <button class="subscribe-btn" onclick="subscribe()">Subscribe</button>
+        <div class="lead-form-box">
+            <h2>Get in Touch</h2>
+            <p>Fill in your details and we'll contact you soon.</p>
+            <input type="text" class="lead-input" id="name" placeholder="Enter your name">
+            <input type="email" class="lead-input" id="email" placeholder="Enter your email">
+            <input type="text" class="lead-input" id="phone" placeholder="Enter your phone number">
+            <button class="lead-btn" onclick="submitLeadForm()">Submit</button>
         </div>
     </div>
 
@@ -126,23 +128,26 @@
     </footer>
 
     <script>
-        function subscribe() {
+        function submitLeadForm() {
+            var name = document.getElementById("name").value;
             var email = document.getElementById("email").value;
-            
-            if(email.trim() === "") {
-                alert("Please enter a valid email!");
+            var phone = document.getElementById("phone").value;
+
+            if (name.trim() === "" || email.trim() === "" || phone.trim() === "") {
+                alert("Please fill in all fields before submitting.");
                 return;
             }
 
             // Push event to GTM's dataLayer
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
-                'event': 'subscribe',
-                'subscription_type': 'newsletter',
-                'email': email
+                'event': 'generate_lead',
+                'lead_name': name,
+                'lead_email': email,
+                'lead_phone': phone
             });
 
-            alert("Thank you for subscribing! Event sent to GA4.");
+            alert("Lead form submitted! Event sent to GA4.");
         }
     </script>
 
