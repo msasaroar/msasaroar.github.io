@@ -1,111 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Request a Quote</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
-      color: #333;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-    .container {
-      background: white;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      max-width: 400px;
-      width: 100%;
-      text-align: center;
-    }
-    h1 {
-      color: #ff6f61;
-      margin-bottom: 1.5rem;
-    }
-    label {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-weight: bold;
-    }
-    input, textarea {
-      width: 100%;
-      padding: 0.5rem;
-      margin-bottom: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 1rem;
-    }
-    button {
-      background: #ff6f61;
-      color: white;
-      border: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: 5px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    button:hover {
-      background: #ff3b2f;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request a Quote</title>
+    <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-PPBVCLNF"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            color: black;
+            padding: 50px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #ff5733;
+        }
+        input, button {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background: orange;
+            color: blue;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button:hover {
+            background: blue;
+            color: orange;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Request a Quote</h1>
-    <form id="quoteForm">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
-      
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-      
-      <label for="message">Message:</label>
-      <textarea id="message" name="message" rows="4" required></textarea>
-      
-      <button type="submit">Submit</button>
-    </form>
-  </div>
-
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-
-  <script>
-    // Function to send GA4 event
-    function sendGA4Event() {
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: 'request_quote',
-        user_name: document.getElementById('name').value,
-        user_email: document.getElementById('email').value,
-        message: document.getElementById('message').value
-      });
-    }
-
-    // Attach event listener to form submission
-    document.getElementById('quoteForm').addEventListener('submit', function(event) {
-      event.preventDefault(); // Prevent form submission
-      sendGA4Event(); // Send GA4 event
-      alert('Thank you for requesting a quote! We will get back to you soon.');
-      this.reset(); // Reset the form
-    });
-  </script>
-
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-PPBVCLNF');</script>
-  <!-- End Google Tag Manager -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <div class="container">
+        <h1>Request a Quote</h1>
+        <p>Fill in the details below to get a customized quote.</p>
+        <form id="quoteForm">
+            <input type="text" id="name" placeholder="Your Name" required><br>
+            <input type="email" id="email" placeholder="Your Email" required><br>
+            <input type="text" id="service" placeholder="Service Required" required><br>
+            <button type="submit">Request Quote</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('quoteForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            let name = document.getElementById('name').value;
+            let email = document.getElementById('email').value;
+            let service = document.getElementById('service').value;
+            
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                event: "request_quote",
+                ecommerce: {
+                    items: [{
+                        item_name: service,
+                        item_category: "Service",
+                        price: "TBD",
+                        quantity: 1
+                    }]
+                },
+                user: {
+                    name: name,
+                    email: email
+                }
+            });
+            alert("Quote request submitted!");
+            document.getElementById('quoteForm').reset();
+        });
+    </script>
 </body>
 </html>
