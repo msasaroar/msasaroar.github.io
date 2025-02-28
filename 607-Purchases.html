@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Purchase Event - GA4 Demo</title>
+    <title>Purchase Event - GA4</title>
 
     <!-- Google Tag Manager -->
     <script>
@@ -23,17 +23,16 @@
             padding: 0;
             text-align: center;
             background: linear-gradient(to right, #ff7e5f, #feb47b);
-            color: white;
+            color: black;
         }
 
         /* Header */
         header {
-            background: #4CAF50;
+            background: green;
             padding: 20px;
             text-align: center;
-            font-size: 28px;
+            font-size: 24px;
             font-weight: bold;
-            color: white;
         }
 
         /* Cart Container */
@@ -42,73 +41,104 @@
             justify-content: center;
             align-items: flex-start;
             flex-wrap: wrap;
-            margin-top: 30px;
-            gap: 30px;
+            padding: 40px 10px;
         }
 
-        /* Individual Product Card */
-        .product-card {
+        .product {
             background: white;
             color: black;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            width: 250px;
             padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             text-align: center;
+            width: 250px;
             transition: transform 0.3s ease-in-out;
         }
 
-        .product-card:hover {
+        .product:hover {
             transform: scale(1.05);
         }
 
-        .product-card img {
+        .product img {
             width: 100%;
-            border-radius: 8px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
         }
 
-        .product-name {
+        .product h3 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .product p {
+            color: #ff5e62;
             font-size: 18px;
             font-weight: bold;
         }
 
-        .product-price {
-            font-size: 20px;
-            color: #FF7E5F;
-            margin-top: 10px;
-        }
-
-        .product-btn {
-            background: #FF7E5F;
-            color: white;
-            padding: 12px;
+        .add-to-cart-btn {
+            background: orange;
+            color: blue;
             border: none;
+            padding: 12px 20px;
             font-size: 16px;
-            border-radius: 5px;
+            font-weight: bold;
             cursor: pointer;
-            margin-top: 15px;
-            transition: background-color 0.3s;
+            border-radius: 5px;
+            transition: 0.3s;
         }
 
-        .product-btn:hover {
-            background: #FEB47B;
+        .add-to-cart-btn:hover {
+            background: blue;
+            color: orange;
         }
 
-        /* Checkout Button */
-        .checkout-btn {
-            background: #4CAF50;
-            color: white;
-            padding: 15px 30px;
+        /* Cart Details */
+        .cart {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: left;
+        }
+
+        .cart h3 {
+            margin-top: 0;
+        }
+
+        .cart ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .cart li {
+            padding: 5px 0;
+        }
+
+        .cart-total {
             font-size: 20px;
+            color: #ff5e62;
+            font-weight: bold;
+        }
+
+        .checkout-btn {
+            background: green;
+            color: white;
             border: none;
+            padding: 12px 20px;
+            font-size: 18px;
+            font-weight: bold;
             cursor: pointer;
             border-radius: 5px;
-            margin-top: 40px;
-            transition: background-color 0.3s;
+            transition: 0.3s;
         }
 
         .checkout-btn:hover {
-            background: #388E3C;
+            background: darkgreen;
         }
 
         /* Footer */
@@ -132,77 +162,94 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <header>
-        Online Store - Cart & Purchase Demo
+        Shop Your Favorite Products
     </header>
 
     <div class="container">
         <!-- Product 1 -->
-        <div class="product-card" id="product1">
-            <img src="https://via.placeholder.com/250x200?text=Product+1" alt="Product 1">
-            <div class="product-name">Product 1</div>
-            <div class="product-price">$29.99</div>
-            <button class="product-btn" onclick="addToCart('Product 1', 29.99)">Add to Cart</button>
+        <div class="product" id="product1">
+            <img src="https://via.placeholder.com/250x200" alt="Product 1">
+            <h3>Product 1</h3>
+            <p>$30.00</p>
+            <button class="add-to-cart-btn" onclick="addToCart('Product 1', 30.00)">Add to Cart</button>
         </div>
 
         <!-- Product 2 -->
-        <div class="product-card" id="product2">
-            <img src="https://via.placeholder.com/250x200?text=Product+2" alt="Product 2">
-            <div class="product-name">Product 2</div>
-            <div class="product-price">$49.99</div>
-            <button class="product-btn" onclick="addToCart('Product 2', 49.99)">Add to Cart</button>
+        <div class="product" id="product2">
+            <img src="https://via.placeholder.com/250x200" alt="Product 2">
+            <h3>Product 2</h3>
+            <p>$45.00</p>
+            <button class="add-to-cart-btn" onclick="addToCart('Product 2', 45.00)">Add to Cart</button>
         </div>
 
         <!-- Product 3 -->
-        <div class="product-card" id="product3">
-            <img src="https://via.placeholder.com/250x200?text=Product+3" alt="Product 3">
-            <div class="product-name">Product 3</div>
-            <div class="product-price">$19.99</div>
-            <button class="product-btn" onclick="addToCart('Product 3', 19.99)">Add to Cart</button>
+        <div class="product" id="product3">
+            <img src="https://via.placeholder.com/250x200" alt="Product 3">
+            <h3>Product 3</h3>
+            <p>$25.00</p>
+            <button class="add-to-cart-btn" onclick="addToCart('Product 3', 25.00)">Add to Cart</button>
         </div>
     </div>
 
-    <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+    <div class="cart">
+        <h3>Your Cart</h3>
+        <ul id="cart-items">
+            <!-- Cart items will be displayed here -->
+        </ul>
+        <p class="cart-total">Total: $<span id="total-amount">0.00</span></p>
+        <button class="checkout-btn" onclick="checkout()">Checkout</button>
+    </div>
 
     <footer>
-        © 2025 Your Store. All rights reserved.
+        © 2025 Your Website. All rights reserved.
     </footer>
 
     <script>
-        // Store cart items
-        let cart = [];
+        var cart = [];
+        var totalAmount = 0;
 
-        // Add item to the cart
-        function addToCart(productName, productPrice) {
-            cart.push({ name: productName, price: productPrice });
-            console.log(`Added ${productName} to the cart.`);
+        function addToCart(productName, price) {
+            cart.push({ name: productName, price: price });
+            totalAmount += price;
+
+            // Update cart display
+            var cartItems = document.getElementById("cart-items");
+            cartItems.innerHTML = '';
+            cart.forEach(function(item) {
+                var li = document.createElement('li');
+                li.textContent = item.name + " - $" + item.price;
+                cartItems.appendChild(li);
+            });
+
+            // Update total amount
+            document.getElementById("total-amount").textContent = totalAmount.toFixed(2);
         }
 
-        // Checkout function to trigger GTM event
         function checkout() {
             if (cart.length === 0) {
-                alert("Your cart is empty! Please add products before proceeding.");
+                alert("Your cart is empty!");
                 return;
             }
 
-            // Create a list of products for the purchase event
-            const items = cart.map(item => ({
-                item_name: item.name,
-                price: item.price,
-                quantity: 1
-            }));
-
-            // Push event to GTM's dataLayer
+            // Push purchase event to GTM
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
                 'event': 'purchase',
-                'transaction_id': 'TX12345',  // This should be dynamically generated in a real app
+                'transaction_id': 'TX12345',
                 'affiliation': 'Online Store',
-                'value': cart.reduce((acc, item) => acc + item.price, 0),
+                'value': totalAmount,
                 'currency': 'USD',
-                'items': items
+                'items': cart.map(function(item) {
+                    return {
+                        'item_name': item.name,
+                        'item_id': item.name.toLowerCase().replace(/\s+/g, '-'),
+                        'price': item.price,
+                        'quantity': 1
+                    };
+                })
             });
 
-            alert("Purchase successful! Event sent to GA4.");
+            alert("Purchase completed! Event sent to GA4.");
         }
     </script>
 
