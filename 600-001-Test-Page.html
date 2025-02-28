@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Begin Checkout - GA4 Event</title>
+    <title>Purchase Event - GA4</title>
 
     <!-- Google Tag Manager -->
     <script>
@@ -35,35 +35,41 @@
             font-weight: bold;
         }
 
-        /* Checkout Form Container */
+        /* Product Display Container */
         .container {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 80vh;
+            height: 70vh;
         }
 
-        .checkout-box {
+        .product-box {
             background: white;
             color: black;
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             text-align: center;
-            max-width: 400px;
-            transition: transform 0.3s ease-in-out;
+            max-width: 500px;
         }
 
-        .checkout-box:hover {
-            transform: scale(1.05);
+        .product-box h2 {
+            margin-bottom: 20px;
         }
 
-        .checkout-box h2 {
-            margin-bottom: 15px;
+        .product-image {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .product-details {
+            margin: 20px 0;
         }
 
         .input-field {
-            width: 90%;
+            width: 80%;
             padding: 10px;
             margin: 10px 0;
             border: 1px solid #ccc;
@@ -71,7 +77,7 @@
             font-size: 16px;
         }
 
-        .checkout-btn {
+        .purchase-btn {
             background: orange;
             color: blue;
             border: none;
@@ -83,7 +89,7 @@
             transition: 0.3s;
         }
 
-        .checkout-btn:hover {
+        .purchase-btn:hover {
             background: blue;
             color: orange;
         }
@@ -109,55 +115,59 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <header>
-        Begin Checkout
+        Purchase Event - Demo Page
     </header>
 
     <div class="container">
-        <div class="checkout-box">
-            <h2>Review Your Cart</h2>
-            <p>Enter your details to proceed to checkout.</p>
-
-            <label>Product:</label>
-            <p><strong>Wireless Headphones</strong> - $99.99</p>
-
+        <div class="product-box">
+            <h2>Awesome Product</h2>
+            <img src="https://via.placeholder.com/300" alt="Product Image" class="product-image">
+            <div class="product-details">
+                <p><strong>Price: $29.99</strong></p>
+                <p>Buy now to get this amazing product! Don't miss out!</p>
+            </div>
             <input type="text" class="input-field" id="name" placeholder="Enter your name">
             <input type="email" class="input-field" id="email" placeholder="Enter your email">
             <input type="text" class="input-field" id="address" placeholder="Enter your shipping address">
-
-            <button class="checkout-btn" onclick="beginCheckout()">Proceed to Checkout</button>
+            <button class="purchase-btn" onclick="completePurchase()">Complete Purchase</button>
         </div>
     </div>
 
     <footer>
-        © 2025 Your Website. All rights reserved.
+        © 2025 Your E-Commerce Site. All rights reserved.
     </footer>
 
     <script>
-        function beginCheckout() {
+        function completePurchase() {
             var name = document.getElementById("name").value;
             var email = document.getElementById("email").value;
             var address = document.getElementById("address").value;
 
             if (name.trim() === "" || email.trim() === "" || address.trim() === "") {
-                alert("Please fill in all fields before proceeding.");
+                alert("Please fill in all fields before completing the purchase.");
                 return;
             }
 
-            // Push event to GTM's dataLayer
+            // Push purchase event to GTM's dataLayer
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
-                'event': 'begin_checkout',
+                'event': 'purchase',
+                'transaction_id': 'TX12345', // Unique transaction ID (can be dynamically generated)
+                'affiliation': 'Online Store',
+                'value': 29.99, // Purchase amount
                 'currency': 'USD',
-                'value': 99.99,
                 'items': [{
-                    'item_name': 'Wireless Headphones',
-                    'item_id': 'WH123',
-                    'price': 99.99,
+                    'item_name': 'Awesome Product',
+                    'item_id': 'P12345',
+                    'price': 29.99,
                     'quantity': 1
-                }]
+                }],
+                'customer_name': name,
+                'customer_email': email,
+                'shipping_address': address
             });
 
-            alert("Checkout initiated! Event sent to GA4.");
+            alert("Purchase completed! Event sent to GA4.");
         }
     </script>
 

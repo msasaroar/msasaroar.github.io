@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Purchase Event - GA4</title>
+    <title>Shopping Cart - Purchase Event</title>
 
     <!-- Google Tag Manager -->
     <script>
@@ -22,8 +22,8 @@
             margin: 0;
             padding: 0;
             text-align: center;
-            background: white;
-            color: black;
+            background: linear-gradient(to right, green, blue);
+            color: white;
         }
 
         /* Header */
@@ -39,97 +39,52 @@
         .container {
             display: flex;
             justify-content: center;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            padding: 40px 10px;
+            align-items: center;
+            height: 80vh;
         }
 
-        .product {
-            background:green;
+        .cart-box {
+            background: green;
             color: black;
-            padding: 20px;
-            margin: 10px;
+            padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             text-align: center;
-            width: 250px;
+            max-width: 500px;
             transition: transform 0.3s ease-in-out;
         }
 
-        .product:hover {
+        .cart-box:hover {
             transform: scale(1.05);
         }
 
-        .product img {
+        .cart-box h2 {
+            margin-bottom: 15px;
+        }
+
+        table {
             width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
+            border-collapse: collapse;
+            margin-bottom: 15px;
         }
 
-        .product h3 {
-            font-size: 20px;
-            margin: 10px 0;
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
         }
 
-        .product p {
-            color: #ff5e62;
+        .total {
             font-size: 18px;
             font-weight: bold;
+            margin: 15px 0;
         }
 
-        .add-to-cart-btn {
+        .purchase-btn {
             background: orange;
             color: blue;
             border: none;
             padding: 12px 20px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-
-        .add-to-cart-btn:hover {
-            background: blue;
-            color: orange;
-        }
-
-        /* Cart Details */
-        .cart {
-            background: blue;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            width: 300px;
-            text-align: left;
-        }
-
-        .cart h3 {
-            margin-top: 0;
-        }
-
-        .cart ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .cart li {
-            padding: 5px 0;
-        }
-
-        .cart-total {
-            font-size: 20px;
-            color: red;
-            font-weight: bold;
-        }
-
-        .checkout-btn {
-            background: green;
-            color: white;
-            border: none;
-            padding: 12px 20px;
             font-size: 18px;
             font-weight: bold;
             cursor: pointer;
@@ -137,8 +92,9 @@
             transition: 0.3s;
         }
 
-        .checkout-btn:hover {
-            background: darkgreen;
+        .purchase-btn:hover {
+            background: blue;
+            color: orange;
         }
 
         /* Footer */
@@ -162,42 +118,41 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <header>
-        Shop Your Favorite Products
+        Your Shopping Cart
     </header>
 
     <div class="container">
-        <!-- Product 1 -->
-        <div class="product" id="product1">
-            <img src="https://via.placeholder.com/250x200" alt="Product 1">
-            <h3>Product 1</h3>
-            <p>$30.00</p>
-            <button class="add-to-cart-btn" onclick="addToCart('Product 1', 30.00)">Add to Cart</button>
+        <div class="cart-box">
+            <h2>Review Your Cart</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price ($)</th>
+                        <th>Quantity</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items">
+                    <tr>
+                        <td>Product A</td>
+                        <td class="price">20.00</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>Product B</td>
+                        <td class="price">35.00</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>Product C</td>
+                        <td class="price">15.00</td>
+                        <td>1</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="total">Total: $<span id="total-price">0.00</span></p>
+            <button class="purchase-btn" onclick="purchase()">Complete Purchase</button>
         </div>
-
-        <!-- Product 2 -->
-        <div class="product" id="product2">
-            <img src="https://via.placeholder.com/250x200" alt="Product 2">
-            <h3>Product 2</h3>
-            <p>$45.00</p>
-            <button class="add-to-cart-btn" onclick="addToCart('Product 2', 45.00)">Add to Cart</button>
-        </div>
-
-        <!-- Product 3 -->
-        <div class="product" id="product3">
-            <img src="https://via.placeholder.com/250x200" alt="Product 3">
-            <h3>Product 3</h3>
-            <p>$25.00</p>
-            <button class="add-to-cart-btn" onclick="addToCart('Product 3', 25.00)">Add to Cart</button>
-        </div>
-    </div>
-
-    <div class="cart">
-        <h3>Your Cart</h3>
-        <ul id="cart-items">
-            <!-- Cart items will be displayed here -->
-        </ul>
-        <p class="cart-total">Total: $<span id="total-amount">0.00</span></p>
-        <button class="checkout-btn" onclick="checkout()">Checkout</button>
     </div>
 
     <footer>
@@ -205,48 +160,38 @@
     </footer>
 
     <script>
-        var cart = [];
-        var totalAmount = 0;
-
-        function addToCart(productName, price) {
-            cart.push({ name: productName, price: price });
-            totalAmount += price;
-
-            // Update cart display
-            var cartItems = document.getElementById("cart-items");
-            cartItems.innerHTML = '';
-            cart.forEach(function(item) {
-                var li = document.createElement('li');
-                li.textContent = item.name + " - $" + item.price;
-                cartItems.appendChild(li);
+        // Calculate total price
+        function calculateTotal() {
+            let prices = document.querySelectorAll(".price");
+            let total = 0;
+            prices.forEach(price => {
+                total += parseFloat(price.textContent);
             });
-
-            // Update total amount
-            document.getElementById("total-amount").textContent = totalAmount.toFixed(2);
+            document.getElementById("total-price").textContent = total.toFixed(2);
         }
 
-        function checkout() {
-            if (cart.length === 0) {
-                alert("Your cart is empty!");
-                return;
-            }
+        // Call function to update total price
+        calculateTotal();
 
-            // Push purchase event to GTM
+        function purchase() {
+            let items = [
+                { item_name: "Product A", price: 20.00, quantity: 1 },
+                { item_name: "Product B", price: 35.00, quantity: 2 },
+                { item_name: "Product C", price: 15.00, quantity: 1 }
+            ];
+            let totalValue = parseFloat(document.getElementById("total-price").textContent);
+
+            // Push event to GTM's dataLayer
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
                 'event': 'purchase',
-                'transaction_id': 'TX12345',
+                'transaction_id': 'TXN' + Math.floor(Math.random() * 100000),
                 'affiliation': 'Online Store',
-                'value': totalAmount,
+                'value': totalValue,
                 'currency': 'USD',
-                'items': cart.map(function(item) {
-                    return {
-                        'item_name': item.name,
-                        'item_id': item.name.toLowerCase().replace(/\s+/g, '-'),
-                        'price': item.price,
-                        'quantity': 1
-                    };
-                })
+                'tax': 0,
+                'shipping': 5.00,
+                'items': items
             });
 
             alert("Purchase completed! Event sent to GA4.");
