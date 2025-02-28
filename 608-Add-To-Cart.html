@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Purchase Event - GA4 Demo</title>
+    <title>Add to Cart - GA4 Event</title>
 
     <!-- Google Tag Manager -->
     <script>
@@ -22,93 +22,77 @@
             margin: 0;
             padding: 0;
             text-align: center;
-            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            background: white;
             color: white;
         }
 
         /* Header */
         header {
-            background: #4CAF50;
+            background: green;
             padding: 20px;
             text-align: center;
-            font-size: 28px;
+            font-size: 24px;
             font-weight: bold;
-            color: white;
         }
 
-        /* Cart Container */
+        /* Product Container */
         .container {
             display: flex;
             justify-content: center;
-            align-items: flex-start;
+            align-items: center;
             flex-wrap: wrap;
-            margin-top: 30px;
-            gap: 30px;
+            gap: 20px;
+            padding: 40px;
         }
 
-        /* Individual Product Card */
-        .product-card {
-            background: white;
+        .product-box {
+            background: green;
             color: black;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            width: 250px;
             padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             text-align: center;
+            max-width: 300px;
             transition: transform 0.3s ease-in-out;
         }
 
-        .product-card:hover {
+        .product-box:hover {
             transform: scale(1.05);
         }
 
-        .product-card img {
+        .product-img {
             width: 100%;
-            border-radius: 8px;
+            border-radius: 10px;
         }
 
-        .product-name {
-            font-size: 18px;
+        .product-title {
+            font-size: 20px;
             font-weight: bold;
+            margin: 10px 0;
         }
 
         .product-price {
-            font-size: 20px;
-            color: #FF7E5F;
+            font-size: 18px;
+            color: #ff5e62;
+            font-weight: bold;
+        }
+
+        .cart-btn {
+            background: orange;
+            color: blue;
+            border: none;
+            padding: 12px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
             margin-top: 10px;
         }
 
-        .product-btn {
-            background: #FF7E5F;
-            color: white;
-            padding: 12px;
-            border: none;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 15px;
-            transition: background-color 0.3s;
-        }
-
-        .product-btn:hover {
-            background: #FEB47B;
-        }
-
-        /* Checkout Button */
-        .checkout-btn {
-            background: #4CAF50;
-            color: white;
-            padding: 15px 30px;
-            font-size: 20px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-top: 40px;
-            transition: background-color 0.3s;
-        }
-
-        .checkout-btn:hover {
-            background: #388E3C;
+        .cart-btn:hover {
+            background: blue;
+            color: orange;
         }
 
         /* Footer */
@@ -132,77 +116,56 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <header>
-        Online Store - Cart & Purchase Demo
+        Online Store - Add to Cart Demo
     </header>
 
     <div class="container">
-        <!-- Product 1 -->
-        <div class="product-card" id="product1">
-            <img src="https://via.placeholder.com/250x200?text=Product+1" alt="Product 1">
-            <div class="product-name">Product 1</div>
-            <div class="product-price">$29.99</div>
-            <button class="product-btn" onclick="addToCart('Product 1', 29.99)">Add to Cart</button>
+        <div class="product-box">
+            <img src="product-1.png" class="product-img" alt="Product 1">
+            <div class="product-title">Wireless Headphones</div>
+            <div class="product-price">$99.99</div>
+            <button class="cart-btn" onclick="addToCart('Wireless Headphones', 'electronics', 'WH123', 99.99)">Add to Cart</button>
         </div>
 
-        <!-- Product 2 -->
-        <div class="product-card" id="product2">
-            <img src="https://via.placeholder.com/250x200?text=Product+2" alt="Product 2">
-            <div class="product-name">Product 2</div>
-            <div class="product-price">$49.99</div>
-            <button class="product-btn" onclick="addToCart('Product 2', 49.99)">Add to Cart</button>
+        <div class="product-box">
+            <img src="product-2.png" class="product-img" alt="Product 2">
+            <div class="product-title">Smartwatch</div>
+            <div class="product-price">$149.99</div>
+            <button class="cart-btn" onclick="addToCart('Smartwatch', 'wearables', 'SW456', 149.99)">Add to Cart</button>
         </div>
 
-        <!-- Product 3 -->
-        <div class="product-card" id="product3">
-            <img src="https://via.placeholder.com/250x200?text=Product+3" alt="Product 3">
-            <div class="product-name">Product 3</div>
-            <div class="product-price">$19.99</div>
-            <button class="product-btn" onclick="addToCart('Product 3', 19.99)">Add to Cart</button>
+        <div class="product-box">
+            <img src="product-3.png" class="product-img" alt="Product 3">
+            <div class="product-title">Bluetooth Speaker</div>
+            <div class="product-price">$79.99</div>
+            <button class="cart-btn" onclick="addToCart('Bluetooth Speaker', 'electronics', 'BS789', 79.99)">Add to Cart</button>
         </div>
     </div>
 
-    <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
-
     <footer>
-        © 2025 Your Store. All rights reserved.
+        © 2025 Your Website. All rights reserved.
     </footer>
 
     <script>
-        // Store cart items
-        let cart = [];
-
-        // Add item to the cart
-        function addToCart(productName, productPrice) {
-            cart.push({ name: productName, price: productPrice });
-            console.log(`Added ${productName} to the cart.`);
-        }
-
-        // Checkout function to trigger GTM event
-        function checkout() {
-            if (cart.length === 0) {
-                alert("Your cart is empty! Please add products before proceeding.");
-                return;
-            }
-
-            // Create a list of products for the purchase event
-            const items = cart.map(item => ({
-                item_name: item.name,
-                price: item.price,
-                quantity: 1
-            }));
-
+        function addToCart(itemName, itemCategory, itemId, itemPrice) {
             // Push event to GTM's dataLayer
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
-                'event': 'purchase',
-                'transaction_id': 'TX12345',  // This should be dynamically generated in a real app
-                'affiliation': 'Online Store',
-                'value': cart.reduce((acc, item) => acc + item.price, 0),
-                'currency': 'USD',
-                'items': items
+                'event': 'add_to_cart',
+                'ecommerce': {
+                    'currency': 'USD',
+                    'value': itemPrice,
+                    'items': [{
+                        'item_name': itemName,
+                        'item_id': itemId,
+                        'price': itemPrice,
+                        'item_category': itemCategory,
+                        'quantity': 1
+                    }]
+                }
             });
 
-            alert("Purchase successful! Event sent to GA4.");
+            alert(itemName + " has been added to cart! Event sent to GA4.");
         }
     </script>
 
