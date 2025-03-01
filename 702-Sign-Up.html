@@ -141,10 +141,6 @@
                 user_email: userEmail
             });
 
-            // Fire LinkedIn Conversion Event
-            window.lintrk = window.lintrk || function() { (window.lintrk.q = window.lintrk.q || []).push(arguments); };
-            lintrk('track', { conversion_id: "YOUR_CONVERSION_ID" });
-
             alert("Sign-up event tracked successfully! Check GA4 and LinkedIn.");
         });
     </script>
