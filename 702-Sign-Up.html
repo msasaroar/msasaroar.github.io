@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LinkedIn Insight Tag - Page View Event (GA4 Schema)</title>
+    <title>LinkedIn Insight Tag - GA4 Sign Up Event</title>
     
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=GTM-PPBVCLNF'+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPBVCLNF');</script>
@@ -35,7 +35,7 @@
 
         /* Main Container */
         .container {
-            margin-top: 100px;
+            margin-top: 120px;
             padding: 20px;
         }
 
@@ -50,6 +50,16 @@
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
             font-size: 18px;
+        }
+
+        /* Form Styling */
+        .input-field {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
         }
 
         /* Button Styling */
@@ -93,36 +103,50 @@
 
     <!-- Header -->
     <header>
-        LinkedIn Insight Tag - Page View Event (GA4 Schema)
+        LinkedIn Insight Tag - GA4 Sign Up Event
     </header>
 
     <!-- Main Content -->
     <div class="container">
         <div class="card">
-            <p>Welcome! This page demonstrates the <strong>"Page View"</strong> event using Google Analytics 4 (GA4) schema, tracked via Google Tag Manager and LinkedIn Insight Tag.</p>
-            <button class="btn" onclick="exploreMore()">Explore More</button>
+            <p>Fill out the form below to sign up and see how GA4 & LinkedIn Insight Tag track the event.</p>
+            
+            <form id="signupForm">
+                <input type="text" class="input-field" id="name" placeholder="Your Name" required>
+                <input type="email" class="input-field" id="email" placeholder="Your Email" required>
+                <button type="submit" class="btn" id="signupBtn">Sign Up</button>
+            </form>
         </div>
     </div>
 
     <!-- Footer -->
     <footer>
-        Tracking powered by GTM, GA4 & LinkedIn Insight Tag.
+        Tracking powered by GA4, GTM & LinkedIn Insight Tag.
     </footer>
 
     <script>
-        // Push Page View Event to GTM Data Layer
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-            event: "page_view",
-            page_location: window.location.href,
-            page_path: window.location.pathname,
-            page_title: document.title
-        });
+        document.getElementById("signupForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            // Capture form values
+            let userName = document.getElementById("name").value;
+            let userEmail = document.getElementById("email").value;
 
-        // Button Click Tracking (for future expansion)
-        function exploreMore() {
-            alert("Explore More button clicked! You can track this event using GTM.");
-        }
+            // Push GA4 Event to GTM Data Layer
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                event: "sign_up",
+                method: "form_submission",
+                user_name: userName,
+                user_email: userEmail
+            });
+
+            // Fire LinkedIn Conversion Event
+            window.lintrk = window.lintrk || function() { (window.lintrk.q = window.lintrk.q || []).push(arguments); };
+            lintrk('track', { conversion_id: "YOUR_CONVERSION_ID" });
+
+            alert("Sign-up event tracked successfully! Check GA4 and LinkedIn.");
+        });
     </script>
 
 </body>
