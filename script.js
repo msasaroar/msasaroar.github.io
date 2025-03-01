@@ -13,6 +13,7 @@ function openFile(fileName) {
   function navigateToURL(recommendedEventName) {
     const baseURL = "https://developers.google.com/analytics/devguides/collection/ga4/reference/events?client_type=gtm#";
     const finalURL = baseURL + recommendedEventName;
+    //alert(finalURL);
     window.location.href = finalURL;
 }
 
