@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Insight Tag - GA4 Content View Event</title>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=GTM-PPBVCLNF'+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPBVCLNF');</script>
+    <!-- End Google Tag Manager -->
+
+    <style>
+        /* Full Page Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background: linear-gradient(to right, green, orange, blue);
+            color: white;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: green;
+            padding: 15px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            font-size: 24px;
+            font-weight: bold;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Main Content */
+        .container {
+            margin-top: 120px;
+            padding: 20px;
+        }
+
+        /* Card Styling */
+        .card {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: black;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            font-size: 18px;
+        }
+
+        /* Footer */
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(241, 241, 241, 0.9);
+            text-align: center;
+            padding: 10px;
+            color: black;
+            font-weight: bold;
+            box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Header -->
+    <header>
+        LinkedIn Insight Tag - GA4 Content View Event
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="card">
+            <h2>Understanding the Power of Digital Marketing</h2>
+            <p>Learn how digital marketing strategies can transform businesses in the modern world. This article covers SEO, PPC, social media marketing, and more.</p>
+            <p><strong>Category:</strong> Digital Marketing</p>
+            <p><strong>Content ID:</strong> DM101</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        Tracking powered by GA4, GTM & LinkedIn Insight Tag.
+    </footer>
+
+    <script>
+        // Define content metadata
+        let contentType = "Article";
+        let contentId = "DM101";
+
+        // Push GA4 Event to GTM Data Layer
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: "view_content",
+            content_type: contentType,
+            content_id: contentId
+        });
+
+    </script>
+
+</body>
+</html>
