@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta Pixel - Add Payment Info</title>
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id=GTM-PPBVCLNF'+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PPBVCLNF');</script>
+    <!-- End Google Tag Manager -->
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+            color: white;
+        }
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+        input {
+            background: white;
+            color: black;
+        }
+        button {
+            background: orange;
+            color: blue;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button:hover {
+            background: blue;
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <div class="container">
+        <h1>Add Payment Info</h1>
+        <form id="paymentForm">
+            <input type="text" id="cardNumber" placeholder="Card Number" required><br>
+            <input type="text" id="expiryDate" placeholder="Expiry Date (MM/YY)" required><br>
+            <input type="text" id="cvv" placeholder="CVV" required><br>
+            <button type="submit">Submit Payment</button>
+        </form>
+    </div>
+    
+    <script>
+        document.getElementById('paymentForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent actual form submission
+            
+            // Send "AddPaymentInfo" event to Meta Pixel via GTM
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'AddPaymentInfo',
+                'content_category': 'Subscription',
+                'content_ids': ['12345'],
+                'content_name': 'Premium Membership',
+                'content_type': 'Digital',
+                'currency': 'USD',
+                'value': 49.99
+            });
+            
+            alert("Payment Info Added! Event Sent to Meta Pixel via GTM.");
+        });
+    </script>
+</body>
+</html>
