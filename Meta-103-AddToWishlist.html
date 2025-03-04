@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meta Pixel Event: AddPaymentInfo</title>
+    <title>Meta Pixel Event: AddToWishlist</title>
 
     <!-- External CSS (for Facebook-like look & feel) -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
@@ -69,7 +69,7 @@
 </head>
 <body>
     <header>
-        <h1>Meta Pixel Event: AddPaymentInfo</h1>
+        <h1>Meta Pixel Event: AddToWishlist</h1>
     </header>
 
     <div class="container">
@@ -81,8 +81,8 @@
         </div>
         
         <div class="parameter">
-            <label for="content_type">Content Type:</label>
-            <span id="content_type" class="parameter-value">product</span>
+            <label for="contents">Contents:</label>
+            <span id="contents" class="parameter-value">Product A, Product B</span>
         </div>
 
         <div class="parameter">
@@ -92,10 +92,10 @@
 
         <div class="parameter">
             <label for="value">Value:</label>
-            <span id="value" class="parameter-value">$100.00</span>
+            <span id="value" class="parameter-value">$250.00</span>
         </div>
 
-        <button class="button" id="trigger-event">Submit Payment Info</button>
+        <button class="button" id="trigger-event">Add To Wishlist</button>
     </div>
 
     <footer>
@@ -105,17 +105,20 @@
     <!-- Google Tag Manager (GTM) code (to be added to the GTM setup) -->
     <script>
         document.getElementById('trigger-event').addEventListener('click', function() {
-            // Simulate firing the Meta Pixel AddPaymentInfo event
+            // Simulate firing the Meta Pixel AddToWishlist event
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
-                event: 'AddPaymentInfo',
+                event: 'AddToWishlist',
                 content_ids: ['12345', '67890'],
-                content_type: 'product',
+                contents: [
+                    { id: '12345', name: 'Product A', quantity: 1, price: 100.00 },
+                    { id: '67890', name: 'Product B', quantity: 1, price: 150.00 }
+                ],
                 currency: 'USD',
-                value: 100.00
+                value: 250.00
             });
 
-            alert('Meta Pixel Event "AddPaymentInfo" fired!');
+            alert('Meta Pixel Event "AddToWishlist" fired!');
         });
     </script>
 </body>

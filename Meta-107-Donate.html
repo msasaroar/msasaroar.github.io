@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meta Pixel Event: AddPaymentInfo</title>
+    <title>Meta Pixel Event: Donate</title>
 
     <!-- External CSS (for Facebook-like look & feel) -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
@@ -69,33 +69,28 @@
 </head>
 <body>
     <header>
-        <h1>Meta Pixel Event: AddPaymentInfo</h1>
+        <h1>Meta Pixel Event: Donate</h1>
     </header>
 
     <div class="container">
         <h2>Simulating Data Entry</h2>
         
         <div class="parameter">
-            <label for="content_ids">Content IDs:</label>
-            <span id="content_ids" class="parameter-value">12345, 67890</span>
+            <label for="value">Value:</label>
+            <span id="value" class="parameter-value">$50.00</span>
         </div>
         
-        <div class="parameter">
-            <label for="content_type">Content Type:</label>
-            <span id="content_type" class="parameter-value">product</span>
-        </div>
-
         <div class="parameter">
             <label for="currency">Currency:</label>
             <span id="currency" class="parameter-value">USD</span>
         </div>
 
         <div class="parameter">
-            <label for="value">Value:</label>
-            <span id="value" class="parameter-value">$100.00</span>
+            <label for="donation_type">Donation Type:</label>
+            <span id="donation_type" class="parameter-value">One-time</span>
         </div>
 
-        <button class="button" id="trigger-event">Submit Payment Info</button>
+        <button class="button" id="trigger-event">Donate</button>
     </div>
 
     <footer>
@@ -105,17 +100,16 @@
     <!-- Google Tag Manager (GTM) code (to be added to the GTM setup) -->
     <script>
         document.getElementById('trigger-event').addEventListener('click', function() {
-            // Simulate firing the Meta Pixel AddPaymentInfo event
+            // Simulate firing the Meta Pixel Donate event
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
-                event: 'AddPaymentInfo',
-                content_ids: ['12345', '67890'],
-                content_type: 'product',
+                event: 'Donate',
+                value: 50.00,
                 currency: 'USD',
-                value: 100.00
+                donation_type: 'One-time'
             });
 
-            alert('Meta Pixel Event "AddPaymentInfo" fired!');
+            alert('Meta Pixel Event "Donate" fired!');
         });
     </script>
 </body>

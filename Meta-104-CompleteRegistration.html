@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meta Pixel Event: AddPaymentInfo</title>
+    <title>Meta Pixel Event: CompleteRegistration</title>
 
     <!-- External CSS (for Facebook-like look & feel) -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
@@ -69,33 +69,33 @@
 </head>
 <body>
     <header>
-        <h1>Meta Pixel Event: AddPaymentInfo</h1>
+        <h1>Meta Pixel Event: CompleteRegistration</h1>
     </header>
 
     <div class="container">
         <h2>Simulating Data Entry</h2>
         
         <div class="parameter">
-            <label for="content_ids">Content IDs:</label>
-            <span id="content_ids" class="parameter-value">12345, 67890</span>
+            <label for="value">Value:</label>
+            <span id="value" class="parameter-value">$100.00</span>
         </div>
         
-        <div class="parameter">
-            <label for="content_type">Content Type:</label>
-            <span id="content_type" class="parameter-value">product</span>
-        </div>
-
         <div class="parameter">
             <label for="currency">Currency:</label>
             <span id="currency" class="parameter-value">USD</span>
         </div>
 
         <div class="parameter">
-            <label for="value">Value:</label>
-            <span id="value" class="parameter-value">$100.00</span>
+            <label for="content_name">Content Name:</label>
+            <span id="content_name" class="parameter-value">User Registration</span>
         </div>
 
-        <button class="button" id="trigger-event">Submit Payment Info</button>
+        <div class="parameter">
+            <label for="status">Status:</label>
+            <span id="status" class="parameter-value">Completed</span>
+        </div>
+
+        <button class="button" id="trigger-event">Complete Registration</button>
     </div>
 
     <footer>
@@ -105,17 +105,17 @@
     <!-- Google Tag Manager (GTM) code (to be added to the GTM setup) -->
     <script>
         document.getElementById('trigger-event').addEventListener('click', function() {
-            // Simulate firing the Meta Pixel AddPaymentInfo event
+            // Simulate firing the Meta Pixel CompleteRegistration event
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
-                event: 'AddPaymentInfo',
-                content_ids: ['12345', '67890'],
-                content_type: 'product',
+                event: 'CompleteRegistration',
+                value: 100.00,
                 currency: 'USD',
-                value: 100.00
+                content_name: 'User Registration',
+                status: 'Completed'
             });
 
-            alert('Meta Pixel Event "AddPaymentInfo" fired!');
+            alert('Meta Pixel Event "CompleteRegistration" fired!');
         });
     </script>
 </body>

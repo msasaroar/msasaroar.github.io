@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meta Pixel Event: AddPaymentInfo</title>
+    <title>Meta Pixel Event: CustomizeProduct</title>
 
     <!-- External CSS (for Facebook-like look & feel) -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
@@ -69,20 +69,35 @@
 </head>
 <body>
     <header>
-        <h1>Meta Pixel Event: AddPaymentInfo</h1>
+        <h1>Meta Pixel Event: CustomizeProduct</h1>
     </header>
 
     <div class="container">
         <h2>Simulating Data Entry</h2>
         
         <div class="parameter">
-            <label for="content_ids">Content IDs:</label>
-            <span id="content_ids" class="parameter-value">12345, 67890</span>
+            <label for="content_name">Content Name:</label>
+            <span id="content_name" class="parameter-value">Custom T-Shirt</span>
         </div>
         
         <div class="parameter">
+            <label for="content_category">Content Category:</label>
+            <span id="content_category" class="parameter-value">Apparel</span>
+        </div>
+
+        <div class="parameter">
+            <label for="content_ids">Content IDs:</label>
+            <span id="content_ids" class="parameter-value">98765</span>
+        </div>
+
+        <div class="parameter">
             <label for="content_type">Content Type:</label>
-            <span id="content_type" class="parameter-value">product</span>
+            <span id="content_type" class="parameter-value">Product</span>
+        </div>
+
+        <div class="parameter">
+            <label for="value">Value:</label>
+            <span id="value" class="parameter-value">$40.00</span>
         </div>
 
         <div class="parameter">
@@ -90,12 +105,7 @@
             <span id="currency" class="parameter-value">USD</span>
         </div>
 
-        <div class="parameter">
-            <label for="value">Value:</label>
-            <span id="value" class="parameter-value">$100.00</span>
-        </div>
-
-        <button class="button" id="trigger-event">Submit Payment Info</button>
+        <button class="button" id="trigger-event">Customize Product</button>
     </div>
 
     <footer>
@@ -105,17 +115,19 @@
     <!-- Google Tag Manager (GTM) code (to be added to the GTM setup) -->
     <script>
         document.getElementById('trigger-event').addEventListener('click', function() {
-            // Simulate firing the Meta Pixel AddPaymentInfo event
+            // Simulate firing the Meta Pixel CustomizeProduct event
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
-                event: 'AddPaymentInfo',
-                content_ids: ['12345', '67890'],
-                content_type: 'product',
-                currency: 'USD',
-                value: 100.00
+                event: 'CustomizeProduct',
+                content_name: 'Custom T-Shirt',
+                content_category: 'Apparel',
+                content_ids: ['98765'],
+                content_type: 'Product',
+                value: 40.00,
+                currency: 'USD'
             });
 
-            alert('Meta Pixel Event "AddPaymentInfo" fired!');
+            alert('Meta Pixel Event "CustomizeProduct" fired!');
         });
     </script>
 </body>
