@@ -3,111 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LinkedIn Insight Tag - Page View Tracking</title>
+    <title>Meta Pixel - Add Payment Info</title>
     
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=GTM-PPBVCLNF'+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPBVCLNF');</script>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id=GTM-PPBVCLNF'+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PPBVCLNF');</script>
     <!-- End Google Tag Manager -->
-
+    
     <style>
-        /* Full Page Styling */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             text-align: center;
-            background: linear-gradient(to right, green, orange, blue);
-            color: white;
+            background: #f0f2f5;
+            color: #1c1e21;
         }
-
-        /* Header Styling */
-        header {
-            background-color: green;
-            padding: 15px;
-            text-align: center;
-            position: fixed;
-            top: 0;
-            width: 100%;
+        .navbar {
+            background: #1877f2;
+            padding: 10px;
+            color: white;
             font-size: 24px;
             font-weight: bold;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
         }
-
-        /* Main Container */
         .container {
-            margin-top: 100px;
+            max-width: 400px;
+            margin: 50px auto;
             padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
-
-        /* Colorful Card Style */
-        .card {
-            background-color: rgba(255, 255, 255, 0.9);
-            color: black;
-            padding: 20px;
-            margin: 20px auto;
-            width: 80%;
-            max-width: 600px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-            font-size: 18px;
-        }
-
-        /* Button Styling */
-        .btn {
-            background-color: orange;
-            color: blue;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 5px;
-            font-size: 18px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .btn:hover {
-            background-color: blue;
-            color: orange;
-        }
-
-        /* Footer */
-        footer {
-            position: fixed;
-            bottom: 0;
+        input, button {
             width: 100%;
-            background-color: rgba(241, 241, 241, 0.9);
-            text-align: center;
             padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        input {
+            background: white;
             color: black;
+        }
+        button {
+            background: #1877f2;
+            color: white;
             font-weight: bold;
-            box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            border: none;
+        }
+        button:hover {
+            background: #165ecb;
         }
     </style>
 </head>
 <body>
-
     <!-- Google Tag Manager (noscript) -->
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-
-    <!-- Header -->
-    <header>
-        LinkedIn Insight Tag - Page View Event
-    </header>
-
-    <!-- Main Content -->
+    
+    <div class="navbar">Facebook Pay</div>
     <div class="container">
-        <div class="card">
-            <p>Welcome! This page demonstrates how to track the <strong>"Page View"</strong> event using LinkedIn Insight Tag installed via Google Tag Manager.</p>
-            <button class="btn">Explore More</button>
-        </div>
+        <h2>Add Payment Info</h2>
+        <form id="paymentForm">
+            <input type="text" id="cardNumber" placeholder="Card Number" required><br>
+            <input type="text" id="expiryDate" placeholder="Expiry Date (MM/YY)" required><br>
+            <input type="text" id="cvv" placeholder="CVV" required><br>
+            <button type="submit">Submit Payment</button>
+        </form>
     </div>
-
-    <!-- Footer -->
-    <footer>
-        Tracking powered by GTM & LinkedIn Insight Tag.
-    </footer>
-
+    
+    <script>
+        document.getElementById('paymentForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent actual form submission
+            
+            // Send "AddPaymentInfo" event to Meta Pixel via GTM
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'AddPaymentInfo',
+                'content_category': 'Subscription',
+                'content_ids': ['12345'],
+                'content_name': 'Premium Membership',
+                'content_type': 'Digital',
+                'currency': 'USD',
+                'value': 49.99
+            });
+            
+            alert("Payment Info Added! Event Sent to Meta Pixel via GTM.");
+        });
+    </script>
 </body>
 </html>

