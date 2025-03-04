@@ -68,7 +68,12 @@
 
     <script>
         window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({ event: 'PageView' });
+        window.dataLayer.push({
+            'event': 'PageView',
+            'page_location': window.location.href,
+            'page_title': document.title
+        });
     </script>
+    
 </body>
 </html>
