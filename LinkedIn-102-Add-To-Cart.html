@@ -6,70 +6,65 @@
     <title>LinkedIn Insight Tag - Add to Cart Event</title>
     
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=GTM-PPBVCLNF'+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPBVCLNF');</script>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id=GTM-PPBVCLNF'+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PPBVCLNF');</script>
     <!-- End Google Tag Manager -->
 
     <style>
-        /* Full Page Styling */
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
+            background-color: #f1f2f5;
             text-align: center;
-            background: linear-gradient(to right, violet, blue, skyblue, green, yellow, orange, red);
-            color: white;
+            padding: 20px;
         }
-
-        /* Header Styling */
-        header {
-            background-color: green;
+        .header {
+            background-color: #0073b1;
+            color: white;
             padding: 15px;
-            text-align: center;
-            position: fixed;
-            top: 0;
-            width: 100%;
             font-size: 24px;
             font-weight: bold;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
         }
-
-        /* Main Container */
         .container {
-            margin-top: 120px;
-            padding: 20px;
-        }
-
-        /* Product Card */
-        .card {
-            background: linear-gradient(to right,red,orange,yellow,green,skyblue,blue, violet);
-            color: black;
-            padding: 20px;
-            margin: 20px auto;
-            width: 80%;
             max-width: 400px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-            font-size: 18px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            border: 2px solid #0073b1;
         }
-
-        /* Button Styling */
-        .btn {
+        h2 {
+            color: #0073b1;
+        }
+        .data-field {
+            text-align: left;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .label {
+            font-weight: bold;
+            color: #333;
+        }
+        .value {
+            color: #555;
+        }
+        button {
             background-color: orange;
             color: blue;
             padding: 12px 20px;
             border: none;
-            border-radius: 5px;
-            font-size: 18px;
             cursor: pointer;
-            transition: 0.3s;
+            font-size: 18px;
+            border-radius: 5px;
+            margin-top: 20px;
         }
-
-        .btn:hover {
+        button:hover {
             background-color: blue;
             color: orange;
         }
-
-        /* Footer */
         footer {
             position: fixed;
             bottom: 0;
@@ -84,28 +79,20 @@
     </style>
 </head>
 <body>
-
     <!-- Google Tag Manager (noscript) -->
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
+    
+    <div class="header">LinkedIn Insight Tag - Add to Cart Event</div>
 
-    <!-- Header -->
-    <header>
-        LinkedIn Insight Tag - Add to Cart Event
-    </header>
-
-    <!-- Main Content -->
     <div class="container">
-        <div class="card">
-            <h2>Awesome Product</h2>
-            <p>Price: <strong>$20.99</strong></p>
-            <button class="btn" id="addToCartBtn">Add to Cart</button>
+        <h2>Awesome Product</h2>
+        <div class="data-field">
+            <span class="label">Price:</span> <span class="value">$20.99</span>
         </div>
+        <button id="addToCartBtn">Add to Cart</button>
     </div>
 
-    <!-- Footer -->
     <footer>
         Tracking powered by GTM & LinkedIn Insight Tag.
     </footer>
@@ -129,6 +116,5 @@
             alert("Add to Cart event tracked successfully! Check GTM.");
         });
     </script>
-
 </body>
 </html>

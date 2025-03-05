@@ -3,45 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LinkedIn Insight Tag - GA4 Install Event</title>
-
+    <title>LinkedIn Insight Tag - GA4 Download Event</title>
+    
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=GTM-PPBVCLNF'+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPBVCLNF');</script>
     <!-- End Google Tag Manager -->
 
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <style>
-        /* Full Page Styling */
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
+            background-color: #f1f2f5;
             text-align: center;
-            background: linear-gradient(to right, violet, blue, skyblue, green, yellow, orange, red);
-            color: white;
+            padding: 20px;
         }
-
-        /* Header Styling */
-        header {
-            background-color: green;
+        .header {
+            background-color: #0073b1;
+            color: white;
             padding: 15px;
-            text-align: center;
-            position: fixed;
-            top: 0;
-            width: 100%;
             font-size: 24px;
             font-weight: bold;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
         }
-
-        /* Main Content */
         .container {
             margin-top: 120px;
             padding: 20px;
         }
-
-        /* Card Styling */
         .card {
-            background: linear-gradient(to right,red,orange,yellow,green,skyblue,blue, violet);
+            background: linear-gradient(to right, red, orange, yellow, green, skyblue, blue, violet);
             color: black;
             padding: 20px;
             margin: 20px auto;
@@ -51,8 +45,6 @@
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
             font-size: 18px;
         }
-
-        /* Button Styling */
         .btn {
             background-color: orange;
             color: blue;
@@ -65,13 +57,10 @@
             text-decoration: none;
             display: inline-block;
         }
-
         .btn:hover {
             background-color: blue;
             color: orange;
         }
-
-        /* Footer */
         footer {
             position: fixed;
             bottom: 0;
@@ -87,23 +76,17 @@
 </head>
 <body>
 
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
     <!-- Header -->
-    <header>
-        LinkedIn Insight Tag - GA4 Install Event
-    </header>
+    <div class="header">
+        LinkedIn Insight Tag - GA4 Download Event
+    </div>
 
     <!-- Main Content -->
     <div class="container">
         <div class="card">
-            <p>Click the button below to install the app. This will trigger GA4 and LinkedIn tracking.</p>
+            <p>Click the button below to download the file. This will trigger GA4 and LinkedIn tracking.</p>
             
-            <a href="https://play.google.com/store/apps/details?id=com.example.app" class="btn" id="installBtn">Install App</a>
+            <a href="sample.pdf" class="btn" id="downloadBtn" download>Download</a>
         </div>
     </div>
 
@@ -113,25 +96,25 @@
     </footer>
 
     <script>
-        document.getElementById("installBtn").addEventListener("click", function(event) {
-            // Prevent default action (so tracking runs before the install page opens)
+        document.getElementById("downloadBtn").addEventListener("click", function(event) {
+            // Prevent default action (so tracking runs before the file starts downloading)
             event.preventDefault();
 
-            // App details
-            let appName = "Example App";
-            let platform = "Android";
+            // File details
+            let fileName = "sample.pdf";
+            let fileType = "PDF";
 
             // Push GA4 Event to GTM Data Layer
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
-                event: "install",
-                app_name: appName,
-                platform: platform
+                event: "download",
+                file_name: fileName,
+                file_type: fileType
             });
 
-            // Delay before redirecting to the install page
+            // Delay file download to allow tracking to fire
             setTimeout(function() {
-                window.location.href = "https://play.google.com/store/apps/details?id=com.example.app";
+                window.location.href = "sample.pdf";
             }, 500);
         });
     </script>

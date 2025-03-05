@@ -3,45 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LinkedIn Insight Tag - Lead Event Tracking</title>
+    <title>LinkedIn Insight Tag - Purchase Event</title>
     
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=GTM-PPBVCLNF'+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPBVCLNF');</script>
     <!-- End Google Tag Manager -->
 
     <style>
-        /* Full Page Styling */
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
+            background-color: #f1f2f5;
             text-align: center;
-            background: linear-gradient(to right, violet, blue, skyblue, green, yellow, orange, red);
-            color: white;
-        }
-
-        /* Header Styling */
-        header {
-            background-color: green;
-            padding: 15px;
-            text-align: center;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            font-size: 24px;
-            font-weight: bold;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Main Container */
-        .container {
-            margin-top: 120px;
             padding: 20px;
         }
-
-        /* Colorful Card Style */
+        .header {
+            background-color: #0073b1;
+            color: white;
+            padding: 15px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            border: 2px solid #0073b1;
+        }
+        h2 {
+            color: #0073b1;
+        }
         .card {
-            background: linear-gradient(to right,red,orange,yellow,green,skyblue,blue, violet);
+            background: linear-gradient(to right, red, orange, yellow, green, skyblue, blue, violet);
             color: black;
             padding: 20px;
             margin: 20px auto;
@@ -51,18 +46,6 @@
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
             font-size: 18px;
         }
-
-        /* Form Styling */
-        .input-field {
-            width: 80%;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            font-size: 16px;
-        }
-
-        /* Button Styling */
         .btn {
             background-color: orange;
             color: blue;
@@ -73,13 +56,10 @@
             cursor: pointer;
             transition: 0.3s;
         }
-
         .btn:hover {
             background-color: blue;
             color: orange;
         }
-
-        /* Footer */
         footer {
             position: fixed;
             bottom: 0;
@@ -101,44 +81,42 @@
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <!-- Header -->
-    <header>
-        LinkedIn Insight Tag - Lead Event Tracking
-    </header>
+    <div class="header">
+        LinkedIn Insight Tag - Purchase Event Tracking
+    </div>
 
-    <!-- Main Content -->
     <div class="container">
         <div class="card">
-            <p>Fill out the form below to generate a lead and track the event using GA4 and LinkedIn Insight Tag.</p>
-            
-            <form id="leadForm">
-                <input type="text" class="input-field" id="name" placeholder="Your Name" required>
-                <input type="email" class="input-field" id="email" placeholder="Your Email" required>
-                <button type="submit" class="btn" id="leadBtn">Submit Lead</button>
-            </form>
+            <p>Click the button below to simulate a purchase event tracked by LinkedIn Insight Tag and GA4.</p>
+            <button class="btn" id="purchaseBtn">Complete Purchase</button>
         </div>
     </div>
 
-    <!-- Footer -->
     <footer>
         Tracking powered by GTM, GA4 & LinkedIn Insight Tag.
     </footer>
 
     <script>
-        document.getElementById("leadForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            
-            // Push event to GTM Data Layer
+        document.getElementById("purchaseBtn").addEventListener("click", function() {
+            // Generate a random transaction ID
+            let transactionId = "TXN" + Math.floor(Math.random() * 1000000);
+
+            // Push event to GTM Data Layer (GA4 Schema)
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
-                'event': 'generate_lead',
-                'event_category': 'Lead',
-                'event_label': 'User submitted lead form',
-                'user_name': document.getElementById("name").value,
-                'user_email': document.getElementById("email").value
+                event: "purchase",
+                transaction_id: transactionId,
+                value: 49.99, // Sample price
+                currency: "USD",
+                items: [{
+                    item_name: "Sample Product",
+                    item_id: "SP123",
+                    price: 49.99,
+                    quantity: 1
+                }]
             });
 
-            alert("Lead event tracked successfully! Check GTM.");
+            alert("Purchase event tracked! Check GTM.");
         });
     </script>
 

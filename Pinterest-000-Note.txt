@@ -1,0 +1,24 @@
+Create an html page on which demonstrate Pinterest Standard Event "PageVisit" having parameters: page_category.
+Show parameters name and values on the page in a readable format such a way so that page looks like a data entry screen but no need to data entry.
+The event will be fire on click a button.
+Make the page Pinterest like look & feel.
+The page will be tracked with GTM.
+Pinterest Tag/Pixel will be installed through GTM.
+
+Event Name		        Description					Key Parameters
+========		    ==========          =============
+PageVisit			        visits a page.					page_category (optional)
+ViewCategory		       views a product category.		category (string)
+Search			            performs a search.				search_query (string)
+AddToCart		           adds a product to the cart.		currency, value, order_quantity, product_id
+Checkout			        starts the checkout process.		currency, value, order_id
+WatchVideo		        watches a video.				video_title, video_duration
+Signup			        signs up.						lead_type
+Lead				    submits a lead form.			lead_type
+Custom			       Custom event for actions.			Custom parameters as needed
+AddToWishlist		 adds a product to their wishlist.	currency, value, product_id
+InitiateCheckout	 initiates checkout.				currency, value, order_id
+Purchase			 completes a purchase.			currency, value, order_quantity, order_id
+Contact			    contacts the business.			contact_type
+Download			 downloads content.				download_type
+AppInstall			 installs an app.					app_name

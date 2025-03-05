@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snapchat StartCheckout Event</title>
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PPBVCLNF');</script>
+    <!-- End Google Tag Manager -->
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background: linear-gradient(to bottom, #FFFC00, #FFD700);
+            color: black;
+        }
+        .container {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .snap-btn {
+            background-color: black;
+            color: yellow;
+            border: none;
+            padding: 15px 40px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .snap-btn:hover {
+            background-color: yellow;
+            color: black;
+            transform: scale(1.1);
+        }
+        .data-box {
+            margin-top: 30px;
+            padding: 25px;
+            border: 3px solid black;
+            display: inline-block;
+            background: white;
+            color: black;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            max-width: 300px;
+        }
+        h1 {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <div class="container">
+        <h1>🛒 Snapchat StartCheckout Event</h1>
+        <p>Click the button below to initiate the checkout process.</p>
+
+        <button class="snap-btn" onclick="triggerStartCheckout()">🛍️ Start Checkout</button>
+        
+        <div class="data-box">
+            <h2>📊 Event Data</h2>
+            <p><strong>Event Name:</strong> StartCheckout</p>
+            <p><strong>Content Type:</strong> Product</p>
+            <p><strong>Content ID:</strong> SKU12345</p>
+            <p><strong>Currency:</strong> USD</p>
+            <p><strong>Value:</strong> $79.99</p>
+            <p><strong>Checkout Step:</strong> 1</p>
+        </div>
+    </div>
+    
+    <script>
+        function triggerStartCheckout() {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'snap_startcheckout',
+                'content_type': 'Product',
+                'content_id': 'SKU12345',
+                'currency': 'USD',
+                'value': 79.99,
+                'checkout_step': 1
+            });
+            alert('🎉 StartCheckout event triggered!');
+        }
+    </script>
+</body>
+</html>

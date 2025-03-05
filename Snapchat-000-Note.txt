@@ -1,0 +1,143 @@
+1. TEMPLATE_FOR_SNAPCHAT
+
+Snapchat Standard Event	 with Parameters
+==========================
+Create an HTML page to demonstrate the Snapchat Standard Event named AddToCart.
+Show the data to be pushed on the page in plain text (not in JSON format).
+Design the page to have a look and feel similar to Snapchat.
+Include the Google Tag Manager (GTM) code with the provided GTM ID: GTM-PPBVCLNF.
+Ensure the page is tracked with GTM.
+Add a button to trigger the event.
+The data should be pushed to the dataLayer only when the button is clicked.
+====================================================================
+Template Name : TEMPLATE_FOR_SNAPCHAT
+Event Name: AddPaymentInfo
+Parameters:	content_type, content_id, currency, value, payment_method
+Create the HTML page.
+
+Event Name: ViewContent	                Parameters: content_type, content_id, currency, value, content_name
+Event Name: AddToCart	                Parameters: content_type, content_id, currency, value, quantity, item_name
+Event Name: InitiateCheckout            Parameters: content_type, content_id, currency, value, coupon, affiliation
+Event Name: AddPaymentInfo.         Parameters:	content_type, content_id, currency, value, payment_method
+Event Name: Purchase.                   Parameters: content_type, content_id, currency, value, transaction_id, affiliation
+Event Name: CompleteRegistration.   Parameters: content_type, content_id, currency, value, user_id, email
+Event Name: Search.                     Parameters: search_term, content_type, content_id, currency, value
+Event Name: Lead. Parameters: content_type, content_id, currency, value, lead_type
+Event Name: SignUp. Parameters: content_type, content_id, currency, value, user_id, email
+Event Name: Subscribe. Parameters: content_type, content_id, currency, value, subscription_type
+Event Name: ViewItem. Parameters: content_type, content_id, currency, value, content_name, category
+Event Name: Contact. Parameters: content_type, content_id, currency, value, contact_method
+Event Name: CustomizeProduct. Parameters: content_type, content_id, currency, value, customization
+Event Name: StartTrial. Parameters: content_type, content_id, currency, value, trial_duration
+Event Name: SubmitApplication. Parameters: content_type, content_id, currency, value, application_type
+Event Name: AddToWishlist. Parameters: content_type, content_id, currency, value, wishlist_name
+Event Name: ViewAd. Parameters: content_type, content_id, currency, value, ad_id, ad_type
+Event Name: CompleteTutorial. Parameters: content_type, content_id, currency, value, tutorial_type
+Event Name: StartCheckout. Parameters: content_type, content_id, currency, value, checkout_step
+Event Name: Donate. Parameters: content_type, content_id, currency, value, donation_amount
+Event Name: CompletePayment. Parameters: content_type, content_id, currency, value, payment_method
+Event Name: Download. Parameters: content_type, content_id, currency, value, download_method
+Event Name: Share. Parameters: content_type, content_id, currency, value, share_platform
+Event Name: JoinGroup. Parameters: content_type, content_id, currency, value, group_name
+Event Name: StartApp. Parameters: content_type, content_id, currency, value, app_name, platform
+
+===================Extra=============================
+InstallApp	Event Name: Purchase. Parameters: content_type, content_id, currency, value, app_name, platform
+OpenApp	Event Name: Purchase. Parameters: content_type, content_id, currency, value, app_name, platform
+RemoveFromCart	Event Name: Purchase. Parameters: content_type, content_id, currency, value, quantity, item_name
+ApplyDiscount	Event Name: Purchase. Parameters: content_type, content_id, currency, value, discount_code
+VerifyAccount	Event Name: Purchase. Parameters: content_type, content_id, currency, value, verification_method
+ActivateAccount	Event Name: Purchase. Parameters: content_type, content_id, currency, value, activation_code
+AcceptOffer	Event Name: Purchase. Parameters: content_type, content_id, currency, value, offer_id
+CancelSubscription	Event Name: Purchase. Parameters: content_type, content_id, currency, value, subscription_type
+
+
+
+
+Snapchat supports 25 Standard Events. 
+Here is the updated and comprehensive list of Snapchat's 25 Standard Events:
+Snapchat Standard Events (25 Events)
+
+ViewContent
+Tracks when a user views content (e.g., a product page).
+
+AddToCart
+Tracks when a user adds an item to their shopping cart.
+
+StartCheckout
+Tracks when a user starts the checkout process.
+
+Purchase
+Tracks when a user completes a purchase.
+
+                        AddBilling
+Tracks when a user adds billing information during checkout.
+
+Search
+Tracks when a user performs a search.
+
+SignUp
+Tracks when a user signs up for a service or account.
+
+                    Login
+Tracks when a user logs into their account.
+
+Share
+Tracks when a user shares content.
+
+                AppInstall==
+Tracks when a user installs an app.
+
+            AppOpen==
+Tracks when a user opens an app.
+
+            LevelAchieved
+Tracks when a user achieves a level in a game or app.
+
+            AchievementUnlocked
+Tracks when a user unlocks an achievement.
+
+TutorialCompletion
+Tracks when a user completes a tutorial.
+
+Subscribe
+Tracks when a user subscribes to a service.
+
+Contact
+Tracks when a user contacts the business (e.g., via email, phone, or chat).
+
+                CustomEvent
+Tracks custom events that are not covered by the standard events.
+
+AddToWishlist
+Tracks when a user adds an item to their wishlist.
+
+InitiateCheckout
+Tracks when a user initiates the checkout process (similar to StartCheckout).
+
+AddPaymentInfo
+Tracks when a user adds payment information during checkout.
+
+Lead
+Tracks when a user submits a lead form or expresses interest.
+
+CompleteRegistration
+Tracks when a user completes a registration process.
+
+                PageView
+Tracks when a user views a specific page.
+
+                ViewCategory
+Tracks when a user views a category of products or content.
+
+                FindLocation
+Tracks when a user searches for or finds a physical location.
+
+
+Event Parameters
+Each Standard Event can include additional event parameters to provide more context about the user's action. Common parameters include:
+content_type: Type of content (e.g., product, article).
+content_id: Unique identifier for the content (e.g., product ID).
+currency: Currency code (e.g., USD, EUR).
+value: Monetary value associated with the event (e.g., purchase amount).
+content_name: Name of the content (e.g., product name).
