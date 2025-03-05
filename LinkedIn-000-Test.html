@@ -3,63 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meta Pixel Event: PageView</title>
-
-    <!-- Facebook-like Look & Feel -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <title>Resources On GA4 & GTM</title>
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f2f5;
-            color: #1c1e21;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, red, orange, yellow, green, skyblue, blue, violet);
             text-align: center;
         }
-        header {
-            background-color: #1877f2;
-            padding: 20px;
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .tab {
+            background: #4CAF50;
             color: white;
+            padding: 10px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 5px 5px 0 0;
+            border: none;
         }
-        .container {
-            max-width: 600px;
-            margin: 40px auto;
+        .tab:hover, .tab.active {
+            background: #2bcfbf;
+        }
+        .tab-content {
+            display: none;
             padding: 20px;
-            background-color: white;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+            background: white;
+            border-radius: 0 0 5px 5px;
+            margin-top: -1px;
         }
-        .info {
-            font-size: 18px;
-            margin: 20px 0;
+        .tab-content.active {
+            display: block;
         }
-        footer {
-            background-color: #f1f1f1;
-            padding: 10px;
-            position: fixed;
+        .listbox {
             width: 100%;
-            bottom: 0;
-            text-align: center;
+            height: 200px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            overflow-y: auto;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Meta Pixel Event: PageView</h1>
-    </header>
-
-    <div class="container">
-        <h2>Page View Event Triggered Automatically</h2>
-        <p class="info">This page simulates a PageView event being fired upon loading.</p>
+    <h1>Resources For Learning Google Analytics 4 (GA4) & Google Tag Manager (GTM)</h1>
+    <h2>Explore tags, triggers, variables, events, and data layers!</h2>
+    
+    <div class="tabs">
+        <button class="tab active" onclick="showTab(event, 'tab1')">Tools & Platforms</button>
+        <button class="tab" onclick="showTab(event, 'tab2')">Workouts Level-1</button>
+        <button class="tab" onclick="showTab(event, 'tab3')">Workouts Level-2</button>
     </div>
-
-    <footer>
-        <p>Page tracked via Google Tag Manager</p>
-    </footer>
-
+    
+    <div id="tab1" class="tab-content active">
+        <h3>Tools, Platforms, Topics & Template</h3>
+        <select class="listbox" size="10" id="syllabusRSandUAT">
+            <option value="001-GA4-Beginners-Syllabus.html">GA4 Beginners Syllabus</option>
+            <option value="002-GA4-Advance-Syllabus.html">GA4 Advance Syllabus</option>
+            <option value="003-GTM-Beginners-Syllabus.html">GTM Beginners Syllabus</option>
+        </select>
+    </div>
+    
+    <div id="tab2" class="tab-content">
+        <h3>Workouts Level-1</h3>
+        <select class="listbox" size="10" id="workoutLevel-1">
+            <option value="101-ga4-config.html">GA4 Configuration</option>
+            <option value="102-page-view.html">Page View</option>
+            <option value="103-purchase-confirmation.html">Purchase Confirmation</option>
+        </select>
+    </div>
+    
+    <div id="tab3" class="tab-content">
+        <h3>Workouts Level-2</h3>
+        <select class="listbox" size="10" id="workoutLevel-2">
+            <option value="201-JavaScript-Error-Tag.html">JavaScript Error Tag</option>
+            <option value="202-user-login-form.html">User Login Trigger</option>
+            <option value="203-element-visibility-trigger.html">Element Visibility Trigger</option>
+        </select>
+    </div>
+    
     <script>
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({ event: 'PageView' });
+        function showTab(event, tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
     </script>
 </body>
 </html>

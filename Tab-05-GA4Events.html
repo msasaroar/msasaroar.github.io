@@ -1,0 +1,91 @@
+<div class="listbox-group">
+    <label for="ga4RecommendedEvents">GA4 Recommended Events</label>
+    <ul id="ga4RecommendedEvents" role="listbox" tabindex="0">
+        <li role="option" data-value="501-add-payment-info.html">501. Add Payment Info</li>
+        <li role="option" data-value="502-add-shipping-info.html">502. Add Shipping Info</li>
+        <li role="option" data-value="503-add-to-cart.html">503. Add to Cart</li>
+        <li role="option" data-value="504-add-to-wishlist.html">504. Add to Wishlist</li>
+        <li role="option" data-value="505-begin-checkout.html">505. Begin Checkout</li>
+        <li role="option" data-value="506-close-convert-lead.html">506. Close Convert Lead</li>
+        <li role="option" data-value="507-close-unconvert-lead.html">507. Close Unconvert Lead</li>
+        <li role="option" data-value="508-disqualify-lead.html">508. Disqualify Lead</li>
+        <li role="option" data-value="509-earn-virtual-currency.html">509. Earn Virtual Currency</li>
+        <li role="option" data-value="510-generate-lead.html">510. Generate Lead</li>
+        <li role="option" data-value="511-join-group.html">511. Join Group</li>
+        <li role="option" data-value="512-level-end.html">512. Level End</li>
+        <li role="option" data-value="513-level-start.html">513. Level Start</li>
+        <li role="option" data-value="514-level-up.html">514. Level Up</li>
+        <li role="option" data-value="515-login.html">515. Login</li>
+        <li role="option" data-value="516-post-score.html">516. Post Score</li>
+        <li role="option" data-value="517-purchase.html">517. Purchase</li>
+        <li role="option" data-value="518-qualify-lead.html">518. Qualify Lead</li>
+        <li role="option" data-value="519-refund.html">519. Refund</li>
+        <li role="option" data-value="520-remove-from-cart.html">520. Remove From Cart</li>
+        <li role="option" data-value="521-search.html">521. Search</li>
+        <li role="option" data-value="522-select-content.html">522. Select Content</li>
+        <li role="option" data-value="523-select-item.html">523. Select Item</li>
+        <li role="option" data-value="524-select-promotion.html">524. Select Promotion</li>
+        <li role="option" data-value="525-share.html">525. Share</li>
+        <li role="option" data-value="526-sign-up.html">526. Sign Up</li>
+        <li role="option" data-value="527-spend-virtual-currency.html">527. Spend Virtual Currency</li>
+        <li role="option" data-value="528-tutorial-begin.html">528. Tutorial Begin</li>
+        <li role="option" data-value="529-tutorial-complete.html">529. Tutorial Complete</li>
+        <li role="option" data-value="530-unlock-achievement.html">530. Unlock Achievement</li>
+        <li role="option" data-value="531-view-cart.html">531. View Cart</li>
+        <li role="option" data-value="532-view-item.html">532. View Item</li>
+        <li role="option" data-value="533-view-item-list.html">533. View Item List</li>
+        <li role="option" data-value="534-view-promotion.html">534. View Promotion</li>
+        <li role="option" data-value="535-working-lead.html">535. Working Lead</li>
+    </ul>
+    <button id="proceedBtn" disabled>Proceed</button>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const listbox = document.getElementById("ga4RecommendedEvents");
+        const proceedBtn = document.getElementById("proceedBtn");
+        let selectedValue = "";
+
+        listbox.addEventListener("click", function(event) {
+            if (event.target.tagName === "LI") {
+                document.querySelectorAll("[role='option']").forEach(el => el.classList.remove("selected"));
+                event.target.classList.add("selected");
+                selectedValue = event.target.getAttribute("data-value");
+                proceedBtn.disabled = false;
+            }
+        });
+
+        proceedBtn.addEventListener("click", function() {
+            if (selectedValue) {
+                window.location.href = selectedValue;
+            }
+        });
+    });
+</script>
+
+<style>
+    .listbox-group ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        border: 1px solid #ccc;
+        max-width: 300px;
+    }
+    .listbox-group li {
+        padding: 10px;
+        cursor: pointer;
+        border-bottom: 1px solid #eee;
+    }
+    .listbox-group li:last-child {
+        border-bottom: none;
+    }
+    .listbox-group li:hover, .listbox-group li.selected {
+        background-color: #007BFF;
+        color: white;
+    }
+    .listbox-group button {
+        margin-top: 10px;
+        padding: 10px;
+        cursor: pointer;
+    }
+</style>

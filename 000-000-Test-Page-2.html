@@ -1,23 +1,74 @@
-<pre>
-  <button id="goToPageTop" onclick="location.href='#pageTop';">Page Top</button>
-  
-  <h2>
-    <a href="Ad-Conversion-Tracking-Tools.png" target="_blank" 
-       rel="noopener noreferrer" onclick="sendText(event)">03. Ad Conversion Tracking Tools</a>
-  </h2>
-
-  <a href="https://analytics.google.com" target="_blank" onclick="sendText(event)">01. Google Analytics</a>
-
-  <a href="000-Ask-Any-LLM.html" onclick="sendText(event)">
-    =>Do I need to recreate the Tag, Trigger, and Variable in the Server Container if they have already been created in the Web Container?
-  </a>
-</pre>
+<div class="listbox-group">
+  <label for="syllabusRSandUAT">Tools, Platforms, Topics & Template</label>
+  <ul id="syllabusRSandUAT" role="listbox" tabindex="0">
+      <li tabindex="0" data-value="001-GA4-Beginners-Syllabus.html">001. GA4 Beginners Syllabus</li>
+      <li tabindex="0" data-value="002-GA4-Advance-Syllabus.html">002. GA4 Advance Syllabus</li>
+      <li tabindex="0" data-value="003-GTM-Beginners-Syllabus.html">003. GTM Beginners Syllabus</li>
+      <li tabindex="0" data-value="004-GTM-Advance-Syllabus.html">004. GTM Advance Syllabus</li>
+      <li tabindex="0" data-value="005-Requirements-on-an-e-Commerce-Website.html">005. Requirements on an eCommerce Website</li>
+      <li tabindex="0" data-value="006-Requirements-on-a-Blogging-Website.html">006. Requirements on a Blogging Website</li>
+      <li tabindex="0" data-value="007-Requirements-on-General-Purpose-Website.html">007. Requirements on General Purpose Website</li>
+      <li tabindex="0" data-value="008-Setup-GA4-Compliant-Ecommerce-Tracking-In-GTM.html">008. Setup GA4 Compliant Ecommerce Tracking In GTM</li>
+      <li tabindex="0" data-value="009-UAT-Format.html">009. UAT Format</li>
+      <li tabindex="0" data-value="010-My-Learning-Activities-On-GA4-and-GTM.html">010. My Learning Activities On GA4 and GTM</li>
+      <li tabindex="0" data-value="011-Analytics-and-Conversion-Tracking-Tools-and-Platforms.html">011. Web Analytics and Conversion Tracking Tools & Platforms</li>
+      <li tabindex="0" data-value="012-What-Else-Must-Know-On-WordPress.html">012. What Else Must Know On WordPress</li>
+      <li tabindex="0" data-value="013-What-Else-Must-Know-On-Shopify.html">013. What Else Must Know On Shopify</li>
+  </ul>
+  <button id="proceedBtn" disabled>Proceed</button>
+</div>
 
 <script>
-  function sendText(event) {
-    event.preventDefault(); // লিংকে সরাসরি যাওয়া বন্ধ করবে
-    let clickedText = event.target.innerText; // ক্লিক করা লিংকের টেক্সট নেয়
-    let encodedText = encodeURIComponent(clickedText); // স্পেশাল ক্যারেক্টার হ্যান্ডেল করার জন্য এনকোড করে
-    window.location.href = "000-Ask-Any-LLM.html?text=" + encodedText; // URL-এ টেক্সট পাঠায়
-  }
+  let selectedValue = "";
+  document.querySelectorAll('#syllabusRSandUAT li').forEach(item => {
+      item.addEventListener('click', function() {
+          document.querySelectorAll('#syllabusRSandUAT li').forEach(li => li.classList.remove('selected'));
+          this.classList.add('selected');
+          selectedValue = this.getAttribute('data-value');
+          document.getElementById('proceedBtn').disabled = false;
+      });
+  });
+
+  document.getElementById('proceedBtn').addEventListener('click', function() {
+      if (selectedValue) {
+          window.location.href = selectedValue;
+      }
+  });
 </script>
+
+<style>
+  .listbox-group ul {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      max-height: 200px;
+      overflow-y: auto;
+  }
+  .listbox-group li {
+      padding: 10px;
+      cursor: pointer;
+      border-bottom: 1px solid #eee;
+  }
+  .listbox-group li:hover, .listbox-group li.selected {
+      background-color: #007bff;
+      color: white;
+  }
+  button {
+      margin-top: 10px;
+      padding: 10px 15px;
+      cursor: pointer;
+      background-color: orange;
+      color: blue;
+      border: none;
+      border-radius: 5px;
+  }
+  button:hover {
+      background-color: blue;
+      color: orange;
+  }
+  button:disabled {
+      background-color: gray;
+      cursor: not-allowed;
+  }
+</style>

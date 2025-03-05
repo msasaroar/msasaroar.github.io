@@ -1,0 +1,71 @@
+<div class="listbox-group">
+    <label for="LinkedInEvents">LinkedIn Insight Tag Events</label>
+    <ul id="LinkedInEvents" role="listbox" tabindex="0">
+        <li tabindex="0" data-value="LinkedIn-001-Page-View.html">LinkedIn-001-Page-View</li>
+        <li tabindex="0" data-value="LinkedIn-101-Sign-Up.html">LinkedIn-101-Sign-Up</li>
+        <li tabindex="0" data-value="LinkedIn-102-Add-To-Cart.html">LinkedIn-102-Add-To-Cart</li>
+        <li tabindex="0" data-value="LinkedIn-103-Purchase.html">LinkedIn-103-Purchase</li>
+        <li tabindex="0" data-value="LinkedIn-104-Lead.html">LinkedIn-104-Lead</li>
+        <li tabindex="0" data-value="LinkedIn-105-Install.html">LinkedIn-105-Install</li>
+        <li tabindex="0" data-value="LinkedIn-106-View-Content.html">LinkedIn-106-View-Content</li>
+        <li tabindex="0" data-value="LinkedIn-107-Book-Appointment.html">LinkedIn-107-Book-Appointment</li>
+        <li tabindex="0" data-value="LinkedIn-108-Subscribe.html">LinkedIn-108-Subscribe</li>
+        <li tabindex="0" data-value="LinkedIn-109-Download.html">LinkedIn-109-Download</li>
+    </ul>
+    <button id="proceedBtn" disabled>Proceed</button>
+</div>
+
+<script>
+    let selectedValue = "";
+    document.querySelectorAll('#LinkedInEvents li').forEach(item => {
+        item.addEventListener('click', function() {
+            document.querySelectorAll('#LinkedInEvents li').forEach(li => li.classList.remove('selected'));
+            this.classList.add('selected');
+            selectedValue = this.getAttribute('data-value');
+            document.getElementById('proceedBtn').disabled = false;
+        });
+    });
+
+    document.getElementById('proceedBtn').addEventListener('click', function() {
+        if (selectedValue) {
+            window.location.href = selectedValue;
+        }
+    });
+</script>
+
+<style>
+    .listbox-group ul {
+        list-style: none;
+        padding: 0;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        max-height: 200px;
+        overflow-y: auto;
+    }
+    .listbox-group li {
+        padding: 10px;
+        cursor: pointer;
+        border-bottom: 1px solid #eee;
+    }
+    .listbox-group li:hover, .listbox-group li.selected {
+        background-color: #007bff;
+        color: white;
+    }
+    button {
+        margin-top: 10px;
+        padding: 10px 15px;
+        cursor: pointer;
+        background-color: orange;
+        color: blue;
+        border: none;
+        border-radius: 5px;
+    }
+    button:hover {
+        background-color: blue;
+        color: orange;
+    }
+    button:disabled {
+        background-color: gray;
+        cursor: not-allowed;
+    }
+</style>
