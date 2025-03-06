@@ -1,8 +1,16 @@
-https://help.pinterest.com/en/business/article/track-conversions-with-pinterest-tag
+https://developers.pinterest.com/docs/api-features/conversion-overview/
+https://developers.pinterest.com/docs/api-features/tracking-conversions/
+https://developers.pinterest.com/docs/api-features/pinterest-tag/
+https://ads.pinterest.com/advertiser/549768860596/conversions/events-overview/
+https://help.pinterest.com/en/business/article/install-the-pinterest-tag
+https://ads.pinterest.com/advertiser/549768860596/conversions/tag/
+
 
 Create an html page on which demonstrate Pinterest Standard Event "PageVisit" having parameters: page_category.
 Show parameters name and values on the page in a readable format such a way so that page looks like a data entry screen but no need to data entry.
 The event will be fire on click a button.
+
+
 Make the page Pinterest like look & feel.
 The page will be tracked with GTM.
 Pinterest Tag/Pixel will be installed through GTM.
@@ -16,3 +24,18 @@ AddToCart		           adds a product to the cart.		currency, value, order_quanti
 Checkout			        starts the checkout process.		currency, value, order_id
 WatchVideo		        watches a video.				video_title, video_duration
 Signup			        signs up.						lead_type
+Lead            - Track people who show interest in your product or service
+Custom         - Track a custom event. Use this event name to track a special event that you want to include in your conversion reporting
+[Partner-defined event] - Add any additional event that you’ve defined for the purpose of audience targeting. Unique events aren’t available for conversion reporting. Keep in mind that whitespace will be trimmed from raw event names passed through the tag
+
+
+<script>pintrk('track', 'checkout',    {event_id: 'eventId0001', value: 100, order_quantity: 1, currency: 'USD'});</script>
+<script>pintrk('track', 'addtocart',   {event_id: 'eventId0001', value: 100, order_quantity: 1, currency: 'USD'});</script>
+<script>pintrk('track', 'pagevisit',    {event_id: 'eventId0001'});                                                         </script>
+<script>pintrk('track', 'signup',       {event_id: 'eventId0001'});                                                         </script>
+<script>pintrk('track', 'watchvideo', {event_id: 'eventId0001', video_title: 'How to style your Parker Boots'}); </script>
+<script>pintrk('track', 'lead',          {event_id: 'eventId0001', lead_type: 'Newsletter'});                            </script>
+<script>pintrk('track', 'search',       {event_id: 'eventId0001', search_query: 'boots'});                              </script>
+<script>pintrk('track', 'search',       {event_id: 'eventId0001', search_query: 'boots'});                              </script>
+<script>pintrk('track', 'custom',      {event_id: 'eventId0001'});                                                          </script>
+<script>pintrk('track', 'custom',      {event_id: 'eventId0001'});                                                          </script>
