@@ -107,12 +107,12 @@
         function fireCustomEvent() {
             if (window.dataLayer) {
                 window.dataLayer.push({
-                    event: 'EventXYZ',
+                    event: 'CustomEvent',
                     parameterX: eventData.parameterX,
                     parameterY: eventData.parameterY,
                     parameterZ: eventData.parameterZ
                 });
-                console.log('Pinterest Custom Event XYZ triggered.');
+                console.log('Pinterest Custom Event triggered.');
             }
         }
 
