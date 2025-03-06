@@ -1,3 +1,5 @@
+https://help.pinterest.com/en/business/article/track-conversions-with-pinterest-tag
+
 Create an html page on which demonstrate Pinterest Standard Event "PageVisit" having parameters: page_category.
 Show parameters name and values on the page in a readable format such a way so that page looks like a data entry screen but no need to data entry.
 The event will be fire on click a button.
@@ -14,11 +16,3 @@ AddToCart		           adds a product to the cart.		currency, value, order_quanti
 Checkout			        starts the checkout process.		currency, value, order_id
 WatchVideo		        watches a video.				video_title, video_duration
 Signup			        signs up.						lead_type
-Lead				    submits a lead form.			lead_type
-Custom			       Custom event for actions.			Custom parameters as needed
-AddToWishlist		 adds a product to their wishlist.	currency, value, product_id
-InitiateCheckout	 initiates checkout.				currency, value, order_id
-Purchase			 completes a purchase.			currency, value, order_quantity, order_id
-Contact			    contacts the business.			contact_type
-Download			 downloads content.				download_type
-AppInstall			 installs an app.					app_name
