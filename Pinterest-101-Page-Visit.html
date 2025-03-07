@@ -90,7 +90,9 @@
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
                 'event': 'PageVisit',
-                'page_category': 'Home Decor'
+                'page_category': 'Home Decor',
+                'page_title': document.title,
+                'page_url': window.location.href
             });
             alert('PageVisit event fired with page_category: Home Decor');
         });

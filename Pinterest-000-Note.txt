@@ -1,13 +1,20 @@
+INSTALL THE Pinterest TAG:
 https://help.pinterest.com/en/business/article/install-the-pinterest-tag
+
+CLAIMING YOUR WEBSITE: 
+https://www.pinterest.com/settings/claim
+
+TRACK CONVERSIONS WITH Pinterest API AND Pinterest TAG:
 https://ads.pinterest.com/advertiser/549768860596/conversions/events-overview/
+
+INSTALL YOUR Pinterest TAG:
 https://ads.pinterest.com/advertiser/549768860596/conversions/tag/
+
+BUSINESS MANAGER ACCOUNT:
 https://www.pinterest.com/business/business-manager/
 
-
-
-
-
-
+INSTALL EXTENSION :
+Pinterest TAG HELPER FROM CHROME WEB STORE
 
 
 Create an html page on which demonstrate Pinterest Standard Event "PageVisit" having parameters: page_category.
