@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pinterest Event - AddToCart</title>
+    <title>Pinterest Checkout Event</title>
     
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -72,42 +72,50 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     
-    <div class="header">Pinterest Add To Cart Event Tracking</div>
+    <div class="header">Pinterest Checkout Event</div>
 
     <div class="container">
-        <h2>Add To Cart Event</h2>
+        <h2>Pinterest Checkout Event</h2>
         <div class="data-field">
-            <span class="label">Event Name:</span> <span class="value">AddToCart</span>
+            <span class="label">Currency:</span> <span class="value" id="currency">USD</span>
         </div>
         <div class="data-field">
-            <span class="label">Currency:</span> <span class="value">USD</span>
+            <span class="label">Value:</span> <span class="value" id="value">49.99</span>
         </div>
         <div class="data-field">
-            <span class="label">Value:</span> <span class="value">49.99</span>
+            <span class="label">Order ID:</span> <span class="value" id="order_id">12345ABC</span>
         </div>
-        <div class="data-field">
-            <span class="label">Order Quantity:</span> <span class="value">2</span>
-        </div>
-        <div class="data-field">
-            <span class="label">Product ID:</span> <span class="value">12345</span>
-        </div>
-        <button id="trackEvent">Track AddToCart Event</button>
+        <button id="triggerEventBtn">Trigger Checkout Event</button>
     </div>
 
     <script>
-        document.getElementById('trackEvent').addEventListener('click', function() {
+        document.getElementById('triggerEventBtn').addEventListener('click', function() {
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
-                'event': 'AddToCart',
-                'currency': 'USD',
+                'event': 'Checkout',
                 'value': 49.99,
-                'order_quantity': 2,
-                'product_id': '12345'
+                'currency': 'USD',
+                'order_id': '12345ABC',
+                'num_items': 2,
+                'contents': [
+                    {
+                        'item_id': 'SKU123',
+                        'item_name': 'Red T-Shirt',
+                        'quantity': 1,
+                        'price': 29.99
+                    },
+                    {
+                        'item_id': 'SKU456',
+                        'item_name': 'Blue Jeans',
+                        'quantity': 1,
+                        'price': 19.99
+                    }
+                ]
             });
-            console.log('Pinterest AddToCart Event Triggered.');
-            alert('Pinterest AddToCart Event Triggered.');
+            console.log('Pinterest Checkout Event Triggered.');
+            alert('Pinterest Checkout Event Triggered.');
         });
     </script>
 </body>
 </html>
-</html>
+
