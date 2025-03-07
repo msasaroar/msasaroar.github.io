@@ -1,14 +1,17 @@
-INSTALL THE Pinterest TAG:
+HELPS ON INSTALL THE Pinterest TAG: 
 https://help.pinterest.com/en/business/article/install-the-pinterest-tag
+
+ACCESS YOUR Pinterest ADS ACCOUNT: 
+https://ads.pinterest.com/
+
+INSTALL YOUR Pinterest TAG:
+https://ads.pinterest.com/advertiser/549768860596/conversions/tag/
 
 CLAIMING YOUR WEBSITE: 
 https://www.pinterest.com/settings/claim
 
 TRACK CONVERSIONS WITH Pinterest API AND Pinterest TAG:
 https://ads.pinterest.com/advertiser/549768860596/conversions/events-overview/
-
-INSTALL YOUR Pinterest TAG:
-https://ads.pinterest.com/advertiser/549768860596/conversions/tag/
 
 BUSINESS MANAGER ACCOUNT:
 https://www.pinterest.com/business/business-manager/
