@@ -76,52 +76,43 @@
 
     <div class="container">
         <h2>Pinterest Checkout Event</h2>
-
         <div class="data-field">
             <span class="label">Currency:</span> <span class="value" id="currency">USD</span>
         </div>
         <div class="data-field">
-            <span class="label">Value:</span> <span class="value" id="value">99.99</span>
+            <span class="label">Value:</span> <span class="value" id="value">49.99</span>
         </div>
         <div class="data-field">
-            <span class="label">Order ID:</span> <span class="value" id="order_id">1234567890</span>
+            <span class="label">Order ID:</span> <span class="value" id="order_id">12345ABC</span>
         </div>
-
         <button id="triggerEventBtn">Trigger Checkout Event</button>
     </div>
 
     <script>
-        // Pinterest checkout event parameters
-        const eventData = {
-            currency: 'USD',
-            value: 99.99,
-            order_id: '1234567890'
-        };
-
-        // Update the display on the page
-        function updatePageData() {
-            document.getElementById('currency').textContent = eventData.currency;
-            document.getElementById('value').textContent = eventData.value;
-            document.getElementById('order_id').textContent = eventData.order_id;
-        }
-
-        // Trigger Pinterest checkout event via GTM
-        function fireCheckoutEvent() {
-            if (window.dataLayer) {
-                window.dataLayer.push({
-                    event: 'Checkout',
-                    currency: eventData.currency,
-                    value: eventData.value,
-                    order_id: eventData.order_id
-                });
-                console.log('Pinterest Checkout event triggered.');
-            }
-        }
-
-        // Event listener for button click
-        document.getElementById('triggerEventBtn').addEventListener('click', function () {
-            updatePageData();
-            fireCheckoutEvent();
+        document.getElementById('triggerEventBtn').addEventListener('click', function() {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'checkout',
+                'value': 49.99,
+                'currency': 'USD',
+                'order_id': '12345ABC',
+                'num_items': 2,
+                'contents': [
+                    {
+                        'item_id': 'SKU123',
+                        'item_name': 'Red T-Shirt',
+                        'quantity': 1,
+                        'price': 29.99
+                    },
+                    {
+                        'item_id': 'SKU456',
+                        'item_name': 'Blue Jeans',
+                        'quantity': 1,
+                        'price': 19.99
+                    }
+                ]
+            });
+            alert('Pinterest Checkout event fired!');
         });
     </script>
 </body>
