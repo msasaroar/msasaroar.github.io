@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pinterest Checkout Event</title>
+    <title>Pinterest PageVisit Event</title>
     
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -72,10 +72,10 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     
-    <div class="header">Pinterest Checkout Event</div>
+    <div class="header">Pinterest PageVisit Event</div>
 
     <div class="container">
-        <h2>Pinterest Checkout Event</h2>
+        <h2>Pinterest PageVisit Event</h2>
 
         <div class="data-field">
             <span class="label">Currency:</span> <span class="value" id="currency">USD</span>
@@ -106,10 +106,10 @@
         }
 
         // Trigger Pinterest checkout event via GTM
-        function fireCheckoutEvent() {
+        function firePageVisitEvent() {
             if (window.dataLayer) {
                 window.dataLayer.push({
-                    event: 'Checkout',
+                    event: 'PageVisit',
                     currency: eventData.currency,
                     value: eventData.value,
                     order_id: eventData.order_id
@@ -121,7 +121,7 @@
         // Event listener for button click
         document.getElementById('triggerEventBtn').addEventListener('click', function () {
             updatePageData();
-            fireCheckoutEvent();
+            firePageVisitEvent();
         });
     </script>
 </body>
