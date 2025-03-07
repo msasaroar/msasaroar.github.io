@@ -1,3 +1,15 @@
+01. Login : https://ads.snapchat.com/
+02. Manage Ads>>>Assets>>>Events Manager
+03. Events Manager>>>Event Sources>>>[Select Your Source]
+04. Scroll Down
+05. Click <Add Event> Button
+06. Select Event Setup Method
+07. Select A Business category
+
+
+
+
+
 1. TEMPLATE_FOR_SNAPCHAT
 
 Snapchat Standard Event	 with Parameters
