@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snapchat Event - Add To Cart</title>
+    <title>Snapchat Event - Add_Cart</title>
     
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -81,7 +81,7 @@
     <div class="container">
         <h2>Add To Cart Event</h2>
         <div class="data-field">
-            <span class="label">Event Name:</span> <span class="value">AddToCart</span>
+            <span class="label">Event Name:</span> <span class="value">Add_Cart</span>
         </div>
         <div class="data-field">
             <span class="label">Item Name:</span> <span class="value">Snapchat Merch Hoodie</span>
@@ -92,19 +92,19 @@
         <div class="data-field">
             <span class="label">Currency:</span> <span class="value">USD</span>
         </div>
-        <button id="trackEvent">Add To Cart</button>
+        <button id="trackEvent">Trigger Add_Cart Event</button>
     </div>
 
     <script>
         document.getElementById('trackEvent').addEventListener('click', function() {
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
-                'event': 'AddCart',
+                'event': 'Add_Cart',
                 'item_name': 'Snapchat Merch Hoodie',
                 'price': 49.99,
                 'currency': 'USD'
             });
-            alert('AddCart event fired with item: Snapchat Merch Hoodie, Price: $49.99, Currency: USD');
+            alert('Add_Cart event fired with item: Snapchat Merch Hoodie, Price: $49.99, Currency: USD');
         });
     </script>
 </body>
