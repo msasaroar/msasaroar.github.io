@@ -1,3 +1,9 @@
+HELP ON Snap Pixel : 
+https://businesshelp.snapchat.com/s/topic/0TO0y000000YVdJGAW/snap-pixel?language=en_US
+
+HOW TO USE SNAPCHAT PIXEL WITH GOOGLE TAG MANAGER : 
+https://businesshelp.snapchat.com/s/article/pixel-google-tag-manager?language=en_US
+
 01. Login : https://ads.snapchat.com/
 02. Manage Ads>>>Assets>>>Events Manager
 03. Events Manager>>>Event Sources>>>[Select Your Source]
