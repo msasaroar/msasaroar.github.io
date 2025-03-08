@@ -91,14 +91,14 @@
         <div class="data-field">
             <span class="label">Currency:</span> <span class="value">USD</span>
         </div>
-        <button id="trackEvent">Add to Cart</button>
+        <button id="trackEvent">Track Add Cart Event</button>
     </div>
 
     <script>
         document.getElementById('trackEvent').addEventListener('click', function() {
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
-                'event': 'ADD_CART',
+                'event': 'add_cart',
                 'item_name': 'Premium Sneakers',
                 'item_id': 'SNK12345',
                 'price': 99.99,
