@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snapchat Event - Add To Cart</title>
+    <title>Snapchat GA4 Event - add_to_cart</title>
     
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -15,31 +15,30 @@
 
     <style>
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: Arial, sans-serif;
             background-color: #FFFC00;
+            color: black;
             text-align: center;
             padding: 20px;
-            color: black;
         }
         .header {
-            background-color: #FFFC00;
-            color: black;
+            background-color: #000;
+            color: #FFFC00;
             padding: 15px;
             font-size: 24px;
             font-weight: bold;
-            border-bottom: 4px solid black;
         }
         .container {
             max-width: 400px;
             margin: 50px auto;
             padding: 20px;
-            background: white;
+            background: #fff;
             border-radius: 8px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-            border: 2px solid black;
+            border: 2px solid #000;
         }
         h2 {
-            color: black;
+            color: #000;
         }
         .data-field {
             text-align: left;
@@ -48,26 +47,23 @@
         }
         .label {
             font-weight: bold;
-            color: black;
         }
         .value {
-            color: #555;
+            color: #333;
         }
         button {
-            background-color: black;
-            color: yellow;
+            background-color: #000;
+            color: #FFFC00;
             padding: 10px 20px;
             border: none;
             cursor: pointer;
             font-size: 16px;
             border-radius: 5px;
             margin-top: 20px;
-            transition: all 0.3s ease;
         }
         button:hover {
-            background-color: yellow;
-            color: black;
-            transform: scale(1.05);
+            background-color: #FFFC00;
+            color: #000;
         }
     </style>
 </head>
@@ -76,35 +72,45 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     
-    <div class="header">Snapchat Add To Cart Tracking</div>
+    <div class="header">Snapchat GA4 add_to_cart Event Tracking</div>
 
     <div class="container">
-        <h2>Add To Cart Event</h2>
+        <h2>add_to_cart Event</h2>
         <div class="data-field">
-            <span class="label">Event Name:</span> <span class="value">AddToCart</span>
+            <span class="label">Event Name:</span> <span class="value">add_to_cart</span>
         </div>
         <div class="data-field">
-            <span class="label">Item Name:</span> <span class="value">Snapchat Merch Hoodie</span>
+            <span class="label">Item Name:</span> <span class="value">Premium Sneakers</span>
         </div>
         <div class="data-field">
-            <span class="label">Price:</span> <span class="value">$49.99</span>
+            <span class="label">Item ID:</span> <span class="value">SNK12345</span>
+        </div>
+        <div class="data-field">
+            <span class="label">Price:</span> <span class="value">$99.99</span>
         </div>
         <div class="data-field">
             <span class="label">Currency:</span> <span class="value">USD</span>
         </div>
-        <button id="trackEvent">Add To Cart</button>
+        <div class="data-field">
+            <span class="label">Quantity:</span> <span class="value">1</span>
+        </div>
+        <button id="trackEvent">Add to Cart</button>
     </div>
 
     <script>
         document.getElementById('trackEvent').addEventListener('click', function() {
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
-                'event': 'AddToCart',
-                'item_name': 'Snapchat Merch Hoodie',
-                'price': 49.99,
-                'currency': 'USD'
+                'event': 'add_to_cart',
+                'items': [{
+                    'item_name': 'Premium Sneakers',
+                    'item_id': 'SNK12345',
+                    'price': 99.99,
+                    'currency': 'USD',
+                    'quantity': 1
+                }]
             });
-            alert('AddToCart event fired with item: Snapchat Merch Hoodie, Price: $49.99, Currency: USD');
+            alert('GA4 add_to_cart event fired with item: Premium Sneakers');
         });
     </script>
 </body>

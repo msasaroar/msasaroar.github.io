@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snapchat Event - ADD_CART</title>
+    <title>Snapchat GA4 Event - add_to_cart</title>
     
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -72,12 +72,12 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     
-    <div class="header">Snapchat ADD_CART Event Tracking</div>
+    <div class="header">Snapchat GA4 add_to_cart Event Tracking</div>
 
     <div class="container">
-        <h2>ADD_CART Event</h2>
+        <h2>add_to_cart Event</h2>
         <div class="data-field">
-            <span class="label">Event Name:</span> <span class="value">ADD_CART</span>
+            <span class="label">Event Name:</span> <span class="value">add_to_cart</span>
         </div>
         <div class="data-field">
             <span class="label">Item Name:</span> <span class="value">Premium Sneakers</span>
@@ -91,20 +91,26 @@
         <div class="data-field">
             <span class="label">Currency:</span> <span class="value">USD</span>
         </div>
-        <button id="trackEvent">Track Add Cart Event</button>
+        <div class="data-field">
+            <span class="label">Quantity:</span> <span class="value">1</span>
+        </div>
+        <button id="trackEvent">Add to Cart</button>
     </div>
 
     <script>
         document.getElementById('trackEvent').addEventListener('click', function() {
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
-                'event': 'add_cart',
-                'item_name': 'Premium Sneakers',
-                'item_id': 'SNK12345',
-                'price': 99.99,
-                'currency': 'USD'
+                'event': 'add_to_cart',
+                'items': [{
+                    'item_name': 'Premium Sneakers',
+                    'item_id': 'SNK12345',
+                    'price': 99.99,
+                    'currency': 'USD',
+                    'quantity': 1
+                }]
             });
-            alert('ADD_CART event fired with item: Premium Sneakers');
+            alert('GA4 add_to_cart event fired with item: Premium Sneakers');
         });
     </script>
 </body>
