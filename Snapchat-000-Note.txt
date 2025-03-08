@@ -13,9 +13,6 @@ https://businesshelp.snapchat.com/s/article/pixel-google-tag-manager?language=en
 07. Select A Business category
 
 
-
-
-
 1. TEMPLATE_FOR_SNAPCHAT
 
 Snapchat Standard Event	 with Parameters

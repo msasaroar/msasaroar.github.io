@@ -1,0 +1,11 @@
+1. Login : https://business.tiktok.completes
+2. Select an account :
+3. Click > Asset
+4. Click > Pixel
+5. Select a Pixel
+6. Click > Open in Events Manager
+7. Add Event
+
+
+<a href="https://chatgpt.com/">Q2ChatGPT >>> List of activities for setting up Conversion Tracking in TikTok with GTM.</a>
+<a href="https://youtu.be/GFkmSNTzYOg?si=2gRPhncnmolrWbIP">=>A to Z Guide | TikTok Pixel Setup | GTM Browser & Server Side(Video)</a>
