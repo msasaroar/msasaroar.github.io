@@ -1,11 +1,49 @@
 1. Login : https://business.tiktok.completes
-2. Select an account :
-3. Click > Asset
-4. Click > Pixel
+2. Click On Button <Go to Business Center> on Right Top Corner 
+   OR 
+   Mouse Pointer On <9 Dot Menu > on Right Top Corner Then Click  <Business Center>
+3. Select an account :
+4. Click > Asset
+5. Click > Pixel
 5. Select a Pixel
 6. Click > Open in Events Manager
-7. Add Event
+7. Now Do All Event Management Activities Here
+8. Resources
+    8.1. Find the list of Standard Events currently supported by the TikTok Pixel and Events API with their 'recommended parameters' in a table.
+        >>> https://business-api.tiktok.com/portal/docs?id=1739585702922241
+    8.1. Ask Into ChatGPT
+        >>> List of activities for setting up Conversion Tracking in TikTok with GTM.
+    8.2. A to Z Guide | TikTok Pixel Setup | GTM Browser & Server Side(Video)
+        >>> https://youtu.be/GFkmSNTzYOg?si=2gRPhncnmolrWbIP
+    8.3. Article: How to set up TikTok Pixel with Google Tag Manager in TikTok Events Manager
+        >>> https://ads.tiktok.com/help/article/get-started-google-tag-manager?lang=en
+               D:\analytics\msasaroar.github.io\TikTok-Event-List.png
 
+Event Name	        Description	Tracking Code	Parameters
+AddPaymentInfo	When a visitor adds their payment information at checkout.	ttq.track('AddPaymentInfo')	-
+AddToCart	When a visitor adds an item to the cart.	ttq.track('AddToCart')	content_type, quantity, description, content_id, currency, value
+AddToWishlist	When an item is added to the wishlist.	ttq.track('AddToWishlist')	-
+ClickButton	When a visitor taps a button.	ttq.track('ClickButton')	-
+CompletePayment	When a visitor makes a payment.	ttq.track('CompletePayment')	content_type, quantity, description, content_id, currency, value
+CompleteRegistration	When a visitor signs up for something.	ttq.track('CompleteRegistration')	-
+Contact	When a visitor contacts you.	ttq.track('Contact')	-
+CustomizeProduct	When a visitor customizes a product.	ttq.track('CustomizeProduct')	-
+Download	When a visitor downloads something from your website.	ttq.track('Download')	-
+FindLocation	When a visitor tries to find your location.	ttq.track('FindLocation')	-
+InitiateCheckout	When a visitor proceeds to checkout.	ttq.track('InitiateCheckout')	-
+PlaceAnOrder	When a visitor places an order.	ttq.track('PlaceAnOrder')	content_type, quantity, description, content_id, currency, value
+Schedule	When a visitor makes an appointment or visits your location.	ttq.track('Schedule')	-
+Search	When a visitor searches.	ttq.track('Search')	query
+SubmitForm	When a visitor submits a form.	ttq.track('SubmitForm')	-
+Subscribe	When a visitor subscribes on your website.	ttq.track('Subscribe')	-
+ViewContent	When a visitor views a specific page.	ttq.track('ViewContent')	content_type, quantity, description, content_id, currency, value
 
-<a href="https://chatgpt.com/">Q2ChatGPT >>> List of activities for setting up Conversion Tracking in TikTok with GTM.</a>
-<a href="https://youtu.be/GFkmSNTzYOg?si=2gRPhncnmolrWbIP">=>A to Z Guide | TikTok Pixel Setup | GTM Browser & Server Side(Video)</a>
+NOTE : By default, the pixel base code will always include "Page View" events, which measure when a visitor lands on your website. Therefore, no additional event code is needed to measure "Page View."
+=======================================================
+Create an HTML page to demonstrate the TikTok Standard named AddPaymentInfo with parameters.
+Show the data to be pushed on the page in plain text (not in JSON format).
+Design the page to have a look and feel similar to TikTok.
+Include the Google Tag Manager (GTM) code with the provided GTM ID: GTM-PPBVCLNF.
+Ensure the page is tracked with GTM.
+Add a button to trigger the event.
+The data should be pushed to the dataLayer only when the button is clicked.
