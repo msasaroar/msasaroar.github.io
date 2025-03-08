@@ -14,7 +14,7 @@
 
 Snapchat Standard Event	 with Parameters
 ==========================
-Create an HTML page to demonstrate the Snapchat Standard Event named AddToCart.
+Create an HTML page to demonstrate the Snapchat Standard Event Type named Page View.
 Show the data to be pushed on the page in plain text (not in JSON format).
 Design the page to have a look and feel similar to Snapchat.
 Include the Google Tag Manager (GTM) code with the provided GTM ID: GTM-PPBVCLNF.
