@@ -3,106 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snapchat AddPaymentInfo Event</title>
+    <title>Snapchat Event - Purchase</title>
     
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id=GTM-PPBVCLNF'+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-PPBVCLNF');</script>
     <!-- End Google Tag Manager -->
     
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
+            background-color: #FFFC00;
             text-align: center;
-            background: linear-gradient(to bottom, #FFFC00, #FFD700);
             color: black;
+            padding: 20px;
+        }
+        .header {
+            background-color: #FFFC00;
+            color: black;
+            padding: 15px;
+            font-size: 24px;
+            font-weight: bold;
         }
         .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            border: 2px solid black;
         }
-        .snap-btn {
+        h2 {
+            color: black;
+        }
+        .data-field {
+            text-align: left;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .label {
+            font-weight: bold;
+            color: black;
+        }
+        .value {
+            color: #333;
+        }
+        button {
             background-color: black;
             color: yellow;
+            padding: 10px 20px;
             border: none;
-            padding: 15px 40px;
-            font-size: 20px;
-            font-weight: bold;
             cursor: pointer;
-            border-radius: 30px;
-            transition: all 0.3s ease-in-out;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            font-size: 16px;
+            border-radius: 5px;
+            margin-top: 20px;
         }
-        .snap-btn:hover {
+        button:hover {
             background-color: yellow;
             color: black;
-            transform: scale(1.1);
-        }
-        .data-box {
-            margin-top: 30px;
-            padding: 25px;
-            border: 3px solid black;
-            display: inline-block;
-            background: white;
-            color: black;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-            max-width: 300px;
-        }
-        h1 {
-            font-size: 32px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-        p {
-            font-size: 18px;
+            transform: scale(1.05);
         }
     </style>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     
+    <div class="header">Snapchat Purchase Event Tracking</div>
+
     <div class="container">
-        <h1>🚀 Snapchat AddPaymentInfo Event</h1>
-        <p>Click the button below to trigger the AddPaymentInfo event.</p>
-        
-        <button class="snap-btn" onclick="triggerAddPaymentInfo()">🔥 Trigger AddPaymentInfo</button>
-        
-        <div class="data-box">
-            <h2>📊 Event Data</h2>
-            <p><strong>Event Name:</strong> AddPaymentInfo</p>
-            <p><strong>Content Type:</strong> Product</p>
-            <p><strong>Content ID:</strong> 12345</p>
-            <p><strong>Currency:</strong> USD</p>
-            <p><strong>Value:</strong> $29.99</p>
-            <p><strong>Payment Method:</strong> Credit Card</p>
+        <h2>Purchase Event</h2>
+        <div class="data-field">
+            <span class="label">Event Name:</span> <span class="value">Purchase</span>
         </div>
+        <div class="data-field">
+            <span class="label">Currency:</span> <span class="value">USD</span>
+        </div>
+        <div class="data-field">
+            <span class="label">Value:</span> <span class="value">49.99</span>
+        </div>
+        <div class="data-field">
+            <span class="label">Transaction ID:</span> <span class="value">TXN123456</span>
+        </div>
+        <button id="trackEvent">Track Purchase</button>
     </div>
-    
+
     <script>
-        function triggerAddPaymentInfo() {
+        document.getElementById('trackEvent').addEventListener('click', function() {
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
-                'event': 'addpaymentinfo',
-                'content_type': 'Product',
-                'content_id': '12345',
+                'event': 'Purchase',
                 'currency': 'USD',
-                'value': 29.99,
-                'payment_method': 'Credit Card'
+                'price': 1499.99,
+                'transaction_id': 'TXN98765',
+                'item_ids': ['iphone15', 'macbook_air_m2'],
+                'item_category': 'Electronics',
+                'number_of_items': 2,
+                'description': 'iPhone 15 Pro, MacBook Air M2'
             });
-            alert('🎉 AddPaymentInfo event triggered!');
-        }
+            alert('Purchase event fired with value: 49.99 USD');
+        });
     </script>
 </body>
 </html>

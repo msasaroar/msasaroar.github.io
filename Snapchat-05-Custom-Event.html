@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snapchat Event - Add To Cart</title>
+    <title>Snapchat Custom Event 1</title>
     
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -15,7 +15,7 @@
 
     <style>
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Arial', sans-serif;
             background-color: #FFFC00;
             text-align: center;
             padding: 20px;
@@ -27,7 +27,6 @@
             padding: 15px;
             font-size: 24px;
             font-weight: bold;
-            border-bottom: 4px solid black;
         }
         .container {
             max-width: 400px;
@@ -36,7 +35,7 @@
             background: white;
             border-radius: 8px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-            border: 2px solid black;
+            border: 2px solid #000;
         }
         h2 {
             color: black;
@@ -48,7 +47,7 @@
         }
         .label {
             font-weight: bold;
-            color: black;
+            color: #333;
         }
         .value {
             color: #555;
@@ -62,7 +61,6 @@
             font-size: 16px;
             border-radius: 5px;
             margin-top: 20px;
-            transition: all 0.3s ease;
         }
         button:hover {
             background-color: yellow;
@@ -76,35 +74,39 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     
-    <div class="header">Snapchat Add To Cart Tracking</div>
+    <div class="header">Snapchat Custom Event Tracking</div>
 
     <div class="container">
-        <h2>Add To Cart Event</h2>
+        <h2>Custom Event 1</h2>
         <div class="data-field">
-            <span class="label">Event Name:</span> <span class="value">AddToCart</span>
+            <span class="label">Event Name:</span> <span class="value">Custom Event 1</span>
         </div>
         <div class="data-field">
-            <span class="label">Item Name:</span> <span class="value">Snapchat Merch Hoodie</span>
+            <span class="label">User ID:</span> <span class="value">123456789</span>
         </div>
         <div class="data-field">
-            <span class="label">Price:</span> <span class="value">$49.99</span>
+            <span class="label">Event Category:</span> <span class="value">Engagement</span>
         </div>
         <div class="data-field">
-            <span class="label">Currency:</span> <span class="value">USD</span>
+            <span class="label">Action:</span> <span class="value">Button Click</span>
         </div>
-        <button id="trackEvent">Add To Cart</button>
+        <button id="trackEvent">Trigger Custom Event 1</button>
     </div>
 
     <script>
         document.getElementById('trackEvent').addEventListener('click', function() {
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
-                'event': 'AddToCart',
-                'item_name': 'Snapchat Merch Hoodie',
-                'price': 49.99,
-                'currency': 'USD'
+            "event": "Custom Event 1",
+            "custom_param_1": "value1",
+            "custom_param_2": "value2",
+            "currency": "USD",
+            "price": 29.99,
+            "content_type": "product",
+            "content_id": "PRODUCT123",
+            "description": "This is a test event"
             });
-            alert('AddToCart event fired with item: Snapchat Merch Hoodie, Price: $49.99, Currency: USD');
+            alert('Custom Event 1 triggered with user_id: 123456789');
         });
     </script>
 </body>
