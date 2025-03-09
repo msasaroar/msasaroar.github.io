@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ecommerce Store</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Google Analytics 4 Tracking Code -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID'); // Replace with your GA4 Measurement ID
+  </script>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 20px 0;
+      font-size: 2.5rem;
+      color: #2c3e50;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .product {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .product img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .product-content {
+      padding: 15px;
+    }
+
+    .product h2 {
+      font-size: 1.5rem;
+      margin: 0 0 10px;
+      color: #2c3e50;
+    }
+
+    .product p {
+      font-size: 1.1rem;
+      color: #666;
+      margin: 0 0 15px;
+    }
+
+    .product button {
+      display: inline-block;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .product button:hover {
+      background-color: #2980b9;
+    }
+
+    .checkout-btn {
+      display: block;
+      width: 200px;
+      margin: 30px auto;
+      background-color: #27ae60;
+      color: #fff;
+      border: none;
+      padding: 15px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .checkout-btn:hover {
+      background-color: #219653;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to Our Ecommerce Store</h1>
+  <div class="container">
+    <div class="product-grid">
+      <!-- Product 1 -->
+      <div class="product" id="product1">
+        <img src="https://via.placeholder.com/300x200" alt="Product 1">
+        <div class="product-content">
+          <h2>Product 1</h2>
+          <p>Price: $20.00</p>
+          <button onclick="viewProduct('Product 1', 'P001', 20.00)">View Product</button>
+          <button onclick="addToCart('Product 1', 'P001', 20.00)">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product" id="product2">
+        <img src="https://via.placeholder.com/300x200" alt="Product 2">
+        <div class="product-content">
+          <h2>Product 2</h2>
+          <p>Price: $30.00</p>
+          <button onclick="viewProduct('Product 2', 'P002', 30.00)">View Product</button>
+          <button onclick="addToCart('Product 2', 'P002', 30.00)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Checkout Button -->
+    <button class="checkout-btn" onclick="purchase()">Proceed to Checkout</button>
+  </div>
+
+  <!-- GA4 Event Tracking Script -->
+  <script>
+    // Function to track product views
+    function viewProduct(name, id, price) {
+      gtag('event', 'view_item', {
+        items: [{
+          item_name: name,
+          item_id: id,
+          price: price,
+          currency: 'USD'
+        }]
+      });
+      alert(`Viewing ${name}`);
+    }
+
+    // Function to track adding to cart
+    function addToCart(name, id, price) {
+      gtag('event', 'add_to_cart', {
+        items: [{
+          item_name: name,
+          item_id: id,
+          price: price,
+          currency: 'USD'
+        }]
+      });
+      alert(`Added ${name} to cart`);
+    }
+
+    // Function to track purchases
+    function purchase() {
+      gtag('event', 'purchase', {
+        transaction_id: 'T12345', // Unique transaction ID
+        value: 50.00, // Total value of the purchase
+        currency: 'USD',
+        items: [
+          {
+            item_name: 'Product 1',
+            item_id: 'P001',
+            price: 20.00,
+            quantity: 1
+          },
+          {
+            item_name: 'Product 2',
+            item_id: 'P002',
+            price: 30.00,
+            quantity: 1
+          }
+        ]
+      });
+      alert('Purchase completed!');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+To ChatGPT >>> 
+Memorize following instruction: 
+Page to be create: GA4 schema compliant eCommerce html page. 
+Include all frequently used parameters.
+Show parameters name and values on the page in a readable format such a way so that page looks like a data entry screen but no need to data entry.
+The event will be fire on click a button.
+Make the page Google Analytics like look & feel.
+The page will be tracked with GTM.
+Use multiple item if there is item information.
+For making the page compact, show all info except items side by side 2 section.
+Subject to demonstrate: GA4 schema compliant event "add_shipping_info".
+
+https://developers.google.com/analytics/devguides/collection/ga4/reference/events?client_type=gtm#add_payment_info
+Create another page for the event : add_payment_info
+Create another page for the event : add_shipping_info
+Create another page for the event : add_to_cart
+Create another page for the event : purchase

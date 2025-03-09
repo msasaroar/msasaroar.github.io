@@ -1,3 +1,5 @@
+<!-- Document Link : https://developers.google.com/analytics/devguides/collection/ga4/reference/events?client_type=gtm#purchase -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +24,7 @@
             color: #333;
         }
         .container {
-            max-width: 600px;
+            max-width: 700px;
             margin: auto;
             padding: 20px;
             background: white;
@@ -32,30 +34,49 @@
         }
         h2 {
             color: #0057B8;
+            margin-bottom: 10px;
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .column {
+            flex: 1;
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ddd;
         }
         .data-table {
             width: 100%;
-            margin-top: 10px;
             border-collapse: collapse;
         }
         .data-table th, .data-table td {
             border: 1px solid #ddd;
-            padding: 10px;
+            padding: 8px;
             text-align: left;
         }
         .data-table th {
             background-color: #0057B8;
             color: white;
         }
+        .item-section {
+            margin-top: 20px;
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+        }
         button {
             background-color: #0057B8;
             color: white;
-            padding: 12px 20px;
+            padding: 10px 20px;
             border: none;
             cursor: pointer;
             font-size: 16px;
             border-radius: 5px;
-            margin-top: 20px;
+            margin-top: 15px;
         }
         button:hover {
             background-color: #003f7f;
@@ -70,48 +91,39 @@
     <div class="container">
         <h2>GA4 Purchase Event Tracking</h2>
         
-        <table class="data-table">
-            <tr>
-                <th>Parameter Name</th>
-                <th>Value</th>
-            </tr>
-            <tr>
-                <td>event</td>
-                <td>purchase</td>
-            </tr>
-            <tr>
-                <td>transaction_id</td>
-                <td>TXN123456</td>
-            </tr>
-            <tr>
-                <td>value</td>
-                <td>199.99</td>
-            </tr>
-            <tr>
-                <td>currency</td>
-                <td>USD</td>
-            </tr>
-            <tr>
-                <td>tax</td>
-                <td>15.99</td>
-            </tr>
-            <tr>
-                <td>shipping</td>
-                <td>5.99</td>
-            </tr>
-            <tr>
-                <td>coupon</td>
-                <td>SUMMER2024</td>
-            </tr>
-            <tr>
-                <td>items</td>
-                <td>
-                    <strong>Item 1:</strong> Nike Running Shoes (SKU12345) - $99.99 <br>
-                    <strong>Item 2:</strong> Adidas T-Shirt (SKU67890) - $50.00 <br>
-                    <strong>Item 3:</strong> Puma Cap (SKU54321) - $50.00
-                </td>
-            </tr>
-        </table>
+        <div class="row">
+            <!-- Left Column: Transaction Info -->
+            <div class="column">
+                <table class="data-table">
+                    <tr><th>Parameter</th><th>Value</th></tr>
+                    <tr><td>event</td><td>purchase</td></tr>
+                    <tr><td>transaction_id</td><td>TXN123456</td></tr>
+                    <tr><td>value</td><td>199.99</td></tr>
+                </table>
+            </div>
+
+            <!-- Right Column: Additional Info -->
+            <div class="column">
+                <table class="data-table">
+                    <tr><th>Parameter</th><th>Value</th></tr>
+                    <tr><td>currency</td><td>USD</td></tr>
+                    <tr><td>tax</td><td>15.99</td></tr>
+                    <tr><td>shipping</td><td>5.99</td></tr>
+                    <tr><td>coupon</td><td>SUMMER2024</td></tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Items Section -->
+        <div class="item-section">
+            <h3>Purchased Items</h3>
+            <table class="data-table">
+                <tr><th>Item Name</th><th>SKU</th><th>Price</th></tr>
+                <tr><td>Nike Running Shoes</td><td>SKU12345</td><td>$99.99</td></tr>
+                <tr><td>Adidas T-Shirt</td><td>SKU67890</td><td>$50.00</td></tr>
+                <tr><td>Puma Cap</td><td>SKU54321</td><td>$50.00</td></tr>
+            </table>
+        </div>
 
         <button id="trackPurchase">Track Purchase</button>
     </div>
