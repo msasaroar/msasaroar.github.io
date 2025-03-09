@@ -39,11 +39,70 @@ Subscribe	When a visitor subscribes on your website.	ttq.track('Subscribe')	-
 ViewContent	When a visitor views a specific page.	ttq.track('ViewContent')	content_type, quantity, description, content_id, currency, value
 
 NOTE : By default, the pixel base code will always include "Page View" events, which measure when a visitor lands on your website. Therefore, no additional event code is needed to measure "Page View."
+
 =======================================================
-Create an HTML page to demonstrate the TikTok Standard named AddPaymentInfo with parameters.
-Show the data to be pushed on the page in plain text (not in JSON format).
-Design the page to have a look and feel similar to TikTok.
-Include the Google Tag Manager (GTM) code with the provided GTM ID: GTM-PPBVCLNF.
-Ensure the page is tracked with GTM.
-Add a button to trigger the event.
-The data should be pushed to the dataLayer only when the button is clicked.
+TikTok document: https://ads.tiktok.com/help/article/standard-events-parameters?lang=en 
+
+Need For TikTok Pixel and Conversion API
+TikTok business Manager account
+Google Tag Manager
+Website
+GA4
+
+Extension: 
+Qr code reader from Google chrome: https://chromewebstore.google.com/detail/qr-code-reader-for-google/gmloihcgbhbonllenincdakeijmikcne?hl=en 
+
+TikTok pixel helper: https://chromewebstore.google.com/detail/tiktok-pixel-helper/aelgobmabdmlfmiblddjfnjodalhidnn?hl=en 
+
+Browser and Server Site Tracking:
+
+Variable:
+
+ecommerce.currency
+ecommerce.value
+ecommerce.items
+ecommerce.items.0.item_id
+ecommerce.items.0.item_name
+ecommerce.items.0.item_brand
+ecommerce.items.0.price
+ecommerce.items.0.item_category
+
+Need For multiple product:
+Please This java script code for Purchase, checkout, view_cart variable ( item_id, item_name, Item_price, Item_category, item_brand, quantity )
+How to use this Code : New variable +  custom javascript
+
+Name: CJS_item_id
+function() {
+ var event= {{ecommerce.items}};
+ return event.map(function(event) { return event.item_id; }).join();
+}
+
+Name: CJS_item_name
+function() {
+ var event= {{ecommerce.items}};
+ return event.map(function(event) { return event.item_name; }).join();
+}
+
+Name: CJS_item_brand
+function() {
+ var event= {{ecommerce.items}};
+ return event.map(function(event) { return event.item_brand; }).join();
+}
+
+Name: CJS_price
+function() {
+ var event= {{ecommerce.items}};
+ return event.map(function(event) { return event.price; }).join();
+}
+
+Name: CJS_item_category
+function() {
+ var event= {{ecommerce.items}};
+ return event.map(function(event) { return event.item_category; }).join();
+}
+
+Name: CJS_quantity
+function() {
+ var event= {{ecommerce.items}};
+ return event.map(function(event) { return event.quantity; }).join();
+}
