@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GA4 eCommerce Events Demo</title>
+    <title>GA4 Compliant eCommerce Events</title>
     
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -16,15 +16,15 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(to right, #FFFC00, #FFD700);
+            background: green;
             color: black;
             text-align: center;
             padding: 20px;
         }
         .container {
             max-width: 600px;
-            margin: 20px auto;
-            background: white;
+            margin: 100px auto;
+            background: greenyellow;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
@@ -41,7 +41,7 @@
             transition: 0.3s;
         }
         button:hover {
-            background-color: yellow;
+            background-color:orange;
             color: black;
             transform: scale(1.05);
         }
@@ -53,17 +53,17 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <div class="container">
-        <h2>GA4 eCommerce Events</h2>
-        <button onclick="fireEvent('view_item_list', 'Best Sellers')">View Item List</button>
-        <button onclick="fireEvent('select_item')">Select Item</button>
-        <button onclick="fireEvent('view_item')">View Item</button>
-        <button onclick="fireEvent('add_to_cart')">Add to Cart</button>
-        <button onclick="fireEvent('remove_from_cart')">Remove from Cart</button>
-        <button onclick="fireEvent('begin_checkout')">Begin Checkout</button>
-        <button onclick="fireEvent('add_shipping_info')">Add Shipping Info</button>
-        <button onclick="fireEvent('add_payment_info')">Add Payment Info</button>
-        <button onclick="fireEvent('purchase')">Complete Purchase</button>
-        <button onclick="fireEvent('refund')">Refund</button>
+        <h2>GA4 Compliant eCommerce Events</h2>
+        <button onclick="fireEvent('view_item_list', 'Best Sellers')">View Item List [view_item_list]</button>
+        <button onclick="fireEvent('select_item')">Select Item [select_item]</button>
+        <button onclick="fireEvent('view_item')">View Item [view_item]</button>
+        <button onclick="fireEvent('add_to_cart')">Add to Cart [add_to_cart]</button>
+        <button onclick="fireEvent('remove_from_cart')">Remove from Cart [remove_from_cart]</button>
+        <button onclick="fireEvent('begin_checkout')">Begin Checkout [begin_checkout]</button>
+        <button onclick="fireEvent('add_shipping_info')">Add Shipping Info [add_shipping_info]</button>
+        <button onclick="fireEvent('add_payment_info')">Add Payment Info [add_payment_info]</button>
+        <button onclick="fireEvent('purchase')">Complete Purchase [purchase]</button>
+        <button onclick="fireEvent('refund')">Refund [refund]</button>
     </div>
 
     <script>
