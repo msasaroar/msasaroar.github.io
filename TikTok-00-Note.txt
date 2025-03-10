@@ -1,4 +1,4 @@
-1. Login : https://business.tiktok.completes
+1. Login : https://business.tiktok.com
 2. Click On Button <Go to Business Center> on Right Top Corner 
    OR 
    Mouse Pointer On <9 Dot Menu > on Right Top Corner Then Click  <Business Center>
@@ -19,24 +19,20 @@
         >>> https://ads.tiktok.com/help/article/get-started-google-tag-manager?lang=en
                D:\analytics\msasaroar.github.io\TikTok-Event-List.png
 
-Event Name	        Description	Tracking Code	Parameters
+Event Name	        Description	Tracking Code	    Parameters
+=======          ================       =======
 AddPaymentInfo	When a visitor adds their payment information at checkout.	ttq.track('AddPaymentInfo')	-
 AddToCart	When a visitor adds an item to the cart.	ttq.track('AddToCart')	content_type, quantity, description, content_id, currency, value
 AddToWishlist	When an item is added to the wishlist.	ttq.track('AddToWishlist')	-
 ClickButton	When a visitor taps a button.	ttq.track('ClickButton')	-
 CompletePayment	When a visitor makes a payment.	ttq.track('CompletePayment')	content_type, quantity, description, content_id, currency, value
-CompleteRegistration	When a visitor signs up for something.	ttq.track('CompleteRegistration')	-
 Contact	When a visitor contacts you.	ttq.track('Contact')	-
-CustomizeProduct	When a visitor customizes a product.	ttq.track('CustomizeProduct')	-
 Download	When a visitor downloads something from your website.	ttq.track('Download')	-
-FindLocation	When a visitor tries to find your location.	ttq.track('FindLocation')	-
 InitiateCheckout	When a visitor proceeds to checkout.	ttq.track('InitiateCheckout')	-
 PlaceAnOrder	When a visitor places an order.	ttq.track('PlaceAnOrder')	content_type, quantity, description, content_id, currency, value
-Schedule	When a visitor makes an appointment or visits your location.	ttq.track('Schedule')	-
-Search	When a visitor searches.	ttq.track('Search')	query
-SubmitForm	When a visitor submits a form.	ttq.track('SubmitForm')	-
-Subscribe	When a visitor subscribes on your website.	ttq.track('Subscribe')	-
 ViewContent	When a visitor views a specific page.	ttq.track('ViewContent')	content_type, quantity, description, content_id, currency, value
+
+Implemented Events : AddPaymentInfo, AddToCart, AddToWishlist, ClickButton, CompletePayment, Contact, Download, InitiateCheckout, PlaceAnOrder, ViewContent
 
 NOTE : By default, the pixel base code will always include "Page View" events, which measure when a visitor lands on your website. Therefore, no additional event code is needed to measure "Page View."
 

@@ -8,8 +8,8 @@ Make the page Google Analytics like look & feel.
 The page will be tracked with GTM.
 Use multiple item if there is item information.
 For making the page compact, show all info except items side by side 2 section.
-Subject to demonstrate: GA4 schema compliant event "add_shipping_info".
-
+Subject to demonstrate: GA4 schema compliant even
+t "add_shipping_info".
 https://developers.google.com/analytics/devguides/collection/ga4/reference/events?client_type=gtm#add_payment_info
 Create another page for the event : add_payment_info
 Create another page for the event : add_shipping_info

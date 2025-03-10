@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TikTok Pixel - Complete Payment</title>
+    <title>TikTok Pixel - Contact Event</title>
 
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': 
@@ -71,37 +71,34 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <div class="container">
-        <h2>Complete Payment Event</h2>
+        <h2>Contact Event</h2>
         <div class="data-field">
-            <span class="label">Event Name:</span> <span class="value">CompletePayment</span>
+            <span class="label">Event Name:</span> <span class="value">Contact</span>
         </div>
         <div class="data-field">
-            <span class="label">Order ID:</span> <span class="value">ORD-98765</span>
+            <span class="label">Contact Method:</span> <span class="value">Email</span>
         </div>
         <div class="data-field">
-            <span class="label">Content ID:</span> <span class="value">SW-12345</span>
+            <span class="label">User Email:</span> <span class="value">user@example.com</span>
         </div>
         <div class="data-field">
-            <span class="label">Total Price:</span> <span class="value">$199.99</span>
+            <span class="label">Message:</span> <span class="value">Inquiry about services</span>
         </div>
-        <div class="data-field">
-            <span class="label">Currency:</span> <span class="value">USD</span>
-        </div>
-        <button id="trackEvent">Track CompletePayment</button>
+        <button id="trackEvent">Track Contact Event</button>
     </div>
 
     <script>
         document.getElementById('trackEvent').addEventListener('click', function() {
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
-            'event': 'CompletePayment',
-            'content_type': 'product',      // Example: Can be "product", "page", etc.
-            'quantity': 1,                  // Example: The quantity of the item
-            'description': 'Sample product description',  // Example: A brief description of the content
-            'content_id': '12345',          // Example: Unique identifier for the content (like product ID)
-            'currency': 'USD',              // Example: Currency code, e.g., "USD", "EUR", etc.
-            'value': 29.99                  // Example: The value or price of the content
+                'event': 'Contact',
+                'contact_method': 'Email',
+                'user_email': 'user@example.com',
+                'message': 'Inquiry about services'
             });
+            alert('Contact event fired!');
+        });
     </script>
+
 </body>
 </html>

@@ -1,2 +1,30 @@
-    <a href="https://ads.twitter.com" target="_blank">06. Twitter Conversion Tracking</a>
-    <a href="https://chatgpt.com/">Q2ChatGPT >>> List of activities for setting up Conversion Tracking in Twitter with GTM.</a>
+<a href="https://ads.twitter.com" target="_blank">06. Twitter Conversion Tracking</a>
+<a href="https://chatgpt.com/">Q2ChatGPT >>> List of activities for setting up Conversion Tracking in Twitter with GTM.</a>
+
+Conversion Tracking for Websites
+https://business.x.com/en/help/campaign-measurement-and-analytics/conversion-tracking-for-websites
+
+The top 10 most commonly used eCommerce events for X (Twitter) Ads Pixel are:
+
+AddPaymentInfo – Fires when a user adds or submits payment details.
+AddToCart – Triggered when a user adds a product to the cart.
+InitiateCheckout – Triggered when a user starts the checkout process.
+Lead – Used when a user expresses interest, such as filling out a form.
+PageView – Triggered when a user visits a page on your site.
+Purchase – Triggered when a user completes a purchase.
+RemoveFromCart – Fires when a user removes an item from their cart.
+SignUp – Fires when a user creates a new account on the site.
+Subscribe – Triggered when a user subscribes to a service or product.
+ViewContent – Fires when a user views a product page or important content.
+
+To ChatGPT >>> 
+Memorize following instruction: 
+Page to be create: eCommerce html page. 
+Include all frequently used parameters.
+Show parameters name and values on the page in a readable format such a way so that page looks like a data entry screen but no need to data entry.
+The event will be fire on click a button.
+Make the page X like look & feel.
+The page will be tracked with GTM.
+Use multiple item if there is item information.
+For making the page compact, show all info except items side by side 2 section.
+Subject to demonstrate: X Compliant event AddPaymentInfo.
