@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snapchat GA4 Event - add_to_cart</title>
-    
+    <title>Snapchat Custom Event - CUSTOM_EVENT_1</title>
+
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -15,30 +15,32 @@
 
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             background-color: #FFFC00;
-            color: black;
             text-align: center;
             padding: 20px;
+            color: black;
         }
         .header {
-            background-color: #000;
+            background-color: black;
             color: #FFFC00;
             padding: 15px;
             font-size: 24px;
             font-weight: bold;
+            border-radius: 8px;
+            margin-bottom: 20px;
         }
         .container {
             max-width: 400px;
-            margin: 50px auto;
+            margin: auto;
             padding: 20px;
-            background: #fff;
-            border-radius: 8px;
+            background: white;
+            border-radius: 10px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-            border: 2px solid #000;
+            border: 2px solid black;
         }
         h2 {
-            color: #000;
+            color: black;
         }
         .data-field {
             text-align: left;
@@ -47,12 +49,13 @@
         }
         .label {
             font-weight: bold;
+            color: black;
         }
         .value {
             color: #333;
         }
         button {
-            background-color: #000;
+            background-color: black;
             color: #FFFC00;
             padding: 10px 20px;
             border: none;
@@ -60,58 +63,61 @@
             font-size: 16px;
             border-radius: 5px;
             margin-top: 20px;
+            transition: all 0.3s ease;
         }
         button:hover {
             background-color: #FFFC00;
-            color: #000;
+            color: black;
+            transform: scale(1.05);
         }
     </style>
 </head>
 <body>
+
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    
-    <div class="header">Snapchat GA4 add_to_cart Event Tracking</div>
+
+    <div class="header">Snapchat Custom Event Tracking</div>
 
     <div class="container">
-        <h2>add_to_cart Event</h2>
+        <h2>Custom Event Trigger</h2>
         <div class="data-field">
-            <span class="label">Event Name:</span> <span class="value">add_to_cart</span>
+            <span class="label">Event Name:</span> <span class="value">CUSTOM_EVENT_1</span>
         </div>
         <div class="data-field">
-            <span class="label">Item Name:</span> <span class="value">Premium Sneakers</span>
+            <span class="label">Transaction ID:</span> <span class="value">TXN123456</span>
         </div>
         <div class="data-field">
-            <span class="label">Item ID:</span> <span class="value">SNK12345</span>
-        </div>
-        <div class="data-field">
-            <span class="label">Price:</span> <span class="value">$99.99</span>
+            <span class="label">Value:</span> <span class="value">$49.99</span>
         </div>
         <div class="data-field">
             <span class="label">Currency:</span> <span class="value">USD</span>
         </div>
         <div class="data-field">
-            <span class="label">Quantity:</span> <span class="value">1</span>
+            <span class="label">Item ID:</span> <span class="value">ITEM98765</span>
         </div>
-        <button id="trackEvent">Add to Cart</button>
+        <div class="data-field">
+            <span class="label">Category:</span> <span class="value">Electronics</span>
+        </div>
+        <button id="trackEvent">Track CUSTOM_EVENT_1</button>
     </div>
 
     <script>
         document.getElementById('trackEvent').addEventListener('click', function() {
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
-                'event': 'add_to_cart',
-                'items': [{
-                    'item_name': 'Premium Sneakers',
-                    'item_id': 'SNK12345',
-                    'price': 99.99,
-                    'currency': 'USD',
-                    'quantity': 1
-                }]
+                'event': 'CUSTOM_EVENT_1',
+                'transaction_id': 'TXN123456',
+                'value': 49.99,
+                'currency': 'USD',
+                'item_id': 'ITEM98765',
+                'category': 'Electronics'
             });
-            alert('GA4 add_to_cart event fired with item: Premium Sneakers');
+            alert('CUSTOM_EVENT_1 event fired successfully!');
         });
     </script>
+
 </body>
 </html>

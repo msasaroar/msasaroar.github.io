@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snapchat Event - Purchase</title>
+    <title>Snapchat Purchase Event</title>
     
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -15,30 +15,26 @@
     
     <style>
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Arial', sans-serif;
             background-color: #FFFC00;
+            color: black;
             text-align: center;
-            color: black;
             padding: 20px;
-        }
-        .header {
-            background-color: #FFFC00;
-            color: black;
-            padding: 15px;
-            font-size: 24px;
-            font-weight: bold;
         }
         .container {
             max-width: 400px;
             margin: 50px auto;
             padding: 20px;
             background: white;
-            border-radius: 8px;
+            border-radius: 10px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-            border: 2px solid black;
+            border: 3px solid #FFFC00;
         }
         h2 {
-            color: black;
+            color: #FFFC00;
+            background: black;
+            padding: 10px;
+            border-radius: 5px;
         }
         .data-field {
             text-align: left;
@@ -47,15 +43,11 @@
         }
         .label {
             font-weight: bold;
-            color: black;
-        }
-        .value {
-            color: #333;
         }
         button {
             background-color: black;
-            color: yellow;
-            padding: 10px 20px;
+            color: #FFFC00;
+            padding: 12px 24px;
             border: none;
             cursor: pointer;
             font-size: 16px;
@@ -63,7 +55,7 @@
             margin-top: 20px;
         }
         button:hover {
-            background-color: yellow;
+            background-color: #FFFC00;
             color: black;
             transform: scale(1.05);
         }
@@ -74,39 +66,41 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     
-    <div class="header">Snapchat Purchase Event Tracking</div>
-
     <div class="container">
-        <h2>Purchase Event</h2>
-        <div class="data-field">
-            <span class="label">Event Name:</span> <span class="value">Purchase</span>
-        </div>
-        <div class="data-field">
-            <span class="label">Currency:</span> <span class="value">USD</span>
-        </div>
-        <div class="data-field">
-            <span class="label">Value:</span> <span class="value">49.99</span>
-        </div>
-        <div class="data-field">
-            <span class="label">Transaction ID:</span> <span class="value">TXN123456</span>
-        </div>
-        <button id="trackEvent">Track Purchase</button>
+        <h2>Snapchat PURCHASE Event</h2>
+        <div class="data-field"><span class="label">Event Name:</span> PURCHASE</div>
+        <div class="data-field"><span class="label">Transaction ID:</span> 123456789</div>
+        <div class="data-field"><span class="label">Value:</span> $49.99</div>
+        <div class="data-field"><span class="label">Currency:</span> USD</div>
+        <div class="data-field"><span class="label">Items:</span></div>
+        <div class="data-field">- Item ID: 98765</div>
+        <div class="data-field">- Item Name: Sneakers</div>
+        <div class="data-field">- Category: Footwear</div>
+        <div class="data-field">- Quantity: 1</div>
+        <div class="data-field">- Price: $49.99</div>
+        
+        <button id="trackPurchase">Track Purchase</button>
     </div>
 
     <script>
-        document.getElementById('trackEvent').addEventListener('click', function() {
+        document.getElementById('trackPurchase').addEventListener('click', function() {
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
-                'event': 'Purchase',
+                'event': 'PURCHASE',
+                'transaction_id': '123456789',
+                'value': 49.99,
                 'currency': 'USD',
-                'price': 1499.99,
-                'transaction_id': 'TXN98765',
-                'item_ids': ['iphone15', 'macbook_air_m2'],
-                'item_category': 'Electronics',
-                'number_of_items': 2,
-                'description': 'iPhone 15 Pro, MacBook Air M2'
+                'items': [
+                    {
+                        'item_id': '98765',
+                        'item_name': 'Sneakers',
+                        'category': 'Footwear',
+                        'quantity': 1,
+                        'price': 49.99
+                    }
+                ]
             });
-            alert('Purchase event fired with value: 49.99 USD');
+            alert('PURCHASE event fired successfully!');
         });
     </script>
 </body>

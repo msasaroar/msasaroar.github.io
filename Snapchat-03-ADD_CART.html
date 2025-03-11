@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snapchat Page View Event</title>
-    
+    <title>Snapchat Event - Add to Cart</title>
+
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -21,19 +21,12 @@
             padding: 20px;
             color: black;
         }
-        .header {
-            background-color: #FFFC00;
-            color: black;
-            padding: 15px;
-            font-size: 24px;
-            font-weight: bold;
-        }
         .container {
             max-width: 400px;
             margin: 50px auto;
             padding: 20px;
             background: white;
-            border-radius: 8px;
+            border-radius: 10px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
             border: 2px solid black;
         }
@@ -44,10 +37,12 @@
             text-align: left;
             padding: 10px;
             border-bottom: 1px solid #ddd;
+        }
+        .label {
             font-weight: bold;
         }
         .value {
-            color: #555;
+            color: #333;
         }
         button {
             background-color: black;
@@ -70,35 +65,42 @@
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    
-    <div class="header">Snapchat Page View Tracking</div>
 
     <div class="container">
-        <h2>Snapchat Page View Event</h2>
+        <h2>Snapchat - Add to Cart Event</h2>
         <div class="data-field">
-            <span class="label">Event Name:</span> <span class="value">PageView</span>
+            <span class="label">Event Name:</span> <span class="value">ADD_CART</span>
         </div>
         <div class="data-field">
-            <span class="label">Page URL:</span> <span class="value" id="pageUrl"></span>
+            <span class="label">Item ID:</span> <span class="value">12345</span>
         </div>
         <div class="data-field">
-            <span class="label">Timestamp:</span> <span class="value" id="timestamp"></span>
+            <span class="label">Item Name:</span> <span class="value">Black Hoodie</span>
         </div>
-        <button id="trackEvent">Track Page View</button>
+        <div class="data-field">
+            <span class="label">Item Category:</span> <span class="value">Clothing</span>
+        </div>
+        <div class="data-field">
+            <span class="label">Price:</span> <span class="value">$49.99</span>
+        </div>
+        <div class="data-field">
+            <span class="label">Currency:</span> <span class="value">USD</span>
+        </div>
+        <button id="trackEvent">Add to Cart</button>
     </div>
 
     <script>
-        document.getElementById('pageUrl').textContent = window.location.href;
-        document.getElementById('timestamp').textContent = new Date().toLocaleString();
-
         document.getElementById('trackEvent').addEventListener('click', function() {
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
-                'event': 'PageView',
-                'page_url': window.location.href,
-                'timestamp': new Date().toISOString()
+                'event': 'ADD_CART',
+                'item_id': '12345',
+                'item_name': 'Black Hoodie',
+                'item_category': 'Clothing',
+                'price': 49.99,
+                'currency': 'USD'
             });
-            alert('PageView event fired!');
+            alert('ADD_CART event fired for item: Black Hoodie');
         });
     </script>
 </body>
