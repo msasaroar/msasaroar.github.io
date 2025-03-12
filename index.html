@@ -45,7 +45,7 @@
     .tab-container {
         width: 200px;
         max-height: 92vh; /* Prevents overflow */
-        background-color: GRAY;
+        background-color: black;
         padding-top: 20px;
         position: fixed;
         overflow-y: auto; /* Enables vertical scrolling */
@@ -55,10 +55,10 @@
         width: 8px; /* Scrollbar width */
     }
     .tab-container::-webkit-scrollbar-track {
-        background: indigo; /* Track color */
+        background: black; /* Track color */
     }
     .tab-container::-webkit-scrollbar-thumb {
-        background: red; /* Scrollbar color */
+        background: greenyellow; /* Scrollbar color */
         border-radius: 5px;
     }
     .tab-container a {
@@ -66,17 +66,17 @@
         padding: 15px;
         text-align: center;
         background-color: green;
-        color: black;
+        color: white;
         text-decoration: none;
         margin: 5px 0;
         border-radius: 5px;
         transition: background-color 0.3s, color 0.3s;
     }
     .tab-container a:hover {
-        background-color: orange;
+        background-color: greenyellow;
     }
     .tab-container a.active {
-        background-color: red;
+        background-color: greenyellow;
         color: black;
     }
     /* Right-side content display */
@@ -86,7 +86,7 @@
         flex: 1;
         height: 100vh;
         overflow-y: auto;
-        background-color: gray;
+        background-color: white;
     }
 
     iframe {
