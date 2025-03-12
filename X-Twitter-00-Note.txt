@@ -4,6 +4,21 @@
 Conversion Tracking for Websites
 https://business.x.com/en/help/campaign-measurement-and-analytics/conversion-tracking-for-websites
 
+
+Conversion Tracking (Overview)
+https://docs.x.com/x-ads-api/measurement/web-conversions#conversion-tracking-overview
+There are a variety of website actions that an advertiser can measure with conversion tracking. 
+They can select one or more, in accordance with the action(s) they are looking to drive with their ad campaign:
+
+Site visit: User visits a landing page on an advertiser’s site
+Purchase: User completes a purchase of a product or service on the advertiser’s site
+Download: User downloads a file, such as a white paper or software package, from the advertiser’s site
+Sign up: User signs up for the advertiser’s service, newsletter, or email communication
+Custom: This is a catch-all category for a custom action that does not fall into one of the categories above
+
+
+
+
 The top 10 most commonly used eCommerce events for X (Twitter) Ads Pixel are:
 
 AddPaymentInfo – Fires when a user adds or submits payment details.
@@ -38,3 +53,6 @@ a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,
 twq('config','p96t2');
 </script>
 <!-- End Twitter conversion tracking base code -->
+
+
+ADDED_PAYMENT_INFO, ADD_TO_CART, ADD_TO_WISHLIST, CHECKOUT_INITIATED, CONTENT_VIEW, CUSTOM, DOWNLOAD, PRODUCT_CUSTOMIZATION,PURCHASE, SEARCH, SIGN_UP, SITE_VISIT, START_TRIAL, SUBSCRIBE

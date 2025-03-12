@@ -3,7 +3,7 @@
 Is TikTok event manager works fine in Bangladesh ?
 ??????????????????????????????????????????????????????????????
 
-1. Login : https://business.tiktok.com   (User ID: msasaroar_1, PWD : *CCCCCCCNNNN#, Number : 01965206101 )
+1. Login : https://business.tiktok.com   (User ID: msasaroar_1, Number : 01965206101, PWD : *dohalia1964# )
 2. Click On Button <Go to Business Center> on Right Top Corner 
    OR 
    Mouse Pointer On <9 Dot Menu > on Right Top Corner Then Click  <Business Center>
@@ -23,6 +23,8 @@ Is TikTok event manager works fine in Bangladesh ?
     8.3. Article: How to set up TikTok Pixel with Google Tag Manager in TikTok Events Manager
         >>> https://ads.tiktok.com/help/article/get-started-google-tag-manager?lang=en
                D:\analytics\msasaroar.github.io\TikTok-Event-List.png
+    8.4. About supported standard events
+        >>> https://ads.tiktok.com/help/article/supported-standard-events
 
 Event Name	        Description	Tracking Code	    Parameters
 =======          ================       =======
