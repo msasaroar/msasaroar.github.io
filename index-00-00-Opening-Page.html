@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+
+            animation: gradientAnimation 30s infinite alternate;
+        }
+
+        h1 {
+            font-size: 50px; /* Increased font size */
+            font-weight: bold;
+            color: black;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+    </style>
+
+    <!-- Tawk.to Chat Widget -->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function() {
+            var s1 = document.createElement("script"),
+                s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/67b07c687aa782190bfbfa29/1ik4mbu71';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!-- End of Tawk.to Script -->
+
+</head>
+
+<body>
+    <div>
+        <h1>Resources For Learning Google Analytics 4 (GA4)<br>&<br>Google Tag Manager (GTM)</h1>
+        <h2>Explore tags, triggers, variables, events, and data layers!</h2>
+        <h3>Activities for Setting Up Conversion Tracking with GTM</h3>
+        <br><br>
+        <h4><a href="011-10-00-Browser-Side-Tracking-Setup.html">01. Browser Side Tracking</a></h4>
+        <h4><a href="011-11-00-Server-Side-Tracking-Setup.html">02. Server Side Tracking</a></h4>
+        <br><br><br>
+        <p style="font-family: Arial, sans-serif; color: black; font-size: 10px;">
+            &copy; <span id="currentYear"></span> Md. Saiful Alam Saroar. All rights reserved. 
+            This demo website is provided solely for educational and demonstration purposes related to setting up conversion tracking.
+        </p>
+    </div>
+
+    <script>
+        function getRandomColor() {
+            const letters = "0123456789ABCDEF";
+            let color = "#";
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        function setRandomGradient() {
+            const colors = Array.from({ length: 6 }, getRandomColor).join(", ");
+            document.body.style.background = `linear-gradient(to right, ${colors})`;
+        }
+
+        setRandomGradient();
+    </script>
+</body>
+</html>
+

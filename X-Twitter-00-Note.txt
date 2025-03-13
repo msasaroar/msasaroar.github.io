@@ -1,9 +1,15 @@
+<=<=<=<=<=<=<=<=<=<=<=<=<=<=<=<=<= Google Account Information =>=>=>=>=>==>=>=>=>=>=>=>=>=>
+User/Gmail ID : ga4gtmpractice1@gmail.com / PWD : *ga4gtmpracticeAbcd#  |  ga4gtmpractice1@gmail.com/*ga4gtmpracticeAbcd#
+User/Gmail ID	: azfarrabibsakif@gmail.com / PWD : *ga4gtmpracticeAbcd#  |  azfarrabibsakif@gmail.com/*ga4gtmpracticeAbcd#
+User/Gmail ID	: salamfreelancing@gmail.com / PWD : *dohalia1964#  |  salamfreelancing@gmail.com/*dohalia1964#
+User/Gmail ID	: msasaroar@gmail.com / PWD : *dohalia1964#  |  msasaroar@gmail.com/*dohalia1964#
+<=<=<=<=<=<=<=<=<=<=<=<=<=<=<=<=<= Google Account Information =>=>=>=>=>==>=>=>=>=>=>=>=>=>
+
 <a href="https://ads.twitter.com" target="_blank">06. Twitter Conversion Tracking</a>
 <a href="https://chatgpt.com/">Q2ChatGPT >>> List of activities for setting up Conversion Tracking in Twitter with GTM.</a>
 
 Conversion Tracking for Websites
 https://business.x.com/en/help/campaign-measurement-and-analytics/conversion-tracking-for-websites
-
 
 Conversion Tracking (Overview)
 https://docs.x.com/x-ads-api/measurement/web-conversions#conversion-tracking-overview
