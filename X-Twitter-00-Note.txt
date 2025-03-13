@@ -5,7 +5,13 @@ User/Gmail ID	: salamfreelancing@gmail.com / PWD : *dohalia1964#  |  salamfreela
 User/Gmail ID	: msasaroar@gmail.com / PWD : *dohalia1964#  |  msasaroar@gmail.com/*dohalia1964#
 <=<=<=<=<=<=<=<=<=<=<=<=<=<=<=<=<= Google Account Information =>=>=>=>=>==>=>=>=>=>=>=>=>=>
 
-<a href="https://ads.twitter.com" target="_blank">06. Twitter Conversion Tracking</a>
+
+01. https://business.x.com/en/advertising
+02. Login :ga4gtmpractice1@gmail.com / PWD : *dohalia1964#
+
+
+<a href="https://business.x.com/en/advertising" target="_blank">06. Twitter Conversion Tracking</a>
+
 <a href="https://chatgpt.com/">Q2ChatGPT >>> List of activities for setting up Conversion Tracking in Twitter with GTM.</a>
 
 Conversion Tracking for Websites
@@ -21,8 +27,6 @@ Purchase: User completes a purchase of a product or service on the advertiser’
 Download: User downloads a file, such as a white paper or software package, from the advertiser’s site
 Sign up: User signs up for the advertiser’s service, newsletter, or email communication
 Custom: This is a catch-all category for a custom action that does not fall into one of the categories above
-
-
 
 
 The top 10 most commonly used eCommerce events for X (Twitter) Ads Pixel are:

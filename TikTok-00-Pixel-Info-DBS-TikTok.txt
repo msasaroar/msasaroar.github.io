@@ -1,23 +1,19 @@
 ================
 GTM Account information
 ================
+GTM Code : GTM-5SBXNF9L
 Account     : DBS-TikTok
 Container   : DBS-TikTok
 Workspace  : Default Workspace
 Custom HTML: This tag installs the TikTok pixel base code on your website. (Learn More : https://business-api.tiktok.com/portal/docs?id=1799004081342466)
 
-Tag name : TT-CV83V2BC77UCRE2PFLRG-Web-Tag-Pixel_Setup
-Trigger     : All Pages
-Pixel code : CV83V2BC77UCRE2PFLRG
-
-TikTok Pixel : This tag sends events on your website to TikTok. (Learn More : https://business-api.tiktok.com/portal/docs?id=1799004081342466)
-
-Tag name : TT-CV83V2BC77UCRE2PFLRG-Web-Tag-Pixel_Event
-Trigger     : TT-CV83V2BC77UCRE2PFLRG-Web-Trigger-Custom_Event
-Pixel code : CV83V2BC77UCRE2PFLRG
-
 ==========
-Base Pixel Code
+Base Pixel Code [ CV912VBC77U3OTMOH1OG]
+
+QR Code Generated Link : 
+https://msasaroar.github.io/?tt_test_id=CV912VBC77U3OTMOH1OG_1741848653#
+https://analytics.tiktok.com/i18n/pixel/test/CV912VBC77U3OTMOH1OG_1741848653?redirect=https%3A%2F%2Fmsasaroar.github.io%2F%3Ftt_test_id%3DCV912VBC77U3OTMOH1OG_1741848653
+
 ==========
 <!-- TikTok Pixel Code Start -->
 <script>
