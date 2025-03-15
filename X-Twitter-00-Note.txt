@@ -8,8 +8,70 @@ User/Gmail ID	: msasaroar@gmail.com / PWD : *dohalia1964#  |  msasaroar@gmail.co
 
 01. https://business.x.com/en/advertising
 02. Login :ga4gtmpractice1@gmail.com / PWD : *dohalia1964#
+03. Click On [...More] On left menu.
+04. Click Ads
+05. Create an Ads fullfilling all requirement
+06. Follow X Tracking Code Installation Guide
+
+Sample Code:
+1st Set=========================
+<!-- Twitter conversion tracking base code -->
+<script>
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+twq('config','p3vdf');
+</script>
+<!-- End Twitter conversion tracking base code -->
+
+<!-- Twitter conversion tracking event code -->
+<script type="text/javascript">
+  // Insert Twitter Event ID
+  twq('event', 'tw-p3vdf-p3vdg', {
+  });
+</script>
+<!-- End Twitter conversion tracking event code -->
 
 
+Sample Code:
+2nd Set=========================
+<!-- Twitter conversion tracking base code -->
+<script>
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+twq('config','p9gxz');
+</script>
+<!-- End Twitter conversion tracking base code -->
+Installation Instructions:
+Copy the base pixel code above.
+Paste the code just before the closing </head> tag on all the pages of your website.
+This base pixel will track page views and enable event tracking.
+Use the X Pixel Helper browser extension to verify correct installation.
+
+
+<!-- Twitter conversion tracking event code -->
+<script type="text/javascript">
+  // Insert Twitter Event ID
+  twq('event', 'tw-p9gxz-p9gy0', {
+    value: null // use this to pass the value of the conversion (e.g. 5.00)
+  });
+</script>
+<!-- End Twitter conversion tracking event code -->
+
+Installation Instructions:
+Ensure you have installed the base pixel first.
+Select the parameters you want to include in your event pixel.
+Copy the generated event pixel code above.
+Paste this code where you want to track the specific event (e.g., after a purchase, lead, add to cart, etc.).
+Replace the example values with your actual event data.
+Customize any additional parameters as needed for your specific tracking requirements.
+
+
+
+
+
+=====================================================================================
 <a href="https://business.x.com/en/advertising" target="_blank">06. Twitter Conversion Tracking</a>
 
 <a href="https://chatgpt.com/">Q2ChatGPT >>> List of activities for setting up Conversion Tracking in Twitter with GTM.</a>
