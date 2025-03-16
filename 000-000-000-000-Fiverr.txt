@@ -173,3 +173,7 @@ Demand: Custom dashboards to visualize all analytics data in a user-friendly for
 
 What’s Included: Custom reporting dashboards for GA4, Google Ads, social media performance, eCommerce stats.
 
+
+
+Google Ads, LinkedIn Insight Tag, Meta/Facebook Pixel, Pinterest Tag, Snapchat Pixel, TikTok Pixel
+
