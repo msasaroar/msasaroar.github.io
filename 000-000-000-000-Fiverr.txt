@@ -7,14 +7,13 @@ Hello! I’m a software engineer with over 15 years of experience in software de
 
 Currently, I specialize in browser-side tracking setup and optimization using tools like:
 
-✅ Google Analytics 4
-✅ Google Ads
-✅ LinkedIn Insight Tag
-✅ Meta/Facebook Pixel
-✅ Pinterest Tag
-✅ Snapchat Pixel
-✅ TikTok Pixel
-
+✅ 01. Google Analytics 4
+✅ 02. Google Ads
+✅ 03. Meta/Facebook Pixel
+✅ 04. LinkedIn Insight Tag
+✅ 05. Pinterest Tag
+✅ 06. TikTok Pixel
+✅ 07. Snapchat Pixel
 I’m committed to delivering high-quality, tailored solutions that meet clients' needs with precision and efficiency.
 
 Let’s collaborate and turn your ideas into success!
