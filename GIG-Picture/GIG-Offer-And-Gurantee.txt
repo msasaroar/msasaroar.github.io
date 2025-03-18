@@ -1,15 +1,17 @@
-
-
+<<<< 3D Text Generator Online >>>>    https://www.3dtextgenerator.com/en/
 
 1. How fit will this profile picture be for my GIG on my Fiverr account?
 
 2. I want to use a guarantee seal with follow following text:
-"New to Fiverr but 100% committed! Trust me, and I won’t disappoint."
+"I'm new to Fiverr, but I'm 100% committed!
+Trust me—you won’t be disappointed."
 How will the picture be ?
 
-3. I want to use this text with following sela: 
+3. I want to use this text with following sela:
+"
 🔹 50% OFF for My First 3 Clients!
-🔹 Same High Quality – Full Dedication Guaranteed!"
+🔹 Same High Quality – Full Dedication, Guaranteed!
+"
 How will the picture be ? 
 
 
