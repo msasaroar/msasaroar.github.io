@@ -1,12 +1,5 @@
 
 
-
-
-
-
-
-
-
 <<<< 3D Text Generator Online >>>>    https://www.3dtextgenerator.com/en/
 The maximum dimension for a Fiverr gig image is 1280 x 769 pixels with a 5MB file size limit.
 Recommended Fiverr Gig Image Guidelines:
@@ -24,7 +17,8 @@ Recommended Fiverr Gig Image Guidelines:
 =================================================================================================
 Your Trusted Partner in Setting up Conversion Tracking
 
-Hello! I’m a software engineer with over 15 years of experience in software development. As technology evolves, I have upskilled myself for freelancing, specializing in Google Tag Manager (GTM).
+Hello! I’m a software engineer with over 15 years of experience in software development. As technology evolves, 
+I have upskilled myself for freelancing, specializing in Google Tag Manager (GTM).
 
 Currently, I specialize in browser-side tracking setup and optimization using tools like:
 
