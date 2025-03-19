@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GA4 Begin Checkout Event Demo</title>
+    <title>GA4 Remove from Cart Event Demo</title>
 
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id=GTM-PPBVCLNF'+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PPBVCLNF');</script>
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N4MMS7TS');</script>
     <!-- End Google Tag Manager -->
 
     <style>
@@ -89,17 +89,17 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <div class="container">
-        <h2>GA4 Begin Checkout Event Tracking</h2>
+        <h2>GA4 Remove from Cart Event Tracking</h2>
         
         <div class="row">
-            <!-- Left Column: Checkout Info -->
+            <!-- Left Column: Cart Info -->
             <div class="column">
                 <table class="data-table">
                     <tr><th>Parameter</th><th>Value</th></tr>
-                    <tr><td>event</td><td>begin_checkout</td></tr>
+                    <tr><td>event</td><td>remove_from_cart</td></tr>
                     <tr><td>currency</td><td>USD</td></tr>
-                    <tr><td>value</td><td>250.00</td></tr>
-                    <tr><td>coupon</td><td>WELCOME10</td></tr>
+                    <tr><td>value</td><td>99.99</td></tr>
+                    <tr><td>coupon</td><td>DISCOUNT10</td></tr>
                 </table>
             </div>
 
@@ -107,70 +107,48 @@
             <div class="column">
                 <table class="data-table">
                     <tr><th>Parameter</th><th>Value</th></tr>
-                    <tr><td>customer_id</td><td>CUST67890</td></tr>
-                    <tr><td>number_of_items</td><td>3</td></tr>
-                    <tr><td>payment_method</td><td>Credit Card</td></tr>
-                    <tr><td>shipping_method</td><td>Express</td></tr>
+                    <tr><td>customer_id</td><td>CUST12345</td></tr>
+                    <tr><td>cart_id</td><td>CART67890</td></tr>
                 </table>
             </div>
         </div>
 
         <!-- Items Section -->
         <div class="item-section">
-            <h3>Items in Cart</h3>
+            <h3>Removed Item</h3>
             <table class="data-table">
                 <tr><th>Item Name</th><th>Item ID</th><th>Price</th><th>Quantity</th><th>Category</th><th>Brand</th></tr>
-                <tr><td>Apple iPhone 15</td><td>SKU11111</td><td>$799.00</td><td>1</td><td>Electronics</td><td>Apple</td></tr>
-                <tr><td>Samsung Galaxy Watch</td><td>SKU22222</td><td>$299.00</td><td>1</td><td>Wearables</td><td>Samsung</td></tr>
-                <tr><td>Sony Noise-Canceling Headphones</td><td>SKU33333</td><td>$199.00</td><td>1</td><td>Accessories</td><td>Sony</td></tr>
+                <tr><td>Nike Running Shoes</td><td>SKU12345</td><td>$99.99</td><td>1</td><td>Shoes</td><td>Nike</td></tr>
             </table>
         </div>
 
-        <button id="trackBeginCheckout">Track Begin Checkout</button>
+        <button id="trackRemoveFromCart">Remove from Cart</button>
     </div>
 
     <script>
-        document.getElementById('trackBeginCheckout').addEventListener('click', function() {
+        document.getElementById('trackRemoveFromCart').addEventListener('click', function() {
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
-                'event': 'begin_checkout',
+                'event': 'remove_from_cart',
                 'ecommerce': {
                     'currency': 'USD',
-                    'value': 250.00,
-                    'coupon': 'WELCOME10',
-                    'customer_id': 'CUST67890',
-                    'number_of_items': 3,
-                    'payment_method': 'Credit Card',
-                    'shipping_method': 'Express',
+                    'value': 99.99,
+                    'coupon': 'DISCOUNT10',
+                    'customer_id': 'CUST12345',
+                    'cart_id': 'CART67890',
                     'items': [
                         {
-                            'item_name': 'Apple iPhone 15',
-                            'item_id': 'SKU11111',
-                            'price': 799.00,
+                            'item_name': 'Nike Running Shoes',
+                            'item_id': 'SKU12345',
+                            'price': 99.99,
                             'quantity': 1,
-                            'item_category': 'Electronics',
-                            'item_brand': 'Apple'
-                        },
-                        {
-                            'item_name': 'Samsung Galaxy Watch',
-                            'item_id': 'SKU22222',
-                            'price': 299.00,
-                            'quantity': 1,
-                            'item_category': 'Wearables',
-                            'item_brand': 'Samsung'
-                        },
-                        {
-                            'item_name': 'Sony Noise-Canceling Headphones',
-                            'item_id': 'SKU33333',
-                            'price': 199.00,
-                            'quantity': 1,
-                            'item_category': 'Accessories',
-                            'item_brand': 'Sony'
+                            'item_category': 'Shoes',
+                            'item_brand': 'Nike'
                         }
                     ]
                 }
             });
-            alert('GA4 Begin Checkout event fired!');
+            alert('GA4 Remove from Cart event fired!');
         });
     </script>
 </body>

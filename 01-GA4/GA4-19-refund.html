@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GA4 Add Shipping Info Event Demo</title>
+    <title>GA4 Refund Event Demo</title>
 
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id=GTM-PPBVCLNF'+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PPBVCLNF');</script>
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N4MMS7TS');</script>
     <!-- End Google Tag Manager -->
 
     <style>
@@ -89,36 +89,35 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <div class="container">
-        <h2>GA4 Add Shipping Info Event Tracking</h2>
+        <h2>GA4 Refund Event Tracking</h2>
         
         <div class="row">
-            <!-- Left Column: Shipping Info -->
+            <!-- Left Column: Refund Info -->
             <div class="column">
                 <table class="data-table">
                     <tr><th>Parameter</th><th>Value</th></tr>
-                    <tr><td>event</td><td>add_shipping_info</td></tr>
+                    <tr><td>event</td><td>refund</td></tr>
+                    <tr><td>transaction_id</td><td>TXN123456</td></tr>
+                    <tr><td>value</td><td>199.99</td></tr>
                     <tr><td>currency</td><td>USD</td></tr>
-                    <tr><td>value</td><td>150.00</td></tr>
-                    <tr><td>shipping_tier</td><td>Standard</td></tr>
-                    <tr><td>coupon</td><td>FREESHIP</td></tr>
+                    <tr><td>refund_reason</td><td>Customer Return</td></tr>
                 </table>
             </div>
 
-            <!-- Right Column: Customer Info -->
+            <!-- Right Column: Additional Info -->
             <div class="column">
                 <table class="data-table">
                     <tr><th>Parameter</th><th>Value</th></tr>
-                    <tr><td>customer_id</td><td>CUST12345</td></tr>
-                    <tr><td>shipping_method</td><td>Ground</td></tr>
                     <tr><td>shipping_cost</td><td>5.99</td></tr>
-                    <tr><td>shipping_address</td><td>123 Main St, City, Country</td></tr>
+                    <tr><td>tax</td><td>15.99</td></tr>
+                    <tr><td>coupon</td><td>SUMMER2024</td></tr>
                 </table>
             </div>
         </div>
 
         <!-- Items Section -->
         <div class="item-section">
-            <h3>Items in Cart</h3>
+            <h3>Refunded Items</h3>
             <table class="data-table">
                 <tr><th>Item Name</th><th>Item ID</th><th>Price</th><th>Quantity</th><th>Category</th><th>Brand</th></tr>
                 <tr><td>Nike Running Shoes</td><td>SKU12345</td><td>$99.99</td><td>1</td><td>Shoes</td><td>Nike</td></tr>
@@ -126,23 +125,22 @@
             </table>
         </div>
 
-        <button id="trackShippingInfo">Track Shipping Info</button>
+        <button id="trackRefund">Track Refund</button>
     </div>
 
     <script>
-        document.getElementById('trackShippingInfo').addEventListener('click', function() {
+        document.getElementById('trackRefund').addEventListener('click', function() {
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
-                'event': 'add_shipping_info',
+                'event': 'refund',
                 'ecommerce': {
+                    'transaction_id': 'TXN123456',
+                    'value': 199.99,
                     'currency': 'USD',
-                    'value': 150.00,
-                    'shipping_tier': 'Standard',
-                    'coupon': 'FREESHIP',
-                    'customer_id': 'CUST12345',
-                    'shipping_method': 'Ground',
+                    'refund_reason': 'Customer Return',
                     'shipping_cost': 5.99,
-                    'shipping_address': '123 Main St, City, Country',
+                    'tax': 15.99,
+                    'coupon': 'SUMMER2024',
                     'items': [
                         {
                             'item_name': 'Nike Running Shoes',
@@ -163,7 +161,7 @@
                     ]
                 }
             });
-            alert('GA4 Add Shipping Info event fired!');
+            alert('GA4 Refund event fired!');
         });
     </script>
 </body>

@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GA4 Add to Cart Event Demo</title>
+    <title>GA4 View Item List Event Demo</title>
 
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id=GTM-PPBVCLNF'+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PPBVCLNF');</script>
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N4MMS7TS');</script>
     <!-- End Google Tag Manager -->
 
     <style>
@@ -89,55 +89,57 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <div class="container">
-        <h2>GA4 Add to Cart Event Tracking</h2>
+        <h2>GA4 View Item List Event Tracking</h2>
         
         <div class="row">
-            <!-- Left Column: Cart Info -->
+            <!-- Left Column: Event Info -->
             <div class="column">
                 <table class="data-table">
                     <tr><th>Parameter</th><th>Value</th></tr>
-                    <tr><td>event</td><td>add_to_cart</td></tr>
+                    <tr><td>event</td><td>view_item_list</td></tr>
+                    <tr><td>item_list_id</td><td>search_results</td></tr>
+                    <tr><td>item_list_name</td><td>Search Results</td></tr>
                     <tr><td>currency</td><td>USD</td></tr>
-                    <tr><td>value</td><td>149.99</td></tr>
-                    <tr><td>coupon</td><td>WELCOME10</td></tr>
                 </table>
             </div>
 
-            <!-- Right Column: Customer Info -->
+            <!-- Right Column: Additional Info -->
             <div class="column">
                 <table class="data-table">
                     <tr><th>Parameter</th><th>Value</th></tr>
-                    <tr><td>customer_id</td><td>CUST12345</td></tr>
-                    <tr><td>cart_id</td><td>CART67890</td></tr>
-                    <tr><td>items_count</td><td>2</td></tr>
+                    <tr><td>search_term</td><td>running shoes</td></tr>
+                    <tr><td>number_of_items</td><td>3</td></tr>
+                    <tr><td>page_location</td><td>/search?q=running+shoes</td></tr>
                 </table>
             </div>
         </div>
 
         <!-- Items Section -->
         <div class="item-section">
-            <h3>Items Added to Cart</h3>
+            <h3>Items in List</h3>
             <table class="data-table">
                 <tr><th>Item Name</th><th>Item ID</th><th>Price</th><th>Quantity</th><th>Category</th><th>Brand</th></tr>
                 <tr><td>Nike Running Shoes</td><td>SKU12345</td><td>$99.99</td><td>1</td><td>Shoes</td><td>Nike</td></tr>
-                <tr><td>Adidas T-Shirt</td><td>SKU67890</td><td>$50.00</td><td>1</td><td>Clothing</td><td>Adidas</td></tr>
+                <tr><td>Adidas Running Shoes</td><td>SKU67890</td><td>$89.99</td><td>1</td><td>Shoes</td><td>Adidas</td></tr>
+                <tr><td>Puma Running Shoes</td><td>SKU54321</td><td>$79.99</td><td>1</td><td>Shoes</td><td>Puma</td></tr>
             </table>
         </div>
 
-        <button id="trackAddToCart">Track Add to Cart</button>
+        <button id="trackItemList">Track View Item List</button>
     </div>
 
     <script>
-        document.getElementById('trackAddToCart').addEventListener('click', function() {
+        document.getElementById('trackItemList').addEventListener('click', function() {
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
-                'event': 'add_to_cart',
+                'event': 'view_item_list',
                 'ecommerce': {
+                    'item_list_id': 'search_results',
+                    'item_list_name': 'Search Results',
                     'currency': 'USD',
-                    'value': 149.99,
-                    'coupon': 'WELCOME10',
-                    'customer_id': 'CUST12345',
-                    'cart_id': 'CART67890',
+                    'search_term': 'running shoes',
+                    'number_of_items': 3,
+                    'page_location': '/search?q=running+shoes',
                     'items': [
                         {
                             'item_name': 'Nike Running Shoes',
@@ -148,17 +150,25 @@
                             'item_brand': 'Nike'
                         },
                         {
-                            'item_name': 'Adidas T-Shirt',
+                            'item_name': 'Adidas Running Shoes',
                             'item_id': 'SKU67890',
-                            'price': 50.00,
+                            'price': 89.99,
                             'quantity': 1,
-                            'item_category': 'Clothing',
+                            'item_category': 'Shoes',
                             'item_brand': 'Adidas'
+                        },
+                        {
+                            'item_name': 'Puma Running Shoes',
+                            'item_id': 'SKU54321',
+                            'price': 79.99,
+                            'quantity': 1,
+                            'item_category': 'Shoes',
+                            'item_brand': 'Puma'
                         }
                     ]
                 }
             });
-            alert('GA4 Add to Cart event fired!');
+            alert('GA4 View Item List event fired!');
         });
     </script>
 </body>
