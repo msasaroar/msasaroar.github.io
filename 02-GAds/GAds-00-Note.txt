@@ -13,3 +13,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WWDLQ5K9"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+
+
+Q2ChatGPT >>> Create a complex HTML page using a non-compliant pushed data layer for GA4, and prepare a list of tasks based on that HTML page to be tracked using GTM.
