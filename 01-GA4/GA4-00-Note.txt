@@ -41,17 +41,36 @@ Create another page for the event : add_to_cart
 Create another page for the event : purchase
 
 
-=========================================================================
-Automatically collected events:
-=========================================================================
-https://support.google.com/analytics/answer/9234069?sjid=15642985394770298078-NC
+=================================
+[GA4] Automatically collected events
+=================================
+https://support.google.com/analytics/answer/9234069
 
 
-=========================================================================
-Recommended events:
-=========================================================================
+==============================================================================================
+[GA4] Enhanced measurement events (When you enable these options for a web data stream, your Google Analytics tag starts sending events right away.)
+==============================================================================================
+https://support.google.com/analytics/answer/9216061?sjid=9969511612730558330-NC
+
+click
+file_download
+first_visit
+form_start
+form_submit
+page_view
+scroll
+session_start
+user_engagement
+video_complete
+video_progress
+video_start
+view_search_results
+
+
+=================
+[GA4] Recommended events
+=================
 https://support.google.com/analytics/answer/9267735?sjid=15642985394770298078-NC
-
 
 =================================================
                                     For all properties
@@ -66,7 +85,7 @@ ad_impression			  sees an advertisement, for apps only
 earn_virtual_currency	 earns virtual currency (coins, gems, tokens, etc.)
 generate_lead			   submits a form or a request for information
 join_group			        joins a group
-login	logs in
+login	                      logs in
 purchase				    completes a purchase
 refund				         receives a refund
 search				         searches your website or app
