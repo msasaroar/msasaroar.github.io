@@ -1,3 +1,18 @@
+Ad For Social Media
+
+Hello! I’m a software engineer with over 15 years of experience in software development. 
+As technology evolves, I have upskilled myself for freelancing, specializing in Google Tag Manager (GTM).
+
+I specialize in browser-side tracking setup and optimization using tools like:
+
+✅ 01. Google Analytics 4 ✅ 02. Google Ads ✅ 03. Meta/Facebook Pixel
+✅ 04. LinkedIn Insight Tag ✅ 05. Pinterest Tag ✅ 06. TikTok Pixel ✅ 07. Snapchat Pixel
+
+I’m committed to delivering meet clients' needs with full dedication
+📧 Get in touch: msasaroar@gmail.com
+
+
+
 Basic
 Pixel Create and Installation, GA4 Base Pixel, Google Analytics 4, Session Start, Google Tag Manager Only PageView Event Setup
 
