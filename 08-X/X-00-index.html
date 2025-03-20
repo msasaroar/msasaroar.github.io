@@ -1,20 +1,20 @@
 <div class="listbox-group">
-    <label for="XTweeter">XTweeter Pixel Events</label>
-    <ul id="XTweeter" role="listbox" tabindex="0">
-        <li tabindex="0" data-value="XTweeter-01-Page-View.html">X/Tweeter-01-Page-View</li>
-        <li tabindex="0" data-value="XTweeter-03-Add-To-Cart.html">X/Tweeter-02-Add-Cart</li>
-        <li tabindex="0" data-value="XTweeter-03-View-Content.html">X/Tweeter-03-View-Content</li>
-        <li tabindex="0" data-value="XTweeter-04-Purchase.html">X/Tweeter-04-Purchase</li>
-        <li tabindex="0" data-value="XTweeter-05-Custom-Event.html">X/Tweeter-05-Custom-Event</li>
+    <label for="X">X Pixel Events</label>
+    <ul id="X" role="listbox" tabindex="0">
+        <li tabindex="0" data-value="X-01-Page-View.html">X # 01. Page-View</li>
+        <li tabindex="0" data-value="X-02-Add-To-Cart.html">X # 02. Add-To-Cart</li>
+        <li tabindex="0" data-value="X-03-View-Content.html">X # 03. View-Content</li>
+        <li tabindex="0" data-value="X-04-Purchase.html">X # 04. Purchase</li>
+        <li tabindex="0" data-value="X-05-Custom-Event.html">X # 05. Custom-Event</li>
     </ul>
     <button id="proceedBtn" disabled>Proceed</button>
 </div>
 
 <script>
     let selectedValue = "";
-    document.querySelectorAll('#XTweeter li').forEach(item => {
+    document.querySelectorAll('#X li').forEach(item => {
         item.addEventListener('click', function() {
-            document.querySelectorAll('#XTweeter li').forEach(li => li.classList.remove('selected'));
+            document.querySelectorAll('#X li').forEach(li => li.classList.remove('selected'));
             this.classList.add('selected');
             selectedValue = this.getAttribute('data-value');
             document.getElementById('proceedBtn').disabled = false;
