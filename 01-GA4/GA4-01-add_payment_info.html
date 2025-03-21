@@ -146,13 +146,14 @@
                 'user_country': 'USA'
             });
 
-            // Push GA4 add_payment_info event
+
+            // Push GA4 add_payment_info event======
             window.dataLayer.push({
-                'event': 'addPaymentInfo',
+                'event': 'add_payment_info',
                 'ecommerce': {
                     'currency': 'USD',
                     'value': 150.00,
-                    'coupon': 'SUMMER2024',
+                    'coupon': 'SUMMER2024@add_payment_info',
                     'payment_type': 'Credit Card',
                     'items': [
                         {
@@ -176,7 +177,37 @@
             });
 
 
-            alert('GA4 Add Payment Info event fired!');
+            // Push GA4 addPaymentInfo======
+            window.dataLayer.push({
+                'event': 'addPaymentInfo',
+                'ecommerce': {
+                    'currency': 'USD',
+                    'value': 150.00,
+                    'coupon': 'SUMMER2024@addPaymentInfo',
+                    'payment_type': 'Credit Card',
+                    'items': [
+                        {
+                            'item_name': 'Nike Running Shoes',
+                            'item_id': 'SKU12345',
+                            'price': 99.99,  // ✅ Corrected key
+                            'quantity': 1,
+                            'item_category': 'Shoes',
+                            'item_brand': 'Nike'
+                        },
+                        {
+                            'item_name': 'Adidas T-Shirt',
+                            'item_id': 'SKU67890',
+                            'price': 50.00,  // ✅ Corrected key
+                            'quantity': 2,
+                            'item_category': 'Clothing',
+                            'item_brand': 'Adidas'
+                        }
+                    ]
+                }
+            });
+
+
+            alert('<<add_payment_info>> & <<addPaymentInfo>> Event Fired!');
         });
     </script>
 </body>
