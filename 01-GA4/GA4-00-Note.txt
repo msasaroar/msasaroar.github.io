@@ -95,6 +95,7 @@ sign_up				         signs up for an account on your website or app
 spend_virtual_currency	 spends virtual currency (coins, gems, tokens, etc.)
 tutorial_begin			     begins a tutorial during an on-boarding process
 tutorial_complete		   completes a tutorial during an on-boarding process
+
 =================================================
                                     For online sales
 =================================================
