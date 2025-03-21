@@ -141,12 +141,12 @@ What are the steps to send the event add_payment_info into GA4 of the html page 
         document.getElementById('trackEvent').addEventListener('click', function() {
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
-                'event': 'add_payment_info_1',
+                'event': 'addPaymentInfo',
                 'ecommerce': {
-                    'currency': 'USD',
-                    'value': 150.00,
-                    'payment_type': 'Credit Card',
                     'coupon': 'SUMMER2024',
+                    'currency': 'USD',
+                    'payment_type': 'Credit Card',
+                    'value': 150.00,
                     'items': [
                         {
                             'item_name': 'Nike Running Shoes',
