@@ -136,8 +136,19 @@
     <script>
         document.getElementById('trackEvent').addEventListener('click', function() {
             window.dataLayer = window.dataLayer || [];
+
+            // Push user data separately
             window.dataLayer.push({
-                'event': 'addPaymentInfo',
+                'event': 'user_data',
+                'user_id': '12345',
+                'user_pseudo_id': '67890',
+                'user_region': 'California',
+                'user_country': 'USA'
+            });
+
+            // Push GA4 add_payment_info event
+            window.dataLayer.push({
+                'event': 'add_payment_info',
                 'ecommerce': {
                     'coupon': 'SUMMER2024',
                     'currency': 'USD',
@@ -147,7 +158,7 @@
                         {
                             'item_name': 'Nike Running Shoes',
                             'item_id': 'SKU12345',
-                            'price': 99.99,
+                            'item_price': 99.99,
                             'quantity': 1,
                             'item_category': 'Shoes',
                             'item_brand': 'Nike'
@@ -155,20 +166,15 @@
                         {
                             'item_name': 'Adidas T-Shirt',
                             'item_id': 'SKU67890',
-                            'price': 50.00,
+                            'item_price': 50.00,
                             'quantity': 2,
                             'item_category': 'Clothing',
                             'item_brand': 'Adidas'
                         }
                     ]
-                },
-                'user_data': {
-                    'user_id': '12345',
-                    'user_pseudo_id': '67890',
-                    'user_region': 'California',
-                    'user_country': 'USA'
                 }
             });
+
             alert('GA4 Add Payment Info event fired!');
         });
     </script>
