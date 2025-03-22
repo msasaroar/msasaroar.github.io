@@ -39,12 +39,22 @@
 </script>
 
 <style>
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .listbox-group {
+        display: flex;
+        flex-direction: column;
+        height: 90vh; /* পুরো ভিউপোর্ট উচ্চতা */
+    }
     .listbox-group ul {
         list-style: none;
         padding: 0;
         margin: 10px 0;
         border: 1px solid #ccc;
-        max-height: 200px;
+        flex-grow: 1; /* লিস্টবক্স পুরো স্ক্রীন নেবে */
         overflow-y: auto;
     }
     .listbox-group li {
@@ -57,7 +67,7 @@
         color: white;
     }
     button {
-        margin-top: 10px;
+        margin: 10px;
         padding: 10px 15px;
         cursor: pointer;
         background-color: orange;
@@ -74,4 +84,3 @@
         cursor: not-allowed;
     }
 </style>
-

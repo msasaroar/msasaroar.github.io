@@ -1,20 +1,25 @@
 <div class="listbox-group">
-    <label for="X">X Pixel Events</label>
-    <ul id="X" role="listbox" tabindex="0">
-        <li tabindex="0" data-value="X-01-Page-View.html">X # 01. Page-View</li>
-        <li tabindex="0" data-value="X-02-Add-To-Cart.html">X # 02. Add-To-Cart</li>
-        <li tabindex="0" data-value="X-03-View-Content.html">X # 03. View-Content</li>
-        <li tabindex="0" data-value="X-04-Purchase.html">X # 04. Purchase</li>
-        <li tabindex="0" data-value="X-05-Custom-Event.html">X # 05. Custom-Event</li>
+    <label for="LinkedInEvents">LinkedIn Insight Tag Events</label>
+    <ul id="LinkedInEvents" role="listbox" tabindex="0">
+        <li tabindex="0" data-value="LinkedIn-01-PageView.html">LinkedIn # 01. PageView</li>
+        <li tabindex="0" data-value="LinkedIn-02-Signup.html">LinkedIn # 02. Signup</li>
+        <li tabindex="0" data-value="LinkedIn-03-AddToCart.html">LinkedIn # 03. AddToCart</li>
+        <li tabindex="0" data-value="LinkedIn-04-Purchase.html">LinkedIn # 04. Purchase</li>
+        <li tabindex="0" data-value="LinkedIn-05-Lead.html">LinkedIn # 05. Lead</li>
+        <li tabindex="0" data-value="LinkedIn-06-Install.html">LinkedIn # 06. Install</li>
+        <li tabindex="0" data-value="LinkedIn-07-ViewContent.html">LinkedIn # 07. ViewContent</li>
+        <li tabindex="0" data-value="LinkedIn-08-BookAppointment.html">LinkedIn # 08. BookAppointment</li>
+        <li tabindex="0" data-value="LinkedIn-09-Subscribe.html">LinkedIn # 09. Subscribe</li>
+        <li tabindex="0" data-value="LinkedIn-10-Download.html">LinkedIn # 10. Download</li>
     </ul>
     <button id="proceedBtn" disabled>Proceed</button>
 </div>
 
 <script>
     let selectedValue = "";
-    document.querySelectorAll('#X li').forEach(item => {
+    document.querySelectorAll('#LinkedInEvents li').forEach(item => {
         item.addEventListener('click', function() {
-            document.querySelectorAll('#X li').forEach(li => li.classList.remove('selected'));
+            document.querySelectorAll('#LinkedInEvents li').forEach(li => li.classList.remove('selected'));
             this.classList.add('selected');
             selectedValue = this.getAttribute('data-value');
             document.getElementById('proceedBtn').disabled = false;
@@ -29,22 +34,12 @@
 </script>
 
 <style>
-    html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-    }
-    .listbox-group {
-        display: flex;
-        flex-direction: column;
-        height: 90vh; /* পুরো ভিউপোর্ট উচ্চতা */
-    }
     .listbox-group ul {
         list-style: none;
         padding: 0;
         margin: 10px 0;
         border: 1px solid #ccc;
-        flex-grow: 1; /* লিস্টবক্স পুরো স্ক্রীন নেবে */
+        max-height: 200px;
         overflow-y: auto;
     }
     .listbox-group li {
@@ -57,7 +52,7 @@
         color: white;
     }
     button {
-        margin: 10px;
+        margin-top: 10px;
         padding: 10px 15px;
         cursor: pointer;
         background-color: orange;
@@ -74,3 +69,4 @@
         cursor: not-allowed;
     }
 </style>
+
