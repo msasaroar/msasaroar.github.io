@@ -1,144 +1,131 @@
-<style>
-    html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-    }
-    .listbox-group {
-        display: flex;
-        flex-direction: column;
-        height: 100vh; /* পুরো ভিউপোর্ট উচ্চতা */
-    }
-    .listbox-group ul {
-        list-style: none;
-        padding: 0;
-        margin: 10px 0;
-        border: 1px solid #ccc;
-        flex-grow: 1; /* লিস্টবক্স পুরো স্ক্রীন নেবে */
-        overflow-y: auto;
-    }
-    .listbox-group li {
-        padding: 10px;
-        cursor: pointer;
-        border-bottom: 1px solid #eee;
-    }
-    .listbox-group li:hover, .listbox-group li.selected {
-        background-color: #007bff;
-        color: white;
-    }
-    button {
-        margin: 10px;
-        padding: 10px 15px;
-        cursor: pointer;
-        background-color: orange;
-        color: blue;
-        border: none;
-        border-radius: 5px;
-    }
-    button:hover {
-        background-color: blue;
-        color: orange;
-    }
-    button:disabled {
-        background-color: gray;
-        cursor: not-allowed;
-    }
-</style>
-
-
-
-
-
-
-
-
-
-
-
-<div class="listbox-group">
-    <label for="ga4ConversionActions">Google Analytics Recommended eCommerce Events</label>
-    <ul id="ga4ConversionActions" role="listbox" tabindex="0">
-        <li tabindex="0" data-value="GA4-01-add_payment_info.html">GA4 # 01. add_payment_info</li>
-        <li tabindex="0" data-value="GA4-02-add_shipping_info.html">GA4 # 02. add_shipping_info</li>
-        <li tabindex="0" data-value="GA4-03-add_to_cart.html">GA4 # 03. add_to_cart</li>
-        <li tabindex="0" data-value="GA4-05-begin_checkout.html">GA4 # 05. begin_checkout</li>
-        <li tabindex="0" data-value="GA4-10-generate_lead.html">GA4 # 10. generate_lead</li>
-        <li tabindex="0" data-value="GA4-17-purchase.html">GA4 # 17. purchase</li>
-        <li tabindex="0" data-value="GA4-19-refund.html">GA4 # 19. refund</li>
-        <li tabindex="0" data-value="GA4-20-remove_from_cart.html">GA4 # 20. remove_from_cart</li>
-        <li tabindex="0" data-value="GA4-23-select_item.html">GA4 # 23. select_item</li>
-        <li tabindex="0" data-value="GA4-32-view_item.html">GA4 # 32. view_item</li>
-        <li tabindex="0" data-value="GA4-33-view_item_list.html">GA4 # 33. view_item_list</li>
-        <li tabindex="0" data-value="GA4-view_search_result.html">GA4 # 34. view_search_result</li>
-        <li tabindex="0" data-value="GA4-99-All-In-One.html">GA4 # 99. All Event On A Single Page</li>
-        <li tabindex="0" data-value="index-99-InshaAllah.html">++++++++++++++++++++++</li>
-        <li tabindex="0" data-value="GA4-04-add_to_wishlist.html">GA4 # ??. add_to_wishlist</li>
-        <li tabindex="0" data-value="GA4-06-close_convert_lead.html">GA4 # ??. close_convert_lead</li>
-        <li tabindex="0" data-value="GA4-07-close_unconvert_lead.html">GA4 # ??. close_unconvert_lead</li>
-        <li tabindex="0" data-value="GA4-08-disqualify_lead.html">GA4 # ??. disqualify_lead</li>
-        <li tabindex="0" data-value="GA4-09-earn_virtual_currency.html">GA4 # ??. earn_virtual_currency</li>
-        <li tabindex="0" data-value="GA4-11-join_group.html">GA4 # ??. join_group</li>
-        <li tabindex="0" data-value="GA4-12-level_end.html">GA4 # ??. level_end</li>
-        <li tabindex="0" data-value="GA4-13-level_start.html">GA4 # ??. level_start</li>
-        <li tabindex="0" data-value="GA4-14-level_up.html">GA4 # ??. level_up</li>
-        <li tabindex="0" data-value="GA4-15-login.html">GA4 # ??. login</li>
-        <li tabindex="0" data-value="GA4-16-post_score.html">GA4 # ??. post_score</li>
-        <li tabindex="0" data-value="GA4-18-qualify_lead.html">GA4 # ??. qualify_lead</li>
-        <li tabindex="0" data-value="GA4-21-search.html">GA4 # ??. search</li>
-        <li tabindex="0" data-value="GA4-22-select_content.html">GA4 # ??. select_content</li>
-        <li tabindex="0" data-value="GA4-24-select_promotion.html">GA4 # ??. select_promotion</li>
-        <li tabindex="0" data-value="GA4-25-share.html">GA4 # ??. share</li>
-        <li tabindex="0" data-value="GA4-26-sign_up.html">GA4 # ??. sign_up</li>
-        <li tabindex="0" data-value="GA4-27-spend_virtual_currency.html">GA4 # ??. spend_virtual_currency</li>
-        <li tabindex="0" data-value="GA4-28-tutorial_begin.html">GA4 # ??. tutorial_begin</li>
-        <li tabindex="0" data-value="GA4-29-tutorial_complete.html">GA4 # ??. tutorial_complete</li>
-        <li tabindex="0" data-value="GA4-30-unlock_achievement.html">GA4 # ??. unlock_achievement</li>
-        <li tabindex="0" data-value="GA4-31-view_cart.html">GA4 # ??. view_cart</li>
-        <li tabindex="0" data-value="GA4-34-view_promotion.html">GA4 # ??. view_promotion</li>
-        <li tabindex="0" data-value="GA4-35-working_lead.html">GA4 # ??. working_lead</li>
-    </ul>
-    <button id="proceedBtn" disabled>Proceed</button>
-</div>
-
-<script>
-    const listbox = document.getElementById("ga4ConversionActions");
-    const listItems = listbox.querySelectorAll("li");
-    const proceedBtn = document.getElementById("proceedBtn");
-    let selectedIndex = -1;
-    let selectedValue = "";
-
-    function selectItem(index) {
-        listItems.forEach(li => li.classList.remove("selected"));
-        if (index >= 0 && index < listItems.length) {
-            listItems[index].classList.add("selected");
-            selectedValue = listItems[index].getAttribute("data-value");
-            proceedBtn.disabled = false;
-            listbox.setAttribute("aria-activedescendant", listItems[index].id);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataLayer Ecommerce Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
         }
-    }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #202124;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .data-section {
+            margin-bottom: 20px;
+        }
+        .data-section h2 {
+            font-size: 18px;
+            color: #202124;
+            margin-bottom: 10px;
+        }
+        .data-section pre {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+        button {
+            background-color: #4285f4;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #357abd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>DataLayer Ecommerce Example</h1>
 
-    listItems.forEach((item, index) => {
-        item.addEventListener("click", function () {
-            selectedIndex = index;
-            selectItem(selectedIndex);
+        <!-- Button to trigger the DataLayer event -->
+        <button id="trackAddToCart">Track Add to Cart</button>
+
+        <!-- Display DataLayer Ecommerce Data -->
+        <div class="data-section">
+            <h2>Ecommerce Data</h2>
+            <pre id="ecommerceData"></pre>
+        </div>
+    </div>
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-PPBVCLNF');
+    </script>
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-N4MMS7TS');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <script>
+        // Function to display eCommerce data on the page
+        function displayEcommerceData(data) {
+            const ecommerceDataElement = document.getElementById('ecommerceData');
+            ecommerceDataElement.textContent = JSON.stringify(data, null, 2);
+        }
+
+        // Event listener for the "Track Add to Cart" button
+        document.getElementById('trackAddToCart').addEventListener('click', function() {
+            window.dataLayer = window.dataLayer || [];
+            const ecommerceData = {
+                'event': 'add_to_cart',
+                'ecommerce': {
+                    'currency': 'USD',
+                    'value': 149.99,
+                    'coupon': 'WELCOME10',
+                    'customer_id': 'CUST12345',
+                    'cart_id': 'CART67890',
+                    'items': [
+                        {
+                            'item_name': 'Nike Running Shoes',
+                            'item_id': 'SKU12345',
+                            'price': 99.99,
+                            'quantity': 1,
+                            'item_category': 'Shoes',
+                            'item_brand': 'Nike'
+                        },
+                        {
+                            'item_name': 'Adidas T-Shirt',
+                            'item_id': 'SKU67890',
+                            'price': 50.00,
+                            'quantity': 1,
+                            'item_category': 'Clothing',
+                            'item_brand': 'Adidas'
+                        }
+                    ]
+                }
+            };
+            window.dataLayer.push(ecommerceData);
+            displayEcommerceData(ecommerceData);
+            alert('GA4 Add to Cart event fired!');
         });
-    });
-
-    listbox.addEventListener("keydown", function (e) {
-        if (e.key === "ArrowDown" && selectedIndex < listItems.length - 1) {
-            selectedIndex++;
-            selectItem(selectedIndex);
-        } else if (e.key === "ArrowUp" && selectedIndex > 0) {
-            selectedIndex--;
-            selectItem(selectedIndex);
-        } else if (e.key === "Enter" && selectedValue) {
-            window.location.href = selectedValue;
-        }
-    });
-
-    proceedBtn.addEventListener("click", function () {
-        if (selectedValue) {
-            window.location.href = selectedValue;
-        }
-    });
-</script>
+    </script>
+</body>
+</html>

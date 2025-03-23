@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scroll Depth Tracking with DataLayer</title>
+
+  <!-- Google Tag Manager -->
+  <script>
+      (function(w, d, s, l, i) {
+          w[l] = w[l] || [];
+          w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+          var f = d.getElementsByTagName(s)[0],
+              j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+          j.async = true;
+          j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+          f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <style>
+    body {
+      background: linear-gradient(to right, green, red, orange, blue);
+      color: black;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: green;
+      color: black;
+      text-align: center;
+    }
+
+    header button {
+      background-color: orange;
+      color: blue;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    header button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    main {
+      margin-top: 60px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .content {
+      margin-top: 60px;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #f1f1f1;
+      text-align: center;
+      height: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header>
+    <button onclick="goHome()">Home</button>
+  </header>
+
+  <main>
+    <h1>Scroll Depth Tracking</h1>
+    <p>Scroll down to see scroll depth events pushed to the dataLayer.</p>
+    
+    <!-- Dummy content for scrolling demonstration -->
+    <div class="content">
+      <p>Keep scrolling to track your progress...</p>
+      <div style="height: 2000px;"></div>
+    </div>
+  </main>
+
+  <footer>
+    <object type="text/html" data="footer.html" style="width: 100%; height: 100%;"></object>
+  </footer>
+
+  <script>
+    // Scroll depth tracking
+    let scrollDepths = [25, 50, 75, 100];
+    let trackedDepths = [];
+
+    window.addEventListener('scroll', () => {
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollTop = window.scrollY;
+      const scrollPercentage = Math.round((scrollTop / scrollHeight) * 100);
+
+      scrollDepths.forEach(depth => {
+        if (!trackedDepths.includes(depth) && scrollPercentage >= depth) {
+          // Push event to dataLayer
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+          event: 'scroll',  // GA4 uses 'scroll' as the event name
+          scroll_depth: typeof depth !== 'undefined' ? depth : 0, // Ensure 'depth' is defined
+          tag_code: 323 // Use underscores for custom parameters (optional)
+          });
+          trackedDepths.push(depth);
+          console.log(`Scroll depth reached: ${depth}%`);
+        }
+      });
+    });
+
+    // Home button function
+    function goHome() {
+      window.location.href = 'index.html';
+    }
+  </script>
+</body>
+</html>

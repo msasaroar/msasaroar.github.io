@@ -14,10 +14,10 @@ User/Gmail ID	: msasaroar@gmail.com / PWD : *dohalia1964#  |  msasaroar@gmail.co
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer2','GTM-N4MMS7TS');</script>
 ===========================================================================================
 <!-- Google Tag Manager (noscript) for GTM-PPBVCLNF -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><iframe src="https://www.googletagmanager.com/ns?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- Google Tag Manager (noscript) for GTM-N4MMS7TS -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N4MMS7TS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><iframe src="https://www.googletagmanager.com/ns?id=GTM-N4MMS7TS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
@@ -165,3 +165,92 @@ Form theme will be as like GTM UI.
 
 When following parameters is used ?
     currency, value, lead_source
+
+
+
+================================================================================================
+
+=================================
+E-commerce Events
+=================================
+add_payment_info
+add_shipping_info
+add_to_cart
+add_to_wishlist
+begin_checkout
+in_app_purchase
+item_list
+purchase
+refund
+remove_from_cart
+select_item
+view_item
+view_item_list
+=================================
+Advertising Events
+=================================
+ad_click
+ad_exposure
+ad_impression
+=================================
+App Lifecycle Events
+=================================
+app_install
+app_remove
+app_update
+screen_view
+session_start
+=================================
+User Interaction & Engagement Events
+=================================
+click
+click (with outbound parameter)
+contact
+element_visible
+file_download
+form_start
+form_submit
+generate_lead
+lead
+login
+outbound_click
+scroll
+search
+share
+sign_up
+social_interaction
+user_engagement
+view_search_results
+=================================
+Gaming events
+=================================
+earn_virtual_currency
+join_group
+level_up
+post_score
+spend_virtual_currency
+=================================
+System & Technical Events
+=================================
+custom_event
+debug_mode
+dom_ready
+exception
+first_visit
+hash_change
+history_change
+page_view
+page_visibility
+page_visible
+thank_you
+timing_complete
+unsubscribe
+subscribe
+window_loaded
+=================================
+Video Interaction events
+=================================
+video_complete
+video_pause
+video_progress
+video_start
