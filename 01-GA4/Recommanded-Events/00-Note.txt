@@ -42,16 +42,9 @@ Create another page for the event : purchase
 
 
 =================================
-[GA4] Automatically collected events
+[GA4] Automatically collected events are events that are collected by default when you set up Google Analytics on your website or app.
 =================================
 https://support.google.com/analytics/answer/9234069
-
-
-==============================================================================================
-[GA4] Enhanced measurement events (When you enable these options for a web data stream, your Google Analytics tag starts sending events right away.)
-==============================================================================================
-https://support.google.com/analytics/answer/9216061?sjid=9969511612730558330-NC
-
 click
 file_download
 first_visit
@@ -67,8 +60,26 @@ video_start
 view_search_results
 
 
+
+==============================================================================================
+[GA4] Enhanced measurement events are events that are collected when you set up Google Analytics on your website or app and enhanced measurement is enabled.
+==============================================================================================
+https://support.google.com/analytics/answer/9216061?sjid=9969511612730558330-NC
+page_view
+scroll
+click
+view_search_results
+video_start
+video_progress
+video_complete
+file_download
+form_start
+form_submit
+
+
+
 =================
-[GA4] Recommended events
+[GA4] Recommended events are events that you implement, but that have predefined names and parameters. These events unlock existing and future reporting capabilities.
 =================
 https://support.google.com/analytics/answer/9267735?sjid=15642985394770298078-NC
 

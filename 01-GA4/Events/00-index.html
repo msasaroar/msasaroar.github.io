@@ -1,0 +1,118 @@
+<style>
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .listbox-group {
+        display: flex;
+        flex-direction: column;
+        height: 90vh; /* পুরো ভিউপোর্ট উচ্চতা */
+    }
+    .listbox-group ul {
+        list-style: none;
+        padding: 0;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        flex-grow: 1; /* লিস্টবক্স পুরো স্ক্রীন নেবে */
+        overflow-y: auto;
+    }
+    .listbox-group li {
+        padding: 10px;
+        cursor: pointer;
+        border-bottom: 1px solid #eee;
+    }
+    .listbox-group li:hover, .listbox-group li.selected {
+        background-color: #007bff;
+        color: white;
+    }
+    button {
+        margin: 10px;
+        padding: 10px 15px;
+        cursor: pointer;
+        background-color: orange;
+        color: blue;
+        border: none;
+        border-radius: 5px;
+    }
+    button:hover {
+        background-color: blue;
+        color: orange;
+    }
+    button:disabled {
+        background-color: gray;
+        cursor: not-allowed;
+    }
+</style>
+
+<div class="listbox-group">
+    <label for="selectedItem">GA4 : Events</label>
+    <ul id="selectedItem" role="listbox" tabindex="0">
+        <li tabindex="0" data-value="../GA4-00-index.html">GA4 Home</li>
+        <li tabindex="0" data-value="GA4-contact-form.html">GA4 # contact_form</li>
+        <li tabindex="0" data-value="GA4-dom-ready.html">GA4 # dom_ready</li>
+        <li tabindex="0" data-value="GA4-history-change-event.html">GA4 # history_change_event</li>
+        <li tabindex="0" data-value="GA4-link-click.html">GA4 # link_click</li>
+        <li tabindex="0" data-value="GA4-outbound-link-click.html">GA4 # outbound_link_click</li>
+        <li tabindex="0" data-value="GA4-page-view.html">GA4 # page_view</li>
+        <li tabindex="0" data-value="GA4-purchase-confirmation.html">GA4 # purchase_confirmation</li>
+        <li tabindex="0" data-value="GA4-scroll-depth.html">GA4 # scroll_depth</li>
+        <li tabindex="0" data-value="GA4-signup-confirmation.html">GA4 # signup_confirmation</li>
+        <li tabindex="0" data-value="GA4-signup-form.html">GA4 # signup_form</li>
+        <li tabindex="0" data-value="GA4-thank-you.html">GA4 # thank_you</li>
+        <li tabindex="0" data-value="GA4-user-login-form.html">GA4 # user_login_form</li>
+        <li tabindex="0" data-value="GA4-video-complete-event.html">GA4 # video_complete_event</li>
+        <li tabindex="0" data-value="GA4-video-engagement-with-embedded-youtube-video.html">GA4 # video_engagement_embedded_youtube_video</li>
+        <li tabindex="0" data-value="GA4-video-engagement-with-non-embedded-video.html">GA4 # video_engagement_non_embedded_video</li>
+        <li tabindex="0" data-value="GA4-video-engagement-with-repository-video.html">GA4 # video_engagement_repository_video</li>
+        <li tabindex="0" data-value="GA4-video-pause-event.html">GA4 # video_pause_event</li>
+        <li tabindex="0" data-value="GA4-view_search_result.html">GA4 # view_search_result</li>            
+    </ul>
+    <button id="proceedBtn" disabled>Proceed</button>
+</div>
+
+<script>
+    const listbox = document.getElementById("selectedItem");
+    const listItems = listbox.querySelectorAll("li");
+    const proceedBtn = document.getElementById("proceedBtn");
+    let selectedIndex = -1;
+    let selectedValue = "";
+
+    function selectItem(index) {
+        listItems.forEach(li => li.classList.remove("selected"));
+        if (index >= 0 && index < listItems.length) {
+            listItems[index].classList.add("selected");
+            selectedValue = listItems[index].getAttribute("data-value");
+            proceedBtn.disabled = false;
+            listbox.setAttribute("aria-activedescendant", listItems[index].id);
+        }
+    }
+
+    listItems.forEach((item, index) => {
+        item.addEventListener("click", function () {
+            selectedIndex = index;
+            selectItem(selectedIndex);
+        });
+    });
+
+    listbox.addEventListener("keydown", function (e) {
+        if (e.key === "ArrowDown" && selectedIndex < listItems.length - 1) {
+            selectedIndex++;
+            selectItem(selectedIndex);
+        } else if (e.key === "ArrowUp" && selectedIndex > 0) {
+            selectedIndex--;
+            selectItem(selectedIndex);
+        } else if (e.key === "Enter" && selectedValue) {
+            window.location.href = selectedValue;
+        }
+    });
+
+    proceedBtn.addEventListener("click", function () {
+        if (selectedValue) {
+            window.location.href = selectedValue;
+        }
+    });
+</script>
+
+
+
