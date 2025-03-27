@@ -3,129 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DataLayer Ecommerce Example</title>
+    <title>Server-Side Tracking Test</title>
+
+    <!-- Google Tag Manager (Browser-Side) -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id=GTM-PPBVCLNF'+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PPBVCLNF');</script>
+    <!-- End Google Tag Manager -->
+
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            margin: 0;
+            text-align: center;
             padding: 20px;
         }
         .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: #fff;
+            margin-top: 50px;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            color: #202124;
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-        .data-section {
-            margin-bottom: 20px;
-        }
-        .data-section h2 {
-            font-size: 18px;
-            color: #202124;
-            margin-bottom: 10px;
-        }
-        .data-section pre {
-            background-color: #f9f9f9;
-            padding: 10px;
-            border-radius: 4px;
-            border: 1px solid #ddd;
-            overflow-x: auto;
+            background: #f4f4f4;
+            border-radius: 10px;
+            display: inline-block;
         }
         button {
-            background-color: #4285f4;
-            color: #fff;
-            border: none;
+            background-color: orange;
+            color: blue;
             padding: 10px 20px;
-            font-size: 16px;
-            border-radius: 4px;
+            border: none;
             cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-top: 20px;
         }
         button:hover {
-            background-color: #357abd;
+            background-color: blue;
+            color: orange;
         }
     </style>
 </head>
 <body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <div class="container">
-        <h1>DataLayer Ecommerce Example</h1>
-
-        <!-- Button to trigger the DataLayer event -->
-        <button id="trackAddToCart">Track Add to Cart</button>
-
-        <!-- Display DataLayer Ecommerce Data -->
-        <div class="data-section">
-            <h2>Ecommerce Data</h2>
-            <pre id="ecommerceData"></pre>
-        </div>
+        <h2>Server-Side Tracking Test</h2>
+        <p>Click the button below to send a Purchase event to the Server-Side GTM.</p>
+        <button id="trackEvent">Track Purchase Event</button>
     </div>
 
-    <!-- Google Tag Manager -->
     <script>
-        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-PPBVCLNF');
-    </script>
-    <script>
-        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-N4MMS7TS');
-    </script>
-    <!-- End Google Tag Manager -->
-
-    <script>
-        // Function to display eCommerce data on the page
-        function displayEcommerceData(data) {
-            const ecommerceDataElement = document.getElementById('ecommerceData');
-            ecommerceDataElement.textContent = JSON.stringify(data, null, 2);
-        }
-
-        // Event listener for the "Track Add to Cart" button
-        document.getElementById('trackAddToCart').addEventListener('click', function() {
+        document.getElementById('trackEvent').addEventListener('click', function() {
             window.dataLayer = window.dataLayer || [];
-            const ecommerceData = {
-                'event': 'add_to_cart',
-                'ecommerce': {
-                    'currency': 'USD',
-                    'value': 149.99,
-                    'coupon': 'WELCOME10',
-                    'customer_id': 'CUST12345',
-                    'cart_id': 'CART67890',
-                    'items': [
-                        {
-                            'item_name': 'Nike Running Shoes',
-                            'item_id': 'SKU12345',
-                            'price': 99.99,
-                            'quantity': 1,
-                            'item_category': 'Shoes',
-                            'item_brand': 'Nike'
-                        },
-                        {
-                            'item_name': 'Adidas T-Shirt',
-                            'item_id': 'SKU67890',
-                            'price': 50.00,
-                            'quantity': 1,
-                            'item_category': 'Clothing',
-                            'item_brand': 'Adidas'
-                        }
-                    ]
-                }
-            };
-            window.dataLayer.push(ecommerceData);
-            displayEcommerceData(ecommerceData);
-            alert('GA4 Add to Cart event fired!');
+            window.dataLayer.push({
+                'event': 'purchase',
+                'transaction_id': 'TX123456',
+                'value': 99.99,
+                'currency': 'USD',
+                'items': [
+                    {
+                        'item_id': 'P001',
+                        'item_name': 'Product 1',
+                        'quantity': 1,
+                        'price': 49.99
+                    },
+                    {
+                        'item_id': 'P002',
+                        'item_name': 'Product 2',
+                        'quantity': 1,
+                        'price': 50.00
+                    }
+                ],
+                'send_to': 'https://your-server-gtm-url'  // Replace with your actual Server GTM URL
+            });
+            alert('Purchase event sent to Server-Side GTM');
         });
     </script>
+
 </body>
 </html>

@@ -1,13 +1,35 @@
-Q2ChatGPT >>> How many tag should I configure in GTM container for web related to server-side tracking ?
 
+Q2ChatGPT >>> What are the tasks required to set up GA4 server-side tracking using GTM?
+Q2ChatGPT >>> How many tags should I configure in the GTM container for web-related server-side tracking?
+Q2ChatGPT >>> Should I configure all tags and triggers in the Server-Side GTM container that are already in the Client-Side GTM container?
+Q2ChatGPT >>> There is tag, trigger and variable for the event add_payment_info in the GTM Container for browser side tracking: what are the task for tracking setup for the event add_payment_info in GTM server container ?
+Q2ChatGPT >>> GTM Code for browser-side is GTM-PPBVCLNF
+                       GTM Code for server-side is GTM-PPPHMLS8
+                       Which one should I use on each page ?
+
+=======================================================================================
+খুবই ভালো উপস্থাপনা।
 Video Tutorial : What is Stape.io | Setup Stape.io A2Z | How to Setup Stape Server-Side Tracking with GTM Container
 URL : https://youtu.be/zvjigXjUnj4?si=WMXSn6Y0lJkdi_tS
 
 =======================================================================================
-OFFICIAL YOUTUBE CHANNEL FROM <<stape.io>>
+খুবই ভালো উপস্থাপনা।
+Unlock the Setup GA4 Server-Side Tracking in GTM: E-commerce Mastery with Stape.io (Easy Way)
+https://youtu.be/YQ6z158FNZI?si=_uEQLYZfreGzoQHa
+
 =======================================================================================
+OFFICIAL YOUTUBE CHANNEL FROM <<stape.io>> [    https://taggrs.io Is another tag container as like stape.io   ]
+=======================================================================================
+USER ID & PWD : cimexob406@birige.com/*dohalia1964#
 Server-side tagging setup with Stape : https://youtube.com/playlist?list=PLGvFzWb64GFspFkw0WsDyCj1xRnRj2w3V&si=YhZcTt6dFrizjoqk
 How to Set Up Google Analytics 4 Server-Side Tracking : https://youtu.be/z5jfbSB_-Ss?si=RanpL9LjizLAuZlU
+
+
+
+
+
+
+
 
 
 
