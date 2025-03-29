@@ -5,7 +5,18 @@ Q2ChatGPT >>> Should I configure all tags and triggers in the Server-Side GTM co
 Q2ChatGPT >>> There is tag, trigger and variable for the event add_payment_info in the GTM Container for browser side tracking: what are the task for tracking setup for the event add_payment_info in GTM server container ?
 Q2ChatGPT >>> GTM Code for browser-side is GTM-PPBVCLNF
                        GTM Code for server-side is GTM-PPPHMLS8
-                       Which one should I use on each page ?
+                       Which one should I use on each page?
+Q2ChatGPT >>> Should I create a tag for an event to be tracked in both the GTM container for browser-side as well as for server-side?
+Q2ChatGPT >>> If I implement both browser-side and server-side tracking, will it produce redundant data?
+
+=======================================================================================
+Server-side tagging
+https://developers.google.com/tag-platform/tag-manager/server-side/overview
+
+
+=======================================================================================
+How to set up GA4 tracking using Google Tag Manager server-side container
+https://stape.io/blog/how-to-set-up-ga4-tracking-using-google-tag-manager-server-side-container
 
 =======================================================================================
 খুবই ভালো উপস্থাপনা।
