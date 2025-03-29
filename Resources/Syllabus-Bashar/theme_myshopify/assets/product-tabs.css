@@ -1,0 +1,165 @@
+.ct-info-table {
+  display: grid;
+  grid-template-columns: 1fr 3fr; /* 1 part for first column and 3 parts for second column */
+  width: 100%;
+  box-sizing: border-box;
+}
+/* Grid row */
+.ct-info-table__row {
+  display: contents;
+}
+
+/* Adjust the width for mobile devices */
+@media (max-width: 600px) {
+  .ct-info-table {
+    grid-template-columns: 2fr 3fr; /* 2 parts for first column and 3 parts for second column */
+  }
+}
+
+.ct-info-table__container{
+  background-color: #fff;
+  padding: 10px;
+  box-shadow: 0 0.6rem 2rem #0d332033;
+}
+
+.ct-info-table__first-col,
+.ct-info-table__second-col{
+  font-size: 16px;
+  padding: 5px 0;
+}
+
+.ct-info-table__first-col{
+  font-weight: 600;
+}
+
+.yt-wrapper {
+  max-width: 680px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.youtube {
+  background-color: #000;
+  margin-bottom: 30px;
+  position: relative;
+  padding-top: 56.25%;
+  overflow: hidden;
+  cursor: pointer;
+}
+.youtube img {
+  width: 100%;
+  top: -16.82%;
+  left: 0;
+  opacity: 0.9;
+  margin: 0 !important;
+}
+.youtube .play-button {
+  width: 90px;
+  height: 60px;
+  background-color: #2DB06D;
+  box-shadow: 0 0 30px rgba( 0,0,0,0.6 );
+  z-index: 1;
+  opacity: 1;
+  border-radius: 6px;
+}
+.youtube .play-button:before {
+  content: "";
+  border-style: solid;
+  border-width: 15px 0 15px 26.0px;
+  border-color: transparent transparent transparent #fff;
+}
+.youtube img,
+.youtube .play-button {
+  cursor: pointer;
+}
+.youtube img,
+.youtube iframe,
+.youtube .play-button,
+.youtube .play-button:before {
+  position: absolute;
+}
+.youtube .play-button,
+.youtube .play-button:before {
+  top: 50%;
+  left: 50%;
+  transform: translate3d( -50%, -50%, 0 );
+}
+.youtube iframe {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.ct-nutrition {
+  overflow-x: auto;
+}
+
+.ct-nutrition__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ct-nutrition__table-head {
+  background-color: #f8f8f8;
+  font-weight: bold;
+}
+
+.ct-nutrition__table-cell, .ct-nutrition__table-header {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.ct-nutrition .pushed{
+  padding-left: 15px;
+}
+
+.tabs-nav__position.is-initialized{
+  color: #2DB06D;
+}
+
+.ct-tab-blog-item{
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+}
+
+.ct-tab-blog-item-container{
+  display: flex;
+  flex-direction: row;
+}
+
+article-list.ct-tabs-articles {
+  padding: 20px 10px 50px;
+  overflow-x: scroll;
+}
+
+.ct-tabs-articles .placeholder-image{
+  padding-bottom: 75%;
+}
+
+@media screen and (max-width: 999px){
+  .article-list--scrollable .article-item:not(:only-child) {
+    width: 70vw;
+  }
+}
+
+.ct-tabs-articles .article-item__title{
+  font-size: 14px;
+  line-height: 1.3;
+  text-transform: initial;
+}
+
+.product-tabs__tab-item-content strong{
+  color: #2DB06D;
+}
+
+.product-tabs__tab-item-content h2{
+  margin-bottom: 0;
+  font-size: 28px;
+}
+
+.product-tabs__tab-item-content h3{
+  font-size: 22px;
+  margin-top: 10px;
+}
