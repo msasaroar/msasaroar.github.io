@@ -1,0 +1,4 @@
+Comparison of different methods for inserting pixel in the website for tracking.
+How suitable is a general-purpose website for tracking with Meta Pixel which doesn't contain data layer?
+Explain Facebook Server Side Tagging with diagram.
+GTM Web Container VS GTM Server Container.
