@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events and Conversion Tracking Requirements</title>
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+      var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s),
+      dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-PPBVCLNF');
+  </script>
+  <!-- End Google Tag Manager -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+      background: white;
+      color: #333;
+    }
+    h1, h2, h3 {
+      color: #0056b3;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Events and Conversion Tracking Requirements on an e-Commerce Website</h1>
+    <p>This document outlines the requirements for implementing event and conversion tracking on an e-commerce website.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>1. Tracking Objectives</h2>
+      <p>The primary objectives of event and conversion tracking are:</p>
+      <ul>
+        <li>Monitor user interactions to optimize the shopping experience.</li>
+        <li>Track conversions to measure sales performance and marketing effectiveness.</li>
+        <li>Collect data for detailed reporting and analysis to drive business decisions.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>2. Key Events</h2>
+      <p>The following events should be tracked:</p>
+      <ul>
+        <li><strong>Page Views:</strong> Record visits to all pages, including product and category pages.</li>
+        <li><strong>Product Views:</strong> Track when a user views a product detail page.</li>
+        <li><strong>Add to Cart:</strong> Monitor when a user adds a product to their shopping cart.</li>
+        <li><strong>Remove from Cart:</strong> Track when a user removes a product from their cart.</li>
+        <li><strong>Checkout Initiation:</strong> Record when a user begins the checkout process.</li>
+        <li><strong>Purchase:</strong> Track completed transactions, including order value and items purchased.</li>
+        <li><strong>Search:</strong> Monitor when a user performs a search on the site, including keywords used.</li>
+        <li><strong>Wishlist Actions:</strong> Track when a user adds or removes items from their wishlist.</li>
+        <li><strong>Promotion Clicks:</strong> Record clicks on promotional banners or special offers.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>3. Conversion Goals</h2>
+      <p>Define the following conversions:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Conversion Goal</th>
+            <th>Trigger Event</th>
+            <th>Measurement</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Product Purchase</td>
+            <td>Transaction Completion</td>
+            <td>Order value, quantity, and items purchased</td>
+          </tr>
+          <tr>
+            <td>Add to Cart</td>
+            <td>Add to Cart Event</td>
+            <td>Count of products added</td>
+          </tr>
+          <tr>
+            <td>Checkout Completion</td>
+            <td>Checkout Success</td>
+            <td>Count of successful checkouts</td>
+          </tr>
+          <tr>
+            <td>Search Engagement</td>
+            <td>Search Event</td>
+            <td>Keywords searched and results viewed</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>4. Implementation Requirements</h2>
+      <p>To implement tracking effectively, the following are required:</p>
+      <ul>
+        <li>Google Tag Manager (GTM) setup for managing tags and triggers.</li>
+        <li>Google Analytics (GA4) property configured for e-commerce tracking.</li>
+        <li>Enhanced E-commerce features enabled in GA4.</li>
+        <li>Data Layer to pass structured data for events and conversions.</li>
+        <li>Custom tags for specific events not automatically tracked by GA4.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>5. Data Layer Variables</h2>
+      <p>Define the following data layer variables:</p>
+      <ul>
+        <li><strong>Product Details:</strong> Includes product ID, name, category, price, and quantity.</li>
+        <li><strong>Cart Details:</strong> Includes products in the cart, total value, and item count.</li>
+        <li><strong>Transaction Details:</strong> Includes order ID, value, items, and user details.</li>
+        <li><strong>Search Details:</strong> Includes search terms and number of results.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>6. Testing and Validation</h2>
+      <p>Ensure proper testing and validation:</p>
+      <ul>
+        <li>Use GTM's Preview Mode to validate tag firing and data layer values.</li>
+        <li>Test events across multiple browsers and devices.</li>
+        <li>Verify data in GA4 reports to ensure accuracy.</li>
+        <li>Perform test transactions to confirm end-to-end tracking.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>7. Reporting</h2>
+      <p>Generate the following reports:</p>
+      <ul>
+        <li>Sales performance by product and category.</li>
+        <li>Conversion rates by channel and campaign.</li>
+        <li>Cart abandonment rate and recovery insights.</li>
+        <li>Search trends and effectiveness of on-site search.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

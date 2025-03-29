@@ -1,0 +1,75 @@
+<pre>
+<style>
+.section-header {
+background: white;
+color: black;
+font-weight: bold;
+padding: 5px;
+display: block;
+}
+</style>
+
+
+<h1>Detailed Activities For Setting Up Conversion Tracking In Meta Pixel With GTM</h1>
+
+<span class="section-header">1. Obtain the Meta Pixel ID</span>
+- Go to Facebook Business Manager (https://business.facebook.com/).
+- Navigate to "Events Manager."
+- Select "Data Sources" and choose "Pixels."
+- Click "Add" to create a new Pixel if you don’t have one.
+- Copy the Pixel ID from the setup instructions.
+
+<span class="section-header">2. Set Up the Meta Pixel Base Code in GTM</span>
+- Log in to Google Tag Manager.
+- Click "Tags" > "New."
+- Name the tag "Meta Pixel - Base Code."
+- Click "Tag Configuration" and choose "Custom HTML."
+- Paste the Meta Pixel base code script.
+- Replace `INSERT_PIXEL_ID_HERE` with your actual Pixel ID.
+- Set the trigger to "All Pages" so it fires on every page.
+- Save and publish the tag.
+
+<span class="section-header">3. Create a Conversion Event in GTM</span>
+- Click "Tags" > "New."
+- Name the tag according to the conversion type (e.g., "Meta Pixel - Purchase Event").
+- Choose "Custom HTML" or "Facebook Pixel" as the tag type.
+- Use the Meta Pixel event script for the specific conversion.
+- Include parameters like purchase value, currency, and content ID.
+- Assign an appropriate trigger (e.g., Page View, Button Click, Form Submission).
+- Save the tag.
+
+<span class="section-header">4. Set Up Standard Events or Custom Events</span>
+- Standard Events include Purchase, Lead, AddToCart, etc.
+- Custom Events allow tracking unique interactions.
+- To set up a Standard Event:
+    - Modify the event script in GTM (e.g., `fbq('track', 'Lead');`).
+    - Use the "Custom HTML" tag for event-specific tracking.
+    - Assign a trigger based on user action.
+- To set up a Custom Event:
+    - Use `fbq('trackCustom', 'EventName');`.
+    - Define event-specific parameters (e.g., `{event_category: 'Signup'}`).
+    - Assign a trigger based on user interaction.
+
+<span class="section-header">5. Test in GTM Preview Mode</span>
+- Click "Preview" in GTM.
+- Enter your website URL and start debugging.
+- Perform the tracked action (page visit, button click, form submission).
+- Check GTM’s "Tag Assistant" to confirm if the Pixel tags fire correctly.
+
+<span class="section-header">6. Verify in Meta Events Manager</span>
+- Go to Meta Events Manager.
+- Select your Pixel and navigate to "Test Events."
+- Perform the tracked action again and check if it appears in real-time.
+- If the event does not appear, revisit GTM to troubleshoot.
+
+<span class="section-header">7. Publish GTM Container</span>
+- If everything works correctly in Preview Mode, click "Submit" in GTM.
+- Add a version name and description (e.g., "Added Meta Pixel Tracking").
+- Click "Publish" to make the changes live.
+
+<span class="section-header">8. Monitor and Optimize</span>
+- Regularly check Meta Events Manager for received events.
+- Compare data with other analytics tools to ensure accuracy.
+- Use the "Pixel Helper" Chrome extension to debug live Pixel events.
+- Adjust triggers and conditions in GTM based on performance insights.
+</pre>

@@ -1,0 +1,705 @@
+<style>
+    body {
+        background: white;
+    }
+    pre {
+        font-size: 20px;
+        white-space: pre-wrap; 
+        word-wrap: break-word; 
+        background-color: #a19bc6;
+        border: 10px solid #a19bc6;
+    }
+
+    h3 {background-color: Black;
+        color: rgb(0, 255, 0);
+        padding: 10px;
+    }
+
+</style>
+
+<h3>Activities for Setting Up Server Side Conversion Tracking with GTM</h3>
+<pre>
+<a href="011-11-01-SS-Setup-GA4.html">01. Google Analytics 4</a>
+<a href="011-11-02-SS-Setup-GAds.html">02. Google Ads</a>
+<a href="011-11-03-SS-Setup-LinkedIn.html">03. LinkedIn Insight Tag</a>
+<a href="011-11-04-SS-Setup-Meta.html">04. Meta/Facebook Pixel</a>
+<a href="011-11-05-SS-Setup-Pinterest.html">05. Pinterest Tag</a>
+<a href="011-11-06-SS-Setup-Snapchat.html">06. Snapchat Pixel</a>
+<a href="011-11-07-SS-Setup-TikTok.html">07. TikTok Pixel</a>
+<a href="011-11-08-SS-Setup-X.html">08. X/Twitter Pixel</a>
+<a href="011-11-09-SS-Setup-Shopify.html">09. Shopify Pixel</a>
+<a href="011-11-10-SS-Setup-Bing.html">10. Bing UET Tag</a>
+<a href="011-11-11-SS-Setup-Quora.html">11. Quora Pixel</a>
+<a href="011-11-12-SS-Setup-Reddit.html">12. Reddit Pixel</a>
+<a href="011-11-13-SS-Setup-Amazon.html">13. Amazon Advertising Pixel</a>
+</pre>
+
+
+<h3 id="SS-Conversion-Tracking-GAds">02. Activities for setting up Server Side Conversion Tracking in Google Ads with GTM</h3>
+<pre>
+1. Set Up a Server Container in GTM:
+Go to Google Tag Manager.
+Create a new Server container.
+Deploy it on Google Cloud or another server.
+
+2. Configure Google Cloud for GTM Server:
+Create a new Google Cloud project.
+Enable Cloud Run and App Engine.
+Deploy the GTM server container.
+
+3. Set Up a Custom Domain for the Server:
+Configure a subdomain (e.g., sst.yourdomain.com).
+Update DNS settings to point to the Cloud Run instance.
+
+4. Modify Google Ads Conversion Tracking for Server-Side:
+In Google Ads, create or retrieve the conversion action.
+Note down the Conversion ID and Conversion Label.
+Enable “Enhanced Conversions” if applicable.
+
+5. Configure Google Ads Client in Server GTM:
+Add a new Google Ads Conversion Tracking Client.
+Ensure it listens for incoming conversion events.
+
+6. Forward Conversion Events from Web GTM to Server GTM:
+In Web GTM, modify conversion tracking tags.
+Set the "Send to Server Container" option and use the custom domain.
+
+7. Create a Google Ads Conversion Tag in Server GTM:
+Set up a new Google Ads Conversion tag.
+Use the Conversion ID and Conversion Label.
+Map event data (e.g., transaction ID, revenue).
+
+8. Implement User Identifiers for Better Match Rate:
+Send hashed email, phone number, or first-party data.
+Use SHA256 hashing for secure transmission.
+
+9. Test and Validate Setup:
+Use Google Tag Assistant and GTM Debug Mode.
+Check conversion data in Google Ads.
+Verify event data in the GA4 DebugView.
+
+10. Optimize and Monitor Performance:
+Regularly review conversion accuracy.
+Optimize event parameters to improve match rates.
+Monitor Cloud Run costs and performance.
+</pre>
+
+<h3 id="SS-Conversion-Tracking-LinkedIn">03. Activities for setting up Server Side Conversion Tracking in Google Ads with GTM</h3>
+<pre>
+1. Set Up a Server Container in GTM:
+Go to Google Tag Manager.
+Create a new Server container.
+Deploy it on Google Cloud or another server.
+
+2. Configure Google Cloud for GTM Server:
+Create a new Google Cloud project.
+Enable Cloud Run and App Engine.
+Deploy the GTM server container.
+
+3. Set Up a Custom Domain for the GTM Server:
+Configure a subdomain (e.g., tracking.yourdomain.com).
+Update DNS settings to point to the Cloud Run instance.
+
+4. Get LinkedIn Insight Tag Information:
+Log in to your LinkedIn Ads account.
+Navigate to "Account Assets" → "Insight Tag."
+Copy the Partner ID for tracking setup.
+
+5. Configure the LinkedIn Client in Server GTM:
+In Server GTM, create a new LinkedIn Insight Tag Client.
+Ensure it listens for relevant conversion events.
+
+6. Modify Web GTM Tags for Server-Side Tracking:
+In Web GTM, modify LinkedIn Insight Tag.
+Update settings to send events to the server container instead of LinkedIn directly.
+
+7. Set Up LinkedIn Conversion Tag in Server GTM:
+In Server GTM, create a LinkedIn Insight Conversion Tag.
+Use the Partner ID and map conversion events.
+Ensure correct event parameters like email, conversion value, and currency.
+
+8. Implement User Identifiers for Better Attribution:
+Send hashed email (SHA256) for better match rates.
+Ensure data privacy compliance (GDPR, CCPA).
+
+9. Test and Debug:
+Use GTM Preview Mode to check data flow.
+Validate conversions using LinkedIn’s Tag Tester Tool.
+Monitor LinkedIn's Matched Audiences & Conversions.
+
+10. Optimize and Monitor:
+Regularly check LinkedIn Campaign Manager for accuracy.
+Adjust event mapping and parameters to improve match rates.
+Monitor Google Cloud costs and optimize performance.
+</pre>
+
+<h3 id="SS-Conversion-Tracking-Meta">04. Activities for setting up Server Side Conversion Tracking in Meta Pixel with GTM</h3>
+<pre>
+1. Set Up a Server Container in GTM:
+Go to Google Tag Manager.
+Create a new Server container.
+Deploy it on Google Cloud or another server.
+
+2. Configure Google Cloud for GTM Server:
+Create a new Google Cloud project.
+Enable Cloud Run and App Engine.
+Deploy the GTM server container.
+
+3. Set Up a Custom Domain for the GTM Server:
+Configure a subdomain (e.g., tracking.yourdomain.com).
+Update DNS settings to point to the Cloud Run instance.
+
+4. Get Meta Pixel Information:
+Log in to Facebook Business Manager.
+Navigate to Events Manager → Meta Pixel.
+Copy the Pixel ID for tracking setup.
+
+5. Set Up Meta Conversions API (CAPI):
+In Events Manager, go to the Conversions API setup.
+Select Google Tag Manager (Server-Side) as the integration method.
+
+6. Configure the Meta Client in Server GTM:
+In Server GTM, create a new Meta Pixel Client.
+Ensure it listens for relevant conversion events.
+
+7. Modify Web GTM Tags for Server-Side Tracking:
+In Web GTM, modify Meta Pixel Tags.
+Update settings to send events to the server container instead of Meta directly.
+
+8. Create a Meta Conversion API Tag in Server GTM:
+In Server GTM, create a Meta Conversions API Tag.
+Use the Pixel ID and configure event mapping.
+Ensure correct parameters like event name, transaction ID, and purchase value.
+
+9. Implement User Identifiers for Better Attribution:
+Send hashed user data (SHA256) like email, phone number, and IP address.
+Ensure data privacy compliance (GDPR, CCPA).
+
+10. Enable Event Deduplication:
+Use the same Event Name and Event ID for browser and server events.
+Ensure Meta correctly deduplicates the events.
+
+11. Test and Debug:
+Use GTM Preview Mode to check data flow.
+Validate events in Meta Events Manager Debugging Tool.
+Monitor Event Match Quality Score.
+
+12. Optimize and Monitor:
+Regularly check Meta Business Manager for conversion accuracy.
+Adjust event mapping and parameters to improve match rates.
+Monitor Google Cloud costs and optimize performance.
+</pre>
+
+<h3 id="SS-Conversion-Tracking-Pinterest">05. Activities for setting up Server Side Conversion Tracking in Pinterest Pixel with GTM</h3>
+<pre>
+1. Set Up a Server Container in GTM:
+Go to Google Tag Manager.
+Create a new Server container.
+Deploy it on Google Cloud or another server.
+
+2. Configure Google Cloud for GTM Server:
+Create a new Google Cloud project.
+Enable Cloud Run and App Engine.
+Deploy the GTM server container.
+
+3. Set Up a Custom Domain for the GTM Server:
+Configure a subdomain (e.g., tracking.yourdomain.com).
+Update DNS settings to point to the Cloud Run instance.
+
+4. Get Pinterest Pixel Information:
+Log in to Pinterest Business Manager.
+Navigate to Ads → Conversions → Pinterest Tag.
+Copy the Pinterest Pixel ID for tracking setup.
+
+5. Set Up Pinterest Conversions API (CAPI):
+In Pinterest Business Manager. enable Conversions API.
+Choose Google Tag Manager (Server-Side) as the integration method.
+
+6. Configure the Pinterest Client in Server GTM:
+In Server GTM, create a Pinterest Tag Client.
+Ensure it listens for relevant conversion events.
+
+7. Modify Web GTM Tags for Server-Side Tracking:
+In Web GTM, modify Pinterest Pixel Tags.
+Update settings to send events to the server container instead of Pinterest directly.
+
+8. Create a Pinterest Conversion API Tag in Server GTM:
+In Server GTM, create a Pinterest Conversions API Tag.
+Use the Pixel ID and map conversion events (e.g., Page Visit, Checkout, Signup).
+Ensure correct parameters like event name, transaction ID, and revenue.
+
+9. Implement User Identifiers for Better Attribution:
+Send hashed user data (SHA256) like email, phone number, and IP address.
+Ensure data privacy compliance (GDPR, CCPA).
+
+10. Enable Event Deduplication:
+Use the same Event Name and Event ID for browser and server events.
+Ensure Pinterest correctly deduplicates the events.
+
+11. Test and Debug:
+Use GTM Preview Mode to check data flow.
+Validate events in Pinterest Events Manager Debugging Tool.
+Monitor Event Match Quality Score.
+
+12. Optimize and Monitor:
+Regularly check Pinterest Business Manager for conversion accuracy.
+Adjust event mapping and parameters to improve match rates.
+Monitor Google Cloud costs and optimize performance.
+</pre>
+
+<h3 id="SS-Conversion-Tracking-Snapchat">06. Activities for setting up Server Side Conversion Tracking in Snapchat Pixel with GTM</h3>
+<pre>
+1. Set Up a Server Container in GTM:
+Go to Google Tag Manager.
+Create a new Server container.
+Deploy it on Google Cloud or another server.
+
+2. Configure Google Cloud for GTM Server:
+Create a new Google Cloud project.
+Enable Cloud Run and App Engine.
+Deploy the GTM server container.
+
+3. Set Up a Custom Domain for the GTM Server:
+Configure a subdomain (e.g., tracking.yourdomain.com).
+Update DNS settings to point to the Cloud Run instance.
+
+4. Get Snapchat Pixel Information:
+Log in to Snapchat Ads Manager.
+Navigate to Events Manager → Snap Pixel.
+Copy the Pixel ID for tracking setup.
+
+5. Set Up Snapchat Conversions API (CAPI):
+In Events Manager. enable Conversions API.
+Choose Google Tag Manager (Server-Side) as the integration method.
+
+6. Configure the Snapchat Client in Server GTM:
+In Server GTM, create a Snapchat Pixel Client.
+Ensure it listens for relevant conversion events.
+
+7. Modify Web GTM Tags for Server-Side Tracking:
+In Web GTM, modify Snapchat Pixel Tags.
+Update settings to send events to the server container instead of Snapchat directly.
+
+8. Create a Snapchat Conversion API Tag in Server GTM:
+In Server GTM, create a Snapchat Conversions API Tag.
+Use the Pixel ID and map conversion events (e.g., Page View, Purchase, Signup).
+Ensure correct parameters like event name, transaction ID, and revenue.
+
+9. Implement User Identifiers for Better Attribution:
+Send hashed user data (SHA256) like email, phone number, and IP address.
+Ensure data privacy compliance (GDPR, CCPA).
+
+10. Enable Event Deduplication:
+Use the same Event Name and Event ID for browser and server events.
+Ensure Snapchat correctly deduplicates the events.
+
+11. Test and Debug:
+Use GTM Preview Mode to check data flow.
+Validate events in Snapchat Events Manager Debugging Tool.
+Monitor Event Match Quality Score.
+
+12. Optimize and Monitor:
+Regularly check Snapchat Ads Manager for conversion accuracy.
+Adjust event mapping and parameters to improve match rates.
+Monitor Google Cloud costs and optimize performance.
+</pre>
+
+<h3 id="SS-Conversion-Tracking-TikTok">07. Activities for setting up Server Side Conversion Tracking in TikTok Pixel with GTM</h3>
+<pre>
+1. Set Up a Server Container in GTM:
+Go to Google Tag Manager.
+Create a new Server container.
+Deploy it on Google Cloud or another server.
+
+2. Configure Google Cloud for GTM Server:
+Create a new Google Cloud project.
+Enable Cloud Run and App Engine.
+Deploy the GTM server container.
+
+3. Set Up a Custom Domain for the GTM Server:
+Configure a subdomain (e.g., tracking.yourdomain.com).
+Update DNS settings to point to the Cloud Run instance.
+
+4. Get TikTok Pixel Information:
+Log in to TikTok Ads Manager.
+Navigate to Assets → Events → Web Events.
+Copy the Pixel ID for tracking setup.
+
+5. Set Up TikTok Events API (Conversions API):
+In TikTok Events Manager. enable Events API.
+Choose Google Tag Manager (Server-Side) as the integration method.
+
+6. Configure the TikTok Client in Server GTM:
+In Server GTM, create a TikTok Pixel Client.
+Ensure it listens for relevant conversion events.
+
+7. Modify Web GTM Tags for Server-Side Tracking:
+In Web GTM, modify TikTok Pixel Tags.
+Update settings to send events to the server container instead of TikTok directly.
+
+8. Create a TikTok Conversion API Tag in Server GTM:
+In Server GTM, create a TikTok Conversions API Tag.
+Use the Pixel ID and map conversion events (e.g., Page View, Purchase, Signup).
+Ensure correct parameters like event name, transaction ID, and revenue.
+
+9. Implement User Identifiers for Better Attribution:
+Send hashed user data (SHA256) like email, phone number, and IP address.
+Ensure data privacy compliance (GDPR, CCPA).
+
+10. Enable Event Deduplication:
+Use the same Event Name and Event ID for browser and server events.
+Ensure TikTok correctly deduplicates the events.
+
+11. Test and Debug:
+Use GTM Preview Mode to check data flow.
+Validate events in TikTok Events Manager Debugging Tool.
+Monitor Event Match Quality Score.
+
+12. Optimize and Monitor:
+Regularly check TikTok Ads Manager for conversion accuracy.
+Adjust event mapping and parameters to improve match rates.
+Monitor Google Cloud costs and optimize performance.
+</pre>
+
+<h3 id="SS-Conversion-Tracking-X">08. Activities for setting up Server Side Conversion Tracking in X Pixel with GTM</h3>
+<pre>
+1. Set Up a Server Container in GTM:
+Go to Google Tag Manager.
+Create a new Server container.
+Deploy it on Google Cloud or another server.
+
+2. Configure Google Cloud for GTM Server:
+Create a new Google Cloud project.
+Enable Cloud Run and App Engine.
+Deploy the GTM server container.
+
+3. Set Up a Custom Domain for the GTM Server:
+Configure a subdomain (e.g., tracking.yourdomain.com).
+Update DNS settings to point to the Cloud Run instance.
+
+4. Get X (Twitter) Pixel Information:
+Log in to X Ads Manager.
+Navigate to Tools → Events Manager.
+Copy the Pixel ID for tracking setup.
+
+5. Set Up X (Twitter) Conversions API (CAPI):
+In Events Manager. enable Conversions API.
+Choose Google Tag Manager (Server-Side) as the integration method.
+
+6. Configure the X Pixel Client in Server GTM:
+In Server GTM, create an X (Twitter) Pixel Client.
+Ensure it listens for relevant conversion events.
+
+7. Modify Web GTM Tags for Server-Side Tracking:
+In Web GTM, modify X Pixel Tags.
+Update settings to send events to the server container instead of X directly.
+
+8. Create an X Conversions API Tag in Server GTM:
+In Server GTM, create an X Conversions API Tag.
+Use the Pixel ID and map conversion events (e.g., Page View, Purchase, Signup).
+Ensure correct parameters like event name, transaction ID, and revenue.
+
+9. Implement User Identifiers for Better Attribution:
+Send hashed user data (SHA256) like email, phone number, and IP address.
+Ensure data privacy compliance (GDPR, CCPA).
+
+10. Enable Event Deduplication:
+Use the same Event Name and Event ID for browser and server events.
+Ensure X correctly deduplicates the events.
+
+11. Test and Debug:
+Use GTM Preview Mode to check data flow.
+Validate events in X Ads Manager Events Debugging Tool.
+Monitor Event Match Quality Score.
+
+12. Optimize and Monitor:
+Regularly check X Ads Manager for conversion accuracy.
+Adjust event mapping and parameters to improve match rates.
+Monitor Google Cloud costs and optimize performance.
+</pre>
+
+<h3 id="SS-Conversion-Tracking-Shopify">09. Activities for setting up Server Side Conversion Tracking in Shopify Pixel with GTM</h3>
+<pre>
+1. Set Up a Server Container in GTM:
+Go to Google Tag Manager.
+Create a new Server container.
+Deploy it on Google Cloud or another server.
+
+2. Configure Google Cloud for GTM Server:
+Create a new Google Cloud project.
+Enable Cloud Run and App Engine.
+Deploy the GTM server container.
+
+3. Set Up a Custom Domain for the GTM Server:
+Configure a subdomain (e.g., tracking.yourdomain.com).
+Update DNS settings to point to the Cloud Run instance.
+
+4. Enable Shopify Web Pixel API:
+Log in to Shopify Admin.
+Go to Settings → Customer Events.
+Click Manage Pixels and create a Custom Pixel.
+Get the Shopify Pixel API Key.
+
+5. Implement Web GTM in Shopify:
+Go to Online Store → Themes → Edit Code.
+Add the GTM Web Container gtag.js script in `theme.liquid`.
+
+6. Set Up Shopify Web Events:
+Use Shopify Checkout Extensibility to track events like Page View, Add to Cart, Purchase.
+Ensure event parameters like order ID, value, and currency are included.
+
+7. Modify Web GTM Tags for Server-Side Tracking:
+In Web GTM, modify Shopify event tags (e.g., Purchase, Add to Cart).
+Update settings to send events to the server container.
+
+8. Set Up a Shopify Conversion API Tag in Server GTM:
+In Server GTM, create a Shopify Conversion API Tag.
+Use the Shopify Pixel API Key and send server events to Shopify.
+Ensure parameters like transaction ID, revenue, and currency are mapped.
+
+9. Implement User Identifiers for Better Attribution:
+Send hashed user data (SHA256) like email, phone number, and IP address.
+Ensure compliance with GDPR, CCPA, and Shopify’s privacy policies.
+
+10. Enable Event Deduplication:
+Use the same Event Name and Event ID for browser and server events.
+Ensure Shopify correctly deduplicates the events.
+
+11. Test and Debug:
+Use GTM Preview Mode to check data flow.
+Validate events in Shopify Customer Events Debugging Tool.
+Check Shopify Analytics to confirm data accuracy.
+
+12. Optimize and Monitor:
+Regularly check Shopify reports for conversion accuracy.
+Adjust event mapping and parameters to improve match rates.
+Monitor Google Cloud costs and optimize performance.
+</pre>
+
+<h3 id="SS-Conversion-Tracking-Bing">10. Activities for setting up Server Side Conversion Tracking in Bing UET Tag with GTM</h3>
+<pre>
+1. Set Up a Server Container in GTM:
+Go to Google Tag Manager.
+Create a new Server container.
+Deploy it on Google Cloud or another server.
+
+2. Configure Google Cloud for GTM Server:
+Create a new Google Cloud project.
+Enable Cloud Run and App Engine.
+Deploy the GTM server container.
+
+3. Set Up a Custom Domain for the GTM Server:
+Configure a subdomain (e.g., tracking.yourdomain.com).
+Update DNS settings to point to the Cloud Run instance.
+
+4. Get Bing UET Tag Information:
+Log in to Microsoft Advertising.
+Navigate to Tools → UET Tag.
+Copy the UET Tag ID for tracking setup.
+
+5. Enable Bing UET Conversions API:
+In Microsoft Advertising. enable Conversions API.
+Choose Google Tag Manager (Server-Side) as the integration method.
+
+6. Configure the Bing UET Client in Server GTM:
+In Server GTM, create a Bing UET Client.
+Ensure it listens for relevant conversion events.
+
+7. Modify Web GTM Tags for Server-Side Tracking:
+In Web GTM, modify Bing UET Tags.
+Update settings to send events to the server container instead of Bing directly.
+
+8. Create a Bing UET Conversions API Tag in Server GTM:
+In Server GTM, create a Bing UET Conversions API Tag.
+Use the UET Tag ID and map conversion events (e.g., Page View, Purchase, Signup).
+Ensure correct parameters like event name, transaction ID, and revenue.
+
+9. Implement User Identifiers for Better Attribution:
+Send hashed user data (SHA256) like email, phone number, and IP address.
+Ensure data privacy compliance (GDPR, CCPA).
+
+10. Enable Event Deduplication:
+Use the same Event Name and Event ID for browser and server events.
+Ensure Bing correctly deduplicates the events.
+
+11. Test and Debug:
+Use GTM Preview Mode to check data flow.
+Validate events in Microsoft Advertising Events Manager.
+Monitor Event Match Quality Score.
+
+12. Optimize and Monitor:
+Regularly check Microsoft Ads Manager for conversion accuracy.
+Adjust event mapping and parameters to improve match rates.
+Monitor Google Cloud costs and optimize performance.
+</pre>
+
+<h3 id="SS-Conversion-Tracking-Quora">11. Activities for setting up Server Side Conversion Tracking in Quora Pixel with GTM</h3>
+<pre>
+1. Set Up a Server Container in GTM:
+Go to Google Tag Manager.
+Create a new Server container.
+Deploy it on Google Cloud or another server.
+
+2. Configure Google Cloud for GTM Server:
+Create a new Google Cloud project.
+Enable Cloud Run and App Engine.
+Deploy the GTM server container.
+
+3. Set Up a Custom Domain for the GTM Server:
+Configure a subdomain (e.g., tracking.yourdomain.com).
+Update DNS settings to point to the Cloud Run instance.
+
+4. Get Quora Pixel Information:
+Log in to Quora Ads Manager.
+Navigate to Pixel under Events.
+Copy the Pixel ID for tracking setup.
+
+5. Set Up Quora Conversions API (CAPI):
+In Quora Ads Manager. enable Conversions API.
+Choose Google Tag Manager (Server-Side) as the integration method.
+
+6. Configure the Quora Pixel Client in Server GTM:
+In Server GTM, create a Quora Pixel Client.
+Ensure it listens for relevant conversion events.
+
+7. Modify Web GTM Tags for Server-Side Tracking:
+In Web GTM, modify Quora Pixel Tags.
+Update settings to send events to the server container instead of Quora directly.
+
+8. Create a Quora Conversions API Tag in Server GTM:
+In Server GTM, create a Quora Conversions API Tag.
+Use the Pixel ID and map conversion events (e.g., Page View, Purchase, Signup).
+Ensure correct parameters like event name, transaction ID, and revenue.
+
+9. Implement User Identifiers for Better Attribution:
+Send hashed user data (SHA256) like email, phone number, and IP address.
+Ensure data privacy compliance (GDPR, CCPA).
+
+10. Enable Event Deduplication:
+Use the same Event Name and Event ID for browser and server events.
+Ensure Quora correctly deduplicates the events.
+
+11. Test and Debug:
+Use GTM Preview Mode to check data flow.
+Validate events in Quora Ads Manager Debugging Tool.
+Monitor Event Match Quality Score.
+
+12. Optimize and Monitor:
+Regularly check Quora Ads Manager for conversion accuracy.
+Adjust event mapping and parameters to improve match rates.
+Monitor Google Cloud costs and optimize performance.
+</pre>
+
+<h3 id="SS-Conversion-Tracking-Reddit">12. Activities for setting up Server Side Conversion Tracking in Reddit Pixel with GTM</h3>
+<pre>
+1. Set Up a Server Container in GTM:
+Go to Google Tag Manager.
+Create a new Server container.
+Deploy it on Google Cloud or another server.
+
+2. Configure Google Cloud for GTM Server:
+Create a new Google Cloud project.
+Enable Cloud Run and App Engine.
+Deploy the GTM server container.
+
+3. Set Up a Custom Domain for the GTM Server:
+Configure a subdomain (e.g., tracking.yourdomain.com).
+Update DNS settings to point to the Cloud Run instance.
+
+4. Get Reddit Pixel Information:
+Log in to Reddit Ads Manager.
+Navigate to Account Settings → Pixel.
+Copy the Pixel ID for tracking setup.
+
+5. Set Up Reddit Conversions API:
+In Reddit Ads Manager. enable Conversions API.
+Choose Google Tag Manager (Server-Side) as the integration method.
+
+6. Configure the Reddit Pixel Client in Server GTM:
+In Server GTM, create a Reddit Pixel Client.
+Ensure it listens for relevant conversion events.
+
+7. Modify Web GTM Tags for Server-Side Tracking:
+In Web GTM, modify Reddit Pixel Tags.
+Update settings to send events to the server container instead of Reddit directly.
+
+8. Create a Reddit Conversions API Tag in Server GTM:
+In Server GTM, create a Reddit Conversions API Tag.
+Use the Pixel ID and map conversion events (e.g., Page View, Purchase, Signup).
+Ensure correct parameters like event name, transaction ID, and revenue.
+
+9. Implement User Identifiers for Better Attribution:
+Send hashed user data (SHA256) like email, phone number, and IP address.
+Ensure data privacy compliance (GDPR, CCPA).
+
+10. Enable Event Deduplication:
+Use the same Event Name and Event ID for browser and server events.
+Ensure Reddit correctly deduplicates the events.
+
+11. Test and Debug:
+Use GTM Preview Mode to check data flow.
+Validate events in Reddit Ads Manager Debugging Tool.
+Monitor Event Match Quality Score.
+
+12. Optimize and Monitor:
+Regularly check Reddit Ads Manager for conversion accuracy.
+Adjust event mapping and parameters to improve match rates.
+Monitor Google Cloud costs and optimize performance.
+</pre>
+
+<h3 id="SS-Conversion-Tracking-Amazon">13. Activities for setting up Server Side Conversion Tracking in Amazon Advertising Pixel with GTM</h3>
+<pre>
+1. Set Up a Server Container in GTM:
+Go to Google Tag Manager.
+Create a new Server container.
+Deploy it on Google Cloud or another server.
+
+2. Configure Google Cloud for GTM Server:
+Create a new Google Cloud project.
+Enable Cloud Run and App Engine.
+Deploy the GTM server container.
+
+3. Set Up a Custom Domain for the GTM Server:
+Configure a subdomain (e.g., tracking.yourdomain.com).
+Update DNS settings to point to the Cloud Run instance.
+
+4. Get Amazon Advertising Pixel Information:
+Log in to Amazon Ads Console.
+Navigate to Tools → Pixels.
+Copy the Pixel ID for tracking setup.
+
+5. Set Up Amazon Conversions API:
+In Amazon Ads Console. enable Conversions API.
+Choose Google Tag Manager (Server-Side) as the integration method.
+
+6. Configure the Amazon Pixel Client in Server GTM:
+In Server GTM, create an Amazon Pixel Client.
+Ensure it listens for relevant conversion events.
+
+7. Modify Web GTM Tags for Server-Side Tracking:
+In Web GTM, modify Amazon Pixel Tags.
+Update settings to send events to the server container instead of Amazon directly.
+
+8. Create an Amazon Conversions API Tag in Server GTM:
+In Server GTM, create an Amazon Conversions API Tag.
+Use the Pixel ID and map conversion events (e.g., Page View, Purchase, Signup).
+Ensure correct parameters like event name, transaction ID, and revenue.
+
+9. Implement User Identifiers for Better Attribution:
+Send hashed user data (SHA256) like email, phone number, and IP address.
+Ensure data privacy compliance (GDPR, CCPA).
+
+10. Enable Event Deduplication:
+Use the same Event Name and Event ID for browser and server events.
+Ensure Amazon correctly deduplicates the events.
+
+11. Test and Debug:
+Use GTM Preview Mode to check data flow.
+Validate events in Amazon Ads Console Debugging Tool.
+Monitor Event Match Quality Score.
+
+12. Optimize and Monitor:
+Regularly check Amazon Ads Console for conversion accuracy.
+Adjust event mapping and parameters to improve match rates.
+Monitor Google Cloud costs and optimize performance.
+</pre>    

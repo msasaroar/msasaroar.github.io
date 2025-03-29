@@ -1,0 +1,67 @@
+<pre>
+    <style>
+    .section-header {
+    background: white;
+    color: black;
+    font-weight: bold;
+    padding: 5px;
+    display: block;
+    }
+    </style>
+<h1>Detailed Activities For Setting Up Conversion Tracking In TikTok Pixel With GTM</h1>
+<span class="section-header">1. Obtain the TikTok Pixel ID</span>
+- Log in to your TikTok Ads Manager account.
+- Navigate to the "Assets" section and click on "Events."
+- Click on "Manage" under the TikTok Pixel section.
+- If you don’t have a pixel yet, click "Create Pixel" and follow the prompts.
+- Once the pixel is created, copy the Pixel ID from the Pixel Details page.
+
+<span class="section-header">2. Set Up the TikTok Pixel Base Code in GTM</span>
+- Open Google Tag Manager and select your container.
+- Click on "Tags" in the left-hand menu, then click "New."
+- Name the tag (e.g., "TikTok Base Pixel").
+- Click on "Tag Configuration" and choose "Custom HTML."
+- Paste the TikTok Pixel base code into the HTML field.
+- Replace `'YOUR_PIXEL_ID'` in the code with your actual TikTok Pixel ID.
+- Click on "Triggering" and select "All Pages" to fire the tag on every page.
+- Save the tag.
+
+<span class="section-header">3. Create a Conversion Event in GTM</span>
+- In GTM, click on "Tags" and then "New."
+- Name the tag (e.g., "TikTok Purchase Event").
+- Click on "Tag Configuration" and choose "Custom HTML."
+- Use the TikTok event code snippet for the specific conversion event (e.g., Purchase).
+- Replace `'YOUR_PIXEL_ID'` with your TikTok Pixel ID and add any required event parameters.
+- Set up a trigger for the event (e.g., "Page View" for a thank-you page or "Click" for a button).
+- Save the tag.
+
+<span class="section-header">4. Set Up Standard or Custom Events</span>
+- For standard events (e.g., ViewContent, AddToCart, Purchase), use TikTok's predefined event codes.
+- For custom events, modify the event code to include custom event names and parameters.
+- Configure triggers in GTM to fire these events based on user interactions (e.g., form submissions, button clicks, etc.).
+- Ensure all event tags are properly linked to your TikTok Pixel ID.
+
+<span class="section-header">5. Test in GTM Preview Mode</span>
+- Click on "Preview" in GTM to enter Preview Mode.
+- Open your website in a new tab and perform the actions that should trigger the TikTok Pixel (e.g., page views, purchases).
+- Check the GTM Preview console to ensure the TikTok Pixel base code and event tags are firing correctly.
+- Verify that the correct event parameters are being passed.
+
+<span class="section-header">6. Verify in TikTok Events Manager</span>
+- Go to TikTok Ads Manager and navigate to "Events."
+- Click on "Manage" under the TikTok Pixel section.
+- Check the "Event Diagnostics" tab to see if events are being received.
+- Ensure that the events match your GTM setup and that data is being tracked accurately.
+
+<span class="section-header">7. Publish GTM Container</span>
+- Once testing is complete and everything is working correctly, go back to GTM.
+- Click on "Submit" in the top-right corner to publish your container.
+- Add a version name and description (e.g., "Published TikTok Pixel setup").
+- Click "Publish" to make your changes live.
+
+<span class="section-header">8. Monitor and Optimize</span>
+- Regularly check TikTok Events Manager to monitor event performance.
+- Use the data to optimize your ad campaigns and improve conversion rates.
+- If necessary, update your GTM tags and triggers to refine event tracking.
+- Stay updated with TikTok Pixel documentation for any changes or new features.
+</pre>

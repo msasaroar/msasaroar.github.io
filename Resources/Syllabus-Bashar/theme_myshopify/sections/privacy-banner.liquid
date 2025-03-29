@@ -1,0 +1,39 @@
+<cookie-bar section="{{ section.id }}" hidden class="cookie-bar text--xsmall">
+  {%- if section.settings.cookie_bar_title != blank -%}
+    <p class="heading heading--xsmall">{{ section.settings.cookie_bar_title }}</p>
+  {%- endif -%}
+
+  {%- if section.settings.cookie_bar_content != blank -%}
+    {{- section.settings.cookie_bar_content -}}
+  {%- endif -%}
+
+  <div class="cookie-bar__actions">
+    <button class="button button--text button--primary button--small text--xsmall" data-action="accept-policy">{{ 'footer.cookie_bar.accept' | t }}</button>
+    <button class="button button--text button--ternary button--small text--xsmall" data-action="decline-policy">{{ 'footer.cookie_bar.decline' | t }}</button>
+  </div>
+</cookie-bar>
+
+{% schema %}
+{
+  "name": "Privacy banner",
+  "class": "shopify-section--privacy-banner",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Privacy bar will only be visible if it fulfills the conditions of the [Shopify Customer Privacy API](https://shopify.dev/docs/themes/consent-tracking-api)"
+    },
+    {
+      "type": "text",
+      "id": "cookie_bar_title",
+      "label": "Title",
+      "default": "Cookie policy"
+    },
+    {
+      "type": "richtext",
+      "id": "cookie_bar_content",
+      "label": "Content",
+      "default": "<p>I agree to the processing of my data in accordance with the conditions set out in the policy of Privacy.</p>"
+    }
+  ]
+}
+{% endschema %}

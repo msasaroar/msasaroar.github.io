@@ -1,0 +1,70 @@
+<pre>
+    <style>
+    .section-header {
+    background: white;
+    color: black;
+    font-weight: bold;
+    padding: 5px;
+    display: block;
+    }
+    </style>
+<h1>Detailed Activities For Setting Up Conversion Tracking In Bing UET Tag With GTM</h1>
+<span class="section-header">1. Create a Bing UET Tag</span>
+- Log in to your Microsoft Advertising account.
+- Navigate to "Tools" > "Conversion Tracking."
+- Click on "Create UET Tag."
+- Name your UET tag (e.g., "Website Conversions").
+- Click "Save" and copy the generated UET tag ID.
+
+<span class="section-header">2. Set Up the Bing UET Tag in GTM</span>
+- Open Google Tag Manager and select your container.
+- Click on "Tags" in the left-hand menu, then click "New."
+- Name the tag (e.g., "Bing UET Base Tag").
+- Click on "Tag Configuration" and choose "Custom HTML."
+- Paste the Bing UET base code into the HTML field.
+- Replace `'YOUR_UET_TAG_ID'` in the code with your actual UET tag ID.
+- Click on "Triggering" and select "All Pages" to fire the tag on every page.
+- Save the tag.
+
+<span class="section-header">3. Create a Conversion Goal in Microsoft Advertising</span>
+- Go back to Microsoft Advertising and navigate to "Tools" > "Conversion Tracking."
+- Click on "Create Conversion Goal."
+- Name your conversion goal (e.g., "Purchase").
+- Select the appropriate conversion type (e.g., "Purchase," "Sign-Up").
+- Set the conversion value and attribution model.
+- Save the conversion goal.
+
+<span class="section-header">4. Create Conversion Tags in GTM</span>
+- In GTM, click on "Tags" > "New."
+- Name the tag (e.g., "Bing Purchase Conversion").
+- Click on "Tag Configuration" and choose "Custom HTML."
+- Paste the Bing UET conversion tracking code into the HTML field.
+- Replace `'YOUR_UET_TAG_ID'` with your actual UET tag ID.
+- Add the conversion goal parameters (e.g., `window.uetq = window.uetq || []; window.uetq.push({'ec':'Purchase', 'ea':'Purchase', 'el':'ProductName', 'ev':100});`).
+- Save the tag.
+
+<span class="section-header">5. Set Up Triggers for Conversion Events</span>
+- In GTM, click on "Triggers" > "New."
+- Name the trigger (e.g., "Purchase Event Trigger").
+- Choose the trigger type (e.g., "Page View" for a thank-you page or "Custom Event" for specific actions).
+- Configure the trigger to fire on the desired event (e.g., URL contains `/thank_you` for purchases).
+- Save the trigger and link it to the corresponding conversion tag.
+
+<span class="section-header">6. Test the Implementation</span>
+- Click on "Preview" in GTM to enter Preview Mode.
+- Open your website in a new tab and perform the actions that should trigger the Bing UET tag (e.g., page views, purchases).
+- Check the GTM Preview console to ensure the Bing UET base tag and conversion tags are firing correctly.
+- Verify that the correct event parameters are being passed.
+
+<span class="section-header">7. Publish the GTM Container</span>
+- Once testing is complete and everything is working correctly, go back to GTM.
+- Click on "Submit" in the top-right corner to publish your container.
+- Add a version name and description (e.g., "Published Bing UET setup").
+- Click "Publish" to make your changes live.
+
+<span class="section-header">8. Monitor and Optimize</span>
+- Regularly check Microsoft Advertising's "Conversion Tracking" dashboard to monitor event performance.
+- Use the data to optimize your ad campaigns and improve conversion rates.
+- If necessary, update your GTM tags and triggers to refine event tracking.
+- Stay updated with Bing UET documentation for any changes or new features.
+</pre>
