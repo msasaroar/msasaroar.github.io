@@ -8,6 +8,7 @@ Q2ChatGPT >>> GTM Code for browser-side is GTM-PPBVCLNF
                        Which one should I use on each page?
 Q2ChatGPT >>> Should I create a tag for an event to be tracked in both the GTM container for browser-side as well as for server-side?
 Q2ChatGPT >>> If I implement both browser-side and server-side tracking, will it produce redundant data?
+Q2ChatGPT >>> What else should I know beyond setting up GA4 server-side tracking activities?
 
 =======================================================================================
 Server-side tagging

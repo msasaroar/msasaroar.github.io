@@ -1,3 +1,5 @@
+var gtmCode = "GTM-WW333VDN";
+console.log(gtmCode);
 
 //===========================================================================
 function openFile(fileName) {
@@ -32,3 +34,4 @@ function formatDate() {
 function formatTime() {
   const today = new Date();
   return today.toLocaleTimeString(); // Formats the time
+}
