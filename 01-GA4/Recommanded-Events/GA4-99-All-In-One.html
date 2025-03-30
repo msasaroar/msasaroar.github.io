@@ -3,88 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GA4 Compliant eCommerce Events</title>
+    <title>GA4 eCommerce Events</title>
     
-<!-- Google Tag Manager (GTM-PPBVCLNF) -->
-<script>
-(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
-var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
-j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl
-f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WW333VDN');
-</script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id=GTM-PPBVCLNF'+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PPBVCLNF');</script>
+    <!-- End Google Tag Manager -->
 
     <style>
         body {
-            font-family: 'Poppins', sans-serif;
-            background: green;
-            color: black;
+            font-family: Arial, sans-serif;
             text-align: center;
+            background: white;
+            color: black;
             padding: 20px;
         }
         .container {
             max-width: 600px;
-            margin: 100px auto;
-            background: greenyellow;
+            margin: auto;
+            background: green;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            color: black;
         }
         button {
-            background-color: black;
-            color: yellow;
+            background: orange;
+            color: blue;
             padding: 10px 20px;
             border: none;
             cursor: pointer;
             font-size: 16px;
-            border-radius: 5px;
             margin: 10px;
-            transition: 0.3s;
+            border-radius: 5px;
         }
         button:hover {
-            background-color:orange;
-            color: black;
-            transform: scale(1.05);
+            background: black;
         }
     </style>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) for GTM-PPBVCLNF -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WW333VDN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
-<!-- Google Tag Manager (noscript) for GTM-N4MMS7TS -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N4MMS7TS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <div class="container">
-        <h2>GA4 Compliant eCommerce Events</h2>
-        <button onclick="fireEvent('view_item_list', 'Best Sellers')">View Item List [view_item_list]</button>
-        <button onclick="fireEvent('select_item')">Select Item [select_item]</button>
-        <button onclick="fireEvent('view_item')">View Item [view_item]</button>
-        <button onclick="fireEvent('add_to_cart')">Add to Cart [add_to_cart]</button>
-        <button onclick="fireEvent('remove_from_cart')">Remove from Cart [remove_from_cart]</button>
-        <button onclick="fireEvent('begin_checkout')">Begin Checkout [begin_checkout]</button>
-        <button onclick="fireEvent('add_shipping_info')">Add Shipping Info [add_shipping_info]</button>
-        <button onclick="fireEvent('add_payment_info')">Add Payment Info [add_payment_info]</button>
-        <button onclick="fireEvent('purchase')">Complete Purchase [purchase]</button>
-        <button onclick="fireEvent('refund')">Refund [refund]</button>
+        <h2>GA4 eCommerce Event Demo</h2>
+        <p>Click the buttons below to trigger eCommerce events.</p>
+
+        <button onclick="fireEvent('add_payment_info')">Add Payment Info</button>
+        <button onclick="fireEvent('add_shipping_info')">Add Shipping Info</button>
+        <button onclick="fireEvent('add_to_cart')">Add to Cart</button>
+        <button onclick="fireEvent('add_to_wishlist')">Add to Wishlist</button>
+        <button onclick="fireEvent('begin_checkout')">Begin Checkout</button>
+        <button onclick="fireEvent('view_item_list')">View Item List</button>
+        <button onclick="fireEvent('purchase')">Purchase</button>
+        <button onclick="fireEvent('refund')">Refund</button>
+        <button onclick="fireEvent('remove_from_cart')">Remove from Cart</button>
+        <button onclick="fireEvent('item_list')">Item List</button>
     </div>
 
     <script>
-        function fireEvent(eventName, listName = '') {
-            const items = [
-                { item_name: 'Product A', item_id: '12345', price: 49.99, quantity: 1 },
-                { item_name: 'Product B', item_id: '67890', price: 29.99, quantity: 2 }
-            ];
+        function fireEvent(eventName) {
+            let eventData = {
+                'event': eventName,
+                'ecommerce': {
+                    'transaction_id': 'T12345',
+                    'value': 59.99,
+                    'currency': 'USD',
+                    'items': [
+                        {
+                            'item_name': 'Sample Product',
+                            'item_id': 'P12345',
+                            'price': 29.99,
+                            'quantity': 2,
+                            'item_category': 'Clothing'
+                        }
+                    ]
+                }
+            };
             
-            let eventData = { event: eventName, items: items };
-            
-            if (listName) {
-                eventData.item_list_name = listName;
+            if (eventName === 'add_payment_info') {
+                eventData.ecommerce.payment_type = 'Credit Card';
+            } else if (eventName === 'add_shipping_info') {
+                eventData.ecommerce.shipping_tier = 'Express';
             }
             
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push(eventData);
-            alert(eventName + ' event fired with data: ' + JSON.stringify(eventData, null, 2));
+            alert(eventName + ' event fired with data!');
         }
     </script>
 </body>
