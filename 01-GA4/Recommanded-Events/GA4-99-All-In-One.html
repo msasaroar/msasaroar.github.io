@@ -1,3 +1,5 @@
+<!-- https://msasaroar.github.io/01-GA4/Recommanded-Events/GA4-99-All-In-One.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,54 +49,131 @@
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WW333VDN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
     <div class="container">
         <h2>GA4 eCommerce Event Demo</h2>
         <p>Click the buttons below to trigger eCommerce events.</p>
 
-        <button onclick="fireEvent('add_payment_info')">Add Payment Info</button>
-        <button onclick="fireEvent('add_shipping_info')">Add Shipping Info</button>
-        <button onclick="fireEvent('add_to_cart')">Add to Cart</button>
-        <button onclick="fireEvent('add_to_wishlist')">Add to Wishlist</button>
-        <button onclick="fireEvent('begin_checkout')">Begin Checkout</button>
-        <button onclick="fireEvent('view_item_list')">View Item List</button>
-        <button onclick="fireEvent('purchase')">Purchase</button>
-        <button onclick="fireEvent('refund')">Refund</button>
-        <button onclick="fireEvent('remove_from_cart')">Remove from Cart</button>
-        <button onclick="fireEvent('item_list')">Item List</button>
+        <button onclick="addToCart()">Add to Cart</button>
+        <button onclick="beginCheckout()">Begin Checkout</button>
+        <button onclick="purchase()">Purchase</button>
+        <button onclick="viewItem()">View Item</button>
+        <button onclick="addPaymentInfo()">Add Payment Info</button>
+        <button onclick="addShippingInfo()">Add Shipping Info</button>
+        <button onclick="addToWishlist()">Add to Wishlist</button>
+        <button onclick="itemList()">Item List</button>
+        <button onclick="refund()">Refund</button>
+        <button onclick="removeFromCart()">Remove from Cart</button>
     </div>
 
     <script>
-        function fireEvent(eventName) {
-            let eventData = {
-                'event': eventName,
+        function addToCart() {
+            window.dataLayer.push({
+                'event': 'add_to_cart',
+                'ecommerce': {
+                    'items': [{
+                        'item_id': '12345',
+                        'item_name': 'Sample Product',
+                        'price': 19.99,
+                        'quantity': 1
+                    }]
+                }
+            });
+            alert('Add to Cart event fired!');
+        }
+
+        function beginCheckout() {
+            window.dataLayer.push({
+                'event': 'begin_checkout',
+                'ecommerce': {
+                    'currency': 'USD',
+                    'value': 59.97,
+                    'items': [{ 'item_id': '12345', 'item_name': 'Sample Product', 'price': 19.99, 'quantity': 3 }]
+                }
+            });
+            alert('Begin Checkout event fired!');
+        }
+
+        function purchase() {
+            window.dataLayer.push({
+                'event': 'purchase',
                 'ecommerce': {
                     'transaction_id': 'T12345',
-                    'value': 59.99,
+                    'affiliation': 'Online Store',
+                    'value': 59.97,
                     'currency': 'USD',
-                    'items': [
-                        {
-                            'item_name': 'Sample Product',
-                            'item_id': 'P12345',
-                            'price': 29.99,
-                            'quantity': 2,
-                            'item_category': 'Clothing'
-                        }
-                    ]
+                    'items': [{ 'item_id': '12345', 'item_name': 'Sample Product', 'price': 19.99, 'quantity': 3 }]
                 }
-            };
-            
-            if (eventName === 'add_payment_info') {
-                eventData.ecommerce.payment_type = 'Credit Card';
-            } else if (eventName === 'add_shipping_info') {
-                eventData.ecommerce.shipping_tier = 'Express';
-            }
-            
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push(eventData);
-            alert(eventName + ' event fired with data!');
+            });
+            alert('Purchase event fired!');
+        }
+
+        function viewItem() {
+            window.dataLayer.push({
+                'event': 'view_item',
+                'ecommerce': {
+                    'items': [{ 'item_id': '12345', 'item_name': 'Sample Product', 'price': 19.99 }]
+                }
+            });
+            alert('View Item event fired!');
+        }
+
+        function addPaymentInfo() {
+            window.dataLayer.push({
+                'event': 'add_payment_info',
+                'ecommerce': { 'payment_type': 'Credit Card' }
+            });
+            alert('Add Payment Info event fired!');
+        }
+
+        function addShippingInfo() {
+            window.dataLayer.push({
+                'event': 'add_shipping_info',
+                'ecommerce': { 'shipping_tier': 'Express' }
+            });
+            alert('Add Shipping Info event fired!');
+        }
+
+        function addToWishlist() {
+            window.dataLayer.push({
+                'event': 'add_to_wishlist',
+                'ecommerce': {
+                    'items': [{ 'item_id': '12345', 'item_name': 'Sample Product', 'price': 19.99 }]
+                }
+            });
+            alert('Add to Wishlist event fired!');
+        }
+
+        function itemList() {
+            window.dataLayer.push({
+                'event': 'view_item_list',
+                'ecommerce': {
+                    'items': [{ 'item_id': '12345', 'item_name': 'Sample Product' }]
+                }
+            });
+            alert('Item List event fired!');
+        }
+
+        function refund() {
+            window.dataLayer.push({
+                'event': 'refund',
+                'ecommerce': {
+                    'transaction_id': 'T12345'
+                }
+            });
+            alert('Refund event fired!');
+        }
+
+        function removeFromCart() {
+            window.dataLayer.push({
+                'event': 'remove_from_cart',
+                'ecommerce': {
+                    'items': [{ 'item_id': '12345', 'item_name': 'Sample Product', 'price': 19.99, 'quantity': 1 }]
+                }
+            });
+            alert('Remove from Cart event fired!');
         }
     </script>
 </body>
