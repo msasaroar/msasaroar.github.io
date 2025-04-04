@@ -79,7 +79,7 @@
             event: "add_to_cart",
             ecommerce: {
                 currency: "USD",
-                value: 30.03,
+                value: 30.00,
                 items: [
                 {
                 item_id: "SKU_12345",
@@ -113,7 +113,7 @@ dataLayer.push({
   event: "begin_checkout",
   ecommerce: {
     currency: "USD",
-    value: 30.03,
+    value: 31.01,
     coupon: "SUMMER_FUN",
     items: [
     {
@@ -149,7 +149,7 @@ dataLayer.push({
             ecommerce: {
               transaction_id: "T_12345",
               // Sum of (price * quantity) for all items.
-              value: 72.05,
+              value: 32.02,
               tax: 3.60,
               shipping: 5.99,
               currency: "USD",
@@ -209,7 +209,7 @@ dataLayer.push({
   event: "view_item",
   ecommerce: {
     currency: "USD",
-    value: 30.03,
+    value: 33.03,
     items: [
     {
       item_id: "SKU_12345",
@@ -243,7 +243,7 @@ dataLayer.push({
   event: "view_cart",
   ecommerce: {
     currency: "USD",
-    value: 30.03,
+    value: 34.04,
     items: [
     {
       item_id: "SKU_12345",
@@ -277,7 +277,7 @@ dataLayer.push({
   event: "add_payment_info",
   ecommerce: {
     currency: "USD",
-    value: 30.03,
+    value: 35.05,
     coupon: "SUMMER_FUN",
     payment_type: "Credit Card",
     items: [
@@ -313,7 +313,7 @@ dataLayer.push({
   event: "add_shipping_info",
   ecommerce: {
     currency: "USD",
-    value: 30.03,
+    value: 36.06,
     coupon: "SUMMER_FUN",
     shipping_tier: "Ground",
     items: [
@@ -349,7 +349,7 @@ dataLayer.push({
   event: "add_to_wishlist",
   ecommerce: {
     currency: "USD",
-    value: 30.03,
+    value: 37.07,
     items: [
     {
       item_id: "SKU_12345",
@@ -439,7 +439,7 @@ dataLayer.push({
   ecommerce: {
     currency: "USD",
     transaction_id: "T_12345", // Transaction ID. Required for purchases and refunds.
-    value: 30.03,
+    value: 38.08,
     coupon: "SUMMER_FUN",
     shipping: 3.33,
     tax: 1.11,
@@ -470,13 +470,13 @@ dataLayer.push({
             alert('Refund event fired!');
         }
 
-        function removeFromCart() {
-          dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
+function removeFromCart() {
+dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
 dataLayer.push({
   event: "remove_from_cart",
   ecommerce: {
     currency: "USD",
-    value: 30.03,
+    value: 39.09,
     items: [
     {
       item_id: "SKU_12345",

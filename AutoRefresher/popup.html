@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ট্যাব অটো রিফ্রেশ</title>
+  <style>
+    body {
+      width: 300px;
+      padding: 15px;
+      font-family: Arial, sans-serif;
+    }
+    select, input, button {
+      width: 100%;
+      margin: 8px 0;
+      padding: 8px;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .status {
+      margin-top: 15px;
+      padding: 10px;
+      background-color: #f0f0f0;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h3>ট্যাব অটো রিফ্রেশ</h3>
+  
+  <label for="tabList">ট্যাব সিলেক্ট করুন:</label>
+  <select id="tabList"></select>
+  
+  <label for="minInterval">সর্বনিম্ন বিরতি (সেকেন্ড):</label>
+  <input type="number" id="minInterval" value="30" min="5">
+  
+  <label for="maxInterval">সর্বোচ্চ বিরতি (সেকেন্ড):</label>
+  <input type="number" id="maxInterval" value="60" min="10">
+  
+  <button id="startBtn">শুরু করুন</button>
+  <button id="stopBtn">বন্ধ করুন</button>
+  
+  <div class="status">
+    <p>স্ট্যাটাস: <span id="statusText">বন্ধ</span></p>
+    <p>রিফ্রেশ কাউন্ট: <span id="refreshCount">0</span></p>
+    <p>পরবর্তী রিফ্রেশ: <span id="nextRefresh">-</span></p>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
