@@ -60,7 +60,7 @@
       <div class="button-grid">
           <button onclick="addToCart()">01. Add to Cart</button>
           <button onclick="beginCheckout()">02. Begin Checkout</button>
-          <button onclick="purchaseEvent()">03. Purchase</button>
+          <button onclick="purchase()">03. Purchase</button>
           <button onclick="viewCart()">04. View Cart</button>
           <button onclick="viewItem()">05. View Item</button>
           <button onclick="addPaymentInfo()">06. Add Payment Info</button>
@@ -142,7 +142,7 @@ dataLayer.push({
             alert('Begin Checkout event fired!');
         }
 
-        function purchaseEvent() {
+        function purchase() {
             dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
             dataLayer.push({
             event: "purchase",
