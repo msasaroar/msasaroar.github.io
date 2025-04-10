@@ -1,0 +1,36 @@
+
+01. About Google Tag Manager
+https://developers.google.com/tag-platform/tag-manager
+
+02. Server-Side Tagging
+https://developers.google.com/tag-platform/tag-manager#server-side_tagging
+https://developers.google.com/tag-platform/tag-manager/server-side/overview#create_a_tag_manager_server_container
+
+03. Configuring the Google Analytics 4 data stream
+https://developers.google.com/tag-platform/learn/sst-fundamentals/5-sst-setup-analytics
+
+04. Testing your setup
+https://developers.google.com/tag-platform/learn/sst-fundamentals/6-testing#testing-your-setup
+
+05. Map a custom domain to your service 
+https://developers.google.com/tag-platform/learn/sst-fundamentals/8-upgrade-infrastructure#map-a-custom-domain-to-your-service
+
+06. Update your client-side tags to send data to the new domain
+https://developers.google.com/tag-platform/learn/sst-fundamentals/8-upgrade-infrastructure#update-your-client-side-tags-to-send-data-to-the-new-domain
+
+07. Mapping custom domains
+https://cloud.google.com/run/docs/mapping-custom-domains
+https://developers.google.com/tag-platform/tag-manager/server-side/custom-domain?option=subdomain
+
+
+08. Custom domain configuration
+https://developers.google.com/tag-platform/tag-manager/server-side/custom-domain?option=same-origin
+
+
+03. Create custom templates
+https://developers.google.com/tag-platform/tag-manager#create_custom_templates
+
+04. Custom templates quick start guide
+https://developers.google.com/tag-platform/tag-manager/templates
+
+
