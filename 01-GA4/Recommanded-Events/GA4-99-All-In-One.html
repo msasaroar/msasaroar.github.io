@@ -394,7 +394,7 @@
         dataLayer.push({ ecommerce: null });
         dataLayer.push({
             event: "purchase",
-            transaction_id: "ORDER12345",
+            transaction_id: "ORDER123456",
             value: 99.99,
             currency: "USD",
             coupon: "SUMMER25",  // optional
@@ -402,15 +402,15 @@
             tax: 3.50,            // optional
             items: [
                 {
-                item_id: "P123",
-                item_name: "T-shirt",
+                item_id: "SKU_001",
+                item_name: "Cool Shirt",
                 price: 49.99,
                 quantity: 1,
                 item_category: "Clothing"
                 },
                 {
-                item_id: "P456",
-                item_name: "Sneakers",
+                item_id: "SKU_002",
+                item_name: "Stylish Hat",
                 price: 50.00,
                 quantity: 1,
                 item_category: "Footwear"
@@ -427,7 +427,7 @@
         dataLayer.push({
             event: "refund",
             currency: "USD",
-            transaction_id: "ORDER12345", // Transaction ID. Required for purchases and refunds.
+            transaction_id: "ORDER123456", // Transaction ID. Required for purchases and refunds.
             value: 38.08,
             items: [
                 {
