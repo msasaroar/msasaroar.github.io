@@ -427,8 +427,8 @@
             // Push the refund event data
             dataLayer.push({
                 event: "refund",
-                transaction_id: "T12345",
                 currency: "USD",
+                transaction_id: "T_12345", // Transaction ID. Required for purchases and refunds.
                 value: 38.08,
                 items: [
                     {
