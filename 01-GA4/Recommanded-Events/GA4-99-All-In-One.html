@@ -75,39 +75,40 @@
     <script>
         function addToCart() {
             dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
-            dataLayer.push({
-            event: "add_to_cart",
-            ecommerce: {
-                currency: "USD",
-                value: 30.00,
-                items: [
-                {
-                item_id: "SKU_12345",
-                item_name: "Stan and Friends Tee",
-                affiliation: "Google Merchandise Store",
-                coupon: "SUMMER_FUN",
-                discount: 2.22,
-                index: 0,
-                item_brand: "Google",
-                item_category: "Apparel",
-                item_category2: "Adult",
-                item_category3: "Shirts",
-                item_category4: "Crew",
-                item_category5: "Short sleeve",
-                item_list_id: "related_products",
-                item_list_name: "Related Products",
-                item_variant: "green",
-                location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
-                price: 10.01,
-                quantity: 3
-                }
-                ]
-            }
-            });
+                dataLayer.push({
+                    event: "add_to_cart",
+                    ecommerce: {
+                        currency: "USD",
+                        value: 30.00,
+                        items: [
+                            {
+                                item_id: "SKU_12345",
+                                item_name: "Stan and Friends Tee",
+                                affiliation: "Google Merchandise Store",
+                                item_brand: "Google",
+                                item_category: "Apparel",
+                                item_category2: "Adult",
+                                item_category3: "Shirts",
+                                item_category4: "Crew",
+                                item_category5: "Short sleeve",
+                                item_variant: "green",
+                                item_list_id: "related_products",
+                                item_list_name: "Related Products",
+                                index: 0,
+                                coupon: "SUMMER_FUN",
+                                discount: 2.22,
+                                location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
+                                price: 10.01,
+                                quantity: 3
+                            }
+                        ]
+                    }
+                });
             alert('Add to Cart event fired!');
         }
 
-        function beginCheckout() {
+
+    function beginCheckout() {
     // Clear the previous ecommerce object
     dataLayer.push({ ecommerce: null });
 
@@ -123,21 +124,19 @@
                     item_id: "SKU_12345",
                     item_name: "Stan and Friends Tee",
                     affiliation: "Google Merchandise Store",
-                    coupon: "SUMMER_FUN",
-                    discount: 2.22,
-                    index: 0,
                     item_brand: "Google",
                     item_category: "Apparel",
                     item_category2: "Adult",
                     item_category3: "Shirts",
                     item_category4: "Crew",
                     item_category5: "Short sleeve",
-                    item_list_id: "related_products",
-                    item_list_name: "Related Products",
                     item_variant: "green",
-                    location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
                     price: 10.01,
-                    quantity: 3
+                    quantity: 3,
+                    index: 0,
+                    coupon: "SUMMER_FUN",
+                    discount: 2.22,
+                    location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo"
                 }
             ]
         }
@@ -145,44 +144,42 @@
 
     // Alert the user that the event has fired
     alert('Begin Checkout event fired!');
-}
+    }
 
 
 function purchase() {
     // Clear the previous ecommerce object
     dataLayer.push({ ecommerce: null });
 
-    // Push the purchase event data
     dataLayer.push({
         event: "purchase",
         ecommerce: {
+            transaction_id: "order12345",  // Unique order ID (example)
+            affiliation: "Google Merchandise Store",
+            coupon: "SUMMER_FUN",
+            value: 30.00,  // Total purchase value (including shipping, taxes, etc.)
             currency: "USD",
-            value: 30.00,
+            shipping: 5.00,  // Add the shipping cost here if available
+            tax: 1.00,  // Add the tax amount if available
             items: [
                 {
                     item_id: "SKU_12345",
                     item_name: "Stan and Friends Tee",
-                    affiliation: "Google Merchandise Store",
-                    coupon: "SUMMER_FUN",
-                    discount: 2.22,
-                    index: 0,
                     item_brand: "Google",
                     item_category: "Apparel",
                     item_category2: "Adult",
                     item_category3: "Shirts",
                     item_category4: "Crew",
                     item_category5: "Short sleeve",
-                    item_list_id: "related_products",
-                    item_list_name: "Related Products",
                     item_variant: "green",
                     location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
                     price: 10.01,
-                    quantity: 3
+                    quantity: 3,
+                    discount: 2.22  // Include item-level discount if applicable
                 }
             ]
         }
     });
-
     // Alert the user that the event has fired
     alert('Purchase event fired!');
 }
@@ -202,18 +199,18 @@ function viewItem() {
                     item_id: "SKU_12345",
                     item_name: "Stan and Friends Tee",
                     affiliation: "Google Merchandise Store",
-                    coupon: "SUMMER_FUN",
-                    discount: 2.22,
-                    index: 0,
                     item_brand: "Google",
                     item_category: "Apparel",
                     item_category2: "Adult",
                     item_category3: "Shirts",
                     item_category4: "Crew",
                     item_category5: "Short sleeve",
+                    item_variant: "green",
                     item_list_id: "related_products",
                     item_list_name: "Related Products",
-                    item_variant: "green",
+                    coupon: "SUMMER_FUN",
+                    discount: 2.22,
+                    index: 0,
                     location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
                     price: 10.01,
                     quantity: 3
@@ -229,7 +226,6 @@ function viewItem() {
 function viewCart() {
     // Clear the previous ecommerce object
     dataLayer.push({ ecommerce: null });
-
     // Push the view_cart event data
     dataLayer.push({
         event: "view_cart",
@@ -241,18 +237,18 @@ function viewCart() {
                     item_id: "SKU_12345",
                     item_name: "Stan and Friends Tee",
                     affiliation: "Google Merchandise Store",
-                    coupon: "SUMMER_FUN",
-                    discount: 2.22,
-                    index: 0,
                     item_brand: "Google",
                     item_category: "Apparel",
                     item_category2: "Adult",
                     item_category3: "Shirts",
                     item_category4: "Crew",
                     item_category5: "Short sleeve",
+                    item_variant: "green",
                     item_list_id: "related_products",
                     item_list_name: "Related Products",
-                    item_variant: "green",
+                    coupon: "SUMMER_FUN",
+                    discount: 2.22,
+                    index: 0,
                     location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
                     price: 10.01,
                     quantity: 3
@@ -260,7 +256,6 @@ function viewCart() {
             ]
         }
     });
-
     // Alert the user that the event has fired
     alert('View Cart event fired!');
 }
@@ -268,7 +263,6 @@ function viewCart() {
 function addPaymentInfo() {
     // Clear the previous ecommerce object
     dataLayer.push({ ecommerce: null });
-
     // Push the add_payment_info event data
     dataLayer.push({
         event: "add_payment_info",
@@ -276,32 +270,31 @@ function addPaymentInfo() {
             currency: "USD",
             value: 35.05,
             coupon: "SUMMER_FUN",
-            payment_type: "Credit Card",
+            payment_type: "Credit Card", // GA4 recommended field
             items: [
                 {
                     item_id: "SKU_12345",
                     item_name: "Stan and Friends Tee",
                     affiliation: "Google Merchandise Store",
-                    coupon: "SUMMER_FUN",
-                    discount: 2.22,
-                    index: 0,
                     item_brand: "Google",
                     item_category: "Apparel",
                     item_category2: "Adult",
                     item_category3: "Shirts",
                     item_category4: "Crew",
                     item_category5: "Short sleeve",
+                    item_variant: "green",
                     item_list_id: "related_products",
                     item_list_name: "Related Products",
-                    item_variant: "green",
                     location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
+                    coupon: "SUMMER_FUN",
+                    discount: 2.22,
+                    index: 0,
                     price: 10.01,
                     quantity: 3
                 }
             ]
         }
     });
-
     // Alert the user that the event has fired
     alert('Add Payment Info event fired!');
 }
@@ -317,25 +310,25 @@ function addShippingInfo() {
             currency: "USD",
             value: 36.06,
             coupon: "SUMMER_FUN",
-            shipping_tier: "Ground",
+            shipping_tier: "Ground", // Recommended field for GA4
             items: [
                 {
                     item_id: "SKU_12345",
                     item_name: "Stan and Friends Tee",
                     affiliation: "Google Merchandise Store",
-                    coupon: "SUMMER_FUN",
-                    discount: 2.22,
-                    index: 0,
                     item_brand: "Google",
                     item_category: "Apparel",
                     item_category2: "Adult",
                     item_category3: "Shirts",
                     item_category4: "Crew",
                     item_category5: "Short sleeve",
+                    item_variant: "green",
                     item_list_id: "related_products",
                     item_list_name: "Related Products",
-                    item_variant: "green",
                     location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
+                    coupon: "SUMMER_FUN",
+                    discount: 2.22,
+                    index: 0,
                     price: 10.01,
                     quantity: 3
                 }
@@ -349,7 +342,7 @@ function addShippingInfo() {
 
 function addToWishlist() {
     dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
-
+    // Push the add_to_wishlist event data
     dataLayer.push({
         event: "add_to_wishlist",
         ecommerce: {
@@ -360,32 +353,31 @@ function addToWishlist() {
                     item_id: "SKU_12345",
                     item_name: "Stan and Friends Tee",
                     affiliation: "Google Merchandise Store",
-                    coupon: "SUMMER_FUN",
-                    discount: 2.22,
-                    index: 0,
                     item_brand: "Google",
                     item_category: "Apparel",
                     item_category2: "Adult",
                     item_category3: "Shirts",
                     item_category4: "Crew",
                     item_category5: "Short sleeve",
+                    item_variant: "green",
                     item_list_id: "related_products",
                     item_list_name: "Related Products",
-                    item_variant: "green",
                     location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
+                    coupon: "SUMMER_FUN",
+                    discount: 2.22,
+                    index: 0,
                     price: 10.01,
                     quantity: 3
                 }
             ]
         }
     });
-
     alert('Add to Wishlist event fired!');
 }
 
 function viewItemList() {
     dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
-
+    // Push the view_item_list event data
     dataLayer.push({
         event: "view_item_list",
         ecommerce: {
@@ -396,19 +388,17 @@ function viewItemList() {
                     item_id: "SKU_12345",
                     item_name: "Stan and Friends Tee",
                     affiliation: "Google Merchandise Store",
-                    coupon: "SUMMER_FUN",
-                    discount: 2.22,
-                    index: 0,
                     item_brand: "Google",
                     item_category: "Apparel",
                     item_category2: "Adult",
                     item_category3: "Shirts",
                     item_category4: "Crew",
                     item_category5: "Short sleeve",
-                    item_list_id: "related_products",
-                    item_list_name: "Related Products",
                     item_variant: "green",
                     location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
+                    coupon: "SUMMER_FUN",
+                    discount: 2.22,
+                    index: 0,
                     price: 10.03,
                     quantity: 3
                 },
@@ -416,39 +406,36 @@ function viewItemList() {
                     item_id: "SKU_12346",
                     item_name: "Google Grey Women's Tee",
                     affiliation: "Google Merchandise Store",
-                    coupon: "SUMMER_FUN",
-                    discount: 3.33,
-                    index: 1,
                     item_brand: "Google",
                     item_category: "Apparel",
                     item_category2: "Adult",
                     item_category3: "Shirts",
                     item_category4: "Crew",
                     item_category5: "Short sleeve",
-                    item_list_id: "related_products",
-                    item_list_name: "Related Products",
                     item_variant: "gray",
                     location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
+                    coupon: "SUMMER_FUN",
+                    discount: 3.33,
+                    index: 1,
                     price: 21.01,
+                    quantity: 2,
                     promotion_id: "P_12345",
-                    promotion_name: "Summer Sale",
-                    quantity: 2
+                    promotion_name: "Summer Sale"
                 }
             ]
         }
     });
-
     alert('View Item List event fired!');
 }
 
 function refund() {
     dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
-
+    // Push the refund event data
     dataLayer.push({
         event: "refund",
         ecommerce: {
             currency: "USD",
-            transaction_id: "T_12345", // Transaction ID. Required for purchases and refunds.
+            transaction_id: "T_12345", // ✅ Required for refund tracking
             value: 38.08,
             coupon: "SUMMER_FUN",
             shipping: 3.33,
@@ -458,32 +445,31 @@ function refund() {
                     item_id: "SKU_12345",
                     item_name: "Stan and Friends Tee",
                     affiliation: "Google Merchandise Store",
-                    coupon: "SUMMER_FUN",
-                    discount: 2.22,
-                    index: 0,
                     item_brand: "Google",
                     item_category: "Apparel",
                     item_category2: "Adult",
                     item_category3: "Shirts",
                     item_category4: "Crew",
                     item_category5: "Short sleeve",
-                    item_list_id: "related_products",
-                    item_list_name: "Related Products",
                     item_variant: "green",
                     location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
+                    coupon: "SUMMER_FUN",
+                    discount: 2.22,
+                    index: 0,
+                    item_list_id: "related_products",
+                    item_list_name: "Related Products",
                     price: 10.01,
                     quantity: 3
                 }
             ]
         }
     });
-
     alert('Refund event fired!');
 }
 
 function removeFromCart() {
     dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
-
+    // Push the remove_from_cart event data
     dataLayer.push({
         event: "remove_from_cart",
         ecommerce: {
@@ -491,28 +477,25 @@ function removeFromCart() {
             value: 39.09,
             items: [
                 {
-                    item_id: "SKU_12345",
-                    item_name: "Stan and Friends Tee",
+                    item_name: "Stan and Friends Tee", // item_name is required for GA4
+                    item_id: "SKU_12345",              // item_id is also important for tracking
                     affiliation: "Google Merchandise Store",
                     coupon: "SUMMER_FUN",
                     discount: 2.22,
-                    index: 0,
                     item_brand: "Google",
                     item_category: "Apparel",
                     item_category2: "Adult",
                     item_category3: "Shirts",
                     item_category4: "Crew",
                     item_category5: "Short sleeve",
-                    item_list_id: "related_products",
-                    item_list_name: "Related Products",
-                    item_variant: "green",
-                    location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
+                    item_list_id: "related_products", // Optional, useful for reporting
+                    item_list_name: "Related Products", // Optional, useful for reporting
+                    item_variant: "green", // Optional, useful for reporting
                     price: 10.01,
                     quantity: 3
                 }
             ]
         }
     });
-
     alert('Remove from Cart event fired!');
 }
