@@ -104,7 +104,7 @@
                     ]
                 }
             });
-            alert('Add to Cart event fired!');
+            alert('Function Name : ' + arguments.callee.name + '\nTime: ' + new Date().toLocaleTimeString());
         }
 
 
@@ -142,8 +142,8 @@
             }
         });
         // Alert the user that the event has fired
-        alert('Begin Checkout event fired!');
-        }
+        alert('Function Name : ' + arguments.callee.name + '\nTime: ' + new Date().toLocaleTimeString());
+    }
 
 
         function purchase() {
@@ -175,7 +175,7 @@
                 ]
             });
             // Alert the user that the event has fired
-            alert('Purchase event fired!');
+            alert('Function Name : ' + arguments.callee.name + '\nTime: ' + new Date().toLocaleTimeString());
         }
 
         function viewItem() {
@@ -214,7 +214,7 @@
             });
 
             // Alert the user that the event has fired
-            alert('View Item event fired!');
+            alert('Function Name : ' + arguments.callee.name + '\nTime: ' + new Date().toLocaleTimeString());
         }
 
         function viewCart() {
@@ -251,7 +251,7 @@
                 }
             });
             // Alert the user that the event has fired
-            alert('View Cart event fired!');
+            alert('Function Name : ' + arguments.callee.name + '\nTime: ' + new Date().toLocaleTimeString());
         }
 
         function addPaymentInfo() {
@@ -290,7 +290,7 @@
                 }
             });
             // Alert the user that the event has fired
-            alert('Add Payment Info event fired!');
+            alert('Function Name : ' + arguments.callee.name + '\nTime: ' + new Date().toLocaleTimeString());
         }
 
         function addShippingInfo() {
@@ -331,7 +331,7 @@
             });
 
             // Alert the user that the event has fired
-            alert('Add Shipping Info event fired!');
+            alert('Function Name : ' + arguments.callee.name + '\nTime: ' + new Date().toLocaleTimeString());
         }
 
         function addToWishlist() {
@@ -366,7 +366,7 @@
                     ]
                 }
             });
-            alert('Add to Wishlist event fired!');
+            alert('Function Name : ' + arguments.callee.name + '\nTime: ' + new Date().toLocaleTimeString());
         }
 
         function viewItemList() {
@@ -419,7 +419,7 @@
                     ]
                 }
             });
-            alert('View Item List event fired!');
+            alert('Function Name : ' + arguments.callee.name + '\nTime: ' + new Date().toLocaleTimeString());
         }
 
         function refund() {
@@ -443,7 +443,7 @@
                     }
                 ]
             });
-            alert('Refund event fired!\nTime: ' + new Date().toLocaleTimeString());
+            alert('Function Name : ' + arguments.callee.name + '\nTime: ' + new Date().toLocaleTimeString());
         }
 
         function removeFromCart() {
@@ -476,7 +476,7 @@
                     ]
                 }
             });
-            alert('Remove from Cart event fired!');
+            alert('Function Name : ' + arguments.callee.name + '\nTime: ' + new Date().toLocaleTimeString());
         }
     </script>
 </body>
