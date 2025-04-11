@@ -149,35 +149,30 @@
         function purchase() {
             // Clear the previous ecommerce object
             dataLayer.push({ ecommerce: null });
-
             dataLayer.push({
                 event: "purchase",
-                ecommerce: {
-                    transaction_id: "order12345",  // Unique order ID (example)
-                    affiliation: "Google Merchandise Store",
-                    coupon: "SUMMER_FUN",
-                    value: 30.00,  // Total purchase value (including shipping, taxes, etc.)
-                    currency: "USD",
-                    shipping: 5.00,  // Add the shipping cost here if available
-                    tax: 1.00,  // Add the tax amount if available
-                    items: [
-                        {
-                            item_id: "SKU_12345",
-                            item_name: "Stan and Friends Tee",
-                            item_brand: "Google",
-                            item_category: "Apparel",
-                            item_category2: "Adult",
-                            item_category3: "Shirts",
-                            item_category4: "Crew",
-                            item_category5: "Short sleeve",
-                            item_variant: "green",
-                            location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
-                            price: 10.01,
-                            quantity: 3,
-                            discount: 2.22  // Include item-level discount if applicable
-                        }
-                    ]
-                }
+                transaction_id: "T12345",
+                value: 99.99,
+                currency: "USD",
+                coupon: "SUMMER25",  // optional
+                shipping: 5.00,       // optional
+                tax: 3.50,            // optional
+                items: [
+                    {
+                    item_id: "P123",
+                    item_name: "T-shirt",
+                    price: 49.99,
+                    quantity: 1,
+                    item_category: "Clothing"
+                    },
+                    {
+                    item_id: "P456",
+                    item_name: "Sneakers",
+                    price: 50.00,
+                    quantity: 1,
+                    item_category: "Footwear"
+                    }
+                ]
             });
             // Alert the user that the event has fired
             alert('Purchase event fired!');
