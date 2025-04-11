@@ -428,6 +428,8 @@
             dataLayer.push({
                 event: "refund",
                 transaction_id: "T12345",
+                currency: "USD",
+                value: 38.08,
                 items: [
                     {
                     item_id: "SKU_001",
@@ -441,7 +443,7 @@
                     }
                 ]
             });
-            alert('Refund event fired!');
+            alert('Refund event fired!\nTime: ' + new Date().toLocaleTimeString());
         }
 
         function removeFromCart() {
