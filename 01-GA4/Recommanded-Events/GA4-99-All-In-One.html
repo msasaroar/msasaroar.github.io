@@ -393,7 +393,7 @@
         // Generate a unique transaction_id
         const timestamp = Math.floor(Date.now() / 1000).toString().padStart(10, '0');  // 10 digits
         const randomPart = Math.floor(Math.random() * 1000).toString().padStart(3, '0');  // 3 digits
-        const uniqueTransactionId = 'Purchase | ' + timestamp + ' | ' + randomPart;
+        const uniqueTransactionId = 'PURCHASE|' + timestamp + '|' + randomPart;
 
         // Clear the previous ecommerce object
         dataLayer.push({ ecommerce: null });
@@ -431,13 +431,11 @@
             '\nTime: ' + new Date().toLocaleTimeString());
     }
 
-
-
     function refund() {
         // Generate a unique transaction_id
         const timestamp = Math.floor(Date.now() / 1000).toString().padStart(10, '0');  // 10 digits
         const randomPart = Math.floor(Math.random() * 1000).toString().padStart(3, '0');  // 3 digits
-        const uniqueTransactionId = 'Refund | ' + timestamp + ' | ' + randomPart;
+        const uniqueTransactionId = 'REFUND|' + timestamp + '|' + randomPart;
 
         dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
 
