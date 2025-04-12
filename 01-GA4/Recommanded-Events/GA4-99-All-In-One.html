@@ -423,38 +423,28 @@
 
     function refund() {
         dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
-
-        // Define refund event data
-        const refundEvent = {
+        // Push the refund event data
+        dataLayer.push({
             event: "refund",
             currency: "USD",
-            transaction_id: "T-A-12345",
+            transaction_id: "T-A-12345", // Transaction ID. Required for purchases and refunds.
             value: 38.08,
             items: [
                 {
-                    item_id: "SKU_001",
-                    item_name: "Cool Shirt",
-                    quantity: 1,
-                    price: 20.00
+                item_id: "SKU_001",
+                item_name: "Cool Shirt",
+                quantity: 1,
+                price: 20.00
                 },
                 {
-                    item_id: "SKU_002",
-                    item_name: "Stylish Hat",
-                    quantity: 2,
-                    price: 9.04
+                item_id: "SKU_002",
+                item_name: "Stylish Hat",
+                quantity: 2,
+                price: 9.04
                 }
             ]
-        };
-
-        // Push the refund event data to dataLayer
-        dataLayer.push(refundEvent);
-
-        // Show alert with dynamic transaction_id
-        alert(
-            'Function Name : ' + arguments.callee.name +
-            '\nTransaction ID: ' + refundEvent.transaction_id +
-            '\nTime: ' + new Date().toLocaleTimeString()
-        );
+        });
+        alert('Function Name : ' + arguments.callee.name + '\nTime: ' + new Date().toLocaleTimeString());
     }
 
     function removeFromCart() {
