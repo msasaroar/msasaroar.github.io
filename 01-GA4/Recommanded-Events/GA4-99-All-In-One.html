@@ -390,63 +390,76 @@
     }
 
     function purchase() {
+        // Generate a unique transaction_id
+        const transaction_id = 'T-C-' + Date.now() + '-' + Math.floor(Math.random() * 1000);
+
         // Clear the previous ecommerce object
         dataLayer.push({ ecommerce: null });
         dataLayer.push({
             event: "purchase",
             ecommerce: {
-                transaction_id: "T-C-12345",
+                transaction_id: transaction_id,
                 value: 99.99,
                 currency: "USD",
                 coupon: "SUMMER25",
                 shipping: 5.00,
                 tax: 3.50,
                 items: [
-                {
-                    item_id: "SKU_001",
-                    item_name: "Cool Shirt",
-                    price: 49.99,
-                    quantity: 1,
-                    item_category: "Clothing"
-                },
-                {
-                    item_id: "SKU_002",
-                    item_name: "Stylish Hat",
-                    price: 50.00,
-                    quantity: 1,
-                    item_category: "Footwear"
-                }
+                    {
+                        item_id: "SKU_001",
+                        item_name: "Cool Shirt",
+                        price: 49.99,
+                        quantity: 1,
+                        item_category: "Clothing"
+                    },
+                    {
+                        item_id: "SKU_002",
+                        item_name: "Stylish Hat",
+                        price: 50.00,
+                        quantity: 1,
+                        item_category: "Footwear"
+                    }
                 ]
             }
         });
 
         // Alert the user that the event has fired
-        alert('Function Name : ' + arguments.callee.name + '\nTime: ' + new Date().toLocaleTimeString());
+        alert('Function Name : ' + arguments.callee.name + 
+            '\nTransaction ID: ' + transaction_id +
+            '\nTime: ' + new Date().toLocaleTimeString());
     }
 
+
+
     function refund() {
+        const uniqueTransactionId = "T-C-" + Date.now(); // Auto-generated unique transaction_id
+
         dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
-        // Push the refund event data
+
         dataLayer.push({
             event: "refund",
             ecommerce: {
-                transaction_id: "T-C-12345", // Required
-                value: 38.08,                 // Optional but recommended
-                currency: "USD",              // Optional but helpful
+                transaction_id: uniqueTransactionId, // Auto-generated ID
+                value: 38.08,
+                currency: "USD",
                 items: [
-                {
-                    item_id: "SKU_001",
-                    quantity: 1
-                },
-                {
-                    item_id: "SKU_002",
-                    quantity: 2
-                }
+                    {
+                        item_id: "SKU_001",
+                        quantity: 1
+                    },
+                    {
+                        item_id: "SKU_002",
+                        quantity: 2
+                    }
                 ]
             }
         });
-        alert('Function Name : ' + arguments.callee.name + '\nTime: ' + new Date().toLocaleTimeString());
+
+        alert('Function Name : ' + arguments.callee.name +
+            '\nTime: ' + new Date().toLocaleTimeString() +
+            '\nTransaction ID: ' + uniqueTransactionId);
     }
+
 
     function removeFromCart() {
         dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
