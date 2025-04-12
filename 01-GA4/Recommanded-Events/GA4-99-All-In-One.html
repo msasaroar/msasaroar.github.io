@@ -391,14 +391,14 @@
 
     function purchase() {
         // Generate a unique transaction_id
-        const transaction_id = 'T-C-' + Date.now() + '-' + Math.floor(Math.random() * 1000);
+        const uniqueTransactionId = 'Txn-' + Math.floor(Date.now() / 60000) + '-' + Math.floor(Math.random() * 1000);
 
         // Clear the previous ecommerce object
         dataLayer.push({ ecommerce: null });
         dataLayer.push({
             event: "purchase",
             ecommerce: {
-                transaction_id: transaction_id,
+                transaction_id: uniqueTransactionId,
                 value: 99.99,
                 currency: "USD",
                 coupon: "SUMMER25",
@@ -425,14 +425,15 @@
 
         // Alert the user that the event has fired
         alert('Function Name : ' + arguments.callee.name + 
-            '\nTransaction ID: ' + transaction_id +
+            '\nTransaction ID: ' + uniqueTransactionId +
             '\nTime: ' + new Date().toLocaleTimeString());
     }
 
 
 
     function refund() {
-        const uniqueTransactionId = "T-C-" + Date.now(); // Auto-generated unique transaction_id
+        // Generate a unique transaction_id
+        const uniqueTransactionId = 'Txn-' + Math.floor(Date.now() / 60000) + '-' + Math.floor(Math.random() * 1000);
 
         dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
 
