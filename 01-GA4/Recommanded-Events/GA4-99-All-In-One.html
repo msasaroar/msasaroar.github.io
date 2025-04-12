@@ -394,29 +394,32 @@
         dataLayer.push({ ecommerce: null });
         dataLayer.push({
             event: "purchase",
-            transaction_id: "T-A-12345",
-            value: 99.99,
-            currency: "USD",
-            coupon: "SUMMER25",  // optional
-            shipping: 5.00,       // optional
-            tax: 3.50,            // optional
-            items: [
+            ecommerce: {
+                transaction_id: "T-A-12345",
+                value: 99.99,
+                currency: "USD",
+                coupon: "SUMMER25",
+                shipping: 5.00,
+                tax: 3.50,
+                items: [
                 {
-                item_id: "SKU_001",
-                item_name: "Cool Shirt",
-                price: 49.99,
-                quantity: 1,
-                item_category: "Clothing"
+                    item_id: "SKU_001",
+                    item_name: "Cool Shirt",
+                    price: 49.99,
+                    quantity: 1,
+                    item_category: "Clothing"
                 },
                 {
-                item_id: "SKU_002",
-                item_name: "Stylish Hat",
-                price: 50.00,
-                quantity: 1,
-                item_category: "Footwear"
+                    item_id: "SKU_002",
+                    item_name: "Stylish Hat",
+                    price: 50.00,
+                    quantity: 1,
+                    item_category: "Footwear"
                 }
-            ]
+                ]
+            }
         });
+
         // Alert the user that the event has fired
         alert('Function Name : ' + arguments.callee.name + '\nTime: ' + new Date().toLocaleTimeString());
     }
@@ -426,23 +429,21 @@
         // Push the refund event data
         dataLayer.push({
             event: "refund",
-            currency: "USD",
-            transaction_id: "T-A-12345", // Transaction ID. Required for purchases and refunds.
-            value: 38.08,
-            items: [
+            ecommerce: {
+                transaction_id: "T-A-12345", // Required
+                value: 38.08,                 // Optional but recommended
+                currency: "USD",              // Optional but helpful
+                items: [
                 {
-                item_id: "SKU_001",
-                item_name: "Cool Shirt",
-                quantity: 1,
-                price: 20.00
+                    item_id: "SKU_001",
+                    quantity: 1
                 },
                 {
-                item_id: "SKU_002",
-                item_name: "Stylish Hat",
-                quantity: 2,
-                price: 9.04
+                    item_id: "SKU_002",
+                    quantity: 2
                 }
-            ]
+                ]
+            }
         });
         alert('Function Name : ' + arguments.callee.name + '\nTime: ' + new Date().toLocaleTimeString());
     }
