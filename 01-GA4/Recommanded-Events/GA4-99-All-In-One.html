@@ -394,7 +394,7 @@
         dataLayer.push({ ecommerce: null });
         dataLayer.push({
             event: "purchase",
-            transaction_id: "ORDER123456",
+            transaction_id: "T-A-12345",
             value: 99.99,
             currency: "USD",
             coupon: "SUMMER25",  // optional
@@ -427,7 +427,7 @@
         dataLayer.push({
             event: "refund",
             currency: "USD",
-            transaction_id: "ORDER123456", // Transaction ID. Required for purchases and refunds.
+            transaction_id: "T-A-12345", // Transaction ID. Required for purchases and refunds.
             value: 38.08,
             items: [
                 {
