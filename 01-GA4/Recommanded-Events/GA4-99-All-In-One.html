@@ -391,8 +391,8 @@
 
     function purchase() {
         // Generate a unique transaction_id
-        const uniqueTransactionId = 'Txn | ' + Math.floor(Date.now() / 60000) + ' | ' + Math.floor(Math.random() * 1000);
-        
+        const uniqueTransactionId = 'Txn | ' + Math.floor(Date.now() / 1000) + ' | ' + Math.floor(Math.random() * 1000);
+
         // Clear the previous ecommerce object
         dataLayer.push({ ecommerce: null });
         dataLayer.push({
@@ -433,7 +433,7 @@
 
     function refund() {
         // Generate a unique transaction_id
-        const uniqueTransactionId = 'Txn | ' + Math.floor(Date.now() / 60000) + ' | ' + Math.floor(Math.random() * 1000);
+        const uniqueTransactionId = 'Txn | ' + Math.floor(Date.now() / 1000) + ' | ' + Math.floor(Math.random() * 1000);
 
         dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
 
