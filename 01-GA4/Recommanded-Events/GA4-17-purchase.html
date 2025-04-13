@@ -125,14 +125,19 @@
 
         <button id="trackPurchase">Track Purchase</button>
     </div>
-
+    
     <script>
+        // Generate a unique transaction_id
+        const timestamp = Math.floor(Date.now() / 1000).toString().padStart(10, '0');  // 10 digits
+        const randomPart = Math.floor(Math.random() * 1000).toString().padStart(3, '0');  // 3 digits
+        const uniqueTransactionId = 'PURCHASE|' + timestamp + '|' + randomPart;
+    
         document.getElementById('trackPurchase').addEventListener('click', function() {
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
                 'event': 'purchase',
                 'ecommerce': {
-                    'transaction_id': 'TXN123456',
+                    'transaction_id': uniqueTransactionId,
                     'value': 199.99,
                     'currency': 'USD',
                     'tax': 15.99,
@@ -166,8 +171,9 @@
                     ]
                 }
             });
-            alert('GA4 Purchase event fired!');
+            alert('GA4 Purchase event fired with Transaction ID: ' + uniqueTransactionId);
         });
     </script>
+    
 </body>
 </html>
