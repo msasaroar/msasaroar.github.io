@@ -82,10 +82,6 @@
 <!-- Google Tag Manager (noscript) for GTM-WW333VDN -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WW333VDN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-<!-- Google Tag Manager (noscript) for GTM-N4MMS7TS -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N4MMS7TS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
-
     <div class="container">
         <h2>GA4 Purchase Event Tracking</h2>
         
@@ -125,14 +121,18 @@
 
         <button id="trackPurchase">Track Purchase</button>
     </div>
-    
+
     <script>
-        // Generate a unique transaction_id
-        const timestamp = Math.floor(Date.now() / 1000).toString().padStart(10, '0');  // 10 digits
-        const randomPart = Math.floor(Math.random() * 1000).toString().padStart(3, '0');  // 3 digits
-        const uniqueTransactionId = 'PURCHASE|' + timestamp + '|' + randomPart;
+        // Function to generate a unique transaction_id
+        function generateTransactionId() {
+            const timestamp = Math.floor(Date.now() / 1000).toString().padStart(10, '0');  // 10 digits
+            const randomPart = Math.floor(Math.random() * 1000).toString().padStart(3, '0');  // 3 digits
+            return 'PURCHASE|' + timestamp + '|' + randomPart;
+        }
     
         document.getElementById('trackPurchase').addEventListener('click', function() {
+            const uniqueTransactionId = generateTransactionId();
+    
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
                 'event': 'purchase',
@@ -174,6 +174,6 @@
             alert('GA4 Purchase event fired with Transaction ID: ' + uniqueTransactionId);
         });
     </script>
-    
+        
 </body>
 </html>
