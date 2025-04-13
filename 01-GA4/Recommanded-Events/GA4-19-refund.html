@@ -128,12 +128,21 @@
     </div>
 
     <script>
+        // Function to generate a unique transaction_id
+        function generateTransactionId() {
+            const timestamp = Math.floor(Date.now() / 1000).toString().padStart(10, '0');  // 10 digits
+            const randomPart = Math.floor(Math.random() * 1000).toString().padStart(3, '0');  // 3 digits
+            return 'REFUND|' + timestamp + '|' + randomPart;
+        }
+    
         document.getElementById('trackRefund').addEventListener('click', function() {
+            const uniqueTransactionId = generateTransactionId();
+    
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
                 'event': 'refund',
                 'ecommerce': {
-                    'transaction_id': 'TXN123456',
+                    'transaction_id': uniqueTransactionId,
                     'value': 199.99,
                     'currency': 'USD',
                     'refund_reason': 'Customer Return',
@@ -160,8 +169,9 @@
                     ]
                 }
             });
-            alert('GA4 Refund event fired!');
+            alert('GA4 Refund event fired with Transaction ID: ' + uniqueTransactionId);
         });
     </script>
+    
 </body>
 </html>
