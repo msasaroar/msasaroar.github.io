@@ -47,30 +47,28 @@
 
 
 <div class="listbox-group">
-    <label for="gadsConversionActions">Google Ads Conversion Action</label>
-    <ul id="gadsConversionActions" role="listbox" tabindex="0">
-        <li tabindex="0" data-value="../index.html">Home</li>
-        <li tabindex="0" data-value="GAds-01-Subscribe.html">GAds # 01. Subscribe</li>
-        <li tabindex="0" data-value="GAds-02-Sign-Ups.html">GAds # 02. Sign-Ups</li>
-        <li tabindex="0" data-value="GAds-03-Book-Appointments.html">GAds # 03. Book Appointments</li>
-        <li tabindex="0" data-value="GAds-04-Request-Quotes.html">GAds # 04. Request Quotes</li>
-        <li tabindex="0" data-value="GAds-05-Get-Directions.html">GAds # 05. Get Directions</li>
-        <li tabindex="0" data-value="GAds-06-Outbound-Clicks.html">GAds # 06. Outbound Clicks</li>
-        <li tabindex="0" data-value="GAds-07-Purchases.html">GAds # 07. Purchases</li>
-        <li tabindex="0" data-value="GAds-08-Add-To-Cart.html">GAds # 08. Add To Cart</li>
-        <li tabindex="0" data-value="GAds-09-Begin-Checkout.html">GAds # 09. Begin Checkout</li>
-        <li tabindex="0" data-value="GAds-10-Submit-Lead-Forms.html">GAds # 10. Submit Lead Forms</li>
-        <li tabindex="0" data-value="GAds-11-Contacts.html">GAds # 11. Contacts</li>
-        <li tabindex="0" data-value="GAds-12-Page-Views.html">GAds # 12. Page Views</li>
+    <label for="LinkedInEvents">LinkedIn Insight Tag Events</label>
+    <ul id="LinkedInEvents" role="listbox" tabindex="0">
+        <li tabindex="0" data-value="../Side-Menu-Bar/menu-99-Opening-Page.html">Home</li>
+        <li tabindex="0" data-value="LinkedIn-01-PageView.html">LinkedIn # 01. PageView</li>
+        <li tabindex="0" data-value="LinkedIn-02-Signup.html">LinkedIn # 02. Signup</li>
+        <li tabindex="0" data-value="LinkedIn-03-AddToCart.html">LinkedIn # 03. AddToCart</li>
+        <li tabindex="0" data-value="LinkedIn-04-Purchase.html">LinkedIn # 04. Purchase</li>
+        <li tabindex="0" data-value="LinkedIn-05-Lead.html">LinkedIn # 05. Lead</li>
+        <li tabindex="0" data-value="LinkedIn-06-Install.html">LinkedIn # 06. Install</li>
+        <li tabindex="0" data-value="LinkedIn-07-ViewContent.html">LinkedIn # 07. ViewContent</li>
+        <li tabindex="0" data-value="LinkedIn-08-BookAppointment.html">LinkedIn # 08. BookAppointment</li>
+        <li tabindex="0" data-value="LinkedIn-09-Subscribe.html">LinkedIn # 09. Subscribe</li>
+        <li tabindex="0" data-value="LinkedIn-10-Download.html">LinkedIn # 10. Download</li>
     </ul>
     <button id="proceedBtn" disabled>Proceed</button>
 </div>
 
 <script>
     let selectedValue = "";
-    document.querySelectorAll('#gadsConversionActions li').forEach(item => {
+    document.querySelectorAll('#LinkedInEvents li').forEach(item => {
         item.addEventListener('click', function() {
-            document.querySelectorAll('#gadsConversionActions li').forEach(li => li.classList.remove('selected'));
+            document.querySelectorAll('#LinkedInEvents li').forEach(li => li.classList.remove('selected'));
             this.classList.add('selected');
             selectedValue = this.getAttribute('data-value');
             document.getElementById('proceedBtn').disabled = false;

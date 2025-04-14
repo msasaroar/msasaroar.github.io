@@ -1,13 +1,10 @@
 
 https://support.google.com/analytics/answer/9216061?sjid=9969511612730558330NC
 
-To track the `view_search_results` event using GA4 + Google Tag Manager (GTM), you need to detect when a search happens and send that event to GA4. Below is a full stepbystep guide to set it up properly.
-
-
+To track the `view_search_results` event using GA4 + Google Tag Manager (GTM), you need to detect when a search happens and 
+send that event to GA4. Below is a full stepbystep guide to set it up properly.
 
 ✅ Use Case: A visitor searches something, and the search term is captured and sent to GA4.
-
-
 
 🔧 StepbyStep GTM Setup
 
@@ -17,8 +14,6 @@ To track the `view_search_results` event using GA4 + Google Tag Manager (GTM), y
  Trigger: All Pages
  Save
 
-
-
 2. Create a Variable to Capture Search Term
 If your site has a search parameter like `?q=shoes`, you can extract it:
 
@@ -27,20 +22,14 @@ If your site has a search parameter like `?q=shoes`, you can extract it:
  Component Type: Query
  Query Key: `q` (or whatever your site uses, like `search`, `s`)
  Name it `Search Term`
-
 ✅ Now GTM can extract the user's search term.
-
-
 
 3. Create a Trigger for Search Results Page
  Go to Triggers → New
  Type: Page View
  Choose: Some Page Views
  Condition: `Page URL` → `contains` → `?q=` (or your query key)
-
 ✅ This tells GTM when to fire the event (when a search is made).
-
-
 
 4. Create the GA4 Event Tag
  Go to Tags → New
