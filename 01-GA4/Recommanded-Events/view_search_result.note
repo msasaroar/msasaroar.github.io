@@ -1,0 +1,83 @@
+
+https://support.google.com/analytics/answer/9216061?sjid=9969511612730558330NC
+
+To track the `view_search_results` event using GA4 + Google Tag Manager (GTM), you need to detect when a search happens and send that event to GA4. Below is a full stepbystep guide to set it up properly.
+
+
+
+✅ Use Case: A visitor searches something, and the search term is captured and sent to GA4.
+
+
+
+🔧 StepbyStep GTM Setup
+
+1. Create a GA4 Configuration Tag (if not already done)
+ Go to Tags → New → GA4 Configuration
+ Add your Measurement ID from GA4 (`GXXXXXXX`)
+ Trigger: All Pages
+ Save
+
+
+
+2. Create a Variable to Capture Search Term
+If your site has a search parameter like `?q=shoes`, you can extract it:
+
+ Go to Variables → New
+ Type: URL
+ Component Type: Query
+ Query Key: `q` (or whatever your site uses, like `search`, `s`)
+ Name it `Search Term`
+
+✅ Now GTM can extract the user's search term.
+
+
+
+3. Create a Trigger for Search Results Page
+ Go to Triggers → New
+ Type: Page View
+ Choose: Some Page Views
+ Condition: `Page URL` → `contains` → `?q=` (or your query key)
+
+✅ This tells GTM when to fire the event (when a search is made).
+
+
+
+4. Create the GA4 Event Tag
+ Go to Tags → New
+ Type: GA4 Event
+ Configuration Tag: Select your GA4 config
+ Event Name: `view_search_results`
+ Add Parameter:
+   Name: `search_term`
+   Value: `{{Search Term}}`
+
+Trigger: Use the one you made for the search results page.
+
+
+
+5. Test Your Setup
+ Use GTM Preview Mode
+ Go to your site and perform a search like `?q=shoes`
+ Check that the `view_search_results` event fires with the search term
+ Then publish
+
+
+
+📈 In GA4 Reports
+Once implemented:
+ Go to Reports → Engagement → Events
+ Look for `view_search_results`
+ Use the parameter `search_term` in Explore to see what users search
+
+
+
+✅ Alternative: Manual Push (for custom apps)
+If you're triggering manually (e.g. from JavaScript), use:
+```js
+window.dataLayer.push({
+  event: "view_search_results",
+  search_term: "yoursearchquery"
+});
+```
+
+Would you like me to help set this up for a specific platform like WordPress, Shopify, or a custom HTML page?
