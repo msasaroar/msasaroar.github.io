@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Behavioral Event Demo</title>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id=GTM-PPBVCLNF'+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PPBVCLNF');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      padding: 20px;
+    }
+    .event-card {
+      background: #fff;
+      border: 2px solid #ccc;
+      padding: 20px;
+      margin: 20px auto;
+      width: 80%;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+    .event-card:hover {
+      transform: scale(1.02);
+    }
+    .event-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .event-description {
+      margin-bottom: 15px;
+    }
+    .trigger-btn {
+      background: orange;
+      color: blue;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .trigger-btn:hover {
+      background: blue;
+      color: orange;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <h1>🧠 ইউজার বিহেভিয়ার ইনটেলিজেন্স - ইভেন্ট ট্রিগার ডেমো</h1>
+
+  <div class="event-card" onmouseenter="triggerEvent('hover_over_product')">
+    <div class="event-title">hover_over_product</div>
+    <div class="event-description">যখন ইউজার কোন পণ্যের উপর মাউস হোভার করে।</div>
+  </div>
+
+  <div class="event-card">
+    <div class="event-title">idle_user_detected</div>
+    <div class="event-description">যখন ইউজার অনেকক্ষণ কোন অ্যাকশন নেয় না।</div>
+    <button class="trigger-btn" onclick="triggerEvent('idle_user_detected')">Trigger</button>
+  </div>
+
+  <div class="event-card">
+    <div class="event-title">repeated_visit</div>
+    <div class="event-description">যখন ইউজার বারবার একই পেইজে ভিজিট করে।</div>
+    <button class="trigger-btn" onclick="triggerEvent('repeated_visit')">Trigger</button>
+  </div>
+
+  <div class="event-card">
+    <div class="event-title">first_time_user</div>
+    <div class="event-description">যখন ইউজার প্রথমবার ওয়েবসাইটে আসে।</div>
+    <button class="trigger-btn" onclick="triggerEvent('first_time_user')">Trigger</button>
+  </div>
+
+  <div class="event-card">
+    <div class="event-title">high_value_user</div>
+    <div class="event-description">যখন ইউজার গুরুত্বপূর্ণ বা বড় অর্ডার করেছে এমন চিহ্নিত হয়।</div>
+    <button class="trigger-btn" onclick="triggerEvent('high_value_user')">Trigger</button>
+  </div>
+
+  <script>
+    function triggerEvent(eventName) {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: eventName
+      });
+      console.log(`Custom Event Fired: ${eventName}`);
+    }
+
+    // Optional: Auto-detect idle user after 20 seconds
+    let idleTimeout = setTimeout(() => {
+      triggerEvent('idle_user_detected');
+    }, 20000);
+    ['mousemove', 'keydown', 'scroll'].forEach(event =>
+      window.addEventListener(event, () => clearTimeout(idleTimeout))
+    );
+  </script>
+</body>
+</html>
