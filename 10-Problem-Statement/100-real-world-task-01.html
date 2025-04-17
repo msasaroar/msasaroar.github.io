@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GA4 & GTM Task</title>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-WW333VDN');
+    </script>
+    <!-- End Google Tag Manager -->    
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: white;
+            color: black;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: green;
+            text-align: center;
+            color: white;
+            padding: 10px 0;
+        }
+
+        header a {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            background-color: orange;
+            color: blue;
+            padding: 5px 10px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        header a:hover {
+            background-color: blue;
+            color: orange;
+        }
+
+        .container {
+            display: flex;
+            margin-top: 70px;
+            padding: 20px;
+        }
+
+        .left-section {
+            width: 30%;
+            padding: 10px;
+            overflow-y: auto;
+            background-color: #f4f4f4;
+            border-right: 1px solid #ddd;
+            height: calc(100vh - 120px);
+        }
+
+        .right-section {
+            width: 70%;
+            padding: 20px;
+        }
+
+        h2 {
+            color: green;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #f1f1f1;
+            text-align: center;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        button {
+            background-color: orange;
+            color: blue;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px 0;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: blue;
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html">Home</a>
+        <h1>GA4 & GTM Task Resolution</h1>
+    </header>
+
+    <div class="container">
+        <div class="left-section">
+            <h2>Task Scenario</h2>
+            <p>You are tasked with tracking user interactions on an e-commerce product page. Specifically, track the following events:</p>
+            <ul>
+                <li>Product viewed</li>
+                <li>Add to cart</li>
+                <li>Product purchased</li>
+            </ul>
+
+            <h2>Objectives</h2>
+            <ul>
+                <li>Set up event tracking using GTM for the specified interactions.</li>
+                <li>Verify the events are accurately captured in GA4.</li>
+                <li>Utilize the GA4 DebugView to ensure proper implementation.</li>
+            </ul>
+
+            <h2>Solution Steps</h2>
+            <ol>
+                <li>Create a new tag in GTM for the product view event.</li>
+                <li>Add a trigger to the tag that fires when the product page is loaded.</li>
+                <li>Repeat the process for Add to Cart and Purchase events with respective triggers.</li>
+                <li>Publish the GTM container and test using GTM Preview Mode.</li>
+                <li>Check GA4 DebugView to ensure events are captured correctly.</li>
+            </ol>
+        </div>
+
+        <div class="right-section">
+            <h2>Main Content</h2>
+            <p>Use the buttons below to simulate the events and verify the tracking setup:</p>
+
+            <button onclick="simulateEvent('Product Viewed')">Simulate Product Viewed</button>
+            <button onclick="simulateEvent('Add to Cart')">Simulate Add to Cart</button>
+            <button onclick="simulateEvent('Product Purchased')">Simulate Product Purchased</button>
+
+            <script>
+                function simulateEvent(eventName) {
+                    console.log(eventName + ' event simulated.');
+                    dataLayer.push({
+                        'event': eventName.replace(' ', '_').toLowerCase(),
+                        'event_category': 'E-commerce',
+                        'event_label': eventName
+                    });
+                    alert(eventName + ' event has been pushed to the dataLayer.');
+                }
+            </script>
+        </div>
+    </div>
+</body>
+</html>
