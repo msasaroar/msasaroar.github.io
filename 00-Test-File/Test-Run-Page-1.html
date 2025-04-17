@@ -64,9 +64,11 @@
       // Just pushing a flag into the dataLayer
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
-        event: "custom_event_trigger"
+        event: "custom_event_from_page",
+        category: "test",
+        action: "clicked_button"
       });
-      alert("Custom Event Triggered!");
+      alert("Custom Event Triggered From Page!");
     });
   </script>
 </body>
