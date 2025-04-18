@@ -1,0 +1,17 @@
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var button = document.getElementById('buttonForMouseOver');
+      alert("Mouse Over");
+      if (button) {
+        button.addEventListener('mouseover', function() {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: 'customMouseoverEvent',
+            button_id: 'buttonForMouseOver'
+          });
+        });
+      }
+    });
+  </script>
+
+উপরোক্ত কোডের মত করে মাউস ক্লিকের জন্য কোড লিখে যাও
