@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Listener Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f8ff;
+      color: #333;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #007acc;
+    }
+
+    .event-box {
+      border: 2px dashed #007acc;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 20px auto;
+      width: 80%;
+      background: #ffffff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    button, input {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: none;
+      background-color: orange;
+      color: blue;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    .log {
+      margin-top: 20px;
+      padding: 10px;
+      background: #f9f9f9;
+      border: 1px solid #ccc;
+      text-align: left;
+      max-height: 200px;
+      overflow-y: auto;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📋 Event Listener Demo</h1>
+
+  <div class="event-box">
+    <button id="clickBtn">Click Me</button>
+    <button id="mouseBtn">Mouse Over Me</button>
+    <input type="text" id="inputField" placeholder="Type something..." />
+    <br />
+    <span>Scroll the page too ↕️</span>
+  </div>
+
+  <div class="log" id="eventLog"></div>
+
+  <script>
+    const logDiv = document.getElementById('eventLog');
+
+    function logEvent(eventName, details = '') {
+      const time = new Date().toLocaleTimeString();
+      logDiv.innerHTML += `[${time}] ${eventName} ${details}<br>`;
+      logDiv.scrollTop = logDiv.scrollHeight;
+    }
+
+    // Click Event
+    document.getElementById('clickBtn').addEventListener('click', () => {
+      logEvent("Click Event", "- Button clicked");
+    });
+
+    // Mouse Over Event
+    document.getElementById('mouseBtn').addEventListener('mouseover', () => {
+      logEvent("MouseOver Event", "- Mouse entered the button");
+    });
+
+    // Input Event
+    document.getElementById('inputField').addEventListener('input', (e) => {
+      logEvent("Input Event", `- Current value: "${e.target.value}"`);
+    });
+
+    // Keydown Event
+    document.addEventListener('keydown', (e) => {
+      logEvent("KeyDown Event", `- Key: "${e.key}"`);
+    });
+
+    // Scroll Event
+    window.addEventListener('scroll', () => {
+      logEvent("Scroll Event", "- Page is scrolling");
+    });
+  </script>
+</body>
+</html>

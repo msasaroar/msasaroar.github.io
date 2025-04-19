@@ -79,5 +79,26 @@
         <button class="btn" id="leftClickMeButton">Left Click Me</button>
     </div>
 
+    <script>
+        document.getElementById('clickMeButton').addEventListener('click', function () {
+            alert('You clicked the "Click Me" button!');
+        });
+
+        document.getElementById('mouseOverMeButton').addEventListener('mouseover', function () {
+            alert('Mouse is over the "Mouse Over Me" button!');
+        });
+
+        document.getElementById('rightClickMeButton').addEventListener('contextmenu', function (e) {
+            e.preventDefault(); // Prevent default right-click menu
+            alert('You right-clicked the "Right Click Me" button!');
+        });
+
+        document.getElementById('leftClickMeButton').addEventListener('mousedown', function (e) {
+            if (e.button === 0) { // 0 means left click
+                alert('You left-clicked the "Left Click Me" button!');
+            }
+        });
+    </script>
+
 </body>
 </html>
