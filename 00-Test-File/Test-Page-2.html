@@ -1,104 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Test Button Page</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Google Tag Manager -->
-    <script>
-      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id=GTM-WW333VDN'+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-WW333VDN');
-    </script>
-    <!-- End Google Tag Manager -->
+<script>
+    document.getElementById('clickMeButton').addEventListener('click', function () {
+        alert('You clicked the "Click Me" button!');
+    });
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(to right, #e0f7fa, #fff3e0);
-            color: #000;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+    document.getElementById('mouseOverMeButton').addEventListener('mouseover', function () {
+        alert('Mouse is over the "Mouse Over Me" button!');
+    });
+
+    document.getElementById('rightClickMeButton').addEventListener('contextmenu', function (e) {
+        e.preventDefault(); // Prevent default right-click menu
+        alert('You right-clicked the "Right Click Me" button!');
+    });
+
+    document.getElementById('leftClickMeButton').addEventListener('mousedown', function (e) {
+        if (e.button === 0) { // 0 means left click
+            alert('You left-clicked the "Left Click Me" button!');
         }
+    });
 
-        .container {
-            text-align: center;
-            background-color: #ffffff;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-        }
+    // Click Event
+    document.getElementById('clickBtn').addEventListener('click', () => {
+      logEvent("Click Event", "- Button clicked");
+    });
 
-        .btn {
-            background-color: orange;
-            color: blue;
-            padding: 12px 24px;
-            font-size: 18px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            margin: 10px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+    // Mouse Over Event
+    document.getElementById('mouseBtn').addEventListener('mouseover', () => {
+      logEvent("MouseOver Event", "- Mouse entered the button");
+    });
 
-        .btn:hover {
-            background-color: blue;
-            color: orange;
-            transform: scale(1.05);
-        }
+    // Input Event
+    document.getElementById('inputField').addEventListener('input', (e) => {
+      logEvent("Input Event", `- Current value: "${e.target.value}"`);
+    });
 
-        h1 {
-            margin-bottom: 30px;
-            font-size: 28px;
-            color: #333;
-        }
-    </style>
-</head>
-<body>
+    // Keydown Event
+    document.addEventListener('keydown', (e) => {
+      logEvent("KeyDown Event", `- Key: "${e.key}"`);
+    });
 
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WW333VDN"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
+    // Scroll Event
+    window.addEventListener('scroll', () => {
+      logEvent("Scroll Event", "- Page is scrolling");
+    });
+    
+  </script>
 
-    <div class="container">
-        <h1>Test Event Buttons</h1>
-        <button class="btn" id="clickMeButton">Click Me</button>
-        <button class="btn" id="mouseOverMeButton">Mouse Over Me</button>
-        <button class="btn" id="rightClickMeButton">Right Click Me</button>
-        <button class="btn" id="leftClickMeButton">Left Click Me</button>
-    </div>
-
-    <script>
-        document.getElementById('clickMeButton').addEventListener('click', function () {
-            alert('You clicked the "Click Me" button!');
-        });
-
-        document.getElementById('mouseOverMeButton').addEventListener('mouseover', function () {
-            alert('Mouse is over the "Mouse Over Me" button!');
-        });
-
-        document.getElementById('rightClickMeButton').addEventListener('contextmenu', function (e) {
-            e.preventDefault(); // Prevent default right-click menu
-            alert('You right-clicked the "Right Click Me" button!');
-        });
-
-        document.getElementById('leftClickMeButton').addEventListener('mousedown', function (e) {
-            if (e.button === 0) { // 0 means left click
-                alert('You left-clicked the "Left Click Me" button!');
-            }
-        });
-    </script>
-
-</body>
-</html>
