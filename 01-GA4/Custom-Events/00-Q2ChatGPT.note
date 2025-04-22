@@ -1,3 +1,4 @@
+===============================Q2ChatGPT
 <script>
   var now = new Date();
   var event_date = now.toISOString().split('T')[0];
@@ -12,6 +13,6 @@
   });
   alert('Event Fired : 20 Seconds Passed On The Page');
 </script>
-
-
 উপরোক্ত Custom HTML Tag এর second_passed এই variable এর ডেটা এই Custom HTML Tag এর ফায়ারিং এর Condition এ ব্যবহার করা যাবে ?
+
+
