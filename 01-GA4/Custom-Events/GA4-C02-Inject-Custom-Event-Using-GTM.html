@@ -33,6 +33,7 @@
             border: 1px solid #ccc;
             border-radius: 5px;
         }
+
         .box {
             width: 200px;
             height: 100px;
@@ -40,7 +41,47 @@
             text-align: center;
             line-height: 100px;
             margin-top: 10px;
+            transition: background-color 0.3s, transform 0.3s;
         }
+
+        /* Hover effect */
+        #hoverBox:hover {
+            background-color: #c0ffc0;
+            transform: scale(1.05);
+        }
+
+        .mouse-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.mouse-grid > * {
+    flex: 1 1 200px;
+}
+
+.form-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 10px;
+    align-items: flex-start;
+}
+
+.form-grid > * {
+    flex: 1 1 200px;
+    min-width: 200px;
+}
+
+.drag-drop-grid {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+    align-items: center;
+}
+
+
     </style>
 </head>
 <body>
@@ -55,8 +96,14 @@
 
     <div class="section">
         <h2>Mouse Events</h2>
-        <button id="clickBtn">Click Me</button>
-        <div id="mouseBox" class="box">Hover / Move / Down / Up</div>
+        <div class="mouse-grid">
+            <button id="clickBtn">Click Me</button>
+            <div id="hoverBox" class="box">Hover</div>
+            <div id="moveBox" class="box">Move</div>
+            <div id="outBox" class="box">Out</div>
+            <div id="downBox" class="box">Mouse Down</div>
+            <div id="upBox" class="box">Mouse Up</div>
+        </div>
     </div>
 
     <div class="section">
@@ -66,12 +113,14 @@
 
     <div class="section">
         <h2>Form Events</h2>
-        <input type="text" id="focusInput" placeholder="Focus / Blur">
-        <input type="text" id="changeInput" value="Hello">
-        <form id="sampleForm">
-            <input type="text" placeholder="Submit this form">
-            <button type="submit">Submit</button>
-        </form>
+        <div class="form-grid">
+            <input type="text" id="focusInput" placeholder="Focus / Blur">
+            <input type="text" id="changeInput" value="Hello">
+            <form id="sampleForm">
+                <input type="text" placeholder="Submit this form">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
     </div>
 
     <div class="section">
@@ -86,8 +135,10 @@
 
     <div class="section">
         <h2>Drag & Drop Events</h2>
-        <div id="dragTarget" class="box" draggable="true">Drag Me</div>
-        <div id="dropZone" class="box" style="background:#d1ffd1;">Drop Here</div>
+        <div class="drag-drop-grid">
+            <div id="dragTarget" class="box" draggable="true">Drag Me</div>
+            <div id="dropZone" class="box" style="background:#d1ffd1;">Drop Here</div>
+        </div>
     </div>
 
     <div class="section">
@@ -108,14 +159,44 @@
     </div>
 
     <!--script>
-        // Mouse Events
-        document.getElementById('clickBtn').addEventListener('click', () => alert('Clicked!'));
-        const mouseBox = document.getElementById('mouseBox');
-        mouseBox.addEventListener('mouseover', () => console.log('Mouse Over'));
-        mouseBox.addEventListener('mouseout', () => console.log('Mouse Out'));
-        mouseBox.addEventListener('mousemove', () => console.log('Mouse Move'));
-        mouseBox.addEventListener('mousedown', () => console.log('Mouse Down'));
-        mouseBox.addEventListener('mouseup', () => console.log('Mouse Up'));
+        // Mouse event listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            const hoverBox = document.getElementById("hoverBox");
+            const moveBox = document.getElementById("moveBox");
+            const outBox = document.getElementById("outBox");
+            const downBox = document.getElementById("downBox");
+            const upBox = document.getElementById("upBox");
+
+            if (hoverBox) {
+                hoverBox.addEventListener("mouseenter", () => {
+                    console.log("Mouse entered hoverBox");
+                });
+            }
+
+            if (moveBox) {
+                moveBox.addEventListener("mousemove", () => {
+                    console.log("Mouse moved over moveBox");
+                });
+            }
+
+            if (outBox) {
+                outBox.addEventListener("mouseout", () => {
+                    console.log("Mouse left outBox");
+                });
+            }
+
+            if (downBox) {
+                downBox.addEventListener("mousedown", () => {
+                    console.log("Mouse down on downBox");
+                });
+            }
+
+            if (upBox) {
+                upBox.addEventListener("mouseup", () => {
+                    console.log("Mouse up on upBox");
+                });
+            }
+        });
 
         // Keyboard Events
         const keyInput = document.getElementById('keyInput');
@@ -167,6 +248,6 @@
 
         // Select Box
         document.getElementById('selectBox').addEventListener('change', () => console.log('Selection Changed'));
-    </!--script-->
+    </script-->
 </body>
 </html>
