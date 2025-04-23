@@ -93,7 +93,7 @@
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PPBVCLNF');
+    })(window,document,'script','dataLayer','GTM-WW333VDN');
   </script>
   <!-- End Google Tag Manager -->
 </head>
@@ -101,7 +101,7 @@
 
   <!-- Google Tag Manager (noscript) -->
   <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WW333VDN"
     height="0" width="0" style="display:none;visibility:hidden"></iframe>
   </noscript>
   <!-- End Google Tag Manager (noscript) -->
@@ -112,15 +112,15 @@
   </header>
 
   <div class="main-content">
-    <form action="#" method="post">
+    <form id="dataForm">
       <label>
         Favorite Color (Text Input):
-        <input type="text" placeholder="e.g., Blue">
+        <input type="text" id="colorInput" placeholder="e.g., Blue">
       </label>
 
       <label>
         Favorite Animal (Dropdown):
-        <select>
+        <select id="animalSelect">
           <option value="">-- Select --</option>
           <option>Cat</option>
           <option>Dog</option>
@@ -138,55 +138,48 @@
 
       <label>
         Additional Comments (Textarea):
-        <textarea rows="4" cols="30" placeholder="Write your comments here..."></textarea>
+        <textarea id="commentsBox" rows="4" cols="30" placeholder="Write your comments here..."></textarea>
       </label>
 
       <label>
         Agree to Terms and Conditions:
-        <input type="checkbox">
+        <input type="checkbox" id="termsCheck">
       </label>
 
-      <button type="submit">Submit</button>
+      <button type="button" onclick="submitToDataLayer()">Submit</button>
     </form>
   </div>
 
-  <footer>
-    <object type="text/html" data="footer.html"></object>
-  </footer>
+<!--
+  <script>
+    function submitToDataLayer() {
+      const favoriteColor = document.getElementById('colorInput')?.value || '';
+      const favoriteAnimal = document.getElementById('animalSelect')?.value || '';
+      const comments = document.getElementById('commentsBox')?.value || '';
+      const agreed = document.getElementById('termsCheck')?.checked || false;
 
-  <!--script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const form = document.querySelector('form');
-      if (!form) return;
-  
-      form.addEventListener('submit', function (e) {
-        e.preventDefault(); // prevent actual submission
-
-        const favoriteColor = form.querySelector('input[type="text"]')?.value || '';
-        const favoriteAnimal = form.querySelector('select')?.value || '';
-        const comments = form.querySelector('textarea')?.value || '';
-        const agreed = form.querySelector('input[type="checkbox"]')?.checked || false;
-  
-        let preference = '';
-        const radios = form.querySelectorAll('input[name="preference"]');
-        radios.forEach((radio) => {
-          if (radio.checked) {
-            preference = radio.value;
-          }
-        });
-  
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-          event: 'formSubmission',
-          favoriteColor: favoriteColor,
-          favoriteAnimal: favoriteAnimal,
-          preference: preference,
-          comments: comments,
-          agreedToTerms: agreed
-        });
+      let preference = '';
+      const radios = document.querySelectorAll('input[name="preference"]');
+      radios.forEach((radio) => {
+        if (radio.checked) {
+          preference = radio.value;
+        }
       });
-    });
-  </script-->
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'formSubmission',
+        favoriteColor: favoriteColor,
+        favoriteAnimal: favoriteAnimal,
+        preference: preference,
+        comments: comments,
+        agreedToTerms: agreed
+      });
+
+      alert("✅ Data sent to GTM dataLayer (no server submission).");
+    }
+  </script>
+-->
 
 </body>
 </html>
