@@ -122,3 +122,43 @@ Event Name: custom_form_submit
 formData.name      --> {{formData.name}}
 formData.subscribe --> {{formData.subscribe}}
 formData.gender    --> {{formData.gender}}
+
+
+
+======================================================================
+উপরোক্ত html পেইজ এর কোড এ কোন পরিবর্তন না করে এই পেইজ এর submitBtn এর ক্লিকের ফলে 
+নিম্নোক্ত Custom HTML Tag এর মাধ্যমে ডেটা লেয়ারে formSubmit কাস্টম ইভেন্টটি পুশ করতে চাই এবং
+পুশ করা formSubmit ইভেন্টটি ফায়ার করাতে এবং তা ট্র্যাকিং করে GA4 এ ইভেন্ট ডেটা পাঠাতে GTM এ ট্যাগ ও ট্রিগার কনফিগার করা হয়েছে। 
+কিন্তু formSubmit ইভেন্টটি ফায়ার করছেনা।
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.getElementById("submitBtn").addEventListener("click", function () {
+        // Input values collect করা হচ্ছে
+        var username = document.getElementById("username").value;
+        var isSubscribed = document.getElementById("subscribe").checked;
+        var genderElements = document.getElementsByName("gender");
+        var genderValue = "";
+        for (var i = 0; i < genderElements.length; i++) {
+          if (genderElements[i].checked) {
+            genderValue = genderElements[i].value;
+            break;
+          }
+        }
+  
+        // Data Layer এ push করা হচ্ছে
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: "formSubmit",
+          userData: {
+            name: username,
+            subscribed: isSubscribed,
+            gender: genderValue
+          }
+        });
+        console.log("Form data pushed to dataLayer.");
+        alert("Form data pushed to dataLayer.");
+      });
+    });
+  </script>
