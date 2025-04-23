@@ -1,48 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Non-PII Data Form</title>
+  <style>
+    body {
+      background-color: white;
+      color: black;
+      text-align: center;
+      padding: 50px;
+      font-family: Arial, sans-serif;
+    }
 
-<script>
-    document.getElementById('clickMeButton').addEventListener('click', function () {
-        alert('You clicked the "Click Me" button!');
-    });
+    header {
+      background-color: green;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
 
-    document.getElementById('mouseOverMeButton').addEventListener('mouseover', function () {
-        alert('Mouse is over the "Mouse Over Me" button!');
-    });
+    .home-button {
+      position: absolute;
+      left: 10px;
+      top: 15px;
+      background-color: orange;
+      color: blue;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
 
-    document.getElementById('rightClickMeButton').addEventListener('contextmenu', function (e) {
-        e.preventDefault(); // Prevent default right-click menu
-        alert('You right-clicked the "Right Click Me" button!');
-    });
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
 
-    document.getElementById('leftClickMeButton').addEventListener('mousedown', function (e) {
-        if (e.button === 0) { // 0 means left click
-            alert('You left-clicked the "Left Click Me" button!');
-        }
-    });
+    .main-content {
+      margin-top: 120px;
+    }
 
-    // Click Event
-    document.getElementById('clickBtn').addEventListener('click', () => {
-      logEvent("Click Event", "- Button clicked");
-    });
+    form {
+      display: inline-block;
+      text-align: left;
+    }
 
-    // Mouse Over Event
-    document.getElementById('mouseBtn').addEventListener('mouseover', () => {
-      logEvent("MouseOver Event", "- Mouse entered the button");
-    });
+    label, input, select, textarea {
+      display: block;
+      margin: 10px 0;
+    }
 
-    // Input Event
-    document.getElementById('inputField').addEventListener('input', (e) => {
-      logEvent("Input Event", `- Current value: "${e.target.value}"`);
-    });
+    .radio-group label {
+      display: inline-block;
+      margin-right: 15px;
+    }
 
-    // Keydown Event
-    document.addEventListener('keydown', (e) => {
-      logEvent("KeyDown Event", `- Key: "${e.key}"`);
-    });
+    button {
+      background-color: orange;
+      color: blue;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      display: block;
+      margin: 20px auto;
+    }
 
-    // Scroll Event
-    window.addEventListener('scroll', () => {
-      logEvent("Scroll Event", "- Page is scrolling");
-    });
-    
+    button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #f1f1f1;
+      text-align: center;
+      height: 50px;
+    }
+
+    footer object {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PPBVCLNF');
   </script>
+  <!-- End Google Tag Manager -->
+</head>
+<body>
 
+  <header>
+    <button class="home-button" onclick="location.href='index.html'">Home</button>
+    <h1>Non-PII Data Collection Form</h1>
+  </header>
+
+  <div class="main-content">
+    <form>
+      <label>
+        Favorite Color (Text Input):
+        <input type="text" placeholder="e.g., Blue">
+      </label>
+
+      <label>
+        Favorite Animal (Dropdown):
+        <select>
+          <option value="">-- Select --</option>
+          <option>Cat</option>
+          <option>Dog</option>
+          <option>Elephant</option>
+          <option>Fox</option>
+        </select>
+      </label>
+
+      <label>What do you prefer? (Radio Options):</label>
+      <div class="radio-group">
+        <label><input type="radio" name="preference" value="morning"> Morning</label>
+        <label><input type="radio" name="preference" value="evening"> Evening</label>
+        <label><input type="radio" name="preference" value="night"> Night</label>
+      </div>
+
+      <label>
+        Additional Comments (Textarea):
+        <textarea rows="4" cols="30" placeholder="Write your comments here..."></textarea>
+      </label>
+
+      <label>
+        Agree to Terms and Conditions:
+        <input type="checkbox">
+      </label>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <footer>
+    <object type="text/html" data="footer.html"></object>
+  </footer>
+
+</body>
+</html>

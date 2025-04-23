@@ -12,6 +12,8 @@ Triggers	            2	              Click Trigger,              Custom Event Tr
 
 ===============================Q2ChatGPT
 একটি html পেইজ বানিয়ে দাও যেটাতে ১টি করে ইনপুট বক্স, চেক্স, অপশন রেডিও বাটন এবং বাটন থাকবে।
+শর্ত হলো কোন প্রকার Personally Identifiable Information (PII) ডেটা ক্যাপচার করা যাবেনা।
+কোন element এর জন্য ইভেন্ট লিসেনার থাকবেনা।
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Response From ChatGPT
 ChatGPT প্রদত্ত html পেইজটি হলো ঃ GA4-C03-Inject-Custom-Event-Using-GTM.html
 
@@ -126,39 +128,177 @@ formData.gender    --> {{formData.gender}}
 
 
 ======================================================================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Elements Demo</title>
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id=GTM-WW333VDN'+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-WW333VDN');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <style>
+        body {
+            background-color: #006400; /* Dark green */
+            color: black;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: green;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .home-button {
+            position: absolute;
+            left: 20px;
+            top: 15px;
+            background-color: orange;
+            color: blue;
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+
+        .home-button:hover {
+            background-color: blue;
+            color: orange;
+        }
+
+        main {
+            padding: 100px 20px 70px; /* Top padding accounts for fixed header, bottom for footer */
+            text-align: center;
+        }
+
+        input, button, label {
+            margin: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: orange;
+            color: blue;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: blue;
+            color: orange;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #f1f1f1;
+            text-align: center;
+            height: 50px;
+        }
+
+        footer object {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WW333VDN"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Header -->
+    <header>
+        <button class="home-button" onclick="location.href='index.html'">Home</button>
+        <h1>User Input Form</h1>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Text Input -->
+        <div>
+            <label for="username">Name:</label>
+            <input type="text" id="username" name="username" placeholder="Enter your name">
+        </div>
+
+        <!-- Checkbox -->
+        <div>
+            <label><input type="checkbox" id="subscribe" name="subscribe"> Subscribe to Newsletter</label>
+        </div>
+
+        <!-- Radio Buttons -->
+        <div>
+            <label><input type="radio" name="gender" value="male"> Male</label>
+            <label><input type="radio" name="gender" value="female"> Female</label>
+        </div>
+
+        <!-- Submit Button -->
+        <div>
+            <button id="submitBtn">Submit</button>
+        </div>
+    </main>
+</body>
+</html>
+
+
 উপরোক্ত html পেইজ এর কোড এ কোন পরিবর্তন না করে এই পেইজ এর submitBtn এর ক্লিকের ফলে 
 নিম্নোক্ত Custom HTML Tag এর মাধ্যমে ডেটা লেয়ারে formSubmit কাস্টম ইভেন্টটি পুশ করতে চাই এবং
 পুশ করা formSubmit ইভেন্টটি ফায়ার করাতে এবং তা ট্র্যাকিং করে GA4 এ ইভেন্ট ডেটা পাঠাতে GTM এ ট্যাগ ও ট্রিগার কনফিগার করা হয়েছে। 
-কিন্তু formSubmit ইভেন্টটি ফায়ার করছেনা।
+ব্রাঊজারে console.log(dataLayer) দিয়ে চেক করে দেখেছি formSubmit ইভেন্টটি সঠিক ডেটা সহ ডেটালেয়ারে পুশ হচ্ছে।
+কিন্তু formSubmit ইভেন্টটি ফায়ার করলেও GTM এর dataLayer ভ্যারিয়েবলে data যাচ্ছেনা।
 
+  <script>
+  document.getElementById("submitBtn").addEventListener("click", function () {
+    var username = document.getElementById("username").value;
+    var isSubscribed = document.getElementById("subscribe").checked;
+    var genderElements = document.getElementsByName("gender");
+    var genderValue = "";
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-      document.getElementById("submitBtn").addEventListener("click", function () {
-        // Input values collect করা হচ্ছে
-        var username = document.getElementById("username").value;
-        var isSubscribed = document.getElementById("subscribe").checked;
-        var genderElements = document.getElementsByName("gender");
-        var genderValue = "";
-        for (var i = 0; i < genderElements.length; i++) {
-          if (genderElements[i].checked) {
-            genderValue = genderElements[i].value;
-            break;
-          }
-        }
-  
-        // Data Layer এ push করা হচ্ছে
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-          event: "formSubmit",
-          userData: {
-            name: username,
-            subscribed: isSubscribed,
-            gender: genderValue
-          }
-        });
-        console.log("Form data pushed to dataLayer.");
-        alert("Form data pushed to dataLayer.");
-      });
+    for (var i = 0; i < genderElements.length; i++) {
+      if (genderElements[i].checked) {
+        genderValue = genderElements[i].value;
+        break;
+      }
+    }
+    // Data Layer এ push করা হচ্ছে
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "formSubmit",
+      userData: {
+        name: username,
+        subscribed: isSubscribed,
+        gender: genderValue
+      }
     });
-  </script>
+    // Corrected alert to show the data as a single string
+    alert(
+      "Form data pushed to dataLayer:\n" +
+      "Name: " + username + "\n" +
+      "Subscribed: " + isSubscribed + "\n" +
+      "Gender: " + genderValue
+    );
+    console.log("Form data pushed to dataLayer.");
+    console.log(dataLayer);
+    alert(dataLayer);
+  });
+</script>

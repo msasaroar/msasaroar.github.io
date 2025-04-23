@@ -1,167 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Form Elements Demo</title>
+  <meta charset="UTF-8">
+  <title>Non-PII Data Form</title>
+  <style>
+    body {
+      background-color: white;
+      color: black;
+      text-align: center;
+      padding: 50px;
+      font-family: Arial, sans-serif;
+    }
 
-    <!-- Google Tag Manager -->
-    <script>
-        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id=GTM-WW333VDN'+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-WW333VDN');
-    </script>
-    <!-- End Google Tag Manager -->
+    header {
+      background-color: green;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
 
-    <style>
-        body {
-            background-color: #006400; /* Dark green */
-            color: black;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
+    .home-button {
+      position: absolute;
+      left: 10px;
+      top: 15px;
+      background-color: orange;
+      color: blue;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
 
-        header {
-            background-color: green;
-            color: white;
-            text-align: center;
-            padding: 15px 0;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-        }
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
 
-        .home-button {
-            position: absolute;
-            left: 20px;
-            top: 15px;
-            background-color: orange;
-            color: blue;
-            border: none;
-            padding: 8px 12px;
-            cursor: pointer;
-        }
+    .main-content {
+      margin-top: 120px;
+    }
 
-        .home-button:hover {
-            background-color: blue;
-            color: orange;
-        }
+    form {
+      display: inline-block;
+      text-align: left;
+    }
 
-        main {
-            padding: 100px 20px 70px; /* Top padding accounts for fixed header, bottom for footer */
-            text-align: center;
-        }
+    label, input, select, textarea {
+      display: block;
+      margin: 10px 0;
+    }
 
-        input, button, label {
-            margin: 10px;
-            font-size: 16px;
-        }
+    .radio-group label {
+      display: inline-block;
+      margin-right: 15px;
+    }
 
-        button {
-            background-color: orange;
-            color: blue;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-        }
+    button {
+      background-color: orange;
+      color: blue;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      display: block;
+      margin: 20px auto;
+    }
 
-        button:hover {
-            background-color: blue;
-            color: orange;
-        }
+    button:hover {
+      background-color: blue;
+      color: orange;
+    }
 
-        footer {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background-color: #f1f1f1;
-            text-align: center;
-            height: 50px;
-        }
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #f1f1f1;
+      text-align: center;
+      height: 50px;
+    }
 
-        footer object {
-            width: 100%;
-            height: 100%;
-        }
-    </style>
+    footer object {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PPBVCLNF');
+  </script>
+  <!-- End Google Tag Manager -->
 </head>
 <body>
 
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WW333VDN"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
-    <!-- Header -->
-    <header>
-        <button class="home-button" onclick="location.href='index.html'">Home</button>
-        <h1>User Input Form</h1>
-    </header>
+  <header>
+    <button class="home-button" onclick="location.href='index.html'">Home</button>
+    <h1>Non-PII Data Collection Form</h1>
+  </header>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Text Input -->
-        <div>
-            <label for="username">Name:</label>
-            <input type="text" id="username" name="username" placeholder="Enter your name">
-        </div>
+  <div class="main-content">
+    <form action="#" method="post">
+      <label>
+        Favorite Color (Text Input):
+        <input type="text" placeholder="e.g., Blue">
+      </label>
 
-        <!-- Checkbox -->
-        <div>
-            <label><input type="checkbox" id="subscribe" name="subscribe"> Subscribe to Newsletter</label>
-        </div>
+      <label>
+        Favorite Animal (Dropdown):
+        <select>
+          <option value="">-- Select --</option>
+          <option>Cat</option>
+          <option>Dog</option>
+          <option>Elephant</option>
+          <option>Fox</option>
+        </select>
+      </label>
 
-        <!-- Radio Buttons -->
-        <div>
-            <label><input type="radio" name="gender" value="male"> Male</label>
-            <label><input type="radio" name="gender" value="female"> Female</label>
-        </div>
+      <label>What do you prefer? (Radio Options):</label>
+      <div class="radio-group">
+        <label><input type="radio" name="preference" value="morning"> Morning</label>
+        <label><input type="radio" name="preference" value="evening"> Evening</label>
+        <label><input type="radio" name="preference" value="night"> Night</label>
+      </div>
 
-        <!-- Submit Button -->
-        <div>
-            <button id="submitBtn">Submit</button>
-        </div>
-    </main>
+      <label>
+        Additional Comments (Textarea):
+        <textarea rows="4" cols="30" placeholder="Write your comments here..."></textarea>
+      </label>
 
-    <!--script>
-        document.getElementById("submitBtn").addEventListener("click", function () {
-          var username = document.getElementById("username").value;
-          var isSubscribed = document.getElementById("subscribe").checked;
-          var genderElements = document.getElementsByName("gender");
-          var genderValue = "";
-      
-          for (var i = 0; i < genderElements.length; i++) {
-            if (genderElements[i].checked) {
-              genderValue = genderElements[i].value;
-              break;
-            }
+      <label>
+        Agree to Terms and Conditions:
+        <input type="checkbox">
+      </label>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <footer>
+    <object type="text/html" data="footer.html"></object>
+  </footer>
+
+  <!--script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.querySelector('form');
+      if (!form) return;
+  
+      form.addEventListener('submit', function (e) {
+        e.preventDefault(); // prevent actual submission
+
+        const favoriteColor = form.querySelector('input[type="text"]')?.value || '';
+        const favoriteAnimal = form.querySelector('select')?.value || '';
+        const comments = form.querySelector('textarea')?.value || '';
+        const agreed = form.querySelector('input[type="checkbox"]')?.checked || false;
+  
+        let preference = '';
+        const radios = form.querySelectorAll('input[name="preference"]');
+        radios.forEach((radio) => {
+          if (radio.checked) {
+            preference = radio.value;
           }
-          // Data Layer এ push করা হচ্ছে
-          window.dataLayer = window.dataLayer || [];
-          window.dataLayer.push({
-            event: "formSubmit",
-            userData: {
-              name: username,
-              subscribed: isSubscribed,
-              gender: genderValue
-            }
-          });
-          // Corrected alert to show the data as a single string
-          alert(
-            "Form data pushed to dataLayer:\n" +
-            "Name: " + username + "\n" +
-            "Subscribed: " + isSubscribed + "\n" +
-            "Gender: " + genderValue
-          );
-          console.log("Form data pushed to dataLayer.");
-          console.log(dataLayer);
-          alert(dataLayer);
         });
-      </script-->
+  
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'formSubmission',
+          favoriteColor: favoriteColor,
+          favoriteAnimal: favoriteAnimal,
+          preference: preference,
+          comments: comments,
+          agreedToTerms: agreed
+        });
+      });
+    });
+  </script-->
+
 </body>
 </html>
