@@ -1,0 +1,33 @@
+How to create custom variables ?
+
+Creating custom variables and tag templates in Google Tag Manager (GTM) lets you extend GTM's built-in functionality. 
+Here's a beginner-friendly, step-by-step guide to help you with both:
+
+✅ Part 1: Creating a Custom Variable
+Custom variables in GTM are useful for capturing data from your site or scripts that GTM doesn’t automatically track.
+
+🛠️ Example: Create a JavaScript Variable
+Steps:
+Go to your GTM dashboard.
+
+On the left menu, click Variables.
+
+Click New (under “User-Defined Variables”).
+
+Click on Variable Configuration.
+
+Scroll down and choose Custom JavaScript.
+
+Paste in this example code:
+
+javascript
+Copy
+Edit
+function() {
+  return document.title; // This returns the page's title
+}
+Name your variable, e.g., Page Title Custom JS.
+
+Click Save.
+
+You can now use this variable in tags, triggers, or other variables.

@@ -60,6 +60,49 @@ ChatGPT প্রদত্ত html পেইজটি হলো ঃ GA4-C03-Inje
   });
 </script>
 
+=======================অথবা=======================
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("submitBtn").addEventListener("click", function () {
+      // Input values collect করা হচ্ছে
+      var username = document.getElementById("username").value;
+      var isSubscribed = document.getElementById("subscribe").checked;
+      var genderElements = document.getElementsByName("gender");
+      var genderValue = "";
+      for (var i = 0; i < genderElements.length; i++) {
+        if (genderElements[i].checked) {
+          genderValue = genderElements[i].value;
+          break;
+        }
+      }
+
+      // Data Layer এ push করা হচ্ছে
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "formSubmit",
+        userData: {
+          name: username,
+          subscribed: isSubscribed,
+          gender: genderValue
+        }
+      });
+
+      console.log("Form data pushed to dataLayer.");
+    });
+  });
+</script>
+
+✅ GTM Configuration Steps:
+GTM এ যাও।
+একটি New Tag তৈরি করো:
+Tag Type: Custom HTML
+HTML এর ঘরে উপরের কোডটি বসাও।
+Trigger:
+Trigger হিসেবে All Pages অথবা নির্দিষ্ট পেইজের জন্য Page View ব্যবহার করো যাতে কোডটি লোড হয়।
+Publish করো।
+
+
 ✅ GTM Config এ পরবর্তী ধাপ:
 🔹 Trigger for this tag:
 Trigger Type: Page View (All Pages or specific page as needed)

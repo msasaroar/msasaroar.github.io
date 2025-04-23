@@ -1,0 +1,51 @@
+How to create tag template on GTM ?
+
+Creating custom variables and tag templates in Google Tag Manager (GTM) lets you extend GTM's built-in functionality. 
+Here's a beginner-friendly, step-by-step guide to help you with both:
+
+✅ Part 2: Creating a Custom Tag Template
+Custom Tag Templates are advanced and written in GTM’s Template Editor using a restricted sandboxed JavaScript environment.
+
+🔧 Steps to Create One:
+In GTM, go to the Templates tab.
+
+Under Tag Templates, click New.
+
+Click on the pencil icon (🖉) to start editing the custom tag.
+
+Give your tag a name, like “My Custom Tag”.
+
+Inside the editor, you'll see tabs for:
+
+Fields: Define custom inputs.
+
+Code: This is where the execution logic goes.
+
+Permissions: Set what your tag can access (like DOM or network).
+
+🧪 Example Code (Simple Console Logger):
+In the Fields tab, add a field:
+
+Type: Text
+
+Name: logMessage
+
+Display Name: “Message to Log”
+
+In the Code tab, paste:
+
+javascript
+Copy
+Edit
+const logMessage = data.logMessage || 'Hello from custom tag!';
+log(logMessage);
+Go to the Permissions tab and check Log to Console.
+
+Save the template.
+
+Now go to Tags > New, and you’ll see “My Custom Tag” as an option.
+
+🧩 Pro Tips
+Test all your custom tags/variables using Preview mode in GTM.
+
+For advanced use cases, you might need to read the GTM Template Guide
