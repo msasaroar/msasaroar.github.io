@@ -112,7 +112,7 @@
   </header>
 
   <div class="main-content">
-    <form id="dataForm">
+    <form action="#" method="get">
       <label>
         Favorite Color (Text Input):
         <input type="text" id="colorInput" placeholder="e.g., Blue">
@@ -146,40 +146,13 @@
         <input type="checkbox" id="termsCheck">
       </label>
 
-      <button type="button" onclick="submitToDataLayer()">Submit</button>
+      <button type="submit">Submit</button>
     </form>
   </div>
 
-<!--
-  <script>
-    function submitToDataLayer() {
-      const favoriteColor = document.getElementById('colorInput')?.value || '';
-      const favoriteAnimal = document.getElementById('animalSelect')?.value || '';
-      const comments = document.getElementById('commentsBox')?.value || '';
-      const agreed = document.getElementById('termsCheck')?.checked || false;
-
-      let preference = '';
-      const radios = document.querySelectorAll('input[name="preference"]');
-      radios.forEach((radio) => {
-        if (radio.checked) {
-          preference = radio.value;
-        }
-      });
-
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: 'formSubmission',
-        favoriteColor: favoriteColor,
-        favoriteAnimal: favoriteAnimal,
-        preference: preference,
-        comments: comments,
-        agreedToTerms: agreed
-      });
-
-      alert("✅ Data sent to GTM dataLayer (no server submission).");
-    }
-  </script>
--->
+  <footer>
+    <object type="text/html" data="footer.html"></object>
+  </footer>
 
 </body>
 </html>
