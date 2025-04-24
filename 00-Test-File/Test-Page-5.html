@@ -1,130 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>JavaScript Events Practice</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 30px;
-            background-color: #f9f9f9;
-            color: #333;
-            text-align: center;
-        }
-        .box {
-            padding: 20px;
-            margin: 15px auto;
-            width: 300px;
-            border: 2px solid #ccc;
-            border-radius: 10px;
-            background-color: #fff;
-            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
-            cursor: pointer;
-        }
-        input, select, form, textarea {
-            margin-top: 10px;
-            padding: 10px;
-            width: 80%;
-            font-size: 16px;
-        }
-    </style>
-</head>
-<body>
-
-    <h1>JavaScript Events Demo</h1>
-
-    <!-- CLICK -->
-    <div class="box" id="clickBox">Click Me</div>
-
-    <!-- DOUBLE CLICK -->
-    <div class="box" id="dblClickBox">Double Click Me</div>
-
-    <!-- MOUSEOVER / MOUSEOUT -->
-    <div class="box" id="hoverBox">Hover Over Me</div>
-
-    <!-- KEYPRESS -->
-    <input type="text" id="keyInput" placeholder="Type something...">
-
-    <!-- FOCUS / BLUR -->
-    <input type="text" id="focusInput" placeholder="Focus/Blur input...">
-
-    <!-- CHANGE -->
-    <select id="mySelect">
-        <option value="">Choose an option</option>
-        <option value="Option 1">Option 1</option>
-        <option value="Option 2">Option 2</option>
-    </select>
-
-    <!-- FORM SUBMIT -->
-    <form id="myForm">
-        <input type="text" placeholder="Enter name">
-        <button type="submit">Submit Form</button>
-    </form>
-
-    <!-- COPY -->
-    <textarea id="copyText">Try copying this text.</textarea>
-
-    <!-- SCROLL -->
-    <div style="margin-top: 1000px;">Scroll to see scroll event.</div>
-
-    <script>
-        // Click
-        document.getElementById('clickBox').addEventListener('click', function () {
-            alert('Click event triggered!');
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var submitBtn = document.getElementById('submitButton');
+  
+      if (submitBtn) {
+        submitBtn.addEventListener('click', function () {
+          var textValue = document.getElementById('textInputBox')?.value || '';
+  
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: 'dataCollection',
+            textBoxData: textValue
+            }
+          });
         });
-
-        // Double Click
-        document.getElementById('dblClickBox').addEventListener('dblclick', function () {
-            alert('Double Click event triggered!');
-        });
-
-        // Mouseover
-        document.getElementById('hoverBox').addEventListener('mouseover', function () {
-            alert('Mouseover event triggered!');
-        });
-
-        // Mouseout
-        document.getElementById('hoverBox').addEventListener('mouseout', function () {
-            alert('Mouseout event triggered!');
-        });
-
-        // Keydown
-        document.getElementById('keyInput').addEventListener('keydown', function (event) {
-            alert('Keydown: ' + event.key);
-        });
-
-        // Focus
-        document.getElementById('focusInput').addEventListener('focus', function () {
-            alert('Focus event triggered!');
-        });
-
-        // Blur
-        document.getElementById('focusInput').addEventListener('blur', function () {
-            setTimeout(function () {
-                alert('Blur event triggered!');
-            }, 2000); // 100 মিলিসেকেন্ড পরে alert() চালাবে
-        });
-
-        // Change
-        document.getElementById('mySelect').addEventListener('change', function () {
-            alert('You selected: ' + this.value);
-        });
-
-        // Form Submit
-        document.getElementById('myForm').addEventListener('submit', function (event) {
-            event.preventDefault(); // prevent real form submission
-            alert('Form submitted!');
-        });
-
-        // Copy
-        document.getElementById('copyText').addEventListener('copy', function () {
-            alert('Copy event triggered!');
-        });
-
-        // Scroll
-        window.addEventListener('scroll', function () {
-            console.log('Scroll event triggered!');
-        });
-    </script>
-</body>
-</html>
+      }
+    });
+  </script>
