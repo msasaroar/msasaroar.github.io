@@ -73,28 +73,3 @@
   </main>
 </body>
 </html>
-
-উপরোক্ত html পেইজকে বিবেচনায় রেখে GTM এর জন্য এমন একটি Custom HTML Tag এর কোড দাও 
-যার মাধ্যমে উপরোক্ত পেইজ এর submitButton বাটনটি ক্লিক করলে 
-অন্যান্য element গুলোর value সমুহ একটি কাস্টম ইভেন্ট formSubmission এর প্যারামিটার হিসাবে ডেটা লেয়ারে পুশ করবে।
-
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const submitBtn = document.getElementById('submitButton');
-
-    if (submitBtn) {
-      submitBtn.addEventListener('click', function () {
-        const textValue = document.getElementById('textInputBox')?.value || '';
-
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-          event: 'formSubmission',
-          formData: {
-            textInputBox: textValue
-          }
-        });
-      });
-    }
-  });
-</script>
