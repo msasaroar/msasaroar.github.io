@@ -93,11 +93,18 @@
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PPBVCLNF');
+    })(window,document,'script','dataLayer','GTM-PDR83L89');
   </script>
   <!-- End Google Tag Manager -->
 </head>
 <body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PDR83L89"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
   <header>
     <button class="home-button" onclick="location.href='index.html'">Home</button>
@@ -105,7 +112,7 @@
   </header>
 
   <div class="main-content">
-    <form>
+    <form action="#" method="post">
       <label>
         Favorite Color (Text Input):
         <input type="text" placeholder="e.g., Blue">
@@ -139,13 +146,47 @@
         <input type="checkbox">
       </label>
 
-      <button type="submit">Submit</button>
+      <button type="buttonOk">OK</button>
     </form>
   </div>
 
   <footer>
     <object type="text/html" data="footer.html"></object>
   </footer>
+
+  <!--script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.querySelector('form');
+      if (!form) return;
+  
+      form.addEventListener('submit', function (e) {
+        e.preventDefault(); // prevent actual submission
+
+        const favoriteColor = form.querySelector('input[type="text"]')?.value || '';
+        const favoriteAnimal = form.querySelector('select')?.value || '';
+        const comments = form.querySelector('textarea')?.value || '';
+        const agreed = form.querySelector('input[type="checkbox"]')?.checked || false;
+  
+        let preference = '';
+        const radios = form.querySelectorAll('input[name="preference"]');
+        radios.forEach((radio) => {
+          if (radio.checked) {
+            preference = radio.value;
+          }
+        });
+  
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'formSubmission',
+          favoriteColor: favoriteColor,
+          favoriteAnimal: favoriteAnimal,
+          preference: preference,
+          comments: comments,
+          agreedToTerms: agreed
+        });
+      });
+    });
+  </script-->
 
 </body>
 </html>
