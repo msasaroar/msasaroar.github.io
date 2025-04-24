@@ -73,3 +73,28 @@
   </main>
 </body>
 </html>
+
+নীচের Custom HTML Tag টি ফায়ার করার পর উপরের রান টাইমে html পেইজ এর কোড কেমন হবে?
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var submitBtn = document.getElementById('submitButton');
+
+    if (submitBtn) {
+      submitBtn.addEventListener('click', function () {
+        alert('demoCustomEvent-Begin');
+
+        var textValue = '';
+        var input = document.getElementById('textInputBox');
+        if (input) textValue = input.value;
+
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'demoCustomEvent',
+          textBoxData: textValue
+        });
+        alert('demoCustomEvent-End');
+      });
+    }
+  });
+</script>
