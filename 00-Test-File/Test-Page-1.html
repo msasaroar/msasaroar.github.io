@@ -71,6 +71,40 @@
     <br>
     <button id="submitButton">OK</button>
   </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var submitBtn = document.getElementById('submitButton');
+  
+      if (submitBtn) {
+        alert('Submit button পাওয়া গেছে');
+        console.log('Submit button পাওয়া গেছে');
+  
+        submitBtn.addEventListener('click', function () {
+          var textValue = '';
+          var input = document.getElementById('textInputBox');
+  
+          if (input) {
+            alert('Input box পাওয়া গেছে');
+            console.log('Input box পাওয়া গেছে');
+            textValue = input.value;
+          }
+  
+          window.dataLayer = window.dataLayer || [];
+          alert('DataLayer প্রস্তুত');
+          console.log('DataLayer প্রস্তুত');
+  
+          window.dataLayer.push({
+            event: 'demoCustomEvent',
+            textBoxData: textValue
+          });
+  
+          alert('DataLayer-এ তথ্য পাঠানো হয়েছে: ' + textValue);
+          console.log('DataLayer-এ তথ্য পাঠানো হয়েছে:', textValue);
+        });
+      }
+    });
+  </script>
 </body>
 </html>
 

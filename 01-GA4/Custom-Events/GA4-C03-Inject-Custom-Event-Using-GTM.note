@@ -133,4 +133,109 @@ demoCustomEvent নামের কাস্টম ইভেন্টটি GA4 
   });
 </script>
 
+===========================================================================
+✅ Step-by-Step: GTM-এ Custom HTML Tag সেটআপ
+
+এই ট্যাগটি পেজ লোডের সময় ইনজেক্ট হবে এবং submitButton বাটন ক্লিক করলে demoCustomEvent ইভেন্ট dataLayer-এ পুশ করবে।
+
+🟢 ১. GTM-এ একটি নতুন Tag তৈরি করো
+GTM Dashboard → Tags → New
+
+Tag Name: Custom HTML - demoCustomEvent Handler
+
+🟢 ২. Tag Configuration
+Tag Type: Custom HTML
+
+HTML কোডটি এখানে বসাও:
+
+Edit
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var submitBtn = document.getElementById('submitButton');
+
+    if (submitBtn) {
+      submitBtn.addEventListener('click', function () {
+        var textValue = '';
+        var input = document.getElementById('textInputBox');
+        if (input) textValue = input.value;
+
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'demoCustomEvent',
+          textBoxData: textValue
+        });
+      });
+    }
+  });
+</script>
+
+🟢 ৩. Trigger সেট করো
+Click Triggering
+
+Trigger Type: All Pages
+(অথবা চাইলে নির্দিষ্ট পেজ Target করতে পারো — যেমন Page Path contains text-input.html)
+
+✅ Step-by-Step: GA4 Custom Event Setup in GTM
+🟢 ৪. GA4 Configuration Tag তৈরি করা (যদি আগে না করো)
+GTM Dashboard → Tags → New → Tag Name: GA4 Configuration
+
+Tag Type: Google Analytics: GA4 Configuration
+
+Measurement ID (GA4 থেকে copy করো): eg. G-XXXXXXXXXX
+
+Trigger: All Pages
+
+Save
+
+🟢 ৫. Data Layer Variable তৈরি করা (textBoxData)
+GTM Dashboard → Variables → Scroll down → Click "New"
+
+Variable Name: DLV - textBoxData (তুমি যেটা বুঝতে পারো)
+
+Variable Type: Data Layer Variable
+
+Data Layer Variable Name: textBoxData (exact match!)
+
+Save
+
+🟢 ৬. Trigger তৈরি করা (Custom Event Trigger)
+GTM Dashboard → Triggers → New → Trigger Name: Trigger - demoCustomEvent
+
+Trigger Type: Custom Event
+
+Event Name: demoCustomEvent (exact match!)
+
+This trigger fires on: All Custom Events
+
+Save
+
+🟢 ৭. GA4 Event Tag তৈরি করা
+GTM Dashboard → Tags → New → Tag Name: GA4 Event - demoCustomEvent
+
+Tag Type: Google Analytics: GA4 Event
+
+Configuration Tag: Select your previously created GA4 Configuration Tag
+
+Event Name: demoCustomEvent
+
+Event Parameters:
+
+Parameter Name: textBoxData
+
+Value: {{DLV - textBoxData}} (এইটা আগের Variable)
+
+Trigger: Use the custom event trigger: Trigger - demoCustomEvent
+
+Save
+
+🟢 ৮. Preview and Publish
+GTM এর উপরে Preview বাটনে ক্লিক করো এবং তোমার সাইটের URL দিয়ে ডিবাগ মোড চালাও।
+
+submitButton-এ ক্লিক করলে দেখো demoCustomEvent ফায়ার হয় কিনা এবং textBoxData ঠিকমতো যাচ্ছে কিনা।
+
+সবকিছু ঠিক থাকলে → Submit → Publish
+
+
+
+
 
