@@ -1,0 +1,136 @@
+<style>
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .listbox-group {
+        display: flex;
+        flex-direction: column;
+        height: 90vh; /* পুরো ভিউপোর্ট উচ্চতা */
+    }
+    .listbox-group ul {
+        list-style: none;
+        padding: 0;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        flex-grow: 1; /* লিস্টবক্স পুরো স্ক্রীন নেবে */
+        overflow-y: auto;
+    }
+    .listbox-group li {
+        padding: 10px;
+        cursor: pointer;
+        border-bottom: 1px solid #eee;
+    }
+    .listbox-group li:hover, .listbox-group li.selected {
+        background-color: #007bff;
+        color: white;
+    }
+    button {
+        margin: 10px;
+        padding: 10px 15px;
+        cursor: pointer;
+        background-color: orange;
+        color: blue;
+        border: none;
+        border-radius: 5px;
+    }
+    button:hover {
+        background-color: blue;
+        color: orange;
+    }
+    button:disabled {
+        background-color: gray;
+        cursor: not-allowed;
+    }
+</style>
+
+<div class="listbox-group">
+    <label for="selectedItem">GA4 : Recommended eCommerce Events</label>
+    <ul id="selectedItem" role="listbox" tabindex="0">
+        <li tabindex="0" data-value="/01-GA4/00-index.html">GA4 : Home</li>
+        <li tabindex="0" data-value="GA4-R01-add_payment_info.html">GA4 # 01. add_payment_info</li>
+        <li tabindex="0" data-value="GA4-R02-add_shipping_info.html">GA4 # 02. add_shipping_info</li>
+        <li tabindex="0" data-value="GA4-R03-add_to_cart.html">GA4 # 03. add_to_cart</li>
+        <li tabindex="0" data-value="GA4-R05-begin_checkout.html">GA4 # 05. begin_checkout</li>
+        <li tabindex="0" data-value="GA4-R10-generate_lead.html">GA4 # 10. generate_lead</li>
+        <li tabindex="0" data-value="GA4-R17-purchase.html">GA4 # 17. purchase</li>
+        <li tabindex="0" data-value="GA4-R19-refund.html">GA4 # 19. refund</li>
+        <li tabindex="0" data-value="GA4-R20-remove_from_cart.html">GA4 # 20. remove_from_cart</li>
+        <li tabindex="0" data-value="GA4-R23-select_item.html">GA4 # 23. select_item</li>
+        <li tabindex="0" data-value="GA4-R32-view_item.html">GA4 # 32. view_item</li>
+        <li tabindex="0" data-value="GA4-R33-view_item_list.html">GA4 # 33. view_item_list</li>
+        <li tabindex="0" data-value="GA4-R34-view_search_result.html">GA4 # 34. view_search_result</li>
+        <li tabindex="0" data-value="GA4-R99-All-In-One.html">GA4 # 99. All Event On A Single Page</li>
+        <li tabindex="0" data-value="GA4-R99-purchase-journey.html">GA4 # 99. eCommerce Purchase Journey</li>
+        <li tabindex="0" data-value="+++++++++++++++++++">++++++++++++++++++++++</li>
+        <li tabindex="0" data-value="GA4-R04-add_to_wishlist.html">GA4 # ??. add_to_wishlist</li>
+        <li tabindex="0" data-value="GA4-R06-close_convert_lead.html">GA4 # ??. close_convert_lead</li>
+        <li tabindex="0" data-value="GA4-R07-close_unconvert_lead.html">GA4 # ??. close_unconvert_lead</li>
+        <li tabindex="0" data-value="GA4-R08-disqualify_lead.html">GA4 # ??. disqualify_lead</li>
+        <li tabindex="0" data-value="GA4-R09-earn_virtual_currency.html">GA4 # ??. earn_virtual_currency</li>
+        <li tabindex="0" data-value="GA4-R11-join_group.html">GA4 # ??. join_group</li>
+        <li tabindex="0" data-value="GA4-R12-level_end.html">GA4 # ??. level_end</li>
+        <li tabindex="0" data-value="GA4-R13-level_start.html">GA4 # ??. level_start</li>
+        <li tabindex="0" data-value="GA4-R14-level_up.html">GA4 # ??. level_up</li>
+        <li tabindex="0" data-value="GA4-R15-login.html">GA4 # ??. login</li>
+        <li tabindex="0" data-value="GA4-R16-post_score.html">GA4 # ??. post_score</li>
+        <li tabindex="0" data-value="GA4-R18-qualify_lead.html">GA4 # ??. qualify_lead</li>
+        <li tabindex="0" data-value="GA4-R21-search.html">GA4 # ??. search</li>
+        <li tabindex="0" data-value="GA4-R22-select_content.html">GA4 # ??. select_content</li>
+        <li tabindex="0" data-value="GA4-R24-select_promotion.html">GA4 # ??. select_promotion</li>
+        <li tabindex="0" data-value="GA4-R25-share.html">GA4 # ??. share</li>
+        <li tabindex="0" data-value="GA4-R26-sign_up.html">GA4 # ??. sign_up</li>
+        <li tabindex="0" data-value="GA4-R27-spend_virtual_currency.html">GA4 # ??. spend_virtual_currency</li>
+        <li tabindex="0" data-value="GA4-R28-tutorial_begin.html">GA4 # ??. tutorial_begin</li>
+        <li tabindex="0" data-value="GA4-R29-tutorial_complete.html">GA4 # ??. tutorial_complete</li>
+        <li tabindex="0" data-value="GA4-R30-unlock_achievement.html">GA4 # ??. unlock_achievement</li>
+        <li tabindex="0" data-value="GA4-R31-view_cart.html">GA4 # ??. view_cart</li>
+        <li tabindex="0" data-value="GA4-R34-view_promotion.html">GA4 # ??. view_promotion</li>
+        <li tabindex="0" data-value="GA4-R35-working_lead.html">GA4 # ??. working_lead</li>
+    </ul>
+    <button id="proceedBtn" disabled>Proceed</button>
+</div>
+
+<script>
+    const listbox = document.getElementById("selectedItem");
+    const listItems = listbox.querySelectorAll("li");
+    const proceedBtn = document.getElementById("proceedBtn");
+    let selectedIndex = -1;
+    let selectedValue = "";
+
+    function selectItem(index) {
+        listItems.forEach(li => li.classList.remove("selected"));
+        if (index >= 0 && index < listItems.length) {
+            listItems[index].classList.add("selected");
+            selectedValue = listItems[index].getAttribute("data-value");
+            proceedBtn.disabled = false;
+            listbox.setAttribute("aria-activedescendant", listItems[index].id);
+        }
+    }
+
+    listItems.forEach((item, index) => {
+        item.addEventListener("click", function () {
+            selectedIndex = index;
+            selectItem(selectedIndex);
+        });
+    });
+
+    listbox.addEventListener("keydown", function (e) {
+        if (e.key === "ArrowDown" && selectedIndex < listItems.length - 1) {
+            selectedIndex++;
+            selectItem(selectedIndex);
+        } else if (e.key === "ArrowUp" && selectedIndex > 0) {
+            selectedIndex--;
+            selectItem(selectedIndex);
+        } else if (e.key === "Enter" && selectedValue) {
+            window.location.href = selectedValue;
+        }
+    });
+
+    proceedBtn.addEventListener("click", function () {
+        if (selectedValue) {
+            window.location.href = selectedValue;
+        }
+    });
+</script>
