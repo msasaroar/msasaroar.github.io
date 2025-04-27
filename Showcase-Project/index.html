@@ -217,8 +217,8 @@
   }
 
   .coming-soon {
-    background-color: red;
-    color: gray;
+    background-color: green;
+    color: blue;
     cursor: not-allowed;
     pointer-events: none; /* Disable clicking */
     border: 5px solid #ccc;
@@ -250,7 +250,7 @@
         </div>
 
       <div class="ga4-access-form">
-        <h3>Request GA4 Report Access==</h3>
+        <h3>Request GA4 Report Access</h3>
         <p>Enter your Gmail address to view the tracking reports for this project.</p>
 
         <form action="mailto:msasaroar@gmail.com" method="POST" enctype="text/plain">
@@ -275,27 +275,19 @@
         <p class="blinking-text" style="color: Black;">⬇️🔽⬇️ Select a Tracking Platform ⬇️🔽⬇️</p>
         <button class="button" onclick="location.href='GA4/GA4-000-menu-for-ga4.html'">Google Analytics</button>
         <button class="button coming-soon" disabled>Google Ads</button>
-        <button class="button coming-soon" disabled>Facebook/Meta Pixel</button>
+        <button class="button coming-soon" disabled>Meta/Facebook</button>
         <button class="button coming-soon" disabled>Pinterest</button>
         <button class="button coming-soon" disabled>LinkedIn</button>
         <button class="button coming-soon" disabled>Snapchat</button>
         <button class="button coming-soon" disabled>TikTok</button>
         <button class="button coming-soon" disabled>X/Twitter</button>
-        <button class="button" onclick="location.href='Test-Page-1.html'">Test Page - 1</button>
-        <button class="button" onclick="location.href='Test-Page-2.html'">Test Page - 2</button>
-        <button class="button" onclick="location.href='Test-Page-3.html'">Test Page - 3</button>
-        <button class="button" onclick="location.href='Test-Page-4.html'">Test Page - 4</button>
-        <button class="button" onclick="location.href='Test-Page-5.html'">Test Page - 5</button>
+        <button class="button" onclick="location.href='Test-Page-1.html'">Test Page-1</button>
+        <button class="button" onclick="location.href='Test-Page-2.html'">Test Page-2</button>
+        <button class="button" onclick="location.href='Test-Page-3.html'">Test Page-3</button>
+        <button class="button" onclick="location.href='Test-Page-4.html'">Test Page-4</button>
+        <button class="button" onclick="location.href='Test-Page-5.html'">Test Page-5</button>
       </div>
     </main>
   </div>
-
-<script>
-  document.querySelectorAll('.coming-soon').forEach(button => {
-    button.addEventListener('click', function() {
-      alert('Coming Soon...');
-    });
-  });
-</script>
 </body>
 </html>
