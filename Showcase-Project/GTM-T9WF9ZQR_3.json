@@ -1,0 +1,507 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2025-04-27 06:11:45",
+    "containerVersion": {
+        "path": "accounts/6292611920/containers/218647824/versions/0",
+        "accountId": "6292611920",
+        "containerId": "218647824",
+        "containerVersionId": "0",
+        "container": {
+            "path": "accounts/6292611920/containers/218647824",
+            "accountId": "6292611920",
+            "containerId": "218647824",
+            "name": "Container | Showcase Project",
+            "publicId": "GTM-T9WF9ZQR",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1745733384346",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6292611920/containers/218647824/workspaces?apiLink=container",
+            "features": {
+                "supportUserPermissions": true,
+                "supportEnvironments": true,
+                "supportWorkspaces": true,
+                "supportGtagConfigs": false,
+                "supportBuiltInVariables": true,
+                "supportClients": false,
+                "supportFolders": true,
+                "supportTags": true,
+                "supportTemplates": true,
+                "supportTriggers": true,
+                "supportVariables": true,
+                "supportVersions": true,
+                "supportZones": true,
+                "supportTransformations": false
+            },
+            "tagIds": [
+                "GTM-T9WF9ZQR"
+            ]
+        },
+        "tag": [
+            {
+                "accountId": "6292611920",
+                "containerId": "218647824",
+                "tagId": "141",
+                "name": "Google Tag",
+                "type": "googtag",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "tagId",
+                        "value": "{{Measurment ID}}"
+                    }
+                ],
+                "fingerprint": "1745683192031",
+                "firingTriggerId": [
+                    "2147479573"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6292611920",
+                "containerId": "218647824",
+                "tagId": "142",
+                "name": "Tag | T-1",
+                "type": "gaawe",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enhancedUserId",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "eventSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "test_parameter_1"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "Value passed for Tag | T-1 > test_parameter_1"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "test_parameter_2"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "Value passed for Tag | T-1 > test_parameter_2"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "test_event_1"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "{{Measurment ID}}"
+                    }
+                ],
+                "fingerprint": "1745683192031",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6292611920",
+                "containerId": "218647824",
+                "tagId": "144",
+                "name": "Tag | T-2",
+                "type": "gaawe",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enhancedUserId",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "eventSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "test_parameter_1"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "Value passed for Tag | T-2 > test_parameter_1"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "test_parameter_2"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "Value passed for Tag | T-2 > test_parameter_2"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "test_event_1"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "{{Measurment ID}}"
+                    }
+                ],
+                "fingerprint": "1745683192031",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            }
+        ],
+        "trigger": [
+            {
+                "accountId": "6292611920",
+                "containerId": "218647824",
+                "triggerId": "78",
+                "name": "demoTrigger",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "demoCustomEvent"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1745667114899"
+            },
+            {
+                "accountId": "6292611920",
+                "containerId": "218647824",
+                "triggerId": "143",
+                "name": "Trigger | T-2",
+                "type": "PAGEVIEW",
+                "fingerprint": "1745683192031"
+            },
+            {
+                "accountId": "6292611920",
+                "containerId": "218647824",
+                "triggerId": "146",
+                "name": "Trigger | T-1",
+                "type": "PAGEVIEW",
+                "fingerprint": "1745683192032"
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "6292611920",
+                "containerId": "218647824",
+                "variableId": "79",
+                "name": "dlv | textDemoVariable",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "textBoxData"
+                    }
+                ],
+                "fingerprint": "1745667114899",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6292611920",
+                "containerId": "218647824",
+                "variableId": "140",
+                "name": "Measurment ID",
+                "type": "c",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "G-SZFQ7DJJC3"
+                    }
+                ],
+                "fingerprint": "1745683192031",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6292611920",
+                "containerId": "218647824",
+                "variableId": "145",
+                "name": "dlv | V-1",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "v_1"
+                    }
+                ],
+                "fingerprint": "1745683192031",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6292611920",
+                "containerId": "218647824",
+                "variableId": "147",
+                "name": "dlv | V-2",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "v_2"
+                    }
+                ],
+                "fingerprint": "1745683192032",
+                "formatValue": {}
+            }
+        ],
+        "builtInVariable": [
+            {
+                "accountId": "6292611920",
+                "containerId": "218647824",
+                "type": "PAGE_URL",
+                "name": "Page URL"
+            },
+            {
+                "accountId": "6292611920",
+                "containerId": "218647824",
+                "type": "PAGE_HOSTNAME",
+                "name": "Page Hostname"
+            },
+            {
+                "accountId": "6292611920",
+                "containerId": "218647824",
+                "type": "PAGE_PATH",
+                "name": "Page Path"
+            },
+            {
+                "accountId": "6292611920",
+                "containerId": "218647824",
+                "type": "REFERRER",
+                "name": "Referrer"
+            },
+            {
+                "accountId": "6292611920",
+                "containerId": "218647824",
+                "type": "EVENT",
+                "name": "Event"
+            },
+            {
+                "accountId": "6292611920",
+                "containerId": "218647824",
+                "type": "CLICK_ELEMENT",
+                "name": "Click Element"
+            },
+            {
+                "accountId": "6292611920",
+                "containerId": "218647824",
+                "type": "CLICK_CLASSES",
+                "name": "Click Classes"
+            },
+            {
+                "accountId": "6292611920",
+                "containerId": "218647824",
+                "type": "CLICK_ID",
+                "name": "Click ID"
+            },
+            {
+                "accountId": "6292611920",
+                "containerId": "218647824",
+                "type": "CLICK_TARGET",
+                "name": "Click Target"
+            },
+            {
+                "accountId": "6292611920",
+                "containerId": "218647824",
+                "type": "CLICK_URL",
+                "name": "Click URL"
+            },
+            {
+                "accountId": "6292611920",
+                "containerId": "218647824",
+                "type": "CLICK_TEXT",
+                "name": "Click Text"
+            },
+            {
+                "accountId": "6292611920",
+                "containerId": "218647824",
+                "type": "FORM_ELEMENT",
+                "name": "Form Element"
+            },
+            {
+                "accountId": "6292611920",
+                "containerId": "218647824",
+                "type": "FORM_CLASSES",
+                "name": "Form Classes"
+            },
+            {
+                "accountId": "6292611920",
+                "containerId": "218647824",
+                "type": "FORM_ID",
+                "name": "Form ID"
+            },
+            {
+                "accountId": "6292611920",
+                "containerId": "218647824",
+                "type": "FORM_URL",
+                "name": "Form URL"
+            },
+            {
+                "accountId": "6292611920",
+                "containerId": "218647824",
+                "type": "FORM_TEXT",
+                "name": "Form Text"
+            },
+            {
+                "accountId": "6292611920",
+                "containerId": "218647824",
+                "type": "CONTAINER_ID",
+                "name": "Container ID"
+            },
+            {
+                "accountId": "6292611920",
+                "containerId": "218647824",
+                "type": "VIDEO_URL",
+                "name": "Video URL"
+            },
+            {
+                "accountId": "6292611920",
+                "containerId": "218647824",
+                "type": "VIDEO_PERCENT",
+                "name": "Video Percent"
+            },
+            {
+                "accountId": "6292611920",
+                "containerId": "218647824",
+                "type": "VIDEO_VISIBLE",
+                "name": "Video Visible"
+            },
+            {
+                "accountId": "6292611920",
+                "containerId": "218647824",
+                "type": "SCROLL_DEPTH_UNITS",
+                "name": "Scroll Depth Units"
+            },
+            {
+                "accountId": "6292611920",
+                "containerId": "218647824",
+                "type": "SCROLL_DEPTH_DIRECTION",
+                "name": "Scroll Direction"
+            },
+            {
+                "accountId": "6292611920",
+                "containerId": "218647824",
+                "type": "ELEMENT_VISIBILITY_RATIO",
+                "name": "Percent Visible"
+            },
+            {
+                "accountId": "6292611920",
+                "containerId": "218647824",
+                "type": "ELEMENT_VISIBILITY_TIME",
+                "name": "On-Screen Duration"
+            }
+        ],
+        "fingerprint": "1745734305419",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6292611920/containers/218647824/versions/0?apiLink=version"
+    }
+}
