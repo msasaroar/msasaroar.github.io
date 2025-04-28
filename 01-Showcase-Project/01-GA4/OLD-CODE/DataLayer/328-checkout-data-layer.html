@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-WTKNJFD8');
+    </script>
+    <!-- End Google Tag Manager -->
+    <style>
+        /* General Styling */
+        body {
+            background: linear-gradient(to right, green, red, orange, blue);
+            color: black;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        header {
+            background-color: green;
+            color: black;
+            text-align: center;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header a {
+            position: absolute;
+            left: 15px;
+            top: 10px;
+            background-color: orange;
+            color: blue;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        header a:hover {
+            background-color: blue;
+            color: orange;
+        }
+
+        .button {
+            background-color: orange;
+            color: blue;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: blue;
+            color: orange;
+        }
+
+        main {
+            margin: 80px 20px 70px;
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .checkout-container,
+        .ecommerce-data {
+            width: 48%;
+            background-color: #e6f9fc;
+            border: 1px solid #b3d9ff;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .checkout-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .checkout-summary {
+            text-align: right;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #f1f1f1;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        #ecommerceOutput {
+            font-family: monospace;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            max-height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html">Home</a>
+        <h1>Checkout</h1>
+    </header>
+
+    <main>
+        <div class="content">
+            <!-- Checkout Section -->
+            <div class="checkout-container">
+                <h2>Your Items</h2>
+                <div class="checkout-item">
+                    <span>Wireless Headphones</span>
+                    <span>$99.99</span>
+                </div>
+                <div class="checkout-item">
+                    <span>Charging Cable (2)</span>
+                    <span>$39.98</span>
+                </div>
+                <div class="checkout-summary">Total: $149.97</div>
+                <button
+                    class="button"
+                    aria-label="Begin Checkout"
+                    onclick="triggerBeginCheckoutEvent()"
+                >
+                    Begin Checkout
+                </button>
+            </div>
+
+            <!-- eCommerce Data Display -->
+            <div class="ecommerce-data">
+                <h3>eCommerce Data (JSON)</h3>
+                <pre id="ecommerceOutput">No data yet...</pre>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Your Store</p>
+    </footer>
+
+    <script>
+        // Initialize Data Layer
+        window.dataLayer = window.dataLayer || [];
+
+        function triggerBeginCheckoutEvent() {
+            const ecommerceData = {
+                event: 'begin_checkout',
+                ecommerce: {
+                    value: 149.97,
+                    currency: 'USD',
+                    items: [
+                        {
+                            item_name: 'Wireless Headphones',
+                            item_id: 'sku123',
+                            price: 99.99,
+                            quantity: 1,
+                            item_category: 'Electronics',
+                            item_variant: 'Black'
+                        },
+                        {
+                            item_name: 'Charging Cable',
+                            item_id: 'sku456',
+                            price: 19.99,
+                            quantity: 2,
+                            item_category: 'Accessories',
+                            item_variant: 'Standard'
+                        }
+                    ]
+                }
+            };
+
+            // Push to Data Layer
+            dataLayer.push(ecommerceData);
+            alert('Begin Checkout Event Triggered! Check GTM Debug Mode.');
+
+            // Update Displayed JSON
+            document.getElementById('ecommerceOutput').textContent = JSON.stringify(ecommerceData, null, 2);
+        }
+    </script>
+</body>
+</html>

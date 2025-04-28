@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-WTKNJFD8');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page View Tag Practice</title>
+    <style>
+        /* General Styles */
+        body {
+            background: white;
+            color: black;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+    
+        /* Header Styles */
+        header {
+            background-color: green;
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            height: 60px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+    
+        header h1 {
+            text-align: center;
+            font-size: 25px bold;
+        }
+    
+        /* Home Button Styles */
+        #home-button {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            background-color: orange;
+            color: blue;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px bold;
+        }
+    
+        #home-button:hover {
+            background-color: blue;
+            color: orange;
+            border: 2px solid orange;
+        }
+    
+        /* Button Styles */
+        button {
+            background-color: orange;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+    
+        button:hover {
+            background-color: white;
+            color: black;
+            border: 1px solid orange;
+        }
+    
+        /* Footer include */
+        footer {
+            text-align: center;
+            margin-top: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WTKNJFD8" 
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header>
+        <h1>Demonstration : Page View Tag</h1>
+    </header>
+
+    <section>
+        <h1>Simulate a page view event by loading this page.</h1>
+    </section>
+</body>
+</html>

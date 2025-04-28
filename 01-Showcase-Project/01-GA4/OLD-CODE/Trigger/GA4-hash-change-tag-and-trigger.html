@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Hash Change Event using GTM</title>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-WTKNJFD8');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <style>
+        body {
+            background: linear-gradient(to right, green, red, orange, blue);
+            color: black;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: green;
+            color: black;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 10px;
+        }
+
+        .home-button {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            background-color: orange;
+            color: blue;
+            border: none;
+            padding: 15px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .home-button:hover {
+            background-color: blue;
+            color: orange;
+        }
+
+        main {
+            margin-top: 300px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            margin: 40px 0;
+            margin-top: 200px;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 200 10px;
+            text-decoration: none;
+            color: blue;
+            font-weight: bold;
+            background-color: orange;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background-color: blue;
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WTKNJFD8" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header>
+        <a href="index.html" class="home-button">Home</a>
+        <h1>Demonstration: Track the 'Hash Change Event' using GTM</h1>
+    </header>
+
+    <main>
+        <h2>This is a simple Single Page Application (SPA) page to demonstrate hash change event tracking with GTM.</h2>
+    </main>
+
+    <nav>
+        <a href="#SectionGA4">Hash: Google Analytics 4</a>
+        <a href="#SectionGTM">Hash: Google Tag Manager</a>
+        <a href="#SectionGAds">Hash: Google Ads</a>
+        <a href="#SectionGitHub">Hash: GitHub</a>
+    </nav>
+
+
+    <div id="footer"></div>
+
+    <script>
+        // Load footer dynamically
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
+
+        // Function to update content dynamically based on hash
+        function updateContent(hash) {
+            const content = document.getElementById('content');
+            switch (hash) {
+                case '#SectionGA4':
+                    content.innerHTML = '<h2>Google Analytics 4</h2><p>Welcome to the Google Analytics 4 section!</p>';
+                    break;
+                case '#SectionGTM':
+                    content.innerHTML = '<h2>Google Tag Manager</h2><p>Welcome to the Google Tag Manager section!</p>';
+                    break;
+                case '#SectionGAds':
+                    content.innerHTML = '<h2>Google Ads</h2><p>Welcome to the Google Ads section!</p>';
+                    break;
+                case '#SectionGitHub':
+                    content.innerHTML = '<h2>GitHub</h2><p>Welcome to the GitHub section!</p>';
+                    break;
+                default:
+                    content.innerHTML = '<h2>Welcome</h2><p>This is a simple Single Page Application (SPA) page to demonstrate hash change event tracking with GTM.</p>';
+            }
+        }
+
+        // Event listener for hash changes
+        window.addEventListener('hashchange', function() {
+            const newHash = location.hash;
+            console.log('Hash changed to:', newHash);
+
+            // Push the hash change event to the data layer for GTM
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'hashChange',
+                'newHash': newHash
+            });
+
+            // Update content
+            updateContent(newHash);
+        });
+
+        // Initial content update based on current hash
+        document.addEventListener('DOMContentLoaded', function() {
+            updateContent(location.hash);
+        });
+    </script>
+</body>
+</html>

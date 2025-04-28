@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Video Start with Data Layer</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, green, red, orange, blue);
+            color: black;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 50px;
+            background-color: green;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        header a {
+            position: absolute;
+            left: 10px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+        button {
+            background-color: orange;
+            color: blue;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: blue;
+            color: orange;
+        }
+        video {
+            display: block;
+            margin: 100px auto 20px auto;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 20px;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #f1f1f1;
+            text-align: center;
+            height: 50px;
+        }
+    </style>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-WTKNJFD8');
+    </script>
+    <!-- End Google Tag Manager -->
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WTKNJFD8"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header>
+        <a href="index.html">Home</a>
+        <h1>Track Video Start</h1>
+    </header>
+
+    <video id="demoVideo" width="640" height="360" controls>
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <h2 style="text-align: center;">Data Layer Output</h2>
+    <pre id="dataLayerOutput">Video data will be displayed here...</pre>
+
+    <footer>
+        <object type="text/html" data="footer.html" style="width: 100%; height: 100%;"></object>
+    </footer>
+
+    <script>
+        // Add event listener for video play event
+        document.getElementById('demoVideo').addEventListener('play', function () {
+            // Collect data for the event
+            const currentHtmlFileName = window.location.pathname.split('/').pop();
+            const videoData = {
+                eventName: 'videoStart', // ইভেন্ট নাম GTM-এ একই হতে হবে
+                videoURL: this.currentSrc,
+                timeStamp: new Date().toISOString()
+            };
+            // tagCode: 325,
+            // htmlFileName: currentHtmlFileName
+
+            // Push the video data to the GTM data layer
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push(videoData);
+
+            // Log data layer for debugging
+            console.log('Data Layer:', window.dataLayer);
+            alert(videoData);
+
+            // Display data in the <pre> tag for visualization
+            document.getElementById('dataLayerOutput').textContent = JSON.stringify(videoData, null, 2);
+        });
+    </script>
+</body>
+</html>

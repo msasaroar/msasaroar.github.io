@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Tracking Task</title>
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+    var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+    j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+    f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WTKNJFD8');
+  </script>
+  <!-- End Google Tag Manager -->
+  <style>
+    body {
+      background: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background-color: green;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+    main {
+      display: flex;
+      margin-top: 70px;
+      padding: 20px;
+      gap: 20px;
+    }
+    .details-container {
+      flex: 1;
+      background-color: #f9f9f9;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .details-container h3 {
+      margin-top: 0;
+    }
+    .details-container textarea {
+      width: 100%;
+      height: calc(100vh - 140px);
+      resize: none;
+      overflow-y: scroll;
+      padding: 10px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .video-container {
+      flex: 2;
+      text-align: center;
+    }
+    video {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #f1f1f1;
+      text-align: center;
+      height: 50px;
+      line-height: 50px;
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Video Tracking Task</h1>
+  </header>
+  <main>
+    <div class="details-container">
+      <h3>Task Scenario</h3>
+      <textarea readonly>
+Task Scenario:
+You're managing the analytics setup for a video streaming website. The website features promotional videos, tutorials, and user-generated content. The marketing team wants detailed insights into video interactions like play, pause, percentage watched, and completion rates.
+
+Objectives:
+1. Track video interactions: play, pause, percentage watched (25%, 50%, 75%, 100%).
+2. Send interaction data to GA4 as custom events.
+3. Create a remarketing audience for users who watched 75% of a video.
+
+Steps to Solve:
+1. Ensure the website pushes video events (play, pause, watched) to the Data Layer.
+2. Set up triggers in GTM for video interactions.
+3. Create GA4 Event Tags in GTM to send data to GA4.
+4. Test the implementation using GTM Preview Mode and GA4 DebugView.
+5. Build a remarketing audience in GA4 for users who watched at least 75% of any video.
+6. Verify data in GA4 and use it for reporting or remarketing campaigns.
+      </textarea>
+    </div>
+    <div class="video-container">
+      <h2>Video Player</h2>
+      <video id="testVideo" controls>
+        <source src="sample.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </main>
+  <footer>
+    <p>Video Tracking Task Footer</p>
+  </footer>
+
+  <script>
+    // Initialize Data Layer
+    window.dataLayer = window.dataLayer || [];
+
+    // Select the video element
+    const video = document.getElementById("testVideo");
+
+    // Video event listeners
+    video.addEventListener("play", () => {
+      dataLayer.push({
+        event: "video_interaction",
+        video_action: "play",
+        video_title: video.currentSrc,
+        video_percentage: null
+      });
+      console.log("Play event tracked");
+    });
+
+    video.addEventListener("pause", () => {
+      dataLayer.push({
+        event: "video_interaction",
+        video_action: "pause",
+        video_title: video.currentSrc,
+        video_percentage: null
+      });
+      console.log("Pause event tracked");
+    });
+
+    video.addEventListener("timeupdate", () => {
+      const percentage = Math.floor((video.currentTime / video.duration) * 100);
+      if ([25, 50, 75, 100].includes(percentage)) {
+        dataLayer.push({
+          event: "video_interaction",
+          video_action: "watched",
+          video_title: video.currentSrc,
+          video_percentage: percentage
+        });
+        console.log(`Watched ${percentage}% event tracked`);
+      }
+    });
+  </script>
+</body>
+</html>
