@@ -1,192 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Non-PII Data Form</title>
-  <style>
-    body {
-      background-color: white;
-      color: black;
-      text-align: center;
-      padding: 50px;
-      font-family: Arial, sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All JavaScript Events Demo</title>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id=GTM-WTKNJFD8'+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-WTKNJFD8');
+        </script>
+        <!-- End Google Tag Manager -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #005a9c;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        input, textarea, button, div, select {
+            margin-top: 10px;
+            padding: 8px;
+            display: block;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
 
-    header {
-      background-color: green;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      position: fixed;
-      top: 0;
-      width: 100%;
-    }
+        .box {
+            width: 200px;
+            height: 100px;
+            background-color: #e0e0e0;
+            text-align: center;
+            line-height: 100px;
+            margin-top: 10px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
 
-    .home-button {
-      position: absolute;
-      left: 10px;
-      top: 15px;
-      background-color: orange;
-      color: blue;
-      border: none;
-      padding: 8px 12px;
-      cursor: pointer;
-    }
+        /* Hover effect */
+        #hoverBox:hover {
+            background-color: #c0ffc0;
+            transform: scale(1.05);
+        }
 
-    .home-button:hover {
-      background-color: blue;
-      color: orange;
-    }
+        .mouse-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
 
-    .main-content {
-      margin-top: 120px;
-    }
+.mouse-grid > * {
+    flex: 1 1 200px;
+}
 
-    form {
-      display: inline-block;
-      text-align: left;
-    }
+.form-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 10px;
+    align-items: flex-start;
+}
 
-    label, input, select, textarea {
-      display: block;
-      margin: 10px 0;
-    }
+.form-grid > * {
+    flex: 1 1 200px;
+    min-width: 200px;
+}
 
-    .radio-group label {
-      display: inline-block;
-      margin-right: 15px;
-    }
+.drag-drop-grid {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+    align-items: center;
+}
 
-    button {
-      background-color: orange;
-      color: blue;
-      padding: 10px 20px;
-      border: none;
-      cursor: pointer;
-      display: block;
-      margin: 20px auto;
-    }
 
-    button:hover {
-      background-color: blue;
-      color: orange;
-    }
-
-    footer {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background-color: #f1f1f1;
-      text-align: center;
-      height: 50px;
-    }
-
-    footer object {
-      width: 100%;
-      height: 100%;
-    }
-  </style>
-
-  <!-- Google Tag Manager -->
-  <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PPBVCLNF');
-  </script>
-  <!-- End Google Tag Manager -->
+    </style>
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WTKNJFD8"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
-  <!-- Google Tag Manager (noscript) -->
-  <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPBVCLNF"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe>
-  </noscript>
-  <!-- End Google Tag Manager (noscript) -->
+    <h1>JavaScript Events Demo</h1>
 
-  <header>
-    <button class="home-button" onclick="location.href='index.html'">Home</button>
-    <h1>Non-PII Data Collection Form</h1>
-  </header>
+    <div class="section">
+        <h2>Mouse Events</h2>
+        <div class="mouse-grid">
+            <button id="clickBtn">Click Me</button>
+            <div id="hoverBox" class="box">Hover</div>
+            <div id="moveBox" class="box">Move</div>
+            <div id="outBox" class="box">Out</div>
+            <div id="downBox" class="box">Mouse Down</div>
+            <div id="upBox" class="box">Mouse Up</div>
+        </div>
+    </div>
 
-  <div class="main-content">
-    <form action="#" method="post">
-      <label>
-        Favorite Color (Text Input):
-        <input type="text" placeholder="e.g., Blue">
-      </label>
+    <div class="section">
+        <h2>Keyboard Events</h2>
+        <input type="text" id="keyInput" placeholder="Type something...">
+    </div>
 
-      <label>
-        Favorite Animal (Dropdown):
-        <select>
-          <option value="">-- Select --</option>
-          <option>Cat</option>
-          <option>Dog</option>
-          <option>Elephant</option>
-          <option>Fox</option>
+    <div class="section">
+        <h2>Form Events</h2>
+        <div class="form-grid">
+            <input type="text" id="focusInput" placeholder="Focus / Blur">
+            <input type="text" id="changeInput" value="Hello">
+            <form id="sampleForm">
+                <input type="text" placeholder="Submit this form">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Clipboard Events</h2>
+        <textarea id="clipArea" rows="4" cols="30">Copy, Cut or Paste here...</textarea>
+    </div>
+
+    <div class="section">
+        <h2>Window Events</h2>
+        <p>Resize, Scroll or Load the window to trigger events.</p>
+    </div>
+
+    <div class="section">
+        <h2>Drag & Drop Events</h2>
+        <div class="drag-drop-grid">
+            <div id="dragTarget" class="box" draggable="true">Drag Me</div>
+            <div id="dropZone" class="box" style="background:#d1ffd1;">Drop Here</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Media Events</h2>
+        <video id="video" width="320" controls>
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            Your browser does not support HTML video.
+        </video>
+    </div>
+
+    <div class="section">
+        <h2>Select Events</h2>
+        <select id="selectBox">
+            <option value="">Choose</option>
+            <option value="A">Option A</option>
+            <option value="B">Option B</option>
         </select>
-      </label>
+    </div>
 
-      <label>What do you prefer? (Radio Options):</label>
-      <div class="radio-group">
-        <label><input type="radio" name="preference" value="morning"> Morning</label>
-        <label><input type="radio" name="preference" value="evening"> Evening</label>
-        <label><input type="radio" name="preference" value="night"> Night</label>
-      </div>
+    <!--script>
+        // Mouse event listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            const hoverBox = document.getElementById("hoverBox");
+            const moveBox = document.getElementById("moveBox");
+            const outBox = document.getElementById("outBox");
+            const downBox = document.getElementById("downBox");
+            const upBox = document.getElementById("upBox");
 
-      <label>
-        Additional Comments (Textarea):
-        <textarea rows="4" cols="30" placeholder="Write your comments here..."></textarea>
-      </label>
+            if (hoverBox) {
+                hoverBox.addEventListener("mouseenter", () => {
+                    console.log("Mouse entered hoverBox");
+                });
+            }
 
-      <label>
-        Agree to Terms and Conditions:
-        <input type="checkbox">
-      </label>
+            if (moveBox) {
+                moveBox.addEventListener("mousemove", () => {
+                    console.log("Mouse moved over moveBox");
+                });
+            }
 
-      <button type="buttonOk">OK</button>
-    </form>
-  </div>
+            if (outBox) {
+                outBox.addEventListener("mouseout", () => {
+                    console.log("Mouse left outBox");
+                });
+            }
 
-  <footer>
-    <object type="text/html" data="footer.html"></object>
-  </footer>
+            if (downBox) {
+                downBox.addEventListener("mousedown", () => {
+                    console.log("Mouse down on downBox");
+                });
+            }
 
-  <!--script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const form = document.querySelector('form');
-      if (!form) return;
-  
-      form.addEventListener('submit', function (e) {
-        e.preventDefault(); // prevent actual submission
-
-        const favoriteColor = form.querySelector('input[type="text"]')?.value || '';
-        const favoriteAnimal = form.querySelector('select')?.value || '';
-        const comments = form.querySelector('textarea')?.value || '';
-        const agreed = form.querySelector('input[type="checkbox"]')?.checked || false;
-  
-        let preference = '';
-        const radios = form.querySelectorAll('input[name="preference"]');
-        radios.forEach((radio) => {
-          if (radio.checked) {
-            preference = radio.value;
-          }
+            if (upBox) {
+                upBox.addEventListener("mouseup", () => {
+                    console.log("Mouse up on upBox");
+                });
+            }
         });
-  
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-          event: 'formSubmission',
-          favoriteColor: favoriteColor,
-          favoriteAnimal: favoriteAnimal,
-          preference: preference,
-          comments: comments,
-          agreedToTerms: agreed
-        });
-      });
-    });
-  </script-->
 
+        // Keyboard Events
+        const keyInput = document.getElementById('keyInput');
+        keyInput.addEventListener('keydown', () => console.log('Key Down'));
+        keyInput.addEventListener('keypress', () => console.log('Key Press'));
+        keyInput.addEventListener('keyup', () => console.log('Key Up'));
+
+        // Form Events
+        const focusInput = document.getElementById('focusInput');
+        focusInput.addEventListener('focus', () => console.log('Focused'));
+        focusInput.addEventListener('blur', () => console.log('Blurred'));
+
+        const changeInput = document.getElementById('changeInput');
+        changeInput.addEventListener('change', () => console.log('Changed'));
+        changeInput.addEventListener('input', () => console.log('Inputting...'));
+
+        document.getElementById('sampleForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Form Submitted');
+        });
+
+        // Clipboard Events
+        const clipArea = document.getElementById('clipArea');
+        clipArea.addEventListener('copy', () => console.log('Copied'));
+        clipArea.addEventListener('cut', () => console.log('Cut'));
+        clipArea.addEventListener('paste', () => console.log('Pasted'));
+
+        // Window Events
+        window.addEventListener('resize', () => console.log('Window Resized'));
+        window.addEventListener('scroll', () => console.log('Window Scrolled'));
+        window.addEventListener('load', () => console.log('Page Loaded'));
+
+        // Drag & Drop Events
+        const dragTarget = document.getElementById('dragTarget');
+        const dropZone = document.getElementById('dropZone');
+
+        dragTarget.addEventListener('dragstart', () => console.log('Drag Start'));
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            console.log('Drag Over');
+        });
+        dropZone.addEventListener('drop', () => console.log('Dropped'));
+
+        // Media Events
+        const video = document.getElementById('video');
+        video.addEventListener('play', () => console.log('Video Playing'));
+        video.addEventListener('pause', () => console.log('Video Paused'));
+        video.addEventListener('ended', () => console.log('Video Ended'));
+
+        // Select Box
+        document.getElementById('selectBox').addEventListener('change', () => console.log('Selection Changed'));
+    </script-->
 </body>
 </html>
