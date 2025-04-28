@@ -1,0 +1,69 @@
+<pre>
+    <style>
+    .section-header {
+    background: white;
+    color: black;
+    font-weight: bold;
+    padding: 5px;
+    display: block;
+    }
+    </style>
+    <h1>Detailed Activities For Setting Up Conversion Tracking In LinkedIn With GTM</h1>
+
+<span class="section-header">1. Obtain the LinkedIn Insight Tag</span>
+- Go to LinkedIn Campaign Manager (https://www.linkedin.com/campaignmanager/)
+- Select the account where you want to set up tracking.
+- Click on "Analyze" > "Insight Tag."
+- Copy the provided Insight Tag script.
+
+<span class="section-header">2. Add the LinkedIn Insight Tag in GTM</span>
+- Log in to your Google Tag Manager account.
+- Select your GTM container.
+- Click "Tags" > "New."
+- Name the tag "LinkedIn Insight Tag."
+- Click "Tag Configuration" and select "Custom HTML."
+- Paste the LinkedIn Insight Tag script.
+- Set the trigger to "All Pages" to ensure it fires on every page.
+- Save and publish the tag.
+
+<span class="section-header">3. Set Up a LinkedIn Conversion Event in LinkedIn Ads</span>
+- Go to LinkedIn Campaign Manager.
+- Navigate to "Analyze" > "Conversion Tracking."
+- Click "Create a Conversion."
+- Enter the conversion name and details (e.g., purchase, sign-up).
+- Choose how you want to track conversions (Page Load or Event-Based).
+- Define the audience (e.g., All Website Visitors or Specific URL).
+- Click "Create."
+
+<span class="section-header">4. Create a LinkedIn Conversion Tag in GTM (For Event-Based Tracking)</span>
+- In GTM, go to "Tags" > "New."
+- Name the tag "LinkedIn Conversion - [Event Name]."
+- Click "Tag Configuration" and select "Custom Image."
+- Use the LinkedIn event-specific tracking URL found in LinkedIn's Conversion Setup.
+- Add dynamic variables if needed (e.g., transaction value).
+- Set an appropriate trigger (e.g., Button Click, Form Submission).
+- Save the tag.
+
+<span class="section-header">5. Test in GTM Preview Mode</span>
+- Click "Preview" in GTM.
+- Enter your website URL and start debugging.
+- Perform the tracked action (page visit, button click).
+- Verify if the LinkedIn Insight Tag and Conversion Tag fire correctly.
+
+<span class="section-header">6. Verify in LinkedIn Ads</span>
+- Go to LinkedIn Campaign Manager.
+- Navigate to "Analyze" > "Conversion Tracking."
+- Check if the conversion event is receiving data.
+- If no data is received, revisit GTM to troubleshoot.
+
+<span class="section-header">7. Publish GTM Container</span>
+- If everything is working correctly in Preview Mode, click "Submit" in GTM.
+- Add a version name and description (e.g., "Added LinkedIn Tracking").
+- Click "Publish" to make the changes live.
+
+<span class="section-header">8. Monitor and Optimize</span>
+- Regularly check LinkedIn Ads to ensure conversions are tracking properly.
+- Compare data with other analytics tools to validate accuracy.
+- Adjust triggers and conditions in GTM if necessary.
+- Optimize based on performance insights.
+</pre>

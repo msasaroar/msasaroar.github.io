@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History Change Event Demo</title>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-WTKNJFD8');
+    </script>
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WTKNJFD8"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager -->
+    <style>
+        body {
+            background: linear-gradient(to right, green, red, orange, blue);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: green;
+            color: black;
+            padding: 10px;
+            text-align: center;
+        }
+        main {
+            padding: 200px;
+        }
+        button {
+            padding: 10px 15px;
+            margin: 15px;
+            background-color: orange ;
+            color: green;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <header>
+        <a href="index.html" class="home-button">Home</a>
+        <h1>History Change Event Demo</h1>
+    </header>
+    <main>
+        <h2>Click the buttons below to simulate history changes and send events to GTM.</h2>
+        <button id="homeButton">Go to Home</button>
+        <button id="aboutButton">Go to About</button>
+        <button id="contactButton">Go to Contact</button>
+    </main>
+
+    <script>
+        // Initialize dataLayer
+        window.dataLayer = window.dataLayer || [];
+
+        // Track history change events
+        function trackHistoryChange(page) {
+            console.log('History changed to:', page);
+            window.dataLayer.push({
+                event: "historyChange",
+                page: page
+            });
+        }
+
+        // Add event listeners to buttons
+        document.getElementById('homeButton').addEventListener('click', function() {
+            window.history.pushState({ page: 'home' }, 'Home', '/home');
+            trackHistoryChange('home');
+        });
+
+        document.getElementById('aboutButton').addEventListener('click', function() {
+            window.history.pushState({ page: 'about' }, 'About', '/about');
+            trackHistoryChange('about');
+        });
+
+        document.getElementById('contactButton').addEventListener('click', function() {
+            window.history.pushState({ page: 'contact' }, 'Contact', '/contact');
+            trackHistoryChange('contact');
+        });
+
+        // Capture browser back/forward navigation
+        window.onpopstate = function(event) {
+            if (event.state && event.state.page) {
+                trackHistoryChange(event.state.page);
+            }
+        };
+    </script>
+</body>
+</html>

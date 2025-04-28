@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events and Conversion Tracking Requirements</title>
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+      var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s),
+      dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-WTKNJFD8');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+      background: white;
+      color: #333;
+    }
+    h1, h2, h3 {
+      color: #0056b3;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Events and Conversion Tracking Requirements on a Blogging Website</h1>
+    <p>This document outlines the requirements for implementing event and conversion tracking on a blogging website.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>1. Tracking Objectives</h2>
+      <p>The primary objectives of event and conversion tracking are:</p>
+      <ul>
+        <li>Monitor user engagement with blog content.</li>
+        <li>Track conversions to measure newsletter sign-ups and other goals.</li>
+        <li>Collect data to understand audience behavior and improve content strategy.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>2. Key Events</h2>
+      <p>The following events should be tracked:</p>
+      <ul>
+        <li><strong>Page Views:</strong> Record visits to all blog posts and pages.</li>
+        <li><strong>Scroll Depth:</strong> Track how far users scroll down each blog post.</li>
+        <li><strong>Outbound Link Clicks:</strong> Monitor clicks on links leading to external websites.</li>
+        <li><strong>Social Sharing:</strong> Track when users share content via social media buttons.</li>
+        <li><strong>Comment Submissions:</strong> Record when a user submits a comment on a blog post.</li>
+        <li><strong>Newsletter Sign-Ups:</strong> Track successful newsletter subscription actions.</li>
+        <li><strong>Search:</strong> Monitor when users perform a search on the site, including keywords used.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>3. Conversion Goals</h2>
+      <p>Define the following conversions:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Conversion Goal</th>
+            <th>Trigger Event</th>
+            <th>Measurement</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Newsletter Sign-Up</td>
+            <td>Form Submission</td>
+            <td>Count of successful sign-ups</td>
+          </tr>
+          <tr>
+            <td>Content Share</td>
+            <td>Social Sharing</td>
+            <td>Count of shares by platform</td>
+          </tr>
+          <tr>
+            <td>Engaged Reader</td>
+            <td>Scroll Depth (e.g., 75%)</td>
+            <td>Percentage of users scrolling deep into posts</td>
+          </tr>
+          <tr>
+            <td>Search Engagement</td>
+            <td>Search Event</td>
+            <td>Keywords searched and results viewed</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>4. Implementation Requirements</h2>
+      <p>To implement tracking effectively, the following are required:</p>
+      <ul>
+        <li>Google Tag Manager (GTM) setup for managing tags and triggers.</li>
+        <li>Google Analytics (GA4) property configured for engagement tracking.</li>
+        <li>Data Layer to pass structured data for events and conversions.</li>
+        <li>Custom tags for specific events not automatically tracked by GA4.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>5. Data Layer Variables</h2>
+      <p>Define the following data layer variables:</p>
+      <ul>
+        <li><strong>Page Details:</strong> Includes post title, category, and tags.</li>
+        <li><strong>User Details:</strong> Includes user ID (if logged in) and session data.</li>
+        <li><strong>Search Details:</strong> Includes search terms and number of results.</li>
+        <li><strong>Sharing Details:</strong> Includes platform and content shared.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>6. Testing and Validation</h2>
+      <p>Ensure proper testing and validation:</p>
+      <ul>
+        <li>Use GTM's Preview Mode to validate tag firing and data layer values.</li>
+        <li>Test events across multiple browsers and devices.</li>
+        <li>Verify data in GA4 reports to ensure accuracy.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>7. Reporting</h2>
+      <p>Generate the following reports:</p>
+      <ul>
+        <li>Top-performing blog posts by views and engagement.</li>
+        <li>Conversion rates for newsletter sign-ups.</li>
+        <li>Audience behavior (e.g., scroll depth, time on page).</li>
+        <li>Search trends and popular keywords.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

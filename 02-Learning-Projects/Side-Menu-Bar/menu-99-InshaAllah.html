@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Gradient Background</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: background 1s ease-in-out;
+        }
+
+        /* Default background before JavaScript applies daily gradient */
+        .default-bg {
+            background: linear-gradient(to right, lavender, lightblue, palegreen, powderblue, thistle, aquamarine, plum, lightcyan,
+                mediumaquamarine, cornflowerblue, lightseagreen, lightskyblue, orchid, lightsteelblue, turquoise, palevioletred, 
+                mediumslateblue, mintcream, aliceblue, honeydew);
+            background-size: 200% 200%;
+            animation: gradientAnimation 30s infinite alternate;
+        }
+
+        /* Daily gradients */
+        .day-0 { background: linear-gradient(to right, green, skyblue, blue); } /* Sunday */
+        .day-1 { background: linear-gradient(to right, skyblue, green, skyblue); } /* Monday */
+        .day-2 { background: linear-gradient(to right, skyblue, skyblue, indigo); } /* Tuesday */
+        .day-3 { background: linear-gradient(to right, green, green, blue); } /* Wednesday */
+        .day-4 { background: linear-gradient(to right, indigo, blue, skyblue); } /* Thursday */
+        .day-5 { background: linear-gradient(to right, green, indigo, green); } /* Friday */
+        .day-6 { background: linear-gradient(to right, green, blue, skyblue); } /* Saturday */
+
+        h1 {
+            font-size: 50px;
+            font-weight: bold;
+            color: black;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let day = new Date().getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+            document.body.classList.remove("default-bg"); // Remove default animation
+            document.body.classList.add("day-" + day);
+        });
+    </script>
+
+</head>
+<body class="default-bg">
+    <h1>InshaAllah! May it happen in the best way for you. <br>🚀😊<br> Stay hopeful and keep working towards your goals.</h1>
+</body>
+</html>

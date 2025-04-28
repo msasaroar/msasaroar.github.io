@@ -1,0 +1,106 @@
+GA4 - SS - View Content - Tag   || FB - View Item - Trigger
+
+Google Analytics: GA4 Event
+Measurement ID : G-1234512345
+view_item
+
+event_id			{{FB - Event ID}}
+x-fb-cd-content_type		product
+x-fb-cd-content_name		{{dlv - fb - product name}}
+x-fb-cd-content_ids		{{dlv - fb - product id}}
+value				{{dlv - fb - product price}}
+currency			{{dlv - fb - Currency}}
+
+
+GA4 - SS - Add to Cart - Tag   || FB - Add to Cart - Trigger
+
+Measurement ID : G-1234512345
+add_to_cart
+
+
+GA4 - SS - Checkout - Tag    ||  FB - CheckOut - Trigger
+
+Measurement ID : G-1234512345
+begin_checkout
+
+event_id			{{FB - Event ID}}
+x-fb-cd-content_type		product
+x-fb-cd-content_name		{{cJS - FB - Purchase Product Name}}
+x-fb-cd-content_ids		{{cJS - FB - Purchase Product ID}}
+value				{{dlv - fb - product price}}
+currency			{{dlv - fb - Currency}}
+
+
+FBC - Cookies	 	1st Party Cookie	_fbc	
+FBP - Cookies		1st Party Cookie	_fbp
+
+
+GA4 - SS - Purchase - Tag   ||  FB - Purchase - Trigger
+
+Google Analytics: GA4 Event
+Measurement ID : G-1234512345
+purchase
+
+Event Parameters:
+=================
+
+
+
+event_id			{{FB - Event ID}}
+x-fb-cd-content_type		product
+x-fb-cd-content_name		{{cJS - FB - Purchase Product Name}}
+x-fb-cd-content_ids		{{cJS - FB - Purchase Product ID}}
+value				{{dlv - fb - product price}}
+currency			{{dlv - fb - Currency}}
+
+===========================================================
+
+transaction_id			{{dlv - Order ID}}
+
+x-fb-ck-fbc			{{FBC - Cookies}}
+x-fb-ck-fbp			{{FBP - Cookies}}
+
+first_party_collection		true
+
+user_data.email_address		{{dlv - Email}}
+user_data.address.first_name	{{dlv - First Name}}
+user_data.address.last_name	{{dlv - Last Name}}
+user_data.phone_number		{{dlv - Phone NO}}
+
+user_data.address.city		{{dlv - City}}
+user_data.address.postal_code	{{dlv - Postcode}}
+user_data.address.country	{{dlv - Country}}
+
+user_data.state
+
+
+
+
+orderData.customer.billing.first_name
+
+orderData.customer.billing.last_name
+
+orderData.customer.billing.phone
+
+orderData.customer.billing.email
+
+orderData.customer.billing.postcode
+
+orderData.customer.billing.state
+orderData.customer.billing.city
+
+orderData.customer.billing.country
+
+ecommerce.transaction_id
+
+
+
+Server Container:
+======================
+Tag: Conversions API Tag
+Trigger : Event Name - GA4
+Event Name    matches RegEX   page_view|view_item|add_to_cart|begin_checkout|purchase
+
+
+
+

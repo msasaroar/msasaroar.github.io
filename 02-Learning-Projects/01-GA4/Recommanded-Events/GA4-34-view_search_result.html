@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Search Results Demo</title>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id=GTM-WTKNJFD8'+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WTKNJFD8');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #000000;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header {
+      background-color: green;
+      color: white;
+      padding: 15px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      text-align: center;
+    }
+
+    .home-button {
+      position: absolute;
+      left: 20px;
+      top: 15px;
+      background-color: orange;
+      color: blue;
+      border: none;
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    main {
+      margin-top: 100px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      width: 70%;
+      margin-bottom: 10px;
+    }
+
+    button {
+      background-color: orange;
+      color: blue;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    .results {
+      margin-top: 30px;
+      text-align: left;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #f1f1f1;
+      text-align: center;
+      height: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WTKNJFD8"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header>
+    <button class="home-button" onclick="location.href='index.html'">Home</button>
+    Search Results Demo
+  </header>
+
+  <main>
+    <form onsubmit="return handleSearch();">
+      <input type="text" id="searchInput" placeholder="Search products..." required />
+      <button type="submit">Search</button>
+    </form>
+
+    <div class="results" id="resultsBox" style="display: none;">
+      <h3>Search Results for: <span id="searchTermDisplay"></span></h3>
+      <ul id="searchResults">
+        <!-- Simulated results will appear here -->
+      </ul>
+    </div>
+  </main>
+
+  <footer>
+    <object type="text/html" data="footer.html" style="width: 100%; height: 100%;"></object>
+  </footer>
+
+  <script>
+    function handleSearch() {
+      const searchTerm = document.getElementById("searchInput").value;
+      document.getElementById("searchTermDisplay").innerText = searchTerm;
+      document.getElementById("resultsBox").style.display = "block";
+
+      const sampleResults = [
+        `Result 1 for "${searchTerm}"`,
+        `Result 2 for "${searchTerm}"`,
+        `Result 3 for "${searchTerm}"`
+      ];
+
+      const resultsList = document.getElementById("searchResults");
+      resultsList.innerHTML = "";
+      sampleResults.forEach(result => {
+        const li = document.createElement("li");
+        li.textContent = result;
+        resultsList.appendChild(li);
+      });
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "view_search_results",
+        search_term: searchTerm
+      });
+
+      return false; // prevent actual form submission
+    }
+  </script>
+
+</body>
+</html>

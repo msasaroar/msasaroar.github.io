@@ -1,1 +1,0 @@
-{"sections":{"main":{"type":"main-cart","blocks":{"totals":{"type":"totals","settings":{}},"order_note":{"type":"order_note","settings":{}}},"block_order":["totals","order_note"],"settings":{}},"cart-recommendations":{"type":"cart-recommendations","settings":{}}},"order":["main","cart-recommendations"]}

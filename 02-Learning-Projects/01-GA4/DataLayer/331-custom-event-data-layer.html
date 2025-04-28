@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Events Demonstration</title>
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+      var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-WTKNJFD8'); /* Replace GTM-XXXXXXX with your GTM ID */
+  </script>
+  <!-- End Google Tag Manager -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, green, red, orange, blue);
+      text-align: center;
+    }
+
+    header {
+      background-color: green;
+      color: black;
+      padding: 20px 0;
+      font-size: 24px;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .button-container {
+      margin: 20px 0;
+    }
+
+    button {
+      background-color: skyblue;
+      color: darkgreen;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      cursor: pointer;
+      margin: 10px;
+      border-radius: 5px;
+      box-shadow: 0 4px 6px rgba(124, 76, 33, 0.79);
+      transition: transform 0.2s ease, background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e64a19;
+      transform: scale(1.1);
+    }
+
+    textarea {
+      width: 80%;
+      height: 200px;
+      margin-top: 20px;
+      border: 2px solid blue;
+      border-radius: 10px;
+      padding: 10px;
+      font-size: 20px;
+      background-color: rgb(111, 103, 103);
+      color: darkblue;
+    }
+
+    footer {
+      margin-top: 20px;
+      background-color: green;
+      color: orange;
+      padding: 10px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WTKNJFD8" /* Replace GTM-XXXXXXX with your GTM ID */
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header>
+    <header>Custom Events Demonstration</header>
+    <button id="home-button" onclick="window.location.href='index.html';">Home</button>
+</header>
+
+  <main>
+    <p>Click a button below to trigger a custom event.</p>
+
+    <div class="button-container">
+      <button id="button1">Trigger Event 1</button>
+      <button id="button2">Trigger Event 2</button>
+      <button id="button3">Trigger Event 3</button>
+    </div>
+
+    <textarea id="output" readonly>Event messages will appear here...</textarea>
+  </main>
+
+  <footer>
+    © 2025 Your Company | Demonstration of GTM Custom Events
+  </footer>
+
+  <script>
+    // Initialize dataLayer
+    window.dataLayer = window.dataLayer || [];
+
+    // Get references to buttons and output area
+    const button1 = document.getElementById("button1");
+    const button2 = document.getElementById("button2");
+    const button3 = document.getElementById("button3");
+    const output = document.getElementById("output");
+
+    // Event handlers for each button
+    button1.addEventListener("click", () => handleCustomEvent("customEvent1", "Event 1: Button 1 clicked!"));
+    button2.addEventListener("click", () => handleCustomEvent("customEvent2", "Event 2: Button 2 clicked!"));
+    button3.addEventListener("click", () => handleCustomEvent("customEvent3", "Event 3: Button 3 clicked!"));
+
+    // Function to handle custom events
+    function handleCustomEvent(eventName, message) {
+      const timestamp = new Date().toLocaleString();
+      // Push event to the dataLayer
+      window.dataLayer.push({
+        event: eventName,
+        message: message,
+        timestamp: new Date().toISOString()
+      });
+
+      // Display the message in the output area
+      output.value = "Name of The Event :" + eventName + "\n\n" + "Message of The Event :" + message + "\n\n" + "Time of The Event :" + timestamp ;
+    }
+  </script>
+</body>
+</html>

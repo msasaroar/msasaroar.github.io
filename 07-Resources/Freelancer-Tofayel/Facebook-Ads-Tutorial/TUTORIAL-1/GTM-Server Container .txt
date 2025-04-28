@@ -1,0 +1,102 @@
+Server Container: 
+
+Create a server container
+Server Container
+
+Stape: Pixel Server 
+---------------------------
+Stape Domain: Tagging Server URLs
+https://tyarrqoi.ap.stape.io
+
+Server Container:
+---------------------- 
+Container Settings:Server container URLs 
+
+https://tyarrqoi.ap.stape.io
+
+
+
+GA4 - SS - Config - All Pages - Tag        >> All Page
+
+Tag ID : G-1234512345
+Configuration Parameter:
+--------------------------
+server_container_url    >> https://ngoogcsh.cjp.stape.io
+send_page_view      true
+
+
+Preview Server Container and check
+Stape Code:
+https://ngoogcsh.jp.stape.io/?=Tofayel
+
+https://asnubird.cap.stape.io/?=Tofayel
+
+https://gtm.naviforce.com.bd/?=Tofayel
+
+
+Server Container:
+---------------------
+Variabels >> Built in variables >> Client Name
+
+Trigger:  Client Name - GA4  [Custom]
+Client Name  equals  GA4
+
+Templates >> Tag Templates >> Conversion API Tag
+
+Tag: Conversions API Tag
+Pixel ID : 
+API Access Token:
+Test Event Code :
+Trigger : Client Name - GA4
+
+N.B: Save and Preview both Container check Server Container Page View
+
+Web Container:
+----------------
+Templates >> Variables Templates >> Event ID (mbaersch)
+Variables: FB - Event ID  >> Event ID (mbaersch)
+
+ 
+FB - Base Pixel - All Pages
+More Setting : Event ID
+FB - Event ID
+
+GA4 - SS - Config - All Pages - Tag
+
+Configuration Parameter:
+--------------------------
+server_container_url    >> https://ngoogcsh.cjp.stape.io
+send_page_view      true
+event_id            {{FB - Event ID}}
+
+
+Save and Preview both Container check FB Test Event Deduplication
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Trigger : Event Name - GA4
+Event Name    matches RegEX   page_view|view_item|add_to_cart|begin_checkout|purchase
+

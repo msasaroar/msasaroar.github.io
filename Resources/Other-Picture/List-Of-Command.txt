@@ -1,5 +1,0 @@
-COMMAND: CORRECT – Fix language errors in a given sentence. 
-COMMAND: TRANSLATE – Translate between Bangla and English.  
-COMMAND: EXPLAIN – Provide a step-by-step explanation of a given subject. 
-COMMAND: ADD – Sum of provided coma separated numbers.
-COMMAND: DEDUCT – Deduct 2nd Number From 1st Number.

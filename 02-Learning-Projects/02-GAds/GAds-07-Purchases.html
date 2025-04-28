@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Purchase Event</title>
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+        var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
+        j.async=true; j.src='https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-WTKNJFD8');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background: linear-gradient(to right, green, red, orange, blue);
+            color: white;
+        }
+
+        /* Header */
+        header {
+            background: green;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Cart Container */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+
+        .cart-box {
+            background: green;
+            color: black;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 500px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .cart-box:hover {
+            transform: scale(1.05);
+        }
+
+        .cart-box h2 {
+            margin-bottom: 15px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+        }
+
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .total {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .purchase-btn {
+            background: orange;
+            color: blue;
+            border: none;
+            padding: 12px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .purchase-btn:hover {
+            background: blue;
+            color: orange;
+        }
+
+        /* Footer */
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: #f1f1f1;
+            text-align: center;
+            height: 50px;
+            line-height: 50px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WTKNJFD8"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header>
+        Your Shopping Cart
+    </header>
+
+    <div class="container">
+        <div class="cart-box">
+            <h2>Review Your Cart</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price ($)</th>
+                        <th>Quantity</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items">
+                    <tr>
+                        <td>Product A</td>
+                        <td class="price">20.00</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>Product B</td>
+                        <td class="price">35.00</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>Product C</td>
+                        <td class="price">15.00</td>
+                        <td>1</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="total">Total: $<span id="total-price">0.00</span></p>
+            <button class="purchase-btn" onclick="purchase()">Complete Purchase</button>
+        </div>
+    </div>
+
+    <footer>
+        © 2025 Your Website. All rights reserved.
+    </footer>
+
+    <script>
+        // Calculate total price
+        function calculateTotal() {
+            let prices = document.querySelectorAll(".price");
+            let total = 0;
+            prices.forEach(price => {
+                total += parseFloat(price.textContent);
+            });
+            document.getElementById("total-price").textContent = total.toFixed(2);
+        }
+
+        // Call function to update total price
+        calculateTotal();
+
+        function purchase() {
+            let items = [
+                { item_name: "Product A", price: 20.00, quantity: 1 },
+                { item_name: "Product B", price: 35.00, quantity: 2 },
+                { item_name: "Product C", price: 15.00, quantity: 1 }
+            ];
+            let totalValue = parseFloat(document.getElementById("total-price").textContent);
+
+            // Push event to GTM's dataLayer
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'purchase',
+                'transaction_id': 'TXN' + Math.floor(Math.random() * 100000),
+                'affiliation': 'Online Store',
+                'value': totalValue,
+                'currency': 'USD',
+                'tax': 0,
+                'shipping': 5.00,
+                'items': items
+            });
+
+            alert("Purchase completed! Event sent to GA4.");
+        }
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

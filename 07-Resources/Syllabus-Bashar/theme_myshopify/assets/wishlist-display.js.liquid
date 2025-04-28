@@ -1,0 +1,100 @@
+// This file handles the logic for the wishlist-display page/section
+
+// static container element
+const container = document.getElementById('wishlist-container');
+const currencyFormat = window.themeVariables.settings.currencyCodeEnabled ? window.themeVariables.settings.moneyWithCurrencyFormat : window.themeVariables.settings.moneyFormat;
+// get wishlist from local storage
+const wishlist = JSON.parse(localStorage.getItem('wishlist'));
+
+// base URL for fetching product data
+const BASE_URL = '{{request.origin}}' + '/products/';
+
+// function to fetch product data
+async function fetchProduct(handle) {
+  const response = await fetch(`${BASE_URL}${handle}.json`);
+  const productData = await response.json();
+
+  return productData;
+}
+
+const wishlistCountEl = document.getElementById("wishlist-count");
+
+function updateWishlistCount() {
+  const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+  wishlistCountEl.innerHTML = wishlist.length;
+  if (wishlist.length === 0) {
+    wishlistCountEl.style.display = 'none'; // or you can remove it from the DOM
+  } else {
+    wishlistCountEl.style.display = 'block';
+  }
+}
+
+// Call updateWishlistCount on page load to set the initial count
+updateWishlistCount();
+
+// Event listener to handle removal of wishlist items
+document.addEventListener('click', async function (event) {
+  if (event.target.matches('.wishlist_remove_item')) {
+    event.preventDefault();
+
+    const button = event.target;
+    const productItem = button.closest('.product-item');
+    const handle = productItem.getAttribute('data-handle');
+
+    // Remove item from local storage
+    const wishlist = JSON.parse(localStorage.getItem('wishlist'));
+    const index = wishlist.indexOf(handle);
+    if (index > -1) {
+      wishlist.splice(index, 1);
+      localStorage.setItem('wishlist', JSON.stringify(wishlist));
+    }
+
+    // Remove item from DOM
+    productItem.remove();
+
+    updateWishlistCount();
+
+  }
+});
+
+// function to create product card
+function createProductCard(product,handle) {
+  const template = `
+    <product-item class="product-item" data-handle="${handle}">
+      <div class="wishlist-image-and-title">
+        <div class="product-item__image-wrapper">
+          <img class="product-item__primary-image" src="{IMAGE_URL}">
+        </div>
+        <div class="product-item__info  ">
+          <div class="product-item-meta">
+            <a class="product-item-meta__title">{TITLE}</a>
+          </div>
+        <div>
+      </div>
+        <div class="wishlist_buttons_container">
+          <a href="${BASE_URL}${handle}" class="wishlist_to_product button button--primary" >
+            Zum Produkt
+          </a>
+          <button class="wishlist_remove_item line-item__remove-button link text--subdued text--xxsmall">
+            Von Wunschliste entfernen
+          </button>
+        <div>
+      </div>
+    </product-item>
+  `;
+
+  return template.replace('{TITLE}', product.product.title)
+                .replace('{IMAGE_URL}', product.product.image.src)
+}
+
+
+// fetch data for each product in the wishlist and add to container
+if (wishlist && wishlist.length) {
+  wishlist.forEach(async (handle) => {
+    const product = await fetchProduct(handle);
+    const productCard = createProductCard(product, handle);
+    container.insertAdjacentHTML('beforeend', productCard);
+  });
+} else {
+  container.innerHTML = '<p>Your wishlist is empty.</p>';
+}

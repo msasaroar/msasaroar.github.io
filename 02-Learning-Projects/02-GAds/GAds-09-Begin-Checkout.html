@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Begin Checkout - GA4 Event</title>
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+        var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
+        j.async=true; j.src='https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-WTKNJFD8');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background: linear-gradient(to right, green, red, orange, blue);
+            color: black;
+        }
+
+        /* Header */
+        header {
+            background: green;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+
+        /* Product List */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 30px;
+        }
+
+        .product-card {
+            background: green;
+            color: black;
+            padding: 20px;
+            margin: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 250px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .checkout-btn {
+            background: orange;
+            color: blue;
+            border: none;
+            padding: 12px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+            margin-top: 20px;
+        }
+
+        .checkout-btn:hover {
+            background: blue;
+            color: orange;
+        }
+
+        /* Footer */
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: #f1f1f1;
+            text-align: center;
+            height: 50px;
+            line-height: 50px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WTKNJFD8"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header>
+        Your Shopping Cart
+    </header>
+
+    <div class="container">
+        <div class="product-card" data-id="P001" data-name="Smartphone" data-price="699.99">
+            <img src="product-1.png" alt="Smartphone" class="product-img">
+            <h3>Smartphone</h3>
+            <p>Price: $699.99</p>
+        </div>
+
+        <div class="product-card" data-id="P002" data-name="Laptop" data-price="999.99">
+            <img src="product-2.png" alt="Laptop" class="product-img">
+            <h3>Laptop</h3>
+            <p>Price: $999.99</p>
+        </div>
+
+        <div class="product-card" data-id="P003" data-name="Headphones" data-price="199.99">
+            <img src="product-3.png" alt="Headphones" class="product-img">
+            <h3>Headphones</h3>
+            <p>Price: $199.99</p>
+        </div>
+    </div>
+
+    <button class="checkout-btn" onclick="beginCheckout()">Proceed to Checkout</button>
+
+    <footer>
+        © 2025 Your Website. All rights reserved.
+    </footer>
+
+    <script>
+        function beginCheckout() {
+            var products = [];
+            var productCards = document.querySelectorAll(".product-card");
+
+            productCards.forEach(function(card) {
+                products.push({
+                    item_id: card.getAttribute("data-id"),
+                    item_name: card.getAttribute("data-name"),
+                    price: parseFloat(card.getAttribute("data-price")),
+                    quantity: 1
+                });
+            });
+
+            // Push event to GTM's dataLayer
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'begin_checkout',
+                'items': products
+            });
+
+            alert("Checkout started! Event sent to GA4.");
+        }
+    </script>
+
+</body>
+</html>

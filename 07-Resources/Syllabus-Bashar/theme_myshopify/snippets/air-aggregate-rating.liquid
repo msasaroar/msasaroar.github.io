@@ -1,0 +1,15 @@
+
+{% if product.metafields.air_reviews_product.review_count > 0 %}
+<script class="air-review-jld" type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Product",
+    "name": {{ product.title | json }},
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": {{  product.metafields.air_reviews_product.review_avg }},
+      "reviewCount": {{ product.metafields.air_reviews_product.review_count }}
+    }
+  }
+</script>
+{% endif %}

@@ -1,0 +1,78 @@
+<=<=<=<=<=<=<=<=<=<=<=<=<=<=<=<=<= Google Account Information =>=>=>=>=>==>=>=>=>=>=>=>=>=>
+User/Gmail ID : ga4gtmpractice1@gmail.com / PWD : *ga4gtmpracticeAbcd#  |  ga4gtmpractice1@gmail.com/*ga4gtmpracticeAbcd#
+User/Gmail ID	: azfarrabibsakif@gmail.com / PWD : *ga4gtmpracticeAbcd#  |  azfarrabibsakif@gmail.com/*ga4gtmpracticeAbcd#
+User/Gmail ID	: salamfreelancing@gmail.com / PWD : *dohalia1964#  |  salamfreelancing@gmail.com/*dohalia1964#
+User/Gmail ID	: msasaroar@gmail.com / PWD : *dohalia1964#  |  msasaroar@gmail.com/*dohalia1964#
+<=<=<=<=<=<=<=<=<=<=<=<=<=<=<=<=<= Google Account Information =>=>=>=>=>==>=>=>=>=>=>=>=>=>
+
+05. Pinterest   GTM-WZB6J9R6
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WZB6J9R6');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZB6J9R6"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+HELPS ON INSTALL THE Pinterest TAG: 
+https://help.pinterest.com/en/business/article/install-the-pinterest-tag
+
+ACCESS YOUR Pinterest ADS ACCOUNT: 
+https://ads.pinterest.com/
+
+INSTALL YOUR Pinterest TAG:
+https://ads.pinterest.com/advertiser/549768860596/conversions/tag/
+
+CLAIMING YOUR WEBSITE: 
+https://www.pinterest.com/settings/claim
+
+TRACK CONVERSIONS WITH Pinterest API AND Pinterest TAG:
+https://ads.pinterest.com/advertiser/549768860596/conversions/events-overview/
+
+
+BUSINESS MANAGER ACCOUNT:
+https://www.pinterest.com/business/business-manager/
+
+CHROME EXTENSION :
+Pinterest TAG HELPER FROM CHROME WEB STORE
+
+
+Create an html page on which demonstrate Pinterest Standard Event "PageVisit" having parameters: page_category.
+Show parameters name and values on the page in a readable format such a way so that page looks like a data entry screen but no need to data entry.
+The event will be fire on click a button.
+
+
+Make the page Pinterest like look & feel.
+The page will be tracked with GTM.
+Pinterest Tag/Pixel will be installed through GTM.
+
+Event Name		        Description					Key Parameters
+========		    ==========          =============
+PageVisit			        visits a page.					page_category (optional)
+ViewCategory		       views a product category.		category (string)
+Search			            performs a search.				search_query (string)
+AddToCart		           adds a product to the cart.		currency, value, order_quantity, product_id
+Checkout			        starts the checkout process.		currency, value, order_id
+WatchVideo		        watches a video.				video_title, video_duration
+Signup			        signs up.						lead_type
+Lead            - Track people who show interest in your product or service
+Custom         - Track a custom event. Use this event name to track a special event that you want to include in your conversion reporting
+[Partner-defined event] - Add any additional event that you’ve defined for the purpose of audience targeting. Unique events aren’t available for conversion reporting. Keep in mind that whitespace will be trimmed from raw event names passed through the tag
+
+
+<script>pintrk('track', 'checkout',    {event_id: 'eventId0001', value: 100, order_quantity: 1, currency: 'USD'});</script>
+<script>pintrk('track', 'addtocart',   {event_id: 'eventId0001', value: 100, order_quantity: 1, currency: 'USD'});</script>
+<script>pintrk('track', 'pagevisit',    {event_id: 'eventId0001'});                                                         </script>
+<script>pintrk('track', 'signup',       {event_id: 'eventId0001'});                                                         </script>
+<script>pintrk('track', 'watchvideo', {event_id: 'eventId0001', video_title: 'How to style your Parker Boots'}); </script>
+<script>pintrk('track', 'lead',          {event_id: 'eventId0001', lead_type: 'Newsletter'});                            </script>
+<script>pintrk('track', 'search',       {event_id: 'eventId0001', search_query: 'boots'});                              </script>
+<script>pintrk('track', 'search',       {event_id: 'eventId0001', search_query: 'boots'});                              </script>
+<script>pintrk('track', 'custom',      {event_id: 'eventId0001'});                                                          </script>
+<script>pintrk('track', 'custom',      {event_id: 'eventId0001'});                                                          </script>

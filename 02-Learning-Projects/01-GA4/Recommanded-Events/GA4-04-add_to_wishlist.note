@@ -1,0 +1,75 @@
+https://developers.google.com/analytics/devguides/collection/ga4/reference/events?client_type=gtm#add_to_wishlist
+
+
+Considering following information write code for an html page to demonstrate for GA4 recommanded event add_to_wishlist:
+GTM Code is GTM-N4MMS7TS and GTM-PPBVCLNF
+Page template as like Google Tagmanager UI.
+
+Event Parameters:==============================
+    currency	   string		   USD                  Required
+    value	        number	 30.03                 Required    
+
+    items	Array<Item>                           Required
+        item_id	          string		   SKU_12345                 Required                                
+        item_name	      string		  Stan and Friends Tee    Required
+        coupon	         string      SUMMER_FUN             Optional
+        discount	        number	 2.22                         Optional
+        item_brand	    string	    Google                      Optional
+        item_category	  string	    Apparel                     Optional
+        price	             number	  10.01                        Optional
+        quantity	        number	 3                             Optional
+
+Tag configuration:==============================
+
+    Tag type: GA4 Event
+
+    Event Name: add_to_wishlist
+
+    Data Layer Variables (Name - Data Layer Variable Name):
+        Ecommerce Items - ecommerce.items
+        Ecommerce Value - ecommerce.value
+        Ecommerce Currency - ecommerce.currency
+
+    Event Parameters (Parameter Name - Value):
+        items - {{Ecommerce Items}}
+        value - {{Ecommerce Value}}
+        currency - {{Ecommerce Currency}}
+
+    Trigger: event equals add_to_wishlist
+
+Trigger configuration:==============================
+    Trigger Type: Custom Event
+    Event Name: add_to_wishlist
+    This trigger fires on: All Custom Events
+
+DataLayer:==============================
+    dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
+    dataLayer.push({
+    event: "add_to_wishlist",
+    ecommerce: {
+        currency: "USD",
+        value: 30.03,
+        items: [
+        {
+        item_id: "SKU_12345",
+        item_name: "Stan and Friends Tee",
+        affiliation: "Google Merchandise Store",
+        coupon: "SUMMER_FUN",
+        discount: 2.22,
+        index: 0,
+        item_brand: "Google",
+        item_category: "Apparel",
+        item_category2: "Adult",
+        item_category3: "Shirts",
+        item_category4: "Crew",
+        item_category5: "Short sleeve",
+        item_list_id: "related_products",
+        item_list_name: "Related Products",
+        item_variant: "green",
+        location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
+        price: 10.01,
+        quantity: 3
+        }
+        ]
+    }
+    });

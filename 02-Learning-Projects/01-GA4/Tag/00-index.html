@@ -1,0 +1,108 @@
+<style>
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .listbox-group {
+        display: flex;
+        flex-direction: column;
+        height: 90vh; /* পুরো ভিউপোর্ট উচ্চতা */
+    }
+    .listbox-group ul {
+        list-style: none;
+        padding: 0;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        flex-grow: 1; /* লিস্টবক্স পুরো স্ক্রীন নেবে */
+        overflow-y: auto;
+    }
+    .listbox-group li {
+        padding: 10px;
+        cursor: pointer;
+        border-bottom: 1px solid #eee;
+    }
+    .listbox-group li:hover, .listbox-group li.selected {
+        background-color: #007bff;
+        color: white;
+    }
+    button {
+        margin: 10px;
+        padding: 10px 15px;
+        cursor: pointer;
+        background-color: orange;
+        color: blue;
+        border: none;
+        border-radius: 5px;
+    }
+    button:hover {
+        background-color: blue;
+        color: orange;
+    }
+    button:disabled {
+        background-color: gray;
+        cursor: not-allowed;
+    }
+</style>
+
+<div class="listbox-group">
+    <label for="selectedItem">GA4 : Tags</label>
+    <ul id="selectedItem" role="listbox" tabindex="0">
+        <li tabindex="0" data-value="/01-GA4/00-index.html">GA4 : Home</li>
+        <li tabindex="0" data-value="GA4-click-element-tag.html">GA4 # click_element_tag</li>
+        <li tabindex="0" data-value="GA4-custom-html-tag.html">GA4 # custom_html_tag</li>
+        <li tabindex="0" data-value="GA4-custom-image-tag-1.html">GA4 # custom_image_tag_1</li>
+        <li tabindex="0" data-value="GA4-custom-image-tag.html">GA4 # custom_image_tag</li>
+        <li tabindex="0" data-value="GA4-JavaScript-Error-Tag.html">GA4 # javascript_error_tag</li>
+        <li tabindex="0" data-value="GA4-social-media-click-tag.html">GA4 # social_media_click_tag</li>
+        <li tabindex="0" data-value="GA4-timer-tag.html">GA4 # timer_tag</li>
+                  
+    </ul>
+    <button id="proceedBtn" disabled>Proceed</button>
+</div>
+
+<script>
+    const listbox = document.getElementById("selectedItem");
+    const listItems = listbox.querySelectorAll("li");
+    const proceedBtn = document.getElementById("proceedBtn");
+    let selectedIndex = -1;
+    let selectedValue = "";
+
+    function selectItem(index) {
+        listItems.forEach(li => li.classList.remove("selected"));
+        if (index >= 0 && index < listItems.length) {
+            listItems[index].classList.add("selected");
+            selectedValue = listItems[index].getAttribute("data-value");
+            proceedBtn.disabled = false;
+            listbox.setAttribute("aria-activedescendant", listItems[index].id);
+        }
+    }
+
+    listItems.forEach((item, index) => {
+        item.addEventListener("click", function () {
+            selectedIndex = index;
+            selectItem(selectedIndex);
+        });
+    });
+
+    listbox.addEventListener("keydown", function (e) {
+        if (e.key === "ArrowDown" && selectedIndex < listItems.length - 1) {
+            selectedIndex++;
+            selectItem(selectedIndex);
+        } else if (e.key === "ArrowUp" && selectedIndex > 0) {
+            selectedIndex--;
+            selectItem(selectedIndex);
+        } else if (e.key === "Enter" && selectedValue) {
+            window.location.href = selectedValue;
+        }
+    });
+
+    proceedBtn.addEventListener("click", function () {
+        if (selectedValue) {
+            window.location.href = selectedValue;
+        }
+    });
+</script>
+
+
+

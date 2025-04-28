@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn how to set up Google Analytics 4 (GA4) eCommerce tracking using Google Tag Manager based on GA4 schema.">
+    <title>GA4 eCommerce Tracking Setup</title>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-WTKNJFD8');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0 20px;
+            background: white;
+            color: #000000;
+        }
+        header {
+            background: #babaf2;
+            color: #000000;
+            padding: 10px 0;
+            text-align: center;
+        }
+        h1, h2 {
+            color: #000000;
+        }
+        ul {
+            list-style-type: square;
+            margin: 10px 0;
+            padding: 0 20px;
+        }
+        code {
+            background: #867979a8;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        pre {
+            background: #000000;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Setup Google Analytics 4(As Per GA4 Schema) Ecommerce Tracking with Google Tag Manager</h1>
+    </header>
+
+    <main>
+        <h2>Step-by-Step Guide</h2>
+        <ol>
+            <li>
+                <h3>Configure GA4 Property</h3>
+                <ul>
+                    <li>Log in to your Google Analytics account and create a GA4 property.</li>
+                    <li>Copy the Measurement ID (e.g., <code>G-XXXXXXXXXX</code>).</li>
+                </ul>
+            </li>
+
+            <li>
+                <h3>Set Up Google Tag Manager (GTM)</h3>
+                <ul>
+                    <li>Log in to Google Tag Manager and create a container for your website.</li>
+                    <li>Add the GTM container code to your website's <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code> sections.</li>
+                </ul>
+            </li>
+
+            <li>
+                <h3>Create a GA4 Configuration Tag</h3>
+                <ul>
+                    <li>In GTM, click <strong>Tags</strong> &gt; <strong>New</strong>.</li>
+                    <li>Choose <strong>GA4 Configuration</strong> as the tag type.</li>
+                    <li>Enter your GA4 Measurement ID.</li>
+                    <li>Set the trigger to <strong>All Pages</strong>.</li>
+                    <li>Save and publish the tag.</li>
+                </ul>
+            </li>
+
+            <li>
+                <h3>Enable Enhanced eCommerce Features</h3>
+                <ul>
+                    <li>Go to your GA4 property settings.</li>
+                    <li>Navigate to <strong>Enhanced Measurement</strong> and enable eCommerce tracking.</li>
+                </ul>
+            </li>
+
+            <li>
+                <h3>Implement Data Layer for eCommerce</h3>
+                <p>Add a structured data layer on your website to capture eCommerce events:</p>
+                <pre><code>{
+"event": "purchase",
+"ecommerce": {
+  "transaction_id": "T12345",
+  "value": 150.00,
+  "currency": "USD",
+  "items": [
+    {
+      "item_name": "Product A",
+      "item_id": "SKU12345",
+      "price": 50.00,
+      "quantity": 2
+    },
+    {
+      "item_name": "Product B",
+      "item_id": "SKU67890",
+      "price": 50.00,
+      "quantity": 1
+    }
+  ]
+}
+}</code></pre>
+            </li>
+
+            <li>
+                <h3>Create GA4 Event Tags in GTM</h3>
+                <ul>
+                    <li>In GTM, click <strong>Tags</strong> &gt; <strong>New</strong>.</li>
+                    <li>Select <strong>GA4 Event</strong> as the tag type.</li>
+                    <li>Configure the tag with the following settings:
+                        <ul>
+                            <li><strong>Event Name:</strong> Match the event in your data layer (e.g., <code>purchase</code>).</li>
+                            <li><strong>Event Parameters:</strong> Map data layer variables to GA4 parameters (e.g., <code>value</code>, <code>currency</code>).</li>
+                        </ul>
+                    </li>
+                    <li>Set the trigger to fire on specific events (e.g., <code>purchase</code>).</li>
+                    <li>Save and publish the tag.</li>
+                </ul>
+            </li>
+
+            <li>
+                <h3>Test and Debug</h3>
+                <ul>
+                    <li>Use GTM's <strong>Preview Mode</strong> to test your setup.</li>
+                    <li>Verify events in GA4's <strong>DebugView</strong>.</li>
+                </ul>
+            </li>
+
+            <li>
+                <h3>Publish Your GTM Changes</h3>
+                <ul>
+                    <li>Once tested, publish the container in GTM.</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h2>Additional Resources</h2>
+        <ul>
+            <li><a href="https://developers.google.com/analytics/devguides/collection/ga4/ecommerce">GA4 eCommerce Documentation</a></li>
+            
+            <li><a href="https://tagmanager.google.com/">Google Tag Manager</a></li>
+        </ul>
+    </main>
+</body>
+</html>

@@ -1,6 +1,0 @@
-1. Provide a real-world analytics and conversion tracking task that can be solved using GA4 and GTM.
-2. Design an HTML page to address the specified problem and facilitate its resolution.
-3. Display the task scenario, objectives, and solution steps within a scrollable text area on the page.
-4. Arrange the objectives and solution steps on the left side of the page, with the main content and other elements on the right side.
-Apply the above 2 instruction on the following page.
-
