@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GA4 Recommended Events - Blog</title>
+  <style>
+    body {
+      background-color: white;
+      color: black;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0 15px 60px;
+    }
+
+    header {
+      background-color: green;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+    }
+
+    .home-button {
+      position: absolute;
+      left: 15px;
+      top: 15px;
+      background-color: orange;
+      color: blue;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 100px auto 0;
+    }
+
+    h1 {
+      font-size: 28px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    button {
+      background-color: orange;
+      color: blue;
+      border: none;
+      padding: 10px 16px;
+      margin: 20px auto;
+      display: block;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #f1f1f1;
+      text-align: center;
+      height: 50px;
+    }
+  </style>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WW333VDN');
+  </script>
+  <!-- End Google Tag Manager -->
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WW333VDN"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header>
+    <a href="index.html"><button class="home-button">Home</button></a>
+    <h1>What is a Recommended Event in GA4?</h1>
+  </header>
+
+  <main>
+    <h2>Definition</h2>
+    <p>
+      Recommended events in Google Analytics 4 (GA4) are events that Google suggests you implement to
+      get the most out of GA4’s advanced reporting and features. These events aren’t tracked automatically,
+      but if your site or app includes relevant actions, Google recommends you set them up using specific
+      event names and parameters.
+    </p>
+
+    <h2>Why Use Recommended Events?</h2>
+    <ul>
+      <li>They unlock enhanced reporting in GA4 (e.g., eCommerce, media tracking).</li>
+      <li>They follow naming best practices recognized by Google Analytics.</li>
+      <li>They are future-proof and more likely to integrate with new GA features.</li>
+    </ul>
+
+    <h2>Examples of Recommended Events</h2>
+    <ul>
+      <li><code>sign_up</code> — Track when a user registers for an account.</li>
+      <li><code>login</code> — Track user logins.</li>
+      <li><code>purchase</code> — Track completed transactions.</li>
+      <li><code>view_item</code> — Track product detail views.</li>
+      <li><code>add_to_cart</code> — Track when a product is added to a cart.</li>
+    </ul>
+
+    <h2>How to Implement</h2>
+    <p>
+      You can use Google Tag Manager or gtag.js to send these events. Here's an example of how to
+      send a "sign_up" event using gtag:
+    </p>
+    <pre><code>
+gtag('event', 'sign_up', {
+  method: 'Google'
+});
+    </code></pre>
+
+    <h2>Where to Find the List</h2>
+    <p>
+      Google provides a full list of recommended events in their
+      <a href="https://support.google.com/analytics/answer/9267735" target="_blank">official documentation</a>.
+    </p>
+
+    <h2>Conclusion</h2>
+    <p>
+      Recommended events in GA4 give you a structured way to capture meaningful user interactions
+      using standardized event names. If your site or app uses common features like sign-ups,
+      purchases, or media views, following Google’s recommended event naming is a best practice.
+    </p>
+  </main>
+</body>
+</html>
