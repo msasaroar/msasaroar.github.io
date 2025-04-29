@@ -1,0 +1,100 @@
+<style>
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .listbox-group {
+        display: flex;
+        flex-direction: column;
+        height: 90vh; /* পুরো ভিউপোর্ট উচ্চতা */
+    }
+    .listbox-group ul {
+        list-style: none;
+        padding: 0;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        flex-grow: 1; /* লিস্টবক্স পুরো স্ক্রীন নেবে */
+        overflow-y: auto;
+    }
+    .listbox-group li {
+        padding: 10px;
+        cursor: pointer;
+        border-bottom: 1px solid #eee;
+    }
+    .listbox-group li:hover, .listbox-group li.selected {
+        background-color: #007bff;
+        color: white;
+    }
+    button {
+        margin: 10px;
+        padding: 10px 15px;
+        cursor: pointer;
+        background-color: orange;
+        color: blue;
+        border: none;
+        border-radius: 5px;
+    }
+    button:hover {
+        background-color: blue;
+        color: orange;
+    }
+    button:disabled {
+        background-color: gray;
+        cursor: not-allowed;
+    }
+</style>
+
+<div class="listbox-group">
+    <label for="PinterestEvents">Pinterest Pixel Events</label>
+    <ul id="PinterestEvents" role="listbox" tabindex="0">
+        <li tabindex="0" data-value="../Side-Menu-Bar/menu-99-Opening-Page.html">Home</li>
+        <li tabindex="0" data-value="Snapchat-01-PAGE_VIEW.html">Snapchat # 01. PAGE_VIEW</li>
+        <li tabindex="0" data-value="Snapchat-02-ADD_CART.html">Snapchat # 02. ADD_CART</li>
+        <li tabindex="0" data-value="Snapchat-03-VIEW_CONTENT.html">Snapchat # 03. VIEW_CONTENT</li>
+        <li tabindex="0" data-value="Snapchat-04-PURCHASE.html">Snapchat # 04. PURCHASE</li>
+        <li tabindex="0" data-value="Snapchat-05-CUSTOM_EVENT_1.html">Snapchat # 05. CUSTOM_EVENT_1</li>
+        <li tabindex="0" data-value="index-99-InshaAllah.html">++++++++++++++++++++++</li>
+        <li tabindex="0" data-value="Snapchat-01-ACHIEVEMENT_UNLOCKED.html">Snapchat # ??. ACHIEVEMENT_UNLOCKED</li>
+        <li tabindex="0" data-value="Snapchat-02-ADD_BILLING.html">Snapchat # ??. ADD_BILLING</li>
+        <li tabindex="0" data-value="Snapchat-03-ADD_TO_WISHLIST.html">Snapchat # ??. ADD_TO_WISHLIST</li>
+        <li tabindex="0" data-value="Snapchat-04-AD_CLICK.html">Snapchat # ??. AD_CLICK</li>
+        <li tabindex="0" data-value="Snapchat-05-AD_VIEW.html">Snapchat # ??. AD_VIEW</li>
+        <li tabindex="0" data-value="Snapchat-06-APP_INSTALL.html">Snapchat # ??. APP_INSTALL</li>
+        <li tabindex="0" data-value="Snapchat-07-APP_OPEN.html">Snapchat # ??. APP_OPEN</li>
+        <li tabindex="0" data-value="Snapchat-08-COMPLETE_TUTORIAL.html">Snapchat # ??. COMPLETE_TUTORIAL</li>
+        <li tabindex="0" data-value="Snapchat-09-INVITE.html">Snapchat # ??. INVITE</li>
+        <li tabindex="0" data-value="Snapchat-10-LEVEL_COMPLETE.html">Snapchat # ??. LEVEL_COMPLETE</li>
+        <li tabindex="0" data-value="Snapchat-11-LIST_VIEW.html">Snapchat # ??. LIST_VIEW</li>
+        <li tabindex="0" data-value="Snapchat-12-LOGIN.html">Snapchat # ??. LOGIN</li>
+        <li tabindex="0" data-value="Snapchat-13-RATE.html">Snapchat # ??. RATE</li>
+        <li tabindex="0" data-value="Snapchat-14-RESERVE.html">Snapchat # ??. RESERVE</li>
+        <li tabindex="0" data-value="Snapchat-15-SAVE.html">Snapchat # ??. SAVE</li>
+        <li tabindex="0" data-value="Snapchat-16-SEARCH.html">Snapchat # ??. SEARCH</li>
+        <li tabindex="0" data-value="Snapchat-17-SHARE.html">Snapchat # ??. SHARE</li>
+        <li tabindex="0" data-value="Snapchat-18-SIGN_UP.html">Snapchat # ??. SIGN_UP</li>
+        <li tabindex="0" data-value="Snapchat-19-SPENT_CREDITS.html">Snapchat # ??. SPENT_CREDITS</li>
+        <li tabindex="0" data-value="Snapchat-20-START_CHECKOUT.html">Snapchat # ??. START_CHECKOUT</li>
+        <li tabindex="0" data-value="Snapchat-21-START_TRIAL.html">Snapchat # ??. START_TRIAL</li>
+        <li tabindex="0" data-value="Snapchat-22-SUBSCRIBE.html">Snapchat # ??. SUBSCRIBE</li>     
+    </ul>
+    <button id="proceedBtn" disabled>Proceed</button>
+</div>
+
+<script>
+    let selectedValue = "";
+    document.querySelectorAll('#PinterestEvents li').forEach(item => {
+        item.addEventListener('click', function() {
+            document.querySelectorAll('#PinterestEvents li').forEach(li => li.classList.remove('selected'));
+            this.classList.add('selected');
+            selectedValue = this.getAttribute('data-value');
+            document.getElementById('proceedBtn').disabled = false;
+        });
+    });
+
+    document.getElementById('proceedBtn').addEventListener('click', function() {
+        if (selectedValue) {
+            window.location.href = selectedValue;
+        }
+    });
+</script>

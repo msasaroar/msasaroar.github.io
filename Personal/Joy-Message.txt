@@ -1,0 +1,13 @@
+Core Competencies
+• React.js, Next.js, Redux, TypeScript
+• JavaScript (ES6), jQuery
+• HTML5, CSS3, SCSS, Bootstrap 5, Tailwind CSS, Ant Design
+• REST API Integration (fetch, axios)
+• Firebase (Auth/DB), Git & GitHub
+• PSD to HTML, Figma to HTML
+• Responsive Web Design, Mobile-first UI
+
+Frontend Developer (React)
+Genex Infosys Ltd, Dhaka
+জব সুইচ করতে চায়।
+কাজে লাগানোর স্কোপ আছে কি ?

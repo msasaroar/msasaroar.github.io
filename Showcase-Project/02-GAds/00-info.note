@@ -1,0 +1,131 @@
+
+02. GAds        GTM-WWDLQ5K9
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WWDLQ5K9');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WWDLQ5K9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+Q2ChatGPT >>> Create a complex HTML page using a non-compliant pushed data layer for GA4, and prepare a list of tasks based on that HTML page to be tracked using GTM.
+
+Q2ChatGPT >>> List some Google Ads Conversion Action
+
+🔹 Website Conversions
+These track actions people take on your website after clicking an ad:
+Purchase – Tracks completed sales or checkouts.
+Lead – Tracks lead form submissions or signups.
+Page View – Tracks visits to a specific page (e.g., thank-you page).
+Sign-up – Tracks registrations or account creations.
+Add to Cart – Tracks when users add a product to the cart.
+Begin Checkout – Tracks when users start the checkout process.
+Add Payment Info – Tracks when users enter payment details.
+Contact – Tracks clicks on phone numbers, email links, or contact forms.
+Submit Lead Form – Tracks when a user submits a lead form.
+
+🔹 Phone Call Conversions
+Track phone calls made after interacting with your ads:
+Calls from Ads – When users click a call button in your ad.
+Calls to a Phone Number on Your Website – When users call a number shown after clicking your ad.
+Imported Call Conversions – If you're tracking calls via CRM and importing offline conversions.
+
+🔹 App Conversions
+Track actions within mobile apps:
+App Install (Android or iOS) – Tracks installs from your ads.
+In-App Purchase – Tracks purchases made within your app.
+App Engagement – Tracks specific in-app events (e.g., login, level completion).
+
+🔹 Import Conversions (Offline)
+Track conversions that happen offline (e.g., in-store sales or CRM leads):
+Offline Conversion Import – Upload conversions manually or via API after they occur offline.
+CRM-Integrated Lead Status Update – When a lead becomes a customer based on CRM update.
+Bonus: Smart Conversion Goals
+Enhanced Conversions – Sends hashed user data (like email/phone) to Google to improve conversion tracking.
+Store Visit Conversions – Tracks visits to physical store locations using location data (available to eligible advertisers).
+
+Would you like an example of how to set up one of these (e.g., "Purchase" or "Lead") using Google Tag Manager?
+
+✅ Step-by-Step: Set Up Google Ads Purchase Conversion in GTM
+1. Go to https://ads.google.com 
+2. Sign in
+3. Select a Google Ads account
+4. +Create > Conversion action >> Conversions on a website > Continue [Path-1]
+4. Goal > Conversion > Summary > Goal > New conversion action [Path-2] 
+5. Choose Website > Continue
+6. Purchase > Setup
+7. Create a manual event  > Enter sa conversion name [e.g. GA4-Gads-Purchase] > Use event
+8. Save and continue
+9. Tag setup > Use Google Tag Manager >
+10. Conversion ID > 16763817231 [Auto Generated]
+11. Conversion label > 7pS9COHYn_MZEI-azrk-  [Auto Generated]
+
+
+C. Connect Dynamic Data (Optional but Best Practice)
+If you're using Data Layer variables:
+
+Go to Variables → New
+Choose Data Layer Variable
+Name: value → Variable name: value
+Name: transaction_id → Variable name: transaction_id
+Name: currency → Variable name: currency
+Then, in your Tag, bind:
+
+Conversion Value → {{value}}
+Transaction ID → {{transaction_id}}
+Currency Code → {{currency}}
+
+
+🔥 Most Common Google Ads Website Conversion Actions
+Conversion ID      : 16763881059
+
+01.	Purchase	                Tracks when a user completes a purchase or transaction
+      Conversion label : -cZLCPvi6rQaEOOM0rk-
+
+
+
+
+
+
+
+
+
+02.	Submit Lead Forms	   Tracks when a user submits a form or inquiry
+      Conversion label :==============================
+
+03.	Sign-up	                 Tracks newsletter, account, or membership signups
+      Conversion label : qJ4fCIns5vMZEI-azrk-
+
+04.	Add to cart	              Tracks when a product is added to the shopping cart
+      Conversion label : _W6HCIDs5vMZEI-azrk-
+
+05.	Begin checkout	         Tracks when a user initiates the checkout process
+      Conversion label : -5XPCJiWrKIaEI-azrk-
+
+06.	Submit contact form	 Tracks form submissions for contact or inquiries
+      Conversion label : nPpMCIqisfEZEI-azrk-
+
+07.	Phone call click	        Tracks clicks on a phone number (mobile click-to-call)
+      Conversion label :=================================
+
+08.	Booking An Appointment	    Tracks booking/reservation completions
+      Conversion label : MOFJCKSWrKIaEI-azrk-
+
+09.	Download	                Tracks file, brochure, or app downloads
+      Conversion label :================================
+
+10.	Start trial	                 Tracks free trial or demo activations
+      Conversion label :
+
+11.	View content	           Tracks views of important content like product pages
+      Conversion label :
+
+12.	Contact us click	        Tracks clicks to open contact pages or email links
+      Conversion label :

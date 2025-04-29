@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snapchat Event - Add to Cart</title>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id=GTM-WTKNJFD8'+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WTKNJFD8');</script>
+    <!-- End Google Tag Manager -->
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #FFFC00;
+            text-align: center;
+            padding: 20px;
+            color: black;
+        }
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            border: 2px solid black;
+        }
+        h2 {
+            color: black;
+        }
+        .data-field {
+            text-align: left;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .label {
+            font-weight: bold;
+        }
+        .value {
+            color: #333;
+        }
+        button {
+            background-color: black;
+            color: yellow;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: yellow;
+            color: black;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WTKNJFD8" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div class="container">
+        <h2>Snapchat - Add to Cart Event</h2>
+        <div class="data-field">
+            <span class="label">Event Name:</span> <span class="value">ADD_CART</span>
+        </div>
+        <div class="data-field">
+            <span class="label">Item ID:</span> <span class="value">12345</span>
+        </div>
+        <div class="data-field">
+            <span class="label">Item Name:</span> <span class="value">Black Hoodie</span>
+        </div>
+        <div class="data-field">
+            <span class="label">Item Category:</span> <span class="value">Clothing</span>
+        </div>
+        <div class="data-field">
+            <span class="label">Price:</span> <span class="value">$49.99</span>
+        </div>
+        <div class="data-field">
+            <span class="label">Currency:</span> <span class="value">USD</span>
+        </div>
+        <button id="trackEvent">Add to Cart</button>
+    </div>
+
+    <script>
+        document.getElementById('trackEvent').addEventListener('click', function() {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'ADD_CART',
+                'item_id': '12345',
+                'item_name': 'Black Hoodie',
+                'item_category': 'Clothing',
+                'price': 49.99,
+                'currency': 'USD'
+            });
+            alert('ADD_CART event fired for item: Black Hoodie');
+        });
+    </script>
+</body>
+</html>
