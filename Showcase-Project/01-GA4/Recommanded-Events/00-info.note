@@ -1,0 +1,267 @@
+<=<=<=<=<=<=<=<=<=<=<=<=<=<=<=<=<= Google Account Information =>=>=>=>=>==>=>=>=>=>=>=>=>=>
+User/Gmail ID : ga4gtmpractice1@gmail.com / PWD : *ga4gtmpracticeAbcd#  |  ga4gtmpractice1@gmail.com/*ga4gtmpracticeAbcd#
+User/Gmail ID	: azfarrabibsakif@gmail.com / PWD : *ga4gtmpracticeAbcd#  |  azfarrabibsakif@gmail.com/*ga4gtmpracticeAbcd#
+User/Gmail ID	: salamfreelancing@gmail.com / PWD : *dohalia1964#  |  salamfreelancing@gmail.com/*dohalia1964#
+User/Gmail ID	: msasaroar@gmail.com / PWD : *dohalia1964#  |  msasaroar@gmail.com/*dohalia1964#
+<=<=<=<=<=<=<=<=<=<=<=<=<=<=<=<=<= Google Account Information =>=>=>=>=>==>=>=>=>=>=>=>=>=>
+
+01. GA4 GTM-N4MMS7TS
+
+<!-- Google Tag Manager (GTM-PPBVCLNF) -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPBVCLNF');</script>
+
+<!-- Google Tag Manager (GTM-N4MMS7TS) -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer2','GTM-N4MMS7TS');</script>
+===========================================================================================
+<!-- Google Tag Manager (noscript) for GTM-PPBVCLNF -->
+<noscript><iframe src="https://www.googletagmanager.com/ns?id=GTM-PPBVCLNF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- Google Tag Manager (noscript) for GTM-N4MMS7TS -->
+<noscript><iframe src="https://www.googletagmanager.com/ns?id=GTM-N4MMS7TS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+
+
+
+To ChatGPT >>> 
+Memorize following instruction: 
+Page to be create: GA4 schema compliant eCommerce html page. 
+Include all frequently used parameters.
+Show parameters name and values on the page in a readable format such a way so that page looks like a data entry screen but no need to data entry.
+The event will be fire on click a button.
+Make the page Google Analytics like look & feel.
+The page will be tracked with GTM.
+Use multiple item if there is item information.
+For making the page compact, show all info except items side by side 2 section.
+Subject to demonstrate: GA4 schema compliant even
+t "add_shipping_info".
+https://developers.google.com/analytics/devguides/collection/ga4/reference/events?client_type=gtm#add_payment_info
+Create another page for the event : add_payment_info
+Create another page for the event : add_shipping_info
+Create another page for the event : add_to_cart
+Create another page for the event : purchase
+
+
+=================================
+[GA4] Automatically collected events are events that are collected by default when you set up Google Analytics on your website or app.
+=================================
+https://support.google.com/analytics/answer/9234069
+click
+file_download
+first_visit
+form_start
+form_submit
+page_view
+scroll
+session_start
+user_engagement
+video_complete
+video_progress
+video_start
+view_search_results
+
+
+
+==============================================================================================
+[GA4] Enhanced measurement events are events that are collected when you set up Google Analytics on your website or app and enhanced measurement is enabled.
+==============================================================================================
+https://support.google.com/analytics/answer/9216061?sjid=9969511612730558330-NC
+page_view
+scroll
+click
+view_search_results
+video_start
+video_progress
+video_complete
+file_download
+form_start
+form_submit
+
+
+
+=================
+[GA4] Recommended events are events that you implement, but that have predefined names and parameters. These events unlock existing and future reporting capabilities.
+=================
+https://support.google.com/analytics/answer/9267735?sjid=15642985394770298078-NC
+
+=================================================
+                                    For all properties
+=================================================
+We recommend these events to all customers in all business verticals. Later 
+sections in this article include some of these events when we recommend 
+sending the events for the given use case.
+=================================================
+Event				        Trigger when a user...
+=================================================
+ad_impression			  sees an advertisement, for apps only
+earn_virtual_currency	 earns virtual currency (coins, gems, tokens, etc.)
+generate_lead			   submits a form or a request for information
+join_group			        joins a group
+login	                      logs in
+purchase				    completes a purchase
+refund				         receives a refund
+search				         searches your website or app
+select_content			    selects content on your website or app
+share				          shares content from your website or app
+sign_up				         signs up for an account on your website or app
+spend_virtual_currency	 spends virtual currency (coins, gems, tokens, etc.)
+tutorial_begin			     begins a tutorial during an on-boarding process
+tutorial_complete		   completes a tutorial during an on-boarding process
+
+=================================================
+                                    For online sales
+=================================================
+We recommend these events when you want to measure sales on your site or app. 
+They're useful for retail, ecommerce, education, real estate, and travel. Sending 
+the events populates the Ecommerce purchases report. To learn more about these 
+events, see Measure ecommerce for your website. View Measure ecommerce (app) 
+for events in your app project.
+=================================================
+Event	                 Trigger when a user...
+=================================================
+add_payment_info	submits their payment information during checkout
+add_shipping_info	 submits their shipping information during checkout
+add_to_cart	           adds items to their shopping cart
+add_to_wishlist	      adds items to their wishlist
+begin_checkout	     begins checkout
+purchase	           completes a purchase
+refund	                receives a refund
+remove_from_cart	removes items from their shopping cart
+select_item	            selects an item from a list of items or offerings
+select_promotion	 selects a promotion
+view_cart	            views their shopping cart
+view_item	           views an item
+view_item_list	       views a list of items or offerings
+view_promotion	    views a promotion on your website or app
+=================================================
+                                    For lead generation
+=================================================
+We recommend these events when you want to measure the full lead generation 
+funnel for online and offline activity. They're useful for business-to-business sales, 
+automotive sales, insurance sales, or generally for when conversions occur offline.
+=================================================
+Event	                    Trigger when a user...
+=================================================
+generate_lead	          submits a form online or submits information offline
+qualify_lead	            is marked as fitting the criteria to become a qualified lead
+disqualify_lead	           is marked as disqualified to become a lead for one of several reasons
+working_lead	          contacts or is contacted by a representative
+close_convert_lead	     became a converted lead (a customer)
+close_unconvert_lead    is marked as not becoming a converted lead for one of several reasons
+=================================================
+                                        For games
+=================================================
+We recommend these events for games properties. Sending these events 
+populates the games reports.
+=================================================
+Event	                    Trigger when a user...
+=================================================
+earn_virtual_currency	earns virtual currency (coins, gems, tokens, etc.)
+join_group	               joins a group
+level_end	                completes a level in a game
+level_start	                 starts a new level in a game
+level_up	                levels-up in the game
+post_score	               posts their score
+select_content	           selects content
+spend_virtual_currency	spends virtual currency (coins, gems, tokens, etc.)
+tutorial_begin	           begins a tutorial during an on-boarding process
+tutorial_complete	     completes a tutorial during an on-boarding process
+unlock_achievement	   unlocks an achievement
+
+
+Create a html page to demonstrate GA4 event generate_lead for an eCommerce site.
+Event will be fire on click a button.
+Event will be tracked using GTM.
+GTM code will be 'GTM-PPBVCLNF'
+Form theme will be as like GTM UI.
+
+When following parameters is used ?
+    currency, value, lead_source
+
+
+
+================================================================================================
+
+=================================
+E-commerce Events
+=================================
+add_payment_info
+add_shipping_info
+add_to_cart
+add_to_wishlist
+begin_checkout
+in_app_purchase
+item_list
+purchase
+refund
+remove_from_cart
+select_item
+view_item
+view_item_list
+=================================
+Advertising Events
+=================================
+ad_click
+ad_exposure
+ad_impression
+=================================
+App Lifecycle Events
+=================================
+app_install
+app_remove
+app_update
+screen_view
+session_start
+=================================
+User Interaction & Engagement Events
+=================================
+click
+click (with outbound parameter)
+contact
+element_visible
+file_download
+form_start
+form_submit
+generate_lead
+lead
+login
+outbound_click
+scroll
+search
+share
+sign_up
+social_interaction
+user_engagement
+view_search_results
+=================================
+Gaming events
+=================================
+earn_virtual_currency
+join_group
+level_up
+post_score
+spend_virtual_currency
+=================================
+System & Technical Events
+=================================
+custom_event
+debug_mode
+dom_ready
+exception
+first_visit
+hash_change
+history_change
+page_view
+page_visibility
+page_visible
+thank_you
+timing_complete
+unsubscribe
+subscribe
+window_loaded
+=================================
+Video Interaction events
+=================================
+video_complete
+video_pause
+video_progress
+video_start

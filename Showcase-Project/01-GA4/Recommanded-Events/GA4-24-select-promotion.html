@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Select Promotion Event</title>
+  <script>
+    // Google Tag Manager - GTM-WTKNJFD8
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'}); 
+    var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); 
+    })(window,document,'script','dataLayer','GTM-WTKNJFD8');
+  </script>
+  <script src="script.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, green, red, orange, blue);
+      color: black;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: green;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+    }
+    header a {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: orange;
+      color: blue;
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+    header a:hover {
+      background-color: blue;
+      color: orange;
+    }
+    main {
+      margin: 125px 20px;
+      text-align: center;
+    }
+    .data-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .data-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid #ddd;
+      padding: 10px;
+      width: 150px;
+      text-align: center;
+    }
+    .data-item > div {
+      margin: 5px 0;
+    }
+    button {
+      background-color: orange;
+      color: blue;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      margin: 20px;
+    }
+    button:hover {
+      background-color: blue;
+      color: orange;
+    }
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #f1f1f1;
+      text-align: center;
+      height: 50px;
+    }
+    footer object {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager NoScript -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WTKNJFD8" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  
+  <header>
+    <a href="index.html">Home</a>
+    <h1>Select Promotion</h1>
+  </header>
+
+  <main>
+    <h2>Promotion Information</h2>
+    <div class="data-container" id="data-layer-display">
+      <!-- DataLayer information will be dynamically added here -->
+    </div>
+    <button id="triggerSelectPromotionEvent">Trigger Select Promotion Event</button>
+    <button onclick="navigateToURL('select_promotion')">Show Google Reference</button>
+  </main>
+
+  <footer>
+    <object type="text/html" data="footer.html"></object>
+  </footer>
+
+  <script>
+    // Initialize dataLayer with the provided data
+    const eventData = {
+      event: "select_promotion",
+      ecommerce: {
+        creative_name: "Summer Banner",
+        creative_slot: "featured_app_1",
+        promotion_id: "P_12345",
+        promotion_name: "Summer Sale",
+        items: [
+          {
+            item_id: "SKU_12345",
+            item_name: "Stan and Friends Tee",
+            affiliation: "Google Merchandise Store",
+            coupon: "SUMMER_FUN",
+            discount: 2.22,
+            index: 0,
+            item_brand: "Google",
+            item_category: "Apparel",
+            item_category2: "Adult",
+            item_category3: "Shirts",
+            item_category4: "Crew",
+            item_category5: "Short sleeve",
+            item_list_id: "related_products",
+            item_list_name: "Related Products",
+            item_variant: "green",
+            location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo-10",
+            price: 10.01,
+            quantity: 3
+          }
+        ]
+      }
+    };
+
+    dataLayer.push(eventData);
+
+    // Display dataLayer information in a side-by-side layout
+    const displayDataLayer = () => {
+      const container = document.getElementById('data-layer-display');
+      container.innerHTML = '';
+
+      const ecommerce = eventData.ecommerce;
+      for (const key in ecommerce) {
+        if (Array.isArray(ecommerce[key])) {
+          ecommerce[key].forEach((item, index) => {
+            for (const prop in item) {
+              const dataItem = document.createElement('div');
+              dataItem.classList.add('data-item');
+              let label = prop.replace(/_/g, " ").toUpperCase();
+              // Make the label more readable and descriptive
+              if (label === "ITEM_ID") label = "Product ID";
+              if (label === "ITEM_NAME") label = "Product Name";
+              if (label === "AFFILIATION") label = "Store Affiliation";
+              if (label === "DISCOUNT") label = "Product Discount";
+              if (label === "ITEM_BRAND") label = "Brand";
+              if (label === "ITEM_CATEGORY") label = "Main Category";
+              if (label === "ITEM_CATEGORY2") label = "Sub Category 1";
+              if (label === "ITEM_CATEGORY3") label = "Sub Category 2";
+              if (label === "ITEM_CATEGORY4") label = "Sub Category 3";
+              if (label === "ITEM_CATEGORY5") label = "Sub Category 4";
+              if (label === "ITEM_LIST_ID") label = "Item List ID";
+              if (label === "ITEM_LIST_NAME") label = "Item List Name";
+              if (label === "ITEM_VARIANT") label = "Variant";
+              if (label === "LOCATION_ID") label = "Location ID";
+              if (label === "PRICE") label = "Price";
+              if (label === "QUANTITY") label = "Quantity";
+
+              dataItem.innerHTML = `<div><strong>${label}</strong></div><div>${item[prop]}</div>`;
+              container.appendChild(dataItem);
+            }
+          });
+        } else {
+          const dataItem = document.createElement('div');
+          dataItem.classList.add('data-item');
+          let label = key.replace(/_/g, " ").toUpperCase();
+          if (label === "CURRENCY") label = "Currency";
+          if (label === "VALUE") label = "Total Value";
+          if (label === "COUPON") label = "Coupon Code";
+
+          dataItem.innerHTML = `<div><strong>${label}</strong></div><div>${ecommerce[key]}</div>`;
+          container.appendChild(dataItem);
+        }
+      }
+    };
+
+    displayDataLayer();
+
+    // Trigger the select_promotion event
+    document.getElementById('triggerSelectPromotionEvent').addEventListener('click', () => {
+      dataLayer.push(eventData);
+      alert('select_promotion event triggered!');
+    });
+  </script>
+</body>
+</html>

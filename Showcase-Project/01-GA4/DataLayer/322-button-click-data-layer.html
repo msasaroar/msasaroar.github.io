@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Click Tracking</title>
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id=GTM-WTKNJFD8'+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WTKNJFD8');</script>
+    <!-- End Google Tag Manager -->
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        button {
+            background-color: orange;
+            color: blue;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: blue;
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WTKNJFD8"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <h1>Button Click Tracking Example</h1>
+    
+    <button id="btn1" class="track-button" data-button-name="Subscribe">Subscribe</button>
+    <button id="btn2" class="track-button" data-button-name="Buy Now">Buy Now</button>
+    <button id="btn3" class="track-button" data-button-name="Learn More">Learn More</button>
+    
+    <script>
+        document.querySelectorAll('.track-button').forEach(button => {
+            button.addEventListener('click', function() {
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                    'event': 'button_click',
+                    'button_name': this.getAttribute('data-button-name'),
+                    'button_id': this.id,
+                    'page_path': window.location.pathname
+                });
+                alert('Button Click Event Tracked: ' + this.getAttribute('data-button-name'));
+            });
+        });
+    </script>
+</body>
+</html>

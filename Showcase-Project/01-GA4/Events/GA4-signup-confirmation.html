@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Confirmation</title>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-WTKNJFD8');
+    </script>
+    <!-- End Google Tag Manager -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background: white;
+        }
+        .confirmation-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .confirmation-message {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WTKNJFD8" 
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div class="confirmation-container">
+        <div class="confirmation-message">
+            <h1>Signup Confirmed</h1>
+            <p>Thank you for signing up, <span id="user-name">User</span>!</p>
+            <p>Your email: <span id="user-email">example@example.com</span></p>
+        </div>
+    </div>
+
+    <script>
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const firstName = urlParams.get('first_name');
+        const lastName = urlParams.get('last_name');
+        const email = urlParams.get('email');
+
+        // Display user details on the confirmation page
+        document.getElementById('user-name').textContent = `${firstName} ${lastName}`;
+        document.getElementById('user-email').textContent = email;
+
+        // Push signup confirmation event to dataLayer for GA4
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: "signup_confirmed",
+            signup_details: {
+                first_name: firstName,
+                last_name: lastName,
+                email: email,
+                confirmation_time: new Date().toISOString()
+            }
+        });
+    </script>
+</body>
+</html>

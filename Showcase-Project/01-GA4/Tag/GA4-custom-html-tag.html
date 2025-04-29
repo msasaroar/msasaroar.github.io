@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom HTML Tag</title>
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-WTKNJFD8');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <style>
+        /* General Page Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: white;
+            color: black;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: green;
+            color: black;
+            text-align: center;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        /* Button Styling */
+        button, a {
+            background-color: orange;
+            width: 10%;
+            color: blue;
+            border: none;
+            padding: 10px 20px;
+            text-decoration: center;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+
+
+        button:hover, a:hover {
+            background-color: blue;
+            color: orange;
+        }
+
+        /* Home Button Styling */
+        .home-button {
+            top: 25px;
+            left: 20px;
+            padding: 15px 20px;
+        }
+
+        /* Main Container Styling */
+        .container {
+            text-align: center;
+            padding: 100px 20px 60px; /* Adjust padding for fixed header/footer */
+        }
+    </style>
+</head>
+<body>
+
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WTKNJFD8"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+    
+    <header>
+    <div>
+        <button class="home-button" onclick="location.href='index.html'">Home</button>
+        <h1>Demonstration : Custom HTML Tag</h1>
+    </div>
+    </header>
+
+</body>
+</html>

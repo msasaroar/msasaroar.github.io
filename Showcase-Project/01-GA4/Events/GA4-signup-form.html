@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Process</title>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-WTKNJFD8');
+    </script>
+    <!-- End Google Tag Manager -->
+    <style>
+    body {
+        background: white;
+        color: black;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    /* Header Styles */
+    header {
+        background-color: green;
+        color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        height: 60px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+    header h1 {
+        margin: 0;
+        font-size: 25px bold;
+    }
+
+    /* Home Button Styles */
+    #home-button {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        background-color: orange;
+        color: blue;
+        border: none;
+        padding: 10px 25px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px bold;
+    }
+
+    #home-button:hover {
+        background-color: blue;
+        color: orange;
+        border: 2px solid orange;
+    }
+        main {
+            padding: 20px;
+        }
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: green;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: orange;
+            color: blue;
+            padding: 10px 20px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: blue;
+            color: orange;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WTKNJFD8" 
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header>
+        <h1>Signup Process</h1>
+        <button id="home-button" onclick="window.location.href='index.html';">Home</button>
+    </header>
+
+    <main>
+        <!-- Signup Page -->
+        <div class="form-container">
+            <h2>Create Your Account</h2>
+            <form id="signup-form" action="105-signup-confirmation.html" method="get" onsubmit="trackSignup()">
+                <input type="text" name="first_name" placeholder="First Name" required>
+                <input type="text" name="last_name" placeholder="Last Name" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        function trackSignup() {
+            // Push signup event to dataLayer for GA4
+            window.dataLayer = window.dataLayer || [];
+            const firstName = document.querySelector('input[name="first_name"]').value;
+            const lastName = document.querySelector('input[name="last_name"]').value;
+            const email = document.querySelector('input[name="email"]').value;
+            window.dataLayer.push({
+                event: "signup_initiated",
+                user_details: {
+                    first_name: firstName,
+                    last_name: lastName,
+                    email: email
+                }
+            });
+            // Store details in sessionStorage to show on confirmation page
+            sessionStorage.setItem("signupDetails", JSON.stringify({ firstName, lastName, email }));
+        }
+    </script>
+</body>
+</html>
