@@ -1,101 +1,239 @@
-<style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GA4 | Custom Events</title>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB72WSHR');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <style>
+    /* Global Styles */
     html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background-color: white;
+      color: black;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
+
+    .page-wrapper {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    /* Header */
+    header {
+      background-color: green;
+      text-align: center;
+      padding: 10px;
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+      color: white;
+    }
+
+    .home-button {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: orange;
+      color: blue;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    /* Main Content */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    /* Listbox Group */
     .listbox-group {
-        display: flex;
-        flex-direction: column;
-        height: 90vh; /* পুরো ভিউপোর্ট উচ্চতা */
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      margin-top: 20px;
     }
+
+    .listbox-group label {
+      font-weight: bold;
+      font-size: 20px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
     .listbox-group ul {
-        list-style: none;
-        padding: 0;
-        margin: 10px 0;
-        border: 1px solid #ccc;
-        flex-grow: 1; /* লিস্টবক্স পুরো স্ক্রীন নেবে */
-        overflow-y: auto;
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      max-height: 300px;
+      overflow-y: auto;
+      background-color: #f9f9f9;
     }
+
     .listbox-group li {
-        padding: 10px;
-        cursor: pointer;
-        border-bottom: 1px solid #eee;
+      padding: 10px;
+      cursor: pointer;
+      border-bottom: 1px solid #eee;
+      transition: background-color 0.3s;
     }
-    .listbox-group li:hover, .listbox-group li.selected {
-        background-color: #007bff;
-        color: white;
+
+    .listbox-group li:hover, 
+    .listbox-group li.selected {
+      background-color: #007bff;
+      color: white;
     }
+
+    /* Buttons */
     button {
-        margin: 10px;
-        padding: 10px 15px;
-        cursor: pointer;
-        background-color: orange;
-        color: blue;
-        border: none;
-        border-radius: 5px;
+      background-color: orange;
+      color: blue;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+      transition: all 0.3s;
     }
+
     button:hover {
-        background-color: blue;
-        color: orange;
+      background-color: blue;
+      color: orange;
     }
+
     button:disabled {
-        background-color: gray;
-        cursor: not-allowed;
+      background-color: gray;
+      cursor: not-allowed;
+      color: white;
     }
-</style>
 
-<div class="listbox-group">
-    <label for="selectedItem">GA4 : Recommended eCommerce Events</label>
-    <ul id="selectedItem" role="listbox" tabindex="0">
-        <li tabindex="0" data-value="what-is-custom-event.html">CUSTOM EVENT</li>
-        <li tabindex="0" data-value="GA4-C01-Time-On-Page.html">GA4 # C01. Track Time on Page Using GTM for GA4</li>
-        <li tabindex="0" data-value="GA4-C02-Inject-Custom-Event-Using-GTM.html">GA4 # C02. Inject Custom Event Using GTM for GA4</li>
-        <li tabindex="0" data-value="GA4-C03-Inject-Custom-Event-Using-GTM.html">GA4 # C03. Inject Custom Event Using GTM for GA4</li>
-        <li tabindex="0" data-value="GA4-01-add_payment_info.html">GA4 # 01. add_payment_info</li>
-        <li tabindex="0" data-value="GA4-02-add_shipping_info.html">GA4 # 02. add_shipping_info</li>
-        <li tabindex="0" data-value="GA4-03-add_to_cart.html">GA4 # 03. add_to_cart</li>
-        <li tabindex="0" data-value="GA4-05-begin_checkout.html">GA4 # 05. begin_checkout</li>
-        <li tabindex="0" data-value="GA4-10-generate_lead.html">GA4 # 10. generate_lead</li>
-        <li tabindex="0" data-value="GA4-17-purchase.html">GA4 # 17. purchase</li>
-        <li tabindex="0" data-value="GA4-19-refund.html">GA4 # 19. refund</li>
-        <li tabindex="0" data-value="GA4-20-remove_from_cart.html">GA4 # 20. remove_from_cart</li>
-        <li tabindex="0" data-value="GA4-23-select_item.html">GA4 # 23. select_item</li>
-        <li tabindex="0" data-value="GA4-32-view_item.html">GA4 # 32. view_item</li>
-        <li tabindex="0" data-value="GA4-33-view_item_list.html">GA4 # 33. view_item_list</li>
-        <li tabindex="0" data-value="GA4-34-view_search_result.html">GA4 # 34. view_search_result</li>
-        <li tabindex="0" data-value="GA4-99-All-In-One.html">GA4 # 99. All Event On A Single Page</li>
-        <li tabindex="0" data-value="GA4-99-purchase-journey.html">GA4 # 99. eCommerce Purchase Journey</li>
-        <li tabindex="0" data-value="index-99-InshaAllah.html">++++++++++++++++++++++</li>
-        <li tabindex="0" data-value="GA4-04-add_to_wishlist.html">GA4 # ??. add_to_wishlist</li>
-        <li tabindex="0" data-value="GA4-06-close_convert_lead.html">GA4 # ??. close_convert_lead</li>
-        <li tabindex="0" data-value="GA4-07-close_unconvert_lead.html">GA4 # ??. close_unconvert_lead</li>
-        <li tabindex="0" data-value="GA4-08-disqualify_lead.html">GA4 # ??. disqualify_lead</li>
-        <li tabindex="0" data-value="GA4-09-earn_virtual_currency.html">GA4 # ??. earn_virtual_currency</li>
-        <li tabindex="0" data-value="GA4-11-join_group.html">GA4 # ??. join_group</li>
-        <li tabindex="0" data-value="GA4-12-level_end.html">GA4 # ??. level_end</li>
-        <li tabindex="0" data-value="GA4-13-level_start.html">GA4 # ??. level_start</li>
-        <li tabindex="0" data-value="GA4-14-level_up.html">GA4 # ??. level_up</li>
-        <li tabindex="0" data-value="GA4-15-login.html">GA4 # ??. login</li>
-        <li tabindex="0" data-value="GA4-16-post_score.html">GA4 # ??. post_score</li>
-        <li tabindex="0" data-value="GA4-18-qualify_lead.html">GA4 # ??. qualify_lead</li>
-        <li tabindex="0" data-value="GA4-21-search.html">GA4 # ??. search</li>
-        <li tabindex="0" data-value="GA4-22-select_content.html">GA4 # ??. select_content</li>
-        <li tabindex="0" data-value="GA4-24-select_promotion.html">GA4 # ??. select_promotion</li>
-        <li tabindex="0" data-value="GA4-25-share.html">GA4 # ??. share</li>
-        <li tabindex="0" data-value="GA4-26-sign_up.html">GA4 # ??. sign_up</li>
-        <li tabindex="0" data-value="GA4-27-spend_virtual_currency.html">GA4 # ??. spend_virtual_currency</li>
-        <li tabindex="0" data-value="GA4-28-tutorial_begin.html">GA4 # ??. tutorial_begin</li>
-        <li tabindex="0" data-value="GA4-29-tutorial_complete.html">GA4 # ??. tutorial_complete</li>
-        <li tabindex="0" data-value="GA4-30-unlock_achievement.html">GA4 # ??. unlock_achievement</li>
-        <li tabindex="0" data-value="GA4-31-view_cart.html">GA4 # ??. view_cart</li>
-        <li tabindex="0" data-value="GA4-34-view_promotion.html">GA4 # ??. view_promotion</li>
-        <li tabindex="0" data-value="GA4-35-working_lead.html">GA4 # ??. working_lead</li>
-    </ul>
-    <button id="proceedBtn" disabled>Proceed</button>
-</div>
+    /* Footer */
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #f1f1f1;
+      text-align: center;
+      height: 50px;
+    }
 
-<script>
+    footer object {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <div class="page-wrapper">
+    <header>
+      <button class="home-button" onclick="location.href='../index.html'">Home</button>
+      <h1>GA4 | Custom Events</h1>
+    </header>
+
+    <main>
+      <div class="listbox-group">
+        <label for="selectedItem">GA4 : Custom Events</label>
+        <ul id="selectedItem" role="listbox" tabindex="0">
+          <li tabindex="0" data-value="what-is-custom-event.html">CUSTOM EVENT</li>
+          <li tabindex="0" data-value="GA4-C01-Time-On-Page.html">GA4 # C01. Track Time on Page Using GTM for GA4</li>
+          <li tabindex="0" data-value="GA4-C02-Inject-Custom-Event-Using-GTM.html">GA4 # C02. Inject Custom Event Using GTM for GA4</li>
+          <li tabindex="0" data-value="GA4-C03-Inject-Custom-Event-Using-GTM.html">GA4 # C03. Inject Custom Event Using GTM for GA4</li>
+          <li tabindex="0" data-value="GA4-01-add_payment_info.html">GA4 # 01. add_payment_info</li>
+          <li tabindex="0" data-value="GA4-02-add_shipping_info.html">GA4 # 02. add_shipping_info</li>
+          <li tabindex="0" data-value="GA4-03-add_to_cart.html">GA4 # 03. add_to_cart</li>
+          <li tabindex="0" data-value="GA4-05-begin_checkout.html">GA4 # 05. begin_checkout</li>
+          <li tabindex="0" data-value="GA4-10-generate_lead.html">GA4 # 10. generate_lead</li>
+          <li tabindex="0" data-value="GA4-17-purchase.html">GA4 # 17. purchase</li>
+          <li tabindex="0" data-value="GA4-19-refund.html">GA4 # 19. refund</li>
+          <li tabindex="0" data-value="GA4-20-remove_from_cart.html">GA4 # 20. remove_from_cart</li>
+          <li tabindex="0" data-value="GA4-23-select_item.html">GA4 # 23. select_item</li>
+          <li tabindex="0" data-value="GA4-32-view_item.html">GA4 # 32. view_item</li>
+          <li tabindex="0" data-value="GA4-33-view_item_list.html">GA4 # 33. view_item_list</li>
+          <li tabindex="0" data-value="GA4-34-view_search_result.html">GA4 # 34. view_search_result</li>
+          <li tabindex="0" data-value="GA4-99-All-In-One.html">GA4 # 99. All Event On A Single Page</li>
+          <li tabindex="0" data-value="GA4-99-purchase-journey.html">GA4 # 99. eCommerce Purchase Journey</li>
+          <li tabindex="0" data-value="index-99-InshaAllah.html">++++++++++++++++++++++</li>
+          <li tabindex="0" data-value="GA4-04-add_to_wishlist.html">GA4 # ??. add_to_wishlist</li>
+          <li tabindex="0" data-value="GA4-06-close_convert_lead.html">GA4 # ??. close_convert_lead</li>
+          <li tabindex="0" data-value="GA4-07-close_unconvert_lead.html">GA4 # ??. close_unconvert_lead</li>
+          <li tabindex="0" data-value="GA4-08-disqualify_lead.html">GA4 # ??. disqualify_lead</li>
+          <li tabindex="0" data-value="GA4-09-earn_virtual_currency.html">GA4 # ??. earn_virtual_currency</li>
+          <li tabindex="0" data-value="GA4-11-join_group.html">GA4 # ??. join_group</li>
+          <li tabindex="0" data-value="GA4-12-level_end.html">GA4 # ??. level_end</li>
+          <li tabindex="0" data-value="GA4-13-level_start.html">GA4 # ??. level_start</li>
+          <li tabindex="0" data-value="GA4-14-level_up.html">GA4 # ??. level_up</li>
+          <li tabindex="0" data-value="GA4-15-login.html">GA4 # ??. login</li>
+          <li tabindex="0" data-value="GA4-16-post_score.html">GA4 # ??. post_score</li>
+          <li tabindex="0" data-value="GA4-18-qualify_lead.html">GA4 # ??. qualify_lead</li>
+          <li tabindex="0" data-value="GA4-21-search.html">GA4 # ??. search</li>
+          <li tabindex="0" data-value="GA4-22-select_content.html">GA4 # ??. select_content</li>
+          <li tabindex="0" data-value="GA4-24-select_promotion.html">GA4 # ??. select_promotion</li>
+          <li tabindex="0" data-value="GA4-25-share.html">GA4 # ??. share</li>
+          <li tabindex="0" data-value="GA4-26-sign_up.html">GA4 # ??. sign_up</li>
+          <li tabindex="0" data-value="GA4-27-spend_virtual_currency.html">GA4 # ??. spend_virtual_currency</li>
+          <li tabindex="0" data-value="GA4-28-tutorial_begin.html">GA4 # ??. tutorial_begin</li>
+          <li tabindex="0" data-value="GA4-29-tutorial_complete.html">GA4 # ??. tutorial_complete</li>
+          <li tabindex="0" data-value="GA4-30-unlock_achievement.html">GA4 # ??. unlock_achievement</li>
+          <li tabindex="0" data-value="GA4-31-view_cart.html">GA4 # ??. view_cart</li>
+          <li tabindex="0" data-value="GA4-34-view_promotion.html">GA4 # ??. view_promotion</li>
+          <li tabindex="0" data-value="GA4-35-working_lead.html">GA4 # ??. working_lead</li>  
+        </ul>
+        <button id="proceedBtn" disabled>Proceed</button>
+      </div>
+    </main>
+
+    <footer>
+      <object type="text/html" data="footer.html"></object>
+    </footer>
+  </div>
+
+  <script>
     const listbox = document.getElementById("selectedItem");
     const listItems = listbox.querySelectorAll("li");
     const proceedBtn = document.getElementById("proceedBtn");
@@ -103,37 +241,38 @@
     let selectedValue = "";
 
     function selectItem(index) {
-        listItems.forEach(li => li.classList.remove("selected"));
-        if (index >= 0 && index < listItems.length) {
-            listItems[index].classList.add("selected");
-            selectedValue = listItems[index].getAttribute("data-value");
-            proceedBtn.disabled = false;
-            listbox.setAttribute("aria-activedescendant", listItems[index].id);
-        }
+      listItems.forEach(li => li.classList.remove("selected"));
+      if (index >= 0 && index < listItems.length) {
+        listItems[index].classList.add("selected");
+        selectedValue = listItems[index].getAttribute("data-value");
+        proceedBtn.disabled = false;
+      }
     }
 
     listItems.forEach((item, index) => {
-        item.addEventListener("click", function () {
-            selectedIndex = index;
-            selectItem(selectedIndex);
-        });
+      item.addEventListener("click", function () {
+        selectedIndex = index;
+        selectItem(selectedIndex);
+      });
     });
 
     listbox.addEventListener("keydown", function (e) {
-        if (e.key === "ArrowDown" && selectedIndex < listItems.length - 1) {
-            selectedIndex++;
-            selectItem(selectedIndex);
-        } else if (e.key === "ArrowUp" && selectedIndex > 0) {
-            selectedIndex--;
-            selectItem(selectedIndex);
-        } else if (e.key === "Enter" && selectedValue) {
-            window.location.href = selectedValue;
-        }
+      if (e.key === "ArrowDown" && selectedIndex < listItems.length - 1) {
+        selectedIndex++;
+        selectItem(selectedIndex);
+      } else if (e.key === "ArrowUp" && selectedIndex > 0) {
+        selectedIndex--;
+        selectItem(selectedIndex);
+      } else if (e.key === "Enter" && selectedValue) {
+        window.location.href = selectedValue;
+      }
     });
 
     proceedBtn.addEventListener("click", function () {
-        if (selectedValue) {
-            window.location.href = selectedValue;
-        }
+      if (selectedValue) {
+        window.location.href = selectedValue;
+      }
     });
-</script>
+  </script>
+</body>
+</html>
