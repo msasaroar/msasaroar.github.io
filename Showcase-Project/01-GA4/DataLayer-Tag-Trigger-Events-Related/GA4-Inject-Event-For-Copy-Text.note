@@ -1,0 +1,90 @@
+In a real-world project, is it necessary to modify the page to implement copy text tracking ?
+
+Great question! Here's a clear answer for your real-world implementation:
+
+---
+
+### ✅ **Do You Need to Modify the Page in a Real Project?**
+
+**Yes**, you usually need to **modify the page** to some extent — but **how much** depends on your approach:
+
+---
+
+### ✅ Option 1: Modify the Page (Recommended for Full Control)
+
+You **add a small JavaScript snippet** directly to the page’s `<head>` or `<body>` to detect the `copy` event and push it to the data layer:
+
+```js
+document.addEventListener('copy', function(event) {
+    const copiedText = document.getSelection().toString();
+    if (copiedText.trim() !== '') {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: 'text_copied',
+            copied_text: copiedText
+        });
+    }
+});
+```
+
+This gives you **reliable and flexible** tracking with full access to the copied text.
+
+🔧 **Yes, this requires a small code edit on the page**.
+
+---
+
+### ⚠️ Option 2: Only Use GTM Without Page Edit
+
+GTM **alone cannot track `copy` events** because:
+- GTM can’t directly listen for `document.addEventListener('copy')` without custom code.
+- GTM only reacts to DOM or user interactions like clicks, form submissions, etc., unless custom JavaScript is injected.
+
+🛑 So if you **don’t add code to the site**, copy tracking **won’t work properly**.
+
+---
+
+### 🔐 Real-World Best Practice (Safe & Scalable)
+
+If you **can't edit the page directly**, and:
+- You have **access to GTM**,
+- And your site **allows custom JavaScript via GTM**,
+
+👉 You can inject the `copy` listener using a **Custom HTML Tag in GTM**. Here’s how:
+
+#### GTM Setup:
+1. **Create a Custom HTML Tag**
+```html
+<script>
+document.addEventListener('copy', function(event) {
+    const copiedText = document.getSelection().toString();
+    if (copiedText.trim() !== '') {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: 'text_copied',
+            copied_text: copiedText
+        });
+    }
+});
+</script>
+```
+
+2. **Trigger: All Pages**
+3. **Fire Once per Page**
+
+✅ This works as long as:
+- The page allows inline scripts.
+- GTM is installed and working correctly.
+
+---
+
+### ✅ Summary
+
+| Method                          | Page Edit Needed? | Recommended For         | Copied Text Captured |
+|-------------------------------|-------------------|-------------------------|-----------------------|
+| Script in HTML Page           | ✅ Yes            | Best Accuracy & Control | ✅ Yes                |
+| GTM Custom HTML Tag           | ❌ No (uses GTM)  | If you can’t touch code | ✅ Yes                |
+| GTM without any script        | ❌ No             | Not usable              | ❌ No                 |
+
+---
+
+Would you like me to show you the **GTM-only version** (no HTML edit needed) for copy tracking as well?

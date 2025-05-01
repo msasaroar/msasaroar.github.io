@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Demonstration of GTM Window Loaded Trigger">
+    <title>Window Loaded Trigger Demonstration</title>
+    
+    <!-- Google Tag Manager -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MB72WSHR');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: black;
+            background: linear-gradient(to right, green, red, orange, blue);
+        }
+
+        header {
+            background-color: green;
+            color: black;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .home-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: orange;
+            color: blue;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .home-button:hover {
+            background-color: blue;
+            color: orange;
+        }
+
+        .content {
+            margin-top: 80px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer {
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            background-color: white;
+        }
+
+        button {
+            background-color: orange;
+            color: blue;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: blue;
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header>
+        <button class="home-button" onclick="navigateHome()">Home</button>
+        <h1>Window Loaded Trigger Demonstration</h1>
+    </header>
+
+    <main class="content">
+        <h2>Welcome to the SPA</h2>
+        <p>This Single Page Application demonstrates the use of the 'Window Loaded Trigger' in Google Tag Manager.</p>
+        <button onclick="loadPage('index')">Index Page</button>
+        <button onclick="loadPage('about')">About Page</button>
+        <div id="spa-content" aria-live="polite">
+            <!-- SPA Content will load here -->
+        </div>
+    </main>
+
+    <footer>
+        <object type="text/html" data="footer.html" aria-label="Footer Content" style="width: 100%; height: 50px;"></object>
+    </footer>
+
+    <script>
+        function navigateHome() {
+            window.location.href = 'index.html';
+        }
+
+        function loadPage(page) {
+            const content = document.getElementById('spa-content');
+            if (page === 'index') {
+                content.innerHTML = '<h3>Index Page</h3><p>This is the index page loaded dynamically.</p>';
+            } else if (page === 'about') {
+                content.innerHTML = '<h3>About Page</h3><p>This is the about page loaded dynamically.</p>';
+            } else {
+                content.innerHTML = '<p>Error: Page not found.</p>';
+            }
+        }
+
+        window.addEventListener('load', function() {
+            console.log('Window Loaded - GTM Trigger Demonstrated');
+            window.dataLayer.push({ event: 'windowLoaded' });
+        });
+   </script>
+</body>
+</html>

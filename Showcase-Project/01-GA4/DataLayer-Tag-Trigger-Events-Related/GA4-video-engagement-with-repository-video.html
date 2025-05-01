@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l !== 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MB72WSHR');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Engagement Tracking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background: white;
+        }
+
+    /* Header Styles */
+    header {
+        background-color: green;
+        color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        height: 60px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 25px bold;
+    }
+
+        .video-container {
+            margin: 100px auto;
+            max-width: 300px; /* Reduced from 640px to 480px */
+        }
+
+        video {
+            width: 100%;
+            border: 5px solid #ccc;
+            border-radius: 8px;
+        }
+
+            /* Home Button Styles */
+    #home-button {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        background-color: orange;
+        color: blue;
+        border: none;
+        padding: 10px 25px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px bold;
+    }
+
+    #home-button:hover {
+        background-color: blue;
+        color: orange;
+        border: 2px solid orange;
+    }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header>
+        <h1>Video Engagement Tracking</h1>
+        <button id="home-button" onclick="window.location.href='index.html';">Home</button>
+    </header>
+
+    <div class="video-container">
+        <video id="trackedVideo" controls>
+            <source src="sample.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <script>
+        // Track video engagement events
+        const video = document.getElementById('trackedVideo');
+
+        // Helper function to push events to the dataLayer
+        function trackVideoEvent(action, currentTime) {
+            dataLayer.push({
+                'event': 'videoEngagement',
+                'videoAction': action,
+                'videoTitle': video.getAttribute('src'),
+                'currentTime': Math.round(currentTime),
+                'tagId': 'GA4 | Video Engagement Tracking'
+            });
+            console.log(`Event: ${action}, Time: ${Math.round(currentTime)} seconds`);
+        }
+
+        // Event listeners for tracking engagement
+        video.addEventListener('play', () => trackVideoEvent('play', video.currentTime));
+        video.addEventListener('pause', () => trackVideoEvent('pause', video.currentTime));
+        video.addEventListener('seeked', () => trackVideoEvent('seek', video.currentTime));
+        video.addEventListener('ended', () => trackVideoEvent('complete', video.currentTime));
+    </script>
+</body>
+</html>

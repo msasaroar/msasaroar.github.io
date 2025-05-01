@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ad Click Tracking</title>
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l !== 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MB72WSHR');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+    </script>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, green, red, orange, blue);
+            color: black;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: green;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+        .home-button {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            background-color: orange;
+            color: blue;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .home-button:hover {
+            background-color: blue;
+            color: orange;
+        }
+        main {
+            padding: 80px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .ad-container {
+            width: 320px;
+            padding: 20px;
+            border-radius: 15px;
+            background-color: rgb(89, 213, 197);
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.825);
+            margin: 100px 0;
+        }
+        .ad-logo {
+            width: 100px;
+            margin: 0 auto 15px;
+        }
+        .ad-headline {
+            font-size: 22px;
+            font-weight: bold;
+            color: #000000;
+            margin-bottom: 15px;
+        }
+        .ad-carousel {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+        .ad-carousel img {
+            width: 60px;
+            height: 60px;
+            margin: 0 5px;
+            border-radius: 10px;
+            border: 2px solid #ddd;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .ad-carousel img:hover {
+            transform: scale(1.1);
+            border-color: #ff5722;
+        }
+        .ad-body {
+            font-size: 16px;
+            color: #08127c;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        .ad-cta {
+            background-color: orange;
+            color: blue;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 25px;
+            display: inline-block;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .ad-cta:hover {
+            background-color: green;
+            transform: scale(1.05);
+        }
+        .ad-footer {
+            font-size: 12px;
+            color: #5a0202;
+            margin-top: 15px;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #f1f1f1;
+            text-align: center;
+            height: 50px;
+        }
+        footer object {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header>
+        <a href="index.html" class="home-button">Home</a>
+        <h1>Demonstration: Ad Click Tracking Using Data Layer</h1>
+    </header>
+
+    <main>
+        <section class="ad-container">
+            <img src="product-1.png" alt="App Logo" class="ad-logo">
+            <h2 class="ad-headline">Transform Your Fitness Journey!</h2>
+            <div class="ad-carousel">
+                <img src="product-1.png" alt="Feature 1">
+                <img src="product-2.png" alt="Feature 2">
+                <img src="product-3.png" alt="Feature 3">
+            </div>
+            <p class="ad-body">
+                Discover the easiest way to track workouts, meals, and progress. Join millions transforming their lives with our app today!
+            </p>
+            <a href="https://example.com" class="ad-cta" onclick="trackAdClick()">Start Free Trial</a>
+            <p class="ad-footer">*Limited offer: 1-month free trial for new users.</p>
+        </section>
+    </main>
+
+    <footer>
+        <object type="text/html" data="footer.html"></object>
+    </footer>
+
+    <script>
+        // Function to track ad click using the dataLayer.
+        function trackAdClick() {
+            const adDetails = {
+                adName: "Fitness App Free Trial",
+                adType: "Banner",
+                destinationURL: "https://example.com",
+                timestamp: new Date().toISOString()
+            };
+
+            window.dataLayer.push({
+                event: "adClick",
+                adDetails
+            });
+
+            console.log("Ad Click Event Pushed to Data Layer: ", { event: "adClick", adDetails });
+            alert("Ad Click Tracked!");
+        }
+    </script>
+</body>
+</html>

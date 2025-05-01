@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GA4 Add Payment Info Event Demo</title>
+
+<!-- Google Tag Manager (GTM-MB72WSHR) -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id=GTM-MB72WSHR'+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB72WSHR');</script>
+<!-- Google Tag Manager (GTM-MB72WSHR) -->
+ 
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 10px;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 0px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
+        }
+        h2 {
+            color: #1a73e8;
+            margin-bottom: 20px;
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+            gap: 5px;
+            margin-bottom: 10px;
+        }
+        .column {
+            flex: 1;
+            background: #f9f9f9;
+            padding: 5px;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+        }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 5px;
+        }
+        .data-table th, .data-table td {
+            border: 1px solid #ddd;
+            padding: 5px;
+            text-align: left;
+        }
+        .data-table th {
+            background-color: #1a73e8;
+            color: white;
+        }
+        .item-section {
+            margin-top: 10px;
+            background: #f9f9f9;
+            padding: 5px;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+        }
+        button {
+            background-color: #1a73e8;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+        button:hover {
+            background-color: #1557b0;
+        }
+    </style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) for GTM-MB72WSHR -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <div class="container">
+        <h2>GA4 Add Payment Info Event Tracking</h2>
+        
+        <div class="row">
+            <!-- Left Column: Payment Info -->
+            <div class="column">
+                <h3>Payment Information</h3>
+                <table class="data-table">
+                    <tr><th>Parameter</th><th>Value</th></tr>
+                    <tr><td>event</td><td>add_payment_info</td></tr>
+                    <tr><td>currency</td><td>USD</td></tr>
+                    <tr><td>value</td><td>150.00</td></tr>
+                    <tr><td>payment_type</td><td>Credit Card</td></tr>
+                    <tr><td>coupon</td><td>SUMMER2024</td></tr>
+                </table>
+            </div>
+
+            <!-- Right Column: User Info -->
+            <div class="column">
+                <h3>User Information</h3>
+                <table class="data-table">
+                    <tr><th>Parameter</th><th>Value</th></tr>
+                    <tr><td>user_id</td><td>12345</td></tr>
+                    <tr><td>user_pseudo_id</td><td>67890</td></tr>
+                    <tr><td>user_region</td><td>California</td></tr>
+                    <tr><td>user_country</td><td>USA</td></tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Items Section -->
+        <div class="item-section">
+            <h3>Items in Cart</h3>
+            <table class="data-table">
+                <tr><th>Item Name</th><th>Item ID</th><th>Price</th><th>Quantity</th><th>Category</th><th>Brand</th></tr>
+                <tr><td>Nike Running Shoes</td><td>SKU12345</td><td>$99.99</td><td>1</td><td>Shoes</td><td>Nike</td></tr>
+                <tr><td>Adidas T-Shirt</td><td>SKU67890</td><td>$50.00</td><td>2</td><td>Clothing</td><td>Adidas</td></tr>
+            </table>
+        </div>
+
+        <button id="trackEvent">Track Add Payment Info</button>
+    </div>
+
+    <script>
+        document.getElementById('trackEvent').addEventListener('click', function() {
+            window.dataLayer = window.dataLayer || [];
+
+            // Push user data separately
+            window.dataLayer.push({
+                'event': 'user_data',
+                'user_id': '12345',
+                'user_pseudo_id': '67890',
+                'user_region': 'California',
+                'user_country': 'USA'
+            });
+
+
+            // Push GA4 add_payment_info event======
+            window.dataLayer.push({
+                'event': 'add_payment_info',
+                'ecommerce': {
+                    'currency': 'USD',
+                    'value': 150.00,
+                    'coupon': 'SUMMER2024',
+                    'payment_type': 'Credit Card',
+                    'items': [
+                        {
+                            'item_name': 'Nike Running Shoes',
+                            'item_id': 'SKU12345',
+                            'price': 99.99,  // ✅ Corrected key
+                            'quantity': 1,
+                            'item_category': 'Shoes',
+                            'item_brand': 'Nike'
+                        },
+                        {
+                            'item_name': 'Adidas T-Shirt',
+                            'item_id': 'SKU67890',
+                            'price': 50.00,  // ✅ Corrected key
+                            'quantity': 2,
+                            'item_category': 'Clothing',
+                            'item_brand': 'Adidas'
+                        }
+                    ]
+                }
+            });
+            alert('<<add_payment_info>> Event Fired!');
+        });
+    </script>
+</body>
+</html>
