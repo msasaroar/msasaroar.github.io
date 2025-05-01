@@ -78,12 +78,13 @@
 
     /* Listbox Group */
     .listbox-group {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      max-width: 600px;
-      height: auto;
-      margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1600px;
+    min-height: 300px; /* কমপক্ষে ৩০০px হবে, কনটেন্ট বেশি হলে আরও বাড়বে */
+    height: 700px;
+    margin-top: 20px;
     }
 
     .listbox-group label {
@@ -173,12 +174,12 @@
   <div class="page-wrapper">
     <header>
       <button class="home-button" onclick="location.href='../index.html'">Home</button>
-      <h1>GA4 | Custom Events</h1>
+      <h1>Google Analytics 4</h1>
     </header>
 
     <main>
       <div class="listbox-group">
-        <label for="selectedItem">GA4 : Custom Events</label>
+        <label for="selectedItem">SELECT AN ITEM FROM THE LIST</label>
         <ul id="selectedItem" role="listbox" tabindex="0">
             <!-- CUSTOM EVENTS SECTION -->
             <li class="section-header" tabindex="0" data-value="what-is-custom-event.html">⬇️ CUSTOM EVENT ⬇️</li>
