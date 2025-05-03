@@ -50,12 +50,12 @@
     .home-button {
       position: absolute;
       left: 10px;
-      top: 50%;
+      top: 20%;
       transform: translateY(-50%);
       background-color: orange;
       color: blue;
-      border: none;
-      padding: 8px 12px;
+      border: 5px solid green;
+      padding: 15px 30px;
       border-radius: 6px;
       cursor: pointer;
       transition: all 0.3s;
@@ -166,124 +166,125 @@
       <div class="listbox-group">
         <label for="selectedItem">SELECT AN ITEM FROM THE LIST</label>
         <ul id="selectedItem" role="listbox" tabindex="0">
-            <!-- CUSTOM EVENTS -->
-            <li class="section-header" tabindex="0" data-value="what-is-custom-event.html">⬇️CUSTOM EVENT [CE]⬇️</li>
-            <li tabindex="0" data-value="GA4-C01-Time-On-Page-Tracking.html">Track Time on Page Using GTM for GA4 [GA4-CE01]</li>
-            <li tabindex="0" data-value="GA4-C02-Custom-Event-Injection.html">Inject Custom Event Using GTM for GA4 [GA4-CE02]</li>
-            <li tabindex="0" data-value="GA4-C03-Custom-Event-Injection-Advanced.html">Advanced Custom Event Injection Using GTM for GA4 [GA4-CE03]</li>
-            <li tabindex="0" data-value="GA4-C04-Text-Copy-Tracking.html">Track Text Copy Events Using GTM for GA4 [GA4-CE04]</li>
+              <!-- CUSTOM EVENTS -->
+              <li class="section-header" tabindex="0" data-value="what-is-custom-event.html">⬇️CUSTOM EVENTS [CE]⬇️</li>
+              <li tabindex="0" data-value="GA4-CE01-Time-On-Page-Tracking.html">Track Time On Page Using Gtm For Ga4 [GA4-CE01]</li>
+              <li tabindex="0" data-value="GA4-CE02-Custom-Event-Injection.html">Inject Custom Event Using Gtm For Ga4 [GA4-CE02]</li>
+              <li tabindex="0" data-value="GA4-CE03-Custom-Event-Injection-Advanced.html">Advanced Custom Event Injection Using Gtm For Ga4 [GA4-CE03]</li>
+              <li tabindex="0" data-value="GA4-CE04-Text-Copy-Tracking.html">Track Text Copy Events Using Gtm For Ga4 [GA4-CE04]</li>
 
-            <!-- RECOMMENDED EVENTS -->
-            <li class="section-header" tabindex="0" data-value="what-is-recommended-event.html">⬇️RECOMMENDED EVENT [RE]⬇️</li>
-            <li tabindex="0" data-value="GA4-R01-Add-Payment-Info.html">Track add_payment_info Events [GA4-RE01]</li>
-            <li tabindex="0" data-value="GA4-R02-Add-Shipping-Info.html">Track add_shipping_info Events [GA4-RE02]</li>
-            <li tabindex="0" data-value="GA4-R03-Add-To-Cart.html">Track add_to_cart Events [GA4-RE03]</li>
-            <li tabindex="0" data-value="GA4-R05-Begin-Checkout.html">Track begin_checkout Events [GA4-RE05]</li>
-            <li tabindex="0" data-value="GA4-R10-Generate-Lead.html">Track generate_lead Events [GA4-RE10]</li>
-            <li tabindex="0" data-value="GA4-R17-Purchase.html">Track purchase Events [GA4-RE17]</li>
-            <li tabindex="0" data-value="GA4-R19-Refund.html">Track refund Events [GA4-RE19]</li>
-            <li tabindex="0" data-value="GA4-R20-Remove-From-Cart.html">Track remove_from_cart Events [GA4-RE20]</li>
-            <li tabindex="0" data-value="GA4-R23-Select-Item.html">Track select_item Events [GA4-RE23]</li>
-            <li tabindex="0" data-value="GA4-R32-View-Item.html">Track view_item Events [GA4-RE32]</li>
-            <li tabindex="0" data-value="GA4-R33-View-Item-List.html">Track view_item_list Events [GA4-RE33]</li>
-            <li tabindex="0" data-value="GA4-R34-View-Search-Results.html">Track view_search_results Events [GA4-RE34]</li>
+              <!-- RECOMMENDED EVENTS -->
+              <li class="section-header" tabindex="0" data-value="what-is-recommended-event.html">⬇️RECOMMENDED EVENTS [RE]⬇️</li>
+              <li tabindex="0" data-value="GA4-RE01-Add-Payment-Info.html">Track Add Payment Info Events [GA4-RE01]</li>
+              <li tabindex="0" data-value="GA4-RE02-Add-Shipping-Info.html">Track Add Shipping Info Events [GA4-RE02]</li>
+              <li tabindex="0" data-value="GA4-RE03-Add-To-Cart.html">Track Add To Cart Events [GA4-RE03]</li>
+              <li tabindex="0" data-value="GA4-RE05-Begin-Checkout.html">Track Begin Checkout Events [GA4-RE05]</li>
+              <li tabindex="0" data-value="GA4-RE10-Generate-Lead.html">Track Generate Lead Events [GA4-RE10]</li>
+              <li tabindex="0" data-value="GA4-RE17-Purchase.html">Track Purchase Events [GA4-RE17]</li>
+              <li tabindex="0" data-value="GA4-RE19-Refund.html">Track Refund Events [GA4-RE19]</li>
+              <li tabindex="0" data-value="GA4-RE20-Remove-From-Cart.html">Track Remove From Cart Events [GA4-RE20]</li>
+              <li tabindex="0" data-value="GA4-RE23-Select-Item.html">Track Select Item Events [GA4-RE23]</li>
+              <li tabindex="0" data-value="GA4-RE32-View-Item.html">Track View Item Events [GA4-RE32]</li>
+              <li tabindex="0" data-value="GA4-RE33-View-Item-List.html">Track View Item List Events [GA4-RE33]</li>
+              <li tabindex="0" data-value="GA4-RE34-View-Search-Results.html">Track View Search Results Events [GA4-RE34]</li>
 
-            <!-- RECOMMENDED EVENT : Coming Soon -->
-            <li class="section-header" tabindex="0" data-value="index-99-Upcoming-Events.html">⬇️RECOMMENDED EVENT [RE] [Coming Soon......]⬇️</li>
-            <li tabindex="0" data-value="GA4-R35-Add-To-Wishlist.html">Track add_to_wishlist Events (Coming Soon) [GA4-RE35]</li>
-            <li tabindex="0" data-value="GA4-R36-Close-Convert-Lead.html">Track close_convert_lead Events (Coming Soon) [GA4-RE36]</li>
-            <li tabindex="0" data-value="GA4-R37-Close-Unconvert-Lead.html">Track close_unconvert_lead Events (Coming Soon) [GA4-RE37]</li>
-            <li tabindex="0" data-value="GA4-R38-Disqualify-Lead.html">Track disqualify_lead Events (Coming Soon) [GA4-RE38]</li>
-            <li tabindex="0" data-value="GA4-R39-Earn-Virtual-Currency.html">Track earn_virtual_currency Events (Coming Soon) [GA4-RE39]</li>
-            <li tabindex="0" data-value="GA4-R40-Join-Group.html">Track join_group Events (Coming Soon) [GA4-RE40]</li>
-            <li tabindex="0" data-value="GA4-R41-Level-End.html">Track level_end Events (Coming Soon) [GA4-RE41]</li>
-            <li tabindex="0" data-value="GA4-R42-Level-Start.html">Track level_start Events (Coming Soon) [GA4-RE42]</li>
-            <li tabindex="0" data-value="GA4-R43-Level-Up.html">Track level_up Events (Coming Soon) [GA4-RE43]</li>
-            <li tabindex="0" data-value="GA4-R44-Login.html">Track login Events (Coming Soon) [GA4-RE44]</li>
-            <li tabindex="0" data-value="GA4-R45-Post-Score.html">Track post_score Events (Coming Soon) [GA4-RE45]</li>
-            <li tabindex="0" data-value="GA4-R46-Qualify-Lead.html">Track qualify_lead Events (Coming Soon) [GA4-RE46]</li>
-            <li tabindex="0" data-value="GA4-R47-Search.html">Track search Events (Coming Soon) [GA4-RE47]</li>
-            <li tabindex="0" data-value="GA4-R48-Select-Content.html">Track select_content Events (Coming Soon) [GA4-RE48]</li>
-            <li tabindex="0" data-value="GA4-R49-Select-Promotion.html">Track select_promotion Events (Coming Soon) [GA4-RE49]</li>
-            <li tabindex="0" data-value="GA4-R50-Share.html">Track share Events (Coming Soon) [GA4-RE50]</li>
-            <li tabindex="0" data-value="GA4-R51-Sign-Up.html">Track sign_up Events (Coming Soon) [GA4-RE51]</li>
-            <li tabindex="0" data-value="GA4-R52-Spend-Virtual-Currency.html">Track spend_virtual_currency Events (Coming Soon) [GA4-RE52]</li>
-            <li tabindex="0" data-value="GA4-R53-Tutorial-Begin.html">Track tutorial_begin Events (Coming Soon) [GA4-RE53]</li>
-            <li tabindex="0" data-value="GA4-R54-Tutorial-Complete.html">Track tutorial_complete Events (Coming Soon) [GA4-RE54]</li>
-            <li tabindex="0" data-value="GA4-R55-Unlock-Achievement.html">Track unlock_achievement Events (Coming Soon) [GA4-RE55]</li>
-            <li tabindex="0" data-value="GA4-R56-View-Cart.html">Track view_cart Events (Coming Soon) [GA4-RE56]</li>
-            <li tabindex="0" data-value="GA4-R57-View-Promotion.html">Track view_promotion Events (Coming Soon) [GA4-RE57]</li>
-            <li tabindex="0" data-value="GA4-R58-Working-Lead.html">Track working_lead Events (Coming Soon) [GA4-RE58]</li>
+              <!-- RECOMMENDED EVENT : Under Construction -->
+              <li class="section-header" tabindex="0" data-value="index-99-Upcoming-Events.html">⬇️RECOMMENDED EVENT [RE] [Coming Soon......]⬇️</li>
+              <li tabindex="0" data-value="GA4-RE35-Add-To-Wishlist.html">Track Add To Wishlist Events (Coming Soon) [GA4-RE35]</li>
+              <li tabindex="0" data-value="GA4-RE36-Close-Convert-Lead.html">Track Close Convert Lead Events (Coming Soon) [GA4-RE36]</li>
+              <li tabindex="0" data-value="GA4-RE37-Close-Unconvert-Lead.html">Track Close Unconvert Lead Events (Coming Soon) [GA4-RE37]</li>
+              <li tabindex="0" data-value="GA4-RE38-Disqualify-Lead.html">Track Disqualify Lead Events (Coming Soon) [GA4-RE38]</li>
+              <li tabindex="0" data-value="GA4-RE39-Earn-Virtual-Currency.html">Track Earn Virtual Currency Events (Coming Soon) [GA4-RE39]</li>
+              <li tabindex="0" data-value="GA4-RE40-Join-Group.html">Track Join Group Events (Coming Soon) [GA4-RE40]</li>
+              <li tabindex="0" data-value="GA4-RE41-Level-End.html">Track Level End Events (Coming Soon) [GA4-RE41]</li>
+              <li tabindex="0" data-value="GA4-RE42-Level-Start.html">Track Level Start Events (Coming Soon) [GA4-RE42]</li>
+              <li tabindex="0" data-value="GA4-RE43-Level-Up.html">Track Level Up Events (Coming Soon) [GA4-RE43]</li>
+              <li tabindex="0" data-value="GA4-RE44-Login.html">Track Login Events (Coming Soon) [GA4-RE44]</li>
+              <li tabindex="0" data-value="GA4-RE45-Post-Score.html">Track Post Score Events (Coming Soon) [GA4-RE45]</li>
+              <li tabindex="0" data-value="GA4-RE46-Qualify-Lead.html">Track Qualify Lead Events (Coming Soon) [GA4-RE46]</li>
+              <li tabindex="0" data-value="GA4-RE47-Search.html">Track Search Events (Coming Soon) [GA4-RE47]</li>
+              <li tabindex="0" data-value="GA4-RE48-Select-Content.html">Track Select Content Events (Coming Soon) [GA4-RE48]</li>
+              <li tabindex="0" data-value="GA4-RE49-Select-Promotion.html">Track Select Promotion Events (Coming Soon) [GA4-RE49]</li>
+              <li tabindex="0" data-value="GA4-RE50-Share.html">Track Share Events (Coming Soon) [GA4-RE50]</li>
+              <li tabindex="0" data-value="GA4-RE51-Sign-Up.html">Track Sign Up Events (Coming Soon) [GA4-RE51]</li>
+              <li tabindex="0" data-value="GA4-RE52-Spend-Virtual-Currency.html">Track Spend Virtual Currency Events (Coming Soon) [GA4-RE52]</li>
+              <li tabindex="0" data-value="GA4-RE53-Tutorial-Begin.html">Track Tutorial Begin Events (Coming Soon) [GA4-RE53]</li>
+              <li tabindex="0" data-value="GA4-RE54-Tutorial-Complete.html">Track Tutorial Complete Events (Coming Soon) [GA4-RE54]</li>
+              <li tabindex="0" data-value="GA4-RE55-Unlock-Achievement.html">Track Unlock Achievement Events (Coming Soon) [GA4-RE55]</li>
+              <li tabindex="0" data-value="GA4-RE56-View-Cart.html">Track View Cart Events (Coming Soon) [GA4-RE56]</li>
+              <li tabindex="0" data-value="GA4-RE57-View-Promotion.html">Track View Promotion Events (Coming Soon) [GA4-RE57]</li>
+              <li tabindex="0" data-value="GA4-RE58-Working-Lead.html">Track Working Lead Events (Coming Soon) [GA4-RE58]</li>
 
-            <!-- TAG PLAN -->
-            <li class="section-header" tabindex="0" data-value="what-is-tag.html">⬇️TAG PLAN [TP]⬇️</li>
-            <li tabindex="0" data-value="GA4-Click-Element-Tag.html">Track Clicks with Element Trigger (Tag) [GA4-TP01]</li>
-            <li tabindex="0" data-value="GA4-Custom-HTML-Tag.html">Custom HTML Injection (Tag) [GA4-TP02]</li>
-            <li tabindex="0" data-value="GA4-Custom-Image-Tag-1.html">Custom Image Load (Tag - Variation 1) [GA4-TP03]</li>
-            <li tabindex="0" data-value="GA4-Custom-Image-Tag.html">Custom Image Load (Tag - Default) [GA4-TP04]</li>
-            <li tabindex="0" data-value="GA4-JavaScript-Error-Tag.html">Track JavaScript Errors (Tag) [GA4-TP05]</li>
-            <li tabindex="0" data-value="GA4-Social-Media-Click-Tag.html">Track Social Media Clicks (Tag) [GA4-TP06]</li>
-            <li tabindex="0" data-value="GA4-Timer-Tag.html">Timer-Based Actions (Tag) [GA4-TP07]</li>
+              <!-- TAG PLAN -->
+              <li class="section-header" tabindex="0" data-value="what-is-tag.html">⬇️TAG PLAN [TP]⬇️</li>
+              <li tabindex="0" data-value="GA4-TP01-Click-Element-Tag.html">Track Clicks With Element Trigger (Tag) [GA4-TP01]</li>
+              <li tabindex="0" data-value="GA4-TP02-Custom-HTML-Tag.html">Custom Html Injection (Tag) [GA4-TP02]</li>
+              <li tabindex="0" data-value="GA4-TP03-Custom-Image-Tag-1.html">Custom Image Load (Tag - Variation 1) [GA4-TP03]</li>
+              <li tabindex="0" data-value="GA4-TP04-Custom-Image-Tag.html">Custom Image Load (Tag - Default) [GA4-TP04]</li>
+              <li tabindex="0" data-value="GA4-TP05-JavaScript-Error-Tag.html">Track Javascript Errors (Tag) [GA4-TP05]</li>
+              <li tabindex="0" data-value="GA4-TP06-Social-Media-Click-Tag.html">Track Social Media Clicks (Tag) [GA4-TP06]</li>
+              <li tabindex="0" data-value="GA4-TP07-Timer-Tag.html">Timer Based Actions (Tag) [GA4-TP07]</li>
 
-            <!-- TRIGGER PLAN -->
-            <li class="section-header" tabindex="0" data-value="what-is-trigger.html">⬇️TRIGGER PLAN [TG]⬇️</li>
-            <li tabindex="0" data-value="GA4-Custom-Event-Trigger.html">Custom Event Trigger (No HTML) [GA4-TG01]</li>
-            <li tabindex="0" data-value="GA4-Element-Visibility-Trigger.html">Element Visibility Trigger [GA4-TG02]</li>
-            <li tabindex="0" data-value="GA4-Hash-Change-Tag-And-Trigger.html">Hash Change Tracking (Tag + Trigger) [GA4-TG03]</li>
-            <li tabindex="0" data-value="GA4-Page-Visibility-Trigger.html">Page Visibility State Trigger [GA4-TG04]</li>
-            <li tabindex="0" data-value="GA4-Window-Loaded-Trigger.html">Window Loaded Trigger [GA4-TG05]</li>
+              <!-- TRIGGER PLAN -->
+              <li class="section-header" tabindex="0" data-value="what-is-trigger.html">⬇️TRIGGER PLAN [TG]⬇️</li>
+              <li tabindex="0" data-value="GA4-TG01-Custom-Event-Trigger.html">Custom Event Trigger (No Html) [GA4-TG01]</li>
+              <li tabindex="0" data-value="GA4-TG02-Element-Visibility-Trigger.html">Element Visibility Trigger [GA4-TG02]</li>
+              <li tabindex="0" data-value="GA4-TG03-Hash-Change-Tag-And-Trigger.html">Hash Change Tracking (Tag + Trigger) [GA4-TG03]</li>
+              <li tabindex="0" data-value="GA4-TG04-Page-Visibility-Trigger.html">Page Visibility State Trigger [GA4-TG04]</li>
+              <li tabindex="0" data-value="GA4-TG05-Window-Loaded-Trigger.html">Window Loaded Trigger [GA4-TG05]</li>
 
-            <!-- VARIABLE PLAN -->
-            <li class="section-header" tabindex="0" data-value="what-is-variable.html">⬇️VARIABLE PLAN [VP]⬇️</li>
-            <li tabindex="0" data-value="GA4-321-Page-View-Data-Layer.html">321. Extract Page View Data (Variable) [GA4-VP01]</li>
-            <li tabindex="0" data-value="GA4-322-Button-Click-Data-Layer.html">322. Extract Button Click Data (Variable) [GA4-VP02]</li>
-            <li tabindex="0" data-value="GA4-323-Scroll-Depth-Data-Layer.html">323. Track Scroll Depth (Variable) [GA4-VP03]</li>
-            <li tabindex="0" data-value="GA4-324-Form-Submit-Data-Layer.html">324. Capture Form Submissions (Variable) [GA4-VP04]</li>
-            <li tabindex="0" data-value="GA4-325-Video-Start-Data-Layer.html">325. Track Video Engagement (Variable) [GA4-VP05]</li>
-            <li tabindex="0" data-value="GA4-327-Remove-From-Cart-DL.html">327. Track Remove from Cart Events (Data Layer) [GA4-VP06]</li>
-            <li tabindex="0" data-value="GA4-328-Checkout-DL.html">328. Track Checkout Process (Data Layer) [GA4-VP07]</li>
-            <li tabindex="0" data-value="GA4-328-Purchase-DL.html">328. Track Purchase Confirmation (Data Layer) [GA4-VP08]</li>
-            <li tabindex="0" data-value="GA4-329-User-Login-DL.html">329. Track User Login (Data Layer) [GA4-VP09]</li>
-            <li tabindex="0" data-value="GA4-330-User-Logout-DL.html">330. Track User Logout (Data Layer) [GA4-VP10]</li>
-            <li tabindex="0" data-value="GA4-331-Custom-Event-DL.html">331. Track Custom Events (Data Layer) [GA4-VP11]</li>
-            <li tabindex="0" data-value="GA4-332-Search-DL.html">332. Track Search Queries (Data Layer) [GA4-VP12]</li>
-            <li tabindex="0" data-value="GA4-333-Product-View-DL.html">333. Track Product Views (Data Layer) [GA4-VP13]</li>
-            <li tabindex="0" data-value="GA4-334-Download-File-DL.html">334. Track File Downloads (Data Layer) [GA4-VP14]</li>
-            <li tabindex="0" data-value="GA4-335-Feedback-Submit-DL.html">335. Track Feedback Submissions (Data Layer) [GA4-VP15]</li>
-            <li tabindex="0" data-value="GA4-336-Page-Timing-DL.html">336. Track Page Performance Metrics (Data Layer) [GA4-VP16]</li>
-            <li tabindex="0" data-value="GA4-337-Error-Tracking-DL.html">337. Track JavaScript Errors (Data Layer) [GA4-VP17]</li>
-            <li tabindex="0" data-value="GA4-338-User-Engagement-DL.html">338. Track Social Engagement (Data Layer) [GA4-VP18]</li>
-            <li tabindex="0" data-value="GA4-339-Ad-Click-Tracking-DL.html">339. Track Ad Clicks (Data Layer) [GA4-VP19]</li>
-            <li tabindex="0" data-value="GA4-341-Form-Interaction-DL.html">341. Track Form Field Interactions (Data Layer) [GA4-VP20]</li>
-            <li tabindex="0" data-value="GA4-342-Standard-Data-Layers.html">342. Implement Standard Data Layers [GA4-VP21]</li>
-            <li tabindex="0" data-value="GA4-343-DL-Enabled-Page.html">343. Data Layer Enabled Page [GA4-VP22]</li>
-            <li tabindex="0" data-value="GA4-343-Non-DL-Page.html">343. Non-Data Layer Page [GA4-VP23]</li>
+              <!-- VARIABLE PLAN -->
+              <li class="section-header" tabindex="0" data-value="what-is-variable.html">⬇️VARIABLE PLAN [VP]⬇️</li>
+              <li tabindex="0" data-value="GA4-VP01-Page-View-Data-Layer.html">Extract Page View Data (Variable) [GA4-VP01]</li>
+              <li tabindex="0" data-value="GA4-VP02-Button-Click-Data-Layer.html">Extract Button Click Data (Variable) [GA4-VP02]</li>
+              <li tabindex="0" data-value="GA4-VP03-Scroll-Depth-Data-Layer.html">Track Scroll Depth (Variable) [GA4-VP03]</li>
+              <li tabindex="0" data-value="GA4-VP04-Form-Submit-Data-Layer.html">Capture Form Submissions (Variable) [GA4-VP04]</li>
+              <li tabindex="0" data-value="GA4-VP05-Video-Start-Data-Layer.html">Track Video Engagement (Variable) [GA4-VP05]</li>
+              <li tabindex="0" data-value="GA4-VP06-Remove-From-Cart-DL.html">Track Remove From Cart Events (Data Layer) [GA4-VP06]</li>
+              <li tabindex="0" data-value="GA4-VP07-Checkout-DL.html">Track Checkout Process (Data Layer) [GA4-VP07]</li>
+              <li tabindex="0" data-value="GA4-VP08-Purchase-DL.html">Track Purchase Confirmation (Data Layer) [GA4-VP08]</li>
+              <li tabindex="0" data-value="GA4-VP09-User-Login-DL.html">Track User Login (Data Layer) [GA4-VP09]</li>
+              <li tabindex="0" data-value="GA4-VP10-User-Logout-DL.html">Track User Logout (Data Layer) [GA4-VP10]</li>
+              <li tabindex="0" data-value="GA4-VP11-Custom-Event-DL.html">Track Custom Events (Data Layer) [GA4-VP11]</li>
+              <li tabindex="0" data-value="GA4-VP12-Search-DL.html">Track Search Queries (Data Layer) [GA4-VP12]</li>
+              <li tabindex="0" data-value="GA4-VP13-Product-View-DL.html">Track Product Views (Data Layer) [GA4-VP13]</li>
+              <li tabindex="0" data-value="GA4-VP14-Download-File-DL.html">Track File Downloads (Data Layer) [GA4-VP14]</li>
+              <li tabindex="0" data-value="GA4-VP15-Feedback-Submit-DL.html">Track Feedback Submissions (Data Layer) [GA4-VP15]</li>
+              <li tabindex="0" data-value="GA4-VP16-Page-Timing-DL.html">Track Page Performance Metrics (Data Layer) [GA4-VP16]</li>
+              <li tabindex="0" data-value="GA4-VP17-Error-Tracking-DL.html">Track Javascript Errors (Data Layer) [GA4-VP17]</li>
+              <li tabindex="0" data-value="GA4-VP18-User-Engagement-DL.html">Track Social Engagement (Data Layer) [GA4-VP18]</li>
+              <li tabindex="0" data-value="GA4-VP19-Ad-Click-Tracking-DL.html">Track Ad Clicks (Data Layer) [GA4-VP19]</li>
+              <li tabindex="0" data-value="GA4-VP20-Form-Interaction-DL.html">Track Form Field Interactions (Data Layer) [GA4-VP20]</li>
+              <li tabindex="0" data-value="GA4-VP21-Standard-Data-Layers.html">Implement Standard Data Layers [GA4-VP21]</li>
+              <li tabindex="0" data-value="GA4-VP22-DL-Enabled-Page.html">Data Layer Enabled Page [GA4-VP22]</li>
+              <li tabindex="0" data-value="GA4-VP23-Non-DL-Page.html">Non Data Layer Page [GA4-VP23]</li>
 
-            <!-- ENGAGEMENT EVENT -->
-            <li class="section-header" tabindex="0" data-value="what-is-event.html">⬇️PRACTICE WITH : ENGAGEMENT EVENT [EE]⬇️</li>
-            <li tabindex="0" data-value="GA4-E01-Contact-Form.html">Track Contact Form Submissions [GA4-EE01]</li>
-            <li tabindex="0" data-value="GA4-E02-DOM-Ready.html">Track DOM Ready State [GA4-EE02]</li>
-            <li tabindex="0" data-value="GA4-E03-History-Change.html">Track History Changes [GA4-EE03]</li>
-            <li tabindex="0" data-value="GA4-E04-Link-Clicks.html">Track All Link Clicks [GA4-EE04]</li>
-            <li tabindex="0" data-value="GA4-E05-Outbound-Links.html">Track Outbound Link Clicks [GA4-EE05]</li>
-            <li tabindex="0" data-value="GA4-E06-Page-Views.html">Track Enhanced Page Views [GA4-EE06]</li>
-            <li tabindex="0" data-value="GA4-E07-Purchase-Confirmation.html">Track Purchase Confirmations [GA4-EE07]</li>
-            <li tabindex="0" data-value="GA4-E08-Scroll-Depth.html">Track Page Scroll Depth [GA4-EE08]</li>
-            <li tabindex="0" data-value="GA4-E09-Signup-Confirmation.html">Track Signup Completions [GA4-EE09]</li>
-            <li tabindex="0" data-value="GA4-E10-Signup-Forms.html">Track Signup Form Interactions [GA4-EE10]</li>
-            <li tabindex="0" data-value="GA4-E11-Thank-You-Pages.html">Track Thank You Page Views [GA4-EE11]</li>
-            <li tabindex="0" data-value="GA4-E12-User-Login-Forms.html">Track Login Form Interactions [GA4-EE12]</li>
-            <li tabindex="0" data-value="GA4-E13-Video-Completions.html">Track Video Completions [GA4-EE13]</li>
-            <li tabindex="0" data-value="GA4-E14-YouTube-Video-Engagement.html">Track Embedded YouTube Videos [GA4-EE14]</li>
-            <li tabindex="0" data-value="GA4-E15-Non-Embedded-Videos.html">Track Self-Hosted Videos [GA4-EE15]</li>
-            <li tabindex="0" data-value="GA4-E16-Video-Repository.html">Track Video Platform Content [GA4-EE16]</li>
-            <li tabindex="0" data-value="GA4-E17-Video-Pause-Events.html">Track Video Pause Actions [GA4-EE17]</li>
-            <li tabindex="0" data-value="GA4-E18-Search-Results.html">Track Search Result Views [GA4-EE18]</li>
+              <!-- ENGAGEMENT EVENT -->
+              <li class="section-header" tabindex="0" data-value="what-is-event.html">⬇️ENGAGEMENT EVENT [EE]⬇️</li>
+              <li tabindex="0" data-value="GA4-EE01-Contact-Form.html">Track Contact Form Submissions [GA4-EE01]</li>
+              <li tabindex="0" data-value="GA4-EE02-DOM-Ready.html">Track Dom Ready State [GA4-EE02]</li>
+              <li tabindex="0" data-value="GA4-EE03-History-Change.html">Track History Changes [GA4-EE03]</li>
+              <li tabindex="0" data-value="GA4-EE04-Link-Clicks.html">Track All Link Clicks [GA4-EE04]</li>
+              <li tabindex="0" data-value="GA4-EE05-Outbound-Links.html">Track Outbound Link Clicks [GA4-EE05]</li>
+              <li tabindex="0" data-value="GA4-EE06-Page-Views.html">Track Enhanced Page Views [GA4-EE06]</li>
+              <li tabindex="0" data-value="GA4-EE07-Purchase-Confirmation.html">Track Purchase Confirmations [GA4-EE07]</li>
+              <li tabindex="0" data-value="GA4-EE08-Scroll-Depth.html">Track Page Scroll Depth [GA4-EE08]</li>
+              <li tabindex="0" data-value="GA4-EE09-Signup-Confirmation.html">Track Signup Completions [GA4-EE09]</li>
+              <li tabindex="0" data-value="GA4-EE10-Signup-Forms.html">Track Signup Form Interactions [GA4-EE10]</li>
+              <li tabindex="0" data-value="GA4-EE11-Thank-You-Pages.html">Track Thank You Page Views [GA4-EE11]</li>
+              <li tabindex="0" data-value="GA4-EE12-User-Login-Forms.html">Track Login Form Interactions [GA4-EE12]</li>
+              <li tabindex="0" data-value="GA4-EE13-Video-Completions.html">Track Video Completions [GA4-EE13]</li>
+              <li tabindex="0" data-value="GA4-EE14-YouTube-Video-Engagement.html">Track Embedded Youtube Videos [GA4-EE14]</li>
+              <li tabindex="0" data-value="GA4-EE15-Non-Embedded-Videos.html">Track Self Hosted Videos [GA4-EE15]</li>
+              <li tabindex="0" data-value="GA4-EE16-Video-Repository.html">Track Video Platform Content [GA4-EE16]</li>
+              <li tabindex="0" data-value="GA4-EE17-Video-Pause-Events.html">Track Video Pause Actions [GA4-EE17]</li>
+              <li tabindex="0" data-value="GA4-EE18-Search-Results.html">Track Search Result Views [GA4-EE18]</li>
 
-            <!-- MULTIPLE EVENT ON SINGLE PAGE -->
-            <li class="section-header" tabindex="0" data-value="index-99-Previously-Practiced.html">⬇️MULTIPLE EVENT ON SINGLE PAGE [ME]⬇️</li>
-            <li tabindex="0" data-value="GA4-99-All-In-One.html">All Events on a Single Page [GA4-ME-01]</li>
-            <li tabindex="0" data-value="GA4-99-Purchase-Journey.html">eCommerce Purchase Journey [GA4-ME-02]</li>
+              <!-- MULTIPLE EVENT ON SINGLE PAGE -->
+              <li class="section-header" tabindex="0" data-value="index-99-Previously-Practiced.html">⬇️MULTIPLE EVENT ON SINGLE PAGE [ME]⬇️</li>
+              <li tabindex="0" data-value="GA4-ME01-All-In-One.html">All Events On A Single Page [GA4-ME01]</li>
+              <li tabindex="0" data-value="GA4-ME02-Purchase-Journey.html">Ecommerce Purchase Journey [GA4-ME02]</li>
+
         </ul>
         <button id="proceedBtn" disabled>Proceed</button>
       </div>
