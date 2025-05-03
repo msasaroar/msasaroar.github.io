@@ -1,4 +1,0 @@
-1. purchase
-সমস্যা	কারণ
-DebugView-এ purchase দেখা যাচ্ছে না	transaction_id এবং items array না থাকলে discard হয়
-value, currency নেই	GA4 strict validation করে — missing হলে reject করে
