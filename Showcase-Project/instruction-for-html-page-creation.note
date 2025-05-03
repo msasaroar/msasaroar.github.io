@@ -1,0 +1,27 @@
+উপরোক্ত স্ক্রীনশট থেকে html পেইজ এর Template তৈরী কর। অতঃপর উক্ত Template এ নিম্নোক্ত html কোড ব্যবহার করে একটি html পেইজ বানাও।
+Proceed বাটন ক্লিক করলে লিস্টের সংশ্লিষ্ট html ফাইল ওপেন হবে।
+উদাহরনঃ Subscribe [GAD-01] সিলেক্ট করে Proceed বাটন ক্লিক করলে GAds-01-Subscribe.html ফাইলটি ওপেন হবে।
+নিম্নলিখিত element গুলো ব্যবহার কর।
+<title>Saiful | Showcase Project | GAds</title>
+<button class="home-button" onclick="location.href='../index.html'">Home</button>
+<h1>Google Ads</h1>
+
+<div class="listbox-group">
+    <label for="gadsConversionActions">Google Ads Conversion Action</label>
+    <ul id="gadsConversionActions" role="listbox" tabindex="0">
+        <li tabindex="0" data-value="../index.html">Home</li>
+        <li tabindex="0" data-value="GAds-01-Subscribe.html">Subscribe [GAD-01]</li>
+        <li tabindex="0" data-value="GAds-02-Sign-Ups.html">Sign-Ups [GAD-02]</li>
+        <li tabindex="0" data-value="GAds-03-Book-Appointments.html">Book Appointments [GAD-03]</li>
+        <li tabindex="0" data-value="GAds-04-Request-Quotes.html">Request Quotes [GAD-04]</li>
+        <li tabindex="0" data-value="GAds-05-Get-Directions.html">Get Directions [GAD-05]</li>
+        <li tabindex="0" data-value="GAds-06-Outbound-Clicks.html">Outbound Clicks [GAD-06]</li>
+        <li tabindex="0" data-value="GAds-07-Purchases.html">Purchases [GAD-07]</li>
+        <li tabindex="0" data-value="GAds-08-Add-To-Cart.html">Add To Cart [GAD-08]</li>
+        <li tabindex="0" data-value="GAds-09-Begin-Checkout.html">Begin Checkout [GAD-09]</li>
+        <li tabindex="0" data-value="GAds-10-Submit-Lead-Forms.html">Submit Lead Forms [GAD-10]</li>
+        <li tabindex="0" data-value="GAds-11-Contacts.html">Contacts [GAD-11]</li>
+        <li tabindex="0" data-value="GAds-12-Page-Views.html">Page Views [GAD-12]</li>
+    </ul>
+    <button id="proceedBtn" disabled>Proceed</button>
+</div>

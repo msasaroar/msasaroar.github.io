@@ -1,87 +1,232 @@
-<div class="listbox-group">
-    <label for="TikTok">TikTok Pixel Events</label>
-    <ul id="TikTok" role="listbox" tabindex="0">
-        <li tabindex="0" data-value="../Side-Menu-Bar/menu-99-Opening-Page.html">Home</li>
-        <li tabindex="0" data-value="TikTok-01-CompletePayment.html">TikTok # 01. CompletePayment</li>
-        <li tabindex="0" data-value="TikTok-02-AddToCart.html">TikTok # 02. AddToCart</li>
-        <li tabindex="0" data-value="TikTok-03-ViewContent.html">TikTok # 03. ViewContent</li>
-        <li tabindex="0" data-value="TikTok-04-InitiateCheckout.html">TikTok # 04. InitiateCheckout</li>
-        <li tabindex="0" data-value="TikTok-05-AddToWishlist.html">TikTok # 05. AddToWishlist</li>   
-        <li tabindex="0" data-value="TikTok-06-AddPaymentInfo.html">TikTok # 06. AddPaymentInfo</li>
-        <li tabindex="0" data-value="TikTok-07-PlaceAnOrder.html">TikTok # 07. PlaceAnOrder</li>
-        <li tabindex="0" data-value="TikTok-08-Contact.html">TikTok # 08. Contact</li>
-        <li tabindex="0" data-value="TikTok-09-Download.html">TikTok # 09. Download</li>
-        <li tabindex="0" data-value="TikTok-13-ClickButton.html">TikTok # 13. ClickButton</li>
-        <li tabindex="0" data-value="index-99-InshaAllah.html">++++++++++++++++++++++</li>
-        <li tabindex="0" data-value="TikTok-11-CompleteRegistration.html">TikTok # ??. CompleteRegistration</li>
-        <li tabindex="0" data-value="TikTok-10-SubmitForm.html">TikTok # ??. SubmitForm</li>
-        <li tabindex="0" data-value="TikTok-12-Subscribe.html">TikTok # ??. Subscribe</li>
-        <li tabindex="0" data-value="TikTok-14-Search.html">TikTok # ??. Search</li>
-    </ul>
-    <button id="proceedBtn" disabled>Proceed</button>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Saiful | Showcase Project | TikTok</title>
 
-<script>
-    let selectedValue = "";
-    document.querySelectorAll('#TikTok li').forEach(item => {
-        item.addEventListener('click', function() {
-            document.querySelectorAll('#TikTok li').forEach(li => li.classList.remove('selected'));
-            this.classList.add('selected');
-            selectedValue = this.getAttribute('data-value');
-            document.getElementById('proceedBtn').disabled = false;
-        });
-    });
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB72WSHR');
+  </script>
+  <!-- End Google Tag Manager -->
 
-    document.getElementById('proceedBtn').addEventListener('click', function() {
-        if (selectedValue) {
-            window.location.href = selectedValue;
-        }
-    });
-</script>
-
-<style>
+  <style>
+    /* Global Styles */
     html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background-color: green;
+      color: black;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
+
+    .page-wrapper {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    /* Header */
+    header {
+      background-color: rgb(41, 163, 41);
+      text-align: center;
+      padding: 10px;
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+      color: black;
+    }
+
+    .home-button {
+      position: absolute;
+      left: 10px;
+      top: 20%;
+      transform: translateY(-50%);
+      background-color: orange;
+      color: blue;
+      border: 5px solid green;
+      padding: 15px 30px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    /* Main Content */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0px;
+      overflow-y: auto;
+    }
+
+    /* Listbox Group */
     .listbox-group {
-        display: flex;
-        flex-direction: column;
-        height: 90vh; /* পুরো ভিউপোর্ট উচ্চতা */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1500px;
+    min-height: 300px; /* কমপক্ষে ৩০০px হবে, কনটেন্ট বেশি হলে আরও বাড়বে */
+    height: 1000px;
+    margin-top: 20px;
     }
+
+    .listbox-group label {
+      font-weight: bold;
+      font-size: 15px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
     .listbox-group ul {
-        list-style: none;
-        padding: 0;
-        margin: 10px 0;
-        border: 1px solid #ccc;
-        flex-grow: 1; /* লিস্টবক্স পুরো স্ক্রীন নেবে */
-        overflow-y: auto;
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+      border: 5px solid rgb(41, 163, 41);
+      max-height: 1000px;
+      overflow-y: auto;
+      background-color: silver;
     }
+
     .listbox-group li {
-        padding: 10px;
-        cursor: pointer;
-        border-bottom: 1px solid #eee;
+      padding: 10px;
+      cursor: pointer;
+      border-bottom: 2px solid black;
+      transition: background-color 0.3s;
     }
-    .listbox-group li:hover, .listbox-group li.selected {
-        background-color: #007bff;
-        color: white;
+
+    .listbox-group li:hover, 
+    .listbox-group li.selected {
+      background-color: #007bff;
+      color: white;
     }
+
+    /* Buttons */
     button {
-        margin: 10px;
-        padding: 10px 15px;
-        cursor: pointer;
-        background-color: orange;
-        color: blue;
-        border: none;
-        border-radius: 5px;
+      background-color: orange;
+      color: blue;
+      border: 5px solid rgb(41, 163, 41);
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+      transition: all 0.3s;
     }
+
     button:hover {
-        background-color: blue;
-        color: orange;
+      background-color: blue;
+      color: orange;
     }
+
     button:disabled {
-        background-color: gray;
-        cursor: not-allowed;
+      background-color: gray;
+      cursor: not-allowed;
+      color: white;
     }
-</style>
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <div class="page-wrapper">
+    <header>
+      <button class="home-button" onclick="location.href='../index.html'">Home</button>
+      <h1>TikTok</h1>
+    </header>
+
+    <main>
+      <div class="listbox-group">
+        <label for="selectedItem">SELECT AN ITEM FROM THE LIST</label>
+        <ul id="selectedItem" role="listbox" tabindex="0">
+            <li tabindex="0" data-value="TikTok-01-CompletePayment.html">Complete Payment [TTK-01]</li>
+            <li tabindex="0" data-value="TikTok-02-AddToCart.html">Add To Cart [TTK-02]</li>
+            <li tabindex="0" data-value="TikTok-03-ViewContent.html">View Content [TTK-03]</li>
+            <li tabindex="0" data-value="TikTok-04-InitiateCheckout.html">Initiate Checkout [TTK-04]</li>
+            <li tabindex="0" data-value="TikTok-05-AddToWishlist.html">Add To Wishlist [TTK-05]</li>   
+            <li tabindex="0" data-value="TikTok-06-AddPaymentInfo.html">Add Payment Info [TTK-06]</li>
+            <li tabindex="0" data-value="TikTok-07-PlaceAnOrder.html">Place An Order [TTK-07]</li>
+            <li tabindex="0" data-value="TikTok-08-Contact.html">Contact [TTK-08]</li>
+            <li tabindex="0" data-value="TikTok-09-Download.html">Download [TTK-09]</li>
+            <li tabindex="0" data-value="TikTok-13-ClickButton.html">Click Button [TTK-13]</li>
+            <li tabindex="0" data-value="index-99-InshaAllah.html">Coming Soon....................</li>
+            <li tabindex="0" data-value="TikTok-11-CompleteRegistration.html">Complete Registration [TTK-11]</li>
+            <li tabindex="0" data-value="TikTok-10-SubmitForm.html">Submit Form [TTK-10]</li>
+            <li tabindex="0" data-value="TikTok-12-Subscribe.html">Subscribe [TTK-12]</li>
+            <li tabindex="0" data-value="TikTok-14-Search.html">Search [TTK-14]</li>
+        </ul>
+        <button id="proceedBtn" disabled>Proceed</button>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const listbox = document.getElementById("selectedItem");
+    const listItems = listbox.querySelectorAll("li");
+    const proceedBtn = document.getElementById("proceedBtn");
+    let selectedIndex = -1;
+    let selectedValue = "";
+
+    function selectItem(index) {
+      listItems.forEach(li => li.classList.remove("selected"));
+      if (index >= 0 && index < listItems.length) {
+        listItems[index].classList.add("selected");
+        selectedValue = listItems[index].getAttribute("data-value");
+        proceedBtn.disabled = false;
+      }
+    }
+
+    listItems.forEach((item, index) => {
+      item.addEventListener("click", function () {
+        selectedIndex = index;
+        selectItem(selectedIndex);
+      });
+    });
+
+    listbox.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowDown" && selectedIndex < listItems.length - 1) {
+        selectedIndex++;
+        selectItem(selectedIndex);
+      } else if (e.key === "ArrowUp" && selectedIndex > 0) {
+        selectedIndex--;
+        selectItem(selectedIndex);
+      } else if (e.key === "Enter" && selectedValue) {
+        window.location.href = selectedValue;
+      }
+    });
+
+    proceedBtn.addEventListener("click", function () {
+      if (selectedValue) {
+        window.location.href = selectedValue;
+      }
+    });
+  </script>
+</body>
+</html>

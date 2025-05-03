@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Saiful | Showcase Project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{PAGE_TITLE}}</title>
 
   <!-- Google Tag Manager -->
   <script>
@@ -11,19 +11,18 @@
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-WW333VDN');
+    })(window,document,'script','dataLayer','{{GTM_ID}}');
   </script>
   <!-- End Google Tag Manager -->
 
   <style>
-    /* Global Reset */
     html, body {
+      height: 100%;
       margin: 0;
       padding: 0;
-      height: 100%;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: white;
       color: black;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     .page-wrapper {
@@ -32,7 +31,6 @@
       height: 100vh;
     }
 
-    /* Header */
     header {
       background-color: green;
       text-align: center;
@@ -44,9 +42,9 @@
     header h1 {
       margin: 0;
       font-size: 36px;
+      color: black;
     }
 
-    /* Home Button (Top Left Corner) */
     .home-button {
       position: absolute;
       left: 10px;
@@ -55,10 +53,10 @@
       background-color: orange;
       color: blue;
       border: none;
-      padding: 8px 12px;
-      border-radius: 6px;
+      padding: 10px 20px;
+      border-radius: 5px;
       cursor: pointer;
-      transition: all 0.3s;
+      transition: 0.3s;
     }
 
     .home-button:hover {
@@ -66,7 +64,6 @@
       color: orange;
     }
 
-    /* Main Content */
     main {
       flex: 1;
       display: flex;
@@ -76,163 +73,55 @@
       overflow-y: auto;
     }
 
-    h2, p {
-      text-align: center;
-      margin: 10px 0;
-    }
-
-    .contacts {
-      margin-top: 20px;
-      text-align: center;
-    }
-
-    .contacts a {
-      display: block;
-      margin: 5px 0;
-      color: orange;
-      text-decoration: underline;
-    }
-
-    .contacts a:hover {
-      color: blue;
-    }
-
-    /* Button Styles */
-    .button {
+    button {
       background-color: orange;
       color: blue;
+      border: none;
       padding: 10px 20px;
-      font-size: 16px;
-      border: none;
-      border-radius: 8px;
-      margin: 10px;
+      border-radius: 5px;
       cursor: pointer;
-      transition: all 0.3s;
-    }
-
-    .button:hover {
-      background-color: blue;
-      color: orange;
-    }
-
-    /* Disabled (Coming Soon) Buttons */
-    .coming-soon {
-      background-color: green;
-      color: blue;
-      pointer-events: none;
-      opacity: 0.6;
-      border: 2px solid lightgreen;
-    }
-
-    /* Blinking Text */
-    .blinking-text {
-      font-size: 16px;
-      font-weight: bold;
-      color: orangered;
-      animation: blink 1s infinite;
-      margin: 20px 0;
-    }
-
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
-    }
-
-    /* GA4 Access Form */
-    .ga4-access-form {
-      margin-top: 30px;
-      padding: 15px;
-      border: 3px solid green;
-      border-radius: 10px;
-      background-color: green;
-      width: 100%;
-      max-width: 400px;
-      text-align: center;
-    }
-
-    .ga4-access-form input[type="email"],
-    .ga4-access-form button {
-      width: 100%;
-      padding: 10px;
-      font-size: 15px;
-      margin-top: 10px;
-      border-radius: 6px;
-      border: none;
-      box-sizing: border-box;
-    }
-
-    .ga4-access-form button {
-      background-color: orange;
-      color: blue;
       transition: 0.3s;
     }
 
-    .ga4-access-form button:hover {
+    button:hover {
       background-color: blue;
       color: orange;
     }
 
-    .ga4-access-form .disclaimer {
-      margin-top: 10px;
-      font-size: 12px;
-      color: orange;
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #f1f1f1;
+      text-align: center;
+      height: 50px;
     }
 
-    /* Responsive Design */
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 24px;
-      }
+    footer object {
+      width: 100%;
+      height: 100%;
     }
   </style>
 </head>
-
 <body>
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WW333VDN"
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{GTM_ID}}"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
   <div class="page-wrapper">
     <header>
       <button class="home-button" onclick="location.href='index.html'">Home</button>
-      <h1>Welcome to Saiful's Showcase</h1>
+      <h1>{{HEADER_TITLE}}</h1>
     </header>
 
     <main>
-      <h2>My Google Analytics 4 (GA4) Tracking Setup</h2>
-      <p>Thank you for visiting my showcase project.</p>
-
-      <p class="blinking-text">⬇️ Connect with me below ⬇️</p>
-      <div class="contacts">
-        <a href="https://facebook.com/msasaroar" target="_blank">Facebook</a>
-        <a href="https://wa.me/8801917530031" target="_blank">WhatsApp</a>
-        <a href="mailto:msasaroar@gmail.com">Email</a>
-      </div>
-
-      <div class="ga4-access-form">
-        <h3>Request GA4 Access</h3>
-        <form action="mailto:msasaroar@gmail.com" method="POST" enctype="text/plain">
-          <input type="email" name="gmail" placeholder="Enter your Gmail" required pattern=".+@gmail\.com" title="Please enter a valid Gmail address">
-          <button type="submit">Request Access</button>
-        </form>
-        <p class="disclaimer">⚠️ Your Gmail will only be used to grant read-only access.</p>
-      </div>
-
-      <p class="blinking-text">⬇️ Choose a Tracking Platform ⬇️</p>
-      <div class="tracking-menu">
-        <button class="button" onclick="location.href='./01-GA4/GA4-000-menu-for-ga4.html'">Google Analytics</button>
-        <button class="button coming-soon" disabled>Google Ads</button>
-        <button class="button coming-soon" disabled>Meta/Facebook</button>
-        <button class="button coming-soon" disabled>Pinterest</button>
-        <button class="button coming-soon" disabled>LinkedIn</button>
-        <button class="button coming-soon" disabled>Snapchat</button>
-        <button class="button coming-soon" disabled>TikTok</button>
-        <button class="button coming-soon" disabled>X/Twitter</button>
-        <button class="button" onclick="location.href='./Test-Pages/Test-Page-1.html'">Test Page-1</button>
-        <button class="button" onclick="location.href='./Test-Pages/Test-Page-2.html'">Test Page-2</button>
-      </div>
+      {{MAIN_CONTENT}}
     </main>
+
+    <footer>
+      <object type="text/html" data="footer.html"></object>
+    </footer>
   </div>
 </body>
 </html>

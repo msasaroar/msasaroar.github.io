@@ -1,85 +1,229 @@
-<style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Saiful | Showcase Project | GAds</title>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB72WSHR');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <style>
+    /* Global Styles */
     html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background-color: green;
+      color: black;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
+
+    .page-wrapper {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    /* Header */
+    header {
+      background-color: rgb(41, 163, 41);
+      text-align: center;
+      padding: 10px;
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+      color: black;
+    }
+
+    .home-button {
+      position: absolute;
+      left: 10px;
+      top: 20%;
+      transform: translateY(-50%);
+      background-color: orange;
+      color: blue;
+      border: 5px solid green;
+      padding: 15px 30px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    /* Main Content */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0px;
+      overflow-y: auto;
+    }
+
+    /* Listbox Group */
     .listbox-group {
-        display: flex;
-        flex-direction: column;
-        height: 90vh; /* পুরো ভিউপোর্ট উচ্চতা */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1500px;
+    min-height: 300px; /* কমপক্ষে ৩০০px হবে, কনটেন্ট বেশি হলে আরও বাড়বে */
+    height: 1000px;
+    margin-top: 20px;
     }
+
+    .listbox-group label {
+      font-weight: bold;
+      font-size: 15px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
     .listbox-group ul {
-        list-style: none;
-        padding: 0;
-        margin: 10px 0;
-        border: 1px solid #ccc;
-        flex-grow: 1; /* লিস্টবক্স পুরো স্ক্রীন নেবে */
-        overflow-y: auto;
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+      border: 5px solid rgb(41, 163, 41);
+      max-height: 1000px;
+      overflow-y: auto;
+      background-color: silver;
     }
+
     .listbox-group li {
-        padding: 10px;
-        cursor: pointer;
-        border-bottom: 1px solid #eee;
+      padding: 10px;
+      cursor: pointer;
+      border-bottom: 2px solid black;
+      transition: background-color 0.3s;
     }
-    .listbox-group li:hover, .listbox-group li.selected {
-        background-color: #007bff;
-        color: white;
+
+    .listbox-group li:hover, 
+    .listbox-group li.selected {
+      background-color: #007bff;
+      color: white;
     }
+
+    /* Buttons */
     button {
-        margin: 10px;
-        padding: 10px 15px;
-        cursor: pointer;
-        background-color: orange;
-        color: blue;
-        border: none;
-        border-radius: 5px;
+      background-color: orange;
+      color: blue;
+      border: 5px solid rgb(41, 163, 41);
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+      transition: all 0.3s;
     }
+
     button:hover {
-        background-color: blue;
-        color: orange;
+      background-color: blue;
+      color: orange;
     }
+
     button:disabled {
-        background-color: gray;
-        cursor: not-allowed;
+      background-color: gray;
+      cursor: not-allowed;
+      color: white;
     }
-</style>
 
+    /* Responsive */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
 
-<div class="listbox-group">
-    <label for="gadsConversionActions">Google Ads Conversion Action</label>
-    <ul id="gadsConversionActions" role="listbox" tabindex="0">
-        <li tabindex="0" data-value="../Side-Menu-Bar/menu-99-Opening-Page.html">Home</li>
-        <li tabindex="0" data-value="GAds-01-Subscribe.html">GAds # 01. Subscribe</li>
-        <li tabindex="0" data-value="GAds-02-Sign-Ups.html">GAds # 02. Sign-Ups</li>
-        <li tabindex="0" data-value="GAds-03-Book-Appointments.html">GAds # 03. Book Appointments</li>
-        <li tabindex="0" data-value="GAds-04-Request-Quotes.html">GAds # 04. Request Quotes</li>
-        <li tabindex="0" data-value="GAds-05-Get-Directions.html">GAds # 05. Get Directions</li>
-        <li tabindex="0" data-value="GAds-06-Outbound-Clicks.html">GAds # 06. Outbound Clicks</li>
-        <li tabindex="0" data-value="GAds-07-Purchases.html">GAds # 07. Purchases</li>
-        <li tabindex="0" data-value="GAds-08-Add-To-Cart.html">GAds # 08. Add To Cart</li>
-        <li tabindex="0" data-value="GAds-09-Begin-Checkout.html">GAds # 09. Begin Checkout</li>
-        <li tabindex="0" data-value="GAds-10-Submit-Lead-Forms.html">GAds # 10. Submit Lead Forms</li>
-        <li tabindex="0" data-value="GAds-11-Contacts.html">GAds # 11. Contacts</li>
-        <li tabindex="0" data-value="GAds-12-Page-Views.html">GAds # 12. Page Views</li>
-    </ul>
-    <button id="proceedBtn" disabled>Proceed</button>
-</div>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
-<script>
+  <div class="page-wrapper">
+    <header>
+      <button class="home-button" onclick="location.href='../index.html'">Home</button>
+      <h1>Google Ads</h1>
+    </header>
+
+    <main>
+      <div class="listbox-group">
+        <label for="selectedItem">SELECT AN ITEM FROM THE LIST</label>
+        <ul id="selectedItem" role="listbox" tabindex="0">
+            <li tabindex="0" data-value="GAds-01-Subscribe.html">Subscribe [GAD-01]</li>
+            <li tabindex="0" data-value="GAds-02-Sign-Ups.html">Sign-Ups [GAD-02]</li>
+            <li tabindex="0" data-value="GAds-03-Book-Appointments.html">Book Appointments [GAD-03]</li>
+            <li tabindex="0" data-value="GAds-04-Request-Quotes.html">Request Quotes [GAD-04]</li>
+            <li tabindex="0" data-value="GAds-05-Get-Directions.html">Get Directions [GAD-05]</li>
+            <li tabindex="0" data-value="GAds-06-Outbound-Clicks.html">Outbound Clicks [GAD-06]</li>
+            <li tabindex="0" data-value="GAds-07-Purchases.html">Purchases [GAD-07]</li>
+            <li tabindex="0" data-value="GAds-08-Add-To-Cart.html">Add To Cart [GAD-08]</li>
+            <li tabindex="0" data-value="GAds-09-Begin-Checkout.html">Begin Checkout [GAD-09]</li>
+            <li tabindex="0" data-value="GAds-10-Submit-Lead-Forms.html">Submit Lead Forms [GAD-10]</li>
+            <li tabindex="0" data-value="GAds-11-Contacts.html">Contacts [GAD-11]</li>
+            <li tabindex="0" data-value="GAds-12-Page-Views.html">Page Views [GAD-12]</li>
+        </ul>
+        <button id="proceedBtn" disabled>Proceed</button>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const listbox = document.getElementById("selectedItem");
+    const listItems = listbox.querySelectorAll("li");
+    const proceedBtn = document.getElementById("proceedBtn");
+    let selectedIndex = -1;
     let selectedValue = "";
-    document.querySelectorAll('#gadsConversionActions li').forEach(item => {
-        item.addEventListener('click', function() {
-            document.querySelectorAll('#gadsConversionActions li').forEach(li => li.classList.remove('selected'));
-            this.classList.add('selected');
-            selectedValue = this.getAttribute('data-value');
-            document.getElementById('proceedBtn').disabled = false;
-        });
+
+    function selectItem(index) {
+      listItems.forEach(li => li.classList.remove("selected"));
+      if (index >= 0 && index < listItems.length) {
+        listItems[index].classList.add("selected");
+        selectedValue = listItems[index].getAttribute("data-value");
+        proceedBtn.disabled = false;
+      }
+    }
+
+    listItems.forEach((item, index) => {
+      item.addEventListener("click", function () {
+        selectedIndex = index;
+        selectItem(selectedIndex);
+      });
     });
 
-    document.getElementById('proceedBtn').addEventListener('click', function() {
-        if (selectedValue) {
-            window.location.href = selectedValue;
-        }
+    listbox.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowDown" && selectedIndex < listItems.length - 1) {
+        selectedIndex++;
+        selectItem(selectedIndex);
+      } else if (e.key === "ArrowUp" && selectedIndex > 0) {
+        selectedIndex--;
+        selectItem(selectedIndex);
+      } else if (e.key === "Enter" && selectedValue) {
+        window.location.href = selectedValue;
+      }
     });
-</script>
+
+    proceedBtn.addEventListener("click", function () {
+      if (selectedValue) {
+        window.location.href = selectedValue;
+      }
+    });
+  </script>
+</body>
+</html>
