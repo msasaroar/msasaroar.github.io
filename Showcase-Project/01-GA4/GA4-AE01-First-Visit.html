@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GA4: first_visit Event Demo</title>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB72WSHR');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <style>
+    body {
+      background-color: white;
+      color: black;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+
+    header {
+      background-color: green;
+      color: white;
+      padding: 20px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      text-align: center;
+    }
+
+    main {
+      margin-top: 100px;
+    }
+
+    .button {
+      background-color: orange;
+      color: blue;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #f1f1f1;
+      text-align: center;
+      height: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header>
+    <h1>GA4 Event Demo: first_visit</h1>
+  </header>
+
+  <main>
+    <p>This page demonstrates how the <strong>first_visit</strong> event is automatically triggered in GA4.</p>
+
+    <h3>How to Test:</h3>
+    <ul style="text-align: left; display: inline-block; margin-top: 20px;">
+      <li>Open this page in an <strong>Incognito/Private</strong> window.</li>
+      <li>Or <strong>clear cookies</strong> for this site and refresh the page.</li>
+      <li>Watch for the <code>first_visit</code> event in the GA4 <strong>DebugView</strong>.</li>
+    </ul>
+
+    <button class="button" onclick="alert('Try opening this page in Incognito to see first_visit!')">
+      Need Help?
+    </button>
+  </main>
+</body>
+</html>

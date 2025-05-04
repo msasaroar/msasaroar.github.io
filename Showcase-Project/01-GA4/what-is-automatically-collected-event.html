@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatically Collected Events and Enhanced Measurement Events in GA4</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: green;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            margin: 0;
+        }
+        h2 {
+            color: #333;
+        }
+        section {
+            padding: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        footer {
+            background-color: #f1f1f1;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Automatically Collected Events and Enhanced Measurement Events in GA4</h1>
+    </header>
+
+    <section>
+        <h2>Introduction</h2>
+        <p>Google Analytics 4 (GA4) offers a robust system for tracking user interactions on your website or app using events. Events are essential for understanding user behavior and engagement. GA4 provides two types of events that are automatically collected when you set up the GA4 tracking code: <strong>Automatically Collected Events</strong> and <strong>Enhanced Measurement Events</strong>.</p>
+        <p>In this article, we will explore both types of events, how they are tracked, and how you can use them to gain deeper insights into user activity on your site.</p>
+
+        <h2>Automatically Collected Events</h2>
+        <p>These are the default events tracked by GA4 as soon as you set up the GA4 tag on your website. They require no additional configuration and are automatically collected by the system.</p>
+        <p>These events are essential for basic user and session-level tracking.</p>
+
+        <h2>Enhanced Measurement Events</h2>
+        <p>Enhanced Measurement is a feature within GA4 that allows you to track more granular interactions with users on your site, such as scrolling, outbound link clicks, video interactions, and file downloads. These events are also collected automatically, but they can be enabled or disabled in the GA4 admin panel depending on your needs.</p>
+        <p>Enhanced Measurement events offer deeper insights into user behavior beyond basic interactions.</p>
+
+        <h2>Table: Automatically Collected Events vs Enhanced Measurement Events</h2>
+        <p>Below is a comparison of the events that are automatically collected by GA4, distinguishing between those that are part of Enhanced Measurement and those that are not. A short description is also included for each event to help you understand its purpose.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Event Name</th>
+                    <th>Enhanced Measurement?</th>
+                    <th>Triggered When...</th>
+                    <th>Short Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>page_view</td>
+                    <td>✅ Yes</td>
+                    <td>A page is viewed or the browser history changes.</td>
+                    <td>Tracks when a user views a page on your site.</td>
+                </tr>
+                <tr>
+                    <td>scroll</td>
+                    <td>✅ Yes</td>
+                    <td>A user scrolls to 90% of the page height.</td>
+                    <td>Measures how far users scroll down the page, indicating content engagement.</td>
+                </tr>
+                <tr>
+                    <td>click</td>
+                    <td>✅ Yes</td>
+                    <td>A user clicks an outbound link (link to another domain).</td>
+                    <td>Tracks clicks on external links leading away from your website.</td>
+                </tr>
+                <tr>
+                    <td>file_download</td>
+                    <td>✅ Yes</td>
+                    <td>A user clicks to download a file.</td>
+                    <td>Monitors when users download files such as PDFs or documents.</td>
+                </tr>
+                <tr>
+                    <td>video_start</td>
+                    <td>✅ Yes</td>
+                    <td>A user starts an embedded video (YouTube, etc.).</td>
+                    <td>Tracks when a user begins watching an embedded video.</td>
+                </tr>
+                <tr>
+                    <td>video_progress</td>
+                    <td>✅ Yes</td>
+                    <td>A user reaches 10%, 25%, 50%, or 75% progress in a video.</td>
+                    <td>Monitors user engagement with video content as they progress through it.</td>
+                </tr>
+                <tr>
+                    <td>video_complete</td>
+                    <td>✅ Yes</td>
+                    <td>A user finishes watching the video.</td>
+                    <td>Tracks when users watch the entire video.</td>
+                </tr>
+                <tr>
+                    <td>form_start</td>
+                    <td>✅ Yes</td>
+                    <td>A user starts filling out a form.</td>
+                    <td>Tracks when a user begins to interact with a form (e.g., sign-up, contact form).</td>
+                </tr>
+                <tr>
+                    <td>form_submit</td>
+                    <td>✅ Yes</td>
+                    <td>A user submits a form.</td>
+                    <td>Records when a user submits a form on your website.</td>
+                </tr>
+                <tr>
+                    <td>first_visit</td>
+                    <td>❌ No</td>
+                    <td>A user visits the site for the first time.</td>
+                    <td>Indicates when a user is visiting your site for the very first time.</td>
+                </tr>
+                <tr>
+                    <td>session_start</td>
+                    <td>❌ No</td>
+                    <td>A new session starts (usually after 30 minutes of inactivity).</td>
+                    <td>Tracks when a new session begins after a period of user inactivity.</td>
+                </tr>
+                <tr>
+                    <td>user_engagement</td>
+                    <td>❌ No</td>
+                    <td>A user engages with the site for at least 10 seconds or other actions.</td>
+                    <td>Measures user engagement based on time spent or actions taken on your site.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Conclusion</h2>
+        <p>In summary, GA4 automatically collects both basic and enhanced user interaction data through its system of events. Automatically Collected Events track fundamental user actions, such as page views, sessions, and first visits, while Enhanced Measurement Events offer more detailed insights into how users engage with content, such as scrolling, file downloads, and video progress.</p>
+        <p>By understanding the difference between these two types of events, you can configure your GA4 setup to capture the data most relevant to your business goals and user experience analysis.</p>
+    </section>
+</body>
+</html>
