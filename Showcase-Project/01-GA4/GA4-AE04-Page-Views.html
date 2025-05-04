@@ -1,6 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <title>GA4: page_view Event Demo</title>
+    
     <!-- Google Tag Manager -->
     <script>
         (function(w, d, s, l, i) {
@@ -18,99 +22,79 @@
         })(window, document, 'script', 'dataLayer', 'GTM-MB72WSHR');
     </script>
     <!-- End Google Tag Manager -->
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page View Tag Practice</title>
-    <style>
-        /* General Styles */
+    
+      <style>
         body {
-            background: white;
-            color: black;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
+          background-color: white;
+          color: black;
+          font-family: Arial, sans-serif;
+          text-align: center;
+          padding: 40px;
         }
     
-        /* Header Styles */
         header {
-            background-color: green;
-            color: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            height: 60px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
+          background-color: green;
+          color: white;
+          padding: 20px;
+          position: fixed;
+          top: 0;
+          width: 100%;
+          text-align: center;
         }
     
-        header h1 {
-            text-align: center;
-            font-size: 25px bold;
+        main {
+          margin-top: 100px;
         }
     
-        /* Home Button Styles */
-        #home-button {
-            position: absolute;
-            left: 10px;
-            top: 10px;
-            background-color: orange;
-            color: blue;
-            border: none;
-            padding: 10px 25px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px bold;
+        .button {
+          background-color: orange;
+          color: blue;
+          padding: 10px 20px;
+          font-size: 16px;
+          border: none;
+          margin-top: 20px;
+          cursor: pointer;
         }
     
-        #home-button:hover {
-            background-color: blue;
-            color: orange;
-            border: 2px solid orange;
+        .button:hover {
+          background-color: blue;
+          color: orange;
         }
     
-        /* Button Styles */
-        button {
-            background-color: orange;
-            color: black;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-    
-        button:hover {
-            background-color: white;
-            color: black;
-            border: 1px solid orange;
-        }
-    
-        /* Footer include */
         footer {
-            text-align: center;
-            margin-top: 500px;
+          position: fixed;
+          bottom: 0;
+          width: 100%;
+          background-color: #f1f1f1;
+          text-align: center;
+          height: 50px;
         }
-    </style>
-</head>
-
-<body>
+      </style>
+    </head>
+    <body>
     <!-- Google Tag Manager (noscript) -->
     <noscript>
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR" 
             height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
-
-    <header>
-        <h1>Demonstration : Page View Tag</h1>
-    </header>
-
-    <section>
-        <h1>Simulate a page view event by loading this page.</h1>
-    </section>
-</body>
-</html>
+      <header>
+        <h1>GA4 Event Demo: page_view</h1>
+      </header>
+    
+      <main>
+        <p>The <strong>page_view</strong> event is triggered automatically when this page loads.</p>
+    
+        <h3>How to Trigger:</h3>
+        <ul style="text-align: left; display: inline-block;">
+          <li>Just load or refresh this page.</li>
+          <li>Each load sends a <code>page_view</code> event to GA4.</li>
+        </ul>
+    
+        <button class="button" onclick="alert('Reload this page to see page_view in GA4 DebugView.')">
+          Help
+        </button>
+      </main>
+    </body>
+    </html>
+    
