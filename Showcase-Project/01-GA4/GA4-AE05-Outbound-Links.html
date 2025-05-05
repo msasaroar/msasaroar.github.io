@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GA4: Outbound Link Click Demo</title>
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MB72WSHR');
+    </script>
+    <!-- End Google Tag Manager -->
+
+  <style>
+    body {
+      background-color: white;
+      color: black;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+
+    header {
+      background-color: green;
+      color: white;
+      padding: 20px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      text-align: center;
+    }
+
+    main {
+      margin-top: 100px;
+    }
+
+a {
+        display: inline-block;
+        margin: 10px;
+        padding: 10px 20px;
+        text-decoration: none;
+        background-color: orange;
+        color: white;
+        border-radius: 5px;
+        font-size: 18px;
+    }
+    a:hover {
+        background-color: blue;
+    }
+
+    body {
+      background-color: white;
+      color: black;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+
+    header {
+      background-color: green;
+      color: white;
+      padding: 20px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      text-align: center;
+    }
+
+  </style>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header>
+        <h1>GA4 Event Demo: outbound_click Demo</h1>
+    </header>
+
+    <main>
+
+      <div class="highlight">
+        <p><strong>Outbound link clicks</strong> are links that navigate a user <strong>away from your domain</strong> to a different website (e.g., Facebook, external blog, partner site).</p>
+        <p>In <strong>Google Analytics 4 (GA4)</strong>, these clicks are tracked <strong>automatically</strong> as an <span style="text-transform: uppercase; color: green;">Enhanced Measurement</span> event, named:</p>
+      </div>
+  
+      <div class="code-box">
+        click event<br/>
+        with <strong>outbound = true</strong> in the event parameters
+      </div>
+
+
+        <p>Clicking the link below will fire a <strong>click</strong> event with <code>outbound=true</code>.</p>
+        <p style="margin-top: 20px;">Check GA4 DebugView or Realtime reports to confirm the event.</p>
+        <p>Click any of the links below to test outbound link tracking.</p>
+
+        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">Google</a>
+        <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a href="https://www.github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </main>
+</body>
+</html>

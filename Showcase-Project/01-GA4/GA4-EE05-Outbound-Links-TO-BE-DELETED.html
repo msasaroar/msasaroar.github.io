@@ -54,10 +54,6 @@
         <a href="https://www.github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Outbound Link Demo</p>
-    </footer>
-
     <script>
         // Add a click event listener to all outbound links
         document.querySelectorAll('a').forEach(link => {
@@ -82,16 +78,6 @@
                 event.preventDefault();
             });
         });
-    </script>
-
-    <div id="footer"></div>
-    <script>
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer').innerHTML = data;
-            })
-            .catch(error => console.error('Error loading footer:', error));
     </script>
 
 </body>
