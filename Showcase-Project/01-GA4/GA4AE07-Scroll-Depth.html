@@ -1,94 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Auto Scroll Event Demo (GTM Only)</title>
-
-  <!-- Google Tag Manager -->
-  <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MB72WSHR');
-  </script>
-  <!-- End Google Tag Manager -->
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scroll Depth Practice</title>
+      <!-- Google Tag Manager -->
+      <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MB72WSHR');
+    </script>
+    <!-- End Google Tag Manager -->
   <style>
     body {
-      background-color: white;
-      color: black;
       margin: 0;
+      padding: 0;
       font-family: Arial, sans-serif;
-    }
-
-    header {
       background-color: green;
-      color: white;
+    }
+    header {
+      background: white;
       text-align: center;
-      padding: 15px;
-      position: fixed;
+      color: black;
+      padding: 10px;
+      width: 100%;
       top: 0;
-      width: 100%;
-      z-index: 1000;
     }
-
-    #home-btn {
-      position: absolute;
-      left: 10px;
-      top: 15px;
-      background-color: orange;
-      color: blue;
-      border: none;
-      padding: 5px 10px;
-      cursor: pointer;
+    header a {
+      color: black;
+      text-decoration: none;
+      padding: 14px 20px;
+      display: inline-block;
     }
-
-    #home-btn:hover {
-      background-color: blue;
-      color: orange;
+    header a:hover {
+      background-color: white;
     }
-
-    main {
-      padding: 100px 20px 100px 20px;
+    .vertical-content {
+      height: 3000px;
+      background: green;
+      text-align: left;
+      padding-top: 20px;
+      color: rgb(0, 0, 0);
     }
-
-    .scroll-vertical {
-      height: 2000px;
-      background: linear-gradient(white, lightgray);
-    }
-
-    .scroll-horizontal {
-      width: 100%;
+    .horizontal-content-wrapper {
       overflow-x: scroll;
       white-space: nowrap;
-      background: #f0f0f0;
-      padding: 20px;
-      margin-top: 50px;
+      background-color: green;
     }
-
-    .scroll-box {
+    .horizontal-content {
       display: inline-block;
-      width: 300px;
-      height: 150px;
-      background: lightblue;
-      margin-right: 20px;
-      vertical-align: top;
+      height: 300px;
+      width: 5000px;
+      background: blueviolet;
+      text-align: left;
+      color: black;
     }
-
-    footer {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background-color: #f1f1f1;
+    h1, h2 {
+      margin: 20px;
+    }
+   
+    button {
+      background-color: orange;
+      color: blue;
+      border-radius: 5px;
+      padding: 10px 20px;
       text-align: center;
-      height: 50px;
+      font-size: 16px;
+      cursor: pointer;
+
+    }
+    button:hover {
+      background-color: blue;
+      color: orange;
     }
   </style>
 </head>
 <body>
-
+  
   <!-- Google Tag Manager (noscript) -->
   <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
@@ -97,26 +87,19 @@
   <!-- End Google Tag Manager (noscript) -->
 
   <header>
-    <button id="home-btn" onclick="location.href='index.html'">Home</button>
-    <h1>Auto Scroll Event Demo (via GTM)</h1>
+      <button class="home-button" onclick="location.href='index.html'">Home</button>
   </header>
 
-  <main>
-    <section class="scroll-vertical">
-      <h2>Vertical Scroll</h2>
-      <p>Scroll down to trigger GA4 automatic scroll event (90% view).</p>
-    </section>
+  <div class="vertical-content">
+    <h1>Vertical Scroll Tracking</h1>
+    <h2>Scroll down to test vertical depth tracking!</h2>
+  </div>
 
-    <section class="scroll-horizontal">
-      <h2>Horizontal Scroll</h2>
-      <div class="scroll-box"></div>
-      <div class="scroll-box"></div>
-      <div class="scroll-box"></div>
-      <div class="scroll-box"></div>
-      <div class="scroll-box"></div>
-      <div class="scroll-box"></div>
-    </section>
-  </main>
-
+  <div class="horizontal-content-wrapper">
+    <div class="horizontal-content">
+      <h1>Horizontal Scroll Tracking</h1>
+      <h2>Scroll right to test horizontal depth tracking!</h2>
+    </div>
+  </div>
 </body>
 </html>
