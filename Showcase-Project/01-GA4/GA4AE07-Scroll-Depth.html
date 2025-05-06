@@ -2,104 +2,117 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Scroll Depth Practice</title>
-      <!-- Google Tag Manager -->
-      <script>
-        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-MB72WSHR');
-    </script>
-    <!-- End Google Tag Manager -->
+  <title>Scroll Event Demo</title>
   <style>
     body {
       margin: 0;
-      padding: 0;
       font-family: Arial, sans-serif;
-      background-color: green;
+      background-color: white;
+      color: black;
     }
     header {
-      background: white;
+      background-color: green;
       text-align: center;
-      color: black;
       padding: 10px;
+      position: fixed;
       width: 100%;
       top: 0;
+      z-index: 1000;
     }
-    header a {
-      color: black;
-      text-decoration: none;
-      padding: 14px 20px;
-      display: inline-block;
-    }
-    header a:hover {
-      background-color: white;
-    }
-    .vertical-content {
-      height: 3000px;
-      background: green;
-      text-align: left;
-      padding-top: 20px;
-      color: rgb(0, 0, 0);
-    }
-    .horizontal-content-wrapper {
-      overflow-x: scroll;
-      white-space: nowrap;
-      background-color: green;
-    }
-    .horizontal-content {
-      display: inline-block;
-      height: 300px;
-      width: 5000px;
-      background: blueviolet;
-      text-align: left;
-      color: black;
-    }
-    h1, h2 {
-      margin: 20px;
-    }
-   
-    button {
+    #home-button {
+      position: absolute;
+      left: 10px;
+      top: 10px;
       background-color: orange;
       color: blue;
-      border-radius: 5px;
-      padding: 10px 20px;
-      text-align: center;
-      font-size: 16px;
+      border: none;
+      padding: 5px 10px;
       cursor: pointer;
-
     }
-    button:hover {
+    #home-button:hover {
       background-color: blue;
       color: orange;
     }
+    .scroll-container {
+      margin-top: 70px;
+      height: 400px;
+      overflow: scroll;
+      border: 2px solid black;
+      white-space: nowrap;
+    }
+    .scroll-box {
+      width: 2000px;
+      height: 1500px;
+      background: linear-gradient(to right, #f06, #4a90e2);
+    }
+    .direction {
+      text-align: center;
+      margin: 20px;
+      font-size: 20px;
+    }
+
   </style>
 </head>
 <body>
-  
-  <!-- Google Tag Manager (noscript) -->
-  <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe>
-  </noscript>
-  <!-- End Google Tag Manager (noscript) -->
 
+  <!-- Header -->
   <header>
-      <button class="home-button" onclick="location.href='index.html'">Home</button>
+    <button id="home-button" onclick="location.href='index.html'">Home</button>
+    <h1>Scroll Event Detection</h1>
   </header>
 
-  <div class="vertical-content">
-    <h1>Vertical Scroll Tracking</h1>
-    <h2>Scroll down to test vertical depth tracking!</h2>
+  <!-- Scroll Direction Display -->
+  <div class="direction">
+    <p id="scroll-direction">Scroll to see direction...</p>
   </div>
 
-  <div class="horizontal-content-wrapper">
-    <div class="horizontal-content">
-      <h1>Horizontal Scroll Tracking</h1>
-      <h2>Scroll right to test horizontal depth tracking!</h2>
-    </div>
+  <!-- Scrollable Area -->
+  <div class="scroll-container" id="scrollArea">
+    <div class="scroll-box"></div>
   </div>
+
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WW333VDN');
+  </script>
+
+  <!-- Scroll Event Script -->
+  <script>
+    const scrollArea = document.getElementById('scrollArea');
+    const directionText = document.getElementById('scroll-direction');
+
+    let lastScrollTop = 0;
+    let lastScrollLeft = 0;
+
+    scrollArea.addEventListener('scroll', () => {
+      const st = scrollArea.scrollTop;
+      const sl = scrollArea.scrollLeft;
+
+      let direction = '';
+      if (st > lastScrollTop) {
+        direction += 'Scrolling Down';
+      } else if (st < lastScrollTop) {
+        direction += 'Scrolling Up';
+      }
+
+      if (sl > lastScrollLeft) {
+        direction += (direction ? ' & ' : '') + 'Scrolling Right';
+      } else if (sl < lastScrollLeft) {
+        direction += (direction ? ' & ' : '') + 'Scrolling Left';
+      }
+
+      if (!direction) direction = 'Not Scrolling';
+
+      directionText.textContent = direction;
+      lastScrollTop = st;
+      lastScrollLeft = sl;
+    });
+  </script>
+
 </body>
 </html>

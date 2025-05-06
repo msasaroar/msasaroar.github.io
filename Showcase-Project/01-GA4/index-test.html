@@ -1,28 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>Scroll Event Demo</title>
   <style>
     body {
+      margin: 0;
+      font-family: Arial, sans-serif;
       background-color: white;
       color: black;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0 20px;
     }
     header {
-      position: fixed;
-      top: 0;
-      width: 100%;
       background-color: green;
       text-align: center;
-      padding: 10px 0;
-      color: white;
-      z-index: 999;
+      padding: 10px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
     }
-    .home-button {
+    #home-button {
       position: absolute;
       left: 10px;
       top: 10px;
@@ -32,72 +29,90 @@
       padding: 5px 10px;
       cursor: pointer;
     }
-    .home-button:hover {
+    #home-button:hover {
       background-color: blue;
       color: orange;
     }
-    .content {
-      margin-top: 80px;
+    .scroll-container {
+      margin-top: 70px;
+      height: 400px;
+      overflow: scroll;
+      border: 2px solid black;
+      white-space: nowrap;
     }
-    .scroll-counter {
+    .scroll-box {
+      width: 2000px;
+      height: 1500px;
+      background: linear-gradient(to right, #f06, #4a90e2);
+    }
+    .direction {
+      text-align: center;
+      margin: 20px;
       font-size: 20px;
-      margin: 20px 0;
-      text-align: center;
     }
-    .box {
-      height: 800px;
-      border: 1px solid #ccc;
-      margin: 20px 0;
-    }
-    footer {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background-color: #f1f1f1;
-      text-align: center;
-      height: 50px;
-    }
+
   </style>
 </head>
 <body>
 
+  <!-- Header -->
+  <header>
+    <button id="home-button" onclick="location.href='index.html'">Home</button>
+    <h1>Scroll Event Detection</h1>
+  </header>
+
+  <!-- Scroll Direction Display -->
+  <div class="direction">
+    <p id="scroll-direction">Scroll to see direction...</p>
+  </div>
+
+  <!-- Scrollable Area -->
+  <div class="scroll-container" id="scrollArea">
+    <div class="scroll-box"></div>
+  </div>
+
+
   <!-- Google Tag Manager -->
   <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-WW333VDN');
   </script>
-  <!-- End GTM -->
 
-  <header>
-    <button class="home-button" onclick="location.href='index.html'">Home</button>
-    <h1>Scroll Event Demo</h1>
-  </header>
-
-  <div class="content">
-    <div class="scroll-counter">You've scrolled <span id="scrollCount">0</span> times</div>
-    
-    <!-- Filler content to make the page scrollable -->
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-  </div>
-
-  <!-- Footer -->
-  <footer>
-    <object type="text/html" data="footer.html" style="width: 100%; height: 100%;"></object>
-  </footer>
-
+  <!-- Scroll Event Script -->
   <script>
-    let scrollCount = 0;
+    const scrollArea = document.getElementById('scrollArea');
+    const directionText = document.getElementById('scroll-direction');
 
-    window.addEventListener('scroll', () => {
-      scrollCount++;
-      console.log(`Scroll event fired: ${scrollCount}`);
-      document.getElementById('scrollCount').textContent = scrollCount;
+    let lastScrollTop = 0;
+    let lastScrollLeft = 0;
+
+    scrollArea.addEventListener('scroll', () => {
+      const st = scrollArea.scrollTop;
+      const sl = scrollArea.scrollLeft;
+
+      let direction = '';
+      if (st > lastScrollTop) {
+        direction += 'Scrolling Down';
+      } else if (st < lastScrollTop) {
+        direction += 'Scrolling Up';
+      }
+
+      if (sl > lastScrollLeft) {
+        direction += (direction ? ' & ' : '') + 'Scrolling Right';
+      } else if (sl < lastScrollLeft) {
+        direction += (direction ? ' & ' : '') + 'Scrolling Left';
+      }
+
+      if (!direction) direction = 'Not Scrolling';
+
+      directionText.textContent = direction;
+      lastScrollTop = st;
+      lastScrollLeft = sl;
     });
   </script>
+
 </body>
 </html>
