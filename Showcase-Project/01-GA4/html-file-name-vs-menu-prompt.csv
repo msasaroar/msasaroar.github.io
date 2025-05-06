@@ -1,0 +1,104 @@
+HTML FILE NAME==MENU PROMPT
+what-is-custom-event.html == ??CUSTOM EVENT??
+GA4-C01-Time-On-Page.html == GA4 # C01. Track Time on Page Using GTM for GA4
+GA4-C02-Inject-Custom-Event-Using-GTM.html == GA4 # C02. Inject Custom Event Using GTM for GA4
+GA4-C03-Inject-Custom-Event-Using-GTM.html == GA4 # C03. Inject Custom Event Using GTM for GA4
+GA4-C04-Text-Copy-Event-Tracking.html == GA4 # C04. Text Copy Event Tracking Using GTM for GA4
+what-is-a-recommended-event.html == ??RECOMMANDED EVENT??
+GA4-R01-add_payment_info.html == GA4 # R01. add_payment_info
+GA4-R02-add_shipping_info.html == GA4 # R02. add_shipping_info
+GA4-R03-add_to_cart.html == GA4 # R03. add_to_cart
+GA4-R05-begin_checkout.html == GA4 # R05. begin_checkout
+GA4-R10-generate_lead.html == GA4 # R10. generate_lead
+GA4-R17-purchase.html == GA4 # R17. purchase
+GA4-R19-refund.html == GA4 # R19. refund
+GA4-R20-remove_from_cart.html == GA4 # R20. remove_from_cart
+GA4-R23-select_item.html == GA4 # R23. select_item
+GA4-R32-view_item.html == GA4 # R32. view_item
+GA4-R33-view_item_list.html == GA4 # R33. view_item_list
+GA4-R34-view_search_result.html == GA4 # R34. view_search_result
+index-99-InshaAllah.html == ??RECOMMANDED EVENT [COMMING...]??
+GA4-04-add_to_wishlist.html == GA4 # R??-01. add_to_wishlist
+GA4-06-close_convert_lead.html == GA4 # R??-02. close_convert_lead
+GA4-07-close_unconvert_lead.html == GA4 # R??-03. close_unconvert_lead
+GA4-08-disqualify_lead.html == GA4 # R??-04. disqualify_lead
+GA4-09-earn_virtual_currency.html == GA4 # R??-05. earn_virtual_currency
+GA4-11-join_group.html == GA4 # R??-06. join_group
+GA4-12-level_end.html == GA4 # R??-07. level_end
+GA4-13-level_start.html == GA4 # R??-08. level_start
+GA4-14-level_up.html == GA4 # R??-09. level_up
+GA4-15-login.html == GA4 # R??-10. login
+GA4-16-post_score.html == GA4 # R??-11. post_score
+GA4-18-qualify_lead.html == GA4 # R??-12. qualify_lead
+GA4-21-search.html == GA4 # R??-13. search
+GA4-22-select_content.html == GA4 # R??-14. select_content
+GA4-24-select_promotion.html == GA4 # R??-15. select_promotion
+GA4-25-share.html == GA4 # R??-16. share
+GA4-26-sign_up.html == GA4 # R??-17. sign_up
+GA4-27-spend_virtual_currency.html == GA4 # R??-18. spend_virtual_currency
+GA4-28-tutorial_begin.html == GA4 # R??-19. tutorial_begin
+GA4-29-tutorial_complete.html == GA4 # R??-20. tutorial_complete
+GA4-30-unlock_achievement.html == GA4 # R??-21. unlock_achievement
+GA4-31-view_cart.html == GA4 # R??-22. view_cart
+GA4-34-view_promotion.html == GA4 # R??-23. view_promotion
+GA4-35-working_lead.html == GA4 # R??-24. working_lead
+index-99-InshaAllah.html == ??PREVIOUSLY PRACTICED EVENT??
+GA4-99-All-In-One.html == GA4 # 99. All Event On A Single Page
+GA4-99-purchase-journey.html == GA4 # 99. eCommerce Purchase Journey
+what-is-tag.html == ??PRACTICE WITH : TAG PLAN??
+GA4-click-element-tag.html == GA4 # click_element_tag
+GA4-custom-html-tag.html == GA4 # custom_html_tag
+GA4-custom-image-tag-1.html == GA4 # custom_image_tag_1
+GA4-custom-image-tag.html == GA4 # custom_image_tag
+GA4-JavaScript-Error-Tag.html == GA4 # javascript_error_tag
+GA4-social-media-click-tag.html == GA4 # social_media_click_tag
+GA4-timer-tag.html == GA4 # timer_tag
+what-is-trigger.html == ??PRACTICE WITH : TRIGGER PLAN??
+GA4-custom-event-trigger.html == GA4 # custom_event_trigger---no html file
+GA4-element-visibility-trigger.html == GA4 # element_visibility_trigger
+GA4-hash-change-tag-and-trigger.html == GA4 # hash_change_tag_and_trigger
+GA4-page-visibility-trigger.html == GA4 # page_visibility_trigger
+GA4-window-loaded-trigger.html == GA4 # window_loaded_trigger
+what-is-variable.html == ??PRACTICE WITH : VARIABLE PLAN??
+321-page-view-data-layer.html == GA4 # 321. page_view_data_layer
+322-button-click-data-layer.html == GA4 # 322. button_click_data_layer
+323-scroll-depth-data-layer.html == GA4 # 323. scroll_depth_data_layer
+324-form-submit-data-layer.html == GA4 # 324. form_submit_data_layer
+325-video-start-data-layer.html == GA4 # 325. video_start_data_layer
+327-remove-from-cart-data-layer.html == GA4 # 327. remove_from_cart_data_layer
+328-checkout-data-layer.html == GA4 # 328. checkout_data_layer
+328-purchase-data-layer.html == GA4 # 328. purchase_data_layer
+329-user-login-data-layer.html == GA4 # 329. user_login_data_layer
+330-user-logout-data-layer.html == GA4 # 330. user_logout_data_layer
+331-custom-event-data-layer.html == GA4 # 331. custom_event_data_layer
+332-search-data-layer.html == GA4 # 332. search_data_layer
+333-product-view-data-layer.html == GA4 # 333. product_view_data_layer
+334-download-file-data-layer.html == GA4 # 334. download_file_data_layer
+335-feedback-submit-data-layer.html == GA4 # 335. feedback_submit_data_layer
+336-page-timing-data-layer.html == GA4 # 336. page_timing_data_layer
+337-error-tracking-data-layer.html == GA4 # 337. error_tracking_data_layer
+338-share-like-dislike-data-layer.html == GA4 # 338. share_like_dislike_data_layer
+339-Ad-Click-Tracking-Data-Layer.html == GA4 # 339. ad_click_tracking_data_layer
+341-Form-Field-And-Focus-Changes-Data-Layer.html == GA4 # 341. form_field_and_focus_changes_data_layer
+342-Push-Frequently-Used-Data-Layers.html == GA4 # 342. push_frequently_used_data_layers
+343-DL-Enabled-Page.html == GA4 # 343. DL_enabled_page
+343-Non-DL-Enabled-Page.html == GA4 # 343. non_DL_enabled_page
+what-is-event.html == ??PRACTICE WITH : EVENT PLAN??
+GA4-contact-form.html == GA4 # contact_form
+GA4-dom-ready.html == GA4 # dom_ready
+GA4-history-change-event.html == GA4 # history_change_event
+GA4-link-click.html == GA4 # link_click
+GA4-outbound-link-click.html == GA4 # outbound_link_click
+GA4-page-view.html == GA4 # page_view
+GA4-purchase-confirmation.html == GA4 # purchase_confirmation
+GA4-scroll-depth.html == GA4 # scroll_depth
+GA4-signup-confirmation.html == GA4 # signup_confirmation
+GA4-signup-form.html == GA4 # signup_form
+GA4-thank-you.html == GA4 # thank_you
+GA4-user-login-form.html == GA4 # user_login_form
+GA4-video-complete-event.html == GA4 # video_complete_event
+GA4-video-engagement-with-embedded-youtube-video.html == GA4 # video_engagement_embedded_youtube_video
+GA4-video-engagement-with-non-embedded-video.html == GA4 # video_engagement_non_embedded_video
+GA4-video-engagement-with-repository-video.html == GA4 # video_engagement_repository_video
+GA4-video-pause-event.html == GA4 # video_pause_event
+GA4-view_search_result.html == GA4 # view_search_result
