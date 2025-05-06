@@ -161,12 +161,13 @@
       <button class="home-button" onclick="location.href='../index.html'">Home</button>
       <h1>Google Analytics 4</h1>
     </header>
-
+    
     <main>
       <div class="listbox-group">
         <label for="selectedItem">SELECT AN ITEM FROM THE LIST</label>
         <ul id="selectedItem" role="listbox" tabindex="0">
-              <!-- AUTOMATICALLY COLLECTED  EVENTS --> <!-- Q2ChatGPT >>> How to demonstrate <first_visit> event ? -->
+              <!-- Q2ChatGPT >>> How to demonstrate <event_name> event ? -->
+              <!-- AUTOMATICALLY COLLECTED  EVENTS -->
               <li class="section-header" tabindex="0" data-value="what-is-automatically-collected-event.html">⬇️AUTOMATICALLY COLLECTED EVENTS [AE]⬇️</li>
               <li tabindex="0" data-value="GA4AE01-First-Visit.html">First Visit [first_visit | GA4AE01]</li>
               <li tabindex="0" data-value="GA4AE02-Session-Start.html">Session Start [session_start | GA4AE02]</li>
@@ -174,11 +175,12 @@
               <!-- AUTOMATICALLY COLLECTED & ENHANCED MEASUREMENT EVENTS -->
               <li class="section-header" tabindex="0" data-value="what-is-automatically-collected-event.html">⬇️AUTOMATICALLY COLLECTED & ENHANCED MEASUREMENT EVENTS [AE]⬇️</li>
               <li tabindex="0" data-value="GA4AE04-Page-Views.html">Page View [page_view | GA4AE04]</li>
-              <li tabindex="0" data-value="GA4AE05-Outbound-Links.html">Outbound Link Clicks [outbound_click | GA4AE05]</li>
-              
-              <li tabindex="0" data-value="GA4VP14-Download-File-DL.html">File Downloads [file_download | GA4VP14]</li>
-              <li tabindex="0" data-value="GA4EE08-Scroll-Depth.html">Page Scroll Depth [scroll | GA4EE08]</li>
-              <li tabindex="0" data-value="GA4EE18-Search-Results.html">Search Result Views [view_search_results | GA4EE18]</li>
+              <li tabindex="0" data-value="GA4AE05-Outbound-Link-Click.html">Outbound Link Click [outbound_click | GA4AE05]</li>
+              <li tabindex="0" data-value="GA4AE06-Download-File.html">File Downloads [file_download | GA4AE06]</li>
+              <li tabindex="0" data-value="GA4AE07-Scroll-Depth.html">Page Scroll Depth [scroll | GA4AE07]</li>
+
+              <li tabindex="0" data-value="GA4AE08-Search-Results.html">Search Result Views [view_search_results | GA4AE08]</li>
+
               <li tabindex="0" data-value="GA4VP05-Video-Start-Data-Layer.html">Video Engagement [video_start | GA4VP05]</li>
               <li tabindex="0" data-value="GA4????-Video-Progress.html">Video Progress [video_progress | GA4????]</li>
               <li tabindex="0" data-value="GA4EE13-Video-Completions.html">Video Completions [video_complete | GA4EE13]</li>
@@ -247,7 +249,7 @@
               <li tabindex="0" data-value="GA4TP03-Custom-Image-Tag-1.html">Custom Image Load (Tag - Variation 1) [GA4TP03]</li>
               <li tabindex="0" data-value="GA4TP04-Custom-Image-Tag.html">Custom Image Load (Tag - Default) [GA4TP04]</li>
               <li tabindex="0" data-value="GA4TP05-JavaScript-Error-Tag.html">Track Javascript Errors (Tag) [GA4TP05]</li>
-              <li tabindex="0" data-value="GA4TP06-Social-Media-Click-Tag.html">Track Social Media Clicks (Tag) [GA4TP06]</li>
+              <li tabindex="0" data-value="GA4TP06-Social-Media-Click.html">Track Social Media Clicks (Tag) [GA4TP06-DONE]</li>
               <li tabindex="0" data-value="GA4TP07-Timer-Tag.html">Timer Based Actions (Tag) [GA4TP07]</li>
               <!-- TRIGGER PLAN -->
               <li class="section-header" tabindex="0" data-value="what-is-trigger.html">⬇️TRIGGER PLAN [TG]⬇️</li>
@@ -271,6 +273,7 @@
               <li tabindex="0" data-value="GA4VP11-Custom-Event-DL.html">Track Custom Events (Data Layer) [GA4VP11]</li>
               <li tabindex="0" data-value="GA4VP12-Search-DL.html">Track Search Queries (Data Layer) [GA4VP12]</li>
               <li tabindex="0" data-value="GA4VP13-Product-View-DL.html">Track Product Views (Data Layer) [GA4VP13]</li>
+              <li tabindex="0" data-value="GA4VP14-Download-File-DL.html">Track Download-File-(Data Layer) [GA4VP14]</li>
               <li tabindex="0" data-value="GA4VP15-Feedback-Submit-DL.html">Track Feedback Submissions (Data Layer) [GA4VP15]</li>
               <li tabindex="0" data-value="GA4VP16-Page-Timing-DL.html">Track Page Performance Metrics (Data Layer) [GA4VP16]</li>
               <li tabindex="0" data-value="GA4VP17-Error-Tracking-DL.html">Track Javascript Errors (Data Layer) [GA4VP17]</li>
@@ -286,10 +289,10 @@
               <li tabindex="0" data-value="GA4ME02-Purchase-Journey.html">Ecommerce Purchase Journey [GA4ME02]</li>
               <!-- CUSTOM EVENTS -->
               <li class="section-header" tabindex="0" data-value="what-is-custom-event.html">⬇️CUSTOM EVENTS [CE]⬇️</li>
-              <li tabindex="0" data-value="GA4CE01-Time-On-Page-Tracking.html">Track Time On Page Using Gtm For Ga4 [GA4CE01]</li>
-              <li tabindex="0" data-value="GA4CE02-Custom-Event-Injection.html">Inject Custom Event Using Gtm For Ga4 [GA4CE02]</li>
+              <li tabindex="0" data-value="GA4CE01-Time-On-Page-Tracking.html">Track Time On Page Using GTM For Ga4 [GA4CE01]</li>
+              <li tabindex="0" data-value="GA4CE02-Custom-Event-Injection.html">Inject Custom Event Using GTM For Ga4 [GA4CE02]</li>
               <li tabindex="0" data-value="GA4CE03-Custom-Event-Injection-Advanced.html">Advanced Custom Event Injection Using Gtm For Ga4 [GA4CE03]</li>
-              <li tabindex="0" data-value="GA4CE04-Text-Copy-Tracking.html">Track Text Copy Events Using Gtm For Ga4 [GA4CE04]</li>
+              <li tabindex="0" data-value="GA4CE04-Text-Copy-Tracking.html">Track Text Copy Events Using GTM For Ga4 [GA4CE04]</li>
         </ul>
         <button id="proceedBtn" disabled>Proceed</button>
       </div>
