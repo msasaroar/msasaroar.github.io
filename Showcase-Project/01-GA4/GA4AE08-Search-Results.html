@@ -3,40 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>View Search Results - GA4 Auto Event</title>
-
-  <!-- GTM Code -->
-  <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MB72WSHR');
-  </script>
-  <!-- End GTM Code -->
-
+  <title>view_search_results | GA4 Showcase</title>
   <style>
     body {
-      background-color: white;
       margin: 0;
-      font-family: Arial, sans-serif;
+      background-color: white;
+      font-family: sans-serif;
+      text-align: center;
     }
     header {
       background-color: green;
-      text-align: center;
       color: black;
       font-weight: bold;
-      padding: 1rem;
-      position: relative;
+      padding: 10px 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
     }
     .home-button {
       position: absolute;
-      left: 1rem;
-      top: 1rem;
+      left: 10px;
+      top: 10px;
       background-color: orange;
       color: blue;
       border: none;
-      padding: 0.5rem 1rem;
+      padding: 6px 12px;
       cursor: pointer;
       font-weight: bold;
     }
@@ -44,67 +36,79 @@
       background-color: blue;
       color: orange;
     }
-    .container {
-      text-align: center;
-      margin-top: 2rem;
+    main {
+      padding-top: 80px;
     }
-    .search-input {
-      padding: 0.5rem;
-      width: 250px;
+    input[type="text"] {
+      padding: 10px;
+      width: 200px;
     }
-    .search-button {
+    button {
       background-color: orange;
       color: blue;
-      border: none;
-      padding: 0.5rem 1rem;
       font-weight: bold;
+      padding: 10px 20px;
+      border: none;
+      margin-left: 10px;
       cursor: pointer;
     }
-    .search-button:hover {
+    button:hover {
       background-color: blue;
       color: orange;
     }
-    .results {
-      margin-top: 2rem;
+    #results {
+      margin-top: 30px;
+      font-size: 18px;
     }
   </style>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB72WSHR');
+  </script>
+  <!-- End Google Tag Manager -->
 </head>
 <body>
-
-  <!-- GTM NoScript (for noscript users) -->
+  <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End GTM NoScript -->
+  <!-- End Google Tag Manager (noscript) -->
 
   <header>
     <button class="home-button" onclick="location.href='index.html'">Home</button>
-    View Search Results
+    view_search_results (Manual)
   </header>
 
-  <div class="container">
+  <main>
+    <h2>Search Something</h2>
     <form id="searchForm">
-      <input type="text" name="q" class="search-input" placeholder="Search something..." required />
-      <button type="submit" class="search-button">Search</button>
+      <input type="text" name="q" placeholder="Enter search term..." required />
+      <button type="submit">Search</button>
     </form>
-
-    <div id="results" class="results"></div>
-  </div>
+    <div id="results"></div>
+  </main>
 
   <script>
-    const form = document.getElementById('searchForm');
-    const results = document.getElementById('results');
-
-    form.addEventListener('submit', function(e) {
+    document.getElementById('searchForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      const query = new URLSearchParams(new FormData(form)).get('q');
+      const query = document.querySelector('input[name="q"]').value.trim();
+
       if (query) {
-        // Show dummy results (no tracking code needed for GA4)
-        results.innerHTML = `<p>Showing results for: <strong>${query}</strong></p>`;
-        // GA4 auto-detects this action via URL params or DOM changes
-        history.pushState({}, '', '?q=' + encodeURIComponent(query));
+        // Push custom event to dataLayer
+        dataLayer.push({
+          event: 'view_search_results',
+          search_term: query
+        });
+
+        // Optional: Show fake results
+        document.getElementById('results').innerHTML =
+          `<p>Showing results for: <strong>${query}</strong></p>`;
       }
     });
   </script>
-
 </body>
 </html>
