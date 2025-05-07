@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Video Start Event Tracking</title>
+  <title>Video Progress Event Tracking</title>
 
-  <!-- GTM Container Only (No GA4 code) -->
+  <!-- GTM Container Only -->
   <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -77,13 +77,12 @@
 
   <header>
     <a href="index.html"><button class="home-button">Home</button></a>
-    Video Start Event Tracking
+    Video Progress Event Tracking
   </header>
 
   <main>
-    <h2>Play the video to trigger <code>video_start</code> event via GTM</h2>
+    <h2>Watch the video to trigger <code>video_progress</code> event</h2>
 
-    <!-- Embedded YouTube video (enhanced measurement compatible) -->
 <!-- YouTube embed for GA4 Enhanced Measurement -->
 <iframe width="560" height="315" 
 src="https://www.youtube.com/embed/pByLJEV_ylQ?si=Dk3qXglCat44Z2J9" 
@@ -92,10 +91,10 @@ allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; pic
 allowfullscreen></iframe>
 
     <p class="note">
-      Make sure you’ve enabled <strong>Enhanced Measurement</strong> inside GA4 via GTM.<br />
-      This video will trigger <code>video_start</code> automatically when played.
+      This YouTube video is automatically tracked by GA4’s Enhanced Measurement.<br />
+      The <code>video_progress</code> event will fire at 10%, 25%, 50%, 75%, and 90% watched.<br />
+      All handled through GTM and GA4 — no extra JavaScript needed.
     </p>
   </main>
 </body>
 </html>
-
