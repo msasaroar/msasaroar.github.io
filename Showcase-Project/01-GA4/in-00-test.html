@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>View Search Results - GA4 Auto Event</title>
+  <title>Video Start Event Tracking</title>
 
-  <!-- GTM Code -->
+  <!-- GTM Container (GTM-MB72WSHR) -->
   <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -13,7 +13,6 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-MB72WSHR');
   </script>
-  <!-- End GTM Code -->
 
   <style>
     body {
@@ -21,6 +20,7 @@
       margin: 0;
       font-family: Arial, sans-serif;
     }
+
     header {
       background-color: green;
       text-align: center;
@@ -29,10 +29,12 @@
       padding: 1rem;
       position: relative;
     }
+
     .home-button {
       position: absolute;
+      top: 50%;
       left: 1rem;
-      top: 1rem;
+      transform: translateY(-50%);
       background-color: orange;
       color: blue;
       border: none;
@@ -40,71 +42,56 @@
       cursor: pointer;
       font-weight: bold;
     }
+
     .home-button:hover {
       background-color: blue;
       color: orange;
     }
-    .container {
+
+    main {
       text-align: center;
-      margin-top: 2rem;
+      margin: 2rem;
     }
-    .search-input {
-      padding: 0.5rem;
-      width: 250px;
-    }
-    .search-button {
-      background-color: orange;
-      color: blue;
+
+    iframe {
+      width: 560px;
+      height: 315px;
+      max-width: 100%;
       border: none;
-      padding: 0.5rem 1rem;
-      font-weight: bold;
-      cursor: pointer;
     }
-    .search-button:hover {
-      background-color: blue;
-      color: orange;
-    }
-    .results {
-      margin-top: 2rem;
+
+    .note {
+      margin-top: 1rem;
+      font-size: 1rem;
+      color: gray;
     }
   </style>
 </head>
 <body>
 
-  <!-- GTM NoScript (for noscript users) -->
+  <!-- GTM: Body NoScript -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End GTM NoScript -->
 
   <header>
-    <button class="home-button" onclick="location.href='index.html'">Home</button>
-    View Search Results
+    <a href="index.html"><button class="home-button">Home</button></a>
+    Video Start Event Tracking
   </header>
 
-  <div class="container">
-    <form id="searchForm">
-      <input type="text" name="q" class="search-input" placeholder="Search something..." required />
-      <button type="submit" class="search-button">Search</button>
-    </form>
+  <main>
+    <h2>Watch the video below to trigger <code>video_start</code> event</h2>
 
-    <div id="results" class="results"></div>
-  </div>
+    <!-- YouTube embed for GA4 Enhanced Measurement -->
+    <iframe width="560" height="315" 
+    src="https://www.youtube.com/embed/pByLJEV_ylQ?si=Dk3qXglCat44Z2J9" 
+    title="YouTube video player" frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen></iframe>
 
-  <script>
-    const form = document.getElementById('searchForm');
-    const results = document.getElementById('results');
-
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const query = new URLSearchParams(new FormData(form)).get('q');
-      if (query) {
-        // Show dummy results (no tracking code needed for GA4)
-        results.innerHTML = `<p>Showing results for: <strong>${query}</strong></p>`;
-        // GA4 auto-detects this action via URL params or DOM changes
-        history.pushState({}, '', '?q=' + encodeURIComponent(query));
-      }
-    });
-  </script>
-
+    <p class="note">
+      GA4 will automatically track the <code>video_start</code> event when you play this video.<br />
+      Make sure Enhanced Measurement is enabled in your GA4 property.
+    </p>
+  </main>
 </body>
 </html>
