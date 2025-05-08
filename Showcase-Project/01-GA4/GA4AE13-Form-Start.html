@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB72WSHR');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Form Start Tracking | GA4</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: white;
+    }
+
+    header {
+      background-color: green;
+      color: black;
+      font-weight: bold;
+      text-align: center;
+      padding: 15px 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .home-button {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background-color: orange;
+      color: blue;
+      padding: 8px 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    .container {
+      margin-top: 150px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      background: #f5f5f5;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    input, textarea {
+      display: block;
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    .button {
+      background-color: orange;
+      color: blue;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .button:hover {
+      background-color: blue;
+      color: orange;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header>
+    <button class="home-button" onclick="window.location.href='index.html'">Home</button>
+    Form Start Tracking
+  </header>
+
+  <div class="container">
+    <h2>Start typing in the form to trigger a <code>form_start</code> event</h2>
+
+    <form>
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message"></textarea>
+      <input type="submit" class="button" value="Send Message" />
+    </form>
+  </div>
+
+</body>
+</html>
