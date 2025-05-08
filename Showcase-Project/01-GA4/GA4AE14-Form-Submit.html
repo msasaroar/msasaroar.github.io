@@ -91,14 +91,11 @@
 
   <main>
     <h2>Sample Form</h2>
-    <form id="sampleForm" onsubmit="handleFormSubmit(event)">
-      <label for="name">Name:</label>
-      <input type="text" name="name" id="name" required />
+    <!-- form id="sampleForm" onsubmit="handleFormSubmit(event)"-->
+    <form id="sampleForm" action="thankyou.html" method="POST">
 
-      <label for="email">Email:</label>
-      <input type="email" name="email" id="email" required />
-
-      <button type="submit" class="btn">Submit</button>
+  
+        <button type="submit" class="btn">Submit</button>
     </form>
   </main>
 
@@ -114,3 +111,5 @@
   </script>
 </body>
 </html>
+
+<form id="sampleForm" action="thankyou.html" method="POST"></form>
