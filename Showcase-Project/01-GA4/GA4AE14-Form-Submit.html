@@ -91,25 +91,15 @@
 
   <main>
     <h2>Sample Form</h2>
-    <!-- form id="sampleForm" onsubmit="handleFormSubmit(event)"-->
     <form id="sampleForm" action="thankyou.html" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" required />
 
-  
-        <button type="submit" class="btn">Submit</button>
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" required />
+
+      <button type="submit" class="btn">Submit</button>
     </form>
   </main>
-
-  <script>
-    function handleFormSubmit(event) {
-      event.preventDefault();
-      alert("Form submitted (simulated)");
-      // This allows GTM to detect the form_submit event
-      const form = document.getElementById('sampleForm');
-      const eventObj = new Event('submit', { bubbles: true, cancelable: true });
-      form.dispatchEvent(eventObj);
-    }
-  </script>
 </body>
 </html>
-
-<form id="sampleForm" action="thankyou.html" method="POST"></form>
