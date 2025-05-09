@@ -1,9 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up Simulation</title>
 
+  <!-- GTM Container -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB72WSHR');
+  </script>
+  <!-- End GTM -->
 
+  <style>
+    body {
+      background-color: white;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
 
-What is the type of event of following:
-1. Tracking Thank You Page
-2. Tracking Link Clicks
-3. Tracking History Change
-4. Tracking YouTube Video Engagement
-5. Tracking Video Pause Actions
+    header {
+      background-color: green;
+      color: black;
+      font-weight: bold;
+      text-align: center;
+      padding: 1em 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .home-button {
+      position: absolute;
+      left: 20px;
+      top: 1em;
+      background-color: orange;
+      color: blue;
+      border: none;
+      padding: 0.5em 1em;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    .container {
+      margin-top: 120px;
+    }
+
+    .btn {
+      background-color: orange;
+      color: blue;
+      font-weight: bold;
+      padding: 1em 2em;
+      border: none;
+      cursor: pointer;
+      font-size: 1em;
+      border-radius: 5px;
+    }
+
+    .btn:hover {
+      background-color: blue;
+      color: orange;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- GTM NoScript -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End GTM NoScript -->
+
+  <header>
+    <button class="home-button" onclick="location.href='index.html'">Home</button>
+    Sign Up Simulation
+  </header>
+
+  <div class="container">
+    <h2>Create Your Account</h2>
+    <form id="signup-form">
+      <input type="email" placeholder="Enter your email" required /><br /><br />
+      <button type="submit" class="btn">Sign Up</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("signup-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      // Push sign_up event to dataLayer
+      dataLayer.push({
+        event: "sign_up",
+        method: "email"
+      });
+
+      alert("Sign up event sent to GTM!");
+    });
+  </script>
+
+</body>
+</html>
