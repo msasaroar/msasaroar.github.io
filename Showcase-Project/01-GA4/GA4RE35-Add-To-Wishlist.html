@@ -1,173 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wishlist - GA4 Add to Wishlist Event</title>
-    
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Add to Wishlist</title>
+
+  <!-- GTM HEAD Script -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id=GTM-MB72WSHR'+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MB72WSHR');</script>
-    <!-- End Google Tag Manager -->
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB72WSHR');
+  </script>
+  <!-- End GTM HEAD -->
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #f9f9f9, #e0e0e0);
-            color: #333;
-        }
-        .container {
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 20px;
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            text-align: center;
-            color: #ff6f61;
-            font-size: 32px;
-            margin-bottom: 20px;
-        }
-        .product {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #fff;
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .product:hover {
-            transform: translateY(-5px);
-            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
-        }
-        .product img {
-            width: 100px;
-            height: 100px;
-            border-radius: 10px;
-            object-fit: cover;
-        }
-        .product-details {
-            flex: 1;
-            margin-left: 20px;
-        }
-        .product-title {
-            font-size: 20px;
-            font-weight: 600;
-            color: #333;
-        }
-        .product-price {
-            font-size: 18px;
-            color: #ff6f61;
-            font-weight: 500;
-        }
-        .add-to-wishlist {
-            background: linear-gradient(135deg, #ff6f61, #ff3b2f);
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 25px;
-            font-size: 14px;
-            font-weight: 500;
-            transition: background 0.3s ease;
-        }
-        .add-to-wishlist:hover {
-            background: linear-gradient(135deg, #ff3b2f, #ff6f61);
-        }
-        .wishlist {
-            margin-top: 30px;
-            padding: 20px;
-            background: linear-gradient(135deg, #e8f0fe, #d1e4ff);
-            border-radius: 10px;
-        }
-        .wishlist h2 {
-            color: #1a73e8;
-            font-size: 24px;
-            margin-bottom: 15px;
-        }
-        .wishlist-item {
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-            font-size: 16px;
-            color: #555;
-        }
-        .wishlist-item:last-child {
-            border-bottom: none;
-        }
-    </style>
+  <style>
+    body {
+      margin: 0;
+      background-color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-color: green;
+      color: black;
+      text-align: center;
+      font-weight: bold;
+      padding: 15px 0;
+      position: relative;
+    }
+
+    .home-button {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: orange;
+      color: blue;
+      padding: 8px 12px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    .container {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .item-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .item {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 15px;
+      width: 250px;
+      box-sizing: border-box;
+    }
+
+    .item h3 {
+      margin: 0 0 10px;
+    }
+
+    .wishlist-button {
+      background-color: orange;
+      color: blue;
+      padding: 10px 20px;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .wishlist-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    .wishlist-section {
+      margin-top: 40px;
+    }
+
+    .wishlist-section h2 {
+      text-align: center;
+    }
+
+    .wishlist-list {
+      list-style: none;
+      padding: 0;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .wishlist-list li {
+      background: #f3f3f3;
+      padding: 10px;
+      margin: 5px 0;
+      border-radius: 8px;
+    }
+  </style>
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N4MMS7TS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    
-    <div class="container">
-        <h1>My Wishlist</h1>
-        <div id="product-list">
-            <div class="product">
-                <img src="shirt.jpg" alt="Shirt">
-                <div class="product-details">
-                    <div class="product-title">Stan and Friends Tee</div>
-                    <div class="product-price">Price: $10.01</div>
-                    <button class="add-to-wishlist" data-item-id="SKU_12345">Add to Wishlist</button>
-                </div>
-            </div>
-            <div class="product">
-                <img src="pants.jpg" alt="Pants">
-                <div class="product-details">
-                    <div class="product-title">Google Branded Pants</div>
-                    <div class="product-price">Price: $20.02</div>
-                    <button class="add-to-wishlist" data-item-id="SKU_67890">Add to Wishlist</button>
-                </div>
-            </div>
-        </div>
-        <div class="wishlist">
-            <h2>Wishlist Items</h2>
-            <div id="wishlist-items"></div>
-        </div>
+
+  <!-- GTM BODY Script -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End GTM BODY -->
+
+  <header>
+    <a href="index.html" class="home-button">Home</a>
+    Add to Wishlist Tracking
+  </header>
+
+  <div class="container">
+    <div class="item-row">
+      <div class="item">
+        <h3>Wireless Headphones</h3>
+        <p>$99.99</p>
+        <button class="wishlist-button" onclick="addToWishlist('SKU_12345', 'Wireless Headphones', 99.99, 'Electronics')">Add to Wishlist</button>
+      </div>
+
+      <div class="item">
+        <h3>Smart Watch</h3>
+        <p>$149.99</p>
+        <button class="wishlist-button" onclick="addToWishlist('SKU_54321', 'Smart Watch', 149.99, 'Wearables')">Add to Wishlist</button>
+      </div>
+
+      <div class="item">
+        <h3>Bluetooth Speaker</h3>
+        <p>$49.99</p>
+        <button class="wishlist-button" onclick="addToWishlist('SKU_67890', 'Bluetooth Speaker', 49.99, 'Audio')">Add to Wishlist</button>
+      </div>
     </div>
-    
-    <script>
-        document.querySelectorAll('.add-to-wishlist').forEach(button => {
-            button.addEventListener('click', function() {
-                let itemId = this.getAttribute('data-item-id');
-                let itemName = this.parentElement.querySelector('.product-title').textContent;
-                let price = this.parentElement.querySelector('.product-price').textContent.split('$')[1];
-                
-                window.dataLayer = window.dataLayer || [];
-                window.dataLayer.push({
-                    event: "add_to_wishlist",
-                    ecommerce: {
-                        currency: "USD",
-                        value: parseFloat(price),
-                        items: [{
-                            item_id: itemId,
-                            item_name: itemName,
-                            price: parseFloat(price),
-                            quantity: 1
-                        }]
-                    }
-                });
-                
-                let wishlistContainer = document.getElementById('wishlist-items');
-                let wishlistItem = document.createElement('div');
-                wishlistItem.classList.add('wishlist-item');
-                wishlistItem.textContent = `${itemName} - $${price}`;
-                wishlistContainer.appendChild(wishlistItem);
-            });
-        });
-    </script>
+  </div>
+
+  <div class="wishlist-section">
+    <h2>Your Wishlist</h2>
+    <ul id="wishlist" class="wishlist-list"></ul>
+  </div>
+
+  <script>
+    function addToWishlist(itemId, itemName, price, category) {
+      // Push to GTM dataLayer
+      dataLayer.push({
+        event: "add_to_wishlist",
+        currency: "USD",
+        value: price,
+        items: [{
+          item_id: itemId,
+          item_name: itemName,
+          price: price,
+          item_category: category
+        }]
+      });
+
+      // Add to visual wishlist
+      const wishlist = document.getElementById("wishlist");
+      const li = document.createElement("li");
+      li.textContent = `${itemName} - $${price}`;
+      wishlist.appendChild(li);
+    }
+  </script>
+
 </body>
 </html>
