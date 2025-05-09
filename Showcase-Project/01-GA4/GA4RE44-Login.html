@@ -131,8 +131,10 @@
       if (email && password) {
         // Push login event to dataLayer
         dataLayer.push({
-          event: "login",
-          user_email: email  // Optional: For debugging only; don't send PII to GA
+            event: 'login',
+            method: 'email',
+            success: true,
+            user_type: 'member'
         });
 
         message.textContent = "Welcome, " + email + "! Login event sent.";
