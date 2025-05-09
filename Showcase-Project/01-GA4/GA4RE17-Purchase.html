@@ -171,9 +171,58 @@
                     ]
                 }
             });
-            alert('GA4 Purchase event fired with Transaction ID: ' + uniqueTransactionId);
+
+            document.getElementById('trackPurchase').addEventListener('click', function () {
+    const uniqueTransactionId = generateTransactionId();
+
+    const purchaseData = {
+        event: 'purchase',
+        ecommerce: {
+            transaction_id: uniqueTransactionId,
+            value: 199.99,
+            currency: 'USD',
+            tax: 15.99,
+            shipping: 5.99,
+            coupon: 'SUMMER2024',
+            items: [
+                {
+                    item_name: 'Nike Running Shoes',
+                    item_id: 'SKU12345',
+                    price: 99.99,
+                    quantity: 1,
+                    item_category: 'Shoes',
+                    item_brand: 'Nike'
+                },
+                {
+                    item_name: 'Adidas T-Shirt',
+                    item_id: 'SKU67890',
+                    price: 50.00,
+                    quantity: 1,
+                    item_category: 'Clothing',
+                    item_brand: 'Adidas'
+                },
+                {
+                    item_name: 'Puma Cap',
+                    item_id: 'SKU54321',
+                    price: 50.00,
+                    quantity: 1,
+                    item_category: 'Accessories',
+                    item_brand: 'Puma'
+                }
+            ]
+        }
+    };
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(purchaseData);
+
+    sessionStorage.setItem('purchaseInfo', JSON.stringify(purchaseData));
+    window.location.href = 'GA4RE17-Purchase-Confirmation.html';
+});
+
         });
     </script>
         
 </body>
 </html>
+
