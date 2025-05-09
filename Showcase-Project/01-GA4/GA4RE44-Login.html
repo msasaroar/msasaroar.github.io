@@ -116,11 +116,8 @@
             // Push login event to the dataLayer
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
-                'event': 'userLogin',
-                'user': {
-                    'username': username,
-                    'loginStatus': 'loggedIn'
-                }
+                'event': 'login',
+                'method': 'email'
             });
 
             // Simulate successful login
