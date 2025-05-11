@@ -1,19 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Close Unconverted Lead - GA4 Event Simulation</title>
-  
-  <!-- GTM container code -->
-  <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MB72WSHR');
-  </script>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simulate close_convert_lead Event</title>
   <style>
     body {
       background-color: white;
@@ -22,118 +12,117 @@
       padding: 0;
       text-align: center;
     }
-
     header {
       background-color: green;
       color: black;
       font-weight: bold;
       text-align: center;
-      padding: 10px 0;
+      padding: 1em;
       position: fixed;
-      width: 100%;
       top: 0;
-      z-index: 999;
+      width: 100%;
     }
-
     .home-button {
       position: absolute;
       left: 10px;
       top: 10px;
       background-color: orange;
       color: blue;
+      padding: 8px 12px;
+      text-decoration: none;
+      font-weight: bold;
       border: none;
-      padding: 5px 10px;
       cursor: pointer;
     }
-
     .home-button:hover {
       background-color: blue;
       color: orange;
     }
-
-    .container {
-      margin-top: 100px;
-      padding: 20px;
+    main {
+      padding: 100px 20px 40px;
     }
-
-    button.send-event {
+    .btn {
       background-color: orange;
       color: blue;
       padding: 10px 20px;
-      font-size: 16px;
       border: none;
-      border-radius: 5px;
       cursor: pointer;
+      font-weight: bold;
       margin-top: 20px;
     }
-
-    button.send-event:hover {
+    .btn:hover {
       background-color: blue;
       color: orange;
     }
-
     pre {
-      background: #f5f5f5;
-      padding: 15px;
+      background: #f0f0f0;
+      padding: 10px;
       border-radius: 5px;
       text-align: left;
-      max-width: 600px;
-      margin: auto;
       overflow-x: auto;
     }
   </style>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB72WSHR');
+  </script>
+  <!-- End Google Tag Manager -->
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
   <header>
-    <button class="home-button" onclick="location.href='index.html'">Home</button>
-    <h1>Close Unconverted Lead Event</h1>
+    <a class="home-button" href="index.html">Home</a>
+    Simulate GA4 Event: close_convert_lead
   </header>
 
-  <div class="container">
-    <h2>📘 Event: <code>close_unconvert_lead</code></h2>
-    <p>This event is used to indicate a lead was closed but not converted.</p>
+  <main>
+    <h2>GA4 Event: <code>close_convert_lead</code></h2>
+    <p>This event marks a lead successfully converted into a customer.</p>
 
-    <h3>🧾 Required Parameters</h3>
-    <ul style="text-align: left; display: inline-block;">
-      <li><b>lead_type</b> (e.g., "enterprise")</li>
-      <li><b>lead_status</b> (e.g., "lost", "unreachable")</li>
-      <li><b>value</b> (numeric, e.g., 3000)</li>
-      <li><b>currency</b> (e.g., "USD", "BDT")</li>
+    <h3>Required/Optional Parameters:</h3>
+    <ul style="text-align:left; max-width:600px; margin:auto;">
+      <li><strong>lead_type</strong> (optional): e.g., "B2B"</li>
+      <li><strong>value</strong> (optional): e.g., 1200</li>
+      <li><strong>currency</strong> (optional): e.g., "USD"</li>
+      <li><strong>transaction_id</strong> (optional): Unique ID</li>
     </ul>
 
-    <h3>📦 Sample Data Pushed</h3>
-    <pre id="sampleData">
-{
-  event: "close_unconvert_lead",
-  lead_type: "enterprise",
-  lead_status: "lost",
-  value: 3000,
-  currency: "USD"
-}
+    <h3>Data Pushed to Data Layer:</h3>
+    <pre>
+dataLayer.push({
+  event: "close_convert_lead",
+  lead_type: "B2B",
+  value: 1200,
+  currency: "USD",
+  transaction_id: "TXN987654321"
+});
     </pre>
 
-    <button class="send-event" onclick="pushCloseUnconvertedLead()">Send Event</button>
+    <button class="btn" onclick="pushLeadConversion()">Simulate Event</button>
 
-    <p id="confirmation" style="margin-top: 20px; color: green;"></p>
-  </div>
-
-  <script>
-    function pushCloseUnconvertedLead() {
-      const eventData = {
-        event: "close_unconvert_lead",
-        lead_type: "enterprise",
-        lead_status: "lost",
-        value: 3000,
-        currency: "USD"
-      };
-
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push(eventData);
-
-      document.getElementById("confirmation").innerText = "✅ Event pushed to dataLayer.";
-      console.log("GA4 Event Pushed:", eventData);
-    }
-  </script>
+    <script>
+      function pushLeadConversion() {
+        dataLayer.push({
+          event: "close_convert_lead",
+          lead_type: "B2B",
+          value: 1200,
+          currency: "USD",
+          transaction_id: "TXN987654321"
+        });
+        alert('Event "close_convert_lead" pushed to dataLayer!');
+      }
+    </script>
+  </main>
 </body>
 </html>
