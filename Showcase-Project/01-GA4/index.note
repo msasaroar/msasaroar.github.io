@@ -15,3 +15,11 @@ GOOGLE TAGMANAGER
 Container
 Container | GA4
 GTM-MB72WSHR
+
+
+GA4RE10 - generate_lead	submits a form online or submits information offline
+GA4RE36 - close_convert_lead	became a converted lead (a customer)
+GA4RE37 - close_unconvert_lead	is marked as not becoming a converted lead for one of several reasons
+GA4RE38 - disqualify_lead	is marked as disqualified to become a lead for one of several reasons
+GA4RE46 - qualify_lead	is marked as fitting the criteria to become a qualified lead
+GA4RE58 - working_lead	contacts or is contacted by a representative

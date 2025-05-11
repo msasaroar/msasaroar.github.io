@@ -1,0 +1,32 @@
+নিম্নলিখিত ইভেন্ট গুলো কিভাবে ইন্টারকানেক্টেড করা হয়?
+1. open_convert_lead
+Create an html page to simulate tracking open_convert_lead event with GTM. Follow GA4 guideline to create the page.
+
+2. submit_convert_lead
+Create an html page to simulate tracking submit_convert_lead event with GTM. Follow GA4 guideline to create the page.
+
+3. close_convert_lead
+Create an html page to simulate tracking close_convert_lead event with GTM. Follow GA4 guideline to create the page.
+
+4. close_unconverted_lead
+Create an html page to simulate tracking close_unconverted_lead event with GTM. Follow GA4 guideline to create the page.
+
+5. disqualify_lead
+Create an html page to simulate tracking disqualify_lead event with GTM. Follow GA4 guideline to create the page.
+
+
+
+
+Create an html page to simulate tracking the event with GTM.
+Follow GA4 guideline to create the page.
+Show the definition of the event as per GA4.
+Show event related all parameters and required data on page as pe GA4 need.
+Show data to be pushed through the event on the page.
+GA4 recommanded event name : close_unconvert_lead
+
+GA4RE10 - generate_lead	submits a form online or submits information offline
+GA4RE46 - qualify_lead	is marked as fitting the criteria to become a qualified lead
+GA4RE38 - disqualify_lead	is marked as disqualified to become a lead for one of several reasons
+GA4RE58 - working_lead	contacts or is contacted by a representative
+GA4RE36 - close_convert_lead	became a converted lead (a customer)
+GA4RE37 - close_unconvert_lead	is marked as not becoming a converted lead for one of several reasons

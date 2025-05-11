@@ -1,55 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Under Construction</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Qualify Lead Event</title>
+
+  <!-- GTM Head -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l; j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl; f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB72WSHR');
+  </script>
+  <!-- End GTM Head -->
+
   <style>
     body {
       margin: 0;
-      padding: 0;
+      background-color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
       background-color: green;
       color: black;
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      height: 100vh;
       text-align: center;
+      font-weight: bold;
+      padding: 15px 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
     }
 
-    .construction-text {
-      font-size: 36px;
-      margin: 8px 0;
+    .home-button {
+      position: absolute;
+      left: 15px;
+      top: 15px;
+      background-color: orange;
+      color: blue;
+      border: none;
+      padding: 8px 12px;
+      font-weight: bold;
+      cursor: pointer;
     }
 
-    .contacts {
+    .home-button:hover {
+      background-color: blue;
       color: orange;
-      font-size: 30px;
-      margin: 20px 0;
     }
 
+    main {
+      margin-top: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .info-box, .lead-card {
+      max-width: 600px;
+      background-color: #f9f9f9;
+      padding: 20px;
+      margin-bottom: 30px;
+      border-left: 5px solid green;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .info-box h2, .lead-card h2 {
+      margin-top: 0;
+      color: #333;
+    }
+
+    .info-box p, .lead-card p {
+      margin: 5px 0;
+      color: #555;
+    }
+
+    .event-button {
+      background-color: orange;
+      color: blue;
+      font-weight: bold;
+      padding: 15px 25px;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .event-button:hover {
+      background-color: blue;
+      color: orange;
+    }
   </style>
 </head>
 <body>
-  <div class="construction-text">UNDER CONSTRUCTION</div> <!-- English -->
-  <div class="construction-text" dir="rtl">قيد الإنشاء</div>     <!-- Arabic -->
-  <div class="construction-text">正在建设中</div>             <!-- Chinese -->
-  <div class="construction-text">건설 중</div>              <!-- Korean -->
-  <div class="construction-text">En construcción</div>      <!-- Spanish -->
-  <div class="construction-text">En cours de construction</div> <!-- French -->
-  <div class="construction-text">Em construção</div>        <!-- Portuguese -->
-  <div class="construction-text">В разработке</div>         <!-- Russian -->
-  <div class="construction-text">Baustelle</div>            <!-- German -->
-  <div class="construction-text">নির্মাণাধীন</div>           <!-- Bengali -->
 
-  <div class="contacts">
-    <div class="contact-me">CONTACT ME FOR YOUR PROJECT</div>
-    <a href="https://facebook.com/msasaroar" target="_blank">Facebook: facebook.com/msasaroar</a>
-    <a> | </a>
-    <a href="https://wa.me/8801917530031" target="_blank">WhatsApp: +8801917530031</a>
-    <a> | </a>
-    <a href="mailto:msasaroar@gmail.com">Email: msasaroar@gmail.com</a>
+  <!-- GTM Body NoScript -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End GTM Body -->
+
+  <header>
+    <button class="home-button" onclick="location.href='index.html'">Home</button>
+    Qualify Lead Tracker
+  </header>
+
+  <main>
+
+    <div class="info-box">
+      <h2>What is "qualify_lead"?</h2>
+      <p><strong>qualify_lead</strong> is a <span style="color: green;">GA4 recommended event</span> for tracking when a lead is marked as qualified after initial evaluation.</p>
+      <p>This action typically happens after a lead form is submitted and helps measure lead quality and sales-readiness.</p>
+    </div>
+
+    <div class="lead-card">
+      <h2>Lead Information</h2>
+      <p><strong>Name:</strong> Jane Doe</p>
+      <p><strong>Email:</strong> jane.doe@example.com</p>
+      <p><strong>Industry:</strong> Technology</p>
+      <p><strong>Source:</strong> LinkedIn Ads</p>
+      <p><strong>Lead Score:</strong> 85</p>
+      <p><strong>Lead Type:</strong> MQL (Marketing Qualified Lead)</p>
+    </div>
+
+    <button class="event-button" onclick="trackQualifyLead()">Qualify Lead</button>
+
+  </main>
+
+  <script>
+    function trackQualifyLead() {
+      dataLayer.push({
+        event: "qualify_lead",
+        lead_name: "Jane Doe",
+        lead_email: "jane.doe@example.com",
+        industry: "Technology",
+        lead_source: "LinkedIn Ads",
+        lead_score: 85,
+        lead_type: "MQL"
+      });
+      alert("qualify_lead event triggered with lead data!");
+    }
+  </script>
+
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Qualify Lead Event Simulation</title>
+  <style>
+    body {
+      background-color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: green;
+      color: black;
+      font-weight: bold;
+      text-align: center;
+      padding: 1em 0;
+      position: relative;
+    }
+    .home-button {
+      position: absolute;
+      top: 15px;
+      left: 20px;
+      background-color: orange;
+      color: blue;
+      padding: 5px 10px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+    .container {
+      max-width: 600px;
+      margin: 2em auto;
+      padding: 1em;
+      text-align: center;
+    }
+    .event-box {
+      text-align: left;
+      background: #f4f4f4;
+      padding: 1em;
+      border-radius: 10px;
+      margin-bottom: 1em;
+    }
+    button {
+      background-color: orange;
+      color: blue;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: blue;
+      color: orange;
+    }
+  </style>
+
+  <!-- GTM Container Code -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+  </script>
+  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MB72WSHR"></script>
+</head>
+
+<body>
+  <!-- GTM noscript fallback -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+
+  <header>
+    <a href="index.html" class="home-button">Home</a>
+    Qualify Lead - GA4 Event Simulation
+  </header>
+
+  <div class="container">
+
+    <div class="event-box">
+      <h3>🔹 Event: <code>qualify_lead</code></h3>
+      <p><strong>Definition:</strong> Indicates that a lead has been qualified as a potential customer.</p>
+
+      <h4>📌 Parameters:</h4>
+      <ul>
+        <li><code>lead_type</code> (string, recommended) — Type of lead (e.g. "enterprise", "small_business")</li>
+        <li><code>value</code> (number, optional) — Estimated value of the lead</li>
+        <li><code>currency</code> (string, optional) — Currency of the value (e.g. "USD")</li>
+      </ul>
+
+      <h4>📤 Data to Push:</h4>
+      <pre><code>dataLayer.push({
+  event: "qualify_lead",
+  lead_type: "enterprise",
+  value: 10000,
+  currency: "USD"
+});</code></pre>
+    </div>
+
+    <button onclick="simulateQualifyLead()">Simulate qualify_lead Event</button>
+
+    <script>
+      function simulateQualifyLead() {
+        dataLayer.push({
+          event: "qualify_lead",
+          lead_type: "enterprise",
+          value: 10000,
+          currency: "USD"
+        });
+        alert("qualify_lead event pushed to dataLayer!");
+      }
+    </script>
   </div>
 </body>
 </html>
+
