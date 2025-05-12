@@ -3,71 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Qualify Lead Event - GA4</title>
-  <style>
-    body {
-      background-color: white;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
-    header {
-      background-color: green;
-      color: black;
-      text-align: center;
-      font-weight: bold;
-      padding: 20px;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-    }
-    .home-button {
-      position: absolute;
-      left: 10px;
-      top: 20px;
-      background-color: orange;
-      color: blue;
-      border: none;
-      padding: 10px 15px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    .home-button:hover {
-      background-color: blue;
-      color: orange;
-    }
-    .container {
-      margin-top: 120px;
-    }
-    button {
-      background-color: orange;
-      color: blue;
-      padding: 10px 20px;
-      font-size: 16px;
-      border: none;
-      cursor: pointer;
-      font-weight: bold;
-      margin-top: 20px;
-    }
-    button:hover {
-      background-color: blue;
-      color: orange;
-    }
-    .info {
-      text-align: left;
-      display: inline-block;
-      max-width: 600px;
-      margin-top: 30px;
-    }
-    label, select {
-      display: block;
-      margin: 10px auto;
-    }
-  </style>
+  <title>GA4 Search Event Demo</title>
 
-  <!-- Google Tag Manager -->
+  <!-- GTM Container -->
   <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -75,60 +13,129 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-MB72WSHR');
   </script>
-  <!-- End Google Tag Manager -->
-</head>
+  <!-- End GTM -->
 
+  <style>
+    body {
+      background-color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+
+    header {
+      background-color: green;
+      color: black;
+      text-align: center;
+      font-weight: bold;
+      padding: 15px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    .home-button {
+      position: absolute;
+      left: 15px;
+      top: 15px;
+      background-color: orange;
+      color: blue;
+      border: none;
+      padding: 8px 12px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    .container {
+      margin-top: 100px;
+      text-align: center;
+    }
+
+    button {
+      background-color: orange;
+      color: blue;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    .info-table {
+      margin: 20px auto;
+      border-collapse: collapse;
+      width: 90%;
+      max-width: 600px;
+    }
+
+    .info-table th, .info-table td {
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    .info-table th {
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
 <body>
+
+  <!-- GTM noscript -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End GTM noscript -->
+
   <header>
-    <button class="home-button" onclick="location.href='index.html'">Home</button>
-    Qualify Lead - GA4 Event Demo
+    <a href="index.html"><button class="home-button">Home</button></a>
+    GA4 Search Event Demo
   </header>
 
   <div class="container">
-    <h2>Qualify a Lead</h2>
-    <p>Select a lead type and submit to trigger <strong>qualify_lead</strong> event.</p>
+    <h2>GA4 Recommended Event: <code>search</code></h2>
 
-    <label for="leadType">Lead Type:</label>
-    <select id="leadType">
-      <option value="home_insurance">Home Insurance</option>
-      <option value="auto">Auto</option>
-      <option value="business">Business</option>
-    </select>
+    <table class="info-table">
+      <tr><th>Parameter</th><th>Description</th></tr>
+      <tr><td><code>search_term</code></td><td>The term the user searched for</td></tr>
+    </table>
 
-    <button onclick="qualifyLead()">Submit Lead</button>
+    <p>Enter a search term below to simulate a search event being sent to GA4 via GTM:</p>
 
-    <div class="info">
-      <h3>GA4 Event Definition</h3>
-      <p><strong>Event Name:</strong> qualify_lead</p>
-      <p><strong>Required Parameter:</strong> lead_type</p>
+    <form id="searchForm">
+      <input type="text" id="searchInput" placeholder="Type your search..." required />
+      <br />
+      <button type="submit">Search</button>
+    </form>
 
-      <h4>Example DataLayer Push:</h4>
-      <pre id="output">
-      </pre>
-    </div>
+    <h3>Data Pushed to <code>dataLayer</code>:</h3>
+    <pre id="output">{ }</pre>
   </div>
 
   <script>
-    function qualifyLead() {
-      const leadType = document.getElementById('leadType').value;
+    document.getElementById('searchForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const searchTerm = document.getElementById('searchInput').value.trim();
 
       const eventData = {
-        event: "qualify_lead",
-        lead_type: leadType
+        event: 'search',
+        search_term: searchTerm
       };
 
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push(eventData);
 
       document.getElementById('output').textContent = JSON.stringify(eventData, null, 2);
-    }
+    });
   </script>
-
-  <!-- Google Tag Manager (noscript) -->
-  <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
-            height="0" width="0" style="display:none;visibility:hidden"></iframe>
-  </noscript>
-  <!-- End Google Tag Manager (noscript) -->
 </body>
 </html>
