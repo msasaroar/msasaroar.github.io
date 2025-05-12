@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>view_promotion Event Tracking</title>
-  
+  <title>GA4 Event: join_group</title>
+
   <!-- GTM Container -->
   <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -20,116 +20,141 @@
       font-family: Arial, sans-serif;
       margin: 0;
     }
+
     header {
       background-color: green;
-      color: black;
       text-align: center;
+      color: black;
       font-weight: bold;
-      padding: 1em;
-      position: relative;
+      padding: 20px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 999;
     }
+
     .home-button {
       position: absolute;
-      left: 10px;
-      top: 10px;
+      left: 20px;
+      top: 20px;
       background-color: orange;
       color: blue;
-      padding: 0.5em 1em;
+      padding: 8px 12px;
+      text-decoration: none;
       border: none;
+      font-weight: bold;
       cursor: pointer;
     }
+
     .home-button:hover {
       background-color: blue;
       color: orange;
     }
+
     .container {
+      padding-top: 100px;
       text-align: center;
-      margin-top: 30px;
     }
-    .event-button {
+
+    button {
       background-color: orange;
       color: blue;
-      padding: 10px 20px;
       border: none;
+      padding: 12px 24px;
       font-size: 16px;
+      font-weight: bold;
       cursor: pointer;
       margin-top: 20px;
     }
-    .event-button:hover {
+
+    button:hover {
       background-color: blue;
       color: orange;
     }
-    .code-box {
-      background: #f0f0f0;
+
+    table {
+      margin: 20px auto;
+      border-collapse: collapse;
+      width: 80%;
+    }
+
+    th, td {
+      padding: 12px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f0f0f0;
+    }
+
+    pre {
+      background-color: #f9f9f9;
       text-align: left;
-      display: inline-block;
-      padding: 1em;
-      margin-top: 20px;
-      font-family: monospace;
+      padding: 10px;
+      width: 80%;
+      margin: 20px auto;
+      border: 1px solid #ddd;
     }
   </style>
 </head>
-
 <body>
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <header>
-    <button class="home-button" onclick="location.href='index.html'">Home</button>
-    view_promotion Event Tracking
+    <a href="index.html" class="home-button">Home</a>
+    GA4 Event Demo: join_group
   </header>
 
   <div class="container">
-    <h2>GA4 Event: <code>view_promotion</code></h2>
-    <p><strong>Purpose:</strong> Track when a user views a promotion (e.g. banner).</p>
+    <h2>GA4 Event: <code>join_group</code></h2>
+    <p>This event is triggered when a user joins an online group or community.</p>
 
-    <h3>Required Parameters:</h3>
-    <ul style="text-align: left; display: inline-block;">
-      <li><code>promotion_id</code> — (String) ID of the promotion.</li>
-      <li><code>promotion_name</code> — (String) Name of the promotion.</li>
-      <li><code>creative_name</code> — (String) Name of the creative asset.</li>
-      <li><code>creative_slot</code> — (String) Name of the location where the promotion is shown.</li>
-    </ul>
+    <h3>Event Parameters</h3>
+    <table>
+      <tr>
+        <th>Parameter</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td><code>group_id</code></td>
+        <td>Yes</td>
+        <td>Unique ID of the group</td>
+      </tr>
+      <tr>
+        <td><code>group_name</code></td>
+        <td>Yes</td>
+        <td>Name of the group</td>
+      </tr>
+    </table>
 
-    <h3>Sample Data:</h3>
-    <div class="code-box">
-      {
-        event: "view_promotion",<br />
-        ecommerce: {<br />
-        &nbsp;&nbsp;promo_view: {<br />
-        &nbsp;&nbsp;&nbsp;&nbsp;promotions: [<br />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;promotion_id: "SPRING_SALE",<br />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;promotion_name: "Spring Collection Banner",<br />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;creative_name: "spring_banner_1",<br />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;creative_slot: "home_top"<br />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-        &nbsp;&nbsp;&nbsp;&nbsp;]<br />
-        &nbsp;&nbsp;}<br />
-        }<br />
-      }
-    </div>
+    <h3>Example DataLayer Push</h3>
+    <pre>
+dataLayer.push({
+  event: 'join_group',
+  group_id: 'discord123',
+  group_name: 'Web Dev Learners'
+});
+    </pre>
 
-    <button class="event-button" onclick="trackViewPromotion()">Send view_promotion Event</button>
+    <button onclick="trackJoinGroup()">Join Group</button>
   </div>
 
   <script>
-    function trackViewPromotion() {
+    function trackJoinGroup() {
       dataLayer.push({
-        event: "view_promotion",
-        ecommerce: {
-          promo_view: {
-            promotions: [{
-              promotion_id: "SPRING_SALE",
-              promotion_name: "Spring Collection Banner",
-              creative_name: "spring_banner_1",
-              creative_slot: "home_top"
-            }]
-          }
-        }
+        event: 'join_group',
+        group_id: 'discord123',
+        group_name: 'Web Dev Learners'
       });
-      alert("view_promotion event pushed to dataLayer!");
+      alert("join_group event pushed to dataLayer!");
     }
   </script>
+
+  <!-- GTM Noscript -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
 </body>
 </html>

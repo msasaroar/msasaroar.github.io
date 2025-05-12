@@ -1,55 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Under Construction</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GA4 Event: join_group</title>
+
+  <!-- GTM Container -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB72WSHR');
+  </script>
+
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      background-color: green;
-      color: black;
+      background-color: white;
       font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      height: 100vh;
+      margin: 0;
+    }
+
+    header {
+      background-color: green;
+      text-align: center;
+      color: black;
+      font-weight: bold;
+      padding: 20px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+    }
+
+    .home-button {
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      background-color: orange;
+      color: blue;
+      padding: 8px 12px;
+      text-decoration: none;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    .container {
+      padding-top: 100px;
       text-align: center;
     }
 
-    .construction-text {
-      font-size: 36px;
-      margin: 8px 0;
+    button {
+      background-color: orange;
+      color: blue;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 20px;
     }
 
-    .contacts {
+    button:hover {
+      background-color: blue;
       color: orange;
-      font-size: 30px;
-      margin: 20px 0;
     }
 
+    table {
+      margin: 20px auto;
+      border-collapse: collapse;
+      width: 80%;
+    }
+
+    th, td {
+      padding: 12px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f0f0f0;
+    }
+
+    pre {
+      background-color: #f9f9f9;
+      text-align: left;
+      padding: 10px;
+      width: 80%;
+      margin: 20px auto;
+      border: 1px solid #ddd;
+    }
   </style>
 </head>
 <body>
-  <div class="construction-text">UNDER CONSTRUCTION</div> <!-- English -->
-  <div class="construction-text" dir="rtl">قيد الإنشاء</div>     <!-- Arabic -->
-  <div class="construction-text">正在建设中</div>             <!-- Chinese -->
-  <div class="construction-text">건설 중</div>              <!-- Korean -->
-  <div class="construction-text">En construcción</div>      <!-- Spanish -->
-  <div class="construction-text">En cours de construction</div> <!-- French -->
-  <div class="construction-text">Em construção</div>        <!-- Portuguese -->
-  <div class="construction-text">В разработке</div>         <!-- Russian -->
-  <div class="construction-text">Baustelle</div>            <!-- German -->
-  <div class="construction-text">নির্মাণাধীন</div>           <!-- Bengali -->
 
-  <div class="contacts">
-    <div class="contact-me">CONTACT ME FOR YOUR PROJECT</div>
-    <a href="https://facebook.com/msasaroar" target="_blank">Facebook: facebook.com/msasaroar</a>
-    <a> | </a>
-    <a href="https://wa.me/8801917530031" target="_blank">WhatsApp: +8801917530031</a>
-    <a> | </a>
-    <a href="mailto:msasaroar@gmail.com">Email: msasaroar@gmail.com</a>
+  <header>
+    <a href="index.html" class="home-button">Home</a>
+    GA4 Event Demo: join_group
+  </header>
+
+  <div class="container">
+    <h2>GA4 Event: <code>join_group</code></h2>
+    <p>This event is triggered when a user joins an online group or community.</p>
+
+    <h3>Event Parameters</h3>
+    <table>
+      <tr>
+        <th>Parameter</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td><code>group_id</code></td>
+        <td>Yes</td>
+        <td>Unique ID of the group</td>
+      </tr>
+      <tr>
+        <td><code>group_name</code></td>
+        <td>Yes</td>
+        <td>Name of the group</td>
+      </tr>
+    </table>
+
+    <h3>Example DataLayer Push</h3>
+    <pre>
+dataLayer.push({
+  event: 'join_group',
+  group_id: 'discord123',
+  group_name: 'Web Dev Learners'
+});
+    </pre>
+
+    <button onclick="trackJoinGroup()">Join Group</button>
   </div>
+
+  <script>
+    function trackJoinGroup() {
+      dataLayer.push({
+        event: 'join_group',
+        group_id: 'discord123',
+        group_name: 'Web Dev Learners'
+      });
+      alert("join_group event pushed to dataLayer!");
+    }
+  </script>
+
+  <!-- GTM Noscript -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
 </body>
 </html>
