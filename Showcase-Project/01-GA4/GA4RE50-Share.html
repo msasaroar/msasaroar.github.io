@@ -1,56 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Under Construction</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GA4 Share Event Example</title>
   <style>
     body {
+      background-color: white;
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: green;
-      color: black;
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      height: 100vh;
       text-align: center;
     }
-
-    .construction-text {
-      font-size: 36px;
-      margin: 8px 0;
+    header {
+      background-color: green;
+      color: black;
+      font-weight: bold;
+      padding: 20px 10px;
+      text-align: center;
+      position: fixed;
+      width: 100%;
+      top: 0;
     }
-
-    .contacts {
+    .home-btn {
+      position: absolute;
+      left: 10px;
+      top: 20px;
+      background-color: orange;
+      color: blue;
+      border: none;
+      padding: 10px 15px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .home-btn:hover {
+      background-color: blue;
       color: orange;
-      font-size: 30px;
-      margin: 20px 0;
     }
-
+    main {
+      margin-top: 120px;
+      padding: 20px;
+    }
+    button {
+      background-color: orange;
+      color: blue;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      margin: 20px auto;
+      display: block;
+    }
+    button:hover {
+      background-color: blue;
+      color: orange;
+    }
+    pre {
+      background: #f4f4f4;
+      padding: 10px;
+      overflow-x: auto;
+      text-align: left;
+      max-width: 90%;
+      margin: 0 auto;
+    }
+    table {
+      margin: 0 auto;
+      border-collapse: collapse;
+      width: 90%;
+    }
+    th, td {
+      border: 1px solid #aaa;
+      padding: 10px;
+    }
+    th {
+      background-color: #e0e0e0;
+    }
   </style>
+
+  <!-- GTM CODE -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB72WSHR');
+  </script>
+  <!-- End GTM -->
 </head>
 <body>
-  <div class="construction-text">UNDER CONSTRUCTION</div> <!-- English -->
-  <div class="construction-text" dir="rtl">قيد الإنشاء</div>     <!-- Arabic -->
-  <div class="construction-text">正在建设中</div>             <!-- Chinese -->
-  <div class="construction-text">건설 중</div>              <!-- Korean -->
-  <div class="construction-text">En construcción</div>      <!-- Spanish -->
-  <div class="construction-text">En cours de construction</div> <!-- French -->
-  <div class="construction-text">Em construção</div>        <!-- Portuguese -->
-  <div class="construction-text">В разработке</div>         <!-- Russian -->
-  <div class="construction-text">Baustelle</div>            <!-- German -->
-  <div class="construction-text">নির্মাণাধীন</div>           <!-- Bengali -->
+  <!-- GTM NoScript -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
 
-  <div class="contacts">
-    <div class="contact-me">CONTACT ME FOR YOUR PROJECT</div>
-    <a href="https://facebook.com/msasaroar" target="_blank">Facebook: facebook.com/msasaroar</a>
-    <a> | </a>
-    <a href="https://wa.me/8801917530031" target="_blank">WhatsApp: +8801917530031</a>
-    <a> | </a>
-    <a href="mailto:msasaroar@gmail.com">Email: msasaroar@gmail.com</a>
-  </div>
+  <header>
+    <button class="home-btn" onclick="location.href='index.html'">Home</button>
+    GA4 Event: share
+  </header>
+
+  <main>
+    <h2>Event Definition</h2>
+    <p>The <code>share</code> event logs when a user shares content via social, email, or copy link.</p>
+
+    <h2>GA4 Parameters</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>Type</th>
+          <th>Required</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>content_type</code></td>
+          <td>string</td>
+          <td>Yes</td>
+          <td>Type of content being shared (e.g., "article")</td>
+        </tr>
+        <tr>
+          <td><code>item_id</code></td>
+          <td>string</td>
+          <td>Yes</td>
+          <td>Unique ID of the content</td>
+        </tr>
+        <tr>
+          <td><code>method</code></td>
+          <td>string</td>
+          <td>Yes</td>
+          <td>Sharing method (e.g., "facebook", "email")</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Push Data to GTM</h2>
+    <pre><code>dataLayer.push({
+  event: "share",
+  content_type: "article",
+  item_id: "blog-2025-001",
+  method: "facebook"
+});</code></pre>
+
+    <button onclick="triggerShare()">Trigger share Event</button>
+  </main>
+
+  <script>
+    function triggerShare() {
+      window.dataLayer = window.dataLayer || [];
+      dataLayer.push({
+        event: "share",
+        content_type: "article",
+        item_id: "blog-2025-001",
+        method: "facebook"
+      });
+      alert("Share event pushed to dataLayer!");
+    }
+  </script>
 </body>
 </html>
-
