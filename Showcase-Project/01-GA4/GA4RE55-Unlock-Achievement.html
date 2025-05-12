@@ -1,55 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Under Construction</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unlock Achievement Event - GA4 Demo</title>
   <style>
     body {
+      background-color: white;
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: green;
-      color: black;
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      height: 100vh;
       text-align: center;
     }
 
-    .construction-text {
-      font-size: 36px;
-      margin: 8px 0;
+    header {
+      background-color: green;
+      color: black;
+      font-weight: bold;
+      text-align: center;
+      padding: 1em;
+      position: relative;
     }
 
-    .contacts {
+    .home-button {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: orange;
+      color: blue;
+      border: none;
+      padding: 0.5em 1em;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .home-button:hover {
+      background-color: blue;
       color: orange;
-      font-size: 30px;
-      margin: 20px 0;
     }
 
-  </style>
-</head>
-<body>
-  <div class="construction-text">UNDER CONSTRUCTION</div> <!-- English -->
-  <div class="construction-text" dir="rtl">قيد الإنشاء</div>     <!-- Arabic -->
-  <div class="construction-text">正在建设中</div>             <!-- Chinese -->
-  <div class="construction-text">건설 중</div>              <!-- Korean -->
-  <div class="construction-text">En construcción</div>      <!-- Spanish -->
-  <div class="construction-text">En cours de construction</div> <!-- French -->
-  <div class="construction-text">Em construção</div>        <!-- Portuguese -->
-  <div class="construction-text">В разработке</div>         <!-- Russian -->
-  <div class="construction-text">Baustelle</div>            <!-- German -->
-  <div class="construction-text">নির্মাণাধীন</div>           <!-- Bengali -->
+    .center-button {
+      background-color: orange;
+      color: blue;
+      border: none;
+      padding: 1em 2em;
+      margin: 2em auto;
+      display: block;
+      font-size: 1em;
+      cursor: pointer;
+      font-weight: bold;
+    }
 
-  <div class="contacts">
-    <div class="contact-me">CONTACT ME FOR YOUR PROJECT</div>
-    <a href="https://facebook.com/msasaroar" target="_blank">Facebook: facebook.com/msasaroar</a>
-    <a> | </a>
-    <a href="https://wa.me/8801917530031" target="_blank">WhatsApp: +8801917530031</a>
-    <a> | </a>
-    <a href="mailto:msasaroar@gmail.com">Email: msasaroar@gmail.com</a>
+    .center-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 1em;
+    }
+
+    pre {
+      background-color: #f4f4f4;
+      padding: 1em;
+      text-align: left;
+      overflow-x: auto;
+    }
+
+    table {
+      margin: 1em auto;
+      border-collapse: collapse;
+      width: 90%;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 0.5em;
+      text-align: left;
+    }
+
+    th {
+      background-color: #eee;
+    }
+  </style>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB72WSHR');
+  </script>
+  <!-- End Google Tag Manager -->
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header>
+    <button class="home-button" onclick="location.href='index.html'">Home</button>
+    Unlock Achievement Event - GA4 Demo
+  </header>
+
+  <div class="container">
+    <h2>🎯 Event: <code>unlock_achievement</code></h2>
+
+    <h3>📖 Definition:</h3>
+    <p>This event is triggered when a user unlocks an achievement in a game or learning module.</p>
+
+    <h3>📋 Required Parameters:</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>achievement_id</code></td>
+          <td>string</td>
+          <td>The ID of the achievement that was unlocked.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>📦 Data to be pushed:</h3>
+    <pre>
+dataLayer.push({
+  event: "unlock_achievement",
+  achievement_id: "level_10_badge"
+});
+    </pre>
+
+    <button class="center-button" onclick="pushUnlockAchievement()">Simulate Unlock Achievement</button>
+
+    <script>
+      function pushUnlockAchievement() {
+        dataLayer.push({
+          event: "unlock_achievement",
+          achievement_id: "level_10_badge"
+        });
+        alert("unlock_achievement event pushed to dataLayer.");
+      }
+    </script>
   </div>
 </body>
 </html>

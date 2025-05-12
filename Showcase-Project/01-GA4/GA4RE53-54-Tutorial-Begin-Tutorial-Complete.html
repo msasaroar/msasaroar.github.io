@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tutorial Events Tracking</title>
+  <style>
+    body {
+      background-color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    header {
+      background-color: green;
+      color: black;
+      font-weight: bold;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+    .home-button {
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      background-color: orange;
+      color: blue;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+    .button {
+      background-color: orange;
+      color: blue;
+      padding: 12px 20px;
+      margin: 20px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .button:hover {
+      background-color: blue;
+      color: orange;
+    }
+    main {
+      margin-top: 100px;
+    }
+    pre {
+      text-align: left;
+      display: inline-block;
+      background-color: #f0f0f0;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+  </style>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB72WSHR');
+  </script>
+  <!-- End Google Tag Manager -->
+</head>
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header>
+    <button class="home-button" onclick="window.location.href='index.html'">Home</button>
+    Tutorial Tracking Page
+  </header>
+
+  <main>
+    <h2>GA4 Tutorial Events Simulation</h2>
+
+    <button class="button" onclick="trackTutorialBegin()">Start Tutorial</button>
+    <button class="button" onclick="trackTutorialComplete()">Complete Tutorial</button>
+
+    <h3>Data Pushed to Data Layer:</h3>
+    <div id="datalayer-output"></div>
+  </main>
+
+  <script>
+    function trackTutorialBegin() {
+      const eventData = {
+        event: 'tutorial_begin',
+        tutorial_name: 'GA4 Basics'
+      };
+      dataLayer.push(eventData);
+      displayData(eventData);
+    }
+
+    function trackTutorialComplete() {
+      const eventData = {
+        event: 'tutorial_complete',
+        tutorial_name: 'GA4 Basics'
+      };
+      dataLayer.push(eventData);
+      displayData(eventData);
+    }
+
+    function displayData(data) {
+      const output = document.getElementById('datalayer-output');
+      output.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+    }
+  </script>
+
+</body>
+</html>

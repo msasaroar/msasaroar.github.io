@@ -2,54 +2,135 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Under Construction</title>
+  <title>Spend Virtual Currency - GA4 Event Demo</title>
   <style>
     body {
+      background-color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
       margin: 0;
       padding: 0;
+    }
+
+    header {
       background-color: green;
       color: black;
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      height: 100vh;
       text-align: center;
+      font-weight: bold;
+      padding: 15px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
     }
 
-    .construction-text {
-      font-size: 36px;
-      margin: 8px 0;
+    .home-button {
+      position: absolute;
+      left: 10px;
+      top: 15px;
+      background-color: orange;
+      color: blue;
+      border: none;
+      padding: 5px 10px;
+      font-weight: bold;
+      cursor: pointer;
     }
 
-    .contacts {
+    .home-button:hover {
+      background-color: blue;
       color: orange;
-      font-size: 30px;
-      margin: 20px 0;
     }
 
-  </style>
-</head>
-<body>
-  <div class="construction-text">UNDER CONSTRUCTION</div> <!-- English -->
-  <div class="construction-text" dir="rtl">قيد الإنشاء</div>     <!-- Arabic -->
-  <div class="construction-text">正在建设中</div>             <!-- Chinese -->
-  <div class="construction-text">건설 중</div>              <!-- Korean -->
-  <div class="construction-text">En construcción</div>      <!-- Spanish -->
-  <div class="construction-text">En cours de construction</div> <!-- French -->
-  <div class="construction-text">Em construção</div>        <!-- Portuguese -->
-  <div class="construction-text">В разработке</div>         <!-- Russian -->
-  <div class="construction-text">Baustelle</div>            <!-- German -->
-  <div class="construction-text">নির্মাণাধীন</div>           <!-- Bengali -->
+    main {
+      margin-top: 100px;
+      padding: 20px;
+    }
 
-  <div class="contacts">
-    <div class="contact-me">CONTACT ME FOR YOUR PROJECT</div>
-    <a href="https://facebook.com/msasaroar" target="_blank">Facebook: facebook.com/msasaroar</a>
-    <a> | </a>
-    <a href="https://wa.me/8801917530031" target="_blank">WhatsApp: +8801917530031</a>
-    <a> | </a>
-    <a href="mailto:msasaroar@gmail.com">Email: msasaroar@gmail.com</a>
-  </div>
+    .event-info {
+      margin-bottom: 30px;
+    }
+
+    button.send-event {
+      background-color: orange;
+      color: blue;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button.send-event:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    pre {
+      background-color: #f2f2f2;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: left;
+      display: inline-block;
+    }
+  </style>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB72WSHR');
+  </script>
+  <!-- End Google Tag Manager -->
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header>
+    <button class="home-button" onclick="location.href='index.html'">Home</button>
+    GA4 Event: spend_virtual_currency
+  </header>
+
+  <main>
+    <div class="event-info">
+      <h2>Event Definition</h2>
+      <p>This event tracks when a user spends virtual currency in your app or game.</p>
+
+      <h3>Required Parameters</h3>
+      <ul style="text-align:left; display: inline-block;">
+        <li><strong>virtual_currency_name</strong> – Name of the currency used (e.g., "gems")</li>
+        <li><strong>value</strong> – Number of units spent</li>
+        <li><strong>item_name</strong> – What the user bought</li>
+      </ul>
+
+      <h3>Data to be pushed:</h3>
+      <pre>
+dataLayer.push({
+  event: "spend_virtual_currency",
+  virtual_currency_name: "gems",
+  value: 200,
+  item_name: "Legendary Sword"
+});
+      </pre>
+    </div>
+
+    <button class="send-event" onclick="pushSpendVirtualCurrency()">Send spend_virtual_currency Event</button>
+  </main>
+
+  <script>
+    function pushSpendVirtualCurrency() {
+      dataLayer.push({
+        event: "spend_virtual_currency",
+        virtual_currency_name: "gems",
+        value: 200,
+        item_name: "Legendary Sword"
+      });
+      alert("Event 'spend_virtual_currency' pushed to dataLayer!");
+    }
+  </script>
 </body>
 </html>
