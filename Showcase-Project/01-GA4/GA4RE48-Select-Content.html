@@ -1,55 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Under Construction</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GA4 Event: select_content</title>
+
+  <!-- GTM Container -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB72WSHR');
+  </script>
+
   <style>
     body {
+      background-color: white;
+      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
+    }
+
+    header {
       background-color: green;
       color: black;
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      height: 100vh;
+      text-align: center;
+      padding: 1rem;
+      font-weight: bold;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .home-button {
+      position: absolute;
+      left: 1rem;
+      top: 1rem;
+      background-color: orange;
+      color: blue;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    main {
+      margin-top: 100px;
+      padding: 2rem;
       text-align: center;
     }
 
-    .construction-text {
-      font-size: 36px;
-      margin: 8px 0;
+    .box, .card {
+      background: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 1rem;
+      margin: 1rem auto;
+      max-width: 600px;
+      text-align: left;
     }
 
-    .contacts {
+    pre {
+      background: #f4f4f4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+
+    .items-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      cursor: pointer;
+      border: 2px solid orange;
+      transition: all 0.3s;
+      text-align: center;
+    }
+
+    .card:hover {
+      background-color: blue;
       color: orange;
-      font-size: 30px;
-      margin: 20px 0;
+      border-color: blue;
     }
 
+    .card h3 {
+      margin: 0.5rem 0;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+    }
   </style>
 </head>
-<body>
-  <div class="construction-text">UNDER CONSTRUCTION</div> <!-- English -->
-  <div class="construction-text" dir="rtl">قيد الإنشاء</div>     <!-- Arabic -->
-  <div class="construction-text">正在建设中</div>             <!-- Chinese -->
-  <div class="construction-text">건설 중</div>              <!-- Korean -->
-  <div class="construction-text">En construcción</div>      <!-- Spanish -->
-  <div class="construction-text">En cours de construction</div> <!-- French -->
-  <div class="construction-text">Em construção</div>        <!-- Portuguese -->
-  <div class="construction-text">В разработке</div>         <!-- Russian -->
-  <div class="construction-text">Baustelle</div>            <!-- German -->
-  <div class="construction-text">নির্মাণাধীন</div>           <!-- Bengali -->
 
-  <div class="contacts">
-    <div class="contact-me">CONTACT ME FOR YOUR PROJECT</div>
-    <a href="https://facebook.com/msasaroar" target="_blank">Facebook: facebook.com/msasaroar</a>
-    <a> | </a>
-    <a href="https://wa.me/8801917530031" target="_blank">WhatsApp: +8801917530031</a>
-    <a> | </a>
-    <a href="mailto:msasaroar@gmail.com">Email: msasaroar@gmail.com</a>
-  </div>
+<body>
+  <header>
+    <button class="home-button" onclick="location.href='index.html'">Home</button>
+    GA4 Event: select_content
+  </header>
+
+  <main>
+    <div class="box">
+      <h3>📌 Event Definition</h3>
+      <p><strong>select_content</strong> is used to measure when users select content, such as banners, list items, or other featured content.</p>
+    </div>
+
+    <div class="box">
+      <h3>🔑 Parameters</h3>
+      <ul>
+        <li><strong>content_type</strong> (required): Type of content selected (e.g., "banner", "card")</li>
+        <li><strong>item_id</strong> (optional): ID of the item selected</li>
+        <li><strong>item_name</strong> (optional): Name/title of the item selected</li>
+      </ul>
+    </div>
+
+    <div class="box">
+      <h3>🛠️ Sample Data Layer Push</h3>
+      <pre>
+dataLayer.push({
+  event: "select_content",
+  content_type: "card",
+  item_id: "product_002",
+  item_name: "Bluetooth Speaker"
+});
+      </pre>
+    </div>
+
+    <div class="box">
+      <h3>🛒 Select a Product Card</h3>
+      <p>Click any item below to trigger a <code>select_content</code> event.</p>
+    </div>
+
+    <div class="items-container">
+      <div class="card" onclick="selectContent('product_001', 'Wireless Headphones')">
+        <h3>Wireless Headphones</h3>
+        <p>Item ID: product_001</p>
+      </div>
+      <div class="card" onclick="selectContent('product_002', 'Bluetooth Speaker')">
+        <h3>Bluetooth Speaker</h3>
+        <p>Item ID: product_002</p>
+      </div>
+      <div class="card" onclick="selectContent('product_003', 'Smart Watch')">
+        <h3>Smart Watch</h3>
+        <p>Item ID: product_003</p>
+      </div>
+      <div class="card" onclick="selectContent('product_004', 'Gaming Mouse')">
+        <h3>Gaming Mouse</h3>
+        <p>Item ID: product_004</p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function selectContent(itemId, itemName) {
+      dataLayer.push({
+        event: "select_content",
+        content_type: "card",
+        content_id: itemId,
+        content_name: itemName
+      });
+      alert(`select_content event pushed!\nItem: ${itemName}`);
+    }
+  </script>
 </body>
 </html>
