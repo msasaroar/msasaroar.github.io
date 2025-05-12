@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GA4 Level Events Demo</title>
+  <style>
+    body {
+      background-color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: green;
+      color: black;
+      text-align: center;
+      font-weight: bold;
+      padding: 1em 0;
+      position: sticky;
+      top: 0;
+    }
+
+    .home-button {
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      background-color: orange;
+      color: blue;
+      padding: 5px 10px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    .container {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    button {
+      background-color: orange;
+      color: blue;
+      font-weight: bold;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      margin: 10px auto;
+      display: block;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    pre {
+      background: #f4f4f4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+
+    h2, h3 {
+      color: #333;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    table, th, td {
+      border: 1px solid #999;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+    }
+
+    .event-block {
+      border: 2px solid #ccc;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+    }
+  </style>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB72WSHR');
+  </script>
+  <!-- End Google Tag Manager -->
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="home-button">Home</a>
+    GA4 Level Events Tracking (via GTM)
+  </header>
+
+  <div class="container">
+    
+    <!-- Event: level_start -->
+    <div class="event-block">
+      <h2>Event: <code>level_start</code></h2>
+      <p>This event should be triggered when a user begins a level in a game.</p>
+
+      <h3>Parameters:</h3>
+      <table>
+        <tr><th>Parameter</th><th>Required</th><th>Description</th></tr>
+        <tr><td><code>level_name</code></td><td>Yes</td><td>Name of the level</td></tr>
+      </table>
+
+      <h3>Example dataLayer.push:</h3>
+      <pre>
+dataLayer.push({
+  event: "level_start",
+  level_name: "Forest World 1"
+});
+      </pre>
+
+      <button onclick="trackLevelStart()">Trigger level_start</button>
+    </div>
+
+    <!-- Event: level_up -->
+    <div class="event-block">
+      <h2>Event: <code>level_up</code></h2>
+      <p>This event is used when a user levels up.</p>
+
+      <h3>Parameters:</h3>
+      <table>
+        <tr><th>Parameter</th><th>Required</th><th>Description</th></tr>
+        <tr><td><code>level</code></td><td>Yes</td><td>New level number</td></tr>
+        <tr><td><code>character</code></td><td>No</td><td>The character that leveled up</td></tr>
+      </table>
+
+      <h3>Example dataLayer.push:</h3>
+      <pre>
+dataLayer.push({
+  event: "level_up",
+  level: 5,
+  character: "Warrior Elf"
+});
+      </pre>
+
+      <button onclick="trackLevelUp()">Trigger level_up</button>
+    </div>
+
+    <!-- Event: level_end -->
+    <div class="event-block">
+      <h2>Event: <code>level_end</code></h2>
+      <p>This event should be sent when a user finishes a level.</p>
+
+      <h3>Parameters:</h3>
+      <table>
+        <tr><th>Parameter</th><th>Required</th><th>Description</th></tr>
+        <tr><td><code>level_name</code></td><td>Yes</td><td>Name of the level</td></tr>
+        <tr><td><code>success</code></td><td>No</td><td>Boolean: true if level completed successfully</td></tr>
+      </table>
+
+      <h3>Example dataLayer.push:</h3>
+      <pre>
+dataLayer.push({
+  event: "level_end",
+  level_name: "Forest World 1",
+  success: true
+});
+      </pre>
+
+      <button onclick="trackLevelEnd()">Trigger level_end</button>
+    </div>
+
+  </div>
+
+  <script>
+    function trackLevelStart() {
+      dataLayer.push({
+        event: "level_start",
+        level_name: "Forest World 1"
+      });
+      alert("level_start event pushed to dataLayer!");
+    }
+
+    function trackLevelUp() {
+      dataLayer.push({
+        event: "level_up",
+        level: 5,
+        character: "Warrior Elf"
+      });
+      alert("level_up event pushed to dataLayer!");
+    }
+
+    function trackLevelEnd() {
+      dataLayer.push({
+        event: "level_end",
+        level_name: "Forest World 1",
+        success: true
+      });
+      alert("level_end event pushed to dataLayer!");
+    }
+  </script>
+
+  <!-- GTM NoScript for fallback -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+</body>
+</html>
