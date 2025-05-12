@@ -3,31 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Qualify Lead Event Simulation</title>
+  <title>Qualify Lead Event - GA4</title>
   <style>
     body {
       background-color: white;
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
+      text-align: center;
     }
     header {
       background-color: green;
       color: black;
-      font-weight: bold;
       text-align: center;
-      padding: 1em 0;
-      position: relative;
+      font-weight: bold;
+      padding: 20px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
     }
     .home-button {
       position: absolute;
-      top: 15px;
-      left: 20px;
+      left: 10px;
+      top: 20px;
       background-color: orange;
       color: blue;
-      padding: 5px 10px;
-      text-decoration: none;
-      border-radius: 5px;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
       font-weight: bold;
     }
     .home-button:hover {
@@ -35,93 +39,96 @@
       color: orange;
     }
     .container {
-      max-width: 600px;
-      margin: 2em auto;
-      padding: 1em;
-      text-align: center;
-    }
-    .event-box {
-      text-align: left;
-      background: #f4f4f4;
-      padding: 1em;
-      border-radius: 10px;
-      margin-bottom: 1em;
+      margin-top: 120px;
     }
     button {
       background-color: orange;
       color: blue;
       padding: 10px 20px;
       font-size: 16px;
-      font-weight: bold;
       border: none;
-      border-radius: 8px;
       cursor: pointer;
+      font-weight: bold;
+      margin-top: 20px;
     }
     button:hover {
       background-color: blue;
       color: orange;
     }
+    .info {
+      text-align: left;
+      display: inline-block;
+      max-width: 600px;
+      margin-top: 30px;
+    }
+    label, select {
+      display: block;
+      margin: 10px auto;
+    }
   </style>
 
-  <!-- GTM Container Code -->
+  <!-- Google Tag Manager -->
   <script>
-    window.dataLayer = window.dataLayer || [];
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB72WSHR');
   </script>
-  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MB72WSHR"></script>
+  <!-- End Google Tag Manager -->
 </head>
 
 <body>
-  <!-- GTM noscript fallback -->
+  <header>
+    <button class="home-button" onclick="location.href='index.html'">Home</button>
+    Qualify Lead - GA4 Event Demo
+  </header>
+
+  <div class="container">
+    <h2>Qualify a Lead</h2>
+    <p>Select a lead type and submit to trigger <strong>qualify_lead</strong> event.</p>
+
+    <label for="leadType">Lead Type:</label>
+    <select id="leadType">
+      <option value="home_insurance">Home Insurance</option>
+      <option value="auto">Auto</option>
+      <option value="business">Business</option>
+    </select>
+
+    <button onclick="qualifyLead()">Submit Lead</button>
+
+    <div class="info">
+      <h3>GA4 Event Definition</h3>
+      <p><strong>Event Name:</strong> qualify_lead</p>
+      <p><strong>Required Parameter:</strong> lead_type</p>
+
+      <h4>Example DataLayer Push:</h4>
+      <pre id="output">
+      </pre>
+    </div>
+  </div>
+
+  <script>
+    function qualifyLead() {
+      const leadType = document.getElementById('leadType').value;
+
+      const eventData = {
+        event: "qualify_lead",
+        lead_type: leadType
+      };
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push(eventData);
+
+      document.getElementById('output').textContent = JSON.stringify(eventData, null, 2);
+    }
+  </script>
+
+  <!-- Google Tag Manager (noscript) -->
   <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
             height="0" width="0" style="display:none;visibility:hidden"></iframe>
   </noscript>
-
-  <header>
-    <a href="index.html" class="home-button">Home</a>
-    Qualify Lead - GA4 Event Simulation
-  </header>
-
-  <div class="container">
-
-    <div class="event-box">
-      <h3>🔹 Event: <code>qualify_lead</code></h3>
-      <p><strong>Definition:</strong> Indicates that a lead has been qualified as a potential customer.</p>
-
-      <h4>📌 Parameters:</h4>
-      <ul>
-        <li><code>lead_type</code> (string, recommended) — Type of lead (e.g. "enterprise", "small_business")</li>
-        <li><code>value</code> (number, optional) — Estimated value of the lead</li>
-        <li><code>currency</code> (string, optional) — Currency of the value (e.g. "USD")</li>
-      </ul>
-
-      <h4>📤 Data to Push:</h4>
-      <pre>
-        <code>
-        dataLayer.push({
-        event: "qualify_lead",
-        lead_type: "enterprise",
-        value: 10000,
-        currency: "USD"
-        });
-        </code>
-      </pre>
-    </div>
-
-    <button onclick="simulateQualifyLead()">Qualify-Lead</button>
-
-    <script>
-      function simulateQualifyLead() {
-        dataLayer.push({
-          event: "qualify_lead",
-          lead_type: "enterprise",
-          value: 10000,
-          currency: "USD"
-        });
-        alert("qualify_lead event pushed to dataLayer!");
-      }
-    </script>
-  </div>
+  <!-- End Google Tag Manager (noscript) -->
 </body>
 </html>
-
