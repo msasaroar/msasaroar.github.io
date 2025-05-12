@@ -2,10 +2,70 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GA4 Event: join_group</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GA4 post_score Event Demo</title>
+  <style>
+    body {
+      background-color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: green;
+      color: black;
+      font-weight: bold;
+      text-align: center;
+      padding: 15px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+    }
+    .home-button {
+      position: absolute;
+      left: 10px;
+      top: 15px;
+      background-color: orange;
+      color: blue;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+    .content {
+      padding-top: 100px;
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+    }
+    .event-button {
+      background-color: orange;
+      color: blue;
+      padding: 10px 20px;
+      border: none;
+      font-size: 16px;
+      font-weight: bold;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    .event-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+    pre {
+      background-color: #f0f0f0;
+      text-align: left;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+  </style>
 
-  <!-- GTM Container -->
+  <!-- Google Tag Manager -->
   <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -13,148 +73,60 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-MB72WSHR');
   </script>
+  <!-- End Google Tag Manager -->
 
-  <style>
-    body {
-      background-color: white;
-      font-family: Arial, sans-serif;
-      margin: 0;
-    }
-
-    header {
-      background-color: green;
-      text-align: center;
-      color: black;
-      font-weight: bold;
-      padding: 20px;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 999;
-    }
-
-    .home-button {
-      position: absolute;
-      left: 20px;
-      top: 20px;
-      background-color: orange;
-      color: blue;
-      padding: 8px 12px;
-      text-decoration: none;
-      border: none;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .home-button:hover {
-      background-color: blue;
-      color: orange;
-    }
-
-    .container {
-      padding-top: 100px;
-      text-align: center;
-    }
-
-    button {
-      background-color: orange;
-      color: blue;
-      border: none;
-      padding: 12px 24px;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-      margin-top: 20px;
-    }
-
-    button:hover {
-      background-color: blue;
-      color: orange;
-    }
-
-    table {
-      margin: 20px auto;
-      border-collapse: collapse;
-      width: 80%;
-    }
-
-    th, td {
-      padding: 12px;
-      border: 1px solid #ccc;
-      text-align: center;
-    }
-
-    th {
-      background-color: #f0f0f0;
-    }
-
-    pre {
-      background-color: #f9f9f9;
-      text-align: left;
-      padding: 10px;
-      width: 80%;
-      margin: 20px auto;
-      border: 1px solid #ddd;
-    }
-  </style>
 </head>
 <body>
 
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
   <header>
-    <a href="index.html" class="home-button">Home</a>
-    GA4 Event Demo: join_group
+    <button class="home-button" onclick="window.location.href='index.html'">Home</button>
+    GA4 post_score Event Tracking
   </header>
 
-  <div class="container">
-    <h2>GA4 Event: <code>join_group</code></h2>
-    <p>This event is triggered when a user joins an online group or community.</p>
+  <div class="content">
+    <h2>GA4 Event: <code>post_score</code></h2>
 
-    <h3>Event Parameters</h3>
-    <table>
-      <tr>
-        <th>Parameter</th>
-        <th>Required</th>
-        <th>Description</th>
-      </tr>
-      <tr>
-        <td><code>group_id</code></td>
-        <td>Yes</td>
-        <td>Unique ID of the group</td>
-      </tr>
-      <tr>
-        <td><code>group_name</code></td>
-        <td>Yes</td>
-        <td>Name of the group</td>
-      </tr>
-    </table>
+    <h3>Purpose</h3>
+    <p>Track when a user achieves a score in a game.</p>
 
-    <h3>Example DataLayer Push</h3>
+    <h3>Required Parameters</h3>
     <pre>
-dataLayer.push({
-  event: 'join_group',
-  group_id: 'discord123',
-  group_name: 'Web Dev Learners'
-});
+score: 8500
+level: "Level 3"
+character: "Archer"
     </pre>
 
-    <button onclick="trackJoinGroup()">Join Group</button>
+    <h3>DataLayer Push Code</h3>
+    <pre>
+&lt;script&gt;
+  dataLayer.push({
+    event: "post_score",
+    score: 8500,
+    level: "Level 3",
+    character: "Archer"
+  });
+&lt;/script&gt;
+    </pre>
+
+    <button class="event-button" onclick="postScore()">Trigger post_score Event</button>
   </div>
 
   <script>
-    function trackJoinGroup() {
+    function postScore() {
       dataLayer.push({
-        event: 'join_group',
-        group_id: 'discord123',
-        group_name: 'Web Dev Learners'
+        event: "post_score",
+        score: 8500,
+        level: "Level 3",
+        character: "Archer"
       });
-      alert("join_group event pushed to dataLayer!");
+      alert('post_score event pushed to dataLayer!');
     }
   </script>
 
-  <!-- GTM Noscript -->
-  <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe>
-  </noscript>
 </body>
 </html>
