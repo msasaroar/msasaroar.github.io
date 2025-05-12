@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>View Cart Event | GA4 Showcase</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>view_promotion Event Tracking</title>
   
-  <!-- GTM Code -->
+  <!-- GTM Container -->
   <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -13,143 +13,122 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-MB72WSHR');
   </script>
-  
+
   <style>
     body {
       background-color: white;
       font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
     }
-
     header {
       background-color: green;
-      text-align: center;
       color: black;
+      text-align: center;
       font-weight: bold;
-      padding: 10px 0;
-      position: sticky;
-      top: 0;
+      padding: 1em;
+      position: relative;
     }
-
     .home-button {
       position: absolute;
       left: 10px;
       top: 10px;
       background-color: orange;
       color: blue;
+      padding: 0.5em 1em;
       border: none;
-      padding: 5px 10px;
-      font-weight: bold;
       cursor: pointer;
     }
-
     .home-button:hover {
       background-color: blue;
       color: orange;
     }
-
-    main {
-      max-width: 800px;
-      margin: 30px auto;
+    .container {
       text-align: center;
+      margin-top: 30px;
     }
-
-    .button {
+    .event-button {
       background-color: orange;
       color: blue;
       padding: 10px 20px;
       border: none;
       font-size: 16px;
-      font-weight: bold;
       cursor: pointer;
       margin-top: 20px;
     }
-
-    .button:hover {
+    .event-button:hover {
       background-color: blue;
       color: orange;
     }
-
-    pre {
+    .code-box {
       background: #f0f0f0;
-      padding: 15px;
       text-align: left;
-      overflow-x: auto;
+      display: inline-block;
+      padding: 1em;
+      margin-top: 20px;
+      font-family: monospace;
     }
   </style>
 </head>
 
 <body>
-  <!-- GTM NoScript -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <header>
     <button class="home-button" onclick="location.href='index.html'">Home</button>
-    View Cart Event Tracking
+    view_promotion Event Tracking
   </header>
 
-  <main>
-    <h2>GA4 Recommended Event: <code>view_cart</code></h2>
+  <div class="container">
+    <h2>GA4 Event: <code>view_promotion</code></h2>
+    <p><strong>Purpose:</strong> Track when a user views a promotion (e.g. banner).</p>
 
-    <p><strong>Event Definition:</strong> Triggered when a user views items in their shopping cart.</p>
-
-    <h3>Parameters Required:</h3>
-    <ul style="text-align:left; display: inline-block;">
-      <li><code>currency</code> – ISO 4217 currency code (e.g., "USD")</li>
-      <li><code>value</code> – Total value of items in the cart</li>
-      <li><code>items</code> – Array of items with identifiers and quantities</li>
+    <h3>Required Parameters:</h3>
+    <ul style="text-align: left; display: inline-block;">
+      <li><code>promotion_id</code> — (String) ID of the promotion.</li>
+      <li><code>promotion_name</code> — (String) Name of the promotion.</li>
+      <li><code>creative_name</code> — (String) Name of the creative asset.</li>
+      <li><code>creative_slot</code> — (String) Name of the location where the promotion is shown.</li>
     </ul>
 
-    <h3>Example Data Pushed to <code>dataLayer</code>:</h3>
-    <pre><code>
-dataLayer.push({
-  event: "view_cart",
-  currency: "USD",
-  value: 59.97,
-  items: [
-    {
-      item_id: "SKU_123",
-      item_name: "Blue T-Shirt",
-      quantity: 1,
-      price: 19.99
-    },
-    {
-      item_id: "SKU_456",
-      item_name: "Green Hat",
-      quantity: 2,
-      price: 19.99
-    }
-  ]
-});
-    </code></pre>
+    <h3>Sample Data:</h3>
+    <div class="code-box">
+      {
+        event: "view_promotion",<br />
+        ecommerce: {<br />
+        &nbsp;&nbsp;promo_view: {<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;promotions: [<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;promotion_id: "SPRING_SALE",<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;promotion_name: "Spring Collection Banner",<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;creative_name: "spring_banner_1",<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;creative_slot: "home_top"<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;]<br />
+        &nbsp;&nbsp;}<br />
+        }<br />
+      }
+    </div>
 
-    <button class="button" onclick="triggerViewCart()">Trigger view_cart Event</button>
-  </main>
+    <button class="event-button" onclick="trackViewPromotion()">Send view_promotion Event</button>
+  </div>
 
   <script>
-    function triggerViewCart() {
+    function trackViewPromotion() {
       dataLayer.push({
-        event: "view_cart",
-        currency: "USD",
-        value: 59.97,
-        items: [
-          {
-            item_id: "SKU_123",
-            item_name: "Blue T-Shirt",
-            quantity: 1,
-            price: 19.99
-          },
-          {
-            item_id: "SKU_456",
-            item_name: "Green Hat",
-            quantity: 2,
-            price: 19.99
+        event: "view_promotion",
+        ecommerce: {
+          promo_view: {
+            promotions: [{
+              promotion_id: "SPRING_SALE",
+              promotion_name: "Spring Collection Banner",
+              creative_name: "spring_banner_1",
+              creative_slot: "home_top"
+            }]
           }
-        ]
+        }
       });
-      alert('view_cart event has been pushed to dataLayer');
+      alert("view_promotion event pushed to dataLayer!");
     }
   </script>
 </body>
