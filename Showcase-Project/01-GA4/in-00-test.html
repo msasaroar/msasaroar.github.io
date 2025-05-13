@@ -1,163 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Event: unlock_achievement</title>
-
-  <!-- Google Tag Manager -->
-  <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({
-      'gtm.start': new Date().getTime(), event:'gtm.js'
-    }); var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:''; j.async=true;
-    j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-    f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MB72WSHR');
-  </script>
-  <!-- End Google Tag Manager -->
-
+  <meta charset="UTF-8">
+  <title>GA4 Events List</title>
   <style>
     body {
       background-color: white;
-      margin: 0;
       font-family: Arial, sans-serif;
     }
-
     header {
       background-color: green;
       color: black;
       font-weight: bold;
       text-align: center;
-      padding: 15px 0;
+      padding: 10px;
       position: fixed;
-      width: 100%;
       top: 0;
-      z-index: 1000;
+      width: 100%;
+      z-index: 100;
     }
-
     .home-button {
       position: absolute;
-      left: 20px;
-      top: 15px;
+      left: 10px;
+      top: 10px;
       background-color: orange;
       color: blue;
-      border: none;
-      padding: 8px 12px;
       font-weight: bold;
+      border: none;
+      padding: 6px 10px;
       cursor: pointer;
     }
-
     .home-button:hover {
       background-color: blue;
       color: orange;
     }
-
-    main {
-      max-width: 800px;
-      margin: 120px auto 40px;
-      padding: 0 20px;
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin-top: 80px;
+      text-align: center;
     }
-
-    h1 {
-      color: #222;
-      font-size: 24px;
-      display: flex;
-      align-items: center;
+    li {
+      margin: 8px 0;
+      background-color: orange;
+      color: blue;
+      padding: 10px;
+      cursor: pointer;
+      width: 80%;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
-
-    h1::before {
-      content: "🎯";
-      margin-right: 10px;
+    li:hover {
+      background-color: blue;
+      color: orange;
     }
-
-    h2 {
+    .category {
+      margin-top: 40px;
       font-size: 18px;
-      margin-top: 30px;
+      font-weight: bold;
+      text-align: center;
+      color: #333;
     }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 10px;
-    }
-
-    th, td {
-      border: 1px solid #ccc;
-      padding: 10px;
-      text-align: left;
-    }
-
-    th {
-      background-color: #f5f5f5;
-    }
-
-    code {
-      background-color: #f4f4f4;
-      display: block;
-      padding: 10px;
-      margin-top: 10px;
-      border-left: 4px solid #999;
-      font-family: Consolas, monospace;
-    }
-
-    .emoji-title {
-      font-size: 16px;
-      margin-top: 25px;
-      display: flex;
-      align-items: center;
-    }
-
-    .emoji-title::before {
-      margin-right: 8px;
-    }
-
   </style>
+
+  <!-- GTM CODE (Head) -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB72WSHR');
+  </script>
 </head>
 <body>
 
-  <!-- Google Tag Manager (noscript) -->
-  <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe>
-  </noscript>
-  <!-- End Google Tag Manager (noscript) -->
+<!-- GTM CODE (Body) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <header>
-    <button class="home-button" onclick="location.href='index.html'">Home</button>
-    Event: unlock_achievement
-  </header>
+<header>
+  <button class="home-button" onclick="location.href='index.html'">Home</button>
+  GA4 Events Navigation
+</header>
 
-  <main>
-    <h2 class="emoji-title">📖 Definition:</h2>
-    <p>This event is triggered when a user unlocks an achievement in a game or learning module.</p>
 
-    <h2 class="emoji-title">📋 Required Parameters:</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Parameter</th>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><code>achievement_id</code></td>
-          <td>string</td>
-          <td>The ID of the achievement that was unlocked.</td>
-        </tr>
-      </tbody>
-    </table>
 
-    <h2 class="emoji-title">📦 Data to be pushed:</h2>
-    <code>
-      dataLayer.push({<br>
-      &nbsp;&nbsp;event: "unlock_achievement",<br>
-      &nbsp;&nbsp;achievement_id: "level_10_badge"<br>
-      });
-    </code>
-  </main>
+<!-- TRACK AUTOMATICALLY COLLECTED EVENTS -->
+<div class="category">🛒 AUTOMATICALLY COLLECTED  EVENTS</div>
+<ul>
+  <li tabindex="0" data-value="GA4AE01-First-Visit.html">First Visit [first_visit | GA4AE01]</li>
+  <li tabindex="0" data-value="GA4AE02-Session-Start.html">Session Start [session_start | GA4AE02]</li>
+  <li tabindex="0" data-value="GA4AE03-User-Engagement.html">User Engagement [user_engagement | GA4AE03]</li>
+</ul>
+
+<!-- TRACK AUTOMATICALLY COLLECTED & ENHANCED MEASUREMENT EVENTS -->
+<div class="category">🛒 TRACK AUTOMATICALLY COLLECTED & ENHANCED MEASUREMENT EVENTS</div>
+<ul>
+  <li tabindex="0" data-value="GA4AE04-Page-Views.html">Page View [page_view | GA4AE04]</li>
+  <li tabindex="0" data-value="GA4AE05-Outbound-Link-Click.html">Outbound Link Click [outbound_click | GA4AE05]</li>
+  <li tabindex="0" data-value="GA4AE06-Download-File.html">File Downloads [file_download | GA4AE06]</li>
+  <li tabindex="0" data-value="GA4AE07-Scroll-Depth.html">Page Scroll Depth [scroll | GA4AE07]</li>
+  <li tabindex="0" data-value="GA4AE08-Search-Results.html">Search Result Views [view_search_results | GA4AE08 / GA4RE34]</li>
+  <li tabindex="0" data-value="GA4AE09-Video-Start.html">Video Engagement [video_start | GA4AE09]</li>
+  <li tabindex="0" data-value="GA4AE10-Video-Progress.html">Video Progress [video_progress | GA4AE10]</li>
+  <li tabindex="0" data-value="GA4AE11-Video-Complete.html">Video Complete [video_complete | GA4AE11]</li>
+  <li tabindex="0" data-value="GA4AE12-Click-Event.html">Click [click | GA4AE12]</li>
+  <li tabindex="0" data-value="GA4AE13-Form-Start.html">Form Start [form_start | GA4AE13]</li>
+  <li tabindex="0" data-value="GA4AE14-Form-Submit.html">Form Submission [form_submit | GA4AE14]</li>
+</ul>
+
+
+<!-- Event Categories -->
+<div class="category">🛒 E-commerce Events</div>
+<ul>
+  <li data-value="GA4RE01-Add-Payment-Info.html">Add Payment Info</li>
+  <li data-value="GA4RE02-Add-Shipping-Info.html">Add Shipping Info</li>
+  <li data-value="GA4RE03-Add-To-Cart.html">Add To Cart</li>
+  <li data-value="GA4RE05-Begin-Checkout.html">Begin Checkout</li>
+  <li data-value="GA4RE17-Purchase.html">Purchase</li>
+  <li data-value="GA4RE18-Purchase-Confirmation.html">Purchase Confirmation</li>
+  <li data-value="GA4RE19-Refund.html">Refund</li>
+  <li data-value="GA4RE20-Remove-From-Cart.html">Remove From Cart</li>
+  <li data-value="GA4RE23-Select-Item.html">Select Item</li>
+  <li data-value="GA4RE32-View-Item.html">View Item</li>
+  <li data-value="GA4RE33-View-Item-List.html">View Item List</li>
+  <li data-value="GA4RE35-Add-To-Wishlist.html">Add To Wishlist</li>
+  <li data-value="GA4RE56-View-Cart.html">View Cart</li>
+  <li data-value="GA4RE49-Select-Promotion.html">Select Promotion</li>
+  <li data-value="GA4RE57-View-Promotion.html">View Promotion</li>
+</ul>
+
+<div class="category">🎯 Lead Generation & CRM</div>
+<ul>
+  <li data-value="GA4RE10-Generate-Lead.html">Generate Lead</li>
+  <li data-value="GA4RE36-Close-Convert-Lead.html">Close Convert Lead</li>
+  <li data-value="GA4RE37-Close-Unconvert-Lead.html">Close Unconvert Lead</li>
+  <li data-value="GA4RE38-Disqualify Lead.html">Disqualify Lead</li>
+  <li data-value="GA4RE46-Qualify-Lead.html">Qualify Lead</li>
+  <li data-value="GA4RE58-Working-Lead.html">Working Lead</li>
+</ul>
+
+<div class="category">📲 Engagement Events</div>
+<ul>
+  <li data-value="GA4RE44-Login.html">Login</li>
+  <li data-value="GA4RE51-Sign-Up.html">Sign-Up</li>
+  <li data-value="GA4RE51-Signup-Confirmation.html">Signup Confirmation</li>
+  <li data-value="GA4RE50-Share.html">Share</li>
+  <li data-value="GA4RE48-Select-Content.html">Select Content</li>
+  <li data-value="GA4RE47-Search.html">Search</li>
+</ul>
+
+<div class="category">💰 Virtual Currency & Gaming</div>
+<ul>
+  <li data-value="GA4RE39-Earn-Virtual-Currency.html">Earn Virtual Currency</li>
+  <li data-value="GA4RE52-Spend-Virtual-Currency.html">Spend Virtual Currency</li>
+  <li data-value="GA4RE40-Join-Group.html">Join Group</li>
+  <li data-value="GA4RE41-GA4RE42-GA4RE43-Level-Start-Up-End.html">Level Start / Up / End</li>
+  <li data-value="GA4RE45-Post-Score.html">Post Score</li>
+  <li data-value="GA4RE53-GA4RE54-Tutorial-Begin-Complete.html">Tutorial Begin / Complete</li>
+  <li data-value="GA4RE55-Unlock-Achievement.html">Unlock Achievement</li>
+</ul>
+
+<!-- JavaScript to set tooltips and make items clickable -->
+<script>
+  document.querySelectorAll("li[data-value]").forEach(function (li) {
+    const fileName = li.getAttribute("data-value");
+    const code = fileName.split('-')[0]; // Extract GA4 code like GA4RE01
+    li.title = code; // Set tooltip
+    li.addEventListener("click", function () {
+      window.location.href = fileName;
+    });
+  });
+</script>
 
 </body>
 </html>

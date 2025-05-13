@@ -2,63 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Saiful | Showcase Project | GA4</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grouped Recommended Events</title>
 
-  <!-- Google Tag Manager -->
+  <!-- GTM HEAD -->
   <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;
+    j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+    f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-MB72WSHR');
   </script>
-  <!-- End Google Tag Manager -->
 
   <style>
-    /* Global Styles */
-    html, body {
-      height: 100%;
+    body {
+      background-color: white;
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
+    }
+
+    header {
       background-color: green;
       color: black;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    .page-wrapper {
-      display: flex;
-      flex-direction: column;
-      height: 100vh;
-    }
-
-    /* Header */
-    header {
-      background-color: rgb(41, 163, 41);
+      font-weight: bold;
+      font-size: 35px;
       text-align: center;
-      padding: 10px;
-      flex-shrink: 0;
-      position: relative;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 36px;
-      color: black;
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
     }
 
     .home-button {
       position: absolute;
-      left: 10px;
-      top: 20%;
-      transform: translateY(-50%);
+      border-radius: 8px;
+      font-size: 16px;
+      left: 15px;
+      top: 15px;
       background-color: orange;
       color: blue;
-      border: 5px solid green;
       padding: 15px 30px;
-      border-radius: 6px;
+      text-decoration: none;
+      border: none;
+      font-weight: bold;
       cursor: pointer;
-      transition: all 0.3s;
+      border: 5px solid darkgreen;
+      border-radius: 6px;
     }
 
     .home-button:hover {
@@ -66,113 +58,109 @@
       color: orange;
     }
 
-    /* Main Content */
     main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 0px;
-      overflow-y: auto;
+      padding: 75px 0px 0px;
+      max-width: 1200px;
+      margin: auto;
     }
 
-    /* Listbox Group */
-    .listbox-group {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 1500px;
-    min-height: 300px; /* কমপক্ষে ৩০০px হবে, কনটেন্ট বেশি হলে আরও বাড়বে */
-    height: 1000px;
-    margin-top: 20px;
-    }
-
-    .listbox-group label {
-      font-weight: bold;
-      font-size: 15px;
-      margin-bottom: 10px;
-      text-align: center;
-    }
-
-    .listbox-group ul {
+    ul {
       list-style: none;
       padding: 0;
-      margin: 10px 0;
-      border: 5px solid rgb(41, 163, 41);
-      max-height: 1000px;
-      overflow-y: auto;
-      background-color: silver;
     }
 
-    .listbox-group li {
+    li {
+      background-color: lightskyblue;
+      color: black;
       padding: 10px;
+      margin: 5px 0;
+      text-align: right;
+      font-weight: lighter;
       cursor: pointer;
-      border-bottom: 2px solid black;
-      transition: background-color 0.3s;
+      border-radius: 5px;
+      transition: 0.3s;
     }
 
-    .listbox-group li:hover, 
-    .listbox-group li.selected {
-      background-color: #007bff;
-      color: white;
-    }
-
-    /* Buttons */
-    button {
-      background-color: orange;
-      color: blue;
-      border: 5px solid rgb(41, 163, 41);
-      padding: 10px 15px;
-      border-radius: 8px;
-      font-size: 16px;
-      margin-top: 20px;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-
-    button:hover {
+    li:hover {
       background-color: blue;
       color: orange;
     }
 
-    button:disabled {
-      background-color: gray;
-      cursor: not-allowed;
-      color: white;
+    .section-header {
+      background-color:green;
+      color: black;
+      text-align: center;
+      font-size: 16px;
+      font-weight: bold;
+      margin-top: 0px;
+      cursor: default;
     }
 
-    /* Responsive */
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 22px;
-      }
+    .category {
+      background-color: lightblue;
+      color:black;
+      font-weight: lighter;
+      text-align: left;
+      padding: 5px;
+      margin-top: 0px;
+      text-align: center;
+      border-left: 20px solid green;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .category::after {
+      content: '➕';
+      position: absolute;
+      right: 15px;
+    }
+
+    .category.active::after {
+      content: '➖';
+    }
+
+    .event-group {
+      display: none;
+      padding-left: 20px;
+    }
+
+    .event-group.show {
+      display: block;
     }
   </style>
 </head>
-
 <body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
 
-  <div class="page-wrapper">
-    <header>
-      <button class="home-button" onclick="location.href='../index.html'">Home</button>
-      <h1>Google Analytics 4</h1>
-    </header>
-    
-    <main>
-      <div class="listbox-group">
-        <label for="selectedItem">SELECT AN ITEM FROM THE LIST</label>
-        <ul id="selectedItem" role="listbox" tabindex="0">
-              <!-- TRACK AUTOMATICALLY COLLECTED  EVENTS -->
-              <li class="section-header" tabindex="0" data-value="what-is-automatically-collected-event.html">⬇️TRACK AUTOMATICALLY COLLECTED EVENTS [AE]⬇️</li>
+  <!-- GTM BODY -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+
+  <header>
+    <a class="home-button" href="index.html">Home</a>
+    <button class="home-button" onclick="location.href='../index.html'">Home</button>
+    Google Analytics 4
+  </header>
+
+  <main>
+
+    <ul>
+      <!-- Section Header -->
+      <li class="section-header" tabindex="0" data-value="what-is-recommended-event.html">
+        AUTOMATICALLY COLLECTED EVENTS [AE]
+      </li>
+      <li class="category">⚙️ Automatically Collected Events</li>
+      <div class="event-group">
               <li tabindex="0" data-value="GA4AE01-First-Visit.html">First Visit [first_visit | GA4AE01]</li>
               <li tabindex="0" data-value="GA4AE02-Session-Start.html">Session Start [session_start | GA4AE02]</li>
               <li tabindex="0" data-value="GA4AE03-User-Engagement.html">User Engagement [user_engagement | GA4AE03]</li>
-              <!-- TRACK AUTOMATICALLY COLLECTED & ENHANCED MEASUREMENT EVENTS -->
-              <li class="section-header" tabindex="0" data-value="what-is-automatically-collected-event.html">⬇️TRACK AUTOMATICALLY COLLECTED & ENHANCED MEASUREMENT EVENTS [AE]⬇️</li>
+      </div>
+
+      <!-- 🛒 Enhanhanced Measurement Events -->
+      <li class="category">📊 Enhanced Measurement Events</li>
+      
+      <div class="event-group">
               <li tabindex="0" data-value="GA4AE04-Page-Views.html">Page View [page_view | GA4AE04]</li>
               <li tabindex="0" data-value="GA4AE05-Outbound-Link-Click.html">Outbound Link Click [outbound_click | GA4AE05]</li>
               <li tabindex="0" data-value="GA4AE06-Download-File.html">File Downloads [file_download | GA4AE06]</li>
@@ -184,44 +172,108 @@
               <li tabindex="0" data-value="GA4AE12-Click-Event.html">Click [click | GA4AE12]</li>
               <li tabindex="0" data-value="GA4AE13-Form-Start.html">Form Start [form_start | GA4AE13]</li>
               <li tabindex="0" data-value="GA4AE14-Form-Submit.html">Form Submission [form_submit | GA4AE14]</li>
-              <!-- RECOMMENDED EVENTS -->
-              <li class="section-header" tabindex="0" data-value="what-is-recommended-event.html">⬇️TRACK RECOMMENDED EVENTS [RE]⬇️</li>
-              <li tabindex="0" data-value="GA4RE01-Add-Payment-Info.html">Add Payment Info Events [add_payment_info | GA4RE01]</li>
-              <li tabindex="0" data-value="GA4RE02-Add-Shipping-Info.html">Add Shipping Info Events [add_shipping_info | GA4RE02]</li>
-              <li tabindex="0" data-value="GA4RE03-Add-To-Cart.html">Add To Cart Events [add_to_cart | GA4RE03]</li>
-              <li tabindex="0" data-value="GA4RE05-Begin-Checkout.html">Begin Checkout Events [begin_checkout | GA4RE05]</li>
-              <li tabindex="0" data-value="GA4RE10-Generate-Lead.html">Generate Lead Events [generate_lead | GA4RE10]</li>
-              <li tabindex="0" data-value="GA4RE17-Purchase.html">Purchase Events [purchase | GA4RE17]</li>
-              <li tabindex="0" data-value="GA4RE18-Purchase-Confirmation.html">Purchase Confirmations [purchase_confirmations | GA4RE18]</li>
-              <li tabindex="0" data-value="GA4RE19-Refund.html">Refund Events [refund | GA4RE19]</li>
-              <li tabindex="0" data-value="GA4RE20-Remove-From-Cart.html">Remove From Cart Events [remove_from_cart | GA4RE20]</li>
-              <li tabindex="0" data-value="GA4RE23-Select-Item.html">Select Item Events [select_item | GA4RE23]</li>
-              <li tabindex="0" data-value="GA4RE32-View-Item.html">View Item Events [view_item | GA4RE32]</li>
-              <li tabindex="0" data-value="GA4RE33-View-Item-List.html">View Item List Events [view_item_list | GA4RE33]</li>
-              <li tabindex="0" data-value="GA4RE35-Add-To-Wishlist.html">Add To Wishlist Events [add_to_wishlist | GA4RE35]</li>
-              <li tabindex="0" data-value="GA4RE36-Close-Convert-Lead.html">Close Convert Lead Events [close_convert_lead | GA4RE36]</li>
-              <li tabindex="0" data-value="GA4RE37-Close-Unconvert-Lead.html">Close Unconvert Lead Events [close_unconvert_lead | GA4RE37]</li>
-              <li tabindex="0" data-value="GA4RE38-Disqualify-Lead.html">Disqualify Lead Events [disqualify_lead | GA4RE38]</li>
-              <li tabindex="0" data-value="GA4RE39-Earn-Virtual-Currency.html">Earn Virtual Currency Events [earn_virtual_currency | GA4RE39]</li>
-              <li tabindex="0" data-value="GA4RE40-Join-Group.html">Join Group Events [join_group | GA4RE40]</li>
-              <li tabindex="0" data-value="GA4RE41-GA4RE42-GA4RE43-Level-Start-Up-End.html">Level Start Event [level_start | GA4RE41] / Level Up Event [level_up | GA4RE42] / Level End Event [level_end | GA4RE43]</li>
-              <li tabindex="0" data-value="GA4RE44-Login.html">Login [login | GA4RE44]</li>
-              <li tabindex="0" data-value="GA4RE45-Post-Score.html">Post Score Events [post_score | GA4RE45]</li>
-              <li tabindex="0" data-value="GA4RE46-Qualify-Lead.html">Qualify Lead Events [qualify_lead |GA4RE46]</li>
-              <li tabindex="0" data-value="GA4RE47-Search.html">Search Events [GA4RE47/GA4VP12]</li>
-              <li tabindex="0" data-value="GA4RE48-Select-Content.html">Select Content Events  [GA4RE48]</li>
-              <li tabindex="0" data-value="GA4RE49-Select-Promotion.html">Select Promotion Events  [GA4RE49]</li>
-              <li tabindex="0" data-value="GA4RE50-Share.html">Share Events [share | GA4RE50]</li>
-              <li tabindex="0" data-value="GA4RE51-Sign-Up.html">Sign-Up Events [sign_up | GA4RE51]</li>
-              <li tabindex="0" data-value="GA4RE51-Signup-Confirmation.html">Signup Confirmation [signup_confirmation | GA4RE51]</li>
-              <li tabindex="0" data-value="GA4RE52-Spend-Virtual-Currency.html">Spend Virtual Currency Events [GA4RE52]</li>
-              <li tabindex="0" data-value="GA4RE53-GA4RE54-Tutorial-Begin-Complete.html">Tutorial Begin Events [tutorial_begin | GA4RE53] / Tutorial Complete Events [tutorial_complete | GA4RE54]</li>
-              <li tabindex="0" data-value="GA4RE55-Unlock-Achievement.html">Unlock Achievement Events [GA4RE55]</li>
-              <li tabindex="0" data-value="GA4RE56-View-Cart.html">View Cart Events [view_cart | GA4RE56]</li>
-              <li tabindex="0" data-value="GA4RE57-View-Promotion.html">View Promotion Events [view_promotion | GA4RE57]</li>
-              <li tabindex="0" data-value="GA4RE58-Working-Lead.html">Working Lead Events [working_lead | GA4RE58]</li>
-              <!-- TAG PLAN -->
-              <li class="section-header" tabindex="0" data-value="what-is-tag.html">⬇️TAG PLAN [TP]⬇️</li>
+      </div>
+
+    </ul>
+
+
+    <ul>
+      <!-- Section Header -->
+      <li class="section-header" tabindex="0" data-value="what-is-recommended-event.html">
+        RECOMMENDED EVENTS [RE]
+      </li>
+      <!--  E-commerce Events -->
+      <li class="category">🛒 E-commerce Events</li>
+      <div class="event-group">
+        <li tabindex="0" data-value="GA4RE01-Add-Payment-Info.html">Add Payment Info [GA4RE01]</li>
+        <li tabindex="0" data-value="GA4RE02-Add-Shipping-Info.html">Add Shipping Info [GA4RE02]</li>
+        <li tabindex="0" data-value="GA4RE03-Add-To-Cart.html">Add To Cart [GA4RE03]</li>
+        <li tabindex="0" data-value="GA4RE05-Begin-Checkout.html">Begin Checkout [GA4RE05]</li>
+        <li tabindex="0" data-value="GA4RE17-Purchase.html">Purchase [GA4RE17]</li>
+        <li tabindex="0" data-value="GA4RE18-Purchase-Confirmation.html">Purchase Confirmation [GA4RE18]</li>
+        <li tabindex="0" data-value="GA4RE19-Refund.html">Refund [GA4RE19]</li>
+        <li tabindex="0" data-value="GA4RE20-Remove-From-Cart.html">Remove From Cart [GA4RE20]</li>
+        <li tabindex="0" data-value="GA4RE23-Select-Item.html">Select Item [GA4RE23]</li>
+        <li tabindex="0" data-value="GA4RE32-View-Item.html">View Item [GA4RE32]</li>
+        <li tabindex="0" data-value="GA4RE33-View-Item-List.html">View Item List [GA4RE33]</li>
+        <li tabindex="0" data-value="GA4RE35-Add-To-Wishlist.html">Add To Wishlist [GA4RE35]</li>
+        <li tabindex="0" data-value="GA4RE49-Select-Promotion.html">Select Promotion [GA4RE49]</li>
+        <li tabindex="0" data-value="GA4RE56-View-Cart.html">View Cart [GA4RE56]</li>
+        <li tabindex="0" data-value="GA4RE57-View-Promotion.html">View Promotion [GA4RE57]</li>
+      </div>
+      <!-- 🧲 Lead Generation -->
+      <li class="category">🧲 Lead Generation & CRM</li>
+      <div class="event-group">
+        <li tabindex="0" data-value="GA4RE10-Generate-Lead.html">Generate Lead [GA4RE10]</li>
+        <li tabindex="0" data-value="GA4RE36-Close-Convert-Lead.html">Close Convert Lead [GA4RE36]</li>
+        <li tabindex="0" data-value="GA4RE37-Close-Unconvert-Lead.html">Close Unconvert Lead [GA4RE37]</li>
+        <li tabindex="0" data-value="GA4RE38-Disqualify-Lead.html">Disqualify Lead [GA4RE38]</li>
+        <li tabindex="0" data-value="GA4RE46-Qualify-Lead.html">Qualify Lead [GA4RE46]</li>
+        <li tabindex="0" data-value="GA4RE58-Working-Lead.html">Working Lead [GA4RE58]</li>
+      </div>
+      <!-- 📲 User Engagement -->
+      <li class="category">📲 User Engagement</li>
+      <div class="event-group">
+        <li tabindex="0" data-value="GA4RE44-Login.html">Login [GA4RE44]</li>
+        <li tabindex="0" data-value="GA4RE47-Search.html">Search [GA4RE47]</li>
+        <li tabindex="0" data-value="GA4RE48-Select-Content.html">Select Content [GA4RE48]</li>
+        <li tabindex="0" data-value="GA4RE50-Share.html">Share [GA4RE50]</li>
+        <li tabindex="0" data-value="GA4RE51-Sign-Up.html">Sign Up [GA4RE51]</li>
+        <li tabindex="0" data-value="GA4RE51-Signup-Confirmation.html">Signup Confirmation [GA4RE51]</li>
+      </div>
+      <!-- 🎮 Gaming -->
+      <li class="category">🎮 Gaming & Virtual Currency</li>
+      <div class="event-group">
+        <li tabindex="0" data-value="GA4RE39-Earn-Virtual-Currency.html">Earn Virtual Currency [GA4RE39]</li>
+        <li tabindex="0" data-value="GA4RE52-Spend-Virtual-Currency.html">Spend Virtual Currency [GA4RE52]</li>
+        <li tabindex="0" data-value="GA4RE40-Join-Group.html">Join Group [GA4RE40]</li>
+        <li tabindex="0" data-value="GA4RE41RE42RE43-Level-Start-Up-End.html">Level Start/Up/End [GA4RE41RE42RE43]</li>
+        <li tabindex="0" data-value="GA4RE45-Post-Score.html">Post Score [GA4RE45]</li>
+        <li tabindex="0" data-value="GA4RE53RE54-Tutorial-Begin-Complete.html">Tutorial Begin/Complete [GA4RE53RE54]</li>
+        <li tabindex="0" data-value="GA4RE55-Unlock-Achievement.html">Unlock Achievement [GA4RE55]</li>
+      </div>
+
+      <!-- 🛒 Custom Event -->
+      <li class="section-header" tabindex="0" data-value="what-is-recommended-event.html">
+        CUSTOM EVENTS, CUSTOM CONVERSION EVENTS & MISCELLANEOUS TRACKING ACTIVITY
+      </li>
+      <li class="category">🎯 Custom Events [CE]</li>
+      <div class="event-group">
+              <li tabindex="0" data-value="GA4CE01-Time-On-Page-Tracking.html">Time On Page Using GTM For Ga4 [GA4CE01]</li>
+              <li tabindex="0" data-value="GA4CE02-Custom-Event-Injection.html">Inject Custom Event Using GTM For Ga4 [GA4CE02]</li>
+              <li tabindex="0" data-value="GA4CE03-Custom-Event-Injection-Advanced.html">Advanced Custom Event Injection Using Gtm For Ga4 [GA4CE03]</li>
+              <li tabindex="0" data-value="GA4CE04-Text-Copy-Tracking.html">Text Copy Events Using GTM For Ga4 [GA4CE04]</li>
+              <li tabindex="0" data-value="GA4CE05-Contact-Form-Submission.html">Contact Form Submissions [GA4CE05]</li>
+              <li tabindex="0" data-value="GA4EE02-Signup-Confirmation.html">Signup Confirmation [GA4EE04]</li>
+              <li tabindex="0" data-value="GA4EE07-Link-Clicks.html">All Link Clicks [GA4EE07]</li>
+              <li tabindex="0" data-value="GA4EE08-History-Change.html">History Changes [GA4EE08]</li>
+              <li tabindex="0" data-value="GA4EE09-YouTube-Video-Engagement.html">Embedded Youtube Videos [GA4EE09]</li>
+              <li tabindex="0" data-value="GA4EE10-Non-Embedded-Videos.html">Self Hosted Videos [GA4EE10]</li>
+              <li tabindex="0" data-value="GA4EE11-Video-Repository.html">Video Platform Content [GA4EE11]</li>
+              <li tabindex="0" data-value="GA4EE12-Video-Pause-Events.html">Video Pause Actions [GA4EE12]</li>
+      </div>
+
+      <!-- 🛒 Custom Conversion Event -->
+      <li class="category">🎯 Custom Conversion Events [CC]</li>
+      <div class="event-group">
+              <li tabindex="0" data-value="Thank-You-Page.html">Thank You Page [GA]</li>
+      </div>
+
+      <!-- 🛒 Miscellaneous Tracking Activity -->
+      <li class="category">🧩  Miscellaneous Tracking Activity [MA]</li>
+      <div class="event-group">
+              <li tabindex="0" data-value="GA4MA01-DOM-Ready.html">Dom Ready State [GA4EE01]</li>
+              <li tabindex="0" data-value="GA4MA02-All-In-One.html">All Events On A Single Page [GA4ME01]</li>
+              <li tabindex="0" data-value="GA4MA04-Purchase-Journey.html">Ecommerce Purchase Journey [GA4ME04]</li>
+      </div>
+
+
+      <!-- 🛒 Tag Plan -->
+      <li class="section-header" tabindex="0" data-value="what-is-recommended-event.html">
+        TAG, TRIGGER & VARIABLE PLAN
+      </li>
+      <li class="category">🔖 Tag Plan [TP]</li>
+      <div class="event-group">
               <li tabindex="0" data-value="GA4TP01-Click-Element-Tag.html">Clicks With Element Trigger (Tag) [GA4TP01]</li>
               <li tabindex="0" data-value="GA4TP02-Custom-HTML-Tag.html">Custom Html Injection (Tag) [GA4TP02]</li>
               <li tabindex="0" data-value="GA4TP03-Custom-Image-Tag-1.html">Custom Image Load (Tag - Variation 1) [GA4TP03]</li>
@@ -229,15 +281,22 @@
               <li tabindex="0" data-value="GA4TP05-JavaScript-Error-Tag.html">Javascript Errors (Tag) [GA4TP05]</li>
               <li tabindex="0" data-value="GA4TP06-Social-Media-Click.html">Social Media Clicks (Tag) [GA4TP06-DONE]</li>
               <li tabindex="0" data-value="GA4TP07-Timer-Tag.html">Timer Based Actions (Tag) [GA4TP07]</li>
-              <!-- TRIGGER PLAN -->
-              <li class="section-header" tabindex="0" data-value="what-is-trigger.html">⬇️TRIGGER PLAN [TG]⬇️</li>
+      </div>
+
+      <!-- 🛒 Trigger Plan -->
+      <li class="category">🚨 Trigger Plan [TG]</li>
+      <div class="event-group">
+              <li class="section-header" tabindex="0" data-value="what-is-trigger.html">TRIGGER PLAN [TG]</li>
               <li tabindex="0" data-value="GA4TG01-Custom-Event-Trigger.html">Custom Event Trigger (No Html) [GA4TG01]</li>
               <li tabindex="0" data-value="GA4TG02-Element-Visibility-Trigger.html">Element Visibility Trigger [GA4TG02]</li>
               <li tabindex="0" data-value="GA4TG03-Hash-Change-Tag-And-Trigger.html">Hash Change Tracking (Tag + Trigger) [GA4TG03]</li>
               <li tabindex="0" data-value="GA4TG04-Page-Visibility-Trigger.html">Page Visibility State Trigger [GA4TG04]</li>
               <li tabindex="0" data-value="GA4TG05-Window-Loaded-Trigger.html">Window Loaded Trigger [GA4TG05]</li>
-              <!-- VARIABLE PLAN -->
-              <li class="section-header" tabindex="0" data-value="what-is-variable.html">⬇️VARIABLE PLAN [VP]⬇️</li>
+      </div>
+
+      <!-- 🛒 Variable Plan -->
+      <li class="category">🧮 Variable Plan [VP]</li>
+      <div class="event-group">
               <li tabindex="0" data-value="GA4VP01-Page-View-Data-Layer.html">Extract Page View Data (Variable) [GA4VP01]</li>
               <li tabindex="0" data-value="GA4VP02-Button-Click-Data-Layer.html">Extract Button Click Data (Variable) [GA4VP02]</li>
               <li tabindex="0" data-value="GA4VP03-Scroll-Depth-Data-Layer.html">Scroll Depth (Variable) [GA4VP03]</li>
@@ -261,74 +320,34 @@
               <li tabindex="0" data-value="GA4VP21-Standard-Data-Layers.html">Implement Standard Data Layers [GA4VP21]</li>
               <li tabindex="0" data-value="GA4VP22-DL-Enabled-Page.html">Data Layer Enabled Page [GA4VP22]</li>
               <li tabindex="0" data-value="GA4VP23-Non-DL-Page.html">Non Data Layer Page [GA4VP23]</li>
-              <!-- CUSTOM EVENTS -->
-              <li class="section-header" tabindex="0" data-value="what-is-custom-event.html">⬇️CUSTOM EVENTS [CE]⬇️</li>
-              <li tabindex="0" data-value="GA4CE01-Time-On-Page-Tracking.html">Time On Page Using GTM For Ga4 [GA4CE01]</li>
-              <li tabindex="0" data-value="GA4CE02-Custom-Event-Injection.html">Inject Custom Event Using GTM For Ga4 [GA4CE02]</li>
-              <li tabindex="0" data-value="GA4CE03-Custom-Event-Injection-Advanced.html">Advanced Custom Event Injection Using Gtm For Ga4 [GA4CE03]</li>
-              <li tabindex="0" data-value="GA4CE04-Text-Copy-Tracking.html">Text Copy Events Using GTM For Ga4 [GA4CE04]</li>
-              <li tabindex="0" data-value="GA4CE05-Contact-Form-Submission.html">Contact Form Submissions [GA4CE05]</li>
-              <li tabindex="0" data-value="GA4EE02-Signup-Confirmation.html">Signup Confirmation [GA4EE04]</li>
-              <li tabindex="0" data-value="GA4EE07-Link-Clicks.html">All Link Clicks [GA4EE07]</li>
-              <li tabindex="0" data-value="GA4EE08-History-Change.html">History Changes [GA4EE08]</li>
-              <li tabindex="0" data-value="GA4EE09-YouTube-Video-Engagement.html">Embedded Youtube Videos [GA4EE09]</li>
-              <li tabindex="0" data-value="GA4EE10-Non-Embedded-Videos.html">Self Hosted Videos [GA4EE10]</li>
-              <li tabindex="0" data-value="GA4EE11-Video-Repository.html">Video Platform Content [GA4EE11]</li>
-              <li tabindex="0" data-value="GA4EE12-Video-Pause-Events.html">Video Pause Actions [GA4EE12]</li>
-              <!-- CUSTOM CONVERSION EVENTS -->
-              <li class="section-header" tabindex="0" data-value="what-is-custom-conversion-event.html">⬇️CUSTOM CONVERSION EVENTS [CC]⬇️</li>
-              <li tabindex="0" data-value="Thank-You-Page.html">Thank You Page [GA]</li>
-              <!-- MISCELLANEOUS TRACKING ACTIVITY -->
-              <li class="section-header" tabindex="0" data-value="what-is-engagement-event.html">⬇️MISCELLANEOUS TRACKING ACTIVITY [MA]⬇️</li>
-              <li tabindex="0" data-value="GA4MA01-DOM-Ready.html">Dom Ready State [GA4EE01]</li>
-              <li tabindex="0" data-value="GA4MA02-All-In-One.html">All Events On A Single Page [GA4ME01]</li>
-              <li tabindex="0" data-value="GA4MA04-Purchase-Journey.html">Ecommerce Purchase Journey [GA4ME04]</li>
-        </ul>
-        <button id="proceedBtn" disabled>Proceed</button>
       </div>
-    </main>
-  </div>
+
+    </ul>
+
+  </main>
 
   <script>
-    const listbox = document.getElementById("selectedItem");
-    const listItems = listbox.querySelectorAll("li");
-    const proceedBtn = document.getElementById("proceedBtn");
-    let selectedIndex = -1;
-    let selectedValue = "";
-
-    function selectItem(index) {
-      listItems.forEach(li => li.classList.remove("selected"));
-      if (index >= 0 && index < listItems.length) {
-        listItems[index].classList.add("selected");
-        selectedValue = listItems[index].getAttribute("data-value");
-        proceedBtn.disabled = false;
-      }
-    }
-
-    listItems.forEach((item, index) => {
-      item.addEventListener("click", function () {
-        selectedIndex = index;
-        selectItem(selectedIndex);
+    // Collapse/Expand functionality
+    const categoryHeaders = document.querySelectorAll(".category");
+    categoryHeaders.forEach((header, index) => {
+      header.addEventListener("click", () => {
+        const eventGroup = header.nextElementSibling;
+        eventGroup.classList.toggle("show");
+        header.classList.toggle("active");
       });
     });
 
-    listbox.addEventListener("keydown", function (e) {
-      if (e.key === "ArrowDown" && selectedIndex < listItems.length - 1) {
-        selectedIndex++;
-        selectItem(selectedIndex);
-      } else if (e.key === "ArrowUp" && selectedIndex > 0) {
-        selectedIndex--;
-        selectItem(selectedIndex);
-      } else if (e.key === "Enter" && selectedValue) {
-        window.location.href = selectedValue;
-      }
-    });
-
-    proceedBtn.addEventListener("click", function () {
-      if (selectedValue) {
-        window.location.href = selectedValue;
-      }
+    // Navigation on click
+    const items = document.querySelectorAll("li[data-value]");
+    items.forEach(item => {
+      item.addEventListener("click", () => {
+        const target = item.getAttribute("data-value");
+        if (target) {
+          window.location.href = target;
+        }
+      });
     });
   </script>
+
 </body>
 </html>
