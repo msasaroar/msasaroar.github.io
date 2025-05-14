@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Custom Event Demo</title>
+  <meta charset="UTF-8">
+  <title>GTM Button Alert Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Google Tag Manager -->
   <script>
@@ -17,59 +17,66 @@
 
   <style>
     body {
-      background-color: white;
       margin: 0;
+      padding: 0;
+      background-color: white;
       font-family: Arial, sans-serif;
-      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-    header {
-      background-color: green;
-      color: black;
-      font-weight: bold;
-      text-align: center;
-      padding: 20px 0;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-    }
-    .home-button {
-      position: absolute;
-      left: 20px;
-      top: 20px;
-      background-color: orange;
-      color: blue;
-      padding: 10px 15px;
-      text-decoration: none;
-      font-weight: bold;
-      border: none;
-      border-radius: 5px;
-    }
-    .home-button:hover {
-      background-color: blue;
-      color: orange;
-    }
-    main {
-      margin-top: 100px;
+
+    .overview {
+      max-width: 600px;
+      margin: 40px 20px 20px 20px;
       padding: 20px;
+      border: 2px solid #ccc;
+      border-radius: 12px;
+      text-align: left;
     }
-    .center-button {
+
+    .overview h2 {
+      text-align: center;
+      color: green;
+    }
+
+    .overview h3 {
+      margin-top: 20px;
+    }
+
+    .overview ul {
+      padding-left: 20px;
+    }
+
+    button {
       background-color: orange;
       color: blue;
-      padding: 10px 20px;
-      font-weight: bold;
       border: none;
-      border-radius: 5px;
+      padding: 15px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 8px;
       cursor: pointer;
+      transition: all 0.3s ease;
       margin: 10px;
+      width: 200px;
     }
-    .center-button:hover {
+
+    button:hover {
       background-color: blue;
       color: orange;
+    }
+
+    @media (max-width: 600px) {
+      button {
+        width: 80%;
+        font-size: 16px;
+      }
     }
   </style>
 </head>
 <body>
+
   <!-- Google Tag Manager (noscript) -->
   <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
@@ -77,20 +84,30 @@
   </noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <header>
-    <a href="index.html" class="home-button">Home</a>
-    Custom Event Demo
-  </header>
-
-  <main>
-
-    <!-- Custom Event Fired From Custom HTML Tag In GTM -->
-    <button class="center-button">Trigger 1st Custom Event</button>
+  <!-- Overview Section -->
+  <div class="overview">
+    <h2>Page Functionality Overview</h2>
+    <p>This page is a part of a GTM Showcase Project demonstrating how <strong>Custom HTML Tags</strong> can be used to control button interactions without any JavaScript code in the HTML file itself.</p>
     
-    <!-- Two buttons (no function) -->
-    <button class="center-button">Trigger 2nd Custom Event</button>
-    
-  </main>
-  
+    <h3 style="color: blue;">✔️ What Works:</h3>
+    <ul>
+      <li>Two buttons are displayed: <strong>Button-1</strong> and <strong>Button-2</strong>.</li>
+      <li>Clicking each button triggers a separate <code>alert()</code> message.</li>
+      <li>No JavaScript is written in the HTML file — the behavior is injected via GTM.</li>
+      <li>Demonstrates how GTM can interact with page elements dynamically.</li>
+    </ul>
+
+    <h3 style="color: red;">❌ What Does Not Work:</h3>
+    <ul>
+      <li>No Google Analytics (GA4) events are triggered on button clicks.</li>
+      <li>If GTM is disabled or blocked, the buttons will not perform any action.</li>
+      <li>These buttons do not collect or send any data — they only show alerts.</li>
+    </ul>
+  </div>
+
+  <!-- Buttons -->
+  <button id="btn1">Button-1</button>
+  <button id="btn2">Button-2</button>
+
 </body>
 </html>
