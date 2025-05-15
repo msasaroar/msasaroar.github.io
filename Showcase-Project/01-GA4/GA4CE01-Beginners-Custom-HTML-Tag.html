@@ -18,33 +18,40 @@
     body {
       background-color: white;
       font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 2rem;
+      margin: 0;
+      padding: 0;
+      text-align: center;      
     }
 
     header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
       background-color: green;
       color: black;
       font-weight: bold;
+      font-size: 35px;
       text-align: center;
-      padding: 1rem;
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
     }
+
 
     .home-button {
       position: absolute;
-      left: 1rem;
-      top: 1rem;
+      border-radius: 8px;
+      font-size: 16px;
+      left: 15px;
+      top: 10px;
       background-color: orange;
       color: blue;
-      padding: 0.5rem 1rem;
+      padding: 15px 30px;
       text-decoration: none;
-      font-weight: bold;
       border: none;
+      font-weight: bold;
       cursor: pointer;
+      border: 5px solid darkgreen;
+      border-radius: 6px;
     }
 
     .home-button:hover {
@@ -53,7 +60,7 @@
     }
 
     .content {
-      margin-top: 100px;
+      margin-top: 200px;
     }
 
     .action-button {
@@ -74,11 +81,11 @@
     }
 
     .note {
-      background-color: #f9f9f9;
+      background-color: lightgray;
       padding: 1rem;
       border: 1px solid #ddd;
       margin-top: 2rem;
-      max-width: 600px;
+      max-width: 1000px;
       margin-left: auto;
       margin-right: auto;
       border-radius: 8px;
@@ -97,22 +104,23 @@
   </header>
 
   <div class="content">
+
     <h2>Welcome to GTM Custom HTML Tag Demo</h2>
     <p>This page shows alerts using GTM:</p>
 
-    <ul style="text-align: left; display: inline-block;">
-      <li>✅ One on page load</li>
-      <li>✅ One on Button 1 click</li>
-      <li>✅ One on Button 2 click</li>
-    </ul>
+    <div class="note">
+        <strong>Note:</strong>
+        This page does not contain any JavaScript code inside. All alerts are triggered via GTM Custom HTML Tags.
+    </div>
 
+    <br>
+    <li>✅ One on page load ✅ One on Button 1 click ✅ One on Button 2 click</li>
+    <br>
+
+    <ul>      
     <button id="btnAlert1" class="action-button">Click Me! (Button 1)</button>
     <button id="btnAlert2" class="action-button">Click Me Too! (Button 2)</button>
-
-    <div class="note">
-      <strong>Note:</strong>
-      This page does not contain any JavaScript code inside. All alerts are triggered via GTM Custom HTML Tags.
-    </div>
+    </ul>
   </div>
 
 </body>
