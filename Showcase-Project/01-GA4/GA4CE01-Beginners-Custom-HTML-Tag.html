@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Custom HTML Tag – Beginner Demo (Page + Button Alert)</title>
+  <title>Custom HTML Tag – Beginner Demo (2 Buttons)</title>
 
   <!-- GTM Container Code -->
   <script>
@@ -57,7 +57,7 @@
     }
 
     .action-button {
-      margin-top: 2rem;
+      margin: 1rem;
       padding: 0.75rem 1.5rem;
       background-color: orange;
       color: blue;
@@ -98,18 +98,20 @@
 
   <div class="content">
     <h2>Welcome to GTM Custom HTML Tag Demo</h2>
-    <p>This page shows two alerts using GTM:</p>
+    <p>This page shows alerts using GTM:</p>
 
     <ul style="text-align: left; display: inline-block;">
       <li>✅ One on page load</li>
-      <li>✅ One on button click</li>
+      <li>✅ One on Button 1 click</li>
+      <li>✅ One on Button 2 click</li>
     </ul>
 
-    <button id="btnAlert" class="action-button">Click Me!</button>
+    <button id="btnAlert1" class="action-button">Click Me! (Button 1)</button>
+    <button id="btnAlert2" class="action-button">Click Me Too! (Button 2)</button>
 
     <div class="note">
       <strong>Note:</strong>
-      No JavaScript is written inside this HTML page. Both alerts are triggered using GTM Custom HTML Tags.
+      This page does not contain any JavaScript code inside. All alerts are triggered via GTM Custom HTML Tags.
     </div>
   </div>
 
