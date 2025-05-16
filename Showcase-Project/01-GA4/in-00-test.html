@@ -2,27 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GTM Custom Event Push - With Parameters</title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Timer Trigger | Page Duration Demo</title>
+  
   <!-- GTM Container Code -->
   <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-MB72WSHR');
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;
+    j.src='https://www.googletagmanager.com/gtm.js?id=GTM-MB72WSHR'+dl;
+    f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MB72WSHR');
   </script>
-
+  
   <style>
-    body {
-      background-color: white;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      text-align: center;      
-    }
-
     header {
       background-color: green;
       color: black;
@@ -35,10 +27,15 @@
       top: 0;
       z-index: 1000;
     }
-
+    body {
+      background-color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
     .home-button {
       position: absolute;
-      border-radius: 8px;
+      border-radius: 6px;
       font-size: 16px;
       left: 15px;
       top: 10px;
@@ -46,106 +43,51 @@
       color: blue;
       padding: 15px 30px;
       text-decoration: none;
-      border: none;
+      border: 5px solid darkgreen;
       font-weight: bold;
       cursor: pointer;
-      border: 5px solid darkgreen;
-      border-radius: 6px;
     }
-
     .home-button:hover {
       background-color: blue;
       color: orange;
     }
-
-    .content {
-      margin-top: 150px;
+    main {
+      padding: 100px 20px 20px;
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
     }
-
-    .action-button {
-      margin: 1rem;
-      padding: 0.75rem 1.5rem;
+    .button {
       background-color: orange;
       color: blue;
+      font-weight: bold;
+      font-size: 18px;
+      padding: 15px 30px;
       border: none;
       border-radius: 6px;
-      font-size: 1rem;
-      font-weight: bold;
       cursor: pointer;
+      margin-top: 30px;
     }
-
-    .action-button:hover {
+    .button:hover {
       background-color: blue;
       color: orange;
-    }
-
-    .note {
-      background-color: lightgray;
-      padding: 1rem;
-      border: 1px solid #ddd;
-      margin-top: 2rem;
-      max-width: 1000px;
-      margin-left: auto;
-      margin-right: auto;
-      border-radius: 8px;
-    }
-
-    #iframe-container {
-      margin-top: 2rem;
-    }
-
-    iframe {
-      width: 90%;
-      height: 600px;
-      border: 2px solid #ccc;
-      border-radius: 10px;
     }
   </style>
 </head>
 <body>
-
-  <!-- GTM NoScript -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
   <header>
-    <a href="../../index.html" class="home-button">Home</a>
-    Open External HTML Page (Using Custom HTML Tags)
+    <a class="home-button" href="index.html">Home</a>
+    Timer Trigger Demo: Page View Duration
   </header>
 
-  <div class="content">
-    <h2>Fire Events with Parameters using GTM</h2>
-    <p>This page demonstrates how to push custom events with parameters using Google Tag Manager.</p>
-    <div class="note">
-      <strong>Note:</strong>
-      This page itself does not include any inline JavaScript code for firing events.
-      All event pushes and actions are controlled through GTM Custom HTML Tags.
-    </div>
-    <br><br>
+  <main>
+    <h2>GA4 Page View Duration Tracking</h2>
+    <p>This page tracks how long you stay and sends the data to GA4 via GTM using a Custom HTML Tag and Timer Trigger.</p>
+    <button class="button">Test Button</button>
+  </main>
 
-  <!-- Summary Section -->
-  <div class="note">
-    <h3>🔎 Summary of This Page:</h3>
-    <ul style="text-align: left; font-size: 16px; line-height: 1.6;">
-      <li>This demo page is created to show how to trigger custom events with parameters using Google Tag Manager.</li>
-      <li><strong>Button 1</strong> directly opens the <code>External HTML Page</code> file in a new browser tab using standard JavaScript.</li>
-      <li><strong>Button 2</strong> triggers a GTM Custom HTML Tag which programmatically opens the same external page in a new tab (no inline JS is used for this action).</li>
-      <li>This page is designed to practice GA4 event triggering and GTM tag-based dynamic behavior in a clean, testable setup.</li>
-    </ul>
-  </div>
-  
-    <!-- First Button: Redirect -->
-    <button id="btnForFirstEvent" class="action-button">Open External-Page.html (Direct)</button>
-    <!-- Second Button: Use GTM to open in new tab -->
-    <button id="btnForSecondEvent" class="action-button">Open External-Page.html (GTM Tag)</button>
-  </div>
-
-  <!-- Script to handle button click -->
-  <script>
-    document.getElementById("btnForFirstEvent").addEventListener("click", function () {
-      window.open("GA4CE03-External-Page.html", "_blank");
-    });
-  </script>
-
+  <!-- GTM NoScript (for backup) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </body>
 </html>
