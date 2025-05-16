@@ -3,109 +3,124 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Time on Page Tracker</title>
+  <title>Timer Trigger Demo</title>
 
-  <!-- Google Tag Manager -->
+  <!-- GTM Code -->
   <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MB72WSHR');
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({
+      'gtm.start': new Date().getTime(), event:'gtm.js'
+    });var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;
+    j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+    f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MB72WSHR');
   </script>
-  <!-- End Google Tag Manager -->
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: white;
+    header {
+      background-color: green;
       color: black;
+      font-weight: bold;
+      font-size: 35px;
       text-align: center;
-      padding: 40px;
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
     }
 
-    h1 {
-      margin-bottom: 10px;
+    body {
+      background-color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
     }
 
-    .timer-box {
-      margin: 30px auto;
-      font-size: 1.5em;
-      color: green;
+    .home-button {
+      position: absolute;
+      border-radius: 8px;
+      font-size: 16px;
+      left: 15px;
+      top: 10px;
+      background-color: orange;
+      color: blue;
+      padding: 15px 30px;
+      text-decoration: none;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      border: 5px solid darkgreen;
+      border-radius: 6px;
+      z-index: 1001; /* ✅ Header এর উপরে আনা হয়েছে */
     }
 
-    .progress-container {
-      width: 80%;
-      background-color: #ddd;
-      margin: 20px auto;
-      height: 30px;
-      border-radius: 15px;
-      overflow: hidden;
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
     }
 
-    .progress-bar {
-      height: 100%;
-      width: 0%;
-      background-color: #4caf50;
+    main {
+      padding: 75px 20px 20px;
+      max-width: 800px;
+      margin: auto;
       text-align: center;
-      line-height: 30px;
-      color: white;
-      transition: width 1s linear;
     }
 
-    .event-log {
+    .center-button {
+      background-color: orange;
+      color: blue;
+      padding: 15px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      border: 5px solid darkgreen;
+      border-radius: 6px;
+      text-decoration: none;
+      display: inline-block;
       margin-top: 30px;
-      font-size: 1em;
-      white-space: pre-line;
+      cursor: pointer;
+    }
+
+    .center-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    .message {
+      font-size: 22px;
+      margin-top: 40px;
+      color: darkblue;
+    }
+
+    .note {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #555;
     }
   </style>
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) -->
+
+  <!-- GTM NoScript Tag -->
   <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
-            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
   </noscript>
-  <!-- End Google Tag Manager (noscript) -->
 
-  <h1>⏱ GA4 Time on Page Tracker</h1>
-  <p>This page tracks 15, 30, 45 and 60 second time-on-page intervals with GTM events.</p>
+  <header>Timer Trigger Demo</header>
 
-  <div class="timer-box" id="countdown">Elapsed: 0 seconds</div>
+  <!-- ✅ Visible Home Button -->
+  <a href="index.html" class="home-button">Home</a>
 
-  <div class="progress-container">
-    <div class="progress-bar" id="progressBar">0%</div>
-  </div>
+  <main>
+    <p class="message">This page demonstrates GTM Timer Trigger.</p>
+    <p class="note">Stay on this page. The timer trigger will fire every 10 seconds.<br>
+    Check GTM Preview Mode or GA4 DebugView to verify the event firing.</p>
 
-  <div class="event-log" id="status">📡 Waiting to fire time-based events...</div>
-
-  <script>
-    let elapsed = 0;
-    const countdown = document.getElementById("countdown");
-    const progressBar = document.getElementById("progressBar");
-    const status = document.getElementById("status");
-
-    const totalTime = 60; // seconds
-
-    const timer = setInterval(() => {
-      elapsed++;
-      countdown.textContent = `Elapsed: ${elapsed} second${elapsed > 1 ? 's' : ''}`;
-      
-      const progress = (elapsed / totalTime) * 100;
-      progressBar.style.width = progress + "%";
-      progressBar.textContent = Math.round(progress) + "%";
-
-      if (elapsed === 15 || elapsed === 30 || elapsed === 45 || elapsed === 60) {
-        const eventName = `${elapsed}`;
-        status.innerText += `\n✅ GA4 Event "${eventName}" Second Passed! Check GA4 DebugView or Go to GA4 → Reports → Engagement → Events`;
-      }
-
-      if (elapsed >= totalTime) {
-        clearInterval(timer);
-        status.innerText += `\n🎉 Tracking completed.`;
-      }
-    }, 1000);
-  </script>
+    <a class="center-button" onclick="console.log('Test Button Clicked')">
+      Test Button (optional)
+    </a>
+  </main>
 
 </body>
 </html>
