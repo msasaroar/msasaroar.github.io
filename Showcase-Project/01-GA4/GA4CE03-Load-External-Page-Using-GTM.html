@@ -129,15 +129,14 @@
     <!-- Second Button: Use GTM to show iframe -->
     <button id="btnForSecondEvent" class="action-button">Show via GTM Tag (iframe)</button>
 
-    <div id="iframe-container"></div>
   </div>
 
   <!-- Script to handle button click -->
-  <script>
-    document.getElementById("btnForFirstEvent").addEventListener("click", function () {
-      window.location.href = "GA4CE03-External-Page.html";
-    });
-  </script>
+<script>
+  document.getElementById("btnForFirstEvent").addEventListener("click", function () {
+    window.open("GA4CE03-External-Page.html", "_blank");
+  });
+</script>
 
 </body>
 </html>
