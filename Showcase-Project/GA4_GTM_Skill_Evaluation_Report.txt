@@ -1,0 +1,202 @@
+# ✅ GA4 + GTM Tracking Skill Assessment Checklist (100 Questions)
+
+> **Instructions:** Answer each question with **YES** or **NO** to assess your current tracking skills.
+
+---
+
+## 🟢 Section 1: GA4 Configuration (10 Questions)
+
+1. Have you created a GA4 property in Google Analytics? **YES**
+2. Do you know your GA4 Measurement ID (G-XXXXXXXXXX)?  **YES**
+3. Have you created a GA4 Configuration Tag in GTM? **YES**
+4. Did you use the "All Pages" trigger with your GA4 config tag?    **YES**
+5. Have you enabled enhanced measurement in GA4?    **YES**
+6. Can you manually disable enhanced measurement options?   **YES**
+7. Have you published GTM with the GA4 tag? **YES**
+8. Do you understand the difference between Universal Analytics and GA4?    **YES**
+9. Can you identify real-time data in the GA4 DebugView?    **YES**
+10. Have you linked your GA4 property to BigQuery?  **NO**
+
+---
+
+## 🟦 Section 2: GTM Tag Creation & Management (20 Questions)
+
+11. Have you created a GA4 Event Tag in GTM? **YES**
+12. Do you know how to name events using GTM? **YES**
+13. Can you assign triggers to individual tags? **YES**
+14. Have you used Page View triggers? **YES**
+15. Have you used Click triggers? **YES**
+16. Have you used Form Submission triggers? **YES**
+17. Do you understand Tag firing priority? **NO**
+18. Have you created tags for YouTube Video Tracking? **YES**
+19. Have you created a custom HTML tag? **YES**
+20. Can you use GTM variables inside your tags? **YES**
+21. Do you know what Auto-Event Variable is? **NO**
+22. Have you used Google Ads Conversion Tracking Tag? **YES**
+23. Have you used a Facebook Pixel in GTM? **YES**
+24. Can you preview tags before publishing? **YES**
+25. Have you deleted or paused tags before? **YES**
+26. Can you duplicate and modify existing tags? **YES**
+27. Have you created tags for multiple GA4 properties? **YES**
+28. Can you pass parameters through GA4 tags? **YES**
+29. Do you know how to use event parameters in GTM? **YES**
+30. Have you named your tags meaningfully? **YES**
+
+---
+
+## 🟨 Section 3: Trigger Configuration (15 Questions)
+
+31. Have you created a custom trigger? **NO**
+32. Can you target specific elements using CSS selectors? **YES**
+33. Have you used the “Some Pages” condition in triggers? **YES**
+34. Have you created a trigger based on DOM element ID? **YES**
+35. Can you make a Scroll Depth trigger? **YES**
+36. Have you used Timer triggers? **YES**
+37. Have you used History Change triggers for SPA? **YES**
+38. Have you created multiple triggers for a single tag? **NO**
+39. Can you exclude certain pages using trigger filters? **NO**
+40. Have you used click classes in click triggers? **YES**
+41. Do you understand DOM Ready vs Window Loaded triggers? **YES**
+42. Can you fire a tag only once per session? **YES**
+43. Have you grouped triggers using custom variables? **NO**
+44. Do you know how to use RegEx in trigger conditions? **YES**
+45. Have you used event-specific trigger filters? **NO**
+
+---
+
+## 🟧 Section 4: Data Layer & Custom Events (20 Questions)
+
+46. Have you pushed data into `dataLayer` manually? **YES**
+47. Can you push event name with parameters? **YES**
+48. Have you used `dataLayer.push()` for virtual page views? **YES**
+49. Can you push event_date and event_time? **YES**
+50. Have you created a Custom Event Trigger for dataLayer events? **NO**
+51. Do you understand the structure of a dataLayer object? **YES**
+52. Can you track form field values via dataLayer? **NO**
+53. Have you created variables to read values from dataLayer? **YES**
+54. Can you track error messages using dataLayer? **NO**
+55. Do you understand the difference between custom events and built-in events? **YES**
+56. Have you tested dataLayer pushes in GTM Preview mode? **YES**
+57. Have you handled nested objects in dataLayer? **NO**
+58. Do you know how to map dataLayer values to GA4 parameters? **YES**
+59. Have you passed revenue/transaction data using dataLayer? **NO**
+60. Can you delay tag firing until dataLayer values exist? **NO**
+61. Can you reset the dataLayer between actions? **NO**
+62. Have you used dataLayer in ecommerce tracking? **YES**
+63. Can you test your dataLayer with console commands? **YES**
+64. Have you used dataLayer for UTM or campaign data? **NO**
+65. Do you clean invalid dataLayer entries? **NO**
+
+---
+
+## 🟪 Section 5: GA4 Custom Events & Parameters (10 Questions)
+
+66. Have you configured custom events in GA4? **NO**
+67. Can you create custom dimensions and metrics? **NO**
+68. Do you know where to view custom events in GA4? **YES**
+69. Can you create audiences based on custom events? **NO**
+70. Have you used the Event Builder to map parameters? **NO**
+71. Have you marked certain events as conversions? **YES**
+72. Can you differentiate between recommended vs custom events? **YES**
+73. Have you used multiple custom parameters in one event? **YES**
+74. Can you add parameters like button_id, page_section, etc.? **YES**
+75. Do you QA your event structure with DebugView? **YES**
+
+---
+
+## 🟥 Section 6: Debugging, QA & Deployment (15 Questions)
+
+76. Do you use GTM’s Preview Mode before publishing? **YES**
+77. Have you used GA4 DebugView to validate events? **YES**
+78. Can you identify the source of broken tags? **YES**
+79. Have you fixed an incorrect trigger condition? **YES**
+80. Can you identify tag duplication in Preview Mode? **NO**
+81. Do you use console logs or alerts for debugging? **YES**
+82. Have you deployed your tags via GitHub Pages or real site? **NO**
+83. Have you tested on mobile devices? **NO**
+84. Do you maintain a change log of tag changes? **NO**
+85. Have you rolled back GTM container versions? **YES**
+86. Have you used browser extensions for debugging (e.g., GA Debugger)? **YES**
+87. Can you simulate real clicks using Developer Tools? **NO**
+88. Do you test cross-browser compatibility of tracking? **NO**
+89. Can you publish tags without breaking live tracking? **NO**
+90. Have you implemented a backup tracking strategy? **NO**
+
+---
+
+## 🟫 Section 7: Advanced Tracking (10 Questions)
+
+91. Have you used Lookup Tables in GTM? **NO**
+92. Do you use Regex Tables for routing events? **NO**
+93. Have you implemented Scroll Depth % tracking? **YES**
+94. Have you used DOM Scraping for advanced tracking? **NO**
+95. Can you inject HTML or modals using GTM only? **NO**
+96. Have you used custom JavaScript variables? **NO**
+97. Have you created dynamic content blocks from GTM? **NO**
+98. Have you implemented file download tracking? **YES**
+99. Can you set cookies or localStorage from GTM? **NO**
+100. Have you used server-side GTM? **YES**
+
+---
+
+> ✅ Once done, calculate how many **YES** answers you have:
+>
+> - **80–100 YES** = ✅ Advanced / Job Ready  
+> - **60–79 YES** = 🔶 Intermediate  
+> - **40–59 YES** = 🟡 Upper Beginner  
+> - **20–39 YES** = 🟢 Beginner  
+> - **Below 20** = ⚪ Just Starting — Great place to grow!
+
+=============================================================================
+## Skill Evaluation Summary
+
+### Total Questions Answered: 100  
+### Total YES: 63  
+### Total NO: 37  
+
+---
+
+## Skill Level: Intermediate
+
+You are currently evaluated as an Intermediate Level Tracker, which means:
+
+- You understand the setup and configuration of GA4 and GTM very well.
+- You can handle Tags, Triggers, and Data Layer operations confidently.
+- You have knowledge of Custom Events, Form Tracking, Scroll Tracking, and more.
+- You have yet to explore advanced concepts like Lookup Tables, server-side GTM, and DOM Scraping.
+
+---
+
+## Strengths
+
+- GA4 Setup and Enhanced Measurement
+- GTM Tag Creation and Basic Trigger Usage
+- Custom HTML Tag & Button/Click Event Handling
+- Basic Data Layer Use and Event Debugging
+- Scroll Tracking and File Download Events
+
+---
+
+## Areas for Improvement
+
+- Advanced Trigger Configuration (e.g., grouping, exclusions, RegEx mastery)
+- Complex Data Layer Operations (e.g., nested objects, error tracking, dynamic params)
+- GA4 Custom Dimensions, Metrics & Audience Building
+- Deployment & QA Practices (e.g., cross-browser testing, changelogs, backup)
+- Advanced GTM Features (e.g., Lookup/Regex Tables, JS variables, modal injection)
+
+---
+
+## Next Steps (Learning Plan Suggestion)
+
+1. Learn about Custom Dimensions & Metrics in GA4.
+2. Practice using Lookup Table and Regex Table for advanced event routing.
+3. Explore Advanced Triggering Logic and Tag Sequencing.
+4. Understand Deployment Best Practices - changelogs, rollback, QA checklist.
+5. Improve skills in Server-Side Tagging and Custom JS Variables.
+
+---
+
+Keep going! You're making fantastic progress in your GA4 & GTM journey.
+
+

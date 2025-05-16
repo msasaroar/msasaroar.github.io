@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>External Page</title>
+
+  <!-- GTM Container Code -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MB72WSHR');
+  </script>
+
+  <style>
+    body {
+      background-color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    header {
+      background-color: green;
+      color: black;
+      font-weight: bold;
+      font-size: 35px;
+      text-align: center;
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .home-button {
+      position: absolute;
+      border-radius: 8px;
+      font-size: 16px;
+      left: 15px;
+      top: 10px;
+      background-color: orange;
+      color: blue;
+      padding: 15px 30px;
+      text-decoration: none;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      border: 5px solid darkgreen;
+      border-radius: 6px;
+    }
+
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    .content {
+      margin-top: 200px;
+    }
+
+    .action-button {
+      margin-top: 2rem;
+      padding: 0.75rem 1.5rem;
+      background-color: orange;
+      color: blue;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .action-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    .closed-message {
+      margin-top: 2rem;
+      font-weight: bold;
+      color: darkgreen;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- GTM NoScript -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <header>
+    External Page
+  </header>
+
+  <div class="content">
+    <h2>This is an external page loaded via GTM or direct navigation.</h2>
+    <p>Click the button below to close this page.</p>
+
+    <button class="action-button" onclick="closePage()">Close This Page</button>
+
+    <div class="closed-message" id="closedMsg">✅ Page closed or simulated as closed.</div>
+  </div>
+
+  <script>
+    function closePage() {
+      // Try to close the window (works only if opened by script)
+      window.close();
+
+      // If close doesn't work, show fallback message
+      document.getElementById('closedMsg').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
