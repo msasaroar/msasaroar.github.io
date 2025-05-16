@@ -59,7 +59,7 @@
     }
 
     .content {
-      margin-top: 200px;
+      margin-top: 150px;
     }
 
     .action-button {
@@ -110,31 +110,42 @@
 
   <header>
     <a href="../../index.html" class="home-button">Home</a>
-    GTM Custom Event Push
+    Open External HTML Page (Using Custom HTML Tags)
   </header>
 
   <div class="content">
     <h2>Fire Events with Parameters using GTM</h2>
-    <p>This page demonstrates how to push custom events with parameters using GTM.</p>
+    <p>This page demonstrates how to push custom events with parameters using Google Tag Manager.</p>
     <div class="note">
       <strong>Note:</strong>
-      This page does not contain any JavaScript code.
-      All events and timestamps are pushed using GTM Custom HTML Tags.
+      This page itself does not include any inline JavaScript code for firing events.
+      All event pushes and actions are controlled through GTM Custom HTML Tags.
     </div>
     <br><br>
 
+  <!-- Summary Section -->
+  <div class="note">
+    <h3>🔎 Summary of This Page:</h3>
+    <ul style="text-align: left; font-size: 16px; line-height: 1.6;">
+      <li>This demo page is created to show how to trigger custom events with parameters using Google Tag Manager.</li>
+      <li><strong>Button 1</strong> directly opens the <code>External HTML Page</code> file in a new browser tab using standard JavaScript.</li>
+      <li><strong>Button 2</strong> triggers a GTM Custom HTML Tag which programmatically opens the same external page in a new tab (no inline JS is used for this action).</li>
+      <li>This page is designed to practice GA4 event triggering and GTM tag-based dynamic behavior in a clean, testable setup.</li>
+    </ul>
+  </div>
+  
     <!-- First Button: Redirect -->
     <button id="btnForFirstEvent" class="action-button">Open External-Page.html (Direct)</button>
-    <!-- Second Button: Use GTM to show iframe -->
+    <!-- Second Button: Use GTM to open in new tab -->
     <button id="btnForSecondEvent" class="action-button">Open External-Page.html (GTM Tag)</button>
   </div>
 
   <!-- Script to handle button click -->
-<script>
-  document.getElementById("btnForFirstEvent").addEventListener("click", function () {
-    window.open("GA4CE03-External-Page.html", "_blank");
-  });
-</script>
+  <script>
+    document.getElementById("btnForFirstEvent").addEventListener("click", function () {
+      window.open("GA4CE03-External-Page.html", "_blank");
+    });
+  </script>
 
 </body>
 </html>

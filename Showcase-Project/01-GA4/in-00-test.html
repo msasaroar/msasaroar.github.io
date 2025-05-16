@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Custom HTML Tag – Beginner Demo (Page + Button Alert)</title>
+  <title>GTM Custom Event Push - With Parameters</title>
 
   <!-- GTM Container Code -->
   <script>
@@ -18,33 +18,39 @@
     body {
       background-color: white;
       font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 2rem;
+      margin: 0;
+      padding: 0;
+      text-align: center;      
     }
 
     header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
       background-color: green;
       color: black;
       font-weight: bold;
+      font-size: 35px;
       text-align: center;
-      padding: 1rem;
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
     }
 
     .home-button {
       position: absolute;
-      left: 1rem;
-      top: 1rem;
+      border-radius: 8px;
+      font-size: 16px;
+      left: 15px;
+      top: 10px;
       background-color: orange;
       color: blue;
-      padding: 0.5rem 1rem;
+      padding: 15px 30px;
       text-decoration: none;
-      font-weight: bold;
       border: none;
+      font-weight: bold;
       cursor: pointer;
+      border: 5px solid darkgreen;
+      border-radius: 6px;
     }
 
     .home-button:hover {
@@ -53,11 +59,11 @@
     }
 
     .content {
-      margin-top: 100px;
+      margin-top: 150px;
     }
 
     .action-button {
-      margin-top: 2rem;
+      margin: 1rem;
       padding: 0.75rem 1.5rem;
       background-color: orange;
       color: blue;
@@ -74,14 +80,25 @@
     }
 
     .note {
-      background-color: #f9f9f9;
+      background-color: lightgray;
       padding: 1rem;
       border: 1px solid #ddd;
       margin-top: 2rem;
-      max-width: 600px;
+      max-width: 1000px;
       margin-left: auto;
       margin-right: auto;
       border-radius: 8px;
+    }
+
+    #iframe-container {
+      margin-top: 2rem;
+    }
+
+    iframe {
+      width: 90%;
+      height: 600px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
     }
   </style>
 </head>
@@ -93,25 +110,42 @@
 
   <header>
     <a href="../../index.html" class="home-button">Home</a>
-    Custom HTML Tag – Beginner Demo
+    Open External HTML Page (Using Custom HTML Tags)
   </header>
 
   <div class="content">
-    <h2>Welcome to GTM Custom HTML Tag Demo</h2>
-    <p>This page shows two alerts using GTM:</p>
-
-    <ul style="text-align: left; display: inline-block;">
-      <li>✅ One on page load</li>
-      <li>✅ One on button click</li>
-    </ul>
-
-    <button id="btnAlert" class="action-button">Click Me!</button>
-
+    <h2>Fire Events with Parameters using GTM</h2>
+    <p>This page demonstrates how to push custom events with parameters using Google Tag Manager.</p>
     <div class="note">
       <strong>Note:</strong>
-      No JavaScript is written inside this HTML page. Both alerts are triggered using GTM Custom HTML Tags.
+      This page itself does not include any inline JavaScript code for firing events.
+      All event pushes and actions are controlled through GTM Custom HTML Tags.
     </div>
+    <br><br>
+
+  <!-- Summary Section -->
+  <div class="note">
+    <h3>🔎 Summary of This Page:</h3>
+    <ul style="text-align: left; font-size: 16px; line-height: 1.6;">
+      <li>This demo page is created to show how to trigger custom events with parameters using Google Tag Manager.</li>
+      <li><strong>Button 1</strong> directly opens the <code>External HTML Page</code> file in a new browser tab using standard JavaScript.</li>
+      <li><strong>Button 2</strong> triggers a GTM Custom HTML Tag which programmatically opens the same external page in a new tab (no inline JS is used for this action).</li>
+      <li>This page is designed to practice GA4 event triggering and GTM tag-based dynamic behavior in a clean, testable setup.</li>
+    </ul>
   </div>
+  
+    <!-- First Button: Redirect -->
+    <button id="btnForFirstEvent" class="action-button">Open External-Page.html (Direct)</button>
+    <!-- Second Button: Use GTM to open in new tab -->
+    <button id="btnForSecondEvent" class="action-button">Open External-Page.html (GTM Tag)</button>
+  </div>
+
+  <!-- Script to handle button click -->
+  <script>
+    document.getElementById("btnForFirstEvent").addEventListener("click", function () {
+      window.open("GA4CE03-External-Page.html", "_blank");
+    });
+  </script>
 
 </body>
 </html>
