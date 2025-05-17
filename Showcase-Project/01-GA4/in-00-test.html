@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>বিড়াল বিলুপ্তির কনসিকুয়েন্স</title>
+  <title>Contact Form</title>
 
-  <!-- GTM CODE -->
+  <!-- Google Tag Manager -->
   <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -13,8 +13,16 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-MB72WSHR');
   </script>
+  <!-- End Google Tag Manager -->
 
   <style>
+    body {
+      background-color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
     header {
       background-color: green;
       color: black;
@@ -26,13 +34,6 @@
       width: 100%;
       top: 0;
       z-index: 1000;
-    }
-
-    body {
-      background-color: white;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
     }
 
     .home-button {
@@ -59,80 +60,103 @@
     }
 
     main {
-      padding: 100px 20px 40px;
-      max-width: 900px;
+      padding: 75px 0px 0px;
+      max-width: 1200px;
       margin: auto;
     }
 
-    h2 {
-      color: darkgreen;
-      margin-top: 30px;
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 40px;
+      background-color: green;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
-    p {
-      font-size: 18px;
-      line-height: 1.6;
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
     }
 
-    .center-button {
-      display: flex;
-      justify-content: center;
-      margin-top: 30px;
+    input, textarea {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
     }
 
-    .center-button button {
+    /* Button Style - common */
+    button {
       background-color: orange;
       color: blue;
-      padding: 12px 25px;
-      font-size: 18px;
-      font-weight: bold;
       border: none;
-      border-radius: 6px;
+      padding: 10px 20px;
       cursor: pointer;
-      border: 3px solid darkgreen;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: bold;
+      display: block;
+      margin: 0 auto; /* center align */
     }
 
-    .center-button button:hover {
+    button:hover {
       background-color: blue;
       color: orange;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 30px;
     }
   </style>
 </head>
 <body>
-  <!-- GTM NoScript fallback -->
+
+  <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
   <header>
-    বিড়াল বিলুপ্তির কনসিকুয়েন্স
-    <a href="index.html" class="home-button">Home</a>
+    Contact Form
+    <a class="home-button" href="index.html">Home</a>
   </header>
 
   <main>
-    <h2>১. ইকোসিস্টেমের ভারসাম্য নষ্ট হওয়া</h2>
-    <p>বিড়াল পরিবেশের ভারসাম্য রক্ষা করে ছোট প্রাণী নিয়ন্ত্রণ করে। তাদের অনুপস্থিতিতে এদের সংখ্যা বেড়ে যেতে পারে এবং ইকোসিস্টেমের ক্ষতি হতে পারে।</p>
+    <div class="container">
+      <h1>Contact Us</h1>
+      <form id="contact-form">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
 
-    <h2>২. ইঁদুর ও ক্ষতিকর প্রাণীর আধিক্য</h2>
-    <p>বিড়াল ইঁদুরের প্রাকৃতিক শত্রু। তাদের না থাকলে ইঁদুর ও অন্যান্য ক্ষতিকর প্রাণী সংখ্যা বেড়ে গিয়ে কৃষি ও বাসাবাড়ির ক্ষতি হতে পারে।</p>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
-    <h2>৩. রোগের বিস্তার</h2>
-    <p>ইঁদুর ও পোকামাকড় অনেক সময় বিপজ্জনক রোগের বাহক হয়। বিড়ালের অনুপস্থিতিতে এদের নিয়ন্ত্রণ কঠিন হবে এবং জনস্বাস্থ্যের ঝুঁকি বাড়বে।</p>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Enter your message" required></textarea>
 
-    <h2>৪. জেনেটিক বৈচিত্র্য হারানো</h2>
-    <p>বিভিন্ন প্রজাতির বিড়াল বিলুপ্ত হলে পৃথিবীর প্রাকৃতিক জেনেটিক ভাণ্ডার হ্রাস পাবে।</p>
-
-    <h2>৫. মানসিক স্বাস্থ্য ও সঙ্গ হারানো</h2>
-    <p>পোষা বিড়াল মানুষের একাকিত্ব ও বিষণ্নতা কমাতে সাহায্য করে। তাদের না থাকলে অনেক মানুষ মানসিকভাবে প্রভাবিত হতে পারে।</p>
-
-    <h2>৬. সাংস্কৃতিক ও ধর্মীয় প্রভাব</h2>
-    <p>অনেক সংস্কৃতিতে বিড়াল একটি গুরুত্বপূর্ণ প্রাণী। বিলুপ্ত হলে ঐতিহ্য ও বিশ্বাসেও ধাক্কা লাগবে।</p>
-
-    <h2>৭. অর্থনৈতিক ক্ষতি</h2>
-    <p>পোষা প্রাণী ব্যবসা, খাবার, চিকিৎসা ও একাধিক খাতে বিড়াল গুরুত্বপূর্ণ। তাদের না থাকলে এইসব খাতের ওপরও প্রভাব পড়বে।</p>
-
-    <div class="center-button">
-      <button onclick="alert('আপনি পরবর্তী বিষয়ের দিকে যেতে পারেন!')">পরবর্তী</button>
+        <button type="submit">Submit</button>
+      </form>
     </div>
   </main>
+
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+
+      localStorage.setItem('name', name);
+      localStorage.setItem('email', email);
+      localStorage.setItem('message', message);
+
+      window.location.href = 'Thank-You-Page.html';
+    });
+  </script>
 </body>
 </html>
