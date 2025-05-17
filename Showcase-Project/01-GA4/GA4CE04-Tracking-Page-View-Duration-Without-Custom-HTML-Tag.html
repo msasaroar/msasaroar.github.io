@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Timer Trigger Demo | GA4 Showcase</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- GTM Container -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;
+    j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+    f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB72WSHR');
+  </script>
+
+  <style>
+    body {
+      background-color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: green;
+      color: black;
+      font-weight: bold;
+      font-size: 35px;
+      text-align: center;
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .home-button {
+      position: absolute;
+      border-radius: 8px;
+      font-size: 16px;
+      left: 15px;
+      top: 10px;
+      background-color: orange;
+      color: blue;
+      padding: 15px 30px;
+      text-decoration: none;
+      border: 5px solid darkgreen;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    main {
+      padding: 75px 20px 20px;
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .center-button {
+      background-color: orange;
+      color: blue;
+      padding: 15px 30px;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      border: 5px solid darkgreen;
+      cursor: pointer;
+      margin-top: 40px;
+    }
+
+    .center-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- GTM (noscript fallback) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <header>
+    Timer Trigger Demo
+    <a href="index.html" class="home-button">HOME</a>
+  </header>
+
+  <main>
+    <h2>This page tracks how long you stay before leaving.</h2>
+    <p>When you leave or reload this page, the time spent will be pushed to the dataLayer as an event for GA4.</p>
+
+    <button class="center-button">Test Button</button>
+  </main>
+
+  <script>
+    (function () {
+      var startTime = new Date().getTime();
+      console.log('🔵 Start Time (ms):', startTime);
+
+      window.addEventListener('beforeunload', function () {
+        var endTime = new Date().getTime();
+        var timeSpent = Math.round((endTime - startTime) / 1000);
+
+        console.log('🟡 End Time (ms):', endTime);
+        console.log('⏱️ Time Spent (sec):', timeSpent);
+
+        dataLayer.push({
+          event: 'page_view_duration',
+          time_spent: timeSpent,
+          page_path: window.location.pathname
+        });
+        console.log('📤 DataLayer Event: page_view_duration pushed');
+      });
+    })();
+  </script>
+
+</body>
+</html>
