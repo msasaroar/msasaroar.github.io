@@ -1,0 +1,24 @@
+========
+FROM CLIENT
+========
+vasanaalia103
+May 18, 2025, 12:44 AM
+👋 Can you help me with Google Ads Marketing and Management? And how many hours a day can you work if possible.
+
+==========
+REPLY TO CLIENT
+==========
+Hi,
+
+Thank you for reaching out!
+Apologies for the delayed response — I was offline due to time zone differences.
+
+At the moment, I specialize in Google Tag Manager (GTM) setup, including tracking implementation for Google Ads, GA4, and other marketing platforms. I don’t currently offer full Google Ads Marketing and Campaign Management services.
+
+However, if you’re looking for help with conversion tracking, remarketing tag setup, or any kind of GTM implementation related to Google Ads, I’d be happy to assist.
+
+As for availability, I’m generally available for 2–5 hours per day, typically between 10:00 AM to 5:00 PM BST (GMT+6).
+Let me know if that works for your schedule, and how I can assist you best.
+
+Best regards,
+Saiful Alam
