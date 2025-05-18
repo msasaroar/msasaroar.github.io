@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <title>SPA History Change Demo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>History Change Event Demo</title>
-  <!-- Google Tag Manager -->
+
+  <!-- GTM Container -->
   <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -12,8 +13,15 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-MB72WSHR');
   </script>
-  <!-- End Google Tag Manager -->
+  <!-- End GTM -->
+
   <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+      text-align: center;
+    }
+
     header {
       background-color: green;
       color: black;
@@ -26,152 +34,90 @@
       top: 0;
       z-index: 1000;
     }
-    body {
-      background-color: white;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
+
+    main {
+      padding-top: 100px;
     }
-    .home-button {
-      position: absolute;
-      border-radius: 8px;
-      font-size: 16px;
-      left: 15px;
-      top: 10px;
+
+    .spa-button {
       background-color: orange;
       color: blue;
-      padding: 15px 30px;
-      text-decoration: none;
-      border: none;
       font-weight: bold;
-      cursor: pointer;
+      padding: 15px 30px;
+      margin: 10px;
+      font-size: 16px;
       border: 5px solid darkgreen;
       border-radius: 6px;
-      z-index: 1001;
-    }
-    .home-button:hover {
-      background-color: blue;
-      color: orange;
-    }
-    main {
-      padding: 100px 20px 0;
-      max-width: 800px;
-      margin: auto;
-      text-align: center;
-    }
-    button {
-      background-color: orange;
-      color: blue;
-      padding: 15px 30px;
-      font-size: 18px;
-      border: none;
       cursor: pointer;
-      border-radius: 8px;
-      margin: 10px;
-      font-weight: bold;
     }
-    button:hover {
+
+    .spa-button:hover {
       background-color: blue;
       color: orange;
     }
-    #output {
+
+    .content {
       margin-top: 20px;
-      font-size: 18px;
-      color: darkgreen;
+      font-size: 20px;
     }
+
+      .left-shifted-section {
+    text-align: left;
+    padding-left: 40px; /* ← এখানেই মূল কাজ, চাইলে 20px/50px করতে পারো */
+  }
+
   </style>
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe>
-  </noscript>
-  <!-- End Google Tag Manager (noscript) -->
-
-  <header>
-    History Change Event Demo
-  </header>
-
-  <a href="index.html" class="home-button">Home</a>
-
+  <header>SPA History Change Demo</header>
   <main>
 
-    <section>
-      <h2>What is a "History Change Event"?</h2>
-      <p>
-        A <strong>History Change Event</strong> occurs when the browser's URL is changed using JavaScript without reloading the page. This is common in Single Page Applications (SPAs), where internal navigation happens dynamically using methods like <code>history.pushState()</code> or <code>history.replaceState()</code>.
-      </p>
-      <p>
-        These changes don’t cause full page reloads, so traditional pageview tracking won't detect them. Tools like Google Tag Manager use a <strong>History Change Trigger</strong> to listen for these events and fire tags accordingly, such as virtual page views in GA4.
-      </p>
-      <p><strong>Example:</strong> When you click the button below, the URL will change (simulating navigation), but the page won't reload.</p>
-    </section>
+<section class="left-shifted-section">
+  <h2>What is a "History Change Event"?</h2>
+  <p>
+    A <strong>History Change Event</strong> occurs when the browser's URL is changed using JavaScript without reloading the page. This is common in Single Page Applications (SPAs), where internal navigation happens dynamically using methods like <code>history.pushState()</code> or <code>history.replaceState()</code>.
+  </p>
+  <p>
+    These changes don’t cause full page reloads, so traditional pageview tracking won't detect them. Tools like Google Tag Manager use a <strong>History Change Trigger</strong> to listen for these events and fire tags accordingly, such as virtual page views in GA4.
+  </p>
+  <p><strong>Example:</strong> When you click the button below, the URL will change (simulating navigation), but the page won't reload.</p>
+</section>
 
-    <h2>Test History Changes</h2>
-    <button onclick="pushStateExample()">Push State</button>
-    <button onclick="replaceStateExample()">Replace State</button>
-    <button onclick="window.history.back()">Go Back</button>
-    <button onclick="window.history.forward()">Go Forward</button>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <button class="spa-button" onclick="navigateTo('home')">Home</button>
+    <button class="spa-button" onclick="navigateTo('about')">About</button>
+    <button class="spa-button" onclick="navigateTo('contact')">Contact</button>
 
-    <div id="output">Current URL Path: <span id="pathDisplay"></span></div>
+    <div class="content" id="content-area">Welcome to the Home page!</div>
   </main>
 
   <script>
-    // Custom wrapper to track history changes and notify GTM
-    function overrideHistoryMethods() {
-      const pushState = history.pushState;
-      const replaceState = history.replaceState;
+    function navigateTo(page) {
+      let content = '';
+      if (page === 'home') content = 'Welcome to the Home page!';
+      else if (page === 'about') content = 'This is the About section.';
+      else if (page === 'contact') content = 'Feel free to Contact us.';
 
-      history.pushState = function(state, title, url) {
-        const result = pushState.apply(this, arguments);
-        window.dispatchEvent(new Event('pushstate'));
-        window.dispatchEvent(new Event('locationchange'));
-        return result;
-      };
+      document.getElementById('content-area').innerText = content;
 
-      history.replaceState = function(state, title, url) {
-        const result = replaceState.apply(this, arguments);
-        window.dispatchEvent(new Event('replacestate'));
-        window.dispatchEvent(new Event('locationchange'));
-        return result;
-      };
-
-      window.addEventListener('popstate', () => {
-        window.dispatchEvent(new Event('locationchange'));
-      });
+      // Update the URL without reloading
+      history.pushState({ page: page }, '', '/' + page);
     }
 
-    overrideHistoryMethods();
-
-    // For display purpose
-    function updatePathDisplay() {
-      document.getElementById('pathDisplay').textContent = window.location.pathname;
-    }
-
-    window.addEventListener('locationchange', () => {
-      console.log("History Changed:", window.location.pathname);
-      updatePathDisplay();
-      // Optional: Push to dataLayer for GTM trigger
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: 'history_change',
-        newPath: window.location.pathname
-      });
+    // Handle back/forward button
+    window.addEventListener('popstate', function(event) {
+      let page = location.pathname.replace('/', '');
+      if (page === '') page = 'home';
+      navigateTo(page);
     });
-
-    function pushStateExample() {
-      const newPath = "/new-page-" + Math.floor(Math.random() * 100);
-      history.pushState({}, "", newPath);
-    }
-
-    function replaceStateExample() {
-      const newPath = "/replaced-page-" + Math.floor(Math.random() * 100);
-      history.replaceState({}, "", newPath);
-    }
-
-    // Initial path display
-    updatePathDisplay();
   </script>
+
+  <!-- GTM NoScript (for fallback) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </body>
 </html>
