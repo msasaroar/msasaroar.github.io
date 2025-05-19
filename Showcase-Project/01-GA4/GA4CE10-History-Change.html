@@ -5,7 +5,7 @@
   <title>SPA History Change Demo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- GTM Container -->
+  <!-- Google Tag Manager -->
   <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -13,12 +13,13 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-MB72WSHR');
   </script>
-  <!-- End GTM -->
+  <!-- End Google Tag Manager -->
 
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 0; padding: 0;
+      margin: 0;
+      padding: 0;
       text-align: center;
     }
 
@@ -61,33 +62,40 @@
       font-size: 20px;
     }
 
-      .left-shifted-section {
-    text-align: left;
-    padding-left: 40px; /* ← এখানেই মূল কাজ, চাইলে 20px/50px করতে পারো */
-  }
-
+    .left-shifted-section {
+      text-align: left;
+      padding-left: 60px; /* Adjusted for more right-shift */
+      padding-right: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
   </style>
 </head>
 <body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
   <header>SPA History Change Demo</header>
+
   <main>
+    <section class="left-shifted-section">
+      <h2>What is a "History Change Event"?</h2>
+      <p>
+        A <strong>History Change Event</strong> occurs when the browser's URL is changed using JavaScript without reloading the page. This is common in Single Page Applications (SPAs), where internal navigation happens dynamically using methods like <code>history.pushState()</code> or <code>history.replaceState()</code>.
+      </p>
+      <p>
+        These changes don’t cause full page reloads, so traditional pageview tracking won't detect them. Tools like Google Tag Manager use a <strong>History Change Trigger</strong> to listen for these events and fire tags accordingly, such as virtual page views in GA4.
+      </p>
+      <p><strong>Example:</strong> When you click the button below, the URL will change (simulating navigation), but the page won't reload.</p>
+    </section>
 
-<section class="left-shifted-section">
-  <h2>What is a "History Change Event"?</h2>
-  <p>
-    A <strong>History Change Event</strong> occurs when the browser's URL is changed using JavaScript without reloading the page. This is common in Single Page Applications (SPAs), where internal navigation happens dynamically using methods like <code>history.pushState()</code> or <code>history.replaceState()</code>.
-  </p>
-  <p>
-    These changes don’t cause full page reloads, so traditional pageview tracking won't detect them. Tools like Google Tag Manager use a <strong>History Change Trigger</strong> to listen for these events and fire tags accordingly, such as virtual page views in GA4.
-  </p>
-  <p><strong>Example:</strong> When you click the button below, the URL will change (simulating navigation), but the page won't reload.</p>
-</section>
+    <br><br><br>
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
     <button class="spa-button" onclick="navigateTo('home')">Home</button>
     <button class="spa-button" onclick="navigateTo('about')">About</button>
     <button class="spa-button" onclick="navigateTo('contact')">Contact</button>
@@ -106,18 +114,21 @@
 
       // Update the URL without reloading
       history.pushState({ page: page }, '', '/' + page);
+
+      // Optional: Push a custom event to dataLayer
+      window.dataLayer = window.dataLayer || [];
+      dataLayer.push({
+        event: 'virtual_pageview',
+        page_path: '/' + page
+      });
     }
 
-    // Handle back/forward button
+    // Handle browser back/forward buttons
     window.addEventListener('popstate', function(event) {
-      let page = location.pathname.replace('/', '');
-      if (page === '') page = 'home';
-      navigateTo(page);
+      let path = location.pathname.replace('/', '') || 'home';
+      navigateTo(path);
     });
   </script>
 
-  <!-- GTM NoScript (for fallback) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </body>
 </html>
