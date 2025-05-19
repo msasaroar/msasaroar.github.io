@@ -17,6 +17,7 @@
 
   <style>
     body {
+      background-color: white;
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
@@ -36,8 +37,31 @@
       z-index: 1000;
     }
 
+    .home-button {
+      position: absolute;
+      border-radius: 6px;
+      font-size: 16px;
+      left: 15px;
+      top: 10px;
+      background-color: orange;
+      color: blue;
+      padding: 15px 30px;
+      text-decoration: none;
+      border: 5px solid darkgreen;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
     main {
-      padding-top: 100px;
+      padding: 75px 0px 0px;
+      max-width: 1200px;
+      margin: auto;
     }
 
     .spa-button {
@@ -64,7 +88,7 @@
 
     .left-shifted-section {
       text-align: left;
-      padding-left: 60px; /* Adjusted for more right-shift */
+      padding-left: 60px;
       padding-right: 20px;
       max-width: 900px;
       margin: auto;
@@ -80,7 +104,10 @@
   </noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <header>SPA History Change Demo</header>
+  <header>
+    SPA History Change Demo
+    <button class="home-button" onclick="navigateTo('dashboard')">Home</button>
+  </header>
 
   <main>
     <section class="left-shifted-section">
@@ -96,17 +123,17 @@
 
     <br><br><br>
 
-    <button class="spa-button" onclick="navigateTo('home')">Home</button>
+    <button class="spa-button" onclick="navigateTo('dashboard')">Dashboard</button>
     <button class="spa-button" onclick="navigateTo('about')">About</button>
     <button class="spa-button" onclick="navigateTo('contact')">Contact</button>
 
-    <div class="content" id="content-area">Welcome to the Home page!</div>
+    <div class="content" id="content-area">Welcome to the Dashboard!</div>
   </main>
 
   <script>
     function navigateTo(page) {
       let content = '';
-      if (page === 'home') content = 'Welcome to the Home page!';
+      if (page === 'dashboard') content = 'Welcome to the Dashboard!';
       else if (page === 'about') content = 'This is the About section.';
       else if (page === 'contact') content = 'Feel free to Contact us.';
 
@@ -125,7 +152,7 @@
 
     // Handle browser back/forward buttons
     window.addEventListener('popstate', function(event) {
-      let path = location.pathname.replace('/', '') || 'home';
+      let path = location.pathname.replace('/', '') || 'dashboard';
       navigateTo(path);
     });
   </script>
