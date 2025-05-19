@@ -86,35 +86,5 @@
     </video>
     <p>Play, pause, or watch to the end to trigger GTM events.</p>
   </main>
-
-  <!-- Custom HTML Tag script (Add this in GTM Custom HTML Tag) -->
-  <script>
-    window.addEventListener('DOMContentLoaded', function () {
-      var video = document.getElementById('demoVideo');
-
-      if (!video) return;
-
-      video.addEventListener('play', function () {
-        dataLayer.push({
-          event: 'video_play',
-          video_title: 'Big Buck Bunny'
-        });
-      });
-
-      video.addEventListener('pause', function () {
-        dataLayer.push({
-          event: 'video_pause',
-          video_title: 'Big Buck Bunny'
-        });
-      });
-
-      video.addEventListener('ended', function () {
-        dataLayer.push({
-          event: 'video_ended',
-          video_title: 'Big Buck Bunny'
-        });
-      });
-    });
-  </script>
 </body>
 </html>
