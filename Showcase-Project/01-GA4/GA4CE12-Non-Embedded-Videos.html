@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Video Tracking Demo | Saiful Alam</title>
 
-  <!-- GTM Head Snippet -->
+  <!-- ✅ dataLayer Initialization -->
+  <script>window.dataLayer = window.dataLayer || [];</script>
+
+  <!-- ✅ GTM Head Snippet -->
   <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -75,7 +78,7 @@
   </style>
 </head>
 <body>
-  <!-- GTM Body Snippet -->
+  <!-- ✅ GTM Body Snippet -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
@@ -87,12 +90,9 @@
   <main>
     <h2>Big Buck Bunny</h2>
     <video id="demoVideo" controls>
-      <source src=".\Showcase-Project\Files\sample.mp4" type="video/mp4" />
       <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
-
       Your browser does not support the video tag.
     </video>
-
   </main>
 </body>
 </html>
