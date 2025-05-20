@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Non-Embedded Video Engagement - GTM Demo</title>
-  <!-- Google Tag Manager -->
+  <title>Video Tracking Demo | Saiful Alam</title>
+
+  <!-- GTM Head Snippet -->
   <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -12,7 +13,6 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-MB72WSHR');
   </script>
-  <!-- End Google Tag Manager -->
 
   <style>
     header {
@@ -27,12 +27,14 @@
       top: 0;
       z-index: 1000;
     }
+
     body {
       background-color: white;
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
     }
+
     .home-button {
       position: absolute;
       border-radius: 8px;
@@ -48,43 +50,44 @@
       cursor: pointer;
       border: 5px solid darkgreen;
       border-radius: 6px;
-      z-index: 1001; 
+      z-index: 1001;
     }
+
     .home-button:hover {
       background-color: blue;
       color: orange;
     }
+
     main {
       padding: 75px 20px 30px;
-      max-width: 900px;
+      max-width: 800px;
       margin: auto;
       text-align: center;
     }
+
     video {
       width: 100%;
-      max-width: 800px;
-      margin-top: 30px;
+      max-width: 700px;
+      margin-top: 20px;
+      border: 3px solid #ccc;
+      border-radius: 10px;
     }
   </style>
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) -->
+  <!-- GTM Body Snippet -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
 
   <header>
-    Non-Embedded Video Engagement
-    <a class="home-button" href="index.html">Home</a>
+    Video Tracking Demo
+    <a href="index.html" class="home-button">Home</a>
   </header>
 
   <main>
-    <h2>Watch the Video Below</h2>
+    <h2>Big Buck Bunny</h2>
     <video id="demoVideo" controls>
-      <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
-      Your browser does not support HTML5 video.
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
     </video>
-    <p>Play, pause, or watch to the end to trigger GTM events.</p>
   </main>
-</body>
-</html>
