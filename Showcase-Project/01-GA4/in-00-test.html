@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Repository Video Engagement Tracking</title>
+
+  <!-- GTM Code -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB72WSHR');
+  </script>
+
+  <style>
+    header {
+      background-color: green;
+      color: black;
+      font-weight: bold;
+      font-size: 35px;
+      text-align: center;
+      padding: 20px 0;
+      //position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    body {
+      background-color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .home-button {
+      position: absolute;
+      border-radius: 8px;
+      font-size: 16px;
+      left: 15px;
+      top: 10px;
+      background-color: orange;
+      color: blue;
+      padding: 15px 30px;
+      text-decoration: none;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      border: 5px solid darkgreen;
+      border-radius: 6px;
+      z-index: 1001;
+    }
+
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    main {
+      padding: 75px 20px 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .content-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .text-section, .video-section {
+      flex: 1 1 400px;
+      min-width: 300px;
+    }
+
+    video {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    h2 {
+      color: #333;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <header>Repository Video Engagement Tracking</header>
+  <a class="home-button" href="index.html">Home</a>
+
+  <main>
+    <div class="content-container">
+      <div class="text-section">
+        <h2>Why Is Repository Video Engagement Tracking a Custom Event in GTM?</h2>
+        <p>
+          Repository videos (like self-hosted MP4 files) are not automatically tracked by Google Tag Manager.
+          GTM does not have built-in triggers for video <strong>play</strong>, <strong>pause</strong>, or <strong>complete</strong> events on these videos.
+        </p>
+        <p>
+          That’s why we use a <strong>Custom HTML Tag</strong> in GTM that listens for these actions with JavaScript and pushes relevant <strong>custom events</strong> to the <code>dataLayer</code>.
+        </p>
+        <p>
+          These events trigger GA4 event tags to track video engagement effectively.
+        </p>
+      </div>
+
+      <div class="video-section">
+        <video id="myVideo" controls>
+          <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
