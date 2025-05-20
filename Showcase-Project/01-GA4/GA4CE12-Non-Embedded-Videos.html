@@ -90,6 +90,37 @@
       <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
+
+    <!-- Script directly in HTML -->
+    <script>
+      alert("✅ Script loaded!");
+
+      window.addEventListener('DOMContentLoaded', function () {
+        alert("✅ DOM fully loaded!");
+
+        var video = document.getElementById('demoVideo');
+
+        if (!video) {
+          alert('❌ Video element not found!');
+          return;
+        }
+
+        alert("✅ Video element found!");
+
+        video.addEventListener('play', function () {
+          alert('▶️ video_play triggered');
+        });
+
+        video.addEventListener('pause', function () {
+          alert('⏸️ video_pause triggered');
+        });
+
+        video.addEventListener('ended', function () {
+          alert('⏹️ video_ended triggered');
+        });
+      });
+    </script>
+
   </main>
 </body>
 </html>
