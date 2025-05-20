@@ -24,35 +24,56 @@
     <title>Video Engagement Tracking</title>
     <style>
         body {
+            background-color: white;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             text-align: center;
-            background: white;
         }
 
-    /* Header Styles */
-    header {
-        background-color: green;
-        color: black;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: sticky;
-        top: 0;
-        height: 60px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
-    }
+        header {
+            background-color: green;
+            color: black;
+            font-weight: bold;
+            font-size: 35px;
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
 
-    header h1 {
-        margin: 0;
-        font-size: 25px bold;
-    }
+        .home-button {
+            position: absolute;
+            border-radius: 6px;
+            font-size: 16px;
+            left: 15px;
+            top: 10px;
+            background-color: orange;
+            color: blue;
+            padding: 15px 30px;
+            text-decoration: none;
+            border: 5px solid darkgreen;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .home-button:hover {
+            background-color: blue;
+            color: orange;
+        }
+
+        main {
+            padding: 75px 0 0;
+            max-width: 1200px;
+            margin: auto;
+        }
 
         .video-container {
             margin: 100px auto;
-            max-width: 300px; /* Reduced from 640px to 480px */
+            max-width: 300px;
         }
 
         video {
@@ -60,68 +81,30 @@
             border: 5px solid #ccc;
             border-radius: 8px;
         }
-
-            /* Home Button Styles */
-    #home-button {
-        position: absolute;
-        left: 10px;
-        top: 10px;
-        background-color: orange;
-        color: blue;
-        border: none;
-        padding: 10px 25px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 14px bold;
-    }
-
-    #home-button:hover {
-        background-color: blue;
-        color: orange;
-        border: 2px solid orange;
-    }
     </style>
 </head>
 <body>
+
     <!-- Google Tag Manager (noscript) -->
     <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
 
     <header>
-        <h1>Video Engagement Tracking</h1>
-        <button id="home-button" onclick="window.location.href='index.html';">Home</button>
+        Video Engagement Tracking : Repository Video
+        <button class="home-button" onclick="window.location.href='index.html';">Home</button>
     </header>
 
-    <div class="video-container">
-        <video id="trackedVideo" controls>
-            <source src="sample.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
+    <main>
+        <div class="video-container">
+            <video id="repositoryVideo" controls>
+                <source src="sample.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </main>
 
-    <script>
-        // Track video engagement events
-        const video = document.getElementById('trackedVideo');
-
-        // Helper function to push events to the dataLayer
-        function trackVideoEvent(action, currentTime) {
-            dataLayer.push({
-                'event': 'videoEngagement',
-                'videoAction': action,
-                'videoTitle': video.getAttribute('src'),
-                'currentTime': Math.round(currentTime),
-                'tagId': 'GA4 | Video Engagement Tracking'
-            });
-            console.log(`Event: ${action}, Time: ${Math.round(currentTime)} seconds`);
-        }
-
-        // Event listeners for tracking engagement
-        video.addEventListener('play', () => trackVideoEvent('play', video.currentTime));
-        video.addEventListener('pause', () => trackVideoEvent('pause', video.currentTime));
-        video.addEventListener('seeked', () => trackVideoEvent('seek', video.currentTime));
-        video.addEventListener('ended', () => trackVideoEvent('complete', video.currentTime));
-    </script>
 </body>
 </html>
