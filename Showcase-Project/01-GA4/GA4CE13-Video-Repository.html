@@ -76,7 +76,7 @@
 
     video {
       width: 100%;
-      height: auto;
+      height: 300px;
       display: block;
       border: 2px solid #ccc;
       border-radius: 6px;
@@ -104,12 +104,21 @@
     <div class="content-container">
       <div class="text-section">
         <h2>Why Is Repository Video Engagement Tracking a Custom Event in GTM?</h2>
-        <p>
-          1. Repository videos (self-hosted or non-YouTube) are not tracked automatically by GTM/GA4.<br>
-          2. GTM lacks built-in triggers for play/pause/complete on such videos.<br>
-          3. You need a Custom HTML Tag with JS to detect these events.<br>
-          4. Custom Event triggers in GTM listen for these JS events pushed to dataLayer.
-        </p>
+
+        <ul style="padding-left: 20px; font-size: 16px; line-height: 1.6;">
+        <li>
+            <strong>Repository videos</strong> (self-hosted or non-YouTube) are <span style="color: red; font-weight: bold;">not automatically tracked</span> by GTM or GA4.
+        </li>
+        <li>
+            GTM does <strong>not have built-in triggers</strong> for <em>play</em>, <em>pause</em>, or <em>complete</em> events on such videos.
+        </li>
+        <li>
+            You must use a <strong>Custom HTML Tag</strong> with JavaScript to <span style="color: green;">detect and send</span> these video events.
+        </li>
+        <li>
+            GTM <strong>Custom Event Triggers</strong> are used to listen for these <code>dataLayer</code> events and forward them to GA4.
+        </li>
+        </ul>
 
         <div id="videoError">
           ভিডিও ফাইল খুঁজে পাওয়া যায়নি। দয়া করে নিশ্চিত করুন <code>sample.mp4</code> ফাইলটি আপলোড করা হয়েছে।
