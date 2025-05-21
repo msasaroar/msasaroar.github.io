@@ -186,3 +186,42 @@
   </script>
 </body>
 </html>
+
+উপরেরটি html পেইজ এবং নীচেরটি Custom HTML Tag. GTM দ্বারা ট্র্যাকিং এর জন্য এই দিয়ে কাজ করা যাবে কিনা ?
+
+<script>
+  (function() {
+    var video = document.getElementById('repositoryVideo');
+    if (!video) return;
+
+    var videoSource = video.querySelector('source');
+    var videoSrc = videoSource ? videoSource.getAttribute('src') : '';
+
+    function trackVideoEvent(action, currentTime) {
+      window.dataLayer = window.dataLayer || [];
+      dataLayer.push({
+        event: 'video_engagement',
+        video_action: action,
+        video_title: videoSrc,
+        current_time: Math.round(currentTime)
+      });
+    }
+
+    video.addEventListener('play', function () {
+      trackVideoEvent('play', video.currentTime);
+    });
+
+    video.addEventListener('pause', function () {
+      trackVideoEvent('pause', video.currentTime);
+    });
+
+    video.addEventListener('seeked', function () {
+      trackVideoEvent('seek', video.currentTime);
+    });
+
+    video.addEventListener('ended', function () {
+      trackVideoEvent('complete', video.currentTime);
+    });
+  })();
+</script>
+
