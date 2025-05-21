@@ -1,127 +1,179 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MB72WSHR');</script>
-    <!-- End Google Tag Manager -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Click Event Tracking</title>
 
-```
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Click Event Tracking</title>
-<style>
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){
+      w[l]=w[l]||[];
+      w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),
+          dl=l!='dataLayer'?'&l='+l:'';
+      j.async=true;
+      j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+      f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB72WSHR');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <style>
     body {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-        background: white;
-        color: #000;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: white;
+      color: #000;
+      text-align: center;
     }
 
     header {
-        background-color: green;
-        color: black;
-        position: fixed;
-        top: 0;
-        width: 100%;
-        text-align: center;
-        padding: 0px 0;
-        z-index: 1000;
-    }
-
-    .container {
-        padding: 250px 20px 60px;
-        text-align: center;
-    }
-
-    .button {
-        display: inline-block;
-        font-size: 18px;
-        color: blue;
-        background-color: orange;
-        text-decoration: none;
-        padding: 12px 25px;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: background-color 0.3s, color 0.3s;
-        margin: 5px;
-    }
-
-    .button:hover {
-        background-color: blue;
-        color: orange;
+      background-color: green;
+      color: black;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      text-align: center;
+      padding: 20px 0;
+      font-weight: bold;
+      font-size: 35px;
+      z-index: 1000;
     }
 
     .home-button {
-        position: fixed;
-        top: 10px;
-        left: 10px;
-        color: blue;
-        background-color: orange;
-        padding: 8px 16px;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: bold;
+      position: fixed;
+      top: 10px;
+      left: 15px;
+      background-color: orange;
+      color: blue;
+      font-weight: bold;
+      font-size: 16px;
+      padding: 15px 30px;
+      border: 5px solid darkgreen;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      z-index: 1001;
+      transition: background-color 0.3s, color 0.3s;
     }
-
     .home-button:hover {
-        background-color: blue;
-        color: orange;
+      background-color: blue;
+      color: orange;
     }
-</style>
-```
 
+    .container {
+      padding: 150px 20px 40px;
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .button {
+      background-color: orange;
+      color: blue;
+      font-weight: bold;
+      font-size: 18px;
+      text-decoration: none;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 150px;
+      min-height: 45px;
+      user-select: none;
+    }
+    .button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    /* Special styling for elements that don't normally behave like buttons */
+    li.button {
+      list-style: none;
+    }
+    fieldset.button {
+      padding: 12px 25px;
+      border: none;
+    }
+    table.button {
+      border-collapse: collapse;
+      padding: 0;
+    }
+    table.button td {
+      padding: 12px 25px;
+    }
+    img.button {
+      cursor: pointer;
+      max-width: 150px;
+      height: auto;
+      border-radius: 8px;
+      border: 5px solid darkgreen;
+      transition: border-color 0.3s;
+    }
+    img.button:hover {
+      border-color: orange;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Click Event Tracking</h1>
-        <button class="home-button" onclick="window.location.href='index.html'">Home</button>
-    </header>
 
-<a href="#" class="home-button">Home</a>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
-<div class="container">
-    <button class="button" >Default Button</button>
-    <button class="button" >Primary Button</button>
-    <button class="button" >Danger Button</button>
+  <header>
+    Click Event Tracking
+    <button class="home-button" onclick="window.location.href='index.html'">Home</button>
+  </header>
 
-    <a href="#" class="button" >Link Button</a>
+  <div class="container">
+    <button class="button">Default Button</button>
+    <button class="button">Primary Button</button>
+    <button class="button">Danger Button</button>
 
-    <span class="button" >Span Button</span>
+    <a href="#" class="button">Link Button</a>
 
-    <div class="button" >Div Button</div>
+    <span class="button">Span Button</span>
 
-    <input type="button" class="button" value="Input Button" >
-    
-    
-    <form>
-        <input type="submit" class="button" value="Submit Button">
+    <div class="button">Div Button</div>
+
+    <input type="button" class="button" value="Input Button" />
+
+    <form style="margin:0;">
+      <input type="submit" class="button" value="Submit Button" />
     </form>
 
-    <label class="button" >Label Button</label>
+    <label class="button">Label Button</label>
 
-    <li class="button" >List Item Button</li>
+    <li class="button">List Item Button</li>
 
-    <img src="sample.jpg" class="button" alt="Image Button"  style="display: block; margin: 10px auto; border-radius: 8px;">
+    <img src="sample.jpg" class="button" alt="Image Button" />
 
-    <p class="button" >Paragraph Button</p>
+    <p class="button">Paragraph Button</p>
 
-    <fieldset class="button" >Fieldset Button</fieldset>
+    <fieldset class="button">Fieldset Button</fieldset>
 
-    <table class="button"  style="width: 250px; margin: 10px auto; text-align: center; padding: 15px; border-radius: 8px;">
-        <tr>
-            <td>Table Button</td>
-        </tr>
+    <table class="button">
+      <tr>
+        <td>Table Button</td>
+      </tr>
     </table>
 
-    <blockquote class="button" >Blockquote Button</blockquote>
-</div>
+    <blockquote class="button">Blockquote Button</blockquote>
+  </div>
 
 </body>
 </html>

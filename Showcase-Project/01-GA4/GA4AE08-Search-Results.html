@@ -2,65 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>view_search_results | GA4 Showcase</title>
-  <style>
-    body {
-      margin: 0;
-      background-color: white;
-      font-family: sans-serif;
-      text-align: center;
-    }
-    header {
-      background-color: green;
-      color: black;
-      font-weight: bold;
-      padding: 10px 0;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 10;
-    }
-    .home-button {
-      position: absolute;
-      left: 10px;
-      top: 10px;
-      background-color: orange;
-      color: blue;
-      border: none;
-      padding: 6px 12px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    .home-button:hover {
-      background-color: blue;
-      color: orange;
-    }
-    main {
-      padding-top: 80px;
-    }
-    input[type="text"] {
-      padding: 10px;
-      width: 200px;
-    }
-    button {
-      background-color: orange;
-      color: blue;
-      font-weight: bold;
-      padding: 10px 20px;
-      border: none;
-      margin-left: 10px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: blue;
-      color: orange;
-    }
-    #results {
-      margin-top: 30px;
-      font-size: 18px;
-    }
-  </style>
 
   <!-- Google Tag Manager -->
   <script>
@@ -71,11 +14,86 @@
     })(window,document,'script','dataLayer','GTM-MB72WSHR');
   </script>
   <!-- End Google Tag Manager -->
+
+  <style>
+    body {
+      background-color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      background-color: green;
+      color: black;
+      font-weight: bold;
+      font-size: 35px;
+      text-align: center;
+      padding: 20px 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+    .home-button {
+      position: absolute;
+      left: 15px;
+      top: 10px;
+      background-color: orange;
+      color: blue;
+      font-weight: bold;
+      font-size: 16px;
+      padding: 15px 30px;
+      border: 5px solid darkgreen;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      z-index: 1001;
+    }
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+    main {
+      padding: 90px 0 20px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    input[type="text"] {
+      padding: 10px;
+      width: 70%;
+      max-width: 300px;
+      font-size: 16px;
+    }
+    button[type="submit"] {
+      background-color: orange;
+      color: blue;
+      font-weight: bold;
+      font-size: 16px;
+      padding: 10px 20px;
+      border: none;
+      margin-left: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button[type="submit"]:hover {
+      background-color: blue;
+      color: orange;
+    }
+    #results {
+      margin-top: 30px;
+      font-size: 18px;
+      color: black;
+    }
+  </style>
 </head>
 <body>
+
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
   <!-- End Google Tag Manager (noscript) -->
 
   <header>
@@ -93,6 +111,8 @@
   </main>
 
   <script>
+    window.dataLayer = window.dataLayer || [];
+
     document.getElementById('searchForm').addEventListener('submit', function(e) {
       e.preventDefault();
       const query = document.querySelector('input[name="q"]').value.trim();
@@ -104,7 +124,7 @@
           search_term: query
         });
 
-        // Optional: Show fake results
+        // Show fake results
         document.getElementById('results').innerHTML =
           `<p>Showing results for: <strong>${query}</strong></p>`;
       }

@@ -1,100 +1,126 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      <title>GA4: page_view Event Demo</title>
-    
-    <!-- Google Tag Manager -->
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-MB72WSHR');
-    </script>
-    <!-- End Google Tag Manager -->
-    
-      <style>
-        body {
-          background-color: white;
-          color: black;
-          font-family: Arial, sans-serif;
-          text-align: center;
-          padding: 40px;
-        }
-    
-        header {
-          background-color: green;
-          color: white;
-          padding: 20px;
-          position: fixed;
-          top: 0;
-          width: 100%;
-          text-align: center;
-        }
-    
-        main {
-          margin-top: 100px;
-        }
-    
-        .button {
-          background-color: orange;
-          color: blue;
-          padding: 10px 20px;
-          font-size: 16px;
-          border: none;
-          margin-top: 20px;
-          cursor: pointer;
-        }
-    
-        .button:hover {
-          background-color: blue;
-          color: orange;
-        }
-    
-        footer {
-          position: fixed;
-          bottom: 0;
-          width: 100%;
-          background-color: #f1f1f1;
-          text-align: center;
-          height: 50px;
-        }
-      </style>
-    </head>
-    <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR" 
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GA4: page_view Event Demo</title>
+
+  <!-- Google Tag Manager -->
+  <script>
+      (function(w, d, s, l, i) {
+          w[l] = w[l] || [];
+          w[l].push({
+              'gtm.start': new Date().getTime(),
+              event: 'gtm.js'
+          });
+          var f = d.getElementsByTagName(s)[0],
+              j = d.createElement(s),
+              dl = l != 'dataLayer' ? '&l=' + l : '';
+          j.async = true;
+          j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+          f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-MB72WSHR');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <style>
+    body {
+      background-color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: green;
+      color: black;
+      font-weight: bold;
+      font-size: 35px;
+      text-align: center;
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .home-button {
+      position: absolute;
+      border-radius: 8px;
+      font-size: 16px;
+      left: 15px;
+      top: 10px;
+      background-color: orange;
+      color: blue;
+      padding: 15px 30px;
+      text-decoration: none;
+      border: 5px solid darkgreen;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    main {
+      padding: 75px 0 0;
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+    }
+
+    ul {
+      text-align: left;
+      display: inline-block;
+      margin-top: 20px;
+    }
+
+    .button {
+      background-color: orange;
+      color: blue;
+      padding: 15px 30px;
+      font-size: 16px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 30px;
+    }
+
+    .button:hover {
+      background-color: blue;
+      color: orange;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR" 
             height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
-      <header>
-        <h1>GA4 Event Demo: page_view</h1>
-      </header>
-    
-      <main>
-        <p>The <strong>page_view</strong> event is triggered automatically when this page loads.</p>
-    
-        <h3>How to Trigger:</h3>
-        <ul style="text-align: left; display: inline-block;">
-          <li>Just load or refresh this page.</li>
-          <li>Each load sends a <code>page_view</code> event to GA4.</li>
-        </ul>
-    
-        <button class="button" onclick="alert('Reload this page to see page_view in GA4 DebugView.')">
-          Help
-        </button>
-      </main>
-    </body>
-    </html>
-    
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header>
+    <button class="home-button" onclick="location.href='index.html'">Home</button>
+    GA4 Event Demo: page_view
+  </header>
+
+  <main>
+    <p>The <strong>page_view</strong> event is triggered automatically when this page loads.</p>
+
+    <h3>How to Trigger:</h3>
+    <ul>
+      <li>Just load or refresh this page.</li>
+      <li>Each load sends a <code>page_view</code> event to GA4.</li>
+    </ul>
+
+    <button class="button" onclick="alert('Reload this page to see page_view in GA4 DebugView.')">
+      Help
+    </button>
+  </main>
+</body>
+</html>

@@ -45,6 +45,7 @@
       border: none;
       border-radius: 8px;
       cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
     }
 
     .home-button:hover {
@@ -72,6 +73,7 @@
       margin-bottom: 15px;
       padding: 10px;
       font-size: 16px;
+      box-sizing: border-box;
     }
 
     .button {
@@ -109,7 +111,7 @@
   <div class="container">
     <h2>Start typing in the form to trigger a <code>form_start</code> event</h2>
 
-    <form>
+    <form id="contactForm">
       <input type="text" name="name" placeholder="Your Name" required />
       <input type="email" name="email" placeholder="Your Email" required />
       <textarea name="message" placeholder="Your Message"></textarea>
@@ -117,5 +119,30 @@
     </form>
   </div>
 
+  <script>
+    (function() {
+      const form = document.getElementById('contactForm');
+      let formStarted = false;
+
+      function pushFormStartEvent() {
+        if (!formStarted) {
+          formStarted = true;
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: 'form_start',
+            formId: form.id
+          });
+          // You can also add console.log for debug if needed:
+          console.log('form_start event pushed');
+        }
+      }
+
+      // Add event listeners to all input and textarea elements inside the form
+      const inputs = form.querySelectorAll('input, textarea');
+      inputs.forEach(input => {
+        input.addEventListener('input', pushFormStartEvent, { once: true });
+      });
+    })();
+  </script>
 </body>
 </html>

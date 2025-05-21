@@ -5,107 +5,136 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GA4: Outbound Link Click Demo</title>
 
-    <!-- Google Tag Manager -->
-    <script>
-        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-MB72WSHR');
-    </script>
-    <!-- End Google Tag Manager -->
+  <!-- Google Tag Manager -->
+  <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-MB72WSHR');
+  </script>
+  <!-- End Google Tag Manager -->
 
   <style>
     body {
       background-color: white;
-      color: black;
       font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 40px;
+      margin: 0;
+      padding: 0;
+      color: black;
     }
 
     header {
       background-color: green;
-      color: white;
-      padding: 20px;
-      position: fixed;
-      top: 0;
-      width: 100%;
+      color: black;
+      font-weight: bold;
+      font-size: 35px;
       text-align: center;
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .home-button {
+      position: absolute;
+      border-radius: 8px;
+      font-size: 16px;
+      left: 15px;
+      top: 10px;
+      background-color: orange;
+      color: blue;
+      padding: 15px 30px;
+      text-decoration: none;
+      border: 5px solid darkgreen;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
     }
 
     main {
-      margin-top: 100px;
+      padding: 75px 20px 20px;
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
     }
 
-a {
-        display: inline-block;
-        margin: 10px;
-        padding: 10px 20px;
-        text-decoration: none;
-        background-color: orange;
-        color: white;
-        border-radius: 5px;
-        font-size: 18px;
+    a {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      text-decoration: none;
+      background-color: orange;
+      color: blue;
+      border-radius: 6px;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
     }
+
     a:hover {
-        background-color: blue;
+      background-color: blue;
+      color: orange;
     }
 
-    body {
-      background-color: white;
-      color: black;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 40px;
+    .highlight {
+      margin-bottom: 20px;
+      font-size: 18px;
     }
 
-    header {
-      background-color: green;
-      color: white;
-      padding: 20px;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      text-align: center;
+    .code-box {
+      background-color: #e8e8e8;
+      padding: 10px;
+      margin-bottom: 30px;
+      font-family: monospace;
+      font-weight: bold;
+      color: green;
+      display: inline-block;
+      border-radius: 6px;
     }
-
   </style>
 </head>
 
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
       height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
-    <header>
-        <h1>GA4 Event Demo: outbound_click Demo</h1>
-    </header>
+  <header>
+    <button class="home-button" onclick="location.href='index.html'">Home</button>
+    GA4 Event Demo: outbound_click Demo
+  </header>
 
-    <main>
+  <main>
+    <div class="highlight">
+      <p><strong>Outbound link clicks</strong> are links that navigate a user <strong>away from your domain</strong> to a different website (e.g., Facebook, external blog, partner site).</p>
+      <p>In <strong>Google Analytics 4 (GA4)</strong>, these clicks are tracked <strong>automatically</strong> as an <span style="text-transform: uppercase; color: green;">Enhanced Measurement</span> event, named:</p>
+    </div>
 
-      <div class="highlight">
-        <p><strong>Outbound link clicks</strong> are links that navigate a user <strong>away from your domain</strong> to a different website (e.g., Facebook, external blog, partner site).</p>
-        <p>In <strong>Google Analytics 4 (GA4)</strong>, these clicks are tracked <strong>automatically</strong> as an <span style="text-transform: uppercase; color: green;">Enhanced Measurement</span> event, named:</p>
-      </div>
-  
-      <div class="code-box">
-        click event<br/>
-        with <strong>outbound = true</strong> in the event parameters
-      </div>
+    <div class="code-box">
+      click event<br/>
+      with <strong>outbound = true</strong> in the event parameters
+    </div>
 
+    <p>Clicking the link below will fire a <strong>click</strong> event with <code>outbound=true</code>.</p>
+    <p style="margin-top: 20px;">Check GA4 DebugView or Realtime reports to confirm the event.</p>
+    <p>Click any of the links below to test outbound link tracking.</p>
 
-        <p>Clicking the link below will fire a <strong>click</strong> event with <code>outbound=true</code>.</p>
-        <p style="margin-top: 20px;">Check GA4 DebugView or Realtime reports to confirm the event.</p>
-        <p>Click any of the links below to test outbound link tracking.</p>
-
-        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
-        <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">Google</a>
-        <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a>
-        <a href="https://www.github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
-    </main>
+    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+    <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">Google</a>
+    <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a>
+    <a href="https://www.github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </main>
 </body>
 </html>

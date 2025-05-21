@@ -1,48 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Scroll Depth Practice</title>
-      <!-- Google Tag Manager -->
-      <script>
-        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-MB72WSHR');
-    </script>
-    <!-- End Google Tag Manager -->
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB72WSHR');
+  </script>
+  <!-- End Google Tag Manager -->
+
   <style>
     body {
+      background-color: white;
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
-      background-color: green;
     }
     header {
-      background: white;
-      text-align: center;
+      background-color: green;
       color: black;
-      padding: 10px;
+      font-weight: bold;
+      font-size: 35px;
+      text-align: center;
+      padding: 20px 0;
+      position: fixed;
       width: 100%;
       top: 0;
+      z-index: 1000;
     }
-    header a {
-      color: black;
+    .home-button {
+      position: absolute;
+      left: 15px;
+      top: 10px;
+      background-color: orange;
+      color: blue;
+      font-weight: bold;
+      font-size: 16px;
+      padding: 15px 30px;
+      border: 5px solid darkgreen;
+      border-radius: 6px;
+      cursor: pointer;
+      z-index: 1001;
       text-decoration: none;
-      padding: 14px 20px;
-      display: inline-block;
+      border-radius: 6px;
+      border-style: solid;
     }
-    header a:hover {
-      background-color: white;
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+    main {
+      padding: 75px 0 0;
+      max-width: 1200px;
+      margin: auto;
     }
     .vertical-content {
       height: 3000px;
       background: green;
       text-align: left;
       padding-top: 20px;
-      color: rgb(0, 0, 0);
+      color: black;
     }
     .horizontal-content-wrapper {
       overflow-x: scroll;
@@ -60,8 +83,7 @@
     h1, h2 {
       margin: 20px;
     }
-   
-    button {
+    button, .btn {
       background-color: orange;
       color: blue;
       border-radius: 5px;
@@ -69,37 +91,110 @@
       text-align: center;
       font-size: 16px;
       cursor: pointer;
-
+      border: none;
+      display: block;
+      margin: 20px auto;
+      font-weight: bold;
+      width: fit-content;
     }
-    button:hover {
+    button:hover, .btn:hover {
       background-color: blue;
       color: orange;
     }
   </style>
 </head>
 <body>
-  
+
   <!-- Google Tag Manager (noscript) -->
   <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR" height="0" width="0" style="display:none;visibility:hidden"></iframe>
   </noscript>
   <!-- End Google Tag Manager (noscript) -->
 
   <header>
-      <button class="home-button" onclick="location.href='index.html'">Home</button>
+    Scroll Depth Practice
+    <a href="index.html" class="home-button">Home</a>
   </header>
 
-  <div class="vertical-content">
-    <h1>Vertical Scroll Tracking</h1>
-    <h2>Scroll down to test vertical depth tracking!</h2>
-  </div>
-
-  <div class="horizontal-content-wrapper">
-    <div class="horizontal-content">
-      <h1>Horizontal Scroll Tracking</h1>
-      <h2>Scroll right to test horizontal depth tracking!</h2>
+  <main>
+    <div class="vertical-content">
+      <h1>Vertical Scroll Tracking</h1>
+      <h2>Scroll down to test vertical depth tracking!</h2>
     </div>
-  </div>
+
+    <div class="horizontal-content-wrapper">
+      <div class="horizontal-content">
+        <h1>Horizontal Scroll Tracking</h1>
+        <h2>Scroll right to test horizontal depth tracking!</h2>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    (function() {
+      const thresholds = [25, 50, 75, 100];
+      let verticalTracked = new Set();
+      let horizontalTracked = new Set();
+
+      function getVerticalScrollPercent() {
+        const scrollTop = window.scrollY || window.pageYOffset;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if (docHeight <= 0) return 100;
+        return (scrollTop / docHeight) * 100;
+      }
+
+      function getHorizontalScrollPercent() {
+        const wrapper = document.querySelector('.horizontal-content-wrapper');
+        if (!wrapper) return 0;
+        const scrollLeft = wrapper.scrollLeft;
+        const scrollWidth = wrapper.scrollWidth - wrapper.clientWidth;
+        if (scrollWidth <= 0) return 100;
+        return (scrollLeft / scrollWidth) * 100;
+      }
+
+      function checkAndPushVertical() {
+        const percent = getVerticalScrollPercent();
+        thresholds.forEach(t => {
+          if (percent >= t && !verticalTracked.has(t)) {
+            verticalTracked.add(t);
+            window.dataLayer.push({
+              event: 'scroll_depth',
+              scroll_type: 'vertical',
+              scroll_percent: t
+            });
+          }
+        });
+      }
+
+      function checkAndPushHorizontal() {
+        const percent = getHorizontalScrollPercent();
+        thresholds.forEach(t => {
+          if (percent >= t && !horizontalTracked.has(t)) {
+            horizontalTracked.add(t);
+            window.dataLayer.push({
+              event: 'scroll_depth',
+              scroll_type: 'horizontal',
+              scroll_percent: t
+            });
+          }
+        });
+      }
+
+      window.addEventListener('scroll', checkAndPushVertical);
+
+      const wrapper = document.querySelector('.horizontal-content-wrapper');
+      if (wrapper) {
+        wrapper.addEventListener('scroll', checkAndPushHorizontal);
+      }
+
+      window.addEventListener('load', () => {
+        checkAndPushVertical();
+        checkAndPushHorizontal();
+      });
+    })();
+  </script>
+
 </body>
 </html>

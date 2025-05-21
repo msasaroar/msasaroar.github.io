@@ -4,8 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Track File Downloads with GTM</title>
+
+  <!-- Google Tag Manager -->
   <script>
-      // Initialize Google Tag Manager
       (function(w, d, s, l, i) {
           w[l] = w[l] || [];
           w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
@@ -18,48 +19,79 @@
       })(window, document, 'script', 'dataLayer', 'GTM-MB72WSHR');
   </script>
 
-
   <style>
     body {
       background-color: white;
       color: black;
       font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: green;
+      color: black;
+      font-weight: bold;
+      font-size: 35px;
       text-align: center;
-      padding-top: 100px;
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .home-button {
+      position: absolute;
+      border-radius: 8px;
+      font-size: 16px;
+      left: 15px;
+      top: 10px;
+      background-color: orange;
+      color: blue;
+      padding: 15px 30px;
+      text-decoration: none;
+      border: 5px solid darkgreen;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    main {
+      padding: 90px 20px 40px;
+      max-width: 600px;
+      margin: auto;
+      text-align: center;
     }
 
     h1 {
       color: green;
+      margin-bottom: 40px;
     }
 
     a.download-link {
-      display: block;
-      margin: 15px auto;
-      padding: 10px 20px;
+      display: inline-block;
+      margin: 10px auto;
+      padding: 15px 40px;
       background-color: orange;
       color: blue;
       text-decoration: none;
-      width: 200px;
-      border-radius: 5px;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 18px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
     }
 
     a.download-link:hover {
       background-color: blue;
       color: orange;
-    }
-
-    footer {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background-color: #f1f1f1;
-      text-align: center;
-      height: 50px;
-    }
-
-    footer object {
-      width: 100%;
-      height: 100%;
     }
   </style>
 </head>
@@ -72,14 +104,37 @@
   </noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <h1>File Download Event Demo</h1>
-  <!--a href="../files/sample.pdf" class="download-link" download>Download PDF</a-->
-  <a href="sample.pdf" class="download-link" download>Download PDF</a>
-  <a href="sample.docx" class="download-link" download>Download DOCX</a>
-  <a href="sample.xlsx" class="download-link" download>Download XLSX</a>
-  <a href="sample.zip" class="download-link" download>Download ZIP</a>
-  <a href="Sample.jpg" class="download-link" download>Download JPG</a>
-  <a href="sample.mp4" class="download-link" download>Download MP4</a>
+  <header>
+    <button class="home-button" onclick="location.href='index.html'">Home</button>
+    Track File Downloads with GTM
+  </header>
+
+  <main>
+    <h1>File Download Event Demo</h1>
+    <a href="sample.pdf" class="download-link" download>Download PDF</a>
+    <a href="sample.docx" class="download-link" download>Download DOCX</a>
+    <a href="sample.xlsx" class="download-link" download>Download XLSX</a>
+    <a href="sample.zip" class="download-link" download>Download ZIP</a>
+    <a href="Sample.jpg" class="download-link" download>Download JPG</a>
+    <a href="sample.mp4" class="download-link" download>Download MP4</a>
+  </main>
+
+  <script>
+    // Track file downloads via dataLayer push
+    document.querySelectorAll('a.download-link').forEach(link => {
+      link.addEventListener('click', event => {
+        const fileUrl = event.currentTarget.getAttribute('href');
+        const fileName = fileUrl.split('/').pop();
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'file_download',
+          file_name: fileName,
+          file_url: fileUrl
+        });
+        // Optionally, console log for debugging
+        console.log('File download event pushed:', fileName);
+      });
+    });
+  </script>
 </body>
 </html>
-
