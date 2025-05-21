@@ -100,28 +100,39 @@
 
   <main>
     <div class="content-container">
-      <div class="text-section">
-        <h2>Why Is Repository Video Engagement Tracking a Custom Event in GTM?</h2>
-        <p>1. Repository videos (such as self-hosted files or embedded from non-YouTube sources) are <strong>not automatically tracked</strong> by GTM or GA4.</p>
-        <p>2. GTM does <strong>not offer built-in triggers</strong> for play, pause, or completion of custom video players.</p>
-        <p>3. We use a <strong>Custom HTML Tag</strong> that runs JavaScript to detect video interactions.</p>
-        <p>4. These scripts push events to <code>dataLayer</code>, and <strong>Custom Event Triggers</strong> in GTM respond to them.</p>
-      </div>
+        <div class="text-section">
+            <h2>Why Is Repository Video Engagement Tracking a Custom Event in GTM?</h2>
+            <p>1. Repository videos (such as self-hosted files or embedded from non-YouTube sources) are <strong>not automatically tracked</strong> by GTM or GA4.</p>
+            <p>2. GTM does <strong>not offer built-in triggers</strong> for play, pause, or completion of custom video players.</p>
+            <p>3. We use a <strong>Custom HTML Tag</strong> that runs JavaScript to detect video interactions.</p>
+            <p>4. These scripts push events to <code>dataLayer</code>, and <strong>Custom Event Triggers</strong> in GTM respond to them.</p>
+        </div>
 
-      <div class="video-section">
+        <div class="video-section">
             <video id="repositoryVideo" controls>
-            <source src="/Showcase-Project/Files/sample.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-      </div>
+                <source src="/Showcase-Project/Files/sample_1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p id="videoError" style="color: red; display: none;">⚠️ ভিডিওটি লোড করা যায়নি। অনুগ্রহ করে ফাইলটি সঠিকভাবে আপলোড হয়েছে কি না তা যাচাই করুন।</p>
+        </div>
+
     </div>
   </main>
 </body>
 </html>
 
 
+
+
 <!--
-            <source src="\Showcase-Project\Files\sample.mp4" type="video/mp4">
+      <div class="video-section">
+            <video id="repositoryVideo" controls>
+            <source src="/Showcase-Project/Files/sample.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+      </div>
+
+
 ঊপরোক্ত html পেইজ ট্র্যাকিং এ Custom HTML Tag এ নিম্নোক্ত কোড ব্যবহার করা যাবে কি?
 GTM এ প্রয়োজনীয় সেত-আপ করা হবে।
 
