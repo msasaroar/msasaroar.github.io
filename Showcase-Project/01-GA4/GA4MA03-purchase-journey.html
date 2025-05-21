@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>eCommerce Purchase Journey</title>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id=' + i + dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB72WSHR');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <style>
+    body {
+      background-color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    header {
+      background-color: green;
+      color: black;
+      font-weight: bold;
+      font-size: 35px;
+      text-align: center;
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .home-button {
+      position: absolute;
+      left: 15px;
+      top: 10px;
+      background-color: orange;
+      color: blue;
+      padding: 15px 30px;
+      font-size: 16px;
+      font-weight: bold;
+      border: 5px solid darkgreen;
+      border-radius: 6px;
+      text-decoration: none;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    main {
+      padding: 120px 20px 50px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .step-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 30px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 10px;
+    }
+
+    .step-card {
+      flex: 1 1 400px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 20px;
+      color: black;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+
+    /* Different background colors for cards */
+    .card-1 { background-color: #fff9c4; }   /* light yellow */
+    .card-2 { background-color: #ffe0b2; }   /* light orange */
+    .card-3 { background-color: #dcedc8; }   /* light green */
+    .card-4 { background-color: #b2ebf2; }   /* light cyan */
+    .card-5 { background-color: #f8bbd0; }   /* light pink */
+    .card-6 { background-color: #e1bee7; }   /* light purple */
+    .card-7 { background-color: #c5cae9; }   /* light indigo */
+    .card-8 { background-color: #c8e6c9; }   /* light teal/green */
+    .card-9 { background-color: #ffcdd2; }   /* light red */
+    .card-10 { background-color: #d7ccc8; }  /* light brown */
+
+    .step-card h2 {
+      margin-bottom: 15px;
+      font-size: 20px;
+    }
+
+    button {
+      background-color: orange;
+      color: blue;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    /* JSON display box */
+    .json-box {
+      flex: 1 1 350px;
+      background: #f5f5f5;
+      border: 1px solid #999;
+      border-radius: 10px;
+      padding: 15px;
+      font-family: monospace;
+      font-size: 14px;
+      white-space: pre-wrap;
+      max-height: 230px;
+      overflow-y: auto;
+      text-align: left;
+      box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header>
+    eCommerce Purchase Journey
+    <a class="home-button" href="index.html">Home</a>
+  </header>
+
+  <main>
+    <div class="step-wrapper card-1">
+      <div class="step-card">
+        <h2>Step 01: View Item List [OPTIONAL]</h2>
+        <button onclick="fireEvent('view_item_list', 0)">View Item List</button>
+      </div>
+      <pre class="json-box" id="json-box-0">{ }</pre>
+    </div>
+
+    <div class="step-wrapper card-2">
+      <div class="step-card">
+        <h2>Step 02: Select Item [OPTIONAL]</h2>
+        <button onclick="fireEvent('select_item', 1)">Select Item</button>
+      </div>
+      <pre class="json-box" id="json-box-1">{ }</pre>
+    </div>
+
+    <div class="step-wrapper card-3">
+      <div class="step-card">
+        <h2>Step 03: View Item</h2>
+        <button onclick="fireEvent('view_item', 2)">View Item</button>
+      </div>
+      <pre class="json-box" id="json-box-2">{ }</pre>
+    </div>
+
+    <div class="step-wrapper card-4">
+      <div class="step-card">
+        <h2>Step 04: Add to Cart</h2>
+        <button onclick="fireEvent('add_to_cart', 3)">Add to Cart</button>
+      </div>
+      <pre class="json-box" id="json-box-3">{ }</pre>
+    </div>
+
+    <div class="step-wrapper card-5">
+      <div class="step-card">
+        <h2>Step 05: View Cart [OPTIONAL]</h2>
+        <button onclick="fireEvent('view_cart', 4)">View Cart</button>
+      </div>
+      <pre class="json-box" id="json-box-4">{ }</pre>
+    </div>
+
+    <div class="step-wrapper card-6">
+      <div class="step-card">
+        <h2>Step 06: Remove from Cart [OPTIONAL]</h2>
+        <button onclick="fireEvent('remove_from_cart', 5)">Remove from Cart</button>
+      </div>
+      <pre class="json-box" id="json-box-5">{ }</pre>
+    </div>
+
+    <div class="step-wrapper card-7">
+      <div class="step-card">
+        <h2>Step 07: Begin Checkout</h2>
+        <button onclick="fireEvent('begin_checkout', 6)">Begin Checkout</button>
+      </div>
+      <pre class="json-box" id="json-box-6">{ }</pre>
+    </div>
+
+    <div class="step-wrapper card-8">
+      <div class="step-card">
+        <h2>Step 08: Add Shipping Info</h2>
+        <button onclick="fireEvent('add_shipping_info', 7)">Add Shipping Info</button>
+      </div>
+      <pre class="json-box" id="json-box-7">{ }</pre>
+    </div>
+
+    <div class="step-wrapper card-9">
+      <div class="step-card">
+        <h2>Step 09: Add Payment Info</h2>
+        <button onclick="fireEvent('add_payment_info', 8)">Add Payment Info</button>
+      </div>
+      <pre class="json-box" id="json-box-8">{ }</pre>
+    </div>
+
+    <div class="step-wrapper card-10">
+      <div class="step-card">
+        <h2>Step 10: Purchase</h2>
+        <button onclick="fireEvent('purchase', 9)">Purchase</button>
+      </div>
+      <pre class="json-box" id="json-box-9">{ }</pre>
+    </div>
+  </main>
+
+  <script>
+    const cartId = 'CART-' + Math.floor(Math.random() * 1000000000);
+
+    function fireEvent(eventName, index) {
+      const item = {
+        item_id: 'SKU123',
+        item_name: 'Test Product',
+        currency: 'USD',
+        price: 49.99,
+        quantity: 1
+      };
+
+      const eventData = {
+        event: eventName,
+        cart_id: cartId,
+        currency: 'USD',
+        value: 49.99,
+        items: [item]
+      };
+
+      if (eventName === 'purchase') {
+        const timestamp = Math.floor(Date.now() / 1000).toString().padStart(10, '0');
+        const randomPart = Math.floor(Math.random() * 1000).toString().padStart(3, '0');
+        eventData.transaction_id = 'PURCHASE|' + timestamp + '|' + randomPart;
+      }
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push(eventData);
+
+      // Show the JSON data in the right box
+      const jsonBox = document.getElementById(`json-box-${index}`);
+      jsonBox.textContent = JSON.stringify(eventData, null, 2);
+
+      // alert(`${eventName} event pushed to dataLayer`);
+    }
+  </script>
+</body>
+</html>
