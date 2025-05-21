@@ -122,3 +122,42 @@
   </main>
 </body>
 </html>
+
+<!--
+ঊপরোক্ত html পেইজ ট্র্যাকিং এ Custom HTML Tag এ নিম্নোক্ত কোড ব্যবহার করা যাবে কি?
+GTM এ প্রয়োজনীয় সেত-আপ করা হবে।
+
+<script>
+  window.addEventListener('DOMContentLoaded', function() {
+    var video = document.getElementById('repositoryVideo');
+    if (!video) return;
+
+    function trackVideoEvent(action, currentTime) {
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+            'event': 'video_engagement',
+            'video_action': action,
+            'video_title': video.querySelector('source')?.getAttribute('src'),
+            'current_time': Math.round(currentTime)
+        });
+    }
+
+    video.addEventListener('play', function() {
+        trackVideoEvent('play', video.currentTime);
+    });
+
+    video.addEventListener('pause', function() {
+        trackVideoEvent('pause', video.currentTime);
+    });
+
+    video.addEventListener('seeked', function() {
+        trackVideoEvent('seek', video.currentTime);
+    });
+
+    video.addEventListener('ended', function() {
+        trackVideoEvent('complete', video.currentTime);
+    });
+  });
+</script>
+-->
+
