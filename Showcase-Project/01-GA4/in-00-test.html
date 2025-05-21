@@ -1,111 +1,508 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Track Video Play & Pause Event</title>
-
-  <!-- Google Tag Manager -->
-  <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MB72WSHR');
-  </script>
-  <!-- End Google Tag Manager -->
-
-  <style>
-    body {
-      background-color: white;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
+এই হলো GTM Container এর JSON: {
+    "exportFormatVersion": 2,
+    "exportTime": "2025-05-21 06:57:49",
+    "containerVersion": {
+        "path": "accounts/6292611920/containers/218686500/versions/0",
+        "accountId": "6292611920",
+        "containerId": "218686500",
+        "containerVersionId": "0",
+        "container": {
+            "path": "accounts/6292611920/containers/218686500",
+            "accountId": "6292611920",
+            "containerId": "218686500",
+            "name": "Container | GA4",
+            "publicId": "GTM-MB72WSHR",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1745857245553",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6292611920/containers/218686500/workspaces?apiLink=container",
+            "features": {
+                "supportUserPermissions": true,
+                "supportEnvironments": true,
+                "supportWorkspaces": true,
+                "supportGtagConfigs": false,
+                "supportBuiltInVariables": true,
+                "supportClients": false,
+                "supportFolders": true,
+                "supportTags": true,
+                "supportTemplates": true,
+                "supportTriggers": true,
+                "supportVariables": true,
+                "supportVersions": true,
+                "supportZones": true,
+                "supportTransformations": false
+            },
+            "tagIds": [
+                "GTM-MB72WSHR"
+            ]
+        },
+        "tag": [
+            {
+                "accountId": "6292611920",
+                "containerId": "218686500",
+                "tagId": "685",
+                "name": "GA4CE14 | Tag | video_pause",
+                "type": "gaawe",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "eventSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "P_tag_id"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "GA4CE14"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "P_video_title"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{GA4CE14 | dlv | video_title}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "P_video_percent"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{Video Percent}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "video_pause"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "{{GA4 | 00 | Measurment ID}}"
+                    }
+                ],
+                "fingerprint": "1747798573419",
+                "firingTriggerId": [
+                    "330"
+                ],
+                "parentFolderId": "749",
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6292611920",
+                "containerId": "218686500",
+                "tagId": "913",
+                "name": "GA4CE14 | Tag | Custom HTML",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  var tagAdded = false;\n\n  window.onYouTubeIframeAPIReady = function () {\n    var player = new YT.Player('demo-video', {\n      events: {\n        'onStateChange': function (event) {\n          window.dataLayer = window.dataLayer || [];\n\n          if (event.data == YT.PlayerState.PLAYING) {\n            dataLayer.push({\n              'event': 'video_play',\n              'video_title': player.getVideoData().title\n            });\n          }\n\n          if (event.data == YT.PlayerState.PAUSED) {\n            dataLayer.push({\n              'event': 'video_pause',\n              'video_title': player.getVideoData().title\n            });\n          }\n        }\n      }\n    });\n  };\n\n  if (!tagAdded) {\n    var tag = document.createElement('script');\n    tag.src = \"https://www.youtube.com/iframe_api\";\n    var firstScript = document.getElementsByTagName('script')[0];\n    firstScript.parentNode.insertBefore(tag, firstScript);\n    tagAdded = true;\n  }\n</script>\n\n"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1747800260907",
+                "firingTriggerId": [
+                    "914"
+                ],
+                "parentFolderId": "749",
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6292611920",
+                "containerId": "218686500",
+                "tagId": "916",
+                "name": "GA4CE14 | Tag | video_play",
+                "type": "gaawe",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "eventSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "P_tag_id"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "GA4CE14"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "P_video_title"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{GA4CE14 | dlv | video_title}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "P_video_percent"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{Video Percent}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "video_play"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "{{GA4 | 00 | Measurment ID}}"
+                    }
+                ],
+                "fingerprint": "1747798755870",
+                "firingTriggerId": [
+                    "898"
+                ],
+                "parentFolderId": "749",
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            }
+        ],
+        "trigger": [
+            {
+                "accountId": "6292611920",
+                "containerId": "218686500",
+                "triggerId": "330",
+                "name": "GA4CE14 | Trigger | video_pause",
+                "type": "YOU_TUBE_VIDEO",
+                "filter": [
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Page URL}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "/GA4CE14"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1747798119309",
+                "parentFolderId": "749",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "captureComplete",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "captureStart",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "fixMissingApi",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "triggerStartOption",
+                        "value": "DOM_READY"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "capturePause",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "captureProgress",
+                        "value": "false"
+                    }
+                ]
+            },
+            {
+                "accountId": "6292611920",
+                "containerId": "218686500",
+                "triggerId": "898",
+                "name": "GA4CE12 | Trigger | video_play",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "video_play"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Page URL}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "/GA4CE12"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1747673666058",
+                "parentFolderId": "749"
+            },
+            {
+                "accountId": "6292611920",
+                "containerId": "218686500",
+                "triggerId": "914",
+                "name": "GA4CE14 | Trigger | Inject Custom HTML",
+                "type": "DOM_READY",
+                "filter": [
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Page URL}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "/GA4CE14"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1747797969903",
+                "parentFolderId": "749"
+            },
+            {
+                "accountId": "6292611920",
+                "containerId": "218686500",
+                "triggerId": "915",
+                "name": "GA4CE14 | Trigger | video_play",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "video_play"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Page URL}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "/GA4CE14"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1747798308094",
+                "parentFolderId": "749"
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "6292611920",
+                "containerId": "218686500",
+                "variableId": "9",
+                "name": "GA4 | 00 | Measurment ID | Pub",
+                "type": "c",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "G-NJWCTEM8EE"
+                    }
+                ],
+                "fingerprint": "1746352232698",
+                "parentFolderId": "749",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6292611920",
+                "containerId": "218686500",
+                "variableId": "163",
+                "name": "GA4 | 00 | Measurment ID",
+                "type": "c",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "{{GA4 | 00 | Measurment ID | Pub}}"
+                    }
+                ],
+                "fingerprint": "1746352232657",
+                "parentFolderId": "749",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6292611920",
+                "containerId": "218686500",
+                "variableId": "917",
+                "name": "GA4CE14 | dlv | video_title",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "video_title"
+                    }
+                ],
+                "fingerprint": "1747798511213",
+                "parentFolderId": "749",
+                "formatValue": {}
+            }
+        ],
+        "folder": [
+            {
+                "accountId": "6292611920",
+                "containerId": "218686500",
+                "folderId": "749",
+                "name": "Google Analytics",
+                "fingerprint": "1746334594789"
+            }
+        ],
+        "builtInVariable": [
+            {
+                "accountId": "6292611920",
+                "containerId": "218686500",
+                "type": "PAGE_URL",
+                "name": "Page URL"
+            },
+            {
+                "accountId": "6292611920",
+                "containerId": "218686500",
+                "type": "VIDEO_PERCENT",
+                "name": "Video Percent"
+            }
+        ],
+        "fingerprint": "1747810669219",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6292611920/containers/218686500/versions/0?apiLink=version"
     }
-
-    header {
-      background-color: green;
-      color: black;
-      font-weight: bold;
-      font-size: 35px;
-      text-align: center;
-      padding: 20px 0;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .home-button {
-      position: absolute;
-      border-radius: 8px;
-      font-size: 16px;
-      left: 15px;
-      top: 10px;
-      background-color: orange;
-      color: blue;
-      padding: 15px 30px;
-      text-decoration: none;
-      border: none;
-      font-weight: bold;
-      cursor: pointer;
-      border: 5px solid darkgreen;
-      border-radius: 6px;
-      z-index: 1001;
-    }
-
-    .home-button:hover {
-      background-color: blue;
-      color: orange;
-    }
-
-    main {
-      padding: 75px 20px 0px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 30px;
-    }
-
-    iframe {
-      display: block;
-      margin: 30px auto;
-      border: 3px solid green;
-      border-radius: 12px;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Google Tag Manager (noscript) -->
-  <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe>
-  </noscript>
-  <!-- End Google Tag Manager (noscript) -->
-
-  <header>
-    <button class="home-button" onclick="window.location.href='index.html';">Home</button>
-    Track Video Play & Pause Event
-  </header>
-
-  <main>
-    <section>
-      <h2>About Video Event Tracking</h2>
-      <p>This page tracks both <strong>Video Play</strong> and <strong>Video Pause</strong> events using GTM and YouTube IFrame API.</p>
-      <p>Play or pause the video below to trigger the corresponding events.</p>
-
-      <iframe id="demo-video" width="640" height="360"
-        src="https://www.youtube.com/embed/pByLJEV_ylQ?enablejsapi=1"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
-    </section>
-  </main>
-
-</body>
-</html>
+}
