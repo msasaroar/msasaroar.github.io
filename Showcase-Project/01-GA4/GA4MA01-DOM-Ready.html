@@ -1,54 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>DOM Ready Event</title>
-    
-    <!-- Google Tag Manager -->
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-MB72WSHR');
-    </script>
-    <!-- End Google Tag Manager -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>DOM Ready Event</title>
 
-    <style>
-        body {
-            background: linear-gradient(to right, green, red, orange, blue);
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            padding: 20px;
-            margin: 0;
-        }
-        #message {
-            color: green;
-            font-weight: bold;
-        }
-    </style>
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+      var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-MB72WSHR');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <style>
+    body {
+      background-color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: green;
+      color: black;
+      font-weight: bold;
+      font-size: 35px;
+      text-align: center;
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .home-button {
+      position: absolute;
+      left: 15px;
+      top: 10px;
+      background-color: orange;
+      color: blue;
+      padding: 15px 30px;
+      font-size: 16px;
+      font-weight: bold;
+      border: 5px solid darkgreen;
+      border-radius: 6px;
+      text-decoration: none;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    main {
+      padding: 75px 20px 0px;
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .center-button {
+      background-color: orange;
+      color: blue;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      border: 2px solid darkgreen;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    .center-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    #message {
+      color: green;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
-    <h1>Demonstration of DOM Ready Event</h1>
+  <header>
+    DOM Ready Event
+    <a href="index.html" class="home-button">Home</a>
+  </header>
+
+  <main>
+    <h2>Demonstration of DOM Ready Event</h2>
     <p id="message">Waiting for the DOM to be ready...</p>
+  </main>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const message = document.getElementById('message');
-            message.textContent = 'The DOM is fully loaded and parsed!';
-        });
-    </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const message = document.getElementById('message');
+      message.textContent = 'The DOM is fully loaded and parsed!';
+    });
+  </script>
 </body>
 </html>
