@@ -22,7 +22,6 @@
       font-size: 35px;
       text-align: center;
       padding: 20px 0;
-      //position: fixed;
       width: 100%;
       top: 0;
       z-index: 1000;
@@ -73,20 +72,25 @@
     }
 
     .text-section, .video-section {
-      flex: 1 1 200px;
-      min-width: 400px;
+      flex: 1 1 400px;
+      min-width: 300px;
     }
 
     video {
-      width: 80%;
-      max-width: 100%;
-      height: 200;
+      width: 100%;
+      height: 200px;
       display: block;
+      background: #000;
     }
 
     h2 {
       color: #333;
       margin-top: 30px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.5;
     }
   </style>
 </head>
@@ -96,32 +100,25 @@
 
   <main>
     <div class="content-container">
-        <div class="text-section">
+      <div class="text-section">
         <h2>Why Is Repository Video Engagement Tracking a Custom Event in GTM?</h2>
-        <p>
-            1. Repository videos (such as self-hosted files or those embedded from third-party platforms other than YouTube) are <strong>not automatically tracked</strong> by Google Tag Manager (GTM) or Google Analytics 4 (GA4).
-        </p>
-        <p>
-            2. GTM does <strong>not include built-in triggers</strong> for detecting video <strong>play</strong>, <strong>pause</strong>, or <strong>complete</strong> actions on custom or repository video players.
-        </p>
-        <p>
-            3. You need to use a <strong>Custom HTML Tag</strong> that runs JavaScript to detect these user actions on the video.
-        </p>
-        <p>
-            4. Then you must configure <strong>Custom Event Triggers</strong> in GTM that respond when these JavaScript events are pushed to the <code>dataLayer</code>.
-        </p>
-        </div>
+        <p>1. Repository videos (such as self-hosted files or embedded from non-YouTube sources) are <strong>not automatically tracked</strong> by GTM or GA4.</p>
+        <p>2. GTM does <strong>not offer built-in triggers</strong> for play, pause, or completion of custom video players.</p>
+        <p>3. We use a <strong>Custom HTML Tag</strong> that runs JavaScript to detect video interactions.</p>
+        <p>4. These scripts push events to <code>dataLayer</code>, and <strong>Custom Event Triggers</strong> in GTM respond to them.</p>
+      </div>
 
-        <div class="video-section">
-                <video id="repositoryVideo" controls>
-                    <source src="sample.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-        </div>
+      <div class="video-section">
+        <video id="repositoryVideo" controls>
+          <source src="sample.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
     </div>
   </main>
 </body>
 </html>
+
 
 <!--
 ঊপরোক্ত html পেইজ ট্র্যাকিং এ Custom HTML Tag এ নিম্নোক্ত কোড ব্যবহার করা যাবে কি?
