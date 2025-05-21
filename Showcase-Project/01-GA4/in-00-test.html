@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>সুস্থভাবে বাঁচা বনাম খাওয়ার জন্য বাঁচা</title>
-  
-  <!-- Google Tag Manager -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Repository Video Engagement Tracking</title>
+
+  <!-- GTM Code -->
   <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -13,7 +13,6 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-MB72WSHR');
   </script>
-  <!-- End Google Tag Manager -->
 
   <style>
     header {
@@ -23,7 +22,6 @@
       font-size: 35px;
       text-align: center;
       padding: 20px 0;
-      position: fixed;
       width: 100%;
       top: 0;
       z-index: 1000;
@@ -38,19 +36,17 @@
 
     .home-button {
       position: absolute;
-      border-radius: 8px;
-      font-size: 16px;
       left: 15px;
       top: 10px;
       background-color: orange;
       color: blue;
       padding: 15px 30px;
-      text-decoration: none;
-      border: none;
+      font-size: 16px;
       font-weight: bold;
-      cursor: pointer;
       border: 5px solid darkgreen;
       border-radius: 6px;
+      text-decoration: none;
+      cursor: pointer;
       z-index: 1001;
     }
 
@@ -60,84 +56,124 @@
     }
 
     main {
-      padding: 100px 20px 40px;
-      max-width: 800px;
+      padding: 75px 20px 40px;
+      max-width: 1200px;
       margin: auto;
     }
 
+    .content-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .text-section, .video-section {
+      flex: 1 1 400px;
+      min-width: 300px;
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+      display: block;
+      border: 2px solid #ccc;
+      border-radius: 6px;
+    }
+
     h2 {
-      color: darkgreen;
-      font-size: 28px;
+      color: #333;
+      margin-top: 30px;
     }
 
-    p {
+    #videoError {
+      display: none;
+      color: red;
+      font-weight: bold;
       font-size: 18px;
-      line-height: 1.7;
-    }
-
-    blockquote {
-      font-style: italic;
-      color: gray;
-      border-left: 4px solid green;
-      margin: 20px 0;
-      padding-left: 15px;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
-            height="0" width="0" style="display:none;visibility:hidden"></iframe>
-  </noscript>
-  <!-- End Google Tag Manager (noscript) -->
-
-  <header>
-    <a href="index.html" class="home-button">Home</a>
-    সুস্থভাবে বাঁচা বনাম খাওয়ার জন্য বাঁচা
-  </header>
+  <header>Video Engagement Tracking : Repository Video</header>
+  <a class="home-button" href="index.html">Home</a>
 
   <main>
-    <h2>📜 মূল বক্তব্য</h2>
-    <blockquote>
-      “সুস্থভাবে বাঁচার জন্য খেলে খুব বেশি খাওয়ার প্রয়োজন নাই, কিন্তু খাওয়ার জন্য বাঁচলে সুস্থ থাকা যায় না।”
-    </blockquote>
+    <div class="content-container">
+      <div class="text-section">
+        <h2>Why Is Repository Video Engagement Tracking a Custom Event in GTM?</h2>
+        <p>
+          1. Repository videos (self-hosted or non-YouTube) are not tracked automatically by GTM/GA4.<br>
+          2. GTM lacks built-in triggers for play/pause/complete on such videos.<br>
+          3. You need a Custom HTML Tag with JS to detect these events.<br>
+          4. Custom Event triggers in GTM listen for these JS events pushed to dataLayer.
+        </p>
 
-    <h2>🔍 ব্যাখ্যা</h2>
-    <p>
-      এই কথাটি আমাদের জীবনের উদ্দেশ্য এবং খাদ্যাভ্যাস সম্পর্কে গভীর উপলব্ধি দেয়। 
-      যারা সুস্থভাবে বাঁচতে চায়, তারা পরিমিত ও পুষ্টিকর খাবার গ্রহণ করলেই যথেষ্ট। 
-      কিন্তু যারা শুধুমাত্র খাওয়ার জন্য বাঁচে, তারা নিজেদের শরীরের ভারসাম্য হারিয়ে ফেলে।
-    </p>
+        <div id="videoError">
+          ভিডিও ফাইল খুঁজে পাওয়া যায়নি। দয়া করে নিশ্চিত করুন <code>sample.mp4</code> ফাইলটি আপলোড করা হয়েছে।
+        </div>
+      </div>
 
-    <h2>🎯 প্রথম দিক: সুস্থভাবে বাঁচার জন্য খাওয়া</h2>
-    <p>
-      যখন আমরা লক্ষ্য করি স্বাস্থ্যকে — তখন আমাদের দরকার পরিমিত খাবার। এতে শরীর ভালো থাকে, মস্তিষ্ক সজাগ থাকে, এবং কর্মক্ষমতা বাড়ে। 
-      অনেক গবেষণায় দেখা গেছে, অতিরিক্ত খাবার নয়, বরং সুষম খাবারই দীর্ঘ আয়ু ও স্বাস্থ্য রক্ষায় কার্যকর।
-    </p>
-
-    <h2>⚠️ বিপরীত: খাওয়ার জন্য বাঁচা</h2>
-    <p>
-      যারা জীবনের মূল উদ্দেশ্য বানিয়ে ফেলে খাওয়া, আনন্দ-ভোগ, তারা বেশিরভাগ সময়েই স্বাস্থ্য উপেক্ষা করে। ফলস্বরূপ, ওবেসিটি, ডায়াবেটিস, হৃদরোগসহ নানা সমস্যা দেখা দেয়। 
-      তখন জীবনের স্বাদ হারায় এবং চিকিৎসার পিছনে সময় ও টাকা খরচ হয়।
-    </p>
-
-    <h2>📌 শিক্ষা</h2>
-    <p>
-      জীবন উপভোগ করতে চাইলে আগে শরীরকে উপভোগযোগ্য রাখতে হবে। 
-      সেইজন্য আমাদের খাদ্যাভ্যাস হতে হবে সচেতন, সুষম ও নিয়ন্ত্রিত।
-    </p>
-
-    <h2>🧠 ইংরেজিতে একটি মিলপ্রবচন</h2>
-    <blockquote>
-      “We should eat to live, not live to eat.”
-    </blockquote>
-
-    <h2>🔚 উপসংহার</h2>
-    <p>
-      জীবনকে অর্থবহ করতে হলে দরকার একটি সুস্থ শরীর। আর সুস্থ শরীরের জন্য প্রয়োজন খাদ্যে ভারসাম্য ও পরিমিতিবোধ। 
-      সুতরাং, খাওয়ার পেছনে জীবন নয়, জীবনকে রক্ষা করতে খাওয়া — এটাই হোক আমাদের মূলমন্ত্র।
-    </p>
+      <div class="video-section">
+        <video id="repositoryVideo" controls>
+          <source src="sample1.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
   </main>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      var video = document.getElementById('repositoryVideo');
+      var videoSource = video?.querySelector('source');
+      var errorMsg = document.getElementById('videoError');
+
+      if (!video || !videoSource) return;
+
+      var videoSrc = videoSource.getAttribute('src');
+
+      // ভিডিও ফাইল আছে কি না চেক (HEAD request)
+      fetch(videoSrc, { method: 'HEAD' })
+        .then(function (response) {
+          if (!response.ok) {
+            throw new Error('Video file not found');
+          }
+        })
+        .catch(function () {
+          video.style.display = 'none';
+          errorMsg.style.display = 'block';
+        });
+
+      // ভিডিও ইভেন্ট ট্র্যাকিং ও ডেটালেয়ারে পুশ
+      function trackVideoEvent(action, currentTime) {
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+          event: 'video_engagement',
+          video_action: action,
+          video_title: videoSrc,
+          current_time: Math.round(currentTime)
+        });
+      }
+
+      video.addEventListener('play', function () {
+        trackVideoEvent('play', video.currentTime);
+      });
+
+      video.addEventListener('pause', function () {
+        trackVideoEvent('pause', video.currentTime);
+      });
+
+      video.addEventListener('seeked', function () {
+        trackVideoEvent('seek', video.currentTime);
+      });
+
+      video.addEventListener('ended', function () {
+        trackVideoEvent('complete', video.currentTime);
+      });
+    });
+  </script>
 </body>
 </html>
