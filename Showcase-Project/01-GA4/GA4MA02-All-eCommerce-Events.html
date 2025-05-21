@@ -201,7 +201,21 @@
           coupon: "SUMMER_SALE",
           items: [{ item_id: "SKU_123", item_name: "T-Shirt", price: 25.00, quantity: 3 }]
         }
+      },
+      refund: {
+        event: "refund",
+        ecommerce: {
+          transaction_id: "T98765",
+          items: [
+            {
+              item_id: "SKU_123",
+              item_name: "T-Shirt",
+              quantity: 3
+            }
+          ]
+        }
       }
+
     };
 
     const buttonContainer = document.getElementById("buttons");
