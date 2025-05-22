@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Form Submit Data Layer</title>
-  <script async>
-    // Google Tag Manager
+
+  <!-- Google Tag Manager -->
+  <script>
     (function(w, d, s, l, i) {
       w[l] = w[l] || [];
       w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
@@ -17,53 +18,76 @@
       f.parentNode.insertBefore(j, f);
     })(window, document, 'script', 'dataLayer', 'GTM-MB72WSHR');
   </script>
+  <!-- End Google Tag Manager -->
+
   <style>
     body {
-      background: linear-gradient(to right, green, red, orange, blue);
-      color: black;
+      background-color: white;
       font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
     }
 
     header {
-      position: fixed;
-      top: 0;
-      width: 100%;
       background-color: green;
       color: black;
+      font-weight: bold;
+      font-size: 35px;
       text-align: center;
-      padding: 10px 0;
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
     }
 
-    header a {
+    .home-button {
       position: absolute;
+      border-radius: 8px;
+      font-size: 16px;
+      left: 15px;
       top: 10px;
-      left: 10px;
       background-color: orange;
       color: blue;
-      padding: 5px 10px;
+      padding: 15px 30px;
       text-decoration: none;
-      border-radius: 5px;
+      border: 5px solid darkgreen;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1001;
     }
 
-    header a:hover {
+    .home-button:hover {
       background-color: blue;
       color: orange;
     }
 
-    form {
-      margin: 100px auto;
-      width: 300px;
+    main {
+      padding: 75px 0px 0px;
+      max-width: 1200px;
+      margin: auto;
       text-align: center;
     }
 
+    form {
+      background-color: #f9f9f9;
+      padding: 20px;
+      max-width: 400px;
+      margin: 50px auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
     label {
+      display: block;
+      margin: 10px 0 5px;
       font-weight: bold;
     }
 
     input {
       width: 100%;
-      padding: 8px;
-      margin: 5px 0 10px;
+      padding: 10px;
+      margin-bottom: 15px;
       border: 1px solid #ccc;
       border-radius: 4px;
     }
@@ -71,10 +95,13 @@
     button {
       background-color: orange;
       color: blue;
-      padding: 10px 20px;
+      padding: 12px 24px;
       border: none;
-      border-radius: 5px;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: bold;
       cursor: pointer;
+      display: inline-block;
     }
 
     button:hover {
@@ -86,58 +113,67 @@
       position: fixed;
       bottom: 0;
       width: 100%;
+      height: 50px;
       background-color: #f1f1f1;
       text-align: center;
-      height: 50px;
     }
   </style>
+                      <link rel="stylesheet" href="global-style.css">
+
 </head>
 <body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
   <header>
-    <a href="index.html">Home</a>
+<button class="home-button" onclick="location.href='index.html'">Home</button>
     Form Submit Example
   </header>
 
-  <form id="exampleForm">
-    <label for="name">Name:</label><br>
-    <input type="text" id="name" name="name" placeholder="Enter your name" required><br>
-    <label for="email">Email:</label><br>
-    <input type="email" id="email" name="email" placeholder="Enter your email" required><br>
-    <button type="submit">Submit</button>
-  </form>
+  <main>
+    <form id="exampleForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required />
+
+      <button type="submit">Submit</button>
+    </form>
+  </main>
+
+  <footer>
+    <object type="text/html" data="footer.html" style="width: 100%; height: 100%;"></object>
+  </footer>
 
   <script>
-    // Form submission tracking
     document.getElementById('exampleForm').addEventListener('submit', function(event) {
-      event.preventDefault(); // Prevent form submission for demo purposes
+      event.preventDefault();
 
-      // Collect form data
       const name = document.getElementById('name').value;
       const email = document.getElementById('email').value;
       const currentHtmlFileName = window.location.pathname.split('/').pop();
 
-      // Push data to dataLayer
       window.dataLayer = window.dataLayer || [];
-      dataLayer.push({
+      window.dataLayer.push({
         event: 'formSubmit',
         formData: {
           tagCode: 324,
           htmlFileName: currentHtmlFileName,
           visitorsName: name,
-          visitorsEmail: email, 
+          visitorsEmail: email,
           timestamp: new Date().toISOString()
         }
       });
 
-      // Provide feedback and log for debugging
       console.log('Form data pushed to dataLayer:', { name, email });
       alert('Form submitted! Data sent to the dataLayer.');
-
     });
   </script>
-
-  <footer>
-    <object type="text/html" data="footer.html" style="width: 100%; height: 100%;"></object>
-  </footer>
 </body>
 </html>

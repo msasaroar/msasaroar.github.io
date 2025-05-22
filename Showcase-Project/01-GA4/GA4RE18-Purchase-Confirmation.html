@@ -14,11 +14,48 @@
   })(window,document,'script','dataLayer','GTM-MB72WSHR');</script>
 
   <style>
+    header {
+      background-color: green;
+      color: black;
+      font-weight: bold;
+      font-size: 35px;
+      text-align: center;
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
     body {
       background-color: white;
       font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    main {
+      padding: 100px 20px 40px;
+      max-width: 700px;
+      margin: auto;
       text-align: center;
-      padding: 30px;
+    }
+    .home-button {
+      position: absolute;
+      left: 15px;
+      top: 10px;
+      background-color: orange;
+      color: blue;
+      padding: 15px 30px;
+      font-size: 16px;
+      font-weight: bold;
+      border: 5px solid darkgreen;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      z-index: 1001;
+    }
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
     }
     h1 {
       color: green;
@@ -29,9 +66,6 @@
       background: #f9f9f9;
       border: 2px solid #0057B8;
       border-radius: 8px;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
     }
     table {
       width: 100%;
@@ -46,53 +80,81 @@
       background-color: #0057B8;
       color: white;
     }
+    /* Buttons except home-button (if any) */
+    button {
+      background-color: orange;
+      color: blue;
+      font-weight: bold;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin: 20px auto 0;
+      display: block;
+      max-width: 200px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    button:hover {
+      background-color: blue;
+      color: orange;
+    }
   </style>
+                    <link rel="stylesheet" href="global-style.css">
+
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
+<header>
+  Purchase Confirmation
+  <a href="index.html" class="home-button">Home</a>
+</header>
+
+<main>
   <h1>Thank You for Your Purchase!</h1>
   <div class="summary" id="purchaseSummary">
     <!-- Purchase details will be injected here -->
   </div>
+</main>
 
-  <script>
-    const data = JSON.parse(sessionStorage.getItem('purchaseInfo'));
-    if (data && data.ecommerce) {
-      const ec = data.ecommerce;
-      let html = `
-        <h3>Transaction ID: ${ec.transaction_id}</h3>
-        <p>Total: $${ec.value} | Tax: $${ec.tax} | Shipping: $${ec.shipping} | Coupon: ${ec.coupon}</p>
-        <h4>Purchased Items:</h4>
-        <table>
-          <tr>
-            <th>Item Name</th>
-            <th>ID</th>
-            <th>Price</th>
-            <th>Brand</th>
-            <th>Category</th>
-          </tr>
+<script>
+  const data = JSON.parse(sessionStorage.getItem('purchaseInfo'));
+  if (data && data.ecommerce) {
+    const ec = data.ecommerce;
+    let html = `
+      <h3>Transaction ID: ${ec.transaction_id}</h3>
+      <p>Total: $${ec.value} | Tax: $${ec.tax} | Shipping: $${ec.shipping} | Coupon: ${ec.coupon}</p>
+      <h4>Purchased Items:</h4>
+      <table>
+        <tr>
+          <th>Item Name</th>
+          <th>ID</th>
+          <th>Price</th>
+          <th>Brand</th>
+          <th>Category</th>
+        </tr>
+    `;
+
+    ec.items.forEach(item => {
+      html += `
+        <tr>
+          <td>${item.item_name}</td>
+          <td>${item.item_id}</td>
+          <td>$${item.price}</td>
+          <td>${item.item_brand}</td>
+          <td>${item.item_category}</td>
+        </tr>
       `;
+    });
 
-      ec.items.forEach(item => {
-        html += `
-          <tr>
-            <td>${item.item_name}</td>
-            <td>${item.item_id}</td>
-            <td>$${item.price}</td>
-            <td>${item.item_brand}</td>
-            <td>${item.item_category}</td>
-          </tr>
-        `;
-      });
-
-      html += '</table>';
-      document.getElementById('purchaseSummary').innerHTML = html;
-    } else {
-      document.getElementById('purchaseSummary').innerHTML = '<p>No purchase information found.</p>';
-    }
-  </script>
+    html += '</table>';
+    document.getElementById('purchaseSummary').innerHTML = html;
+  } else {
+    document.getElementById('purchaseSummary').innerHTML = '<p>No purchase information found.</p>';
+  }
+</script>
 </body>
 </html>

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Working Lead - GA4 Event</title>
 
     <!-- Google Tag Manager -->
@@ -33,6 +33,31 @@
             text-align: center;
             font-size: 24px;
             font-weight: bold;
+            color: black;
+        }
+
+        /* Home Button */
+        .home-button {
+            position: fixed;
+            left: 15px;
+            top: 10px;
+            background-color: orange;
+            color: blue;
+            padding: 15px 30px;
+            border: 5px solid darkgreen;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1001;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .home-button:hover {
+            background-color: blue;
+            color: orange;
         }
 
         /* Lead Form Container */
@@ -100,6 +125,8 @@
             color: black;
         }
     </style>
+                        <link rel="stylesheet" href="global-style.css">
+
 </head>
 <body>
 
@@ -108,6 +135,8 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
+    <!-- Home Button -->
+<button class="home-button" onclick="location.href='index.html'">Home</button>
     <header>
         Working Lead Form
     </header>
@@ -116,10 +145,10 @@
         <div class="lead-form-box">
             <h2>Submit Your Working Lead</h2>
             <p>Provide lead details and we will get back to you.</p>
-            <input type="text" class="input-field" id="lead_name" placeholder="Lead Name">
-            <input type="email" class="input-field" id="lead_email" placeholder="Lead Email">
-            <input type="text" class="input-field" id="lead_phone" placeholder="Lead Phone">
-            <input type="text" class="input-field" id="lead_status" placeholder="Lead Status">
+            <input type="text" class="input-field" id="lead_name" placeholder="Lead Name" />
+            <input type="email" class="input-field" id="lead_email" placeholder="Lead Email" />
+            <input type="text" class="input-field" id="lead_phone" placeholder="Lead Phone" />
+            <input type="text" class="input-field" id="lead_status" placeholder="Lead Status" />
             <button class="lead-btn" onclick="submitWorkingLead()">Submit Lead</button>
         </div>
     </div>

@@ -12,60 +12,96 @@
       padding: 0;
       text-align: center;
     }
+
     header {
       background-color: green;
       color: black;
-      text-align: center;
       font-weight: bold;
-      padding: 20px;
+      font-size: 35px;
+      text-align: center;
+      padding: 20px 0;
       position: fixed;
-      top: 0;
       width: 100%;
+      top: 0;
       z-index: 1000;
     }
+
     .home-button {
       position: absolute;
-      left: 10px;
-      top: 20px;
+      left: 15px;
+      top: -10px;
       background-color: orange;
       color: blue;
+      padding: 15px 30px;
+      text-decoration: none;
       border: none;
-      padding: 10px 15px;
-      cursor: pointer;
       font-weight: bold;
+      cursor: pointer;
+      border: 5px solid darkgreen;
+      border-radius: 6px;
+      z-index: 1001;
+      font-size: 16px;
     }
+
     .home-button:hover {
       background-color: blue;
       color: orange;
     }
-    .container {
-      margin-top: 120px;
+
+    main {
+      padding: 75px 20px 20px;
+      max-width: 1200px;
+      margin: auto;
     }
+
     button {
       background-color: orange;
       color: blue;
-      padding: 10px 20px;
+      padding: 12px 25px;
       font-size: 16px;
       border: none;
       cursor: pointer;
       font-weight: bold;
       margin-top: 20px;
+      border-radius: 6px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
+
     button:hover {
       background-color: blue;
       color: orange;
     }
-    .info {
-      text-align: left;
-      display: inline-block;
-      max-width: 600px;
-      margin-top: 30px;
-    }
+
     label, select {
-      display: block;
+      font-size: 16px;
       margin: 10px auto;
+      display: block;
+    }
+
+    select {
+      padding: 8px 12px;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .info {
+      max-width: 600px;
+      margin: 30px auto;
+      text-align: left;
+    }
+
+    pre {
+      background-color: #f4f4f4;
+      padding: 12px;
+      text-align: left;
+      overflow-x: auto;
+      border-radius: 4px;
     }
   </style>
+                    <link rel="stylesheet" href="global-style.css">
+
 
   <!-- Google Tag Manager -->
   <script>
@@ -84,7 +120,7 @@
     Qualify Lead - GA4 Event Demo
   </header>
 
-  <div class="container">
+  <main>
     <h2>Qualify a Lead</h2>
     <p>Select a lead type and submit to trigger <strong>qualify_lead</strong> event.</p>
 
@@ -102,16 +138,14 @@
       <p><strong>Event Name:</strong> qualify_lead</p>
       <p><strong>Required Parameter:</strong> lead_type</p>
 
-      <h4>Example DataLayer Push:</h4>
-      <pre id="output">
-      </pre>
+      <h4>Example dataLayer.push:</h4>
+      <pre id="output"></pre>
     </div>
-  </div>
+  </main>
 
   <script>
     function qualifyLead() {
       const leadType = document.getElementById('leadType').value;
-
       const eventData = {
         event: "qualify_lead",
         lead_type: leadType

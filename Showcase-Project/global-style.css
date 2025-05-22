@@ -1,0 +1,51 @@
+/* Base Page Reset for Consistency */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Consistent Body Styling */
+body {
+  background-color: white;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* Fixed Header Styling */
+header {
+  background-color: green;
+  color: black;
+  font-weight: bold;
+  font-size: 35px;
+  text-align: center;
+  padding: 20px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Home Button Styling */
+.home-button {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  padding: 15px 30px;
+  background-color: orange;
+  color: blue;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border: 5px solid darkgreen;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 1001;
+  display: inline-block;
+}
+
+.home-button:hover {
+  background-color: blue;
+  color: orange;
+}

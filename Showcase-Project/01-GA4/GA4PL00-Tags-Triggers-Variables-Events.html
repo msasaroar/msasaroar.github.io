@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GTM Basics: Tags, Triggers, Variables & Events</title>
+  <style>
+    header {
+      background-color: green;
+      color: black;
+      font-weight: bold;
+      font-size: 35px;
+      text-align: center;
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    body {
+      background-color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .home-button {
+      position: absolute;
+      border-radius: 8px;
+      font-size: 16px;
+      left: 15px;
+      top: 10px;
+      background-color: orange;
+      color: blue;
+      padding: 15px 30px;
+      text-decoration: none;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      border: 5px solid darkgreen;
+      border-radius: 6px;
+      z-index: 1001;
+    }
+
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    main {
+      padding: 75px 20px 40px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      color: green;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    ul {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+  </style>
+<link rel="stylesheet" href="global-style.css">
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({
+      'gtm.start': new Date().getTime(),event:'gtm.js'
+    });
+    var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+      j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+      f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB72WSHR');
+  </script>
+  <!-- End Google Tag Manager -->
+</head>
+
+<body>
+  <a class="home-button" href="index.html">Home</a>
+
+  <header>GTM Basics: Tags, Triggers, Variables & Events</header>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <main>
+    <div class="section">
+      <h2>📌 What is Google Tag Manager (GTM)?</h2>
+      <p>Google Tag Manager is a free tool from Google that allows marketers and developers to manage and deploy marketing tags (snippets of code or tracking pixels) on your website without modifying the code directly.</p>
+    </div>
+
+    <div class="section">
+      <h2>🏷️ Tag</h2>
+      <p>A Tag is a piece of code that sends data to platforms like Google Analytics, Facebook Pixel, or others.</p>
+      <ul>
+        <li>Example: GA4 Configuration Tag, GA4 Event Tag</li>
+        <li>Fires when the Trigger condition is met</li>
+        <li>Created under the "Tags" section in GTM</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>🎯 Trigger</h2>
+      <p>A Trigger tells GTM when or under what condition a tag should fire.</p>
+      <ul>
+        <li>Types: Page View, Click, Form Submission, Timer, Custom Event, etc.</li>
+        <li>Example: Fire tag only on page URL contains <code>thank-you</code></li>
+        <li>Can include filters/conditions</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>🔧 Variable</h2>
+      <p>Variables are used to capture dynamic values, like page URL, click text, or form field values.</p>
+      <ul>
+        <li>Built-in Examples: Page URL, Page Path, Referrer</li>
+        <li>User-defined Examples: DOM Element, Data Layer Variable</li>
+        <li>Variables make your triggers smarter</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>⚡ Event</h2>
+      <p>Events are interactions users make on your site. GTM uses <code>dataLayer.push</code> to track events and trigger tags.</p>
+      <ul>
+        <li>Example: <code>dataLayer.push({event: 'form_submit'})</code></li>
+        <li>Can be Custom Events or automatic (like page views)</li>
+        <li>Important for GA4 event-based tracking</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>📚 Summary</h2>
+      <ul>
+        <li><strong>Tag</strong>: Sends data (e.g., GA4, Ads)</li>
+        <li><strong>Trigger</strong>: When to fire the tag</li>
+        <li><strong>Variable</strong>: Dynamic values for triggers/tags</li>
+        <li><strong>Event</strong>: User interaction or behavior sent to GTM</li>
+      </ul>
+    </div>
+  </main>
+</body>
+</html>

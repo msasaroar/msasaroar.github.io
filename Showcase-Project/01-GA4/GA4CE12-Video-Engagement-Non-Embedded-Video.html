@@ -48,10 +48,9 @@
       color: blue;
       padding: 15px 30px;
       text-decoration: none;
-      border: none;
+      border: 5px solid darkgreen;
       font-weight: bold;
       cursor: pointer;
-      border: 5px solid darkgreen;
       border-radius: 6px;
       z-index: 1001;
     }
@@ -76,6 +75,8 @@
       border-radius: 10px;
     }
   </style>
+                <link rel="stylesheet" href="global-style.css">
+
 </head>
 <body>
   <!-- ✅ GTM Body Snippet -->
@@ -83,16 +84,13 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <header>
-
-  <h1>Video Engagement Tracking : Non-Embedded Video</h1>
-
+    <h1>Video Engagement Tracking : Non-Embedded Video</h1>
     <a href="index.html" class="home-button">Home</a>
   </header>
 
   <main>
     <h2>For Bigger Blazes</h2>
     <video id="demoVideo" controls>
-      <!--source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" /-->
       <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>

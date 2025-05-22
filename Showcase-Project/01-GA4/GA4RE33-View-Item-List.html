@@ -1,174 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GA4 View Item List Event Demo</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GA4 View Item List Event Demo</title>
 
-<!-- Google Tag Manager (GTM-MB72WSHR) -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MB72WSHR');</script>
+  <!-- Google Tag Manager (GTM-MB72WSHR) -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;
+    j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+    f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MB72WSHR');
+  </script>
 
+  <style>
+    header {
+      background-color: green;
+      color: black;
+      font-weight: bold;
+      font-size: 35px;
+      text-align: center;
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
 
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f8f9fa;
-            text-align: center;
-            padding: 20px;
-            color: #333;
-        }
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            border: 1px solid #ddd;
-        }
-        h2 {
-            color: #1a73e8;
-            margin-bottom: 20px;
-        }
-        .row {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-        .column {
-            flex: 1;
-            background: #f9f9f9;
-            padding: 15px;
-            border-radius: 6px;
-            border: 1px solid #ddd;
-        }
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 15px;
-        }
-        .data-table th, .data-table td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        .data-table th {
-            background-color: #1a73e8;
-            color: white;
-        }
-        .item-section {
-            margin-top: 20px;
-            background: #f9f9f9;
-            padding: 15px;
-            border-radius: 6px;
-            border: 1px solid #ddd;
-        }
-        button {
-            background-color: #1a73e8;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            border-radius: 5px;
-            margin-top: 15px;
-        }
-        button:hover {
-            background-color: #1557b0;
-        }
-    </style>
+    body {
+      background-color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .home-button {
+      position: absolute;
+      left: 15px;
+      top: 10px;
+      background-color: orange;
+      color: blue;
+      padding: 15px 30px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      border: 5px solid darkgreen;
+      border-radius: 6px;
+      z-index: 1001;
+      font-size: 16px;
+    }
+
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    main {
+      padding: 75px 15px 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      color: black;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .column {
+      flex: 1;
+      min-width: 300px;
+      background: #f9f9f9;
+      padding: 15px;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 15px;
+    }
+
+    .data-table th, .data-table td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    .data-table th {
+      background-color: green;
+      color: white;
+    }
+
+    .item-section {
+      margin-top: 20px;
+      background: #f9f9f9;
+      padding: 15px;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+    }
+
+    .event-button {
+      background-color: orange;
+      color: blue;
+      padding: 15px 30px;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin: 20px auto 0;
+      display: block;
+    }
+
+    .event-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+  </style>
+                    <link rel="stylesheet" href="global-style.css">
+
 </head>
 <body>
-<!-- Google Tag Manager (noscript) for GTM-MB72WSHR -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-<!-- Google Tag Manager (noscript) for GTM-N4MMS7TS -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N4MMS7TS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <header>
+    GA4 View Item List Demo
+    <a class="home-button" href="index.html">Home</a>
+  </header>
 
+  <main>
+    <h2>GA4 View Item List Event Tracking</h2>
 
-    <div class="container">
-        <h2>GA4 View Item List Event Tracking</h2>
-        
-        <div class="row">
-            <!-- Left Column: Event Info -->
-            <div class="column">
-                <table class="data-table">
-                    <tr><th>Parameter</th><th>Value</th></tr>
-                    <tr><td>event</td><td>view_item_list</td></tr>
-                    <tr><td>item_list_id</td><td>search_results</td></tr>
-                    <tr><td>item_list_name</td><td>Search Results</td></tr>
-                    <tr><td>currency</td><td>USD</td></tr>
-                </table>
-            </div>
+    <div class="row">
+      <div class="column">
+        <table class="data-table">
+          <tr><th>Parameter</th><th>Value</th></tr>
+          <tr><td>event</td><td>view_item_list</td></tr>
+          <tr><td>item_list_id</td><td>search_results</td></tr>
+          <tr><td>item_list_name</td><td>Search Results</td></tr>
+          <tr><td>currency</td><td>USD</td></tr>
+        </table>
+      </div>
 
-            <!-- Right Column: Additional Info -->
-            <div class="column">
-                <table class="data-table">
-                    <tr><th>Parameter</th><th>Value</th></tr>
-                    <tr><td>search_term</td><td>running shoes</td></tr>
-                    <tr><td>number_of_items</td><td>3</td></tr>
-                    <tr><td>page_location</td><td>/search?q=running+shoes</td></tr>
-                </table>
-            </div>
-        </div>
-
-        <!-- Items Section -->
-        <div class="item-section">
-            <h3>Items in List</h3>
-            <table class="data-table">
-                <tr><th>Item Name</th><th>Item ID</th><th>Price</th><th>Quantity</th><th>Category</th><th>Brand</th></tr>
-                <tr><td>Nike Running Shoes</td><td>SKU12345</td><td>$99.99</td><td>1</td><td>Shoes</td><td>Nike</td></tr>
-                <tr><td>Adidas Running Shoes</td><td>SKU67890</td><td>$89.99</td><td>1</td><td>Shoes</td><td>Adidas</td></tr>
-                <tr><td>Puma Running Shoes</td><td>SKU54321</td><td>$79.99</td><td>1</td><td>Shoes</td><td>Puma</td></tr>
-            </table>
-        </div>
-
-        <button id="trackItemList">Track View Item List</button>
+      <div class="column">
+        <table class="data-table">
+          <tr><th>Parameter</th><th>Value</th></tr>
+          <tr><td>search_term</td><td>running shoes</td></tr>
+          <tr><td>number_of_items</td><td>3</td></tr>
+          <tr><td>page_location</td><td>/search?q=running+shoes</td></tr>
+        </table>
+      </div>
     </div>
 
-    <script>
-        document.getElementById('trackItemList').addEventListener('click', function() {
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({
-                'event': 'view_item_list',
-                'ecommerce': {
-                    'item_list_id': 'search_results',
-                    'item_list_name': 'Search Results',
-                    'currency': 'USD',
-                    'search_term': 'running shoes',
-                    'number_of_items': 3,
-                    'page_location': '/search?q=running+shoes',
-                    'items': [
-                        {
-                            'item_name': 'Nike Running Shoes',
-                            'item_id': 'SKU12345',
-                            'price': 99.99,
-                            'quantity': 1,
-                            'item_category': 'Shoes',
-                            'item_brand': 'Nike'
-                        },
-                        {
-                            'item_name': 'Adidas Running Shoes',
-                            'item_id': 'SKU67890',
-                            'price': 89.99,
-                            'quantity': 1,
-                            'item_category': 'Shoes',
-                            'item_brand': 'Adidas'
-                        },
-                        {
-                            'item_name': 'Puma Running Shoes',
-                            'item_id': 'SKU54321',
-                            'price': 79.99,
-                            'quantity': 1,
-                            'item_category': 'Shoes',
-                            'item_brand': 'Puma'
-                        }
-                    ]
-                }
-            });
-            alert('GA4 View Item List event fired!');
-        });
-    </script>
+    <div class="item-section">
+      <h3>Items in List</h3>
+      <table class="data-table">
+        <tr><th>Item Name</th><th>Item ID</th><th>Price</th><th>Quantity</th><th>Category</th><th>Brand</th></tr>
+        <tr><td>Nike Running Shoes</td><td>SKU12345</td><td>$99.99</td><td>1</td><td>Shoes</td><td>Nike</td></tr>
+        <tr><td>Adidas Running Shoes</td><td>SKU67890</td><td>$89.99</td><td>1</td><td>Shoes</td><td>Adidas</td></tr>
+        <tr><td>Puma Running Shoes</td><td>SKU54321</td><td>$79.99</td><td>1</td><td>Shoes</td><td>Puma</td></tr>
+      </table>
+    </div>
+
+    <button class="event-button" id="trackItemList">Track View Item List</button>
+  </main>
+
+  <script>
+    document.getElementById('trackItemList').addEventListener('click', function () {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'view_item_list',
+        ecommerce: {
+          item_list_id: 'search_results',
+          item_list_name: 'Search Results',
+          currency: 'USD',
+          search_term: 'running shoes',
+          number_of_items: 3,
+          page_location: '/search?q=running+shoes',
+          items: [
+            {
+              item_name: 'Nike Running Shoes',
+              item_id: 'SKU12345',
+              price: 99.99,
+              quantity: 1,
+              item_category: 'Shoes',
+              item_brand: 'Nike'
+            },
+            {
+              item_name: 'Adidas Running Shoes',
+              item_id: 'SKU67890',
+              price: 89.99,
+              quantity: 1,
+              item_category: 'Shoes',
+              item_brand: 'Adidas'
+            },
+            {
+              item_name: 'Puma Running Shoes',
+              item_id: 'SKU54321',
+              price: 79.99,
+              quantity: 1,
+              item_category: 'Shoes',
+              item_brand: 'Puma'
+            }
+          ]
+        }
+      });
+      alert('GA4 View Item List event fired!');
+    });
+  </script>
 </body>
 </html>

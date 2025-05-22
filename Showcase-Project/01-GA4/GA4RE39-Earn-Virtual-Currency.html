@@ -1,148 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Earn Virtual Currency - GA4 Event</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Earn Virtual Currency - GA4 Event</title>
 
-    <!-- Google Tag Manager -->
-    <script>
-        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
-        var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
-        j.async=true; j.src='https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-        f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-MB72WSHR');
-    </script>
-    <!-- End Google Tag Manager -->
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+    var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
+    j.async=true; j.src='https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+    f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB72WSHR');
+  </script>
+  <!-- End Google Tag Manager -->
 
-    <style>
-        /* General Styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            background: linear-gradient(to right, green, red, orange, blue);
-            color: white;
-        }
+  <style>
+    body {
+      background-color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
-        /* Header */
-        header {
-            background: green;
-            padding: 20px;
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-        }
+    header {
+      background-color: green;
+      color: black;
+      font-weight: bold;
+      font-size: 35px;
+      text-align: center;
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
 
-        /* Virtual Currency Section */
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 80vh;
-            flex-direction: column;
-        }
+    .home-button {
+      position: absolute;
+      border-radius: 8px;
+      font-size: 16px;
+      left: 15px;
+      top: 10px;
+      background-color: orange;
+      color: blue;
+      padding: 15px 30px;
+      text-decoration: none;
+      border: 5px solid darkgreen;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1001;
+    }
 
-        .currency-box {
-            background: green;
-            color: black;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            text-align: center;
-            max-width: 400px;
-            transition: transform 0.3s ease-in-out;
-        }
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
 
-        .currency-box:hover {
-            transform: scale(1.05);
-        }
+    main {
+      padding: 120px 0 60px;
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+    }
 
-        .currency-box h2 {
-            margin-bottom: 15px;
-        }
+    .currency-box {
+      background: green;
+      color: black;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      max-width: 400px;
+      margin: auto;
+      transition: transform 0.3s ease-in-out;
+    }
 
-        .currency-display {
-            font-size: 24px;
-            font-weight: bold;
-            margin: 20px 0;
-            color: #ff6600;
-        }
+    .currency-box:hover {
+      transform: scale(1.05);
+    }
 
-        .earn-btn {
-            background: orange;
-            color: blue;
-            border: none;
-            padding: 12px 20px;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
+    .currency-display {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 20px 0;
+      color: #ff6600;
+    }
 
-        .earn-btn:hover {
-            background: blue;
-            color: orange;
-        }
+    .earn-btn {
+      background-color: orange;
+      color: blue;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
 
-        /* Footer */
-        footer {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background: #f1f1f1;
-            text-align: center;
-            height: 50px;
-            line-height: 50px;
-            color: black;
-        }
-    </style>
+    .earn-btn:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: #f1f1f1;
+      text-align: center;
+      height: 50px;
+      line-height: 50px;
+      color: black;
+    }
+  </style>
+                    <link rel="stylesheet" href="global-style.css">
+
 </head>
 <body>
 
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
-    <header>
-        Earn Virtual Currency
-    </header>
+  <header>
+    Earn Virtual Currency
+    <a href="index.html" class="home-button">Home</a>
+  </header>
 
-    <div class="container">
-        <div class="currency-box">
-            <h2>Earn Virtual Coins!</h2>
-            <p>Click the button below to earn virtual currency.</p>
-            <div class="currency-display">Coins: <span id="coin-count">0</span></div>
-            <button class="earn-btn" onclick="earnCoins()">Earn Coins</button>
-        </div>
+  <main>
+    <div class="currency-box">
+      <h2>Earn Virtual Coins!</h2>
+      <p>Click the button below to earn virtual currency.</p>
+      <div class="currency-display">Coins: <span id="coin-count">0</span></div>
+      <button class="earn-btn" onclick="earnCoins()">Earn Coins</button>
     </div>
+  </main>
 
-    <footer>
-        © 2025 Your Website. All rights reserved.
-    </footer>
+  <footer>
+    © 2025 Your Website. All rights reserved.
+  </footer>
 
-    <script>
-        let coins = 0;
+  <script>
+    let coins = 0;
 
-        function earnCoins() {
-            let earnedCoins = Math.floor(Math.random() * 10) + 1; // Earn between 1-10 coins
-            coins += earnedCoins;
-            document.getElementById("coin-count").innerText = coins;
+    function earnCoins() {
+      let earnedCoins = Math.floor(Math.random() * 10) + 1;
+      coins += earnedCoins;
+      document.getElementById("coin-count").innerText = coins;
 
-            // Push event to GTM's dataLayer
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({
-                'event': 'earn_virtual_currency',
-                'virtual_currency_name': 'Gold Coins',
-                'value': earnedCoins
-            });
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        'event': 'earn_virtual_currency',
+        'virtual_currency_name': 'Gold Coins',
+        'value': earnedCoins
+      });
 
-            alert(`You earned ${earnedCoins} virtual coins! Event sent to GA4.`);
-        }
-    </script>
+      alert(`You earned ${earnedCoins} virtual coins! Event sent to GA4.`);
+    }
+  </script>
 
 </body>
 </html>

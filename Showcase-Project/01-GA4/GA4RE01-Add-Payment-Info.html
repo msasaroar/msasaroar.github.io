@@ -1,134 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>GA4 Add Payment Info Event Demo</title>
 
-<!-- Google Tag Manager (GTM-MB72WSHR) -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id=GTM-MB72WSHR'+dl;f.parentNode.insertBefore(j,f);
+    <!-- Google Tag Manager (GTM-MB72WSHR) -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id=GTM-MB72WSHR'+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-MB72WSHR');</script>
-<!-- Google Tag Manager (GTM-MB72WSHR) -->
- 
+    <!-- End Google Tag Manager -->
+
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f8f9fa;
+        header {
+            background-color: green;
+            color: black;
+            font-weight: bold;
+            font-size: 35px;
             text-align: center;
-            padding: 10px;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        body {
+            background-color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
             color: #333;
         }
+
+        .home-button {
+            position: absolute;
+            left: 15px;
+            top: 10px;
+            background-color: orange;
+            color: blue;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border: 5px solid darkgreen;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            z-index: 1001;
+        }
+        .home-button:hover {
+            background-color: blue;
+            color: orange;
+        }
+
+        main {
+            padding: 75px 20px 30px;
+            max-width: 1200px;
+            margin: auto;
+            text-align: center;
+        }
+
+        /* All buttons except .home-button */
+        button {
+            background-color: orange;
+            color: blue;
+            font-weight: bold;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 10px auto;
+            display: block; /* center align */
+            max-width: 200px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: blue;
+            color: orange;
+        }
+
         .container {
             max-width: 900px;
             margin: auto;
-            padding: 0px;
             background: white;
             border-radius: 8px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             border: 1px solid #ddd;
+            padding: 20px;
         }
+
         h2 {
             color: #1a73e8;
             margin-bottom: 20px;
         }
+
         .row {
             display: flex;
             justify-content: space-between;
-            gap: 5px;
-            margin-bottom: 10px;
+            gap: 10px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
         }
+
         .column {
-            flex: 1;
+            flex: 1 1 45%;
             background: #f9f9f9;
-            padding: 5px;
+            padding: 10px;
             border-radius: 6px;
             border: 1px solid #ddd;
+            min-width: 280px;
         }
+
         .data-table {
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 5px;
         }
+
         .data-table th, .data-table td {
             border: 1px solid #ddd;
-            padding: 5px;
+            padding: 8px;
             text-align: left;
         }
+
         .data-table th {
             background-color: #1a73e8;
             color: white;
         }
+
         .item-section {
             margin-top: 10px;
             background: #f9f9f9;
-            padding: 5px;
+            padding: 10px;
             border-radius: 6px;
             border: 1px solid #ddd;
         }
-        button {
-            background-color: #1a73e8;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            border-radius: 5px;
-            margin-top: 5px;
-        }
-        button:hover {
-            background-color: #1557b0;
-        }
     </style>
+                  <link rel="stylesheet" href="global-style.css">
+
 </head>
 <body>
-<!-- Google Tag Manager (noscript) for GTM-MB72WSHR -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-    <div class="container">
-        <h2>GA4 Add Payment Info Event Tracking</h2>
-        
-        <div class="row">
-            <!-- Left Column: Payment Info -->
-            <div class="column">
-                <h3>Payment Information</h3>
+    <header>
+        GA4 Add Payment Info Event Demo
+        <a href="index.html" class="home-button">Home</a>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>GA4 Add Payment Info Event Tracking</h2>
+            
+            <div class="row">
+                <!-- Left Column: Payment Info -->
+                <div class="column">
+                    <h3>Payment Information</h3>
+                    <table class="data-table">
+                        <tr><th>Parameter</th><th>Value</th></tr>
+                        <tr><td>event</td><td>add_payment_info</td></tr>
+                        <tr><td>currency</td><td>USD</td></tr>
+                        <tr><td>value</td><td>150.00</td></tr>
+                        <tr><td>payment_type</td><td>Credit Card</td></tr>
+                        <tr><td>coupon</td><td>SUMMER2024</td></tr>
+                    </table>
+                </div>
+
+                <!-- Right Column: User Info -->
+                <div class="column">
+                    <h3>User Information</h3>
+                    <table class="data-table">
+                        <tr><th>Parameter</th><th>Value</th></tr>
+                        <tr><td>user_id</td><td>12345</td></tr>
+                        <tr><td>user_pseudo_id</td><td>67890</td></tr>
+                        <tr><td>user_region</td><td>California</td></tr>
+                        <tr><td>user_country</td><td>USA</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Items Section -->
+            <div class="item-section">
+                <h3>Items in Cart</h3>
                 <table class="data-table">
-                    <tr><th>Parameter</th><th>Value</th></tr>
-                    <tr><td>event</td><td>add_payment_info</td></tr>
-                    <tr><td>currency</td><td>USD</td></tr>
-                    <tr><td>value</td><td>150.00</td></tr>
-                    <tr><td>payment_type</td><td>Credit Card</td></tr>
-                    <tr><td>coupon</td><td>SUMMER2024</td></tr>
+                    <tr><th>Item Name</th><th>Item ID</th><th>Price</th><th>Quantity</th><th>Category</th><th>Brand</th></tr>
+                    <tr><td>Nike Running Shoes</td><td>SKU12345</td><td>$99.99</td><td>1</td><td>Shoes</td><td>Nike</td></tr>
+                    <tr><td>Adidas T-Shirt</td><td>SKU67890</td><td>$50.00</td><td>2</td><td>Clothing</td><td>Adidas</td></tr>
                 </table>
             </div>
 
-            <!-- Right Column: User Info -->
-            <div class="column">
-                <h3>User Information</h3>
-                <table class="data-table">
-                    <tr><th>Parameter</th><th>Value</th></tr>
-                    <tr><td>user_id</td><td>12345</td></tr>
-                    <tr><td>user_pseudo_id</td><td>67890</td></tr>
-                    <tr><td>user_region</td><td>California</td></tr>
-                    <tr><td>user_country</td><td>USA</td></tr>
-                </table>
-            </div>
+            <button id="trackEvent">Track Add Payment Info</button>
         </div>
-
-        <!-- Items Section -->
-        <div class="item-section">
-            <h3>Items in Cart</h3>
-            <table class="data-table">
-                <tr><th>Item Name</th><th>Item ID</th><th>Price</th><th>Quantity</th><th>Category</th><th>Brand</th></tr>
-                <tr><td>Nike Running Shoes</td><td>SKU12345</td><td>$99.99</td><td>1</td><td>Shoes</td><td>Nike</td></tr>
-                <tr><td>Adidas T-Shirt</td><td>SKU67890</td><td>$50.00</td><td>2</td><td>Clothing</td><td>Adidas</td></tr>
-            </table>
-        </div>
-
-        <button id="trackEvent">Track Add Payment Info</button>
-    </div>
+    </main>
 
     <script>
         document.getElementById('trackEvent').addEventListener('click', function() {
@@ -143,8 +210,7 @@
                 'user_country': 'USA'
             });
 
-
-            // Push GA4 add_payment_info event======
+            // Push GA4 add_payment_info event
             window.dataLayer.push({
                 'event': 'add_payment_info',
                 'ecommerce': {
@@ -156,7 +222,7 @@
                         {
                             'item_name': 'Nike Running Shoes',
                             'item_id': 'SKU12345',
-                            'price': 99.99,  // ✅ Corrected key
+                            'price': 99.99,
                             'quantity': 1,
                             'item_category': 'Shoes',
                             'item_brand': 'Nike'
@@ -164,7 +230,7 @@
                         {
                             'item_name': 'Adidas T-Shirt',
                             'item_id': 'SKU67890',
-                            'price': 50.00,  // ✅ Corrected key
+                            'price': 50.00,
                             'quantity': 2,
                             'item_category': 'Clothing',
                             'item_brand': 'Adidas'

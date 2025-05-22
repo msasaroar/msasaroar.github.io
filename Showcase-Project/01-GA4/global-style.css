@@ -1,0 +1,61 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  background-color: white;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Header Styling */
+header {
+  background-color: green;
+  color: black;
+  font-weight: bold;
+  font-size: 35px;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  border: 2px solid black;
+  position: relative;
+}
+
+/* Home Button Styling */
+a.home-button {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  
+  width: 140px;
+  height: 50px;
+
+  background-color: orange;
+  color: blue;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+
+  border: 5px solid darkgreen;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 1001;
+  display: inline-block;
+}
+
+/* Home Button Hover Effect */
+a.home-button:hover {
+  background-color: blue;
+  color: orange;
+}

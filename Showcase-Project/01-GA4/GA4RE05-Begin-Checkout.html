@@ -1,175 +1,317 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GA4 Begin Checkout Event Demo</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GA4 Begin Checkout Event Demo</title>
 
-<!-- Google Tag Manager (GTM-MB72WSHR) -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MB72WSHR');</script>
+  <!-- Google Tag Manager (GTM-MB72WSHR) -->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != "dataLayer" ? "&l=" + l : "";
+      j.async = true;
+      j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "dataLayer", "GTM-MB72WSHR");
+  </script>
 
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f8f9fa;
-            text-align: center;
-            padding: 20px;
-            color: #333;
-        }
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            border: 1px solid #ddd;
-        }
-        h2 {
-            color: #1a73e8;
-            margin-bottom: 20px;
-        }
-        .row {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-        .column {
-            flex: 1;
-            background: #f9f9f9;
-            padding: 15px;
-            border-radius: 6px;
-            border: 1px solid #ddd;
-        }
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 15px;
-        }
-        .data-table th, .data-table td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        .data-table th {
-            background-color: #1a73e8;
-            color: white;
-        }
-        .item-section {
-            margin-top: 20px;
-            background: #f9f9f9;
-            padding: 15px;
-            border-radius: 6px;
-            border: 1px solid #ddd;
-        }
-        button {
-            background-color: #1a73e8;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            border-radius: 5px;
-            margin-top: 15px;
-        }
-        button:hover {
-            background-color: #1557b0;
-        }
-    </style>
+  <style>
+    body {
+      background-color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: black;
+    }
+
+    header {
+      background-color: green;
+      color: black;
+      font-weight: bold;
+      font-size: 35px;
+      text-align: center;
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .home-button {
+      position: fixed;
+      left: 15px;
+      top: 10px;
+      background-color: orange;
+      color: blue;
+      padding: 15px 30px;
+      font-size: 16px;
+      font-weight: bold;
+      border: 5px solid darkgreen;
+      border-radius: 6px;
+      cursor: pointer;
+      z-index: 1001;
+      text-decoration: none;
+      border-radius: 8px;
+      border: none;
+      display: inline-block;
+    }
+
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 100px auto 40px; /* top margin for fixed header */
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: green;
+      color: black;
+      font-weight: bold;
+    }
+
+    h2,
+    h3 {
+      margin-top: 0;
+      color: green;
+      font-weight: bold;
+    }
+
+    .row {
+      display: flex;
+      gap: 20px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .column {
+      flex: 1 1 45%;
+      background-color: #f0f9f0;
+      padding: 15px;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+      box-sizing: border-box;
+    }
+
+    .item-section {
+      background-color: #f0f9f0;
+      padding: 15px;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+      margin-bottom: 30px;
+    }
+
+    button {
+      background-color: orange;
+      color: blue;
+      border: none;
+      font-weight: bold;
+      padding: 15px 40px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: block;
+      margin: 0 auto 40px auto;
+      user-select: none;
+    }
+
+    button:hover {
+      background-color: blue;
+      color: orange;
+    }
+  </style>
+                    <link rel="stylesheet" href="global-style.css">
+
 </head>
 <body>
-<!-- Google Tag Manager (noscript) for GTM-MB72WSHR -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript
+    ><iframe
+      src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+      height="0"
+      width="0"
+      style="display:none;visibility:hidden"
+    ></iframe
+  ></noscript>
 
-<!-- Google Tag Manager (noscript) for GTM-N4MMS7TS -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N4MMS7TS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <header>GA4 Begin Checkout Event Demo</header>
 
+  <a href="index.html" class="home-button" aria-label="Home Button">Home</a>
 
-    <div class="container">
-        <h2>GA4 Begin Checkout Event Tracking</h2>
-        
-        <div class="row">
-            <!-- Left Column: Checkout Info -->
-            <div class="column">
-                <table class="data-table">
-                    <tr><th>Parameter</th><th>Value</th></tr>
-                    <tr><td>event</td><td>begin_checkout</td></tr>
-                    <tr><td>currency</td><td>USD</td></tr>
-                    <tr><td>value</td><td>250.00</td></tr>
-                    <tr><td>coupon</td><td>WELCOME10</td></tr>
-                </table>
-            </div>
+  <main>
+    <div class="row">
+      <div class="column">
+        <table>
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>event</td>
+              <td>begin_checkout</td>
+            </tr>
+            <tr>
+              <td>currency</td>
+              <td>USD</td>
+            </tr>
+            <tr>
+              <td>value</td>
+              <td>250.00</td>
+            </tr>
+            <tr>
+              <td>coupon</td>
+              <td>WELCOME10</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-            <!-- Right Column: Customer Info -->
-            <div class="column">
-                <table class="data-table">
-                    <tr><th>Parameter</th><th>Value</th></tr>
-                    <tr><td>customer_id</td><td>CUST67890</td></tr>
-                    <tr><td>number_of_items</td><td>3</td></tr>
-                    <tr><td>payment_method</td><td>Credit Card</td></tr>
-                    <tr><td>shipping_method</td><td>Express</td></tr>
-                </table>
-            </div>
-        </div>
-
-        <!-- Items Section -->
-        <div class="item-section">
-            <h3>Items in Cart</h3>
-            <table class="data-table">
-                <tr><th>Item Name</th><th>Item ID</th><th>Price</th><th>Quantity</th><th>Category</th><th>Brand</th></tr>
-                <tr><td>Apple iPhone 15</td><td>SKU11111</td><td>$799.00</td><td>1</td><td>Electronics</td><td>Apple</td></tr>
-                <tr><td>Samsung Galaxy Watch</td><td>SKU22222</td><td>$299.00</td><td>1</td><td>Wearables</td><td>Samsung</td></tr>
-                <tr><td>Sony Noise-Canceling Headphones</td><td>SKU33333</td><td>$199.00</td><td>1</td><td>Accessories</td><td>Sony</td></tr>
-            </table>
-        </div>
-
-        <button id="trackBeginCheckout">Track Begin Checkout</button>
+      <div class="column">
+        <table>
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>customer_id</td>
+              <td>CUST67890</td>
+            </tr>
+            <tr>
+              <td>number_of_items</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>payment_method</td>
+              <td>Credit Card</td>
+            </tr>
+            <tr>
+              <td>shipping_method</td>
+              <td>Express</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
-    <script>
-        document.getElementById('trackBeginCheckout').addEventListener('click', function() {
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({
-                'event': 'begin_checkout',
-                'ecommerce': {
-                    'currency': 'USD',
-                    'value': 250.00,
-                    'coupon': 'WELCOME10',
-                    'customer_id': 'CUST67890',
-                    'number_of_items': 3,
-                    'payment_method': 'Credit Card',
-                    'shipping_method': 'Express',
-                    'items': [
-                        {
-                            'item_name': 'Apple iPhone 15',
-                            'item_id': 'SKU11111',
-                            'price': 799.00,
-                            'quantity': 1,
-                            'item_category': 'Electronics',
-                            'item_brand': 'Apple'
-                        },
-                        {
-                            'item_name': 'Samsung Galaxy Watch',
-                            'item_id': 'SKU22222',
-                            'price': 299.00,
-                            'quantity': 1,
-                            'item_category': 'Wearables',
-                            'item_brand': 'Samsung'
-                        },
-                        {
-                            'item_name': 'Sony Noise-Canceling Headphones',
-                            'item_id': 'SKU33333',
-                            'price': 199.00,
-                            'quantity': 1,
-                            'item_category': 'Accessories',
-                            'item_brand': 'Sony'
-                        }
-                    ]
-                }
-            });
-            alert('GA4 Begin Checkout event fired!');
+    <section class="item-section">
+      <h3>Items in Cart</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Item Name</th>
+            <th>Item ID</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Category</th>
+            <th>Brand</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Apple iPhone 15</td>
+            <td>SKU11111</td>
+            <td>$799.00</td>
+            <td>1</td>
+            <td>Electronics</td>
+            <td>Apple</td>
+          </tr>
+          <tr>
+            <td>Samsung Galaxy Watch</td>
+            <td>SKU22222</td>
+            <td>$299.00</td>
+            <td>1</td>
+            <td>Wearables</td>
+            <td>Samsung</td>
+          </tr>
+          <tr>
+            <td>Sony Noise-Canceling Headphones</td>
+            <td>SKU33333</td>
+            <td>$199.00</td>
+            <td>1</td>
+            <td>Accessories</td>
+            <td>Sony</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <button id="trackBeginCheckout">Track Begin Checkout</button>
+  </main>
+
+  <script>
+    document
+      .getElementById("trackBeginCheckout")
+      .addEventListener("click", function () {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: "begin_checkout",
+          ecommerce: {
+            currency: "USD",
+            value: 250.0,
+            coupon: "WELCOME10",
+            customer_id: "CUST67890",
+            number_of_items: 3,
+            payment_method: "Credit Card",
+            shipping_method: "Express",
+            items: [
+              {
+                item_name: "Apple iPhone 15",
+                item_id: "SKU11111",
+                price: 799.0,
+                quantity: 1,
+                item_category: "Electronics",
+                item_brand: "Apple",
+              },
+              {
+                item_name: "Samsung Galaxy Watch",
+                item_id: "SKU22222",
+                price: 299.0,
+                quantity: 1,
+                item_category: "Wearables",
+                item_brand: "Samsung",
+              },
+              {
+                item_name: "Sony Noise-Canceling Headphones",
+                item_id: "SKU33333",
+                price: 199.0,
+                quantity: 1,
+                item_category: "Accessories",
+                item_brand: "Sony",
+              },
+            ],
+          },
         });
-    </script>
+        alert("GA4 Begin Checkout event fired!");
+      });
+  </script>
 </body>
 </html>

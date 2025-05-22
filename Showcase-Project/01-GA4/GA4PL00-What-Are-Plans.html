@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GTM Plans Explained: Variable, Trigger, and Tag</title>
+  <!-- GTM Code -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB72WSHR');
+  </script>
+  <style>
+    header {
+      background-color: green;
+      color: black;
+      font-weight: bold;
+      font-size: 35px;
+      text-align: center;
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    body {
+      background-color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .home-button {
+      position: absolute;
+      border-radius: 6px;
+      font-size: 16px;
+      left: 15px;
+      top: 10px;
+      background-color: orange;
+      color: blue;
+      padding: 15px 30px;
+      text-decoration: none;
+      border: 5px solid darkgreen;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1001; 
+    }
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+    main {
+      padding: 75px 20px 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      color: green;
+      margin-top: 40px;
+    }
+    p, li {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    .section {
+      margin-bottom: 40px;
+    }
+  </style>
+  <link rel="stylesheet" href="global-style.css">
+</head>
+<body>
+
+  <!-- GTM NoScript -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <header>
+    GTM Plans: Variable, Trigger & Tag
+  </header>
+
+  <a href="index.html" class="home-button">Home</a>
+
+  <main>
+    <section class="section">
+      <h2>🔍 What Are GTM Plans?</h2>
+      <p>
+        In Google Tag Manager (GTM), planning your tags, triggers, and variables is essential for an organized and scalable implementation. These three components work together to track user behavior and send data to Google Analytics 4 (GA4) or other platforms.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>📌 Variable Plan</h2>
+      <p>
+        Variables are used to store and return values. They can be system-defined (built-in) or user-defined. A proper Variable Plan helps ensure you have the right data at the right time.
+      </p>
+      <strong>Common GTM Variables:</strong>
+      <ul>
+        <li><strong>Page Path:</strong> The path portion of the URL.</li>
+        <li><strong>Click Text:</strong> The text inside the clicked element.</li>
+        <li><strong>Form ID:</strong> Useful for form submissions.</li>
+        <li><strong>Data Layer Variable:</strong> Used to extract values from dataLayer (e.g., product name).</li>
+        <li><strong>JavaScript Variable:</strong> Custom JS-based values from the page.</li>
+      </ul>
+      <strong>Tips for Variable Plan:</strong>
+      <ul>
+        <li>List all the variables you'll need.</li>
+        <li>Use consistent naming conventions.</li>
+        <li>Test each variable in Preview mode.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>🎯 Trigger Plan</h2>
+      <p>
+        Triggers tell GTM when to fire a tag. They define user actions or conditions to watch for. The Trigger Plan defines what user interactions you want to track.
+      </p>
+      <strong>Common GTM Triggers:</strong>
+      <ul>
+        <li><strong>Page View:</strong> Fires when a page loads.</li>
+        <li><strong>Click Trigger:</strong> Fires when a button or link is clicked.</li>
+        <li><strong>Form Submission:</strong> Tracks when a form is submitted.</li>
+        <li><strong>Timer Trigger:</strong> Fires after a specific time on page.</li>
+        <li><strong>Custom Event:</strong> Listens for manually pushed events via <code>dataLayer.push</code>.</li>
+      </ul>
+      <strong>Tips for Trigger Plan:</strong>
+      <ul>
+        <li>Define clear conditions for each trigger.</li>
+        <li>Match triggers to specific variables or page elements.</li>
+        <li>Use built-in filters (e.g., Click Text = "Buy Now").</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>🏷️ Tag Plan</h2>
+      <p>
+        Tags are the actual pieces of code that send data to platforms like GA4, Google Ads, or Facebook Pixel. The Tag Plan documents what data to send, where to send it, and when.
+      </p>
+      <strong>Common GTM Tags:</strong>
+      <ul>
+        <li><strong>GA4 Configuration Tag:</strong> Initializes GA4 on the site.</li>
+        <li><strong>GA4 Event Tag:</strong> Sends specific events like <code>purchase</code> or <code>add_to_cart</code>.</li>
+        <li><strong>Conversion Linker:</strong> Used for conversion tracking.</li>
+        <li><strong>Custom HTML Tag:</strong> Injects custom scripts or pixels.</li>
+      </ul>
+      <strong>Tips for Tag Plan:</strong>
+      <ul>
+        <li>Map each tag to a trigger and associated variables.</li>
+        <li>Follow naming conventions (e.g., "GA4 – Event – Purchase").</li>
+        <li>Use tag sequencing for load order when needed.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>📋 Conclusion</h2>
+      <p>
+        A well-documented Variable, Trigger, and Tag Plan is critical for managing your GTM setup efficiently. It ensures consistency, reduces errors, and speeds up debugging. If you’re starting out, keep a simple spreadsheet or Notion document to track each item and test everything using GTM Preview Mode.
+      </p>
+    </section>
+  </main>
+</body>
+</html>

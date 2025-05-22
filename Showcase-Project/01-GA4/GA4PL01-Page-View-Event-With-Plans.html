@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Scroll Depth Event - GTM Showcase</title>
+  <title>Page View Event - GTM Showcase</title>
 
   <!-- Google Tag Manager -->
   <script>
@@ -127,6 +127,7 @@
       color: orange;
     }
   </style>
+  <link rel="stylesheet" href="global-style.css">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -135,7 +136,7 @@
   <!-- End Google Tag Manager (noscript) -->
 
   <header>
-    Scroll Depth Event - GTM Showcase
+    Page View Event - GTM Showcase
     <a href="index.html" class="home-button">Home</a>
   </header>
 
@@ -160,9 +161,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>1</td><td>Scroll Depth Threshold</td><td>Built-In</td><td>Percentage depth of scroll</td><td><a href="#tags">Scroll Depth Tag</a></td></tr>
-          <tr><td>2</td><td>Scroll Depth Units</td><td>Built-In</td><td>Units (percent or pixels)</td><td><a href="#tags">Scroll Depth Tag</a></td></tr>
-          <tr><td>3</td><td>Page Path</td><td>Built-In</td><td>Path after domain</td><td><a href="#tags">Scroll Depth Tag</a></td></tr>
+          <tr><td>1</td><td>Page Path</td><td>Built-In</td><td>Path after domain</td><td><a href="#tags">Page View Tag</a></td></tr>
+          <tr><td>2</td><td>Page Title</td><td>Built-In</td><td>Web page title</td><td><a href="#tags">Page View Tag</a></td></tr>
+          <tr><td>3</td><td>Page URL</td><td>Built-In</td><td>Full URL</td><td><a href="#tags">Page View Tag</a></td></tr>
+          <tr><td>4</td><td>Debug Mode</td><td>Built-In</td><td>Preview mode flag</td><td><a href="#tags">Debug Tag</a></td></tr>
+          <tr><td>5</td><td>Conversion</td><td>Data Layer</td><td>Custom conversion data</td><td><a href="#tags">Thank You Page Tag</a></td></tr>
         </tbody>
       </table>
     </section>
@@ -180,7 +183,9 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>1</td><td>Scroll Depth Trigger</td><td>Scroll Depth</td><td>Vertical Scroll: 25%, 50%, 75%, 100%</td><td><a href="#tags">Scroll Depth Tag</a></td></tr>
+          <tr><td>1</td><td>Page View Trigger</td><td>Page View</td><td>All Pages</td><td><a href="#tags">Page View Tag</a></td></tr>
+          <tr><td>2</td><td>Debug View</td><td>Custom Event</td><td>Event Name = debug_view</td><td><a href="#tags">Debug Tag</a></td></tr>
+          <tr><td>3</td><td>Thank You Page</td><td>Page View</td><td>Page Path contains /thank-you</td><td><a href="#tags">Thank You Tag</a></td></tr>
         </tbody>
       </table>
     </section>
@@ -198,22 +203,32 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Scroll Depth Tag</td>
-            <td>GA4 Event</td>
-            <td><a href="#triggers">Scroll Depth Trigger</a></td>
-            <td>Scroll Depth Threshold, Scroll Depth Units, Page Path</td>
-          </tr>
+          <tr><td>1</td><td>Page View Tag</td><td>GA4 Event</td><td><a href="#triggers">Page View Trigger</a></td><td>Page Path, Page Title, Page URL</td></tr>
+          <tr><td>2</td><td>Debug Tag</td><td>GA4 Event</td><td><a href="#triggers">Debug View</a></td><td>Debug Mode</td></tr>
+          <tr><td>3</td><td>Thank You Tag</td><td>GA4 Event</td><td><a href="#triggers">Thank You Page</a></td><td>Conversion</td></tr>
         </tbody>
       </table>
     </section>
 
     <section id="demo">
-      <h2>HTML Demo (Trigger Scroll Depth Manually)</h2>
-      <p style="text-align: center;">Scroll down the page to trigger scroll depth events at 25%, 50%, 75%, and 100% levels.</p>
-      <div style="height: 3000px;"></div>
+      <h2>HTML Demo (Manual Page View Data Layer Push)</h2>
+      <button onclick="pushPageViewEvent()">Push page_view Event</button>
+      <script>
+        function pushPageViewEvent() {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: "page_view",
+            page_title: document.title,
+            page_path: window.location.pathname,
+            page_location: window.location.href
+          });
+          alert("page_view event pushed to dataLayer manually!");
+        }
+      </script>
+      <p>Click the button above to manually trigger a <code>page_view</code> event using <code>dataLayer.push</code>.</p>
     </section>
   </main>
 </body>
 </html>
+
+উপরোক্ত পেইজের মত করে Button Click Event এর জন্য আরেকটি পেইজ বানিয়ে দাও।

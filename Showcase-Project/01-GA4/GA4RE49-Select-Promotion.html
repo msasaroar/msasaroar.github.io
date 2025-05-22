@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Select Promotion Event</title>
+
+  <!-- GTM Container -->
   <script>
-    // Google Tag Manager - GTM-MB72WSHR
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'}); 
     var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); 
     })(window,document,'script','dataLayer','GTM-MB72WSHR');
   </script>
-  <script src="script.js"></script>
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -25,26 +26,36 @@
       top: 0;
       width: 100%;
       background-color: green;
-      color: white;
+      color: black;
       text-align: center;
-      padding: 10px 0;
+      font-weight: bold;
+      font-size: 35px;
+      padding: 20px 0;
+      z-index: 1000;
     }
-    header a {
+    header a.home-button {
       position: absolute;
-      top: 10px;
-      left: 10px;
+      top: 15px;
+      left: 15px;
       background-color: orange;
       color: blue;
       text-decoration: none;
-      padding: 5px 10px;
-      border-radius: 5px;
+      padding: 15px 30px;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 16px;
+      border: 5px solid darkgreen;
+      cursor: pointer;
+      z-index: 1001;
+      display: inline-block;
+      text-align: center;
     }
-    header a:hover {
+    header a.home-button:hover {
       background-color: blue;
       color: orange;
     }
     main {
-      margin: 125px 20px;
+      margin: 125px 20px 60px;
       text-align: center;
     }
     .data-container {
@@ -61,9 +72,12 @@
       padding: 10px;
       width: 150px;
       text-align: center;
+      background-color: white;
+      border-radius: 6px;
     }
     .data-item > div {
       margin: 5px 0;
+      word-break: break-word;
     }
     button {
       background-color: orange;
@@ -72,8 +86,11 @@
       padding: 10px 20px;
       font-size: 16px;
       cursor: pointer;
-      border-radius: 5px;
-      margin: 20px;
+      border-radius: 6px;
+      font-weight: bold;
+      margin: 20px 10px 0;
+      min-width: 220px;
+      transition: background-color 0.3s, color 0.3s;
     }
     button:hover {
       background-color: blue;
@@ -86,20 +103,23 @@
       background-color: #f1f1f1;
       text-align: center;
       height: 50px;
-    }
-    footer object {
-      width: 100%;
-      height: 100%;
+      line-height: 50px;
+      font-size: 14px;
+      color: #555;
+      font-family: Arial, sans-serif;
+      user-select: none;
     }
   </style>
+                    <link rel="stylesheet" href="global-style.css">
+
 </head>
 <body>
   <!-- Google Tag Manager NoScript -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  
+
   <header>
-    <a href="index.html">Home</a>
-    <h1>Select Promotion</h1>
+    <a href="index.html" class="home-button">Home</a>
+    Select Promotion
   </header>
 
   <main>
@@ -108,11 +128,11 @@
       <!-- DataLayer information will be dynamically added here -->
     </div>
     <button id="triggerSelectPromotionEvent">Trigger Select Promotion Event</button>
-    <button onclick="navigateToURL('select_promotion')">Show Google Reference</button>
+    <button id="googleRefBtn">Show Google Reference</button>
   </main>
 
   <footer>
-    <object type="text/html" data="footer.html"></object>
+    &copy; 2025 Your Company
   </footer>
 
   <script>
@@ -149,7 +169,8 @@
       }
     };
 
-    dataLayer.push(eventData);
+    // Push initial event on page load (optional, comment if not needed)
+    // dataLayer.push(eventData);
 
     // Display dataLayer information in a side-by-side layout
     const displayDataLayer = () => {
@@ -159,12 +180,11 @@
       const ecommerce = eventData.ecommerce;
       for (const key in ecommerce) {
         if (Array.isArray(ecommerce[key])) {
-          ecommerce[key].forEach((item, index) => {
+          ecommerce[key].forEach((item) => {
             for (const prop in item) {
               const dataItem = document.createElement('div');
               dataItem.classList.add('data-item');
               let label = prop.replace(/_/g, " ").toUpperCase();
-              // Make the label more readable and descriptive
               if (label === "ITEM_ID") label = "Product ID";
               if (label === "ITEM_NAME") label = "Product Name";
               if (label === "AFFILIATION") label = "Store Affiliation";
@@ -204,8 +224,14 @@
 
     // Trigger the select_promotion event
     document.getElementById('triggerSelectPromotionEvent').addEventListener('click', () => {
-      dataLayer.push(eventData);
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push(eventData);
       alert('select_promotion event triggered!');
+    });
+
+    // Navigate to Google Reference URL for select_promotion event
+    document.getElementById('googleRefBtn').addEventListener('click', () => {
+      window.open('https://developers.google.com/analytics/devguides/collection/ga4/ecommerce?client_type=gtm#select_promotion', '_blank');
     });
   </script>
 </body>

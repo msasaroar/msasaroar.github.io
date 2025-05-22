@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Scroll Depth Event - GTM Showcase</title>
+  <title>Button Click Event - GTM Showcase</title>
 
   <!-- Google Tag Manager -->
   <script>
@@ -135,7 +135,7 @@
   <!-- End Google Tag Manager (noscript) -->
 
   <header>
-    Scroll Depth Event - GTM Showcase
+    Button Click Event - GTM Showcase
     <a href="index.html" class="home-button">Home</a>
   </header>
 
@@ -160,9 +160,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>1</td><td>Scroll Depth Threshold</td><td>Built-In</td><td>Percentage depth of scroll</td><td><a href="#tags">Scroll Depth Tag</a></td></tr>
-          <tr><td>2</td><td>Scroll Depth Units</td><td>Built-In</td><td>Units (percent or pixels)</td><td><a href="#tags">Scroll Depth Tag</a></td></tr>
-          <tr><td>3</td><td>Page Path</td><td>Built-In</td><td>Path after domain</td><td><a href="#tags">Scroll Depth Tag</a></td></tr>
+          <tr><td>1</td><td>Click Text</td><td>Built-In</td><td>Text of clicked button</td><td><a href="#tags">Button Click Tag</a></td></tr>
+          <tr><td>2</td><td>Click Classes</td><td>Built-In</td><td>CSS classes of clicked element</td><td><a href="#tags">Button Click Tag</a></td></tr>
         </tbody>
       </table>
     </section>
@@ -180,7 +179,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>1</td><td>Scroll Depth Trigger</td><td>Scroll Depth</td><td>Vertical Scroll: 25%, 50%, 75%, 100%</td><td><a href="#tags">Scroll Depth Tag</a></td></tr>
+          <tr><td>1</td><td>All Button Clicks</td><td>Click - All Elements</td><td>Click Classes contains btn-click</td><td><a href="#tags">Button Click Tag</a></td></tr>
         </tbody>
       </table>
     </section>
@@ -198,21 +197,26 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Scroll Depth Tag</td>
-            <td>GA4 Event</td>
-            <td><a href="#triggers">Scroll Depth Trigger</a></td>
-            <td>Scroll Depth Threshold, Scroll Depth Units, Page Path</td>
-          </tr>
+          <tr><td>1</td><td>Button Click Tag</td><td>GA4 Event</td><td><a href="#triggers">All Button Clicks</a></td><td>Click Text, Click Classes</td></tr>
         </tbody>
       </table>
     </section>
 
     <section id="demo">
-      <h2>HTML Demo (Trigger Scroll Depth Manually)</h2>
-      <p style="text-align: center;">Scroll down the page to trigger scroll depth events at 25%, 50%, 75%, and 100% levels.</p>
-      <div style="height: 3000px;"></div>
+      <h2>HTML Demo (Manual Button Click Event)</h2>
+      <button class="btn-click" onclick="pushButtonClick()">Click Me!</button>
+      <script>
+        function pushButtonClick() {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: "button_click",
+            button_text: "Click Me!",
+            button_class: "btn-click"
+          });
+          alert("button_click event pushed to dataLayer manually!");
+        }
+      </script>
+      <p>Click the button above to simulate a <code>button_click</code> event using <code>dataLayer.push</code>.</p>
     </section>
   </main>
 </body>
