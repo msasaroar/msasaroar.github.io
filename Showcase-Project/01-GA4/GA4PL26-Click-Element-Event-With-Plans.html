@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB72WSHR');</script>
+    <!-- End Google Tag Manager -->
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tag Practice: Element Click</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: white;
+            color: black;
+        }
+
+        header {
+            background-color: green;
+            color: black;
+            font-weight: bold;
+            font-size: 35px;
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .home-button {
+            position: fixed;
+            top: 10px;
+            left: 15px;
+            background-color: orange;
+            color: blue;
+            padding: 15px 30px;
+            border: 5px solid darkgreen;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            z-index: 1001;
+            text-decoration: none;
+            text-align: center;
+        }
+        .home-button:hover {
+            background-color: blue;
+            color: orange;
+        }
+
+        main {
+            padding: 110px 20px 60px;
+            max-width: 1200px;
+            margin: auto;
+            text-align: center;
+        }
+
+        /* Buttons container: flex wrap for multiple lines */
+        .buttons-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        /* All buttons and button-like elements get same size */
+        .button, 
+        .button-link,
+        .button-span,
+        .button-div,
+        .button-label,
+        .button-li,
+        .button-img,
+        .button-p,
+        .button-fieldset,
+        .button-table,
+        .button-blockquote,
+        input[type="button"],
+        input[type="submit"],
+        form .button-submit {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 150px;
+            height: 50px;
+            font-size: 16px;
+            font-weight: bold;
+            color: blue;
+            background-color: orange;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            user-select: none;
+            box-sizing: border-box;
+            padding: 0 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Specific overrides for tag names that are inline by default */
+        .button-link {
+            display: inline-flex;
+        }
+        .button-span {
+            display: inline-flex;
+        }
+        .button-div {
+            display: inline-flex;
+        }
+        .button-label {
+            display: inline-flex;
+        }
+        .button-li {
+            list-style: none;
+            display: inline-flex;
+        }
+        .button-p {
+            display: inline-flex;
+            margin: 0;
+        }
+        .button-fieldset {
+            border: none;
+            display: inline-flex;
+        }
+        .button-table {
+            border-collapse: collapse;
+            display: inline-flex;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+        }
+        .button-table td {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .button-blockquote {
+            display: inline-flex;
+            margin: 0;
+        }
+
+        /* Hover effect for all buttons */
+        .button:hover,
+        .button-link:hover,
+        .button-span:hover,
+        .button-div:hover,
+        .button-label:hover,
+        .button-li:hover,
+        .button-p:hover,
+        .button-fieldset:hover,
+        .button-table:hover,
+        .button-blockquote:hover,
+        input[type="button"]:hover,
+        input[type="submit"]:hover,
+        form .button-submit:hover {
+            background-color: blue;
+            color: orange;
+        }
+
+        /* For image button: fit inside fixed size */
+        .button-img {
+            width: 150px;
+            height: 50px;
+            object-fit: contain;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .button-img:hover {
+            background-color: blue;
+            color: orange;
+            filter: brightness(0) invert(1);
+        }
+
+        /* Form submit button wrapper to match size */
+        form {
+            display: inline-block;
+            margin: 0;
+        }
+    </style>
+
+    <script>
+        // Button click event handler
+        function trackElementClick(elementType, elementClass, elementText) {
+            window.dataLayer = window.dataLayer || [];
+            dataLayer.push({
+                event: 'trackElementClick',
+                elementType: elementType,
+                elementClass: elementClass,
+                elementText: elementText,
+                tagId: 'GA4 | 206 | Track Clicks on Any Element'
+            });
+            alert(`<<${elementText}>> clicked! Event pushed to dataLayer.`);
+        }
+    </script>
+</head>
+<body>
+    <header>
+        Tag Practice: Element Click
+        <a href="index.html" class="home-button">Home</a>
+    </header>
+
+    <main>
+        <div class="buttons-container">
+            <button class="button" onclick="trackElementClick('Button', 'Button', 'Default Button')">Default Button</button>
+            <button class="button" onclick="trackElementClick('Button', 'Button', 'Primary Button')">Primary Button</button>
+            <button class="button" onclick="trackElementClick('Button', 'Button', 'Danger Button')">Danger Button</button>
+
+            <a href="#" class="button-link" onclick="trackElementClick('Link', 'Button', 'Link Button')">Link Button</a>
+
+            <span class="button-span" onclick="trackElementClick('Span', 'Button', 'Span Button')">Span Button</span>
+
+            <div class="button-div" onclick="trackElementClick('Div', 'Button', 'Div Button')">Div Button</div>
+
+            <input type="button" class="button" value="Input Button" onclick="trackElementClick('Input', 'Button', 'Input Button')" />
+
+            <form onsubmit="trackElementClick('Form Submit', 'Form+Button', 'Submit Button'); return false;">
+                <input type="submit" class="button" value="Submit Button" />
+            </form>
+
+            <label class="button-label" onclick="trackElementClick('Label', 'Button', 'Label Button')">Label Button</label>
+
+            <li class="button-li" onclick="trackElementClick('List Item', 'Button', 'List Item Button')">List Item Button</li>
+
+            <img src="https://via.placeholder.com/150x50" alt="Image Button" class="button-img" onclick="trackElementClick('Image', 'Button', 'Image Button')" />
+
+            <p class="button-p" onclick="trackElementClick('Paragraph', 'Button', 'Paragraph Button')">Paragraph Button</p>
+
+            <fieldset class="button-fieldset" onclick="trackElementClick('Fieldset', 'Button', 'Fieldset Button')">Fieldset Button</fieldset>
+
+            <table class="button-table" onclick="trackElementClick('Table', 'Button', 'Table Button')" >
+                <tr><td>Table Button</td></tr>
+            </table>
+
+            <blockquote class="button-blockquote" onclick="trackElementClick('Blockquote', 'Button', 'Blockquote Button')">Blockquote Button</blockquote>
+        </div>
+
+        <!-- Variable Plan -->
+        <section id="variables">
+            <h2>Variable Plan</h2>
+            <table border="1" cellspacing="0" cellpadding="5" style="width: 100%; border-collapse: collapse;">
+                <thead style="background-color: #ddd;">
+                    <tr>
+                        <th>#</th>
+                        <th>Variable Name</th>
+                        <th>Variable Type</th>
+                        <th>Description</th>
+                        <th>Used In</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>Page Path</td><td>Built-In</td><td>Path after domain</td><td><a href="#tags">Page View Tag</a></td></tr>
+                    <tr><td>2</td><td>Page Title</td><td>Built-In</td><td>Web page title</td><td><a href="#tags">Page View Tag</a></td></tr>
+                    <tr><td>3</td><td>Page URL</td><td>Built-In</td><td>Full URL</td><td><a href="#tags">Page View Tag</a></td></tr>
+                    <tr><td>4</td><td>Debug Mode</td><td>Built-In</td><td>Preview mode flag</td><td><a href="#tags">Debug Tag</a></td></tr>
+                    <tr><td>5</td><td>Conversion</td><td>Data Layer</td><td>Custom conversion data</td><td><a href="#tags">Thank You Page Tag</a></td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Trigger Plan -->
+        <section id="triggers" style="margin-top: 40px;">
+            <h2>Trigger Plan</h2>
+            <table border="1" cellspacing="0" cellpadding="5" style="width: 100%; border-collapse: collapse;">
+                <thead style="background-color: #ddd;">
+                    <tr>
+                        <th>#</th>
+                        <th>Trigger Name</th>
+                        <th>Trigger Type</th>
+                        <th>Firing Conditions</th>
+                        <th>Used In</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>Page View Trigger</td><td>Page View</td><td>All Pages</td><td><a href="#tags">Page View Tag</a></td></tr>
+                    <tr><td>2</td><td>Debug View</td><td>Custom Event</td><td>Event Name = debug_view</td><td><a href="#tags">Debug Tag</a></td></tr>
+                    <tr><td>3</td><td>Thank You Page</td><td>Page View</td><td>Page Path contains /thank-you</td><td><a href="#tags">Thank You Tag</a></td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Tag Plan -->
+        <section id="tags" style="margin-top: 40px;">
+            <h2>Tag Plan</h2>
+            <table border="1" cellspacing="0" cellpadding="5" style="width: 100%; border-collapse: collapse;">
+                <thead style="background-color: #ddd;">
+                    <tr>
+                        <th>#</th>
+                        <th>Tag Name</th>
+                        <th>Tag Type</th>
+                        <th>Trigger</th>
+                        <th>Variables Used</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>Page View Tag</td><td>GA4 Configuration</td><td>Page View Trigger</td><td>Page Path, Page Title, Page URL</td></tr>
+                    <tr><td>2</td><td>Debug Tag</td><td>GA4 Event</td><td>Debug View</td><td>Debug Mode</td></tr>
+                    <tr><td>3</td><td>Thank You Page Tag</td><td>GA4 Event</td><td>Thank You Page</td><td>Conversion</td></tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

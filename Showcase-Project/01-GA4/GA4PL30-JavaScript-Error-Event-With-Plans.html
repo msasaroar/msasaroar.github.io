@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Track JavaScript Error using GTM</title>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB72WSHR');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <style>
+    body {
+      background-color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: green;
+      color: black;
+      font-weight: bold;
+      font-size: 35px;
+      text-align: center;
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .home-button {
+      position: absolute;
+      border-radius: 6px;
+      font-size: 16px;
+      left: 15px;
+      top: 10px;
+      background-color: orange;
+      color: blue;
+      padding: 15px 30px;
+      text-decoration: none;
+      border: 5px solid darkgreen;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    main {
+      padding: 100px 20px 40px;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+
+    button {
+      background-color: orange;
+      color: blue;
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      cursor: pointer;
+      margin-top: 30px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    table {
+      width: 100%;
+      margin-top: 30px;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #ddd;
+    }
+
+    h2 {
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header>
+    <a href="index.html" class="home-button">Home</a>
+    JavaScript Error Tracking using GTM
+  </header>
+
+  <main>
+    <h1>Trigger a JavaScript Error</h1>
+    <p>Click the button below to intentionally trigger a JS error and track it using GTM.</p>
+    <button onclick="triggerError()">Trigger Error</button>
+
+    <script>
+      function triggerError() {
+        // This function is designed to trigger an error
+        nonExistentFunction(); // Will throw ReferenceError
+      }
+
+      // Global error listener to simulate dataLayer push (for visualization, not used in GTM)
+      window.onerror = function (message, source, lineno, colno, error) {
+        console.log("Captured Error:", message);
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          'event': 'js_error',
+          'errorMessage': message,
+          'errorSource': source,
+          'errorLine': lineno,
+          'errorColumn': colno
+        });
+      };
+    </script>
+
+    <h2>✅ Variable Plan</h2>
+    <table>
+      <tr><th>Variable Name</th><th>Variable Type</th><th>Description</th></tr>
+      <tr><td>errorMessage</td><td>Data Layer Variable</td><td>Captures error message</td></tr>
+      <tr><td>errorSource</td><td>Data Layer Variable</td><td>Captures file source of the error</td></tr>
+      <tr><td>errorLine</td><td>Data Layer Variable</td><td>Captures the line number of error</td></tr>
+      <tr><td>errorColumn</td><td>Data Layer Variable</td><td>Captures the column number of error</td></tr>
+    </table>
+
+    <h2>🎯 Trigger Plan</h2>
+    <table>
+      <tr><th>Trigger Name</th><th>Trigger Type</th><th>Condition</th></tr>
+      <tr>
+        <td>JS Error Trigger</td>
+        <td>Custom Event</td>
+        <td>Event Name equals <strong>js_error</strong></td>
+      </tr>
+    </table>
+
+    <h2>🏷️ Tag Plan</h2>
+    <table>
+      <tr><th>Tag Name</th><th>Tag Type</th><th>Configuration</th><th>Trigger</th></tr>
+      <tr>
+        <td>GA4 - JavaScript Error</td>
+        <td>GA4 Event Tag</td>
+        <td>
+          Event Name: <code>js_error</code><br>
+          Parameters: <br>
+          - error_message: {{errorMessage}}<br>
+          - error_source: {{errorSource}}<br>
+          - error_line: {{errorLine}}<br>
+          - error_column: {{errorColumn}}
+        </td>
+        <td>JS Error Trigger</td>
+      </tr>
+    </table>
+  </main>
+</body>
+</html>

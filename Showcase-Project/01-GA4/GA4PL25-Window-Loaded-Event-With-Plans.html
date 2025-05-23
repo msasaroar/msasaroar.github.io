@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Track Window Loaded | GA4 + GTM</title>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB72WSHR');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <style>
+    body {
+      background-color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: green;
+      color: black;
+      font-weight: bold;
+      font-size: 35px;
+      text-align: center;
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .home-button {
+      position: absolute;
+      border-radius: 8px;
+      font-size: 16px;
+      left: 15px;
+      top: 10px;
+      background-color: orange;
+      color: blue;
+      padding: 15px 30px;
+      text-decoration: none;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      border: 5px solid darkgreen;
+      border-radius: 6px;
+      z-index: 1001; 
+    }
+
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    main {
+      padding: 100px 15px 20px;
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+    }
+
+    button {
+      background-color: orange;
+      color: blue;
+      font-size: 18px;
+      padding: 15px 30px;
+      margin-top: 20px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    table {
+      margin: 30px auto;
+      border-collapse: collapse;
+      width: 90%;
+    }
+
+    th, td {
+      border: 1px solid #aaa;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #eee;
+    }
+
+    h2, h3 {
+      margin-top: 40px;
+    }
+
+    #status {
+      font-size: 20px;
+      margin-top: 30px;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header>
+    <a href="index.html" class="home-button">Home</a>
+    Track Window Loaded Event
+  </header>
+
+  <main>
+    <h2>GA4 Event Tracking via GTM for Window Loaded</h2>
+    <p id="status">Current Status: <strong>Waiting for load...</strong></p>
+
+    <button onclick="location.reload()">Reload Page to Test</button>
+
+    <!-- 📌 Variable Plan -->
+    <h3>🧩 Variable Plan</h3>
+    <table>
+      <tr><th>SL</th><th>Variable Name</th><th>Type</th><th>Configuration</th></tr>
+      <tr>
+        <td>1</td>
+        <td>JS - Page Title</td>
+        <td>JavaScript Variable</td>
+        <td><code>document.title</code></td>
+      </tr>
+    </table>
+
+    <!-- 📌 Trigger Plan -->
+    <h3>🔔 Trigger Plan</h3>
+    <table>
+      <tr><th>SL</th><th>Trigger Name</th><th>Type</th><th>Configuration</th></tr>
+      <tr>
+        <td>1</td>
+        <td>CE - windowLoaded</td>
+        <td>Custom Event</td>
+        <td>Event Name: <code>windowLoaded</code><br>Trigger Fires On: All Custom Events</td>
+      </tr>
+    </table>
+
+    <!-- 📌 Tag Plan -->
+    <h3>🏷️ Tag Plan</h3>
+    <table>
+      <tr><th>SL</th><th>Tag Name</th><th>Type</th><th>Configuration</th></tr>
+      <tr>
+        <td>1</td>
+        <td>GA4 Event - window_loaded</td>
+        <td>GA4 Event</td>
+        <td>
+          GA4 Config Tag: [Your GA4 Config Tag]<br>
+          Event Name: <code>window_loaded</code><br>
+          Event Parameters:<br>
+          &bull; <code>page_title</code> = {{JS - Page Title}}
+        </td>
+      </tr>
+    </table>
+  </main>
+
+  <script>
+    window.addEventListener("load", function () {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "windowLoaded",
+        page_title: document.title
+      });
+
+      document.getElementById("status").innerHTML = 'Current Status: <strong style="color:blue;">Window Loaded</strong>';
+    });
+  </script>
+
+</body>
+</html>

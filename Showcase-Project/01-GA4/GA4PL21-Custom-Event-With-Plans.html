@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>User Logout Event - GTM Showcase</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Custom Event - GTM Showcase</title>
   <link rel="stylesheet" href="GA4PL21-TO-50-Style.css">
+
+
   <!-- Google Tag Manager -->
   <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -22,7 +24,7 @@
   <!-- End Google Tag Manager (noscript) -->
 
   <header>
-    User Logout Event - GTM Showcase
+    Custom Event - GTM Showcase
     <a href="index.html" class="home-button">Home</a>
   </header>
 
@@ -47,8 +49,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>1</td><td>User ID</td><td>Data Layer</td><td>Unique user identifier</td><td><a href="#tags">Logout Tag</a></td></tr>
-          <tr><td>2</td><td>Page Path</td><td>Built-In</td><td>Path after domain</td><td><a href="#tags">Logout Tag</a></td></tr>
+          <tr><td>1</td><td>custom_event_type</td><td>Data Layer</td><td>Custom event type identifier</td><td><a href="#tags">Custom Event Tag</a></td></tr>
+          <tr><td>2</td><td>custom_event_label</td><td>Data Layer</td><td>Label or name of the event</td><td><a href="#tags">Custom Event Tag</a></td></tr>
         </tbody>
       </table>
     </section>
@@ -66,13 +68,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Logout Trigger</td>
-            <td>Custom Event</td>
-            <td>Event Name = user_logout</td>
-            <td><a href="#tags">Logout Tag</a></td>
-          </tr>
+          <tr><td>1</td><td>Custom Event Trigger</td><td>Custom Event</td><td>Event Name = custom_event</td><td><a href="#tags">Custom Event Tag</a></td></tr>
         </tbody>
       </table>
     </section>
@@ -92,30 +88,34 @@
         <tbody>
           <tr>
             <td>1</td>
-            <td>Logout Tag</td>
+            <td>Custom Event Tag</td>
             <td>GA4 Event</td>
-            <td><a href="#triggers">Logout Trigger</a></td>
-            <td>User ID, Page Path</td>
+            <td><a href="#triggers">Custom Event Trigger</a></td>
+            <td>custom_event_type, custom_event_label</td>
           </tr>
         </tbody>
       </table>
     </section>
 
     <section id="demo">
-      <h2>HTML Demo (Manual Logout Event Push)</h2>
-      <button onclick="pushLogoutEvent()">Push user_logout Event</button>
+      <h2>HTML Demo (Push Custom Event)</h2>
+      <div style="display: flex; gap: 20px; justify-content: center;">
+        <button onclick="pushCustomEvent('signup', 'User Signed Up')">Push signup Event</button>
+        <button onclick="pushCustomEvent('download', 'File Downloaded')">Push download Event</button>
+        <button onclick="pushCustomEvent('contact_click', 'Contact Button Clicked')">Push contact_click Event</button>
+      </div>
       <script>
-        function pushLogoutEvent() {
+        function pushCustomEvent(eventType, label) {
           window.dataLayer = window.dataLayer || [];
           window.dataLayer.push({
-            event: "user_logout",
-            user_id: "USER123", // This can be dynamically populated
-            page_path: window.location.pathname
+            event: "custom_event",
+            custom_event_type: eventType,
+            custom_event_label: label
           });
-          alert("user_logout event pushed to dataLayer manually!");
+          alert(`${eventType} event pushed with label "${label}"`);
         }
       </script>
-      <p>Click the button above to manually trigger a <code>user_logout</code> event using <code>dataLayer.push</code>.</p>
+      <p>উপরে দেওয়া যেকোনো বাটনে ক্লিক করলে একটি <code>custom_event</code> ইভেন্ট dataLayer-এ পাঠানো হবে।</p>
     </section>
   </main>
 </body>

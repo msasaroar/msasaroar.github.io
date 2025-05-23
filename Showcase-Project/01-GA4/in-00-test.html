@@ -1,175 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Form Submit Event | GA4 Manual Trigger</title>
-  <!-- Google Tag Manager -->
-  <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MB72WSHR');
-  </script>
-  <!-- End Google Tag Manager -->
-  <style>
-    header {
-      background-color: green;
-      color: black;
-      font-weight: bold;
-      font-size: 35px;
-      text-align: center;
-      padding: 20px 0;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-    }
+Showcase-Project/01-GA4/GA4PL0A-Page-Without-dataLayer.html Showcase-Project/01-GA4/GA4PL0B-Page-With-dataLayer.html Showcase-Project/01-GA4/GA4PL0C-Standard-dataLayers.html Showcase-Project/01-GA4/GA4PL0D-Tags-Triggers-Variables-Events.html Showcase-Project/01-GA4/GA4PL0E-What-Are-Plans.html Showcase-Project/01-GA4/GA4PL01-Page-View-Event-With-Plans.html Showcase-Project/01-GA4/GA4PL02-Button-Click-Event-With-Plans.html Showcase-Project/01-GA4/GA4PL03-Scroll-Depth-Event-With-Plans.html Showcase-Project/01-GA4/GA4PL04-Form-Submit-Event-With-Plans.html Showcase-Project/01-GA4/GA4PL05-Video-Start-Event-With-Plans.html Showcase-Project/01-GA4/GA4PL06-OLD-REMOVE-FROM-CART.HTML Showcase-Project/01-GA4/GA4PL06-Remove-From-Cart-Event-With-Plans.html Showcase-Project/01-GA4/GA4PL07-Checkout-Event-With-Plans.html Showcase-Project/01-GA4/GA4PL07-OLD-CHECKOUT.HTML Showcase-Project/01-GA4/GA4PL08-Purchase-Event-With-Plans.html Showcase-Project/01-GA4/GA4PL09-User-Login-Event-With-Plans.html Showcase-Project/01-GA4/GA4PL10-User-Logout-Event-With-Plans.html Showcase-Project/01-GA4/GA4PL12-Search-Event-With-Plans.html Showcase-Project/01-GA4/GA4PL13-Product-View-Event-With-Plans.html Showcase-Project/01-GA4/GA4PL14-Download-File-Event-With-Plans.html Showcase-Project/01-GA4/GA4PL15-Feedback-Submit-Event-With-Plans.html Showcase-Project/01-GA4/GA4PL16-Page-Timing-Event-With-Plans.html Showcase-Project/01-GA4/GA4PL17-Error-Tracking-Event-With-Plans.html Showcase-Project/01-GA4/GA4PL18-OLD-User-Engagement-Event-With-Plans.html Showcase-Project/01-GA4/GA4PL18-User-Engagement-Event-With-Plans.html Showcase-Project/01-GA4/GA4PL19-Ad-Click-Tracking-Event-With-Plans.html Showcase-Project/01-GA4/GA4PL19-OLD-Ad-Click-Tracking-Event-With-Plans.html Showcase-Project/01-GA4/GA4PL20-Form-Interaction-Event-With-Plans.html Showcase-Project/01-GA4/GA4PL21-Custom-Event-With-Plans.html Showcase-Project/01-GA4/GA4PL22-Element-Visibility-Event-With-Plans.html Showcase-Project/01-GA4/GA4PL23-Hash-Change-Event-With-Plans.html Showcase-Project/01-GA4/GA4PL24-Page-Visibility-Event-With-Plans.html Showcase-Project/01-GA4/GA4PL25-Window-Loaded-Event-With-Plans.html Showcase-Project/01-GA4/GA4PL26-Click-Element-Event-With-Plans.html Showcase-Project/01-GA4/GA4PL27-Custom-HTML-Tag-With-Plans.html Showcase-Project/01-GA4/GA4PL28-Custom-Image-Tag-With-Plans.html Showcase-Project/01-GA4/GA4PL29-Timer-Tag-With-Plans.html Showcase-Project/01-GA4/GA4PL30-JavaScript-Error-Event-With-Plans.html Showcase-Project/01-GA4/GA4PL31-Social-Media-Click-Event-With-Plans.html Showcase-Project/01-GA4/GA4PL33-Custom-Event-With-Plans.html
 
-    body {
-      background-color: white;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
+নীচের কোড ব্লকের যেসকল .html ফাইলের নাম উপরের টেক্সট এ নাই তার তালিকা দাও
+              <li tabindex="0" data-value="GA4PL0A-Page-Without-dataLayer.html">Page Without dataLayer [GA4PL0A]</li>
+              <li tabindex="0" data-value="GA4PL0B-Page-With-dataLayer.html">Page With dataLayer [GA4PL0B]</li>
+              <li tabindex="0" data-value="GA4PL0C-Standard-dataLayers.html">Standard dataLayers [GA4PL0C]</li>
+              <li tabindex="0" data-value="GA4PL0D-Tags-Triggers-Variables-Events.html">GTM Basics: Tags, Triggers, Variables & Events [GA4PL0D]</li>
+              <li tabindex="0" data-value="GA4PL0E-What-Are-Plans.html">GTM Plans: Variable, Trigger & Tag [GA4PL0E]</li>
 
-    .home-button {
-      position: absolute;
-      border-radius: 8px;
-      font-size: 16px;
-      left: 15px;
-      top: 10px;
-      background-color: orange;
-      color: blue;
-      padding: 15px 30px;
-      text-decoration: none;
-      border: none;
-      font-weight: bold;
-      cursor: pointer;
-      border: 5px solid darkgreen;
-      border-radius: 6px;
-      z-index: 1001;
-    }
+<li tabindex="0" data-value="GA4PL01-Page-View-Event-With-Plans.html">Page View Event [GA4PL01]</li>
+<li tabindex="0" data-value="GA4PL02-Button-Click-Event-With-Plans.html">Button Click Event [GA4PL02]</li>
+<li tabindex="0" data-value="GA4PL03-Scroll-Depth-Event-With-Plans.html">Scroll Depth Event [GA4PL03]</li>
+<li tabindex="0" data-value="GA4PL04-Form-Submit-Event-With-Plans.html">Form Submission Event [GA4PL04]</li>
+<li tabindex="0" data-value="GA4PL05-Video-Start-Event-With-Plans.html">Video Engagement Event [GA4PL05]</li>
+<li tabindex="0" data-value="GA4PL06-Remove-From-Cart-Event-With-Plans.html">Remove from Cart Event [GA4PL06]</li>
+<li tabindex="0" data-value="GA4PL06-OLD-REMOVE-FROM-CART.html">OLD - Remove from Cart Event [GA4PL06]</li>
+<li tabindex="0" data-value="GA4PL07-Checkout-Event-With-Plans.html">Checkout Event [GA4PL07]</li>
+<li tabindex="0" data-value="GA4PL08-Purchase-Event-With-Plans.html">Purchase Event [GA4PL08]</li>
+<li tabindex="0" data-value="GA4PL09-User-Login-Event-With-Plans.html">User Login Event [GA4PL09]</li>
+<li tabindex="0" data-value="GA4PL10-User-Logout-Event-With-Plans.html">User Logout Event [GA4PL10]</li>
+<li tabindex="0" data-value="GA4PL11-Custom-Event-Event-With-Plans.html">Custom Event [GA4PL11]</li>
+<li tabindex="0" data-value="GA4PL12-Search-Event-With-Plans.html">Search Query Event [GA4PL12 / GA4RE47]</li>
+<li tabindex="0" data-value="GA4PL13-Product-View-Event-With-Plans.html">Product View Event [GA4PL13]</li>
+<li tabindex="0" data-value="GA4PL14-Download-File-Event-With-Plans.html">File Download Event [GA4PL14]</li>
+<li tabindex="0" data-value="GA4PL15-Feedback-Submit-Event-With-Plans.html">Feedback Submission Event [GA4PL15]</li>
+<li tabindex="0" data-value="GA4PL16-Page-Timing-Event-With-Plans.html">Page Performance Event [GA4PL16]</li>
+<li tabindex="0" data-value="GA4PL17-Error-Tracking-Event-With-Plans.html">JavaScript Error Event [GA4PL17]</li>
+<li tabindex="0" data-value="GA4PL18-User-Engagement-Event-With-Plans.html">User Engagement Event [GA4PL18]</li>
+<li tabindex="0" data-value="GA4PL18-OLD-User-Engagement-Event-With-Plans.html">OLD - User Engagement Event [GA4PL18]</li>
+<li tabindex="0" data-value="GA4PL19-Ad-Click-Tracking-Event-With-Plans.html">Ad Click Event [GA4PL19]</li>
+<li tabindex="0" data-value="GA4PL19-OLD-Ad-Click-Tracking-Event-With-Plans.html">OLD - Ad Click Event [GA4PL19]</li>
+<li tabindex="0" data-value="GA4PL20-Form-Interaction-Event-With-Plans.html">Form Interaction Event [GA4PL20]</li>
 
-    .home-button:hover {
-      background-color: blue;
-      color: orange;
-    }
+<li tabindex="0" data-value="GA4PL21-Custom-Event-Trigger.html">Custom Event [GA4PL21]</li>
+<li tabindex="0" data-value="GA4PL22-Element-Visibility-Trigger.html">Element Visibility Event  [GA4PL22]</li>
+<li tabindex="0" data-value="GA4PL23-Hash-Change-Tag-And-Trigger.html">Hash Change Event [GA4PL23]</li>
+<li tabindex="0" data-value="GA4PL24-Page-Visibility-Trigger.html">Page Visibility Event [GA4PL24]</li>
+<li tabindex="0" data-value="GA4PL25-Window-Loaded-Trigger.html">Window Loaded Event[GA4PL25]</li>
+<li tabindex="0" data-value="GA4PL26-Click-Element-Tag.html">Clicks With Element [GA4PL26]</li>
+<li tabindex="0" data-value="GA4PL27-Custom-HTML-Tag.html">Custom HTML Injection Event [GA4PL27]</li>
+<li tabindex="0" data-value="GA4PL28-Custom-Image-Tag-1.html">Custom Image Load Event [GA4PL28]</li>
+<li tabindex="0" data-value="GA4PL29-Custom-Image-Tag.html">Custom Image Load Event [GA4PL29]</li>
+<li tabindex="0" data-value="GA4PL30-JavaScript-Error-Tag.html">JavaScript Errors Event [GA4PL30]</li>
+<li tabindex="0" data-value="GA4PL31-Timer-Tag.html">Timer Based Actions [GA4PL31]</li>
+<li tabindex="0" data-value="GA4PL32-Social-Media-Click-Event-With-Plans.html">Social Media Clicks Event [GA4PL32]</li>
+<li tabindex="0" data-value="GA4PL33-Custom-Event-With-Plans.html">Custom Event [GA4PL33]</li>
 
-    main {
-      padding: 100px 20px 40px;
-      max-width: 1200px;
-      margin: auto;
-    }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 30px;
-    }
-
-    th, td {
-      border: 1px solid #ccc;
-      padding: 10px;
-      text-align: left;
-    }
-
-    th {
-      background-color: #f0f0f0;
-    }
-
-    h2 {
-      text-align: center;
-      margin-top: 50px;
-    }
-
-    .event-button {
-      display: block;
-      margin: 30px auto;
-      background-color: orange;
-      color: blue;
-      padding: 15px 30px;
-      font-size: 18px;
-      font-weight: bold;
-      border: 5px solid darkgreen;
-      border-radius: 6px;
-      cursor: pointer;
-      text-align: center;
-    }
-
-    .event-button:hover {
-      background-color: blue;
-      color: orange;
-    }
-
-    p {
-      text-align: center;
-      font-size: 16px;
-    }
-  </style>
-</head>
-<body>
-
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
-<header>
-  Form Submit Event | GA4 Manual Trigger
-</header>
-
-<a href="index.html" class="home-button">Home</a>
-
-<main>
-  <h2>Variable Plan</h2>
-  <table>
-    <tr><th>#</th><th>Variable Name</th><th>Variable Type</th><th>Description</th><th>Used In</th></tr>
-    <tr><td>1</td><td>Form ID</td><td>Form Element</td><td>Captures form ID when submitted</td><td>Trigger, Tag</td></tr>
-    <tr><td>2</td><td>Page URL</td><td>Auto-Event Variable</td><td>Captures current page URL</td><td>Tag</td></tr>
-  </table>
-
-  <h2>Trigger Plan</h2>
-  <table>
-    <tr><th>#</th><th>Trigger Name</th><th>Trigger Type</th><th>Firing Conditions</th><th>Used In</th></tr>
-    <tr>
-      <td>1</td>
-      <td>Form Submit Trigger</td>
-      <td>Form Submission</td>
-      <td>All forms or specific form ID</td>
-      <td>GA4 Form Submit Tag</td>
-    </tr>
-  </table>
-
-  <h2>Tag Plan</h2>
-  <table>
-    <tr><th>#</th><th>Tag Name</th><th>Tag Type</th><th>Firing Trigger</th><th>Variables Used</th></tr>
-    <tr>
-      <td>1</td>
-      <td>GA4 Form Submit</td>
-      <td>GA4 Event Tag</td>
-      <td>Form Submit Trigger</td>
-      <td>Form ID, Page URL</td>
-    </tr>
-  </table>
-
-  <h2>HTML Demo (Manual <code>form_submit</code> Event)</h2>
-
-  <button class="event-button" onclick="pushFormSubmitEvent()">Push form_submit Event</button>
-
-  <p>Click the button above to manually trigger a <code>form_submit</code> event using <code>dataLayer.push</code>.</p>
-
-  <script>
-    function pushFormSubmitEvent() {
-      dataLayer.push({
-        event: 'form_submit',
-        form_id: 'newsletter_signup',
-        page_url: window.location.href
-      });
-      alert('form_submit event pushed to dataLayer');
-    }
-  </script>
-</main>
-</body>
-</html>
+GA4PL11-Custom-Event-Event-With-Plans.html
+GA4PL21-Custom-Event-Trigger.html
+GA4PL22-Element-Visibility-Trigger.html
+GA4PL23-Hash-Change-Tag-And-Trigger.html
+GA4PL24-Page-Visibility-Trigger.html
+GA4PL25-Window-Loaded-Trigger.html
+GA4PL26-Click-Element-Tag.html
+GA4PL27-Custom-HTML-Tag.html
+GA4PL28-Custom-Image-Tag-1.html
+GA4PL29-Custom-Image-Tag.html
+GA4PL30-JavaScript-Error-Tag.html
+GA4PL31-Timer-Tag.html
+GA4PL32-Social-Media-Click-Event-With-Plans.html

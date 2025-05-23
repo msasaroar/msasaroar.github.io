@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Track Page Visibility | GA4 + GTM</title>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB72WSHR');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <style>
+    body {
+      background-color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: green;
+      color: black;
+      font-weight: bold;
+      font-size: 35px;
+      text-align: center;
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .home-button {
+      position: absolute;
+      border-radius: 8px;
+      font-size: 16px;
+      left: 15px;
+      top: 10px;
+      background-color: orange;
+      color: blue;
+      padding: 15px 30px;
+      text-decoration: none;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      border: 5px solid darkgreen;
+      border-radius: 6px;
+      z-index: 1001; 
+    }
+
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    main {
+      padding: 100px 15px 20px;
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+    }
+
+    button {
+      background-color: orange;
+      color: blue;
+      font-size: 18px;
+      padding: 15px 30px;
+      margin-top: 20px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    table {
+      margin: 30px auto;
+      border-collapse: collapse;
+      width: 90%;
+    }
+
+    th, td {
+      border: 1px solid #aaa;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #eee;
+    }
+
+    h2, h3 {
+      margin-top: 40px;
+    }
+
+    #status {
+      font-size: 20px;
+      margin-top: 30px;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header>
+    <a href="index.html" class="home-button">Home</a>
+    Track Page Visibility Event
+  </header>
+
+  <main>
+    <h2>GA4 Event Tracking via GTM for Visibility Change</h2>
+    <p id="status">Current Page Visibility: <strong id="visibilityState">Visible</strong></p>
+    <button onclick="alert('Minimize, switch tabs, or lock screen to test visibility')">
+      How to Test Visibility Event
+    </button>
+
+    <!-- 📌 Variable Plan -->
+    <h3>🧩 Variable Plan</h3>
+    <table>
+      <tr><th>SL</th><th>Variable Name</th><th>Type</th><th>Configuration</th></tr>
+      <tr>
+        <td>1</td>
+        <td>JS - Document Visibility</td>
+        <td>JavaScript Variable</td>
+        <td><code>document.visibilityState</code></td>
+      </tr>
+    </table>
+
+    <!-- 📌 Trigger Plan -->
+    <h3>🔔 Trigger Plan</h3>
+    <table>
+      <tr><th>SL</th><th>Trigger Name</th><th>Type</th><th>Configuration</th></tr>
+      <tr>
+        <td>1</td>
+        <td>CE - visibilityChange</td>
+        <td>Custom Event</td>
+        <td>Event Name: <code>visibilityChange</code><br>Trigger Fires On: All Custom Events</td>
+      </tr>
+    </table>
+
+    <!-- 📌 Tag Plan -->
+    <h3>🏷️ Tag Plan</h3>
+    <table>
+      <tr><th>SL</th><th>Tag Name</th><th>Type</th><th>Configuration</th></tr>
+      <tr>
+        <td>1</td>
+        <td>GA4 Event - visibility_change</td>
+        <td>GA4 Event</td>
+        <td>
+          GA4 Config Tag: [Your GA4 Config Tag]<br>
+          Event Name: <code>visibility_change</code><br>
+          Event Parameters:<br>
+          &bull; <code>visibility_state</code> = {{JS - Document Visibility}}
+        </td>
+      </tr>
+    </table>
+  </main>
+
+  <script>
+    function pushVisibilityEvent(state) {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'visibilityChange',
+        visibility_state: state
+      });
+
+      document.getElementById('visibilityState').textContent = state.charAt(0).toUpperCase() + state.slice(1);
+    }
+
+    document.addEventListener('visibilitychange', function () {
+      pushVisibilityEvent(document.visibilityState);
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      pushVisibilityEvent(document.visibilityState);
+    });
+  </script>
+</body>
+</html>

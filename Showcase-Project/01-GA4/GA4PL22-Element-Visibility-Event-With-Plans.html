@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Social Media Click - GTM Showcase</title>
-  <link rel="stylesheet" href="GA4PL-style-sheet.css">
-
+  <title>Element Visibility Trigger - GTM Showcase</title>
+  <link rel="stylesheet" href="GA4PL21-TO-50-Style.css" />
   <!-- Google Tag Manager -->
   <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -15,7 +14,6 @@
     })(window,document,'script','dataLayer','GTM-MB72WSHR');
   </script>
   <!-- End Google Tag Manager -->
-
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -24,7 +22,7 @@
   <!-- End Google Tag Manager (noscript) -->
 
   <header>
-    Social Media Click Event - GTM Showcase
+    Element Visibility Trigger - GTM Showcase
     <a href="index.html" class="home-button">Home</a>
   </header>
 
@@ -49,8 +47,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>1</td><td>Click Text</td><td>Built-In</td><td>The anchor text</td><td><a href="#tags">Social Media Click Tag</a></td></tr>
-          <tr><td>2</td><td>Click URL</td><td>Built-In</td><td>Destination link</td><td><a href="#tags">Social Media Click Tag</a></td></tr>
+          <tr><td>1</td><td>Element ID</td><td>Auto-Detected</td><td>Visible Element's ID</td><td><a href="#tags">Element View Tag</a></td></tr>
+          <tr><td>2</td><td>Element Classes</td><td>Auto-Detected</td><td>CSS Class Names</td><td><a href="#tags">Element View Tag</a></td></tr>
         </tbody>
       </table>
     </section>
@@ -68,7 +66,17 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>1</td><td>Social Media Click</td><td>Click - Just Links</td><td>Click URL contains facebook.com, whatsapp.com, etc.</td><td><a href="#tags">Social Media Click Tag</a></td></tr>
+          <tr>
+            <td>1</td>
+            <td>Element Visibility Trigger</td>
+            <td>Element Visibility</td>
+            <td>
+              ID equals <code>promo-banner</code><br>
+              Visibility threshold: 50%<br>
+              Once per page: True
+            </td>
+            <td><a href="#tags">Element View Tag</a></td>
+          </tr>
         </tbody>
       </table>
     </section>
@@ -86,29 +94,26 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>1</td><td>Social Media Click Tag</td><td>GA4 Event</td><td><a href="#triggers">Social Media Click</a></td><td>Click Text, Click URL</td></tr>
+          <tr>
+            <td>1</td>
+            <td>Element View Tag</td>
+            <td>GA4 Event</td>
+            <td><a href="#triggers">Element Visibility Trigger</a></td>
+            <td>Element ID, Element Classes</td>
+          </tr>
         </tbody>
       </table>
     </section>
 
     <section id="demo">
-      <h2>HTML Demo (Manual Social Click Event)</h2>
-      <button onclick="pushSocialClick('Facebook', 'https://facebook.com/msasaroar')">Facebook</button>
-      <button onclick="pushSocialClick('WhatsApp', 'https://wa.me/8801917530031')">WhatsApp</button>
-      <button onclick="pushSocialClick('Email', 'mailto:msasaroar@gmail.com')">Email</button>
-
-      <script>
-        function pushSocialClick(platform, url) {
-          window.dataLayer = window.dataLayer || [];
-          window.dataLayer.push({
-            event: "social_click",
-            social_platform: platform,
-            social_url: url
-          });
-          alert(platform + " click event pushed to dataLayer!");
-        }
-      </script>
-      <p>Click any button to simulate a <code>social_click</code> event with platform and URL details.</p>
+      <h2>HTML Demo (Element Visibility)</h2>
+      <p>Scroll down to reveal the target element and trigger the visibility event.</p>
+      <div style="height: 800px;"></div>
+      <div id="promo-banner" style="background-color: orange; color: blue; padding: 50px; text-align: center;">
+        <strong>This is the Promo Banner</strong><br>
+        <em>Element Visibility will be tracked when 50% visible</em>
+      </div>
+      <div style="height: 500px;"></div>
     </section>
   </main>
 </body>

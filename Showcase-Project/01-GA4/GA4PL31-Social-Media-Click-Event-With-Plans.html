@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>User Logout Event - GTM Showcase</title>
+  <title>Social Media Click - GTM Showcase</title>
   <link rel="stylesheet" href="GA4PL21-TO-50-Style.css">
+
   <!-- Google Tag Manager -->
   <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -14,6 +15,7 @@
     })(window,document,'script','dataLayer','GTM-MB72WSHR');
   </script>
   <!-- End Google Tag Manager -->
+
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -22,7 +24,7 @@
   <!-- End Google Tag Manager (noscript) -->
 
   <header>
-    User Logout Event - GTM Showcase
+    Social Media Click Event - GTM Showcase
     <a href="index.html" class="home-button">Home</a>
   </header>
 
@@ -47,8 +49,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>1</td><td>User ID</td><td>Data Layer</td><td>Unique user identifier</td><td><a href="#tags">Logout Tag</a></td></tr>
-          <tr><td>2</td><td>Page Path</td><td>Built-In</td><td>Path after domain</td><td><a href="#tags">Logout Tag</a></td></tr>
+          <tr><td>1</td><td>Click Text</td><td>Built-In</td><td>The anchor text</td><td><a href="#tags">Social Media Click Tag</a></td></tr>
+          <tr><td>2</td><td>Click URL</td><td>Built-In</td><td>Destination link</td><td><a href="#tags">Social Media Click Tag</a></td></tr>
         </tbody>
       </table>
     </section>
@@ -66,13 +68,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Logout Trigger</td>
-            <td>Custom Event</td>
-            <td>Event Name = user_logout</td>
-            <td><a href="#tags">Logout Tag</a></td>
-          </tr>
+          <tr><td>1</td><td>Social Media Click</td><td>Click - Just Links</td><td>Click URL contains facebook.com, whatsapp.com, etc.</td><td><a href="#tags">Social Media Click Tag</a></td></tr>
         </tbody>
       </table>
     </section>
@@ -90,32 +86,29 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Logout Tag</td>
-            <td>GA4 Event</td>
-            <td><a href="#triggers">Logout Trigger</a></td>
-            <td>User ID, Page Path</td>
-          </tr>
+          <tr><td>1</td><td>Social Media Click Tag</td><td>GA4 Event</td><td><a href="#triggers">Social Media Click</a></td><td>Click Text, Click URL</td></tr>
         </tbody>
       </table>
     </section>
 
     <section id="demo">
-      <h2>HTML Demo (Manual Logout Event Push)</h2>
-      <button onclick="pushLogoutEvent()">Push user_logout Event</button>
+      <h2>HTML Demo (Manual Social Click Event)</h2>
+      <button onclick="pushSocialClick('Facebook', 'https://facebook.com/msasaroar')">Facebook</button>
+      <button onclick="pushSocialClick('WhatsApp', 'https://wa.me/8801917530031')">WhatsApp</button>
+      <button onclick="pushSocialClick('Email', 'mailto:msasaroar@gmail.com')">Email</button>
+
       <script>
-        function pushLogoutEvent() {
+        function pushSocialClick(platform, url) {
           window.dataLayer = window.dataLayer || [];
           window.dataLayer.push({
-            event: "user_logout",
-            user_id: "USER123", // This can be dynamically populated
-            page_path: window.location.pathname
+            event: "social_click",
+            social_platform: platform,
+            social_url: url
           });
-          alert("user_logout event pushed to dataLayer manually!");
+          alert(platform + " click event pushed to dataLayer!");
         }
       </script>
-      <p>Click the button above to manually trigger a <code>user_logout</code> event using <code>dataLayer.push</code>.</p>
+      <p>Click any button to simulate a <code>social_click</code> event with platform and URL details.</p>
     </section>
   </main>
 </body>
