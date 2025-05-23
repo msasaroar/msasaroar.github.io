@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Form Submit Event - GTM Showcase</title>
-  <link rel="stylesheet" href="plan-style.css">
+  <title>Checkout Event - GTM Showcase</title>
+  <link rel="stylesheet" href="GA4PL-style-sheet.css">
   <!-- Google Tag Manager -->
   <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -22,7 +22,7 @@
   <!-- End Google Tag Manager (noscript) -->
 
   <header>
-    Form Submit Event - GTM Showcase
+    Checkout Event - GTM Showcase
     <a href="index.html" class="home-button">Home</a>
   </header>
 
@@ -47,8 +47,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>1</td><td>Form ID</td><td>Built-In</td><td>ID of the submitted form</td><td><a href="#tags">Form Submit Tag</a></td></tr>
-          <tr><td>2</td><td>Form Classes</td><td>Built-In</td><td>Classes of submitted form</td><td><a href="#tags">Form Submit Tag</a></td></tr>
+          <tr><td>1</td><td>Checkout Step</td><td>Data Layer</td><td>Step in checkout process</td><td><a href="#tags">Checkout Tag</a></td></tr>
+          <tr><td>2</td><td>Items</td><td>Data Layer</td><td>List of products</td><td><a href="#tags">Checkout Tag</a></td></tr>
         </tbody>
       </table>
     </section>
@@ -66,7 +66,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>1</td><td>Form Submit Trigger</td><td>Form Submission</td><td>All Forms</td><td><a href="#tags">Form Submit Tag</a></td></tr>
+          <tr><td>1</td><td>Checkout Trigger</td><td>Custom Event</td><td>Event Name = begin_checkout</td><td><a href="#tags">Checkout Tag</a></td></tr>
         </tbody>
       </table>
     </section>
@@ -84,37 +84,35 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>1</td><td>Form Submit Tag</td><td>GA4 Event</td><td><a href="#triggers">Form Submit Trigger</a></td><td>Form ID, Form Classes</td></tr>
+          <tr><td>1</td><td>Checkout Tag</td><td>GA4 Event</td><td><a href="#triggers">Checkout Trigger</a></td><td>Checkout Step, Items</td></tr>
         </tbody>
       </table>
     </section>
 
     <section id="demo">
-      <h2>HTML Demo (Form Submit)</h2>
-      <form onsubmit="handleFormSubmit(event)">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required />
-
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required />
-
-        <button type="submit">Submit</button>
-      </form>
-
+      <h2>HTML Demo (Manual begin_checkout Event Push)</h2>
+      <button onclick="pushCheckoutEvent()">Push begin_checkout Event</button>
       <script>
-        function handleFormSubmit(event) {
-          event.preventDefault();
+        function pushCheckoutEvent() {
           window.dataLayer = window.dataLayer || [];
           window.dataLayer.push({
-            event: "form_submit",
-            form_id: "demo-form",
-            form_classes: "tracking-form"
+            event: "begin_checkout",
+            ecommerce: {
+              checkout_step: 1,
+              items: [
+                {
+                  item_id: "SKU_123",
+                  item_name: "GA4 Book",
+                  price: 29.99,
+                  quantity: 1
+                }
+              ]
+            }
           });
-          alert("form_submit event pushed to dataLayer manually!");
+          alert("begin_checkout event pushed to dataLayer manually!");
         }
       </script>
-
-      <p>Fill out the form and click submit to simulate a <code>form_submit</code> event using <code>dataLayer.push</code>.</p>
+      <p>Click the button above to manually trigger a <code>begin_checkout</code> event using <code>dataLayer.push</code>.</p>
     </section>
   </main>
 </body>

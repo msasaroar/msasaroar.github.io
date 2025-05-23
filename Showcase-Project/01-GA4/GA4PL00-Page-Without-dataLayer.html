@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Page_View Event Style Page</title>
+  <style>
+    /* Body and general styles */
+    body {
+      background-color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: black;
+    }
+
+    /* Header styles as per guideline */
+    header {
+      background-color: green;
+      color: black;
+      font-weight: bold;
+      font-size: 35px;
+      text-align: center;
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    /* Home button in header */
+    .home-button {
+      position: absolute;
+      left: 15px;
+      top: 10px;
+      background-color: orange;
+      color: blue;
+      padding: 15px 30px;
+      border: 5px solid darkgreen;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      z-index: 1001;
+    }
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    /* Main content */
+    main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 85px 20px 40px; /* padding-top to clear fixed header */
+    }
+
+    /* Card container */
+    .card {
+      background-color: white;
+      border: 2px solid green;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .card h2 {
+      margin-top: 0;
+    }
+
+    /* Form inputs */
+    input[type="text"],
+    input[type="number"] {
+      width: 100%;
+      padding: 8px 10px;
+      margin: 6px 0 16px 0;
+      box-sizing: border-box;
+      font-size: 16px;
+      border: 1.5px solid green;
+      border-radius: 6px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    /* Buttons styling */
+    button {
+      background-color: orange;
+      color: blue;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    /* Container for multiple buttons horizontally aligned */
+    .button-group {
+      display: inline-flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    /* Footer styling */
+    footer {
+      text-align: center;
+      padding: 10px 0;
+      background-color: white;
+      color: black;
+      font-size: 16px;
+      border-top: 1px solid green;
+      position: relative;
+      z-index: 1000;
+    }
+
+    /* Modal styles */
+    #modal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      border: 2px solid green;
+      border-radius: 8px;
+      padding: 25px 30px;
+      box-shadow: 0 6px 10px rgba(0,0,0,0.2);
+      z-index: 2000;
+      max-width: 90%;
+      text-align: center;
+    }
+    #modal p {
+      font-size: 18px;
+      margin-bottom: 20px;
+      color: black;
+    }
+    #modal button {
+      width: 120px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      header {
+        font-size: 28px;
+        padding: 15px 0;
+      }
+      .home-button {
+        padding: 10px 20px;
+        font-size: 14px;
+        left: 10px;
+        top: 8px;
+      }
+      main {
+        padding: 90px 10px 40px;
+      }
+      .button-group {
+        justify-content: center;
+      }
+      button {
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <button class="home-button" onclick="navigateHome()" aria-label="Home">Home</button>
+    Welcome to the Static Page
+  </header>
+
+  <main>
+    <!-- Section 1: Personal Information -->
+    <section class="card">
+      <h2>Personal Information</h2>
+      <form id="personalInfoForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required />
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" placeholder="Enter your age" required />
+
+        <button type="submit">Submit Info</button>
+      </form>
+    </section>
+
+    <!-- Section 2: Product Interaction -->
+    <section class="card">
+      <h2>Featured Product</h2>
+      <p><strong>Product Name:</strong> Smart Watch</p>
+      <p><strong>Price:</strong> $299</p>
+      <button id="addToCart">Add to Cart</button>
+    </section>
+
+    <!-- Section 3: Quick Survey -->
+    <section class="card">
+      <h2>Quick Survey</h2>
+      <p>How satisfied are you with our website?</p>
+      <div class="button-group">
+        <button onclick="showModal('Very Satisfied')">Very Satisfied</button>
+        <button onclick="showModal('Neutral')">Neutral</button>
+        <button onclick="showModal('Dissatisfied')">Dissatisfied</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Static Website</p>
+  </footer>
+
+  <!-- Modal -->
+  <div id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-message">
+    <p id="modal-message"></p>
+    <button onclick="closeModal()">Close</button>
+  </div>
+
+  <script>
+    // Navigate Home function
+    function navigateHome() {
+      window.location.href = 'index.html'; // Change if needed
+    }
+
+    // Show Modal function
+    function showModal(message) {
+      const modal = document.getElementById('modal');
+      document.getElementById('modal-message').textContent = message;
+      modal.style.display = 'block';
+    }
+
+    // Close Modal function
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+
+    // Handle Personal Info form submit
+    document.getElementById('personalInfoForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      showModal('Thank you for submitting your information!');
+      this.reset();
+    });
+
+    // Handle Add to Cart button click
+    document.getElementById('addToCart').addEventListener('click', function() {
+      showModal('Smart Watch added to cart!');
+    });
+  </script>
+</body>
+</html>

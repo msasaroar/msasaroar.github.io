@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Form Submit Event - GTM Showcase</title>
-  <link rel="stylesheet" href="plan-style.css">
+  <title>Social Media Click - GTM Showcase</title>
+  <link rel="stylesheet" href="GA4PL-style-sheet.css">
+
   <!-- Google Tag Manager -->
   <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -14,6 +15,7 @@
     })(window,document,'script','dataLayer','GTM-MB72WSHR');
   </script>
   <!-- End Google Tag Manager -->
+
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -22,7 +24,7 @@
   <!-- End Google Tag Manager (noscript) -->
 
   <header>
-    Form Submit Event - GTM Showcase
+    Social Media Click Event - GTM Showcase
     <a href="index.html" class="home-button">Home</a>
   </header>
 
@@ -47,8 +49,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>1</td><td>Form ID</td><td>Built-In</td><td>ID of the submitted form</td><td><a href="#tags">Form Submit Tag</a></td></tr>
-          <tr><td>2</td><td>Form Classes</td><td>Built-In</td><td>Classes of submitted form</td><td><a href="#tags">Form Submit Tag</a></td></tr>
+          <tr><td>1</td><td>Click Text</td><td>Built-In</td><td>The anchor text</td><td><a href="#tags">Social Media Click Tag</a></td></tr>
+          <tr><td>2</td><td>Click URL</td><td>Built-In</td><td>Destination link</td><td><a href="#tags">Social Media Click Tag</a></td></tr>
         </tbody>
       </table>
     </section>
@@ -66,7 +68,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>1</td><td>Form Submit Trigger</td><td>Form Submission</td><td>All Forms</td><td><a href="#tags">Form Submit Tag</a></td></tr>
+          <tr><td>1</td><td>Social Media Click</td><td>Click - Just Links</td><td>Click URL contains facebook.com, whatsapp.com, etc.</td><td><a href="#tags">Social Media Click Tag</a></td></tr>
         </tbody>
       </table>
     </section>
@@ -84,37 +86,29 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>1</td><td>Form Submit Tag</td><td>GA4 Event</td><td><a href="#triggers">Form Submit Trigger</a></td><td>Form ID, Form Classes</td></tr>
+          <tr><td>1</td><td>Social Media Click Tag</td><td>GA4 Event</td><td><a href="#triggers">Social Media Click</a></td><td>Click Text, Click URL</td></tr>
         </tbody>
       </table>
     </section>
 
     <section id="demo">
-      <h2>HTML Demo (Form Submit)</h2>
-      <form onsubmit="handleFormSubmit(event)">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required />
-
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required />
-
-        <button type="submit">Submit</button>
-      </form>
+      <h2>HTML Demo (Manual Social Click Event)</h2>
+      <button onclick="pushSocialClick('Facebook', 'https://facebook.com/msasaroar')">Facebook</button>
+      <button onclick="pushSocialClick('WhatsApp', 'https://wa.me/8801917530031')">WhatsApp</button>
+      <button onclick="pushSocialClick('Email', 'mailto:msasaroar@gmail.com')">Email</button>
 
       <script>
-        function handleFormSubmit(event) {
-          event.preventDefault();
+        function pushSocialClick(platform, url) {
           window.dataLayer = window.dataLayer || [];
           window.dataLayer.push({
-            event: "form_submit",
-            form_id: "demo-form",
-            form_classes: "tracking-form"
+            event: "social_click",
+            social_platform: platform,
+            social_url: url
           });
-          alert("form_submit event pushed to dataLayer manually!");
+          alert(platform + " click event pushed to dataLayer!");
         }
       </script>
-
-      <p>Fill out the form and click submit to simulate a <code>form_submit</code> event using <code>dataLayer.push</code>.</p>
+      <p>Click any button to simulate a <code>social_click</code> event with platform and URL details.</p>
     </section>
   </main>
 </body>

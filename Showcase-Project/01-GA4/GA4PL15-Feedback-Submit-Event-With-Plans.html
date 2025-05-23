@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feedback Submit Event - GTM Showcase</title>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB72WSHR');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <style>
+    body {
+      background-color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: green;
+      color: black;
+      font-weight: bold;
+      font-size: 35px;
+      text-align: center;
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .home-button {
+      position: absolute;
+      border-radius: 8px;
+      font-size: 16px;
+      left: 15px;
+      top: 10px;
+      background-color: orange;
+      color: blue;
+      padding: 15px 30px;
+      text-decoration: none;
+      border: 5px solid darkgreen;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 6px;
+      z-index: 1001;
+    }
+
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    main {
+      padding: 120px 20px 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    section {
+      margin-bottom: 60px;
+    }
+
+    h2 {
+      text-align: center;
+      color: darkgreen;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+    }
+
+    nav {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 0 15px;
+      font-weight: bold;
+      color: blue;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: orange;
+    }
+
+    button {
+      display: block;
+      margin: 20px auto;
+      background-color: orange;
+      color: blue;
+      border: none;
+      padding: 15px 30px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: blue;
+      color: orange;
+    }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header>
+    Feedback Submit Event - GTM Showcase
+    <a href="index.html" class="home-button">Home</a>
+  </header>
+
+  <main>
+    <nav>
+      <a href="#variables">Variable Plan</a>
+      <a href="#triggers">Trigger Plan</a>
+      <a href="#tags">Tag Plan</a>
+      <a href="#demo">HTML Demo</a>
+    </nav>
+
+    <section id="variables">
+      <h2>Variable Plan</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Variable Name</th>
+            <th>Variable Type</th>
+            <th>Description</th>
+            <th>Used In</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Form ID</td><td>Built-In</td><td>Unique identifier for the feedback form</td><td><a href="#tags">Feedback Tag</a></td></tr>
+          <tr><td>2</td><td>Form Classes</td><td>Built-In</td><td>CSS classes of the form</td><td><a href="#tags">Feedback Tag</a></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="triggers">
+      <h2>Trigger Plan</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Trigger Name</th>
+            <th>Trigger Type</th>
+            <th>Firing Conditions</th>
+            <th>Used In</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Feedback Submit</td><td>Custom Event</td><td>Event Name = feedback_submit</td><td><a href="#tags">Feedback Tag</a></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="tags">
+      <h2>Tag Plan</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Tag Name</th>
+            <th>Tag Type</th>
+            <th>Firing Trigger</th>
+            <th>Variables Used</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Feedback Tag</td><td>GA4 Event</td><td><a href="#triggers">Feedback Submit</a></td><td>Form ID, Form Classes</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="demo">
+      <h2>HTML Demo (Manual feedback_submit Event)</h2>
+      <button onclick="pushFeedbackEvent()">Submit Feedback</button>
+      <script>
+        function pushFeedbackEvent() {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: "feedback_submit",
+            form_id: "feedback-form-1",
+            form_class: "feedback-form"
+          });
+          alert("feedback_submit event pushed to dataLayer!");
+        }
+      </script>
+      <p>Click the button above to manually trigger a <code>feedback_submit</code> event using <code>dataLayer.push</code>.</p>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Enhanced website with data layer integration, user interactivity, and responsive design">
+  <title>Data Layer Enabled Page</title>
+
+  <!-- Google Tag Manager -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+      event: 'pageview',
+      pageCategory: 'homepage',
+      userRole: 'guest',
+      timestamp: new Date().toISOString()
+    });
+  </script>
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+    var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
+    j.async=true; j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+    f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MB72WSHR');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <style>
+    body {
+      background-color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: black;
+    }
+
+    header {
+      background-color: green;
+      color: black;
+      font-weight: bold;
+      font-size: 35px;
+      text-align: center;
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .home-button {
+      position: absolute;
+      left: 15px;
+      top: 10px;
+      background-color: orange;
+      color: blue;
+      padding: 15px 30px;
+      text-decoration: none;
+      border: 5px solid darkgreen;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    main {
+      padding: 75px 20px 50px;
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .card {
+      background: white;
+      border: 2px solid green;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+
+    .card input, .card button {
+      padding: 8px;
+      margin: 5px 0;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    .card input {
+      width: 100%;
+    }
+
+    .card button {
+      background-color: orange;
+      color: blue;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      width: auto;
+      min-width: 120px;
+      margin: 0 5px;
+    }
+
+    .card button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: white;
+      color: black;
+      text-align: center;
+      padding: 10px 0;
+      z-index: 1000;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    #modal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 20px;
+      border: 1px solid black;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      z-index: 2000;
+      max-width: 300px;
+      text-align: center;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    #modal button {
+      margin-top: 15px;
+      padding: 8px 16px;
+      border-radius: 6px;
+      border: none;
+      background-color: orange;
+      color: blue;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    #modal button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    @media (max-width: 600px) {
+      .home-button {
+        padding: 10px 20px;
+        font-size: 14px;
+        top: 5px;
+      }
+
+      .button-group {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .card button {
+        width: 100%;
+        margin: 5px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header>
+    <button class="home-button" onclick="navigateHome()">Home</button>
+    Welcome to the Data Layer Enabled Page
+    <br />
+    <a href="343-Non-DL-Enabled-Page.html" style="font-size: 16px; display: inline-block; margin-top: 10px; background: orange; color: blue; padding: 8px 16px; border-radius: 6px; text-decoration: none;">View Non-DL Version</a>
+  </header>
+
+  <main>
+    <!-- Section 1 -->
+    <div class="card">
+      <h2>Personal Information</h2>
+      <form id="personalInfoForm">
+        <input type="text" id="name" name="name" placeholder="Your name" required />
+        <input type="number" id="age" name="age" placeholder="Your age" required />
+        <div class="button-group" style="justify-content:center; margin-top: 15px;">
+          <button type="submit">Submit Info</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="card">
+      <h2>Featured Product: Smart Watch</h2>
+      <p>Price: $299</p>
+      <div class="button-group">
+        <button id="addToCart">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="card">
+      <h2>Quick Survey</h2>
+      <p>How satisfied are you with our website?</p>
+      <div class="button-group">
+        <button onclick="surveyResponse('Very Satisfied')">Very Satisfied</button>
+        <button onclick="surveyResponse('Neutral')">Neutral</button>
+        <button onclick="surveyResponse('Dissatisfied')">Dissatisfied</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 Enhanced Website
+  </footer>
+
+  <div id="modal">
+    <p id="modal-message"></p>
+    <button onclick="closeModal()">Close</button>
+  </div>
+
+  <script>
+    function navigateHome() {
+      window.location.href = 'index.html';
+    }
+
+    function showModal(message) {
+      document.getElementById('modal-message').textContent = message;
+      document.getElementById('modal').style.display = 'block';
+    }
+
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+
+    document.getElementById('personalInfoForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const age = document.getElementById('age').value;
+      dataLayer.push({
+        event: 'personal_info_submission',
+        name,
+        age,
+        timestamp: new Date().toISOString()
+      });
+      showModal('Thank you for submitting your information!');
+    });
+
+    document.getElementById('addToCart').addEventListener('click', function () {
+      dataLayer.push({
+        event: 'add_to_cart',
+        productName: 'Smart Watch',
+        price: 299,
+        timestamp: new Date().toISOString()
+      });
+      showModal('Smart Watch added to cart!');
+    });
+
+    function surveyResponse(response) {
+      dataLayer.push({
+        event: 'survey_response',
+        satisfaction: response,
+        timestamp: new Date().toISOString()
+      });
+      showModal(`Thank you for your response: ${response}`);
+    }
+  </script>
+</body>
+</html>

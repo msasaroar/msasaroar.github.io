@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GTM Plans Explained: Variable, Trigger, and Tag</title>
+  <link rel="stylesheet" href="GA4PL-style-sheet.css">
+
   <!-- GTM Code -->
   <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -12,6 +14,7 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-MB72WSHR');
   </script>
+
   <style>
     header {
       background-color: green;
@@ -25,15 +28,17 @@
       top: 0;
       z-index: 1000;
     }
+
     body {
       background-color: white;
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
     }
+
     .home-button {
       position: absolute;
-      border-radius: 6px;
+      border-radius: 8px;
       font-size: 16px;
       left: 15px;
       top: 10px;
@@ -42,35 +47,69 @@
       padding: 15px 30px;
       text-decoration: none;
       border: 5px solid darkgreen;
+      border-radius: 6px;
+      z-index: 1001;
       font-weight: bold;
       cursor: pointer;
-      z-index: 1001; 
     }
+
     .home-button:hover {
       background-color: blue;
       color: orange;
     }
+
     main {
-      padding: 75px 20px 30px;
+      padding: 90px 20px 40px;
       max-width: 1000px;
       margin: auto;
     }
-    h2 {
-      color: green;
-      margin-top: 40px;
-    }
-    p, li {
-      font-size: 18px;
-      line-height: 1.6;
-    }
-    ul {
-      padding-left: 20px;
-    }
+
     .section {
       margin-bottom: 40px;
     }
+
+    h2 {
+      color: darkgreen;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    code {
+      background-color: #f1f1f1;
+      padding: 2px 4px;
+      border-radius: 4px;
+      font-size: 90%;
+    }
+
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 15px;
+    }
+
+    .action-button {
+      background-color: orange;
+      color: blue;
+      font-size: 16px;
+      font-weight: bold;
+      border: 2px solid darkgreen;
+      border-radius: 6px;
+      padding: 10px 20px;
+      text-align: center;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .action-button:hover {
+      background-color: blue;
+      color: orange;
+    }
   </style>
-  <link rel="stylesheet" href="global-style.css">
 </head>
 <body>
 
@@ -94,30 +133,33 @@
 
     <section class="section">
       <h2>📌 Variable Plan</h2>
-      <p>
-        Variables are used to store and return values. They can be system-defined (built-in) or user-defined. A proper Variable Plan helps ensure you have the right data at the right time.
-      </p>
+      <p>Variables are used to store and return values. They can be system-defined (built-in) or user-defined.</p>
       <strong>Common GTM Variables:</strong>
       <ul>
         <li><strong>Page Path:</strong> The path portion of the URL.</li>
         <li><strong>Click Text:</strong> The text inside the clicked element.</li>
         <li><strong>Form ID:</strong> Useful for form submissions.</li>
-        <li><strong>Data Layer Variable:</strong> Used to extract values from dataLayer (e.g., product name).</li>
-        <li><strong>JavaScript Variable:</strong> Custom JS-based values from the page.</li>
+        <li><strong>Data Layer Variable:</strong> Extract values from <code>dataLayer</code>.</li>
+        <li><strong>JavaScript Variable:</strong> Values from custom JS on the page.</li>
       </ul>
+
       <strong>Tips for Variable Plan:</strong>
       <ul>
         <li>List all the variables you'll need.</li>
         <li>Use consistent naming conventions.</li>
         <li>Test each variable in Preview mode.</li>
       </ul>
+
+      <div class="button-group">
+        <a href="#" class="action-button">Built-in Vars</a>
+        <a href="#" class="action-button">DLV Examples</a>
+        <a href="#" class="action-button">JS Variable</a>
+      </div>
     </section>
 
     <section class="section">
       <h2>🎯 Trigger Plan</h2>
-      <p>
-        Triggers tell GTM when to fire a tag. They define user actions or conditions to watch for. The Trigger Plan defines what user interactions you want to track.
-      </p>
+      <p>Triggers tell GTM when to fire a tag. They define user actions or conditions to watch for.</p>
       <strong>Common GTM Triggers:</strong>
       <ul>
         <li><strong>Page View:</strong> Fires when a page loads.</li>
@@ -126,32 +168,44 @@
         <li><strong>Timer Trigger:</strong> Fires after a specific time on page.</li>
         <li><strong>Custom Event:</strong> Listens for manually pushed events via <code>dataLayer.push</code>.</li>
       </ul>
+
       <strong>Tips for Trigger Plan:</strong>
       <ul>
         <li>Define clear conditions for each trigger.</li>
         <li>Match triggers to specific variables or page elements.</li>
-        <li>Use built-in filters (e.g., Click Text = "Buy Now").</li>
+        <li>Use filters (e.g., Click Text = "Buy Now").</li>
       </ul>
+
+      <div class="button-group">
+        <a href="#" class="action-button">Click Trigger</a>
+        <a href="#" class="action-button">Timer Trigger</a>
+        <a href="#" class="action-button">Custom Event</a>
+      </div>
     </section>
 
     <section class="section">
       <h2>🏷️ Tag Plan</h2>
-      <p>
-        Tags are the actual pieces of code that send data to platforms like GA4, Google Ads, or Facebook Pixel. The Tag Plan documents what data to send, where to send it, and when.
-      </p>
+      <p>Tags are the actual pieces of code that send data to platforms like GA4, Google Ads, or Facebook Pixel.</p>
       <strong>Common GTM Tags:</strong>
       <ul>
         <li><strong>GA4 Configuration Tag:</strong> Initializes GA4 on the site.</li>
-        <li><strong>GA4 Event Tag:</strong> Sends specific events like <code>purchase</code> or <code>add_to_cart</code>.</li>
-        <li><strong>Conversion Linker:</strong> Used for conversion tracking.</li>
-        <li><strong>Custom HTML Tag:</strong> Injects custom scripts or pixels.</li>
+        <li><strong>GA4 Event Tag:</strong> Sends specific events like <code>purchase</code>.</li>
+        <li><strong>Conversion Linker:</strong> Tracks conversions across domains.</li>
+        <li><strong>Custom HTML Tag:</strong> Injects custom scripts.</li>
       </ul>
+
       <strong>Tips for Tag Plan:</strong>
       <ul>
         <li>Map each tag to a trigger and associated variables.</li>
-        <li>Follow naming conventions (e.g., "GA4 – Event – Purchase").</li>
-        <li>Use tag sequencing for load order when needed.</li>
+        <li>Use clear naming like <code>GA4 - Event - Purchase</code>.</li>
+        <li>Use tag sequencing when needed.</li>
       </ul>
+
+      <div class="button-group">
+        <a href="#" class="action-button">GA4 Config</a>
+        <a href="#" class="action-button">GA4 Event</a>
+        <a href="#" class="action-button">Custom HTML</a>
+      </div>
     </section>
 
     <section class="section">

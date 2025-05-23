@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Scroll Depth Event - GTM Showcase</title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Form Submit Event | GA4 Manual Trigger</title>
   <!-- Google Tag Manager -->
   <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -14,15 +13,7 @@
     })(window,document,'script','dataLayer','GTM-MB72WSHR');
   </script>
   <!-- End Google Tag Manager -->
-
   <style>
-    body {
-      background-color: white;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
     header {
       background-color: green;
       color: black;
@@ -36,6 +27,13 @@
       z-index: 1000;
     }
 
+    body {
+      background-color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
     .home-button {
       position: absolute;
       border-radius: 8px;
@@ -46,9 +44,10 @@
       color: blue;
       padding: 15px 30px;
       text-decoration: none;
-      border: 5px solid darkgreen;
+      border: none;
       font-weight: bold;
       cursor: pointer;
+      border: 5px solid darkgreen;
       border-radius: 6px;
       z-index: 1001;
     }
@@ -59,161 +58,118 @@
     }
 
     main {
-      padding: 120px 20px 40px;
+      padding: 100px 20px 40px;
       max-width: 1200px;
       margin: auto;
-    }
-
-    section {
-      margin-bottom: 60px;
-    }
-
-    h2 {
-      text-align: center;
-      color: darkgreen;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 20px;
-    }
-
-    table, th, td {
-      border: 1px solid #ccc;
+      margin-bottom: 30px;
     }
 
     th, td {
-      padding: 12px;
+      border: 1px solid #ccc;
+      padding: 10px;
       text-align: left;
     }
 
     th {
-      background-color: #f2f2f2;
-      font-weight: bold;
+      background-color: #f0f0f0;
     }
 
-    nav {
-      margin-bottom: 30px;
+    h2 {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .event-button {
+      display: block;
+      margin: 30px auto;
+      background-color: orange;
+      color: blue;
+      padding: 15px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      border: 5px solid darkgreen;
+      border-radius: 6px;
+      cursor: pointer;
       text-align: center;
     }
 
-    nav a {
-      margin: 0 15px;
-      font-weight: bold;
-      color: blue;
-      text-decoration: none;
-    }
-
-    nav a:hover {
-      color: orange;
-    }
-
-    button {
-      display: block;
-      margin: 20px auto;
-      background-color: orange;
-      color: blue;
-      border: none;
-      padding: 15px 30px;
-      font-size: 16px;
-      font-weight: bold;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    button:hover {
+    .event-button:hover {
       background-color: blue;
       color: orange;
+    }
+
+    p {
+      text-align: center;
+      font-size: 16px;
     }
   </style>
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
 
-  <header>
-    Scroll Depth Event - GTM Showcase
-    <a href="index.html" class="home-button">Home</a>
-  </header>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
-  <main>
-    <nav>
-      <a href="#variables">Variable Plan</a>
-      <a href="#triggers">Trigger Plan</a>
-      <a href="#tags">Tag Plan</a>
-      <a href="#demo">HTML Demo</a>
-    </nav>
+<header>
+  Form Submit Event | GA4 Manual Trigger
+</header>
 
-    <section id="variables">
-      <h2>Variable Plan</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Variable Name</th>
-            <th>Variable Type</th>
-            <th>Description</th>
-            <th>Used In</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>1</td><td>Scroll Depth Threshold</td><td>Built-In</td><td>Percentage depth of scroll</td><td><a href="#tags">Scroll Depth Tag</a></td></tr>
-          <tr><td>2</td><td>Scroll Depth Units</td><td>Built-In</td><td>Units (percent or pixels)</td><td><a href="#tags">Scroll Depth Tag</a></td></tr>
-          <tr><td>3</td><td>Page Path</td><td>Built-In</td><td>Path after domain</td><td><a href="#tags">Scroll Depth Tag</a></td></tr>
-        </tbody>
-      </table>
-    </section>
+<a href="index.html" class="home-button">Home</a>
 
-    <section id="triggers">
-      <h2>Trigger Plan</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Trigger Name</th>
-            <th>Trigger Type</th>
-            <th>Firing Conditions</th>
-            <th>Used In</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>1</td><td>Scroll Depth Trigger</td><td>Scroll Depth</td><td>Vertical Scroll: 25%, 50%, 75%, 100%</td><td><a href="#tags">Scroll Depth Tag</a></td></tr>
-        </tbody>
-      </table>
-    </section>
+<main>
+  <h2>Variable Plan</h2>
+  <table>
+    <tr><th>#</th><th>Variable Name</th><th>Variable Type</th><th>Description</th><th>Used In</th></tr>
+    <tr><td>1</td><td>Form ID</td><td>Form Element</td><td>Captures form ID when submitted</td><td>Trigger, Tag</td></tr>
+    <tr><td>2</td><td>Page URL</td><td>Auto-Event Variable</td><td>Captures current page URL</td><td>Tag</td></tr>
+  </table>
 
-    <section id="tags">
-      <h2>Tag Plan</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Tag Name</th>
-            <th>Tag Type</th>
-            <th>Firing Trigger</th>
-            <th>Variables Used</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Scroll Depth Tag</td>
-            <td>GA4 Event</td>
-            <td><a href="#triggers">Scroll Depth Trigger</a></td>
-            <td>Scroll Depth Threshold, Scroll Depth Units, Page Path</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
+  <h2>Trigger Plan</h2>
+  <table>
+    <tr><th>#</th><th>Trigger Name</th><th>Trigger Type</th><th>Firing Conditions</th><th>Used In</th></tr>
+    <tr>
+      <td>1</td>
+      <td>Form Submit Trigger</td>
+      <td>Form Submission</td>
+      <td>All forms or specific form ID</td>
+      <td>GA4 Form Submit Tag</td>
+    </tr>
+  </table>
 
-    <section id="demo">
-      <h2>HTML Demo (Trigger Scroll Depth Manually)</h2>
-      <p style="text-align: center;">Scroll down the page to trigger scroll depth events at 25%, 50%, 75%, and 100% levels.</p>
-      <div style="height: 3000px;"></div>
-    </section>
-  </main>
+  <h2>Tag Plan</h2>
+  <table>
+    <tr><th>#</th><th>Tag Name</th><th>Tag Type</th><th>Firing Trigger</th><th>Variables Used</th></tr>
+    <tr>
+      <td>1</td>
+      <td>GA4 Form Submit</td>
+      <td>GA4 Event Tag</td>
+      <td>Form Submit Trigger</td>
+      <td>Form ID, Page URL</td>
+    </tr>
+  </table>
+
+  <h2>HTML Demo (Manual <code>form_submit</code> Event)</h2>
+
+  <button class="event-button" onclick="pushFormSubmitEvent()">Push form_submit Event</button>
+
+  <p>Click the button above to manually trigger a <code>form_submit</code> event using <code>dataLayer.push</code>.</p>
+
+  <script>
+    function pushFormSubmitEvent() {
+      dataLayer.push({
+        event: 'form_submit',
+        form_id: 'newsletter_signup',
+        page_url: window.location.href
+      });
+      alert('form_submit event pushed to dataLayer');
+    }
+  </script>
+</main>
 </body>
 </html>

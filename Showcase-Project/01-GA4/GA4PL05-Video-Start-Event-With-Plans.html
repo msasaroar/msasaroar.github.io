@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Form Submit Event - GTM Showcase</title>
-  <link rel="stylesheet" href="plan-style.css">
+  <title>Video Start Event - GTM Showcase</title>
+  <link rel="stylesheet" href="GA4PL-style-sheet.css">
   <!-- Google Tag Manager -->
   <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -22,7 +22,7 @@
   <!-- End Google Tag Manager (noscript) -->
 
   <header>
-    Form Submit Event - GTM Showcase
+    Video Start Event - GTM Showcase
     <a href="index.html" class="home-button">Home</a>
   </header>
 
@@ -47,8 +47,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>1</td><td>Form ID</td><td>Built-In</td><td>ID of the submitted form</td><td><a href="#tags">Form Submit Tag</a></td></tr>
-          <tr><td>2</td><td>Form Classes</td><td>Built-In</td><td>Classes of submitted form</td><td><a href="#tags">Form Submit Tag</a></td></tr>
+          <tr><td>1</td><td>Video Title</td><td>Data Layer</td><td>Title of the video</td><td><a href="#tags">Video Start Tag</a></td></tr>
+          <tr><td>2</td><td>Video URL</td><td>Data Layer</td><td>URL of the video file</td><td><a href="#tags">Video Start Tag</a></td></tr>
         </tbody>
       </table>
     </section>
@@ -66,7 +66,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>1</td><td>Form Submit Trigger</td><td>Form Submission</td><td>All Forms</td><td><a href="#tags">Form Submit Tag</a></td></tr>
+          <tr><td>1</td><td>Video Start Trigger</td><td>Custom Event</td><td>Event Name = video_start</td><td><a href="#tags">Video Start Tag</a></td></tr>
         </tbody>
       </table>
     </section>
@@ -84,37 +84,29 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>1</td><td>Form Submit Tag</td><td>GA4 Event</td><td><a href="#triggers">Form Submit Trigger</a></td><td>Form ID, Form Classes</td></tr>
+          <tr><td>1</td><td>Video Start Tag</td><td>GA4 Event</td><td><a href="#triggers">Video Start Trigger</a></td><td>Video Title, Video URL</td></tr>
         </tbody>
       </table>
     </section>
 
     <section id="demo">
-      <h2>HTML Demo (Form Submit)</h2>
-      <form onsubmit="handleFormSubmit(event)">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required />
-
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required />
-
-        <button type="submit">Submit</button>
-      </form>
-
+      <h2>HTML Demo (Manual Video Start Event Push)</h2>
+      <video id="demoVideo" width="640" controls>
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
       <script>
-        function handleFormSubmit(event) {
-          event.preventDefault();
+        document.getElementById('demoVideo').addEventListener('play', function() {
           window.dataLayer = window.dataLayer || [];
           window.dataLayer.push({
-            event: "form_submit",
-            form_id: "demo-form",
-            form_classes: "tracking-form"
+            event: "video_start",
+            video_title: "Big Buck Bunny Demo",
+            video_url: "https://www.w3schools.com/html/mov_bbb.mp4"
           });
-          alert("form_submit event pushed to dataLayer manually!");
-        }
+          alert("video_start event pushed to dataLayer!");
+        });
       </script>
-
-      <p>Fill out the form and click submit to simulate a <code>form_submit</code> event using <code>dataLayer.push</code>.</p>
+      <p>Play the video to simulate a <code>video_start</code> GA4 event via <code>dataLayer.push</code>.</p>
     </section>
   </main>
 </body>

@@ -1,0 +1,109 @@
+body {
+  background-color: white;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: green;
+  color: black;
+  font-weight: bold;
+  font-size: 35px;
+  text-align: center;
+  padding: 20px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.home-button {
+  position: absolute;
+  font-size: 16px;
+  left: 15px;
+  top: 10px;
+  background-color: orange;
+  color: blue;
+  padding: 15px 30px;
+  text-decoration: none;
+  border: 5px solid darkgreen;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+  z-index: 1001;
+}
+
+.home-button:hover {
+  background-color: blue;
+  color: orange;
+}
+
+main {
+  padding: 120px 20px 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+nav {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+nav a {
+  margin: 0 15px;
+  font-weight: bold;
+  color: blue;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: orange;
+}
+
+h2 {
+  text-align: center;
+  color: darkgreen;
+}
+
+section {
+  margin-bottom: 60px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table, th, td {
+  border: 1px solid #ccc;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+button {
+  display: block;
+  margin: 20px auto;
+  background-color: orange;
+  color: blue;
+  border: none;
+  padding: 15px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: blue;
+  color: orange;
+}
