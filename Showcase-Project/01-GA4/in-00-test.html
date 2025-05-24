@@ -1,287 +1,152 @@
-নীচে ৩টি css ফাইলের কোড দেয়া হলো। এই তিনটাকে মার্জ করে ১টি css ফাইল বানিয়ে দাও।
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Category Toggle & Navigation Test</title>
+  <style>
+    header {
+      background-color: green;
+      color: black;
+      font-weight: bold;
+      font-size: 35px;
+      text-align: center;
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
 
+    body {
+      background-color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
-=====================================
-CSS FILE # 1
-=====================================
-/* General Page Styles */
-body {
-  background-color: white;
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
+    .home-button {
+      position: absolute;
+      border-radius: 8px;
+      font-size: 16px;
+      left: 15px;
+      top: 10px;
+      background-color: orange;
+      color: blue;
+      padding: 15px 30px;
+      text-decoration: none;
+      border: 5px solid darkgreen;
+      cursor: pointer;
+      border-radius: 6px;
+      z-index: 1001;
+    }
 
-header {
-  background-color: green;
-  color: black;
-  font-weight: bold;
-  font-size: 35px;
-  text-align: center;
-  padding: 20px 0;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-}
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
 
-main {
-  padding: 100px 20px 40px;
-  max-width: 1000px;
-  margin: auto;
-}
+    main {
+      padding: 75px 20px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-.section {
-  margin-bottom: 50px;
-}
+    /* Category header style */
+    .category {
+      cursor: pointer;
+      background-color: #eee;
+      padding: 10px;
+      margin-top: 20px;
+      font-weight: bold;
+      user-select: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-h2 {
-  color: darkgreen;
-  text-align: center;
-}
+    /* Plus/minus sign for toggle */
+    .category::after {
+      content: "➕";
+      font-weight: bold;
+      font-size: 20px;
+      transition: transform 0.3s ease;
+    }
 
-/* Home Button Styles */
-.home-button {
-  position: absolute;
-  border-radius: 8px;
-  font-size: 16px;
-  left: 15px;
-  top: 10px;
-  background-color: orange;
-  color: blue;
-  padding: 15px 30px;
-  text-decoration: none;
-  border: none;
-  font-weight: bold;
-  cursor: pointer;
-  border: 5px solid darkgreen;
-  border-radius: 6px;
-  z-index: 1001;
-}
+    .category.active::after {
+      content: "➖";
+    }
 
-.home-button:hover {
-  background-color: blue;
-  color: orange;
-}
+    /* Event group hidden by default */
+    .event-group {
+      display: none;
+      list-style: none;
+      padding-left: 20px;
+      margin: 0;
+    }
 
-/* Simulation Button */
-.center-button {
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-}
+    .event-group.show {
+      display: block;
+    }
 
-button {
-  background-color: orange;
-  color: blue;
-  font-size: 18px;
-  padding: 15px 30px;
-  border: 4px solid darkgreen;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-}
+    /* List item style */
+    li[data-value] {
+      padding: 8px;
+      cursor: pointer;
+      color: blue;
+      font-weight: bold;
+      border-bottom: 1px solid #ccc;
+      max-width: 600px;
+      margin: 0 auto;
+    }
 
-button:hover {
-  background-color: blue;
-  color: orange;
-}
+    li[data-value]:hover {
+      background-color: orange;
+      color: blue;
+      transition: background-color 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+  <header>আমার টেস্ট পেজ</header>
+  <a href="#" class="home-button">Home</a>
 
-/* Table Styles */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
+  <main>
+    <div class="category">Category 1</div>
+    <ul class="event-group">
+      <li data-value="page1.html">Page 1</li>
+      <li data-value="page2.html">Page 2</li>
+    </ul>
 
-th, td {
-  border: 2px solid #4CAF50;
-  padding: 12px;
-  text-align: left;
-}
+    <div class="category">Category 2</div>
+    <ul class="event-group">
+      <li data-value="page3.html">Page 3</li>
+      <li data-value="page4.html">Page 4</li>
+    </ul>
+  </main>
 
-th {
-  background-color: #e6ffe6;
-  color: black;
-}
+  <script>
+    // সব <li> আইটেমে ক্লিক ইভেন্ট যোগ করা হচ্ছে
+    document.querySelectorAll("li[data-value]").forEach(function(item) {
+      item.addEventListener("click", function() {
+        const fileName = item.getAttribute("data-value");
+        if (fileName) {
+          // নতুন ট্যাবে ফাইল ওপেন
+          window.open(fileName, "_blank");
+        }
+      });
+    });
 
-td {
-  background-color: #f9f9f9;
-}
-
-=====================================
-CSS FILE # 2
-=====================================
-
-/* General Page Styles */
-body {
-  background-color: white;
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-header {
-  background-color: green;
-  color: black;
-  font-weight: bold;
-  font-size: 35px;
-  text-align: center;
-  padding: 20px 0;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-}
-
-main {
-  padding: 100px 20px 40px;
-  max-width: 1000px;
-  margin: auto;
-}
-
-.section {
-  margin-bottom: 50px;
-}
-
-h2 {
-  color: darkgreen;
-  text-align: center;
-}
-
-/* Home Button Styles */
-.home-button {
-  position: absolute;
-  border-radius: 8px;
-  font-size: 16px;
-  left: 15px;
-  top: 10px;
-  background-color: orange;
-  color: blue;
-  padding: 15px 30px;
-  text-decoration: none;
-  border: none;
-  font-weight: bold;
-  cursor: pointer;
-  border: 5px solid darkgreen;
-  border-radius: 6px;
-  z-index: 1001;
-}
-
-.home-button:hover {
-  background-color: blue;
-  color: orange;
-}
-
-/* Simulation Button */
-.center-button {
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-}
-
-button {
-  background-color: orange;
-  color: blue;
-  font-size: 18px;
-  padding: 15px 30px;
-  border: 4px solid darkgreen;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-button:hover {
-  background-color: blue;
-  color: orange;
-}
-
-/* Table Styles */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-
-th, td {
-  border: 2px solid #4CAF50;
-  padding: 12px;
-  text-align: left;
-}
-
-th {
-  background-color: #e6ffe6;
-  color: black;
-}
-
-td {
-  background-color: #f9f9f9;
-}
-
-=====================================
-CSS FILE # 3
-=====================================
-
-/* Base Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Body Styling */
-body {
-  background-color: white;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-/* Header Styling */
-header {
-  background-color: green;
-  color: black;
-  font-weight: bold;
-  font-size: 35px;
-  text-align: center;
-  padding: 10px 0;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-  border: 2px solid black;
-  position: relative;
-}
-
-/* Home Button Styling */
-a.home-button {
-  position: absolute;
-  top: 50%;
-  left: 15px;
-  transform: translateY(-50%);
-  
-  width: 140px;
-  height: 60px;
-
-  background-color: orange;
-  color: blue;
-  font-size: 16px;
-  font-weight: bold;
-  line-height: 5px;
-  text-align: center;
-  text-decoration: none;
-
-  border: 5px solid darkgreen;
-  border-radius: 6px;
-  cursor: pointer;
-  z-index: 1001;
-  display: inline-block;
-}
-
-/* Home Button Hover Effect */
-a.home-button:hover {
-  background-color: blue;
-  color: orange;
-}
-
-
+    // ক্যাটাগরি টগল করার জন্য (➕ / ➖)
+    document.querySelectorAll(".category").forEach(function(category) {
+      category.addEventListener("click", function() {
+        category.classList.toggle("active");
+        const group = category.nextElementSibling;
+        if (group && group.classList.contains("event-group")) {
+          group.classList.toggle("show");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
