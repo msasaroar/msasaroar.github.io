@@ -25,54 +25,6 @@
   <!-- End Google Tag Manager -->
 
   <style>
-    body {
-      background-color: white;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      color: black;
-    }
-
-    header {
-      background-color: green;
-      color: black;
-      font-weight: bold;
-      font-size: 35px;
-      text-align: center;
-      padding: 20px 0;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .home-button {
-      position: absolute;
-      left: 15px;
-      top: 10px;
-      background-color: orange;
-      color: blue;
-      padding: 15px 30px;
-      text-decoration: none;
-      border: 5px solid darkgreen;
-      border-radius: 6px;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-      z-index: 1001;
-    }
-
-    .home-button:hover {
-      background-color: blue;
-      color: orange;
-    }
-
-    main {
-      padding: 75px 20px 50px;
-      max-width: 800px;
-      margin: auto;
-      text-align: center;
-    }
 
     .card {
       background: white;
@@ -191,6 +143,8 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="GA4PL01-TO-50-Style.css">
+
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -202,7 +156,7 @@
     <button class="home-button" onclick="navigateHome()">Home</button>
     Welcome to the Data Layer Enabled Page
     <br />
-    <a href="343-Non-DL-Enabled-Page.html" style="font-size: 16px; display: inline-block; margin-top: 10px; background: orange; color: blue; padding: 8px 16px; border-radius: 6px; text-decoration: none;">View Non-DL Version</a>
+    <a href="GA4PL0A-Page-Without-dataLayer.html" style="font-size: 16px; display: inline-block; margin-top: 10px; background: orange; color: blue; padding: 8px 16px; border-radius: 6px; text-decoration: none;">View Non-DL Version</a>
   </header>
 
   <main>
@@ -238,10 +192,6 @@
       </div>
     </div>
   </main>
-
-  <footer>
-    © 2025 Enhanced Website
-  </footer>
 
   <div id="modal">
     <p id="modal-message"></p>
