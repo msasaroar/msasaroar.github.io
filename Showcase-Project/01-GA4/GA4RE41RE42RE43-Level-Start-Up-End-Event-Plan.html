@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Level Events | GA4 Event Plan</title>
+  <link rel="stylesheet" href="GA4PL51-TO-99-Style.css" />
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB72WSHR');
+  </script>
+  <!-- End Google Tag Manager -->
+</head>
+<body>
+  <header>
+    Level Events | GA4 Event Plan
+    <a class="home-button" href="../index.html">Home</a>
+  </header>
+
+  <main>
+    <!-- Simulate Events -->
+    <div class="section">
+      <h2>Simulate Events</h2>
+      <div class="center-button">
+        <button onclick="simulateLevelStart()">Simulate level_start</button>
+        <button onclick="simulateLevelUp()">Simulate level_up</button>
+        <button onclick="simulateLevelEnd()">Simulate level_end</button>
+      </div>
+      <script>
+        function simulateLevelStart() {
+          dataLayer.push({
+            event: 'level_start',
+            level_name: 'Desert Canyon',
+            level_number: 1
+          });
+          alert("level_start event pushed!");
+        }
+        function simulateLevelUp() {
+          dataLayer.push({
+            event: 'level_up',
+            level_name: 'Forest Temple',
+            level_number: 2
+          });
+          alert("level_up event pushed!");
+        }
+        function simulateLevelEnd() {
+          dataLayer.push({
+            event: 'level_end',
+            level_name: 'Ice Cave',
+            level_number: 3
+          });
+          alert("level_end event pushed!");
+        }
+      </script>
+    </div>
+
+    <!-- Variable Plan -->
+    <div class="section">
+      <h2>Variable Plan</h2>
+      <table>
+        <tr>
+          <th>Variable Name</th>
+          <th>Type</th>
+          <th>Data Layer Variable Name</th>
+        </tr>
+        <tr>
+          <td>event_name</td>
+          <td>Data Layer Variable</td>
+          <td>event</td>
+        </tr>
+        <tr>
+          <td>level_name</td>
+          <td>Data Layer Variable</td>
+          <td>level_name</td>
+        </tr>
+        <tr>
+          <td>level_number</td>
+          <td>Data Layer Variable</td>
+          <td>level_number</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Trigger Plan -->
+    <div class="section">
+      <h2>Trigger Plan</h2>
+      <table>
+        <tr>
+          <th>Trigger Name</th>
+          <th>Type</th>
+          <th>Event Name</th>
+          <th>Firing Condition</th>
+        </tr>
+        <tr>
+          <td>level_start - Event Trigger</td>
+          <td>Custom Event</td>
+          <td>level_start</td>
+          <td>All Custom Events</td>
+        </tr>
+        <tr>
+          <td>level_up - Event Trigger</td>
+          <td>Custom Event</td>
+          <td>level_up</td>
+          <td>All Custom Events</td>
+        </tr>
+        <tr>
+          <td>level_end - Event Trigger</td>
+          <td>Custom Event</td>
+          <td>level_end</td>
+          <td>All Custom Events</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Tag Plan -->
+    <div class="section">
+      <h2>Tag Plan</h2>
+      <table>
+        <tr>
+          <th>Tag Name</th>
+          <th>Type</th>
+          <th>Event Name</th>
+          <th>Event Parameters</th>
+          <th>Trigger</th>
+        </tr>
+        <tr>
+          <td>GA4 Event - level_start</td>
+          <td>GA4 Event Tag</td>
+          <td>level_start</td>
+          <td>
+            level_name → {{DLV - level_name}}<br>
+            level_number → {{DLV - level_number}}
+          </td>
+          <td>level_start - Event Trigger</td>
+        </tr>
+        <tr>
+          <td>GA4 Event - level_up</td>
+          <td>GA4 Event Tag</td>
+          <td>level_up</td>
+          <td>
+            level_name → {{DLV - level_name}}<br>
+            level_number → {{DLV - level_number}}
+          </td>
+          <td>level_up - Event Trigger</td>
+        </tr>
+        <tr>
+          <td>GA4 Event - level_end</td>
+          <td>GA4 Event Tag</td>
+          <td>level_end</td>
+          <td>
+            level_name → {{DLV - level_name}}<br>
+            level_number → {{DLV - level_number}}
+          </td>
+          <td>level_end - Event Trigger</td>
+        </tr>
+      </table>
+    </div>
+  </main>
+</body>
+</html>

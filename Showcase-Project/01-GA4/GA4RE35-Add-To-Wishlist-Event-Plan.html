@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>add_to_wishlist | GA4 Event Plan</title>
+  <link rel="stylesheet" href="GA4PL51-TO-99-Style.css" />
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB72WSHR');
+  </script>
+  <!-- End Google Tag Manager -->
+</head>
+<body>
+  <header>
+    add_to_wishlist | GA4 Event Plan
+    <a class="home-button" href="../index.html">Home</a>
+  </header>
+
+  <main>
+    <div class="section">
+      <h2>Simulate add_to_wishlist Event</h2>
+      <div class="center-button">
+        <button onclick="simulateEvent()">Simulate Event</button>
+      </div>
+      <script>
+        function simulateEvent() {
+          dataLayer.push({
+            event: 'add_to_wishlist'
+          });
+          alert("add_to_wishlist event pushed to dataLayer!");
+        }
+      </script>
+    </div>
+
+    <div class="section">
+      <h2>Variable Plan</h2>
+      <table>
+        <tr>
+          <th>Variable Name</th>
+          <th>Type</th>
+          <th>Data Layer Variable Name</th>
+        </tr>
+        <tr>
+          <td>event_name</td>
+          <td>Data Layer Variable</td>
+          <td>event</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>Trigger Plan</h2>
+      <table>
+        <tr>
+          <th>Trigger Name</th>
+          <th>Type</th>
+          <th>Event Name</th>
+          <th>Firing Condition</th>
+        </tr>
+        <tr>
+          <td>add_to_wishlist - Event Trigger</td>
+          <td>Custom Event</td>
+          <td>add_to_wishlist</td>
+          <td>All Custom Events</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>Tag Plan</h2>
+      <table>
+        <tr>
+          <th>Tag Name</th>
+          <th>Type</th>
+          <th>Event Name</th>
+          <th>Event Parameters</th>
+          <th>Trigger</th>
+        </tr>
+        <tr>
+          <td>GA4 Event - add_to_wishlist</td>
+          <td>GA4 Event Tag</td>
+          <td>add_to_wishlist</td>
+          <td>event → {DLV - event}</td>
+          <td>add_to_wishlist - Event Trigger</td>
+        </tr>
+      </table>
+    </div>
+  </main>
+</body>
+</html>

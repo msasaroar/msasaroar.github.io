@@ -1,228 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Custom Events Demonstration</title>
+GA4RE58-Working-Lead.html
+GA4RE58-Working-Lead-Event-Plan.html
 
-  <!-- Google Tag Manager -->
-  <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MB72WSHR');
-  </script>
-  <!-- End Google Tag Manager -->
+Consider above as a pair. Like wise which are not with pair in the following ?
 
-  <style>
-    body {
-      background-color: white;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      background-color: green;
-      color: black;
-      font-weight: bold;
-      font-size: 35px;
-      text-align: center;
-      padding: 20px 0;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .home-button {
-      position: absolute;
-      border-radius: 8px;
-      font-size: 16px;
-      left: 15px;
-      top: 10px;
-      background-color: orange;
-      color: blue;
-      padding: 15px 30px;
-      text-decoration: none;
-      border: 5px solid darkgreen;
-      border-radius: 6px;
-      z-index: 1001;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .home-button:hover {
-      background-color: blue;
-      color: orange;
-    }
-
-    main {
-      padding: 75px 20px 40px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .button-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      margin: 20px 0;
-    }
-
-    button {
-      background-color: orange;
-      color: blue;
-      font-weight: bold;
-      border: 5px solid darkgreen;
-      border-radius: 6px;
-      padding: 15px 30px;
-      cursor: pointer;
-      font-size: 16px;
-      flex: 1 1 250px;
-      max-width: 250px;
-    }
-
-    button:hover {
-      background-color: blue;
-      color: orange;
-    }
-
-    textarea {
-      width: 100%;
-      height: 150px;
-      padding: 10px;
-      font-size: 16px;
-      margin-top: 20px;
-    }
-
-    section {
-      margin-top: 40px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    th, td {
-      padding: 10px;
-      border: 1px solid #444;
-    }
-
-    th {
-      background-color: #f0f0f0;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-
-  <header>
-    Custom Events Demonstration
-    <a href="index.html" class="home-button">Home</a>
-  </header>
-
-  <main>
-    <p>Click a button below to trigger a custom event.</p>
-
-    <div class="button-container">
-      <button id="button1">Trigger Event 1</button>
-      <button id="button2">Trigger Event 2</button>
-      <button id="button3">Trigger Event 3</button>
-    </div>
-
-    <textarea id="output" readonly>Event messages will appear here...</textarea>
-
-    <section id="variables">
-      <h2>Variable Plan</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Variable Name</th>
-            <th>Variable Type</th>
-            <th>Description</th>
-            <th>Used In</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>1</td><td>message</td><td>Data Layer Variable</td><td>Custom event message</td><td>All Custom Event Tags</td></tr>
-          <tr><td>2</td><td>timestamp</td><td>Data Layer Variable</td><td>Time of the event</td><td>All Custom Event Tags</td></tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section id="triggers">
-      <h2>Trigger Plan</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Trigger Name</th>
-            <th>Trigger Type</th>
-            <th>Firing Conditions</th>
-            <th>Used In</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>1</td><td>Trigger Custom Event 1</td><td>Custom Event</td><td>Event Name = customEvent1</td><td>Custom Event Tag 1</td></tr>
-          <tr><td>2</td><td>Trigger Custom Event 2</td><td>Custom Event</td><td>Event Name = customEvent2</td><td>Custom Event Tag 2</td></tr>
-          <tr><td>3</td><td>Trigger Custom Event 3</td><td>Custom Event</td><td>Event Name = customEvent3</td><td>Custom Event Tag 3</td></tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section id="tags">
-      <h2>Tag Plan</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Tag Name</th>
-            <th>Tag Type</th>
-            <th>Firing Trigger</th>
-            <th>Variables Used</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>1</td><td>Custom Event Tag 1</td><td>GA4 Event</td><td>Trigger Custom Event 1</td><td>message, timestamp</td></tr>
-          <tr><td>2</td><td>Custom Event Tag 2</td><td>GA4 Event</td><td>Trigger Custom Event 2</td><td>message, timestamp</td></tr>
-          <tr><td>3</td><td>Custom Event Tag 3</td><td>GA4 Event</td><td>Trigger Custom Event 3</td><td>message, timestamp</td></tr>
-        </tbody>
-      </table>
-    </section>
-  </main>
-
-  <script>
-    function logEvent(eventName, message) {
-      const timestamp = new Date().toISOString();
-      const logMessage = `Event: ${eventName} | Message: ${message} | Time: ${timestamp}`;
-      document.getElementById('output').value += `\n${logMessage}`;
-      dataLayer.push({
-        event: eventName,
-        message: message,
-        timestamp: timestamp
-      });
-    }
-
-    document.getElementById("button1").addEventListener("click", () => {
-      logEvent("customEvent1", "Custom Event 1 triggered");
-    });
-
-    document.getElementById("button2").addEventListener("click", () => {
-      logEvent("customEvent2", "Custom Event 2 triggered");
-    });
-
-    document.getElementById("button3").addEventListener("click", () => {
-      logEvent("customEvent3", "Custom Event 3 triggered");
-    });
-  </script>
-</body>
-</html>
+GA4RE57-View-Promotion.html
+GA4RE57-View-Promotion-Event-Plan.html
+GA4RE56-View-Cart.html
+GA4RE56-View-Cart-Event-Plan.html
+GA4RE55-Unlock-Achievement.html
+GA4RE55-Unlock-Achievement-Event-Plan.html
+GA4RE53RE54-Tutorial-Begin-Complete.html
+GA4RE53RE54-Tutorial-Begin-Complete-Event-Plan.html
+GA4RE52-Spend-Virtual-Currency.html
+GA4RE52-Spend-Virtual-Currency-Event-Plan.html
+GA4RE51-Signup-Confirmation.html
+GA4RE51-Sign-Up.html
+GA4RE51-Sign-Up-Event-Plan.html
+GA4RE50-Share.html
+GA4RE50-Share-Event-Plan.html
+GA4RE49-SelectPromotion-Event-Plan.html
+GA4RE49-Select-Promotion.html
+GA4RE48-SelectContent-Event-Plan.html
+GA4RE48-Select-Content.html
+GA4RE47-Search.html
+GA4RE47-Search-Event-Plan.html
+GA4RE46-Qualify-Lead.html
+GA4RE46-Qualify-Lead-Event-Plan.html
+GA4RE45-PostScore-Event-Plan.html
+GA4RE45-Post-Score.html
+GA4RE44-Login.html
+GA4RE44-Login-Event-Plan.html
+GA4RE41RE42RE43-Level-Start-Up-End.html
+GA4RE41RE42RE43-Level-Start-Up-End-Event-Plan.html
+GA4RE40-Join-Group.html
+GA4RE40-Join-Group-Event-Plan.html
+GA4RE39-Earn-Virtual-Currency.html
+GA4RE39-Earn-Virtual-Currency-Event-Plan.html
+GA4RE38-Disqualify-Lead.html
+GA4RE38-Disqualify-Lead-Event-Plan.html
+GA4RE37-Close-Unconvert-Lead.html
+GA4RE37-Close-Unconvert-Lead-Event-Plan.html
+GA4RE36-Close-Converted-Lead-Event-Plan.html
+GA4RE36-Close-Convert-Lead.html
+GA4RE35-Add-To-Wishlist.html
+GA4RE35-Add-To-Wishlist-Event-Plan.html
+GA4RE33-View-Item-List.html
+GA4RE33-View-Item-List-Event-Plan.html
+GA4RE32-View-Item.html
+GA4RE32-View-Item-Event-Plan.html
+GA4RE23-Select-Item.html
+GA4RE23-Select-Item-Event-Plan.html
+GA4RE20-Remove-From-Cart.html
+GA4RE20-Remove-From-Cart-Event-Plan.html
+GA4RE19-Refund.html
+GA4RE19-Refund-Event-Plan.html
+GA4RE18-Purchase-Confirmation.html
+GA4RE17-Purchase.html
+GA4RE17-Purchase-Event-Plan.html
+GA4RE10-Generate-Lead.html
+GA4RE10-Generate-Lead-Event-Plan.html
+GA4RE05-Begin-Checkout.html
+GA4RE05-Begin-Checkout-Event-Plan.html
+GA4RE03-Add-To-Cart.html
+GA4RE03-Add-To-Cart-Event-Plan.html
+GA4RE02-Add-Shipping-Info.html
+GA4RE02-Add-Shipping-Info-Event-Plan.html
+GA4RE01-Add-Payment-Info.html
+GA4RE01-Add-Payment-Info-Event-Plan.html
