@@ -4,7 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Page_View Event Style Page</title>
+  
+  <link rel="stylesheet" href="GA4PL01-TO-50-Style.css">
+
   <style>
+
+header {
+  background-color: green;
+  color: black;
+  font-weight: bold;
+  font-size: 35px; /* আগের 35px থেকে কমানো হয়েছে */
+  text-align: center;
+  padding: 12px 0; /* আগের 20px থেকে কমানো হয়েছে */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
 
     /* Main content */
     main {
@@ -16,10 +32,10 @@
     /* Card container */
     .card {
       background-color: white;
-      border: 2px solid green;
+      border: 5px solid darkgreen;
       border-radius: 8px;
-      padding: 20px;
-      margin-bottom: 25px;
+      padding: 1px;
+      margin-bottom: 5px;
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
     .card h2 {
@@ -42,22 +58,7 @@
       font-weight: bold;
     }
 
-    /* Buttons styling */
-    button {
-      background-color: orange;
-      color: blue;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 6px;
-      font-weight: bold;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-    button:hover {
-      background-color: blue;
-      color: orange;
-    }
+
 
     /* Container for multiple buttons horizontally aligned */
     .button-group {
@@ -65,18 +66,6 @@
       gap: 15px;
       flex-wrap: wrap;
       margin-top: 10px;
-    }
-
-    /* Footer styling */
-    footer {
-      text-align: center;
-      padding: 10px 0;
-      background-color: white;
-      color: black;
-      font-size: 16px;
-      border-top: 1px solid green;
-      position: relative;
-      z-index: 1000;
     }
 
     /* Modal styles */
@@ -128,7 +117,6 @@
       }
     }
   </style>
-    <link rel="stylesheet" href="GA4PL01-TO-50-Style.css">
 </head>
 <body>
 
@@ -171,10 +159,6 @@
       </div>
     </section>
   </main>
-
-  <footer>
-    <p>© 2025 Static Website</p>
-  </footer>
 
   <!-- Modal -->
   <div id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-message">
