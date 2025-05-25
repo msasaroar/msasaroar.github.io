@@ -16,66 +16,32 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-MB72WSHR');
   </script>
-
+  <link rel="stylesheet" href="GA4-global-style.css">
   <style>
-    header {
-      background-color: green;
-      color: black;
-      font-weight: bold;
-      font-size: 35px;
-      text-align: center;
-      padding: 20px 0;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-    }
+        /* h1 এর স্টাইল আলাদা করে সেট করা */
+        header h1 {
+            font-size: 35px;              /* আগের চাইতে অনেক ছোট */
+            margin: 5px 0;                /* margin কমানো হয়েছে */
+        }
 
-    body {
-      background-color: white;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
+        header h2 {
+            margin: 100px 100px;                /* margin কমানো হয়েছে */
+        }        
+        main {
+          padding: 0 20px;
+          margin-top: 150px; /* নিচে নামানোর জন্য বাড়ানো হয়েছে */
+          text-align: center;
+        }
 
-    .home-button {
-      position: absolute;
-      border-radius: 8px;
-      font-size: 16px;
-      left: 15px;
-      top: 10px;
-      background-color: orange;
-      color: blue;
-      padding: 15px 30px;
-      text-decoration: none;
-      border: 5px solid darkgreen;
-      font-weight: bold;
-      cursor: pointer;
-      border-radius: 6px;
-      z-index: 1001;
-    }
-
-    .home-button:hover {
-      background-color: blue;
-      color: orange;
-    }
-
-    main {
-      padding: 75px 20px 30px;
-      max-width: 800px;
-      margin: auto;
-      text-align: center;
-    }
-
-    video {
-      width: 100%;
-      max-width: 700px;
-      margin-top: 20px;
-      border: 3px solid #ccc;
-      border-radius: 10px;
-    }
+        video {
+          width: 100%;
+          max-width: 700px;
+          margin: 50px auto 0; /* উপরে 100px, নিচে 0px, ডানে-বামে auto */
+          display: block;        /* margin auto কাজ করার জন্য */
+          border: 3px solid #ccc;
+          border-radius: 10px;
+        }
   </style>
-                <link rel="stylesheet" href="GA4-global-style.css">
 
 </head>
 <body>
