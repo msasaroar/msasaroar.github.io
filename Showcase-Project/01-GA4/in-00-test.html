@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>close_converted_lead | GA4 Event Plan</title>
+  <title>close_unconverted_lead | GA4 Event Plan</title>
   <link rel="stylesheet" href="GA4PL51-TO-99-Style.css" />
   <!-- Google Tag Manager -->
   <script>
@@ -17,24 +17,23 @@
 </head>
 <body>
   <header>
-    close_converted_lead | GA4 Event Plan
+    close_unconverted_lead | GA4 Event Plan
     <a class="home-button" href="../index.html">Home</a>
   </header>
 
   <main>
     <div class="section">
-      <h2>Simulate close_converted_lead Event</h2>
+      <h2>Simulate close_unconverted_lead Event</h2>
       <div class="center-button">
         <button onclick="simulateEvent()">Simulate Event</button>
       </div>
       <script>
         function simulateEvent() {
           dataLayer.push({
-            event: 'close_converted_lead',
-            lead_id: 'L-12345',
-            conversion_value: 10000
+            event: 'close_unconverted_lead',
+            lead_id: 'L-67890'
           });
-          alert("close_converted_lead event pushed to dataLayer!");
+          alert("close_unconverted_lead event pushed to dataLayer!");
         }
       </script>
     </div>
@@ -52,11 +51,6 @@
           <td>Data Layer Variable</td>
           <td>lead_id</td>
         </tr>
-        <tr>
-          <td>conversion_value</td>
-          <td>Data Layer Variable</td>
-          <td>conversion_value</td>
-        </tr>
       </table>
     </div>
 
@@ -70,9 +64,9 @@
           <th>Firing Condition</th>
         </tr>
         <tr>
-          <td>close_converted_lead - Event Trigger</td>
+          <td>close_unconverted_lead - Event Trigger</td>
           <td>Custom Event</td>
-          <td>close_converted_lead</td>
+          <td>close_unconverted_lead</td>
           <td>All Custom Events</td>
         </tr>
       </table>
@@ -89,14 +83,11 @@
           <th>Trigger</th>
         </tr>
         <tr>
-          <td>GA4 Event - close_converted_lead</td>
+          <td>GA4 Event - close_unconverted_lead</td>
           <td>GA4 Event Tag</td>
-          <td>close_converted_lead</td>
-          <td>
-            lead_id → {{DLV - lead_id}}<br>
-            conversion_value → {{DLV - conversion_value}}
-          </td>
-          <td>close_converted_lead - Event Trigger</td>
+          <td>close_unconverted_lead</td>
+          <td>lead_id → {{DLV - lead_id}}</td>
+          <td>close_unconverted_lead - Event Trigger</td>
         </tr>
       </table>
     </div>
