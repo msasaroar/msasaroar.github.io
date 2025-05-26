@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GTM JavaScript Variable - A to Z Syllabus</title>
+  <!-- GTM Code -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB72WSHR');
+  </script>
+
+  <style>
+    body {
+      background-color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: green;
+      color: black;
+      font-weight: bold;
+      font-size: 35px;
+      text-align: center;
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .home-button {
+      position: absolute;
+      border-radius: 6px;
+      font-size: 16px;
+      left: 15px;
+      top: 10px;
+      background-color: orange;
+      color: blue;
+      padding: 15px 30px;
+      text-decoration: none;
+      border: 5px solid darkgreen;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    main {
+      padding: 100px 20px 50px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #006400;
+    }
+
+    ol {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 12px;
+      font-size: 18px;
+    }
+
+    a {
+      text-decoration: none;
+      color: darkblue;
+    }
+
+    a:hover {
+      color: darkred;
+    }
+
+.custom-pre {
+  background-color: rgb(181, 203, 181);
+  padding: 20px;
+  border: 5px solid green;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: auto;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    JavaScript Variable in GTM – A to Z Syllabus
+    <a href="index.html" class="home-button">Home</a>
+  </header>
+
+  <main>
+    <h2>Learning Modules</h2>
+    <ol>
+      <li><a href="#s01"> Introduction to JavaScript Variables in GTM</a></li>
+      <li><a href="#s02"> Global JavaScript Variable (e.g., <code>window.userId</code>)</a></li>
+      <li><a href="#s03"> How to Create a JavaScript Variable in GTM</a></li>
+      <li><a href="#s04"> Understanding Scope: Global vs Local Variables</a></li>
+      <li><a href="#s05"> Using Nested Variables (e.g., <code>window.user.details.id</code>)</a></li>
+      <li><a href="#s06"> Error Handling for Undefined Variables</a></li>
+      <li><a href="#s07"> Using JavaScript Variable in GA4 Tag</a></li>
+      <li><a href="#s08"> Using JavaScript Variable in Trigger Conditions</a></li>
+      <li><a href="#s09"> Using JavaScript Variable with Lookup Table Variable</a></li>
+      <li><a href="#s10"> DOM-based JavaScript Variable with <code>document.querySelector</code></a></li>
+      <li><a href="#s11"> Reading Input Field Value using JavaScript Variable</a></li>
+      <li><a href="#s12"> Reading Meta Tag or Script Tag Content via JavaScript</a></li>
+      <li><a href="#s13"> Using Custom JavaScript Variable vs JavaScript Variable</a></li>
+      <li><a href="#s14"> Debugging JavaScript Variables in Preview Mode</a></li>
+      <li><a href="#s15"> Best Practices for Naming and Structuring Variables</a></li>
+      <li><a href="#s16"> Real-world Use Cases (e.g., User ID, Language, Login Status)</a></li>
+      <li><a href="#s17"> Security Considerations (Avoid sensitive data exposure)</a></li>
+      <li><a href="#s18"> Common Mistakes and Troubleshooting</a></li>
+      <li><a href="#s19"> Performance Tips for JavaScript Variables</a></li>
+      <li><a href="#s20"> Advanced Use: Combining with DOM Events</a></li>
+    </ol>
+
+    <!-- Sections -->
+    <div id="s01" class="section"><h2>01. Introduction to JavaScript Variables in GTM</h2></div>
+   <pre class="custom-pre">
+<b>Lesson 1: Introduction to JavaScript Variables in GTM</b>
+
+📌 What is a JavaScript Variable in GTM?
+- It retrieves a value from the page's global JavaScript context.
+- It looks for variables under the "window" object.
+
+📘 Example:
+If your page has:
+  window.userId = "saiful123";
+
+Then you can create a JavaScript Variable in GTM with name:
+  userId
+It will read the value: "saiful123"
+
+🧠 Why use JS Variables in GTM?
+- To capture userId, language, login status, etc.
+- Use them in GA4 tags, Facebook tags, or triggers.
+
+🎯 GTM Setup:
+1. Go to Variables > New
+2. Type: JavaScript Variable
+3. Global Variable Name: userId
+4. Save and use it as {{JS - User ID}}
+
+🧪 Testing in GTM Preview Mode:
+- Open your site with GTM Preview
+- Click on an event
+- Go to Variables tab
+- Check if your JS Variable is showing the correct value
+
+✅ Summary:
+- JS Variables pull from "window" object
+- Useful for custom data tracking
+- Easy to set up and test
+
+</pre>
+
+    <div id="s02" class="section"><h2>02. Global JavaScript Variable</h2></div>
+<pre class="custom-pre">
+    <b>Lesson 2: Global JavaScript Variable</b>
+
+📌 What is a Global JavaScript Variable?
+- A variable declared in the global scope (usually under the "window" object).
+- It can be accessed from anywhere in your website's JavaScript code.
+
+📘 Syntax Example:
+  window.userType = "admin";
+
+This variable is now globally available as:
+  window.userType
+
+✅ Characteristics:
+- Lives in browser memory as long as the page is loaded.
+- Accessible from browser console, GTM, or any script block.
+- Can be used to store values like user info, session state, language, etc.
+
+🧠 Common Use Cases:
+- userId (e.g., window.userId = "12345")
+- isLoggedIn (e.g., window.isLoggedIn = true)
+- user.role.name (nested: window.user.role.name = "editor")
+
+🎯 How to Set a Global JS Variable on Your Page:
+Put this in a script tag in the HTML:
+  &lt;script&gt;
+    window.language = "en";
+    window.isLoggedIn = true;
+    window.user = {
+      id: "u456",
+      name: "Saiful",
+      type: "subscriber"
+    };
+  &lt;/script&gt;
+
+🧪 How to Access It:
+- From browser console:
+  console.log(window.language); // "en"
+- In GTM JavaScript Variable:
+  language
+  user.name
+  user.type
+
+🚫 Warning:
+- Avoid overwriting built-in window properties.
+- Do not declare global variables with generic names (e.g., "data", "temp").
+
+✅ Summary:
+- Global JS variables live on the "window" object.
+- Useful for tracking, personalization, and conditional logic.
+- Can be easily accessed by GTM or browser scripts.
+</pre>
+
+    <div id="s03" class="section"><h2>03. How to Create a JavaScript Variable in GTM</h2></div>
+    <pre class="custom-pre">
+        <!-- Your preformatted text here -->
+    </pre>
+    <div id="s04" class="section"><h2>04. Understanding Scope</h2></div>
+    <pre class="custom-pre">
+        <!-- Your preformatted text here -->
+    </pre>
+    <div id="s05" class="section"><h2>05. Using Nested Variables</h2></div>
+    <pre class="custom-pre">
+        <!-- Your preformatted text here -->
+    </pre>
+    <div id="s06" class="section"><h2>06. Error Handling</h2></div>
+    <pre class="custom-pre">
+        <!-- Your preformatted text here -->
+    </pre>
+    <div id="s07" class="section"><h2>07. JavaScript Variable in GA4 Tag</h2></div>
+    <pre class="custom-pre">
+        <!-- Your preformatted text here -->
+    </pre>
+    <div id="s08" class="section"><h2>08. Variable in Trigger Conditions</h2></div>
+    <pre class="custom-pre">
+        <!-- Your preformatted text here -->
+    </pre>
+    <div id="s09" class="section"><h2>09. Variable with Lookup Table</h2></div>
+    <pre class="custom-pre">
+        <!-- Your preformatted text here -->
+    </pre>
+    <div id="s10" class="section"><h2>10. DOM-based Variable</h2></div>
+    <pre class="custom-pre">
+        <!-- Your preformatted text here -->
+    </pre>
+    <div id="s11" class="section"><h2>11. Reading Input Field Value</h2></div>
+    <pre class="custom-pre">
+        <!-- Your preformatted text here -->
+    </pre>
+    <div id="s12" class="section"><h2>12. Reading Meta/Script Tag</h2></div>
+    <pre class="custom-pre">
+        <!-- Your preformatted text here -->
+    </pre>
+    <div id="s13" class="section"><h2>13. Custom JavaScript Variable</h2></div>
+    <pre class="custom-pre">
+        <!-- Your preformatted text here -->
+    </pre>
+    <div id="s14" class="section"><h2>14. Debugging in Preview Mode</h2></div>
+    <pre class="custom-pre">
+        <!-- Your preformatted text here -->
+    </pre>
+    <div id="s15" class="section"><h2>15. Best Practices</h2></div>
+    <pre class="custom-pre">
+        <!-- Your preformatted text here -->
+    </pre>
+    <div id="s16" class="section"><h2>16. Real-world Use Cases</h2></div>
+    <pre class="custom-pre">
+        <!-- Your preformatted text here -->
+    </pre>
+    <div id="s17" class="section"><h2>17. Security Considerations</h2></div>
+    <pre class="custom-pre">
+        <!-- Your preformatted text here -->
+    </pre>
+    <div id="s18" class="section"><h2>18. Common Mistakes</h2></div>
+    <pre class="custom-pre">
+        <!-- Your preformatted text here -->
+    </pre>
+    <div id="s19" class="section"><h2>19. Performance Tips</h2></div>
+    <pre class="custom-pre">
+        <!-- Your preformatted text here -->
+    </pre>
+    <div id="s20" class="section"><h2>20. Advanced Use: DOM Events</h2></div>
+    <pre class="custom-pre">
+        <!-- Your preformatted text here -->
+    </pre>
+  </main>
+</body>
+</html>

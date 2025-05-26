@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>আমার পাবলিশ করা ব্লগ অন্যরা কীভাবে খুঁজে পাবে?</title>
+  <meta name="description" content="এই ব্লগে আপনি জানতে পারবেন কিভাবে আপনার HTML বা ব্লগ পেজ অন্যরা সহজে খুঁজে পেতে পারে।">
+  <meta name="keywords" content="HTML ব্লগ, Google Search, Blog শেয়ার, SEO, GitHub Pages, Saiful Alam">
+  
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB72WSHR');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <style>
+    header {
+      background-color: green;
+      color: black;
+      font-weight: bold;
+      font-size: 35px;
+      text-align: center;
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    body {
+      background-color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .home-button {
+      position: absolute;
+      border-radius: 6px;
+      font-size: 16px;
+      left: 15px;
+      top: 10px;
+      background-color: orange;
+      color: blue;
+      padding: 15px 30px;
+      text-decoration: none;
+      border: 5px solid darkgreen;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1001; 
+    }
+
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    main {
+      padding: 100px 20px 40px;
+      max-width: 900px;
+      margin: auto;
+      line-height: 1.7;
+      font-size: 18px;
+    }
+
+    h2 {
+      color: darkgreen;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header>
+    আমার ব্লগ কীভাবে সবাই খুঁজে পাবে?
+  </header>
+
+  <a class="home-button" href="index.html">Home</a>
+
+  <main>
+    <h2>১. আপনার ব্লগের লিংক শেয়ার করুন</h2>
+    <p>সবচেয়ে সহজ উপায় হলো আপনার ব্লগের URL অন্যদের সঙ্গে শেয়ার করা:</p>
+    <ul>
+      <li>Facebook, WhatsApp, Messenger, Telegram-এ লিংক পাঠান</li>
+      <li>LinkedIn বা Twitter Bio-তে দিন</li>
+      <li>নিজের Digital Business Card বা Portfolio তে রাখুন</li>
+    </ul>
+
+    <h2>২. Google বা Search Engine-এ দেখা যাবে কিভাবে?</h2>
+    <p>আপনার ব্লগ গুগলে খুঁজে পেতে হলে এটি Google-এর সার্ভারে ইনডেক্স হতে হবে। এজন্য:</p>
+    <ul>
+      <li>GitHub Pages, Netlify, Neocities এর মতো ফ্রি হোস্টিং প্ল্যাটফর্ম ব্যবহার করলে অনেক সময় নিজে থেকেই ইনডেক্স হয়</li>
+      <li>তবে দ্রুত চাইলে <strong>Google Search Console</strong> এ সাবমিট করুন</li>
+    </ul>
+
+    <h2>৩. ব্লগকে Google-এ খুঁজে পেতে সাহায্য করার কৌশল</h2>
+    <ul>
+      <li><strong>HTML-এর head ট্যাগে:</strong> title, description, keywords, author meta tag ব্যবহার করুন</li>
+      <li><strong>সঠিক Title ব্যবহার করুন:</strong> যেমন - "GA4 ইভেন্ট কীভাবে কাজ করে? ডেমোসহ ব্যাখ্যা"</li>
+      <li><strong>মূল কীওয়ার্ড যুক্ত করুন:</strong> আপনার পেজে যেসব শব্দ Google-এ মানুষ সার্চ করে, সেগুলো naturally যুক্ত করুন</li>
+    </ul>
+
+    <h2>৪. সোশ্যাল মিডিয়ায় সুন্দরভাবে শেয়ার করতে চাইলে</h2>
+    <p>আপনি চাইলে Open Graph Meta Tags ব্যবহার করতে পারেন যাতে শেয়ার করলে প্রিভিউ টাইটেল/ছবি দেখা যায়। যেমন:</p>
+<pre>
+&lt;meta property="og:title" content="GA4 ডেমো পেজ by Saiful"&gt;
+&lt;meta property="og:description" content="Google Analytics 4 এবং Tag Manager সম্পর্কিত লাইভ ডেমো"&gt;
+&lt;meta property="og:url" content="https://msasaroar.github.io/Showcase-Project/"&gt;
+</pre>
+
+    <h2>৫. সময়ের সাথে ভিজিটর বাড়ানোর কৌশল</h2>
+    <ul>
+      <li>নিয়মিত নতুন HTML পেজ বা ব্লগ যুক্ত করুন</li>
+      <li>সঠিকভাবে লিংক করা থাকলে Google সহজে বুঝতে পারবে</li>
+      <li>আপনার Showcase পেজে প্রতিটি পেইজের লিংক যুক্ত করুন (internal linking)</li>
+    </ul>
+
+    <p>এইভাবে ধীরে ধীরে আপনার ব্লগ সবার কাছে পৌঁছে যাবে!</p>
+  </main>
+</body>
+</html>

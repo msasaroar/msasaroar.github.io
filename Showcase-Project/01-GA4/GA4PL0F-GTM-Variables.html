@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GTM Variables - Complete Guide</title>
+  <link rel="stylesheet" href="GA4PL01-TO-50-Style.css">
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB72WSHR');
+  </script>
+  <!-- End Google Tag Manager -->
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header>
+    Complete Guide to GTM Variables
+    <a href="index.html" class="home-button">Home</a>
+  </header>
+
+  <main>
+    <section>
+      <h2>Introduction</h2>
+      <p>Google Tag Manager (GTM) variables are used to dynamically capture values from your website to help manage your tags, triggers, and conditions. There are two main types of variables in GTM: Built-in Variables and User-defined Variables. Below is a breakdown of each type along with examples.</p>
+    </section>
+
+    <section>
+      <h2>1. Built-in Variables</h2>
+      <p>These are default variables provided by GTM which you can enable as needed.</p>
+      <table>
+        <thead>
+          <tr><th>Variable Name</th><th>Description</th><th>Example</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Click ID</td><td>ID of the clicked element</td><td>button123</td></tr>
+          <tr><td>Click Classes</td><td>CSS classes of the clicked element</td><td>btn primary</td></tr>
+          <tr><td>Page Path</td><td>Current URL path</td><td>/checkout/step1</td></tr>
+          <tr><td>Referrer</td><td>URL of the referring page</td><td>https://google.com</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>2. User-defined Variables</h2>
+      <p>These variables are custom-defined to capture specific values from the site. Here's a list of common types:</p>
+
+      <table>
+        <thead>
+          <tr><th>Variable Type</th><th>Description</th><th>Example Usage</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Data Layer Variable</td><td>Reads values from the dataLayer</td><td>ecommerce.items</td></tr>
+          <tr><td>URL Variable</td><td>Extracts values from URL query strings</td><td>utm_source</td></tr>
+          <tr><td>Auto-Event Variable</td><td>Used with event-based triggers</td><td>Click Element</td></tr>
+          <tr><td>JavaScript Variable</td><td>Returns value using JavaScript</td><td>function() { return window.location.hostname; }</td></tr>
+          <tr><td>First Party Cookie</td><td>Reads cookies stored in browser</td><td>_ga</td></tr>
+          <tr><td>DOM Element</td><td>Reads value from an HTML element</td><td>#product-id</td></tr>
+          <tr><td>Regex Table</td><td>Maps input values using regex</td><td>Match domain to environment</td></tr>
+          <tr><td>Lookup Table</td><td>Maps values directly</td><td>Page Path => Page Type</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Conclusion</h2>
+      <p>Variables are essential for effective tag management. By understanding how to configure and apply GTM variables, you can track user behavior and trigger events accurately.</p>
+    </section>
+  </main>
+</body>
+</html>
