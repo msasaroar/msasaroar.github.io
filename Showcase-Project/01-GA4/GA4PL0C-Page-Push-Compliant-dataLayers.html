@@ -18,7 +18,7 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Frequently Used Data Layers</title>
+  <title>GA4 Compliant Data Layers</title>
   <style>
     .button-group {
       display: flex;
@@ -27,22 +27,7 @@
       gap: 15px;
       margin-bottom: 30px;
     }
-    button {
-      background-color: orange;
-      color: blue;
-      border: none;
-      padding: 12px 24px;
-      font-size: 16px;
-      font-weight: bold;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      min-width: 150px;
-    }
-    button:hover {
-      background-color: blue;
-      color: orange;
-    }
+
     table {
       width: 100%;
       border-collapse: collapse;
@@ -71,19 +56,60 @@
       font-size: 14px;
     }
   </style>
-    <link rel="stylesheet" href="GA4PL01-TO-50-Style.css">
+  <link rel="stylesheet" href="GA4PL01-TO-50-Style.css">
   <script>
     window.dataLayer = window.dataLayer || [];
 
     const dataLayerEntries = [
-      { event: "pageView", pageTitle: "Product Page - Sample Products", pageURL: "https://www.example.com/products/wireless-headphones" },
-      { event: "userInfo", userId: "user12345", userType: "registered", userRegion: "US" },
-      { event: "navigationEvent", eventCategory: "navigation", eventAction: "load", eventLabel: "product-page-load" },
-      { event: "siteInfo", siteName: "Example E-commerce", siteVersion: "3.0.1" },
-      { event: "contentMetadata", contentId: "product-98765", contentType: "product", contentTags: ["electronics", "headphones", "wireless"] },
-      { event: "campaignInfo", trafficSource: "organic", campaignName: "Winter Deals 2024" },
-      { event: "ecommerceInfo", productId: "98765", productCategory: "Headphones", productPrice: 129.99 },
-      { event: "customVariables", loggedInStatus: true, pageEnvironment: "production" }
+      // GA4 Recommended: page_view
+      { event: "page_view", page_title: "Product Page - Wireless Headphones", page_location: "https://www.example.com/products/wireless-headphones" },
+
+      // GA4 Recommended: login
+      { event: "login", method: "Email" },
+
+      // GA4 Recommended: view_item
+      {
+        event: "view_item",
+        items: [{
+          item_id: "98765",
+          item_name: "Wireless Headphones",
+          item_category: "Electronics",
+          price: 129.99
+        }]
+      },
+
+      // GA4 Recommended: select_content
+      {
+        event: "select_content",
+        content_type: "product",
+        item_id: "98765"
+      },
+
+      // GA4 Recommended: session_start (manually simulating)
+      { event: "session_start" },
+
+      // GA4 Recommended: campaign_details (custom equivalent)
+      {
+        event: "campaign_details",
+        source: "organic",
+        campaign: "Winter Deals 2024",
+        medium: "search"
+      },
+
+      // Custom Event (must define in GA4)
+      {
+        event: "user_properties_update",
+        user_id: "user12345",
+        user_type: "registered",
+        user_region: "US"
+      },
+
+      // Custom Event (must define in GA4)
+      {
+        event: "environment_info",
+        logged_in: true,
+        environment: "production"
+      }
     ];
 
     function pushDataLayer(index) {
@@ -97,7 +123,6 @@
       const row = table.insertRow(-1);
       const eventCell = row.insertCell(0);
       const detailsCell = row.insertCell(1);
-
       eventCell.textContent = entry.event || 'N/A';
 
       const pre = document.createElement('pre');
@@ -115,20 +140,20 @@
 
   <header>
     <a href="index.html" class="home-button">Home</a>
-    Frequently Used Data Layers
+    GA4 Compliant Data Layers
   </header>
 
   <main>
-    <h2>Click a button to push a data layer entry:</h2>
+    <h2>Click a button to push a GA4-compliant data layer entry:</h2>
     <div class="button-group">
       <button onclick="pushDataLayer(0)">Push Page View</button>
-      <button onclick="pushDataLayer(1)">Push User Info</button>
-      <button onclick="pushDataLayer(2)">Push Navigation Event</button>
-      <button onclick="pushDataLayer(3)">Push Site Info</button>
-      <button onclick="pushDataLayer(4)">Push Content Metadata</button>
+      <button onclick="pushDataLayer(1)">Push Login</button>
+      <button onclick="pushDataLayer(2)">Push View Item</button>
+      <button onclick="pushDataLayer(3)">Push Select Content</button>
+      <button onclick="pushDataLayer(4)">Push Session Start</button>
       <button onclick="pushDataLayer(5)">Push Campaign Info</button>
-      <button onclick="pushDataLayer(6)">Push eCommerce Info</button>
-      <button onclick="pushDataLayer(7)">Push Custom Variables</button>
+      <button onclick="pushDataLayer(6)">Push User Info</button>
+      <button onclick="pushDataLayer(7)">Push Environment Info</button>
     </div>
 
     <table id="data-layer-table">
