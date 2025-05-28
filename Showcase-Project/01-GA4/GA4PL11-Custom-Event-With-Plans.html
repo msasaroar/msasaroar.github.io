@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sample Custom Event Plan</title>
+  
+  <!-- GTM Code (Head) -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB72WSHR');
+  </script>
+
+  <style>
+    body {
+      background-color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: green;
+      color: black;
+      font-weight: bold;
+      font-size: 35px;
+      text-align: center;
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    .home-button {
+      position: absolute;
+      border-radius: 8px;
+      font-size: 16px;
+      left: 15px;
+      top: 10px;
+      background-color: orange;
+      color: blue;
+      padding: 15px 30px;
+      text-decoration: none;
+      border: 5px solid darkgreen;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 6px;
+      z-index: 1001;
+    }
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+    main {
+      padding: 100px 20px 40px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      color: darkgreen;
+    }
+    .plan-section {
+      border: 2px solid darkgreen;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px 0;
+      background-color: #f9fff9;
+    }
+    .plan-section h3 {
+      color: green;
+      margin-top: 0;
+    }
+    .plan-section ul {
+      padding-left: 20px;
+    }
+    button {
+      display: block;
+      margin: 30px auto;
+      background-color: orange;
+      color: blue;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: bold;
+      border: 3px solid darkgreen;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: blue;
+      color: orange;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- GTM Code (Body) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+
+  <header>
+    Sample Custom Event Plan
+    <a href="index.html" class="home-button">Home</a>
+  </header>
+
+  <main>
+    <h2>Push Sample Custom Event via GTM</h2>
+
+    <div class="plan-section">
+      <h3>🔧 Variable Plan</h3>
+      <ul>
+        <li><strong>Name:</strong> Event Name (Custom)</li>
+        <li><strong>Variable Type:</strong> Data Layer Variable</li>
+        <li><strong>Data Layer Variable Name:</strong> event</li>
+        <li><strong>Used For:</strong> Capturing the event name when pushed to the dataLayer</li>
+      </ul>
+    </div>
+
+    <div class="plan-section">
+      <h3>🎯 Trigger Plan</h3>
+      <ul>
+        <li><strong>Name:</strong> Sample Custom Event Trigger</li>
+        <li><strong>Trigger Type:</strong> Custom Event</li>
+        <li><strong>Event Name:</strong> sample_custom_event</li>
+        <li><strong>This Trigger Fires On:</strong> All Custom Events with name = <code>sample_custom_event</code></li>
+      </ul>
+    </div>
+
+    <div class="plan-section">
+      <h3>🏷️ Tag Plan</h3>
+      <ul>
+        <li><strong>Name:</strong> GA4 Event - Sample Custom Event</li>
+        <li><strong>Tag Type:</strong> Google Analytics: GA4 Event</li>
+        <li><strong>Configuration Tag:</strong> Select your GA4 Configuration Tag</li>
+        <li><strong>Event Name:</strong> sample_custom_event</li>
+        <li><strong>Event Parameters (example):</strong></li>
+        <ul>
+          <li>category: <code>'user_action'</code></li>
+          <li>label: <code>'custom_button_clicked'</code></li>
+        </ul>
+        <li><strong>Trigger:</strong> Custom Event Trigger</li>
+      </ul>
+    </div>
+
+    <button onclick="pushCustomEvent()">Push Sample Custom Event</button>
+  </main>
+
+  <script>
+    function pushCustomEvent() {
+      window.dataLayer = window.dataLayer || [];
+      dataLayer.push({
+        event: "sample_custom_event",
+        category: "user_action",
+        label: "custom_button_clicked"
+      });
+      alert("Sample custom event pushed to dataLayer!");
+    }
+  </script>
+</body>
+</html>
