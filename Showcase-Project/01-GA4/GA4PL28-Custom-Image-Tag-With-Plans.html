@@ -60,9 +60,9 @@
   <p>Click on any image below to trigger a custom GA4 event.</p>
 
   <div>
-    <img src="https://placebear.com/300/200" alt="Sample Image 1" id="image1" onclick="handleImageClick('Sample Image-1')" />
-    <img src="https://fakeimg.pl/300x200/?text=Sample" alt="Sample Image 2" id="image2" onclick="handleImageClick('Sample Image-2')" />
-    <img src="https://dummyimage.com/300x200/000/fff&text=Hello+World" alt="Sample Image 3" id="image3" onclick="handleImageClick('Sample Image-3')" />
+    <img src="https://dummyimage.com/300x200/000/fff&text=Saiful" alt="Sample Image 1" id="image1" onclick="handleImageClick('Sample Image-1')" />
+    <img src="https://dummyimage.com/300x200/000/fff&text=Alam" alt="Sample Image 2" id="image2" onclick="handleImageClick('Sample Image-2')" />
+    <img src="https://dummyimage.com/300x200/000/fff&text=Saroar" alt="Sample Image 3" id="image3" onclick="handleImageClick('Sample Image-3')" />
   </div>
 
   <script>
@@ -71,7 +71,7 @@
       dataLayer.push({
         'event': 'imageClick',
         'imageId': imageId,
-        'tagId': 'GA4 | 205 | Custom Image Tag'
+        'tagId': 'GA4PL28 | Tag | Custom Image Click'
       });
       alert(`Image ${imageId} clicked!`);
     }
