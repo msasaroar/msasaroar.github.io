@@ -22,69 +22,15 @@
       padding: 0;
       text-align: center;      
     }
-
-    header {
-      background-color: green;
-      color: black;
-      font-weight: bold;
-      font-size: 35px;
-      text-align: center;
-      padding: 20px 0;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-    }
-
-
-    .home-button {
-      position: absolute;
-      border-radius: 8px;
-      font-size: 16px;
-      left: 15px;
-      top: 10px;
-      background-color: orange;
-      color: blue;
-      padding: 15px 30px;
-      text-decoration: none;
-      border: none;
-      font-weight: bold;
-      cursor: pointer;
-      border: 5px solid darkgreen;
-      border-radius: 6px;
-    }
-
-    .home-button:hover {
-      background-color: blue;
-      color: orange;
-    }
-
+ 
     .content {
-      margin-top: 100px;
-    }
-
-    .action-button {
-      margin: 1rem;
-      padding: 0.75rem 1.5rem;
-      background-color: orange;
-      color: blue;
-      border: none;
-      border-radius: 6px;
-      font-size: 1rem;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .action-button:hover {
-      background-color: blue;
-      color: orange;
+      margin-top: 120px;
     }
 
     .note {
       background-color: #f9f9f9;
       padding: 5rem;
       border: 1px solid #ddd;
-      margin-top: 2rem;
       max-width: 1000px;
       margin-left: auto;
       margin-right: auto;
@@ -107,16 +53,14 @@
   </header>
 
   <div class="content">
-    <h2>Welcome to GTM Custom HTML Tag Demo</h2>
     <p>This page shows alerts using GTM:</p>
-
+    <br><br>
     <div class="note">
-      <strong>Note:</strong>
       This page does not contain any JavaScript code inside. All alerts are triggered via GTM Custom HTML Tags.
     </div>
 
     <ul style="text-align: left; display: inline-block;">
-      <br><br><br><br>
+      <br><br><br>
       <li>✅ One on page load ✅ One on Button 1 click ✅ One on Button 2 click</li>
       <br><br><br><br>
     <button id="btnAlert1" class="action-button">Click Me! (Button 1)</button>

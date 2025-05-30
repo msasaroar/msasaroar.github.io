@@ -17,53 +17,12 @@
   </script>
 
   <style>
-    header {
-      background-color: green;
-      color: black;
-      font-weight: bold;
-      font-size: 35px;
-      text-align: center;
-      padding: 20px 0;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-    }
-
     body {
       background-color: white;
       font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-    .home-button {
-      position: absolute;
-      border-radius: 8px;
-      font-size: 16px;
-      left: 15px;
-      top: 10px;
-      background-color: orange;
-      color: blue;
-      padding: 15px 30px;
-      text-decoration: none;
-      border: none;
-      font-weight: bold;
-      cursor: pointer;
-      border: 5px solid darkgreen;
-      border-radius: 6px;
-      z-index: 1001; /* ✅ Header এর উপরে আনা হয়েছে */
-    }
-
-    .home-button:hover {
-      background-color: blue;
-      color: orange;
     }
 
     main {
-      padding: 75px 20px 20px;
-      max-width: 800px;
-      margin: auto;
       text-align: center;
     }
 
@@ -77,7 +36,6 @@
       border-radius: 6px;
       text-decoration: none;
       display: inline-block;
-      margin-top: 30px;
       cursor: pointer;
     }
 
@@ -98,8 +56,7 @@
       color: #555;
     }
   </style>
-                <link rel="stylesheet" href="GA4-global-style.css">
-
+  <link rel="stylesheet" href="GA4-global-style.css">
 </head>
 <body>
 
@@ -118,10 +75,8 @@
     <p class="message">This page demonstrates GTM Timer Trigger.</p>
     <p class="note">Stay on this page. The timer trigger will fire every 10 seconds.<br>
     Check GTM Preview Mode or GA4 DebugView to verify the event firing.</p>
-
-    <a class="center-button" onclick="console.log('Test Button Clicked')">
-    Click To Start Timer
-    </a>
+    <br><br><br><br><br>
+    <a class="center-button" onclick="console.log('Test Button Clicked')">Click To Start Timer</a>
   </main>
 
 </body>
