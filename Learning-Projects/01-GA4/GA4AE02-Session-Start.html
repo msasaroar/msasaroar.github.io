@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GA4: session_start Event Demo</title>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WVTKMJG2');
+  </script>
+  <!-- End Google Tag Manager -->
+  <link rel="stylesheet" href="GA4-global-style.css">
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WVTKMJG2"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header>
+    <button class="home-button" onclick="location.href='index.html'">Home</button>
+    GA4 Event Demo: session_start
+  </header>
+
+  <main>
+    <p>This page demonstrates the <strong>session_start</strong> event in GA4.</p>
+
+    <h3>How to Trigger:</h3>
+    <ul>
+      <li>Open this page in a new <strong>Incognito window</strong>.</li>
+      <li>Or <strong>clear cookies</strong> and refresh this page.</li>
+      <li>Or wait <strong>30 minutes</strong> then visit again to start a new session.</li>
+    </ul>
+    <br>
+    <br>
+    <button class="button" onclick="alert('Use incognito or clear cookies to see session_start in DebugView.')">
+      Need Help?
+    </button>
+  </main>
+</body>
+</html>

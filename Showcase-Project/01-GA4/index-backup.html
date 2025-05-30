@@ -17,41 +17,13 @@
 
   <style>
 
-    main {
-      padding: 75px 0px 0px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .home-button {
-      position: absolute;
-      border-radius: 8px;
-      font-size: 16px;
-      left: 15px;
-      top: 5px;
-      background-color: orange;
-      color: blue;
-      text-decoration: none;
-      border: none;
-      font-weight: bold;
-      cursor: pointer;
-      border: 5px solid darkgreen;
-      border-radius: 6px;
-      z-index: 1001;
-    }
-
-    .home-button:hover {
-      background-color: blue;
-      color: orange;
-    }
-
     ul {
       list-style: none;
       padding: 0;
     }
 
     li {
-      background-color: lightskyblue;
+      background-color: rgb(145, 166, 145);
       color: black;
       padding: 10px;
       margin: 5px 0;
@@ -73,12 +45,12 @@
       text-align: center;
       font-size: 12px;
       font-weight: bold;
-      margin-top: 0px;
+      margin-top: 16px;
       cursor: default;
     }
 
     .category {
-      background-color: lightblue;
+      background-color: rgb(159, 242, 190);
       color:black;
       font-weight: lighter;
       text-align: left;
@@ -126,18 +98,13 @@
 
   <main>
     <ul>
-      <!-- Section Header -->
-      <li class="section-header" tabindex="0" data-value="what-is-recommended-event.html">
-        AUTOMATICALLY COLLECTED EVENTS [AE]
-      </li>
+      <li class="section-header" tabindex="0" data-value="GA4AE-What-Is-Automatically-Collected-Event.html">AUTOMATICALLY COLLECTED EVENTS [AE]</li>
       <li class="category">⚙️ Automatically Collected Events</li>
       <div class="event-group">
             <li tabindex="0" data-value="GA4AE01-First-Visit.html">First Visit [first_visit | GA4AE01]</li>
             <li tabindex="0" data-value="GA4AE02-Session-Start.html">Session Start [session_start | GA4AE02]</li>
             <li tabindex="0" data-value="GA4AE03-User-Engagement.html">User Engagement [user_engagement | GA4AE03]</li>
       </div>
-
-      <!-- 🛒 Enhanhanced Measurement Events -->
       <li class="category">📊 Enhanced Measurement Events</li>
       <div class="event-group">
             <li tabindex="0" data-value="GA4AE04-Page-Views.html">Page View [page_view | GA4AE04]</li>
@@ -155,98 +122,87 @@
     </ul>
 
     <ul>
-      <!-- Section Header -->
-      <li class="section-header" tabindex="0" data-value="what-is-recommended-event.html">
-        RECOMMENDED EVENTS [RE]
-      </li>
-      <!--  E-commerce Events -->
+      <li class="section-header" tabindex="0" data-value="GA4RE-What-Is-Recommended-Event.html">RECOMMENDED EVENTS [RE]</li>
       <li class="category">🛒 E-commerce Events</li>
       <div class="event-group">
+            <li tabindex="0" data-value="GA4RE01-Add-Payment-Info-Event-Plan.html">Event Plan : Add Payment Info [GA4RE01]</li>
             <li tabindex="0" data-value="GA4RE01-Add-Payment-Info.html">Add Payment Info [GA4RE01]</li>
-            <li tabindex="0" data-value="GA4RE01-Add-Payment-Info-Event-Plan.html">Add Payment Info Event Plan [GA4RE01]</li>
+            <li tabindex="0" data-value="GA4RE02-Add-Shipping-Info-Event-Plan.html">Event Plan : Add Shipping Info [GA4RE02]</li>
             <li tabindex="0" data-value="GA4RE02-Add-Shipping-Info.html">Add Shipping Info [GA4RE02]</li>
-            <li tabindex="0" data-value="GA4RE02-Add-Shipping-Info-Event-Plan.html">Add Shipping Info Event Plan [GA4RE02]</li>
+            <li tabindex="0" data-value="GA4RE03-Add-To-Cart-Event-Plan.html">Event Plan : Add To Cart [GA4RE03]</li>
             <li tabindex="0" data-value="GA4RE03-Add-To-Cart.html">Add To Cart [GA4RE03]</li>
-            <li tabindex="0" data-value="GA4RE03-Add-To-Cart-Event-Plan.html">Add To Cart Event Plan [GA4RE03]</li>
+            <li tabindex="0" data-value="GA4RE05-Begin-Checkout-Event-Plan.html">Event Plan : Begin Checkout [GA4RE05]</li>
             <li tabindex="0" data-value="GA4RE05-Begin-Checkout.html">Begin Checkout [GA4RE05]</li>
-            <li tabindex="0" data-value="GA4RE05-Begin-Checkout-Event-Plan.html">Begin Checkout Event Plan [GA4RE05]</li>
+            <li tabindex="0" data-value="GA4RE17-Purchase-Event-Plan.html">Event Plan : Purchase [GA4RE17]</li>
             <li tabindex="0" data-value="GA4RE17-Purchase.html">Purchase [GA4RE17]</li>
-            <li tabindex="0" data-value="GA4RE17-Purchase-Event-Plan.html">Purchase Event Plan [GA4RE17]</li>
+            <li tabindex="0" data-value="GA4RE18-Purchase-Confirmation-Event-Plan.html">Event Plan : Purchase Confirmation [GA4RE18]</li>
             <li tabindex="0" data-value="GA4RE18-Purchase-Confirmation.html">Purchase Confirmation [GA4RE18]</li>
-            <li tabindex="0" data-value="GA4RE18-Purchase-Confirmation-Event-Plan.html">Purchase Confirmation Event Plan [GA4RE18]</li>
+            <li tabindex="0" data-value="GA4RE19-Refund-Event-Plan.html">Event Plan : Refund [GA4RE19]</li>
             <li tabindex="0" data-value="GA4RE19-Refund.html">Refund [GA4RE19]</li>
-            <li tabindex="0" data-value="GA4RE19-Refund-Event-Plan.html">Refund Event Plan [GA4RE19]</li>
+            <li tabindex="0" data-value="GA4RE20-Remove-From-Cart-Event-Plan.html">Event Plan : Remove From Cart [GA4RE20]</li>
             <li tabindex="0" data-value="GA4RE20-Remove-From-Cart.html">Remove From Cart [GA4RE20]</li>
-            <li tabindex="0" data-value="GA4RE20-Remove-From-Cart-Event-Plan.html">Remove From Cart Event Plan [GA4RE20]</li>
+            <li tabindex="0" data-value="GA4RE23-Select-Item-Event-Plan.html">Event Plan : Select Item [GA4RE23]</li>
             <li tabindex="0" data-value="GA4RE23-Select-Item.html">Select Item [GA4RE23]</li>
-            <li tabindex="0" data-value="GA4RE23-Select-Item-Event-Plan.html">Select Item Event Plan [GA4RE23]</li>
+            <li tabindex="0" data-value="GA4RE32-View-Item-Event-Plan.html">Event Plan : View Item [GA4RE32]</li>
             <li tabindex="0" data-value="GA4RE32-View-Item.html">View Item [GA4RE32]</li>
-            <li tabindex="0" data-value="GA4RE32-View-Item-Event-Plan.html">View Item Event Plan [GA4RE32]</li>
+            <li tabindex="0" data-value="GA4RE33-View-Item-List-Event-Plan.html">Event Plan : View Item List [GA4RE33]</li>
             <li tabindex="0" data-value="GA4RE33-View-Item-List.html">View Item List [GA4RE33]</li>
-            <li tabindex="0" data-value="GA4RE33-View-Item-List-Event-Plan.html">View Item List Event Plan [GA4RE33]</li>
+            <li tabindex="0" data-value="GA4RE35-Add-To-Wishlist-Event-Plan.html">Event Plan : Add To Wishlist [GA4RE35]</li>
             <li tabindex="0" data-value="GA4RE35-Add-To-Wishlist.html">Add To Wishlist [GA4RE35]</li>
-            <li tabindex="0" data-value="GA4RE35-Add-To-Wishlist-Event-Plan.html">Add To Wishlist Event Plan [GA4RE35]</li>
+            <li tabindex="0" data-value="GA4RE49-Select-Promotion-Event-Plan.html">Event Plan : Select Promotion [GA4RE49]</li>
             <li tabindex="0" data-value="GA4RE49-Select-Promotion.html">????Select Promotion [GA4RE49]</li>
-            <li tabindex="0" data-value="GA4RE49-Select-Promotion-Event-Plan.html">Select Promotion Event Plan [GA4RE49]</li>
+            <li tabindex="0" data-value="GA4RE56-View-Cart-Event-Plan.html">Event Plan : View Cart [GA4RE56]</li>
             <li tabindex="0" data-value="GA4RE56-View-Cart.html">????View Cart [GA4RE56]</li>
-            <li tabindex="0" data-value="GA4RE56-View-Cart-Event-Plan.html">View Cart Event Plan [GA4RE56]</li>
+            <li tabindex="0" data-value="GA4RE57-View-Promotion-Event-Plan.html">Event Plan : View Promotion [GA4RE57]</li>
             <li tabindex="0" data-value="GA4RE57-View-Promotion.html">????View Promotion [GA4RE57]</li>
-            <li tabindex="0" data-value="GA4RE57-View-Promotion-Event-Plan.html">View Promotion Event Plan [GA4RE57]</li>
       </div>
-      <!-- 🧲 Lead Generation -->
       <li class="category">🧲 Lead Generation & CRM</li>
       <div class="event-group">
+            <li tabindex="0" data-value="GA4RE10-Generate-Lead-Event-Plan.html">Event Plan : Generate Lead [GA4RE10]</li>
             <li tabindex="0" data-value="GA4RE10-Generate-Lead.html">Generate Lead [GA4RE10]</li>
-            <li tabindex="0" data-value="GA4RE10-Generate-Lead-Event-Plan.html">Generate Lead Event Plan [GA4RE10]</li>
-            <li tabindex="0" data-value="GA4RE36-Close-Converted-Lead.html">Close Converted Lead [GA4RE36]</li>
-            <li tabindex="0" data-value="GA4RE36-Close-Converted-Lead-Event-Plan.html">Close Converted Lead Event Plan [GA4RE36]</li>
+            <li tabindex="0" data-value="GA4RE36-Close-Converted-Lead-Event-Plan.html">Event Plan : Close Converted Lead [GA4RE36]</li>
+             <li tabindex="0" data-value="GA4RE36-Close-Converted-Lead.html">Close Converted Lead [GA4RE36]</li>
+            <li tabindex="0" data-value="GA4RE37-Close-Unconverted-Lead-Event-Plan.html">Event Plan : Close Unconverted Lead [GA4RE37]</li>
             <li tabindex="0" data-value="GA4RE37-Close-Unconverted-Lead.html">Close Unconverted Lead [GA4RE37]</li>
-            <li tabindex="0" data-value="GA4RE37-Close-Unconverted-Lead-Event-Plan.html">Close Unconverted Lead Event Plan [GA4RE37]</li>
+            <li tabindex="0" data-value="GA4RE38-Disqualify-Lead-Event-Plan.html">Event Plan : Disqualify Lead [GA4RE38]</li>
             <li tabindex="0" data-value="GA4RE38-Disqualify-Lead.html">Disqualify Lead [GA4RE38]</li>
-            <li tabindex="0" data-value="GA4RE38-Disqualify-Lead-Event-Plan.html">Disqualify Lead Event Plan [GA4RE38]</li>
+            <li tabindex="0" data-value="GA4RE46-Qualify-Lead-Event-Plan.html">Event Plan : Qualify Lead [GA4RE46]</li>
             <li tabindex="0" data-value="GA4RE46-Qualify-Lead.html">Qualify Lead [GA4RE46]</li>
-            <li tabindex="0" data-value="GA4RE46-Qualify-Lead-Event-Plan.html">Qualify Lead Event Plan [GA4RE46]</li>
+            <li tabindex="0" data-value="GA4RE58-Working-Lead-Event-Plan.html">Event Plan : Working Lead [GA4RE58]</li>
             <li tabindex="0" data-value="GA4RE58-Working-Lead.html">Working Lead [GA4RE58]</li>
-            <li tabindex="0" data-value="GA4RE58-Working-Lead-Event-Plan.html">Working Lead Event Plan [GA4RE58]</li>
       </div>
-      <!-- 📲 User Engagement -->
       <li class="category">📲 User Engagement</li>
       <div class="event-group">
+            <li tabindex="0" data-value="GA4RE44-Login-Event-Plan.html">Event Plan : Login [GA4RE44]</li>
             <li tabindex="0" data-value="GA4RE44-Login.html">Login [GA4RE44]</li>
-            <li tabindex="0" data-value="GA4RE44-Login-Event-Plan.html">Login Event Plan [GA4RE44]</li>
+            <li tabindex="0" data-value="GA4RE47-Search-Event-Plan.html">Event Plan : Search [GA4RE47]</li>
             <li tabindex="0" data-value="GA4RE47-Search.html">Search [GA4RE47]</li>
-            <li tabindex="0" data-value="GA4RE47-Search-Event-Plan.html">Search Event Plan [GA4RE47]</li>
+            <li tabindex="0" data-value="GA4RE48-Select-Content-Event-Plan.html">Event Plan : Select Content [GA4RE48]</li>
             <li tabindex="0" data-value="GA4RE48-Select-Content.html">Select Content [GA4RE48]</li>
-            <li tabindex="0" data-value="GA4RE48-Select-Content-Event-Plan.html">Select Content Event Plan [GA4RE48]</li>
+            <li tabindex="0" data-value="GA4RE50-Share-Event-Plan.html">Event Plan : Share [GA4RE50]</li>
             <li tabindex="0" data-value="GA4RE50-Share.html">Share [GA4RE50]</li>
-            <li tabindex="0" data-value="GA4RE50-Share-Event-Plan.html">Share Event Plan [GA4RE50]</li>
+            <li tabindex="0" data-value="GA4RE51-Sign-Up-Event-Plan.html">Event Plan : Sign Up [GA4RE51]</li>
             <li tabindex="0" data-value="GA4RE51-Sign-Up.html">Sign Up [GA4RE51]</li>
-            <li tabindex="0" data-value="GA4RE51-Sign-Up-Event-Plan.html">Sign Up Event Plan [GA4RE51]</li>
             <li tabindex="0" data-value="GA4RE51-Signup-Confirmation.html">Signup Confirmation [GA4RE51]</li>
       </div>
-      <!-- 🎮 Gaming -->
       <li class="category">🎮 Gaming & Virtual Currency</li>
       <div class="event-group">
+            <li tabindex="0" data-value="GA4RE39-Earn-Virtual-Currency-Event-Plan.html">Event Plan : Earn Virtual Currency [GA4RE39]</li>
             <li tabindex="0" data-value="GA4RE39-Earn-Virtual-Currency.html">????Earn Virtual Currency [GA4RE39]</li>
-            <li tabindex="0" data-value="GA4RE39-Earn-Virtual-Currency-Event-Plan.html">Earn Virtual Currency Event Plan [GA4RE39]</li>
+            <li tabindex="0" data-value="GA4RE52-Spend-Virtual-Currency-Event-Plan.html">Event Plan : Spend Virtual Currency [GA4RE52]</li>
             <li tabindex="0" data-value="GA4RE52-Spend-Virtual-Currency.html">Spend Virtual Currency [GA4RE52]</li>
-            <li tabindex="0" data-value="GA4RE52-Spend-Virtual-Currency-Event-Plan.html">Spend Virtual Currency Event Plan [GA4RE52]</li>
+            <li tabindex="0" data-value="GA4RE40-Join-Group-Event-Plan.html">Event Plan : Join Group [GA4RE40]</li>
             <li tabindex="0" data-value="GA4RE40-Join-Group.html">Join Group [GA4RE40]</li>
-            <li tabindex="0" data-value="GA4RE40-Join-Group-Event-Plan.html">Join Group Event Plan [GA4RE40]</li>
+            <li tabindex="0" data-value="GA4RE41RE42RE43-Level-Start-Up-End-Event-Plan.html">Event Plan : Level Start/Up/End [GA4RE41RE42RE43]</li>
             <li tabindex="0" data-value="GA4RE41RE42RE43-Level-Start-Up-End.html">Level Start/Up/End [GA4RE41RE42RE43]</li>
-            <li tabindex="0" data-value="GA4RE41RE42RE43-Level-Start-Up-End-Event-Plan.html">Level Start/Up/End Event Plan [GA4RE41RE42RE43]</li>
+            <li tabindex="0" data-value="GA4RE45-Post-Score-Event-Plan.html">Event Plan : Post Score [GA4RE45]</li>
             <li tabindex="0" data-value="GA4RE45-Post-Score.html">Post Score [GA4RE45]</li>
-            <li tabindex="0" data-value="GA4RE45-Post-Score-Event-Plan.html">Post Score Event Plan [GA4RE45]</li>
+            <li tabindex="0" data-value="GA4RE53RE54-Tutorial-Begin-Complete-Event-Plan.html">Event Plan : Tutorial Begin/Complete [GA4RE53RE54]</li>
             <li tabindex="0" data-value="GA4RE53RE54-Tutorial-Begin-Complete.html">Tutorial Begin/Complete [GA4RE53RE54]</li>
-            <li tabindex="0" data-value="GA4RE53RE54-Tutorial-Begin-Complete-Event-Plan.html">Tutorial Begin/Complete Event Plan [GA4RE53RE54]</li>
+            <li tabindex="0" data-value="GA4RE55-Unlock-Achievement-Event-Plan.html">Event Plan : Unlock Achievement [GA4RE55]</li>
             <li tabindex="0" data-value="GA4RE55-Unlock-Achievement.html">Unlock Achievement [GA4RE55]</li>
-            <li tabindex="0" data-value="GA4RE55-Unlock-Achievement-Event-Plan.html">Unlock Achievement Event Plan [GA4RE55]</li>
       </div>
-
-      <!-- 🛒 Custom Event -->
-      <li class="section-header" tabindex="0" data-value="what-is-recommended-event.html">
-        CUSTOM EVENTS, CUSTOM CONVERSION EVENTS & MISCELLANEOUS TRACKING ACTIVITY
-      </li>
+      <li class="section-header">MISCELLANEOUS TRACKING ACTIVITY</li>
       <li class="category">🎯 Custom Events [CE]</li>
       <div class="event-group">
             <li tabindex="0" data-value="GA4CE01-Beginners-Custom-HTML-Tag.html">GTM Custom HTML Tag : Page Load & Button Alert (Beginner) [GA4CE01]</li>
@@ -264,40 +220,35 @@
             <li tabindex="0" data-value="GA4CE13-Video-Engagement-Repository-Video.html">Tracking Video Engagement : Repository / Platform Video [GA4EE13]</li>
             <li tabindex="0" data-value="GA4CE14-Video-Engagement-Event.html">Tracking Video Engagement : Start / Play / Pause / Complete Video [GA4EE14]</li>
       </div>
-
-      <!-- 🛒 Miscellaneous Tracking Activity -->
-      <li class="category">🧩  Miscellaneous Tracking Activity [MA]</li>
+      <li class="category">🧩  Miscellaneous Activity [MA]</li>
       <div class="event-group">
             <li tabindex="0" data-value="GA4-Thank-You-Page.html">Thank You Page [GA4]</li>
             <li tabindex="0" data-value="GA4MA01-DOM-Ready-Event.html">DOM Ready Event [GA4MA01]</li>
             <li tabindex="0" data-value="GA4MA02-All-eCommerce-Events.html">All eCommerce Events On Single Page [GA4ME01]</li>
             <li tabindex="0" data-value="GA4MA03-Ecommerce-Purchase-Journey.html">eCommerce Purchase Journey [GA4ME03]</li>
       </div>
-
-      <li class="section-header" tabindex="0" data-value="what-is-recommended-event.html">
-        VARIABLE, TRIGGER, TAG  &  EVENT PLAN
-      </li>
-
-      <!-- 🛒 Variable Plan -->
+      <li class="section-header" tabindex="0" data-value="GA4PL-What-Are-Plans.html">VARIABLE, TRIGGER, TAG  &  EVENT PLAN</li>
       <li class="category">🧮 Variable Plan, Trigger Plan & Tag Plan Included Events [PL]</li>
       <div class="event-group">
           <li tabindex="0" data-value="GA4PL0A-Page-Not-Push-dataLayers.html">Page Not Push dataLayers [GA4PL0A]</li>
           <li tabindex="0" data-value="GA4PL0B-Page-Push-Non-Compliant-dataLayers.html">Page Push Non-Compliant dataLayers [GA4PL0B]</li>
           <li tabindex="0" data-value="GA4PL0C-Page-Push-Compliant-dataLayers.html">Page Push Compliant dataLayers [GA4PL0C]</li>
           <li tabindex="0" data-value="GA4PL0D-Tags-Triggers-Variables-Events.html">GTM Basics: Tags, Triggers, Variables & Events [GA4PL0D]</li>
-          <li tabindex="0" data-value="GA4PL0E-What-Are-Plans.html">GTM Plans: Variable, Trigger & Tag [GA4PL0E]</li>
+          <li tabindex="0" data-value="GA4PL0E-GTM-Variables.html">GTM Variable [GA4PL0E]</li>
+          <li tabindex="0" data-value="GA4PL0F-JavaScript-Variable-A-To-Z-Syllabus.html">Syllabus[GA4PL0F]</li>
+          <li tabindex="0" data-value="GA4PL0G-SandBox-For-GTM-Practice.html">GTM SandBox [GA4PL0G]</li>
           <li tabindex="0" data-value="GA4PL01-Page-View-Event-With-Plans.html">Page View Event [GA4PL01]</li>
           <li tabindex="0" data-value="GA4PL02-Button-Click-Event-With-Plans.html">Button Click Event [GA4PL02]</li>
           <li tabindex="0" data-value="GA4PL03-Scroll-Depth-Event-With-Plans.html">Scroll Depth Event [GA4PL03]</li>
           <li tabindex="0" data-value="GA4PL04-Form-Submit-Event-With-Plans.html">Form Submission Event [GA4PL04]</li>
           <li tabindex="0" data-value="GA4PL05-Video-Start-Event-With-Plans.html">Video Engagement Event [GA4PL05]</li>
+          <li tabindex="0" data-value="GA4PL06-remove-from-cart-old.html">Add To Cart(OLD) & Remove From Cart(OLD) Event [GA4PL06]</li>          
           <li tabindex="0" data-value="GA4PL06-Remove-From-Cart-Event-With-Plans.html">Remove from Cart Event [GA4PL06]</li>
-          <li tabindex="0" data-value="GA4PL06-OLD-REMOVE-FROM-CART.html">????OLD - Remove from Cart Event [GA4PL06]</li>
           <li tabindex="0" data-value="GA4PL07-Checkout-Event-With-Plans.html">Checkout Event [GA4PL07]</li>
           <li tabindex="0" data-value="GA4PL08-Purchase-Event-With-Plans.html">Purchase Event [GA4PL08]</li>
           <li tabindex="0" data-value="GA4PL09-User-Login-Event-With-Plans.html">User Login Event [GA4PL09]</li>
           <li tabindex="0" data-value="GA4PL10-User-Logout-Event-With-Plans.html">User Logout Event [GA4PL10]</li>
-          <li tabindex="0" data-value="GA4PL11-Custom-Event-Event-With-Plans.html">????Custom Event [GA4PL11]</li>
+          <li tabindex="0" data-value="GA4PL11-Custom-Event-With-Plans.html">Sample Custom Event [GA4PL11]</li>
           <li tabindex="0" data-value="GA4PL12-Search-Event-With-Plans.html">Search Query Event [GA4PL12 / GA4RE47]</li>
           <li tabindex="0" data-value="GA4PL13-Product-View-Event-With-Plans.html">Product View Event [GA4PL13]</li>
           <li tabindex="0" data-value="GA4PL14-Download-File-Event-With-Plans.html">File Download Event [GA4PL14]</li>
@@ -305,52 +256,23 @@
           <li tabindex="0" data-value="GA4PL16-Page-Timing-Event-With-Plans.html">Page Performance Event [GA4PL16]</li>
           <li tabindex="0" data-value="GA4PL17-Error-Tracking-Event-With-Plans.html">JavaScript Error Event [GA4PL17]</li>
           <li tabindex="0" data-value="GA4PL18-User-Engagement-Event-With-Plans.html">User Engagement Event [GA4PL18]</li>
-          <li tabindex="0" data-value="GA4PL18-OLD-User-Engagement-Event-With-Plans.html">????OLD - User Engagement Event [GA4PL18]</li>
+          <li tabindex="0" data-value="GA4PL18-OLD-User-Engagement-Event-With-Plans.html">????OLD - User Engagement Event [?GA4PL18]</li>
           <li tabindex="0" data-value="GA4PL19-Ad-Click-Tracking-Event-With-Plans.html">Ad Click Event [GA4PL19]</li>
-          <li tabindex="0" data-value="GA4PL19-OLD-Ad-Click-Tracking-Event-With-Plans.html">OLD - Ad Click Event [GA4PL19]</li>
+          <li tabindex="0" data-value="GA4PL19-OLD-Ad-Click-Tracking-Event-With-Plans.html">????OLD - Ad Click Event [?GA4PL19]</li>
           <li tabindex="0" data-value="GA4PL20-Form-Interaction-Event-With-Plans.html">Form Interaction Event [GA4PL20]</li>
-          <li tabindex="0" data-value="GA4PL21-Custom-Event-With-Plans.html">Custom Event [GA4PL21]</li>
+          <li tabindex="0" data-value="GA4PL21-Social-Media-Click-Event-With-Plans.html">Social Media Click Event [GA4PL21]</li>
           <li tabindex="0" data-value="GA4PL22-Element-Visibility-Event-With-Plans.html">Element Visibility Event  [GA4PL22]</li>
           <li tabindex="0" data-value="GA4PL23-Hash-Change-Event-With-Plans.html">Hash Change Event [GA4PL23]</li>
           <li tabindex="0" data-value="GA4PL24-Page-Visibility-Event-With-Plans.html">Page Visibility Event [GA4PL24]</li>
-          <li tabindex="0" data-value="GA4PL25-Window-Loaded-Event-With-Plans.html">Window Loaded Event[GA4PL25]</li>
+          <li tabindex="0" data-value="GA4PL25-Window-Loaded-Event-With-Plans.html">Window Loaded Event [GA4PL25]</li>
           <li tabindex="0" data-value="GA4PL26-Click-Element-Event-With-Plans.html">Clicks With Element [GA4PL26]</li>
-          <li tabindex="0" data-value="GA4PL27-Custom-HTML-Tag-With-Plans.html">Custom HTML Injection Event [GA4PL27]</li>
+          <li tabindex="0" data-value="GA4PL27-Custom-HTML-Tag-With-Plans.html">????Custom HTML Injection Event [?GA4PL27]</li>
           <li tabindex="0" data-value="GA4PL28-Custom-Image-Tag-With-Plans.html">Custom Image Load Event [GA4PL28]</li>
           <li tabindex="0" data-value="GA4PL29-Timer-Tag-With-Plans.html">Timer Based Actions [GA4PL29]</li>
           <li tabindex="0" data-value="GA4PL30-JavaScript-Error-Event-With-Plans.html">JavaScript Errors Event [GA4PL30]</li>
-          <li tabindex="0" data-value="GA4PL31-Social-Media-Click-Event-With-Plans.html">Social Media Clicks Event [GA4PL31]</li>
-          <li tabindex="0" data-value="GA4PL32-Custom-Event-With-Plans.html">Custom Event [GA4PL32]</li>
       </div>
     </ul>
   </main>
-
-
-  <!--BEGIN OLD script
-    // Collapse/Expand functionality
-    const categoryHeaders = document.querySelectorAll(".category");
-    categoryHeaders.forEach((header, index) => {
-      header.addEventListener("click", () => {
-        const eventGroup = header.nextElementSibling;
-        eventGroup.classList.toggle("show");
-        header.classList.toggle("active");
-      });
-    });
-
-    // Navigation on click
-    const items = document.querySelectorAll("li[data-value]");
-    items.forEach(item => {
-      item.addEventListener("click", () => {
-        const target = item.getAttribute("data-value");
-        if (target) {
-          window.location.href = target;
-        }
-      });
-    });
-
-END OLD-----script-->
-
-
 
 <script>
   // সব <li> আইটেমে ক্লিক ইভেন্ট যোগ করা হচ্ছে

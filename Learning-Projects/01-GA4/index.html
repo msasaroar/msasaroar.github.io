@@ -12,7 +12,7 @@
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;
     j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
     f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MB72WSHR');
+    })(window,document,'script','dataLayer','GTM-WVTKMJG2');
   </script>
 
   <style>
@@ -87,7 +87,7 @@
 
   <!-- GTM BODY -->
   <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB72WSHR"
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WVTKMJG2"
             height="0" width="0" style="display:none;visibility:hidden"></iframe>
   </noscript>
 
@@ -270,5 +270,33 @@
           <li tabindex="0" data-value="GA4PL28-Custom-Image-Tag-With-Plans.html">Custom Image Load Event [GA4PL28]</li>
           <li tabindex="0" data-value="GA4PL29-Timer-Tag-With-Plans.html">Timer Based Actions [GA4PL29]</li>
           <li tabindex="0" data-value="GA4PL30-JavaScript-Error-Event-With-Plans.html">JavaScript Errors Event [GA4PL30]</li>
+      </div>
+    </ul>
+  </main>
 
+<script>
+  // সব <li> আইটেমে ক্লিক ইভেন্ট যোগ করা হচ্ছে
+  document.querySelectorAll("li[data-value]").forEach(function(item) {
+    item.addEventListener("click", function() {
+      const fileName = item.getAttribute("data-value");
+      if (fileName) {
+        // নতুন ট্যাবে ফাইল ওপেন
+        window.open(fileName, "_blank");
+      }
+    });
+  });
 
+  // ক্যাটাগরি টগল করার জন্য (➕ / ➖)
+  document.querySelectorAll(".category").forEach(function(category) {
+    category.addEventListener("click", function() {
+      category.classList.toggle("active");
+      const group = category.nextElementSibling;
+      if (group && group.classList.contains("event-group")) {
+        group.classList.toggle("show");
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

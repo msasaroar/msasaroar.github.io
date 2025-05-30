@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GA4: first_visit Event Demo</title>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WVTKMJG2');
+  </script>
+  <!-- End Google Tag Manager -->
+  <link rel="stylesheet" href="GA4-global-style.css">
+</head>
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WVTKMJG2"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header>
+    <button class="home-button" onclick="location.href='index.html'">Home</button>
+    GA4 Event Demo: first_visit
+  </header>
+
+  <main>
+    <p>This page demonstrates how the <strong>first_visit</strong> event is automatically triggered in GA4.</p>
+
+    <h3>How to Test:</h3>
+    <ul>
+      <li>Open this page in an <strong>Incognito/Private</strong> window.</li>
+      <li>Or <strong>clear cookies</strong> for this site and refresh the page.</li>
+      <li>Watch for the <code>first_visit</code> event in the GA4 <strong>DebugView</strong>.</li>
+    </ul>
+    <br>
+    <br>
+    <button class="button" onclick="alert('Try opening this page in Incognito to see first_visit!')">
+      Need Help?
+    </button>
+  </main>
+
+</body>
+</html>

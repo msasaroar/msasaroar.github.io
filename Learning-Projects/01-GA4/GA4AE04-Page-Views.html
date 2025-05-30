@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GA4: page_view Event Demo</title>
+
+  <!-- Google Tag Manager -->
+  <script>
+      (function(w, d, s, l, i) {
+          w[l] = w[l] || [];
+          w[l].push({
+              'gtm.start': new Date().getTime(),
+              event: 'gtm.js'
+          });
+          var f = d.getElementsByTagName(s)[0],
+              j = d.createElement(s),
+              dl = l != 'dataLayer' ? '&l=' + l : '';
+          j.async = true;
+          j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+          f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-WVTKMJG2');
+  </script>
+  <!-- End Google Tag Manager -->
+  <link rel="stylesheet" href="GA4-global-style.css">
+</head>
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WVTKMJG2" 
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header>
+    <button class="home-button" onclick="location.href='index.html'">Home</button>
+    GA4 Event Demo: page_view
+  </header>
+
+  <main>
+    <p>The <strong>page_view</strong> event is triggered automatically when this page loads.</p>
+
+    <h3>How to Trigger:</h3>
+    <ul>
+      <li>Just load or refresh this page.</li>
+      <li>Each load sends a <code>page_view</code> event to GA4.</li>
+    </ul>
+    <br>
+    <br>
+    <button class="button" onclick="alert('Reload this page to see page_view in GA4 DebugView.')">
+      Need Help?
+    </button>
+  </main>
+</body>
+</html>

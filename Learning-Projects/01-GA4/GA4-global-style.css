@@ -1,0 +1,126 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General Body Styling */
+body {
+  background-color: white;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header Styling */
+header {
+  background-color: green;
+  color: black;
+  font-weight: bold;
+  font-size: 35px;
+  text-align: center;
+  padding: 15px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  border: 2px solid black;
+}
+
+/* Main Section Styling */
+main {
+  padding: 100px 20px 40px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* Section Margin */
+.section {
+  margin-bottom: 50px;
+}
+
+/* Section Title */
+h2 {
+  color: darkgreen;
+  text-align: center;
+}
+
+/* Home Button Styling */
+.home-button,
+a.home-button {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  transform: translateY(0);
+  background-color: orange;
+  color: blue;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  padding: 15px 30px;
+  border: 5px solid darkgreen;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 1001;
+  display: inline-block;
+  height: auto;
+  width: auto;
+  line-height: normal;
+}
+
+/* Home Button Hover Effect */
+.home-button:hover,
+a.home-button:hover {
+  background-color: blue;
+  color: orange;
+}
+
+/* Centered Button Wrapper */
+.center-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+/* General Button Styling */
+button {
+  background-color: orange;
+  color: blue;
+  font-size: 18px;
+  padding: 15px 30px;
+  border: 4px solid darkgreen;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: blue;
+  color: orange;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 2px solid #4CAF50;
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #e6ffe6;
+  color: black;
+}
+
+td {
+  background-color: #f9f9f9;
+}

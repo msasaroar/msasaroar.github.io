@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GA4: user_engagement Event Demo</title>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WVTKMJG2');
+  </script>
+  <!-- End Google Tag Manager -->
+
+    <link rel="stylesheet" href="GA4-global-style.css">
+</head>
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WVTKMJG2"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header>
+    <button class="home-button" onclick="location.href='index.html'">Home</button>
+    GA4 Event Demo: user_engagement
+  </header>
+
+  <main>
+    <p>The <strong>user_engagement</strong> event is fired when users actively engage with this page.</p>
+
+    <h3>How to Trigger:</h3>
+    <ul>
+      <li>Stay on this page for at least <strong>10 seconds</strong>.</li>
+      <li>Or scroll/click around (engage with the content).</li>
+    </ul>
+    <br>
+    <br>
+    <button class="button" onclick="alert('Stay on this page for 10+ seconds to trigger user_engagement.')">
+      Need Help?
+    </button>
+  </main>
+
+</body>
+</html>
