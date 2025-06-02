@@ -273,29 +273,29 @@
       </div>
     </ul>
   </main>
-<script>
-  // সব <li> আইটেমে ক্লিক ইভেন্ট যোগ করা হচ্ছে
-  document.querySelectorAll("li[data-value]").forEach(function(item) {
-    item.addEventListener("click", function() {
-      const fileName = item.getAttribute("data-value");
-      if (fileName) {
-        // নতুন ট্যাবে ফাইল ওপেন
-        window.open(fileName, "_blank");
-      }
+  <script>
+    // সব <li> আইটেমে ক্লিক ইভেন্ট যোগ করা হচ্ছে
+    document.querySelectorAll("li[data-value]").forEach(function(item) {
+      item.addEventListener("click", function() {
+        const fileName = item.getAttribute("data-value");
+        if (fileName) {
+          // নতুন ট্যাবে ফাইল ওপেন
+          window.open(fileName, "_blank");
+        }
+      });
     });
-  });
 
-  // ক্যাটাগরি টগল করার জন্য (➕ / ➖)
-  document.querySelectorAll(".category").forEach(function(category) {
-    category.addEventListener("click", function() {
-      category.classList.toggle("active");
-      const group = category.nextElementSibling;
-      if (group && group.classList.contains("event-group")) {
-        group.classList.toggle("show");
-      }
+    // ক্যাটাগরি টগল করার জন্য (➕ / ➖)
+    document.querySelectorAll(".category").forEach(function(category) {
+      category.addEventListener("click", function() {
+        category.classList.toggle("active");
+        const group = category.nextElementSibling;
+        if (group && group.classList.contains("event-group")) {
+          group.classList.toggle("show");
+        }
+      });
     });
-  });
-</script>
-<script src="main.js"></script>
+  </script>
+  <script src="../main.js"></script>
 </body>
 </html>

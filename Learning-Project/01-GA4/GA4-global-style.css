@@ -79,6 +79,24 @@ a.home-button:hover {
   color: orange;
 }
 
+/* Tooltip Styling */
+.home-button[title]:hover::after {
+  content: attr(title);
+  font-weight: lighter;
+  font-size: 12px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: black;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  white-space: nowrap;
+  margin-top: 5px;
+  z-index: 1002;
+}
+
+
 /* Centered Button Wrapper */
 .center-button {
   display: flex;
