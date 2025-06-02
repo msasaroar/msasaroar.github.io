@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Web API & REST API ব্যাখ্যা</title>
+  <style>
+    header {
+      background-color: green;
+      color: black;
+      font-weight: bold;
+      font-size: 35px;
+      text-align: center;
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    body {
+      background-color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .home-button {
+      position: absolute;
+      border-radius: 8px;
+      font-size: 16px;
+      left: 15px;
+      top: 10px;
+      background-color: orange;
+      color: blue;
+      padding: 15px 30px;
+      text-decoration: none;
+      border: 5px solid darkgreen;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    main {
+      padding: 90px 20px 40px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      color: darkgreen;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+
+    table, th, td {
+      border: 1px solid darkgreen;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+      color: black;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .highlight {
+      background-color: #ffffcc;
+      padding: 10px;
+      border-left: 5px solid orange;
+    }
+  </style>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB72WSHR');
+  </script>
+  <!-- End Google Tag Manager -->
+</head>
+<body>
+  <a href="index.html" class="home-button">Home</a>
+  <header>
+    Web API ও REST API ব্যাখ্যা
+  </header>
+  <main>
+    <div class="section">
+      <h2>✅ ১. Web API কী?</h2>
+      <p>Web API (Application Programming Interface) হলো এমন একটি সফটওয়্যার ইন্টারফেস, যেটা অন্য অ্যাপ্লিকেশন বা ওয়েবসাইটের সাথে <strong>ডেটা আদান-প্রদানের সুযোগ</strong> দেয় ইন্টারনেটের মাধ্যমে।</p>
+      <div class="highlight">📌 উদাহরণ: ওয়েবসাইট বা মোবাইল অ্যাপ যদি কোনো সার্ভার থেকে ইউজারের তথ্য চায়, সেটা API দিয়েই করে।</div>
+    </div>
+
+    <div class="section">
+      <h2>✅ ২. REST API কী?</h2>
+      <p>REST (Representational State Transfer) হচ্ছে Web API তৈরি করার একটি স্ট্যান্ডার্ড পদ্ধতি। এটি HTTP প্রটোকল ব্যবহার করে কাজ করে এবং Resource এর ধারণার উপর ভিত্তি করে তৈরি।</p>
+      <ul>
+        <li>Resource-based (যেমনঃ Users, Products)</li>
+        <li>Stateless (প্রতিটি রিকোয়েস্ট আলাদা)</li>
+        <li>HTTP Methods (GET, POST ইত্যাদি) ব্যবহার করে</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>✅ ৩. HTTP Verb কীভাবে কাজ করে?</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>HTTP Verb</th>
+            <th>কাজ</th>
+            <th>উদাহরণ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>GET</td>
+            <td>ডেটা নেওয়া</td>
+            <td>/api/users অথবা /api/users/5</td>
+          </tr>
+          <tr>
+            <td>POST</td>
+            <td>নতুন ডেটা তৈরি</td>
+            <td>/api/users</td>
+          </tr>
+          <tr>
+            <td>PUT</td>
+            <td>পুরো ডেটা আপডেট</td>
+            <td>/api/users/5</td>
+          </tr>
+          <tr>
+            <td>PATCH</td>
+            <td>আংশিক আপডেট</td>
+            <td>/api/users/5</td>
+          </tr>
+          <tr>
+            <td>DELETE</td>
+            <td>ডেটা ডিলিট</td>
+            <td>/api/users/5</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>✅ ৪. বাস্তব উদাহরণ</h2>
+      <p>ধরুন, একটি মোবাইল অ্যাপে ইউজার একাউন্ট খুলছে। তখন অ্যাপটি <code>POST</code> রিকোয়েস্টের মাধ্যমে API কে ইউজারের নাম ও ইমেইল পাঠায়। API তা ডেটাবেজে সংরক্ষণ করে।</p>
+    </div>
+  </main>
+</body>
+</html>
