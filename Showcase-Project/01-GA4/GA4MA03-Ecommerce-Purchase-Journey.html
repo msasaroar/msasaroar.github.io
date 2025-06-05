@@ -43,7 +43,7 @@
     }
 
     .step-card {
-      flex: 1 1 400px;
+      flex: 1 1 100px;
       border: 1px solid #ccc;
       border-radius: 10px;
       padding: 20px;
@@ -69,7 +69,15 @@
       font-size: 20px;
     }
 
+    .step-card h5 {
+      margin-bottom: 15px;
+      text-align: center;
+    }
 
+    .step-card button {
+      display: block;
+      margin: 0 auto;
+    }
 
     /* JSON display box */
     .json-box {
@@ -105,16 +113,18 @@
   <main>
     <div class="step-wrapper card-1">
       <div class="step-card">
-        <h2>Step 01: View Item List [OPTIONAL]</h2>
-        <button onclick="fireEvent('view_item_list', 0)">View Item List</button>
+        <h2>Step 01: View Item List</h2>
+        <h5>[OPTIONAL]</h5>
+        <button onclick="fireEvent('view_item_list', 0)" style="width: 230px;">View Item List</button>
       </div>
       <pre class="json-box" id="json-box-0">{ }</pre>
     </div>
 
     <div class="step-wrapper card-2">
       <div class="step-card">
-        <h2>Step 02: Select Item [OPTIONAL]</h2>
-        <button onclick="fireEvent('select_item', 1)">Select Item</button>
+        <h2>Step 02: Select Item</h2>
+        <h5>[OPTIONAL]</h5>
+        <button onclick="fireEvent('select_item', 1)" style="width: 230px;">Select Item</button>
       </div>
       <pre class="json-box" id="json-box-1">{ }</pre>
     </div>
@@ -122,7 +132,7 @@
     <div class="step-wrapper card-3">
       <div class="step-card">
         <h2>Step 03: View Item</h2>
-        <button onclick="fireEvent('view_item', 2)">View Item</button>
+        <button onclick="fireEvent('view_item', 2)" style="width: 230px;">View Item</button>
       </div>
       <pre class="json-box" id="json-box-2">{ }</pre>
     </div>
@@ -130,23 +140,25 @@
     <div class="step-wrapper card-4">
       <div class="step-card">
         <h2>Step 04: Add to Cart</h2>
-        <button onclick="fireEvent('add_to_cart', 3)">Add to Cart</button>
+        <button onclick="fireEvent('add_to_cart', 3)" style="width: 230px;">Add to Cart</button>
       </div>
       <pre class="json-box" id="json-box-3">{ }</pre>
     </div>
 
     <div class="step-wrapper card-5">
       <div class="step-card">
-        <h2>Step 05: View Cart [OPTIONAL]</h2>
-        <button onclick="fireEvent('view_cart', 4)">View Cart</button>
+        <h2>Step 05: View Cart</h2>
+        <h5>[OPTIONAL]</h5>
+        <button onclick="fireEvent('view_cart', 4)" style="width: 230px;">View Cart</button>
       </div>
       <pre class="json-box" id="json-box-4">{ }</pre>
     </div>
 
     <div class="step-wrapper card-6">
       <div class="step-card">
-        <h2>Step 06: Remove from Cart [OPTIONAL]</h2>
-        <button onclick="fireEvent('remove_from_cart', 5)">Remove from Cart</button>
+        <h2>Step 06: Remove from Cart</h2>
+        <h5>[OPTIONAL]</h5>
+        <button onclick="fireEvent('remove_from_cart', 5)" style="width: 230px;">Remove from Cart</button>
       </div>
       <pre class="json-box" id="json-box-5">{ }</pre>
     </div>
@@ -154,7 +166,7 @@
     <div class="step-wrapper card-7">
       <div class="step-card">
         <h2>Step 07: Begin Checkout</h2>
-        <button onclick="fireEvent('begin_checkout', 6)">Begin Checkout</button>
+        <button onclick="fireEvent('begin_checkout', 6)" style="width: 230px;">Begin Checkout</button>
       </div>
       <pre class="json-box" id="json-box-6">{ }</pre>
     </div>
@@ -162,7 +174,7 @@
     <div class="step-wrapper card-8">
       <div class="step-card">
         <h2>Step 08: Add Shipping Info</h2>
-        <button onclick="fireEvent('add_shipping_info', 7)">Add Shipping Info</button>
+        <button onclick="fireEvent('add_shipping_info', 7)" style="width: 230px;">Add Shipping Info</button>
       </div>
       <pre class="json-box" id="json-box-7">{ }</pre>
     </div>
@@ -170,7 +182,7 @@
     <div class="step-wrapper card-9">
       <div class="step-card">
         <h2>Step 09: Add Payment Info</h2>
-        <button onclick="fireEvent('add_payment_info', 8)">Add Payment Info</button>
+        <button onclick="fireEvent('add_payment_info', 8)" style="width: 230px;">Add Payment Info</button>
       </div>
       <pre class="json-box" id="json-box-8">{ }</pre>
     </div>
@@ -178,7 +190,7 @@
     <div class="step-wrapper card-10">
       <div class="step-card">
         <h2>Step 10: Purchase</h2>
-        <button onclick="fireEvent('purchase', 9)">Purchase</button>
+        <button onclick="fireEvent('purchase', 9)" style="width: 230px;">Purchase</button>
       </div>
       <pre class="json-box" id="json-box-9">{ }</pre>
     </div>
