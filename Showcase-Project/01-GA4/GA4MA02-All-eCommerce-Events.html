@@ -5,61 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GA4 | eCommerce Events</title>
   <style>
-    body {
-      background-color: white;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    main {
-      padding: 10px 20px 50px;
-      display: flex;
-      max-width: 1200px;
-      margin: auto;
-    }
-    #buttons {
+
+    .column {
       flex: 1;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      padding-right: 20px;
+      gap: 45px;
     }
-    button {
-      background-color: orange;
-      color: blue;
-      font-size: 16px;
-      font-weight: bold;
-      padding: 10px 20px;
-      margin: 10px 0;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      width: 100%;
-      text-align: center;
-    }
-    button:hover {
-      background-color: blue;
-      color: orange;
-    }
+
     .output-container {
       flex: 2;
+      display: flex;
+      flex-direction: column;
     }
-    .output-label {
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-    .output {
-      background: #f5f5f5;
-      padding: 15px;
-      text-align: left;
-      border: 1px solid #ccc;
-      font-size: 14px;
-      white-space: pre-wrap;
-      min-height: 300px;
-    }
-  </style>
-                <link rel="stylesheet" href="GA4-global-style.css">
 
+.output {
+  background: black;
+  color: greenyellow;
+  padding: 15px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  white-space: pre-wrap;
+  min-height: 310px;
+  max-height: 310px; /* এটাও দিলে content নির্দিষ্ট উচ্চতা ছাড়িয়ে গেলে scrollbar আসবে */
+  overflow-y: auto; /* কেবল উপরের নিচের স্ক্রল */
+}
+  </style>
+  <link rel="stylesheet" href="GA4-global-style.css">
   <!-- GTM -->
   <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -73,13 +45,19 @@
 <body>
   <header>Miscellaneous Tracking Activity | All eCommerce Events in One Page</header>
   <a href="index.html" class="home-button">Home</a>
+  
+  <h1 style="text-align: center; margin-top: 125px; margin-bottom: 0px; font-size: 20px; font-weight: bold;">
+    Pushed Data Layer Will Be Shown Here
+  </h1>
 
-  <main>
-    <div id="buttons"></div>
+<main style="display: flex; justify-content: space-between; max-width: 1200px; align-items: flex-start; gap: 10px; margin-top: -50px;">
+    <div class="column" id="left-buttons"></div>
     <div class="output-container">
-      <p class="output-label">Pushed Data Layer Will Be Shown Here</p>
       <div id="output" class="output">This Space Will Display the Data Layer After Push</div>
+<button onclick="pushEvent('refund')" style="margin-top: 25px;">refund</button>
+<button onclick="clearOutput()" style="margin-top: 20px;">Clear Output</button>
     </div>
+    <div class="column" id="right-buttons"></div>
   </main>
 
   <script>
@@ -179,29 +157,41 @@
         ecommerce: {
           transaction_id: "T98765",
           items: [
-            {
-              item_id: "SKU_123",
-              item_name: "T-Shirt",
-              quantity: 3
-            }
+            { item_id: "SKU_123", item_name: "T-Shirt", quantity: 3 }
           ]
         }
       }
-
     };
 
-    const buttonContainer = document.getElementById("buttons");
+    function pushEvent(name) {
+      dataLayer.push(events[name]);
+      output.textContent = JSON.stringify(events[name], null, 2);
+    }
 
-    Object.keys(events).forEach(key => {
+    function clearOutput() {
+      output.textContent = "This Space Will Display the Data Layer After Push";
+    }
+
+    // Add first 5 to left, next 5 to right
+    const keys = Object.keys(events).filter(k => k !== "refund");
+    const left = document.getElementById("left-buttons");
+    const right = document.getElementById("right-buttons");
+
+    keys.slice(0, 5).forEach(k => {
       const btn = document.createElement("button");
-      btn.textContent = key;
-      btn.onclick = () => {
-        dataLayer.push(events[key]);
-        output.textContent = JSON.stringify(events[key], null, 2);
-      };
-      buttonContainer.appendChild(btn);
+      btn.textContent = k;
+      btn.onclick = () => pushEvent(k);
+      left.appendChild(btn);
+    });
+
+    keys.slice(5).forEach(k => {
+      const btn = document.createElement("button");
+      btn.textContent = k;
+      btn.onclick = () => pushEvent(k);
+      right.appendChild(btn);
     });
   </script>
+
   <script src="../main.js"></script>
 </body>
 </html>
