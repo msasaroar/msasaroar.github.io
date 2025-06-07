@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Google Analytics 4</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      padding: 10px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .home-button {
+      float: left;
+      margin-right: 10px;
+      text-decoration: none;
+      background: #007bff;
+      color: white;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .section {
+      margin: 8px 0;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    h2 {
+      font-size: 16px;
+      margin-bottom: 5px;
+      text-align: center;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    table, th, td {
+      border: 1px solid #999;
+    }
+
+    th, td {
+      padding: 4px 6px;
+      text-align: left;
+    }
+
+    .center-button {
+      display: flex;
+      justify-content: center;
+      margin: 10px 0;
+    }
+
+    button {
+      padding: 6px 12px;
+      font-size: 13px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        font-size: 12px;
+      }
+
+      table, th, td {
+        font-size: 12px;
+      }
+
+      .home-button {
+        font-size: 10px;
+        padding: 3px 6px;
+      }
+    }
+  </style>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB72WSHR');
+  </script>
+  <!-- End Google Tag Manager -->
+</head>
+<body>
+  <header>
+    <a class="home-button" href="../index.html">Home</a>
+    Event Plan | earn_virtual_currency
+  </header>
+
+  <main>
+    <div class="section">
+      <div class="center-button">
+        <button onclick="simulateEvent()">Push The Event</button>
+      </div>
+      <script>
+        function simulateEvent() {
+          dataLayer.push({
+            event: 'earn_virtual_currency'
+          });
+          alert("earn_virtual_currency event pushed to dataLayer!");
+        }
+      </script>
+    </div>
+
+    <div class="section">
+      <h2>Variable Plan</h2>
+      <table>
+        <tr>
+          <th>Variable Name</th>
+          <th>Type</th>
+          <th>Data Layer Variable Name</th>
+        </tr>
+        <tr>
+          <td>event_name</td>
+          <td>Data Layer Variable</td>
+          <td>event</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>Trigger Plan</h2>
+      <table>
+        <tr>
+          <th>Trigger Name</th>
+          <th>Type</th>
+          <th>Event Name</th>
+          <th>Firing Condition</th>
+        </tr>
+        <tr>
+          <td>earn_virtual_currency - Event Trigger</td>
+          <td>Custom Event</td>
+          <td>earn_virtual_currency</td>
+          <td>All Custom Events</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>Tag Plan</h2>
+      <table>
+        <tr>
+          <th>Tag Name</th>
+          <th>Type</th>
+          <th>Event Name</th>
+          <th>Event Parameters</th>
+          <th>Trigger</th>
+        </tr>
+        <tr>
+          <td>GA4 Event - earn_virtual_currency</td>
+          <td>GA4 Event Tag</td>
+          <td>earn_virtual_currency</td>
+          <td>event → {DLV - event}</td>
+          <td>earn_virtual_currency - Event Trigger</td>
+        </tr>
+      </table>
+    </div>
+  </main>
+</body>
+</html>
