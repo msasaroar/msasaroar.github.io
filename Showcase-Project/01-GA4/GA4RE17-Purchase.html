@@ -62,7 +62,7 @@
 
     .data-table th, .data-table td {
       border: 1px solid #ddd;
-      padding: 8px;
+      padding: 5px;
       text-align: left;
     }
 
@@ -96,8 +96,6 @@
 
   <main>
     <div class="container">
-      <h2>GA4 Purchase Event Tracking</h2>
-
       <div class="row">
         <!-- Left Column: Transaction Info -->
         <div class="column">
@@ -132,7 +130,7 @@
         </table>
       </div>
 
-      <button id="trackPurchase">Track Purchase</button>
+      <button id="trackPurchase">Track The Event</button>
     </div>
   </main>
 
@@ -192,7 +190,7 @@
       sessionStorage.setItem('purchaseInfo', JSON.stringify(purchaseData));
 
       // Redirect to confirmation page (replace with your actual confirmation page)
-      window.location.href = 'GA4RE17-Purchase-Confirmation.html';
+      window.location.href = 'GA4RE18-Purchase-Confirmation.html';
     });
   </script>
   <script src="../main.js"></script>
