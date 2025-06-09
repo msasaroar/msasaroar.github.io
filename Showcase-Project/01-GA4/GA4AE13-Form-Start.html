@@ -45,16 +45,13 @@
       font-size: 16px;
       font-weight: bold;
       padding: 10px 20px;
-      border: none;
       border-radius: 8px;
+      border-color: green;
+      border-width: 5px;
       cursor: pointer;
       transition: background-color 0.3s, color 0.3s;
     }
 
-    .button:hover {
-      background-color: blue;
-      color: orange;
-    }
   </style>
   <link rel="stylesheet" href="GA4-global-style.css">
 
@@ -80,7 +77,9 @@
       <input type="text" name="name" placeholder="Your Name" required />
       <input type="email" name="email" placeholder="Your Email" required />
       <textarea name="message" placeholder="Your Message"></textarea>
-      <input type="submit" class="button" value="Send Message" />
+      <!--input type="submit" class="button" value="Send Message" /-->
+      <button type="submit" class="button">Send Message</button>
+
     </form>
   </div>
 
