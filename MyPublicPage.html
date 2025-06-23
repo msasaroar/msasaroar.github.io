@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ASP.NET Core Web API Creation Steps</title>
+  <style>
+    header {
+      background-color: green;
+      color: black;
+      font-weight: bold;
+      font-size: 35px;
+      text-align: center;
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    body {
+      background-color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .home-button {
+      position: absolute;
+      border-radius: 6px;
+      font-size: 16px;
+      left: 15px;
+      top: 10px;
+      background-color: orange;
+      color: blue;
+      padding: 15px 30px;
+      text-decoration: none;
+      border: 5px solid darkgreen;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .home-button:hover {
+      background-color: blue;
+      color: orange;
+    }
+
+    main {
+      padding: 75px 20px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      color: green;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      border-top: 3px solid green;
+      border-bottom: 3px solid green;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+    h3 {
+      color: green;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
+
+    p {
+      line-height: 1;
+      font-size: 15px;
+      color: #333;
+    }
+
+    code {
+      background-color: rgb(207, 204, 200);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: Consolas, monospace;
+      font-size: 16px;
+    }
+
+    ol {
+      margin-left: 20px;
+      font-size: 18px;
+      color: #222;
+    }
+  </style>
+</head>
+<body>
+  <!-- GTM container (GTM-MB72WSHR) -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB72WSHR');
+  </script>
+
+  <header>
+    Steps to start working on creating a Web API with ASP.NET Core & C#
+    <a href="index.html" class="home-button">Home</a>
+  </header>
+
+  <main>
+
+    <h2>Step 1: Create Project</h2>
+    <h3>🔷 1.1 Open Visual Studio</h3>
+    <ul>
+      <li>Launch <strong>Visual Studio 2022</strong> or later</li>
+      <li>Click on <strong>"Create a new project"</strong></li>
+    </ul>
+
+    <h3>🔷 1.2 Select Project Template</h3>
+    <ul>
+      <li>Search for <strong>"ASP.NET Core Web API"</strong></li>
+      <li>Select the template and click <strong>Next</strong></li>
+    </ul>
+
+    <h3>🔷 1.3 Configure Project</h3>
+    <ul>
+      <li>Enter a name like <code>MyWebApi</code></li>
+      <li>Choose a location to save the project</li>
+      <li>Click <strong>Next</strong></li>
+    </ul>
+
+    <h3>🔷 1.4 Set Framework and Options</h3>
+    <ul>
+      <li>Select target framework: <strong>.NET 6 or .NET 7</strong></li>
+      <li>Set <strong>Authentication type</strong> to: <strong>None</strong></li>
+      <li>Check or uncheck:
+        <ul>
+          <li>✅ Use controllers</li>
+          <li>✅ Enable OpenAPI support (Swagger)</li>
+        </ul>
+      </li>
+      <li>Click <strong>Create</strong></li>
+    </ul>
+
+    <h3>✅ Result</h3>
+    <ul>
+      <li>Your Web API project is now created</li>
+      <li>Project includes files like:
+        <ul>
+          <li><code>Program.cs</code></li>
+          <li><code>Controllers/WeatherForecastController.cs</code></li>
+          <li><code>appsettings.json</code></li>
+          <li><code>launchSettings.json</code></li>
+        </ul>
+      </li>
+    </ul>
+
+  
+    <h2>Step 2: Setup <code>ApplicationDbContext</code></h2>
+    <h3>📁 2.1 Create a <code>Data</code> Folder</h3>
+    <ul>
+      <li>Right-click your project in Solution Explorer &rarr; <strong>Add</strong> &rarr; <strong>New Folder</strong></li>
+      <li>Name the folder: <code>Data</code></li>
+    </ul>
+
+    <h3>📄 2.2 Create <code>ApplicationDbContext.cs</code></h3>
+    <ul>
+      <li>Inside the <code>Data</code> folder, add a new class file: <strong>ApplicationDbContext.cs</strong></li>
+      <li>Write the following code:</li>
+    </ul>
+
+    <pre><code>using Microsoft.EntityFrameworkCore;
+using YourProjectName.Models;
+
+namespace YourProjectName.Data
+{
+    public class ApplicationDbContext : DbContext
+    {
+        public ApplicationDbContext(DbContextOptions&lt;ApplicationDbContext&gt; options)
+            : base(options)
+        {
+        }
+
+        // Add DbSet here, e.g.:
+        // public DbSet&lt;Product&gt; Products { get; set; }
+    }
+}</code></pre>
+
+    <h3>🔧 2.3 Register in <code>Program.cs</code></h3>
+    <ul>
+      <li>Add this line inside the <code>builder.Services</code> section:</li>
+    </ul>
+
+    <pre><code>builder.Services.AddDbContext&lt;ApplicationDbContext&gt;(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));</code></pre>
+
+    <ul>
+      <li>Also, add these <code>using</code> directives at the top of <code>Program.cs</code>:</li>
+    </ul>
+
+    <pre><code>using Microsoft.EntityFrameworkCore;
+using YourProjectName.Data;</code></pre>
+
+    <h3>⚙️ 2.4 Add Connection String in <code>appsettings.json</code></h3>
+    <ul>
+      <li>Open <code>appsettings.json</code> and add the following under <code>ConnectionStrings</code>:</li>
+    </ul>
+
+    <pre><code>"ConnectionStrings": {
+  "DefaultConnection": "Server=.;Database=MyWebApiDb;Trusted_Connection=True;TrustServerCertificate=True;"
+}</code></pre>
+
+    <p><strong>Note:</strong> Replace <code>MyWebApiDb</code> with your actual database name.</p>
+
+    <h3>✅ Summary</h3>
+    <ul>
+      <li>Create <code>Data</code> folder</li>
+      <li>Create <code>ApplicationDbContext.cs</code> class</li>
+      <li>Register it in <code>Program.cs</code></li>
+      <li>Add connection string in <code>appsettings.json</code></li>
+    </ul>
+
+
+
+    <h2>Step 3: Create Model</h2>
+    <p>
+    A Model is a C# class that represents a table in your database. Each property in the class becomes a column, and each instance of the class becomes a row in the table.
+    </p>
+
+    <h3>🔷 3.1 Create a <code>Models</code> Folder</h3>
+    <ul>
+      <li>Right-click on the root of the project</li>
+      <li>Select <strong>Add → New Folder</strong></li>
+      <li>Name it: <code>Models</code></li>
+    </ul>
+
+    <h3>🔷 3.2 Add a Model Class</h3>
+    <ul>
+      <li>Right-click on <code>Models</code> folder</li>
+      <li>Select <strong>Add → Class</strong></li>
+      <li>Name the file: <code>Product.cs</code></li>
+    </ul>
+
+    <h3>🔷 3.3 Define the Model Properties</h3>
+    <p>Example of a <code>Product</code> model:</p>
+
+    <pre><code>namespace YourProjectName.Models
+{
+    public class Product
+    {
+        public int Id { get; set; }                 // Primary key
+        public string Name { get; set; }            // Product name
+        public decimal Price { get; set; }          // Product price
+    }
+}</code></pre>
+
+    <h3>✅ Notes</h3>
+    <ul>
+      <li><code>Id</code> is treated as the primary key by default</li>
+      <li>You can use attributes like <code>[Required]</code> or <code>[MaxLength]</code> for validation</li>
+    </ul>
+
+
+
+
+    <h2>Step 4: Add Model Property in <code>ApplicationDbContext</code></h2>
+
+<p>
+  Once you’ve created your model (like Product), you need to register it in the ApplicationDbContext class using a DbSet property. This tells Entity Framework Core that it should create a database table for that model.
+</p>
+    <h3>🔷 4.1 Open <code>ApplicationDbContext.cs</code></h3>
+    <ul>
+      <li>Navigate to <code>Data/ApplicationDbContext.cs</code></li>
+      <li>Open the file for editing</li>
+    </ul>
+
+    <h3>🔷 4.2 Add <code>DbSet</code> for Your Model</h3>
+    <p>If your model class is named <code>Product</code>, add this line inside the class:</p>
+
+    <pre><code>public DbSet&lt;Product&gt; Products { get; set; }</code></pre>
+
+    <p><strong>Full example of the updated class:</strong></p>
+    <pre><code>using Microsoft.EntityFrameworkCore;
+using YourProjectName.Models;
+
+namespace YourProjectName.Data
+{
+    public class ApplicationDbContext : DbContext
+    {
+        public ApplicationDbContext(DbContextOptions&lt;ApplicationDbContext&gt; options)
+            : base(options)
+        {
+        }
+
+        public DbSet&lt;Product&gt; Products { get; set; } // Table for Product model
+    }
+}</code></pre>
+
+    <h3>✅ Notes</h3>
+    <ul>
+      <li><code>DbSet&lt;Product&gt;</code> creates a table named <strong>Products</strong></li>
+      <li>Make sure to use the correct <code>using</code> statement for your model's namespace</li>
+      <li>Repeat this process for each new model you add</li>
+    </ul>
+
+
+    <h2>Step 5: "Add-Migration" Command</h2>
+    <h3>🔷 5.1 Open Package Manager Console</h3>
+    <ul>
+      <li>In Visual Studio, go to <strong>Tools → NuGet Package Manager → Package Manager Console</strong></li>
+      <li>You can also search “Package Manager Console” in the top search bar</li>
+    </ul>
+
+    <h3>🔷 5.2 Run Add-Migration</h3>
+    <p>In the console, enter the following command:</p>
+
+    <pre><code>Add-Migration InitialCreate</code></pre>
+
+    <p><strong>Explanation:</strong> This command creates a migration file to build your database schema. You can change <code>InitialCreate</code> to any descriptive name.</p>
+
+    <h3>🔷 5.3 What Happens</h3>
+    <ul>
+      <li>A new folder named <code>Migrations</code> is added to your project</li>
+      <li>It contains a migration class with <code>Up()</code> and <code>Down()</code> methods</li>
+      <li>EF Core uses these to create or rollback database changes</li>
+    </ul>
+
+    <h3>⚠️ Common Errors</h3>
+    <ul>
+      <li><strong>Error:</strong> “No parameterless constructor” → Make sure <code>ApplicationDbContext</code> is set up with options</li>
+      <li><strong>Error:</strong> “Unable to create object of type 'DbContext'” → Ensure it's registered in <code>Program.cs</code></li>
+    </ul>
+
+
+    <h2>Step 6: "Update-Database" Command</h2>
+    <p>
+After generating a migration with the Add-Migration command, you need to apply that migration to your actual database. This is done using the Update-Database command, which creates the tables as defined in your model.
+    </p>
+    <h3>🔷 6.1 Open Package Manager Console</h3>
+    <ul>
+      <li>Go to <strong>Tools → NuGet Package Manager → Package Manager Console</strong></li>
+      <li>Or search for “Package Manager Console” in Visual Studio</li>
+    </ul>
+
+    <h3>🔷 6.2 Run <code>Update-Database</code></h3>
+    <p>Type the following command in the console:</p>
+
+    <pre><code>Update-Database</code></pre>
+
+    <p>This applies the latest migration to the database using the connection string from <code>appsettings.json</code>.</p>
+
+    <h3>🔷 6.3 What Happens</h3>
+    <ul>
+      <li>Database is created (if it doesn’t exist)</li>
+      <li>Tables are created based on your model and migration</li>
+      <li>You can check them using:
+        <ul>
+          <li>SQL Server Management Studio (SSMS)</li>
+          <li>SQL Server Object Explorer in Visual Studio</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3>⚠️ Common Errors</h3>
+    <ul>
+      <li><strong>Login failed:</strong> Check your connection string format</li>
+      <li><strong>Permission denied:</strong> Run Visual Studio as administrator</li>
+      <li><strong>No migrations were applied:</strong> Run <code>Add-Migration</code> first</li>
+    </ul>
+
+
+
+    <h2>Step 7: Write Controller Code</h2>
+    <p>
+      After the database and tables are created via Update-Database, you’re ready to write a Controller. A controller handles HTTP requests (like GET, POST, PUT, DELETE) and connects your client (frontend or other apps) with the database via the model.
+ </p>
+     <h3>🔷 7.1 Create a <code>Controllers</code> Folder</h3>
+    <ul>
+      <li>Right-click project → <strong>Add → New Folder</strong></li>
+      <li>Name it: <code>Controllers</code></li>
+    </ul>
+
+    <h3>🔷 7.2 Add a New Controller</h3>
+    <ul>
+      <li>Right-click <code>Controllers</code> → <strong>Add → New Item</strong></li>
+      <li>Select <strong>API Controller - Empty</strong></li>
+      <li>Name it: <code>ProductsController.cs</code></li>
+    </ul>
+
+    <h3>🔷 7.3 Add Required Namespaces</h3>
+    <pre><code>using Microsoft.AspNetCore.Mvc;
+using YourProjectName.Data;
+using YourProjectName.Models;</code></pre>
+
+    <h3>🔷 7.4 Inject <code>ApplicationDbContext</code></h3>
+    <pre><code>private readonly ApplicationDbContext _context;
+
+public ProductsController(ApplicationDbContext context)
+{
+    _context = context;
+}</code></pre>
+
+    <h3>🔷 7.5 Add Basic CRUD Endpoints</h3>
+    <pre><code>// GET: api/products
+[HttpGet]
+public ActionResult&lt;IEnumerable&lt;Product&gt;&gt; GetProducts()
+{
+    return _context.Products.ToList();
+}
+
+// GET: api/products/5
+[HttpGet("{id}")]
+public ActionResult&lt;Product&gt; GetProduct(int id)
+{
+    var product = _context.Products.Find(id);
+    if (product == null) return NotFound();
+    return product;
+}
+
+// POST: api/products
+[HttpPost]
+public ActionResult&lt;Product&gt; PostProduct(Product product)
+{
+    _context.Products.Add(product);
+    _context.SaveChanges();
+    return CreatedAtAction(nameof(GetProduct), new { id = product.Id }, product);
+}</code></pre>
+
+    <h3>✅ Done!</h3>
+    <ul>
+      <li>You now have an API endpoint at <code>/api/products</code></li>
+      <li>Use tools like Postman or Swagger to test</li>
+    </ul>
+
+    </main>
+
+  <script src="../main.js"></script>
+</body>
+</html>
